@@ -5,7 +5,7 @@ namespace X10D.Performant.EnumExtensions
     /// <summary>
     ///     Extension methods for <see cref="Enum"/> types.
     /// </summary>
-    public static class EnumExtensions
+    public static partial class EnumExtensions
     {
         /// <summary>
         ///     Returns the next value in an <see cref="Enum"/> using <paramref name="value"/> as a starting point.

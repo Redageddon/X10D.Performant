@@ -5,7 +5,7 @@ namespace X10D.Performant.FloatExtensions
     /// <summary>
     ///     Extension methods for <see cref="float"/>.
     /// </summary>
-    public static class FloatExtensions
+    public static partial class FloatExtensions
     {
         /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GetBytes"/>
         public static byte[] GetBytes(this float value) => BitConverter.GetBytes(value);

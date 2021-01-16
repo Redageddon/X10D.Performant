@@ -5,7 +5,7 @@ namespace X10D.Performant.DoubleExtensions
     /// <summary>
     ///     Extension methods for <see cref="double"/>.
     /// </summary>
-    public static class DoubleExtensions
+    public static partial class DoubleExtensions
     {
         /// <summary>
         ///     Converts the <paramref name="value"/> to a <see cref="T:byte[]"/>.

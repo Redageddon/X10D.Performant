@@ -1,57 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>8.0</LangVersion>
-        <Authors>Oliver Booth</Authors>
+        <TargetFramework>net5.0</TargetFramework>
+        <nullable>Enable</nullable>
+        <LangVersion>Latest</LangVersion>
+        <Authors>Oliver Booth, Redageddon</Authors>
         <NeutralLanguage>en</NeutralLanguage>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <RepositoryUrl>https://github.com/oliverbooth/X10D</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Redageddon/X10D/tree/performant</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <Description>Extension methods on crack.</Description>
+        <Description>Performant Extension methods on crack.</Description>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageIcon>icon.png</PackageIcon>
         <PackageTags>dotnet extension-methods</PackageTags>
-        <Version>2.3.0</Version>
-        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+        <Version>1.0.1</Version>
+        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <FileVersion>1.0.1</FileVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <AssemblyVersion>2.6.0</AssemblyVersion>
-        <FileVersion>2.6.0</FileVersion>
-        <PackageVersion>2.6.0</PackageVersion>
-        <RootNamespace>X10D</RootNamespace>
-        <NoWarn>NU1701</NoWarn>
+        <RootNamespace>X10D.Performant</RootNamespace>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     
-    <ItemGroup>
-        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.0">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Roslynator.Analyzers" Version="3.0.0">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.164">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Compile Update="Resource.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>Resource.resx</DependentUpon>
-        </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Update="Resource.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-    </ItemGroup>
-
     <ItemGroup>
         <Content Include="..\icon.png">
             <Pack>True</Pack>
@@ -61,6 +31,11 @@
             <Pack>True</Pack>
             <PackagePath />
         </Content>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="src\DecimalExtensions" />
+      <Folder Include="src\IntergerExtensions" />
     </ItemGroup>
 
 </Project>

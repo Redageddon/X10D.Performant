@@ -1,4 +1,7 @@
-﻿namespace X10D.Tests.Core
+﻿using System.Reflection;
+using X10D.Performant.ReflectionExtensions;
+
+namespace X10D.Tests.Core
 {
     using System;
     using System.ComponentModel;
@@ -6,50 +9,50 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
-    ///     Tests for <see cref="ReflectionExtensions" />.
+    ///     Tests for <see cref="ReflectionExtensions"/>.
     /// </summary>
     [TestClass]
     public class ReflectionTests
     {
         /// <summary>
-        ///     Test for <see cref="ReflectionExtensions.GetDefaultValue{T}(System.Reflection.MemberInfo)" />.
+        ///     Test for <see cref="ReflectionExtensions.GetDefaultValue{T}(MemberInfo)"/>.
         /// </summary>
         [TestMethod]
         public void GetDefaultValue()
         {
-            var klass = new TestClass();
+            TestClass klass = new();
 
-            foreach (var property in klass.GetType().GetProperties())
+            foreach (PropertyInfo property in klass.GetType().GetProperties())
             {
                 Assert.AreEqual("Foo", property.GetDefaultValue<string>());
             }
         }
 
         /// <summary>
-        ///     Test for <see cref="ReflectionExtensions.GetDescription(System.Reflection.MemberInfo)" />.
+        ///     Test for <see cref="ReflectionExtensions.GetDescription(MemberInfo)"/>.
         /// </summary>
         [TestMethod]
         public void GetDescription()
         {
-            var klass = new TestClass();
+            TestClass klass = new();
 
-            foreach (var property in klass.GetType().GetProperties())
+            foreach (PropertyInfo property in klass.GetType().GetProperties())
             {
                 Assert.AreEqual("Test description", property.GetDescription());
             }
         }
 
         /// <summary>
-        ///     Test for <see cref="ReflectionExtensions.GetDescription(System.Reflection.MemberInfo)" />.
+        ///     Test for <see cref="ReflectionExtensions.GetDescription(MemberInfo)"/>.
         /// </summary>
         [TestMethod]
         public void SelectFromCustomAttribute()
         {
-            var klass = new TestClass();
+            TestClass klass = new();
 
-            foreach (var property in klass.GetType().GetProperties())
+            foreach (PropertyInfo property in klass.GetType().GetProperties())
             {
-                var value = property.SelectFromCustomAttribute<TestAttribute, string>(a => a?.TestValue);
+                string value = property.SelectFromCustomAttribute<TestAttribute, string>(a => a?.TestValue);
                 Assert.AreEqual("Bar", value);
             }
         }

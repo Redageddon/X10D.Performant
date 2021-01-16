@@ -1,47 +1,37 @@
+using X10D.Performant.DoubleExtensions;
+
 namespace X10D.Tests.Core
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
-    ///     Tests for <see cref="DoubleExtensions" />.
+    ///     Tests for <see cref="DoubleExtensions"/>.
     /// </summary>
     [TestClass]
     public class DoubleTests
     {
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.Clamp" />.
-        /// </summary>
-        [TestMethod]
-        public void Clamp()
-        {
-            Assert.AreEqual(2.0, 3.0.Clamp(1.0, 2.0));
-            Assert.AreEqual(1.0, (-3.0).Clamp(1.0, 2.0));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.ToRadians" />.
+        ///     Tests for <see cref="DoubleExtensions.DegreesToRadians"/>.
         /// </summary>
         [TestMethod]
         public void DegreesToRadians()
         {
-            Assert.AreEqual(Math.PI, 180.0.ToRadians());
-            Assert.AreEqual(Math.PI * 1.5, 270.0.ToRadians());
+            Assert.AreEqual(Math.PI, 180.0.DegreesToRadians());
+            Assert.AreEqual(Math.PI * 1.5, 270.0.DegreesToRadians());
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.GetBytes" />.
+        ///     Tests for <see cref="DoubleExtensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
         public void GetBytes()
         {
-            CollectionAssert.AreEqual(
-                new byte[] { 0x18, 0x2D, 0x44, 0x54, 0xFB, 0x21, 0x09, 0x40 },
-                Math.PI.GetBytes());
+            CollectionAssert.AreEqual(new byte[] { 0x18, 0x2D, 0x44, 0x54, 0xFB, 0x21, 0x09, 0x40 }, Math.PI.GetBytes());
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.IsEven" />.
+        ///     Tests for <see cref="DoubleExtensions.IsEven"/>.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -51,7 +41,7 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.IsOdd" />.
+        ///     Tests for <see cref="DoubleExtensions.IsOdd"/>.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -61,17 +51,17 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.ToDegrees" />.
+        ///     Tests for <see cref="DoubleExtensions.RadiansToDegrees"/>.
         /// </summary>
         [TestMethod]
         public void RadiansToDegrees()
         {
-            Assert.AreEqual(180.0, Math.PI.ToDegrees());
-            Assert.AreEqual(360.0, (2.0 * Math.PI).ToDegrees());
+            Assert.AreEqual(180.0, Math.PI.RadiansToDegrees());
+            Assert.AreEqual(360.0, (2.0 * Math.PI).RadiansToDegrees());
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.Round" />.
+        ///     Tests for <see cref="DoubleExtensions.Round"/>.
         /// </summary>
         [TestMethod]
         public void Round()

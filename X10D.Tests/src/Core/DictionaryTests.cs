@@ -1,3 +1,5 @@
+using X10D.Performant.KeyValuePairExtensions;
+
 namespace X10D.Tests.Core
 {
     using System.Collections;
@@ -5,53 +7,53 @@ namespace X10D.Tests.Core
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
-    ///     Tests for <see cref="DictionaryExtensions" />.
+    ///     Tests for <see cref="DictionaryExtensions"/>.
     /// </summary>
     [TestClass]
     public class DictionaryTests
     {
         /// <summary>
-        ///     Tests for <see cref="DictionaryExtensions.ToConnectionString{T1,T2}(IEnumerable{KeyValuePair{T1, T2}})" />.
+        ///     Tests for <see cref="DictionaryExtensions.ToConnectionString{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
         /// </summary>
         [TestMethod]
         public void ToConnectionString()
         {
-            var dictionary = new Dictionary<string, object>
+            Dictionary<string, object> dictionary = new()
             {
                 { "username", "Foo" }, { "password", "Foo Bar" }, { "port", 3306 },
             };
 
-            var connectionString = dictionary.ToConnectionString();
+            string connectionString = dictionary.ToConnectionString();
             Assert.AreEqual("username=Foo;password=\"Foo Bar\";port=3306", connectionString);
         }
 
         /// <summary>
-        ///     Tests for <see cref="DictionaryExtensions.ToGetParameters{T1,T2}(IEnumerable{KeyValuePair{T1, T2}})" />.
+        ///     Tests for <see cref="DictionaryExtensions.ToGetParameters{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
         /// </summary>
         [TestMethod]
         public void ToGetParameters()
         {
-            var dictionary = new Dictionary<string, object>
+            Dictionary<string, object> dictionary = new()
             {
                 { "username", "Foo" }, { "password", "Foo Bar" }, { "port", 3306 },
             };
 
-            var getParameterString = dictionary.ToGetParameters();
+            string getParameterString = dictionary.ToGetParameters();
             Assert.AreEqual("username=Foo&password=Foo+Bar&port=3306", getParameterString);
         }
 
         /// <summary>
-        ///     Tests for <see cref="DictionaryExtensions.ToGetParameters{T1,T2}(IEnumerable{KeyValuePair{T1, T2}})" />.
+        ///     Tests for <see cref="DictionaryExtensions.ToGetParameters{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
         /// </summary>
         [TestMethod]
         public void ToGetParametersSeparators()
         {
-            var dictionary = new Dictionary<string, IEnumerable>
+            Dictionary<string, IEnumerable> dictionary = new()
             {
                 { "username", "Foo" }, { "password", "Foo Bar" }, { "port", new[] { 3, 3, 0, 6 } },
             };
 
-            var getParameterString = dictionary.ToGetParameters(",", "-", ".");
+            string getParameterString = dictionary.ToGetParameters(",", "-", ".");
             Assert.AreEqual("username=F%2co%2co&password=F-o-o-+-B-a-r&port=3.3.0.6", getParameterString);
 
             getParameterString = dictionary.ToGetParameters(",", "-");

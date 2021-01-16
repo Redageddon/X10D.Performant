@@ -3,7 +3,7 @@
     /// <summary>
     ///     Extension methods for <see cref="char"/>.
     /// </summary>
-    public static class CharExtensions
+    public static partial class CharExtensions
     {
         /// <summary>
         ///     Repeats a <see cref="char"/> a specified number of times.

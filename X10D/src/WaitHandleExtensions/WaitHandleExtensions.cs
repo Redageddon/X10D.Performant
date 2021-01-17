@@ -6,7 +6,7 @@ namespace X10D.Performant.WaitHandleExtensions
     /// <summary>
     ///     Extension methods for <see cref="WaitHandle"/>.
     /// </summary>
-    public static class WaitHandleExtensions
+    public static partial class WaitHandleExtensions
     {
         /// <summary>
         ///     Returns a <see cref="Task"/> which can be awaited until the current <see cref="WaitHandle"/> receives a signal.

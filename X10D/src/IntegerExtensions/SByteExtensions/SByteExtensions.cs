@@ -8,7 +8,7 @@ namespace X10D.Performant.SByteExtensions
     public static partial class SByteExtensions
     {
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.FromUnixTimestamp"/>
-        public static DateTime FromUnixTimestamp(this ushort timestamp, bool isMillis = false)
+        public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
                 ? DateTimeOffset.FromUnixTimeMilliseconds(timestamp)
@@ -18,23 +18,14 @@ namespace X10D.Performant.SByteExtensions
         }
 
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsEven"/>
-        public static bool IsEven(this ushort value) => value % 2 == 0;
+        public static bool IsEven(this sbyte value) => value % 2 == 0;
 
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsOdd"/>
-        public static bool IsOdd(this ushort value) => value % 2 != 0;
+        public static bool IsOdd(this sbyte value) => value % 2 != 0;
 
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean"/>
-        public static bool ToBoolean(this ushort value) => value != 0;
+        public static bool ToBoolean(this sbyte value) => value != 0;
 
-        /// <inheritdoc cref="BitConverter.ToUInt16(byte[],int)"/>
-        public static ushort ToUShort(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt16(bytes, startIndex);
-
-        /// <inheritdoc cref="BitConverter.ToUInt32(byte[],int)"/>
-        public static uint ToUInt(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt32(bytes, startIndex);
-
-        /// <inheritdoc cref="BitConverter.ToUInt64(byte[],int)"/>
-        public static ulong ToULong(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt64(bytes, startIndex);
-        
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsPrime"/>
         public static bool IsPrime(this sbyte value)
         {

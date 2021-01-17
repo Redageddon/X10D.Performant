@@ -17,7 +17,7 @@ namespace X10D.Performant.IntExtensions
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.GetBytes"/>
+        /// <inheritdoc cref="BitConverter.GetBytes(long)"/>
         public static byte[] GetBytes(this int value) => BitConverter.GetBytes(value);
 
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsEven"/>

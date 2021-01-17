@@ -24,11 +24,7 @@ namespace X10D.Performant.ULongExtensions
             return offset.DateTime;
         }
 
-        /// <summary>
-        ///     Converts the <paramref name="value"/> to a <see cref="T:byte[]"/>.
-        /// </summary>
-        /// <param name="value">An unsigned integral value.</param>
-        /// <returns>A <see cref="T:byte[]"/>.</returns>
+        /// <inheritdoc cref="BitConverter.GetBytes(ulong)"/>
         public static byte[] GetBytes(this ulong value) => BitConverter.GetBytes(value);
 
         /// <summary>

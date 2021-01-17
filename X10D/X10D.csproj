@@ -34,7 +34,6 @@
     </ItemGroup>
     
     <ItemGroup>
-      <Folder Include="src\DecimalExtensions" />
       <Folder Include="src\IntegerExtensions" />
     </ItemGroup>
 

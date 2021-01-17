@@ -1,4 +1,6 @@
-﻿namespace X10D.Performant.BooleanExtensions
+﻿using System;
+
+namespace X10D.Performant.BooleanExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="bool"/>.
@@ -32,5 +34,8 @@
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>Returns 1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
         public static long ToLong(this bool value) => value ? 1 : 0;
+        
+        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GetBytes"/>
+        public static byte[] GetBytes(this bool value) => BitConverter.GetBytes(value);
     }
 }

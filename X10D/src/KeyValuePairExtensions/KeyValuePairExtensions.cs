@@ -21,6 +21,10 @@ namespace X10D.Performant.KeyValuePairExtensions
         {
             static string? SanitizeValue<T>(T value)
             {
+                if (value is null)
+                {
+                    return string.Empty;
+                }
                 if (value is string str)
                 {
                     foreach (char t in str)
@@ -32,7 +36,7 @@ namespace X10D.Performant.KeyValuePairExtensions
                     }
                 }
 
-                return value?.ToString();
+                return value.ToString();
             }
 
             IEnumerable<string> InternalIterator()

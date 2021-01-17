@@ -12,7 +12,7 @@ namespace X10D.Tests.Core
     public class RandomTests
     {
         /// <summary>
-        ///     Tests for <see cref="RandomExtensions.CoinToss"/>.
+        ///     Tests for <see cref="RandomExtensions.NextBool"/>.
         /// </summary>
         [TestMethod]
         public void CoinToss()
@@ -21,10 +21,10 @@ namespace X10D.Tests.Core
 
             bool[] tosses =
             {
-                random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(),
-                random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(),
-                random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(), random.CoinToss(),
-                random.CoinToss(), random.CoinToss(),
+                random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(),
+                random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(),
+                random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(),
+                random.NextBool(), random.NextBool(),
             };
 
             CollectionAssert.AreNotEqual(

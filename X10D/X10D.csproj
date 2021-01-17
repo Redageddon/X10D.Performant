@@ -35,7 +35,7 @@
     
     <ItemGroup>
       <Folder Include="src\DecimalExtensions" />
-      <Folder Include="src\IntergerExtensions" />
+      <Folder Include="src\IntegerExtensions" />
     </ItemGroup>
 
 </Project>

@@ -128,7 +128,7 @@ namespace X10D.Performant.GenericExtensions
                         Convert<string, float>.Function = float.Parse;
                         Convert<string, double>.Function = double.Parse;
                         Convert<string, decimal>.Function = decimal.Parse;
-                        Convert<string, TimeSpan>.Function = v => StringExtensions.Parse(v);
+                        Convert<string, TimeSpan>.Function = v => StringExtensions.ShortHandParse(v);
                     }
                     else
                     {

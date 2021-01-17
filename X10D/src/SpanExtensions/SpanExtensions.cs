@@ -15,7 +15,7 @@ namespace X10D.Performant.SpanExtensions
         /// </summary>
         /// <param name="values">The values being pulled.</param>
         /// <param name="count">The amount of items to be returned.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
         /// <returns>A <see cref="Span{T}"/> containing <paramref name="count"/> amount of <typeparamref name="T"/>.</returns>
         public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null)
@@ -35,7 +35,7 @@ namespace X10D.Performant.SpanExtensions
         ///     Shuffles a <see cref="Span{T}"/>.
         /// </summary>
         /// <param name="source">The <see cref="Span{T}"/> to shuffle.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
         public static void Shuffle<T>(this Span<T> source, Random? random = null)
         {

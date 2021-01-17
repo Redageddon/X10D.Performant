@@ -20,7 +20,7 @@ namespace X10D.Performant.RandomExtensions
         /// <returns>
         ///     Returns <see langword="true"/> or <see langword="false"/> depending on the return value from <see cref="System.Random.Next(int)"/>.
         /// </returns>
-        public static bool CoinToss(this Random random) => random.Next(2) == 0;
+        public static bool NextBool(this Random random) => random.NextDouble() >= 0.5;
 
         /// <summary>
         ///     Returns a random element from <paramref name="values"/> using the <see cref="Random"/> instance.

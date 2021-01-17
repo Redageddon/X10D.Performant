@@ -24,11 +24,7 @@ namespace X10D.Performant.LongExtensions
             return offset.DateTime;
         }
 
-        /// <summary>
-        ///     Converts the <paramref name="value"/> to a <see cref="T:byte[]"/>.
-        /// </summary>
-        /// <param name="value">An integral value.</param>
-        /// <returns>A <see cref="T:byte[]"/>.</returns>
+        /// <inheritdoc cref="BitConverter.GetBytes(long)"/>
         public static byte[] GetBytes(this long value) => BitConverter.GetBytes(value);
 
         /// <summary>

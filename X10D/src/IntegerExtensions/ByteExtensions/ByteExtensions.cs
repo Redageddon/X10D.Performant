@@ -50,39 +50,19 @@ namespace X10D.Performant.ByteExtensions
             }
         }
 
-        /// <summary>
-        ///     Converts the <see cref="T:byte[]"/> to an <see cref="short"/>.
-        /// </summary>
-        /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>An <see cref="short"/>.</returns>
-        public static short BitsAsShort(this byte[] bytes) => BitConverter.ToInt16(bytes, 0);
+        /// <inheritdoc cref="BitConverter.ToInt16(byte[],int)"/>
+        public static short ToShort(this byte[] bytes, int startIndex = 0) => BitConverter.ToInt16(bytes, startIndex);
 
-        /// <summary>
-        ///     Converts the <see cref="T:byte[]"/> to an <see cref="int"/>.
-        /// </summary>
-        /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>An <see cref="int"/>.</returns>
-        public static int BitsAsInt(this byte[] bytes) => BitConverter.ToInt32(bytes, 0);
+        /// <inheritdoc cref="BitConverter.ToInt32(byte[],int)"/>
+        public static int ToInt(this byte[] bytes, int startIndex = 0) => BitConverter.ToInt32(bytes, startIndex);
 
-        /// <summary>
-        ///     Converts the <see cref="T:byte[]"/> to an <see cref="long"/>.
-        /// </summary>
-        /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>An <see cref="long"/>.</returns>
-        public static long BitsAsLong(this byte[] bytes) => BitConverter.ToInt64(bytes, 0);
+        /// <inheritdoc cref="BitConverter.ToInt64(byte[],int)"/>
+        public static long ToLong(this byte[] bytes, int startIndex = 0) => BitConverter.ToInt64(bytes, startIndex);
 
-        /// <summary>
-        ///     Gets a <see cref="string"/> literally representing the raw values in the <see cref="T:byte[]"/>.
-        /// </summary>
-        /// <param name="bytes">The bytes to get.</param>
-        /// <returns>A <see cref="string"/>.</returns>
-        public static string BitsAsString(this byte[] bytes) => BitConverter.ToString(bytes);
+        /// <inheritdoc cref="BitConverter.ToString(byte[])"/>
+        public static string ToSting(this byte[] bytes) => BitConverter.ToString(bytes);
 
-        /// <summary>
-        ///     Gets a <see cref="string"/> representing the value the <see cref="T:byte[]"/> with <see cref="Encoding.UTF8"/> encoding.
-        /// </summary>
-        /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>A <see cref="string"/>.</returns>
-        public static string GetUtf8String(this byte[] bytes) => Encoding.UTF8.GetString(bytes);
+        /// <inheritdoc cref="Encoding.GetString(byte[])"/>
+        public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetString(bytes);
     }
 }

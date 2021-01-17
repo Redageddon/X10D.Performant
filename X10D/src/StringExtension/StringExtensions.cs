@@ -17,7 +17,7 @@ namespace X10D.Performant.StringExtension
         /// </summary>
         /// <param name="value">The base-64 <see cref="string"/> to decode.</param>
         /// <returns>The <see cref="string"/> in plain text.</returns>
-        public static string Base64Decode(this string value) => Convert.FromBase64String(value).GetUtf8String();
+        public static string Base64Decode(this string value) => Convert.FromBase64String(value).ToEncodedString();
 
         /// <summary>
         ///     Encodes a base-64 encoded <see cref="string"/>.

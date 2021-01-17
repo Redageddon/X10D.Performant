@@ -3,7 +3,7 @@
     /// <summary>
     ///     Extension methods for <see cref="decimal"/>.
     /// </summary>
-    public static class DecimalExtensions
+    public static partial class DecimalExtensions
     {
         /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.IsEven"/>
         public static bool IsEven(this decimal value) => value % 2 == 0;

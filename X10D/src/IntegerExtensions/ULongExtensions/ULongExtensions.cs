@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace X10D.Performant.LongExtensions
+namespace X10D.Performant.ULongExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="ulong"/>.
     /// </summary>
-    public static class ULongExtensions
+    public static partial class ULongExtensions
     {
         /// <summary>
         ///     Converts the <paramref name="timestamp"/> to a <see cref="DateTime"/> treating it as a Unix timestamp.

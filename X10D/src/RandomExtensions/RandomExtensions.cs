@@ -18,7 +18,7 @@ namespace X10D.Performant.RandomExtensions
         /// </summary>
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <returns>
-        ///     Returns <see langword="true"/> or <see langword="false"/> depending on the return value from <see cref="System.Random.Next(int)"/>.
+        ///     Returns <see langword="true"/> or <see langword="false"/> depending on the return value from <see cref="Random.Next(int)"/>.
         /// </returns>
         public static bool NextBool(this Random random) => random.NextDouble() >= 0.5;
 

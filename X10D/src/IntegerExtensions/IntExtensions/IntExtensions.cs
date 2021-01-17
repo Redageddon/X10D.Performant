@@ -5,7 +5,7 @@ namespace X10D.Performant.IntExtensions
     /// <summary>
     ///     Extension methods for <see cref="int"/>.
     /// </summary>
-    public static class IntExtensions
+    public static partial class IntExtensions
     {
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this int timestamp, bool isMillis = false)

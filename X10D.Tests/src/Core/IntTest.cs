@@ -1,4 +1,5 @@
 ﻿using X10D.Performant.IntExtensions;
+using X10D.Performant.UIntExtensions;
 
 namespace X10D.Tests.Core
 {

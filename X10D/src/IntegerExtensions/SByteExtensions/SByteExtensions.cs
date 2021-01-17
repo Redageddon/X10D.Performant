@@ -1,13 +1,14 @@
 ﻿using System;
+using X10D.Performant.ULongExtensions;
 
-namespace X10D.Performant.ByteExtensions
+namespace X10D.Performant.SByteExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="sbyte"/>.
     /// </summary>
     public static partial class SByteExtensions
     {
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.ULongExtensions.FromUnixTimestamp"/>
+        /// <inheritdoc cref="ULongExtensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this ushort timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -17,13 +18,13 @@ namespace X10D.Performant.ByteExtensions
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.ULongExtensions.IsEven"/>
+        /// <inheritdoc cref="ULongExtensions.IsEven"/>
         public static bool IsEven(this ushort value) => value % 2 == 0;
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.ULongExtensions.IsOdd"/>
+        /// <inheritdoc cref="ULongExtensions.IsOdd"/>
         public static bool IsOdd(this ushort value) => value % 2 != 0;
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.ULongExtensions.ToBoolean"/>
+        /// <inheritdoc cref="ULongExtensions.ToBoolean"/>
         public static bool ToBoolean(this ushort value) => value != 0;
 
         /// <summary>

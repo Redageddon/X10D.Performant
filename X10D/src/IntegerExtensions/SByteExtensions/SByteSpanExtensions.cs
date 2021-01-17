@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant.ByteExtensions
+namespace X10D.Performant.SByteExtensions
 {
     public static partial class SByteExtensions
     {

@@ -1,5 +1,7 @@
 using System;
 using X10D.Performant.ByteExtensions;
+using X10D.Performant.SByteExtensions;
+using SByteExtensions = X10D.Performant.SByteExtensions.SByteExtensions;
 
 namespace X10D.Tests.Core
 {
@@ -117,13 +119,13 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="SByteExtensions.BitsAsUShort(ReadOnlySpan{byte})"/>.
+        ///     Tests for <see cref="Performant.SByteExtensions.SByteExtensions.BitsAsUShort(ReadOnlySpan{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt16()
         {
             byte[] a = { 0xF3, 0x3F };
-            Assert.AreEqual(16371, a.BitsAsUShort());
+            Assert.AreEqual(16371, SByteExtensions.BitsAsUShort(a));
             Assert.AreEqual(16371, a.AsSpan().BitsAsUShort());
         }
 

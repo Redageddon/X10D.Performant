@@ -1,4 +1,5 @@
 ﻿using X10D.Performant.ShortExtensions;
+using X10D.Performant.UShortExtensions;
 
 namespace X10D.Tests.Core
 {

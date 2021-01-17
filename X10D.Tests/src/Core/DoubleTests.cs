@@ -59,16 +59,5 @@ namespace X10D.Tests.Core
             Assert.AreEqual(180.0, Math.PI.RadiansToDegrees());
             Assert.AreEqual(360.0, (2.0 * Math.PI).RadiansToDegrees());
         }
-
-        /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.Round"/>.
-        /// </summary>
-        [TestMethod]
-        public void Round()
-        {
-            Assert.AreEqual(5.0, 3.5.Round(5));
-            Assert.AreEqual(5.0, 7.0.Round(5));
-            Assert.AreEqual(10.0, 7.5.Round(5));
-        }
     }
 }

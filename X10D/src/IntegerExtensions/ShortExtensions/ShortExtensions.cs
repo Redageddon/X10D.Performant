@@ -5,7 +5,7 @@ namespace X10D.Performant.ShortExtensions
     /// <summary>
     ///     Extension methods for <see cref="short"/>.
     /// </summary>
-    public static class ShortExtensions
+    public static partial class ShortExtensions
     {
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this short timestamp, bool isMillis = false)

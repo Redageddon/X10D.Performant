@@ -4,70 +4,70 @@ namespace X10D.Performant.CharExtensions
 {
     public static partial class CharExtensions
     {
-        /// <inheritdoc cref="System.Char.IsControl(char)"/>
+        /// <inheritdoc cref="Char.IsControl(char)"/>
         public static bool IsControl(this char value) => char.IsControl(value);
 
-        /// <inheritdoc cref="System.Char.IsDigit(char)"/>
+        /// <inheritdoc cref="Char.IsDigit(char)"/>
         public static bool IsDigit(this char value) => char.IsDigit(value);
         
-        /// <inheritdoc cref="System.Char.IsLetter(char)"/>
+        /// <inheritdoc cref="Char.IsLetter(char)"/>
         public static bool IsLetter(this char value) => char.IsLetter(value);
         
-        /// <inheritdoc cref="System.Char.IsLower(char)"/>
+        /// <inheritdoc cref="Char.IsLower(char)"/>
         public static bool IsLower(this char value) => char.IsLower(value);
         
-        /// <inheritdoc cref="System.Char.IsNumber(char)"/>
+        /// <inheritdoc cref="Char.IsNumber(char)"/>
         public static bool IsNumber(this char value) => char.IsNumber(value);
         
-        /// <inheritdoc cref="System.Char.IsPunctuation(char)"/>
+        /// <inheritdoc cref="Char.IsPunctuation(char)"/>
         public static bool IsPunctuation(this char value) => char.IsPunctuation(value);
 
-        /// <inheritdoc cref="System.Char.IsSeparator(char)"/>
+        /// <inheritdoc cref="Char.IsSeparator(char)"/>
         public static bool IsSeparator(this char value) => char.IsSeparator(value);
 
-        /// <inheritdoc cref="System.Char.IsSurrogate(char)"/>
+        /// <inheritdoc cref="Char.IsSurrogate(char)"/>
         public static bool IsSurrogate(this char value) => char.IsSurrogate(value);
         
-        /// <inheritdoc cref="System.Char.IsSymbol(char)"/>
+        /// <inheritdoc cref="Char.IsSymbol(char)"/>
         public static bool IsSymbol(this char value) => char.IsSymbol(value);
         
-        /// <inheritdoc cref="System.Char.IsUpper(char)"/>
+        /// <inheritdoc cref="Char.IsUpper(char)"/>
         public static bool IsUpper(this char value) => char.IsUpper(value);
         
-        /// <inheritdoc cref="System.Char.ToLower(char)"/>
+        /// <inheritdoc cref="Char.ToLower(char)"/>
         public static char ToLower(this char value, CultureInfo? culture = null) => char.ToLower(value, culture ?? CultureInfo.CurrentCulture);
 
-        /// <inheritdoc cref="System.Char.ToUpper(char)"/>
+        /// <inheritdoc cref="Char.ToUpper(char)"/>
         public static char ToUpper(this char value, CultureInfo? culture = null) => char.ToUpper(value, culture ?? CultureInfo.CurrentCulture);
 
-        /// <inheritdoc cref="System.Char.ConvertToUtf32(char,char)"/>
+        /// <inheritdoc cref="Char.ConvertToUtf32(char,char)"/>
         public static int ConvertToUtf32(this char highSurrogate, char lowSurrogate) => char.ConvertToUtf32(highSurrogate, lowSurrogate);
 
-        /// <inheritdoc cref="System.Char.GetNumericValue(char)"/>
+        /// <inheritdoc cref="Char.GetNumericValue(char)"/>
         public static double GetNumericValue(this char value) => char.GetNumericValue(value);
 
-        /// <inheritdoc cref="System.Char.GetUnicodeCategory(char)"/>
+        /// <inheritdoc cref="Char.GetUnicodeCategory(char)"/>
         public static UnicodeCategory GetUnicodeCategory(this char value) => char.GetUnicodeCategory(value);
 
-        /// <inheritdoc cref="System.Char.IsHighSurrogate(char)"/>
+        /// <inheritdoc cref="Char.IsHighSurrogate(char)"/>
         public static bool IsHighSurrogate(this char value) => char.IsHighSurrogate(value);
         
-        /// <inheritdoc cref="System.Char.IsLowSurrogate(char)"/>
+        /// <inheritdoc cref="Char.IsLowSurrogate(char)"/>
         public static bool IsLowSurrogate(this char value) => char.IsLowSurrogate(value);
 
-        /// <inheritdoc cref="System.Char.IsSurrogatePair(char,char)"/>
+        /// <inheritdoc cref="Char.IsSurrogatePair(char,char)"/>
         public static bool IsSurrogatePair(this char highSurrogate, char lowSurrogate) => char.IsSurrogatePair(highSurrogate, lowSurrogate);
         
-        /// <inheritdoc cref="System.Char.IsWhiteSpace(char)"/>
+        /// <inheritdoc cref="Char.IsWhiteSpace(char)"/>
         public static bool IsWhiteSpace(this char value) => char.IsWhiteSpace(value);
         
-        /// <inheritdoc cref="System.Char.ToLowerInvariant(char)"/>
+        /// <inheritdoc cref="Char.ToLowerInvariant(char)"/>
         public static char ToLowerInvariant(this char value) => char.ToLowerInvariant(value);
         
-        /// <inheritdoc cref="System.Char.ToUpperInvariant(char)"/>
+        /// <inheritdoc cref="Char.ToUpperInvariant(char)"/>
         public static char ToUpperInvariant(this char value) => char.ToUpperInvariant(value);
         
-        /// <inheritdoc cref="System.Char.IsLetterOrDigit(char)"/>
+        /// <inheritdoc cref="Char.IsLetterOrDigit(char)"/>
         public static bool IsLetterOrDigit(this char value) => char.IsLetterOrDigit(value);
     }
 }

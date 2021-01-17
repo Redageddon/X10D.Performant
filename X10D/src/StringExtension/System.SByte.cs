@@ -2,11 +2,11 @@
 {
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="System.SByte.Parse(string)"/>
+        /// <inheritdoc cref="SByte.Parse(string)"/>
         public static sbyte ToSByte(this string value) =>
             sbyte.Parse(value);
         
-        /// <inheritdoc cref="System.SByte.TryParse(string,out sbyte)"/>
+        /// <inheritdoc cref="SByte.TryParse(string,out sbyte)"/>
         public static bool TryToSByte(this string value, out sbyte result) =>
             sbyte.TryParse(value, out result);
     }

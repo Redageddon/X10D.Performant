@@ -5,7 +5,7 @@ namespace X10D.Performant.LongExtensions
     /// <summary>
     ///     Extension methods for <see cref="long"/>.
     /// </summary>
-    public static class LongExtensions
+    public static partial class LongExtensions
     {
         /// <summary>
         ///     Converts the <paramref name="timestamp"/> to a <see cref="DateTime"/> treating it as a Unix timestamp.

@@ -8,7 +8,7 @@ namespace X10D.Performant.UIntExtensions
     /// </summary>
     public static partial class UIntExtensions
     {
-        /// <inheritdoc cref="ULongExtensions.FromUnixTimestamp"/>
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this uint timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -18,19 +18,19 @@ namespace X10D.Performant.UIntExtensions
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="ULongExtensions.GetBytes"/>
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.GetBytes"/>
         public static byte[] GetBytes(this uint value) => BitConverter.GetBytes(value);
 
-        /// <inheritdoc cref="ULongExtensions.IsEven"/>
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsEven"/>
         public static bool IsEven(this uint value) => value % 2 == 0;
 
-        /// <inheritdoc cref="ULongExtensions.IsOdd"/>
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsOdd"/>
         public static bool IsOdd(this uint value) => value % 2 != 0;
 
-        /// <inheritdoc cref="ULongExtensions.ToBoolean"/>
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.ToBoolean"/>
         public static bool ToBoolean(this uint value) => value != 0;
         
-        /// <inheritdoc cref="ULongExtensions.IsPrime"/>
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsPrime"/>
         public static bool IsPrime(this uint value)
         {
             switch (value)

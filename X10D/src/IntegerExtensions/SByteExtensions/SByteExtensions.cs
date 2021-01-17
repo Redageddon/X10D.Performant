@@ -8,7 +8,7 @@ namespace X10D.Performant.SByteExtensions
     /// </summary>
     public static partial class SByteExtensions
     {
-        /// <inheritdoc cref="ULongExtensions.FromUnixTimestamp"/>
+        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this ushort timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -18,13 +18,13 @@ namespace X10D.Performant.SByteExtensions
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="ULongExtensions.IsEven"/>
+        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsEven"/>
         public static bool IsEven(this ushort value) => value % 2 == 0;
 
-        /// <inheritdoc cref="ULongExtensions.IsOdd"/>
+        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsOdd"/>
         public static bool IsOdd(this ushort value) => value % 2 != 0;
 
-        /// <inheritdoc cref="ULongExtensions.ToBoolean"/>
+        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean"/>
         public static bool ToBoolean(this ushort value) => value != 0;
 
         /// <summary>
@@ -48,11 +48,7 @@ namespace X10D.Performant.SByteExtensions
         /// <returns>An <see cref="ulong"/>.</returns>
         public static ulong BitsAsULong(this byte[] bytes) => BitConverter.ToUInt64(bytes, 0);
         
-        /// <summary>
-        ///     Determines if the <see cref="sbyte"/> is a prime number.
-        /// </summary>
-        /// <param name="value">The number.</param>
-        /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
+        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsPrime"/>
         public static bool IsPrime(this sbyte value)
         {
             switch (value)

@@ -54,35 +54,35 @@ namespace X10D.Performant.ByteExtensions
         ///     Converts the <see cref="T:byte[]"/> to an <see cref="short"/>.
         /// </summary>
         /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>Returns an <see cref="short"/>.</returns>
+        /// <returns>An <see cref="short"/>.</returns>
         public static short BitsAsShort(this byte[] bytes) => BitConverter.ToInt16(bytes, 0);
 
         /// <summary>
         ///     Converts the <see cref="T:byte[]"/> to an <see cref="int"/>.
         /// </summary>
         /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>Returns an <see cref="int"/>.</returns>
+        /// <returns>An <see cref="int"/>.</returns>
         public static int BitsAsInt(this byte[] bytes) => BitConverter.ToInt32(bytes, 0);
 
         /// <summary>
         ///     Converts the <see cref="T:byte[]"/> to an <see cref="long"/>.
         /// </summary>
         /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>Returns an <see cref="long"/>.</returns>
+        /// <returns>An <see cref="long"/>.</returns>
         public static long BitsAsLong(this byte[] bytes) => BitConverter.ToInt64(bytes, 0);
 
         /// <summary>
         ///     Gets a <see cref="string"/> literally representing the raw values in the <see cref="T:byte[]"/>.
         /// </summary>
         /// <param name="bytes">The bytes to get.</param>
-        /// <returns>Returns a <see cref="string"/>.</returns>
+        /// <returns>A <see cref="string"/>.</returns>
         public static string BitsAsString(this byte[] bytes) => BitConverter.ToString(bytes);
 
         /// <summary>
         ///     Gets a <see cref="string"/> representing the value the <see cref="T:byte[]"/> with <see cref="Encoding.UTF8"/> encoding.
         /// </summary>
         /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>Returns a <see cref="string"/>.</returns>
+        /// <returns>A <see cref="string"/>.</returns>
         public static string GetUtf8String(this byte[] bytes) => Encoding.UTF8.GetString(bytes);
     }
 }

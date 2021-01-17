@@ -13,7 +13,7 @@ namespace X10D.Performant.EnumExtensions
         /// <param name="value">An <see cref="Enum"/> value.</param>
         /// <param name="wrap">Whether or not to wrap to the to the start of the <see cref="Enum"/>. Defaults to <see langword="true"/>.</param>
         /// <typeparam name="T">An <see cref="Enum"/>.</typeparam>
-        /// <returns>Returns a <typeparamref name="T"/> value.</returns>
+        /// <returns>A <typeparamref name="T"/> value.</returns>
         public static T NextEnumDeclaration<T>(this T value, bool wrap = true)
             where T : struct, Enum
         {
@@ -31,7 +31,7 @@ namespace X10D.Performant.EnumExtensions
         /// <param name="value">An <see cref="Enum"/> value.</param>
         /// <param name="wrap">Whether or not to wrap to the to the end of the <see cref="Enum"/>. Defaults to <see langword="true"/>.</param>
         /// <typeparam name="T">An <see cref="Enum"/>.</typeparam>
-        /// <returns>Returns a <typeparamref name="T"/> value.</returns>
+        /// <returns>A <typeparamref name="T"/> value.</returns>
         public static T PreviousEnumDeclaration<T>(this T value, bool wrap = true)
             where T : struct, Enum
         {

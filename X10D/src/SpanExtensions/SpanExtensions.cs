@@ -17,7 +17,7 @@ namespace X10D.Performant.SpanExtensions
         /// <param name="count">The amount of items to be returned.</param>
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
-        /// <returns>Returns a <see cref="Span{T}"/> containing <paramref name="count"/> amount of <typeparamref name="T"/>.</returns>
+        /// <returns>A <see cref="Span{T}"/> containing <paramref name="count"/> amount of <typeparamref name="T"/>.</returns>
         public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;

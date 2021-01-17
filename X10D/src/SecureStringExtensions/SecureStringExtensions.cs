@@ -13,7 +13,7 @@ namespace X10D.Performant.SecureStringExtensions
         /// </summary>
         /// <param name="value">The <see cref="SecureString"/> to convert.</param>
         /// <param name="extension">Whether or not to use this extension method.</param>
-        /// <returns>Returns a <see cref="string"/>.</returns>
+        /// <returns>A <see cref="string"/>.</returns>
         public static string? ToString(this SecureString value, bool extension) =>
             extension
                 ? new NetworkCredential(string.Empty, value).Password

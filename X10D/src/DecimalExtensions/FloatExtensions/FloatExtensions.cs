@@ -21,8 +21,5 @@ namespace X10D.Performant.FloatExtensions
 
         /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.DegreesToRadians"/>
         public static float DegreesToRadians(this float angle) => MathF.PI * angle / 180.0f;
-
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.Round"/>
-        public static float Round(this float value, float nearest = 1) => MathF.Round(value / nearest) * nearest;
     }
 }

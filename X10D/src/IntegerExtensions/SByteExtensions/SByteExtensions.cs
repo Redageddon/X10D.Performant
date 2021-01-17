@@ -31,32 +31,28 @@ namespace X10D.Performant.SByteExtensions
         ///     Converts the <see cref="T:byte[]"/> to a <see cref="ushort"/>.
         /// </summary>
         /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>Returns an <see cref="ushort"/>.</returns>
-        [CLSCompliant(false)]
+        /// <returns>An <see cref="ushort"/>.</returns>
         public static ushort BitsAsUShort(this byte[] bytes) => BitConverter.ToUInt16(bytes, 0);
 
         /// <summary>
         ///     Converts the <see cref="T:byte[]"/> to an <see cref="uint"/>.
         /// </summary>
         /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>Returns an <see cref="uint"/>.</returns>
-        [CLSCompliant(false)]
+        /// <returns>An <see cref="uint"/>.</returns>
         public static uint BitsAsUInt(this byte[] bytes) => BitConverter.ToUInt32(bytes, 0);
 
         /// <summary>
         ///     Converts the <see cref="T:byte[]"/> to an <see cref="ulong"/>.
         /// </summary>
         /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>Returns an <see cref="ulong"/>.</returns>
-        [CLSCompliant(false)]
+        /// <returns>An <see cref="ulong"/>.</returns>
         public static ulong BitsAsULong(this byte[] bytes) => BitConverter.ToUInt64(bytes, 0);
         
         /// <summary>
         ///     Determines if the <see cref="sbyte"/> is a prime number.
         /// </summary>
         /// <param name="value">The number.</param>
-        /// <returns>Returns <see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
-        [CLSCompliant(false)]
+        /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
         public static bool IsPrime(this sbyte value)
         {
             switch (value)

@@ -12,7 +12,7 @@ namespace X10D.Performant.CharExtensions
         /// </summary>
         /// <param name="value">The <see cref="char"/> to repeat.</param>
         /// <param name="count">The amount of times to repeat.</param>
-        /// <returns>Returns a <see cref="string"/> whose value is <paramref name="value"/> repeated <paramref name="count"/> times.</returns>
+        /// <returns>A <see cref="string"/> whose value is <paramref name="value"/> repeated <paramref name="count"/> times.</returns>
         public static string Repeat(this char value, int count) => new(value, count);
         
         /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GetBytes"/>

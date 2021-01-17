@@ -16,8 +16,5 @@
 
         /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.DegreesToRadians"/>
         public static decimal DegreesToRadians(this decimal angle) => 3.1415926535897932384626433832m * angle / 180.0m;
-
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.Round"/>
-        public static decimal Round(this decimal value, decimal nearest = 1) => decimal.Round(value/nearest) * nearest;
     }
 }

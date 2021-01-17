@@ -46,7 +46,7 @@ namespace X10D.Performant.IEnumerableExtensions
         /// <param name="count">The amount of items to be returned.</param>
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
-        /// <returns>Returns an <see cref="IEnumerable{T}"/> containing <paramref name="count"/> values.</returns>
+        /// <returns>An <see cref="IEnumerable{T}"/> containing <paramref name="count"/> values.</returns>
         public static IEnumerable<T> LazyRandom<T>(this IEnumerable<T> values, int count, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;
@@ -64,7 +64,7 @@ namespace X10D.Performant.IEnumerableExtensions
         /// <param name="source">The collection to shuffle.</param>
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <typeparam name="T">The collection type.</typeparam>
-        /// <returns>Returns <paramref name="source"/> shuffled.</returns>
+        /// <returns><paramref name="source"/> shuffled.</returns>
         public static IEnumerable<T> Shuffled<T>(this IEnumerable<T> source, Random? random = null)
         {
             List<T> list = new(source);

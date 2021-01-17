@@ -2,11 +2,11 @@
 {
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="Int64.Parse(string)"/>
+        /// <inheritdoc cref="long.Parse(string)"/>
         public static long ToLong(this string value) =>
             long.Parse(value);
         
-        /// <inheritdoc cref="Int64.TryParse(string,out long)"/>
+        /// <inheritdoc cref="long.TryParse(string,out long)"/>
         public static bool TryToLong(this string value, out long result) =>
             long.TryParse(value, out result);
     }

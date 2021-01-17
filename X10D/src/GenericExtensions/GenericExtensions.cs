@@ -15,8 +15,7 @@ namespace X10D.Performant.GenericExtensions
         /// <param name="value">The object to convert.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>Returns the value converted to <typeparamref name="TTo"/>.</returns>
-        [CLSCompliant(false)]
+        /// <returns>The value converted to <typeparamref name="TTo"/>.</returns>
         public static TTo? To<TFrom, TTo>(this TFrom value) => Convert<TFrom, TTo>.Function(value);
 
         /// <summary>
@@ -26,8 +25,7 @@ namespace X10D.Performant.GenericExtensions
         /// <param name="output">The value converted to <typeparamref name="TTo"/>.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>Returns <see langword="true"/> if a conversion was successful, or <see langword="false"/> otherwise.</returns>
-        [CLSCompliant(false)]
+        /// <returns><see langword="true"/> if a conversion was successful, or <see langword="false"/> otherwise.</returns>
         public static bool TryTo<TFrom, TTo>(this TFrom value, out TTo? output)
         {
             try
@@ -51,8 +49,7 @@ namespace X10D.Performant.GenericExtensions
         /// <param name="other">The backup value.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>Returns the a <typeparamref name="TTo"/> value.</returns>
-        [CLSCompliant(false)]
+        /// <returns>The a <typeparamref name="TTo"/> value.</returns>
         public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, TTo? other)
         {
             if (!value.TryTo(out TTo? output))
@@ -70,8 +67,7 @@ namespace X10D.Performant.GenericExtensions
         /// <param name="other">The unloaded value to get.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>Returns the value converted to <typeparamref name="TTo"/>.</returns>
-        [CLSCompliant(false)]
+        /// <returns>The value converted to <typeparamref name="TTo"/>.</returns>
         public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, Func<TTo> other)
         {
             if (!value.TryTo(out TTo? output))

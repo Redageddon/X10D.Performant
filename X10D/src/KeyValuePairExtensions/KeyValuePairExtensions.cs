@@ -16,7 +16,7 @@ namespace X10D.Performant.KeyValuePairExtensions
         /// <param name="keyValuePairs">The pairs.</param>
         /// <typeparam name="TKey">The key type.</typeparam>
         /// <typeparam name="TValue">The value type.</typeparam>
-        /// <returns>Returns a <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
+        /// <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
         public static string ToConnectionString<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {
             static string? SanitizeValue<T>(T value)
@@ -52,7 +52,7 @@ namespace X10D.Performant.KeyValuePairExtensions
         /// <param name="keyValuePairs">The pairs.</param>
         /// <typeparam name="TKey">The key type.</typeparam>
         /// <typeparam name="TValue">The value type.</typeparam>
-        /// <returns>Returns a <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
+        /// <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
         public static string ToGetParameters<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {
             IEnumerable<string> InternalIterator()
@@ -76,7 +76,7 @@ namespace X10D.Performant.KeyValuePairExtensions
         /// <param name="separators"> Joins <see name="TValue"/> by the chosen <see cref="string"/> values.</param>
         /// <typeparam name="TKey">The key type.</typeparam>
         /// <typeparam name="TValue">The value type.</typeparam>
-        /// <returns>Returns a <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
+        /// <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
         public static string ToGetParameters<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs, params string[] separators)
             where TValue : IEnumerable
         {

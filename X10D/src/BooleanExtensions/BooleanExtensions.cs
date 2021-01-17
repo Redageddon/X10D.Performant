@@ -11,28 +11,28 @@ namespace X10D.Performant.BooleanExtensions
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="byte"/>.
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>Returns 1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
         public static byte ToByte(this bool value) => value ? 1 : 0;
 
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="short"/>.
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>Returns 1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
         public static short ToShort(this bool value) => value ? 1 : 0;
 
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="int"/>.
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>Returns 1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
         public static int ToInt(this bool value) => value ? 1 : 0;
 
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="long"/>.
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>Returns 1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
         public static long ToLong(this bool value) => value ? 1 : 0;
         
         /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GetBytes"/>

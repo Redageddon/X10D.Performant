@@ -1,4 +1,4 @@
-Documentation Guidelines:
+#Documentation Guidelines:
 1. Each line has a max size of 150 characters
 2. 1 space after each ///
 3. Summary is to be multi-lined and has 1 tab + 1 space after the ///
@@ -20,3 +20,4 @@ from double
 18. Void tags should not have a space before the slash
 19. Sentences should be capitalized
 20. all tpyes should be cref's, no hardcoded types 
+21. The returns tag should not begin with the word returns.

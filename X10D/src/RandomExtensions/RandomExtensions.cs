@@ -18,7 +18,7 @@ namespace X10D.Performant.RandomExtensions
         /// </summary>
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <returns>
-        ///     Returns <see langword="true"/> or <see langword="false"/> depending on the return value from <see cref="Random.Next(int)"/>.
+        ///     Returns <see langword="true"/> or <see langword="false"/> depending on the return value from <see cref="System.Random.NextDouble"/>.
         /// </returns>
         public static bool NextBool(this Random random) => random.NextDouble() >= 0.5;
 
@@ -28,7 +28,7 @@ namespace X10D.Performant.RandomExtensions
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <param name="values">The collection from which to draw.</param>
         /// <typeparam name="T">The collection type.</typeparam>
-        /// <returns>Returns a random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
+        /// <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
         public static T OneOf<T>(this Random random, params T[] values) => random.OneOf((IList<T>)values);
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace X10D.Performant.RandomExtensions
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <param name="values">The collection from which to draw.</param>
         /// <typeparam name="T">The collection type.</typeparam>
-        /// <returns>Returns a random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
+        /// <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
         public static T OneOf<T>(this Random random, IList<T> values) => values[random.Next(values.Count)];
     }
 }

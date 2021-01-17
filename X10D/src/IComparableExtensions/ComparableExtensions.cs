@@ -14,7 +14,7 @@ namespace X10D.Performant.IComparableExtensions
         /// <param name="lower">The exclusive lower bound.</param>
         /// <param name="upper">The exclusive upper bound.</param>
         /// <typeparam name="T">The comparable type.</typeparam>
-        /// <returns>Returns <see langword="true"/> if <paramref name="value"/> is between the bounds, <see langword="false"/> otherwise.</returns>
+        /// <returns><see langword="true"/> if <paramref name="value"/> is between the bounds, <see langword="false"/> otherwise.</returns>
         public static bool Between<T>(this T value, T lower, T upper)
             where T : IComparable<T> =>
             value.CompareTo(lower) > 0 && value.CompareTo(upper) < 0;
@@ -26,7 +26,7 @@ namespace X10D.Performant.IComparableExtensions
         /// <param name="lower">The exclusive lower bound.</param>
         /// <param name="upper">The exclusive upper bound.</param>
         /// <typeparam name="T">The comparable type.</typeparam>
-        /// <returns>Returns <see langword="true"/> if <paramref name="value"/> is out of the bounds, <see langword="false"/> otherwise.</returns>
+        /// <returns><see langword="true"/> if <paramref name="value"/> is out of the bounds, <see langword="false"/> otherwise.</returns>
         public static bool Outside<T>(this T value, T lower, T upper)
             where T : IComparable<T> =>
             value.CompareTo(lower) < 0 || value.CompareTo(upper) > 0;

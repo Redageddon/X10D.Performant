@@ -11,7 +11,7 @@ namespace X10D.Performant.EndpointExtensions
         ///     Gets the <see cref="EndPoint"/> hostname.
         /// </summary>
         /// <param name="endPoint">The endpoint whose hostname to get.</param>
-        /// <returns>Returns a <see cref="string"/> representing the hostname, which may be an IP or a DNS, or empty <see cref="string"/>on failure.</returns>
+        /// <returns>A <see cref="string"/> representing the hostname, which may be an IP or a DNS, or empty <see cref="string"/>on failure.</returns>
         public static string GetHostName(this EndPoint endPoint) =>
             endPoint switch
             {
@@ -24,7 +24,7 @@ namespace X10D.Performant.EndpointExtensions
         ///     Gets the <see cref="EndPoint"/> port.
         /// </summary>
         /// <param name="endPoint">The endpoint whose port to get.</param>
-        /// <returns>Returns an <see cref="int"/> representing the port, or 0 on failure.</returns>
+        /// <returns>An <see cref="int"/> representing the port, or 0 on failure.</returns>
         public static int GetPort(this EndPoint endPoint) =>
             endPoint switch
             {

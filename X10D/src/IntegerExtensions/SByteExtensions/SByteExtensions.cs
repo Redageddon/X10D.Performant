@@ -26,26 +26,14 @@ namespace X10D.Performant.SByteExtensions
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean"/>
         public static bool ToBoolean(this ushort value) => value != 0;
 
-        /// <summary>
-        ///     Converts the <see cref="T:byte[]"/> to a <see cref="ushort"/>.
-        /// </summary>
-        /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>An <see cref="ushort"/>.</returns>
-        public static ushort BitsAsUShort(this byte[] bytes) => BitConverter.ToUInt16(bytes, 0);
+        /// <inheritdoc cref="BitConverter.ToUInt16(byte[],int)"/>
+        public static ushort ToUShort(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt16(bytes, startIndex);
 
-        /// <summary>
-        ///     Converts the <see cref="T:byte[]"/> to an <see cref="uint"/>.
-        /// </summary>
-        /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>An <see cref="uint"/>.</returns>
-        public static uint BitsAsUInt(this byte[] bytes) => BitConverter.ToUInt32(bytes, 0);
+        /// <inheritdoc cref="BitConverter.ToUInt32(byte[],int)"/>
+        public static uint ToUInt(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt32(bytes, startIndex);
 
-        /// <summary>
-        ///     Converts the <see cref="T:byte[]"/> to an <see cref="ulong"/>.
-        /// </summary>
-        /// <param name="bytes">The bytes to convert.</param>
-        /// <returns>An <see cref="ulong"/>.</returns>
-        public static ulong BitsAsULong(this byte[] bytes) => BitConverter.ToUInt64(bytes, 0);
+        /// <inheritdoc cref="BitConverter.ToUInt64(byte[],int)"/>
+        public static ulong ToULong(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt64(bytes, startIndex);
         
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsPrime"/>
         public static bool IsPrime(this sbyte value)

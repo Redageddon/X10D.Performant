@@ -54,13 +54,13 @@ namespace X10D.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToSting"/>.
+        ///     Tests for <see cref="ByteExtensions.ToString(byte[])"/>.
         /// </summary>
         [TestMethod]
         public void AsString()
         {
             byte[] a = { 0x00, 0x73, 0xc6, 0xff };
-            Assert.AreEqual("00-73-C6-FF", a.ToSting());
+            Assert.AreEqual("00-73-C6-FF", ByteExtensions.ToString(a));
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace X10D.Tests.Core
         public void GetUInt32()
         {
             byte[] a = { 0xB0, 0x0B, 0x13, 0x5F };
-            Assert.AreEqual(1595083696U, a.BitsAsUInt());
+            Assert.AreEqual(1595083696U, a.ToUInt());
             Assert.AreEqual(1595083696U, a.AsSpan().BitsAsUInt());
         }
 
@@ -147,7 +147,7 @@ namespace X10D.Tests.Core
         public void GetUInt64()
         {
             byte[] a = { 0xB0, 0x0B, 0x13, 0x50, 0x05, 0x31, 0xB0, 0x0B };
-            Assert.AreEqual(842227029206305712UL, a.BitsAsULong());
+            Assert.AreEqual(842227029206305712UL, a.ToULong());
             Assert.AreEqual(842227029206305712UL, a.AsSpan().BitsAsULong());
         }
         

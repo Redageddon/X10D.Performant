@@ -12,7 +12,7 @@ namespace X10D.Performant.StringExtension
         /// <param name="input">The input <see cref="string"/>.</param>
         /// <param name="provider">The format provider.</param>
         /// <returns>Returns an instance of <see cref="TimeSpan"/>.</returns>
-        public static TimeSpan Parse(string input, IFormatProvider? provider = null)
+        public static TimeSpan ShortHandParse(string input, IFormatProvider? provider = null)
         {
             const string realNumberPattern = @"([0-9]*\.[0-9]+|[0-9]+)";
 

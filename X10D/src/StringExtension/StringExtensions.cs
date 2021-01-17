@@ -170,6 +170,6 @@ namespace X10D.Performant.StringExtension
         /// </summary>
         /// <param name="value">The input string.</param>
         /// <returns>Returns an instance of <see cref="TimeSpan"/>.</returns>
-        public static TimeSpan ToTimeSpan(this string value) => Parse(value);
+        public static TimeSpan ToTimeSpan(this string value) => ShortHandParse(value);
     }
 }

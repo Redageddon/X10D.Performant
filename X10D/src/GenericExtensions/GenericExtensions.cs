@@ -22,21 +22,21 @@ namespace X10D.Performant.GenericExtensions
         ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.
         /// </summary>
         /// <param name="value">The object to convert.</param>
-        /// <param name="output">The value converted to <typeparamref name="TTo"/>.</param>
+        /// <param name="result">The value converted to <typeparamref name="TTo"/>.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
         /// <returns><see langword="true"/> if a conversion was successful, or <see langword="false"/> otherwise.</returns>
-        public static bool TryTo<TFrom, TTo>(this TFrom value, out TTo? output)
+        public static bool TryTo<TFrom, TTo>(this TFrom value, out TTo? result)
         {
             try
             {
-                output = Convert<TFrom, TTo>.Function(value);
+                result = Convert<TFrom, TTo>.Function(value);
 
                 return true;
             }
             catch (Exception)
             {
-                output = default;
+                result = default;
 
                 return false;
             }
@@ -183,6 +183,7 @@ namespace X10D.Performant.GenericExtensions
                     Function = Expression.Lambda<Func<TFrom, TTo>>(convert, from).Compile();
                 }
 
+                #pragma warning disable 8602
                 return Function(tFrom);
             };
         }

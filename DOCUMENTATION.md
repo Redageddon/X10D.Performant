@@ -21,3 +21,4 @@ from double
 19. Sentences should be capitalized
 20. all tpyes should be cref's, no hardcoded types 
 21. The returns tag should not begin with the word returns.
+22. If a method only has 1 out parameter, it should be called "result"

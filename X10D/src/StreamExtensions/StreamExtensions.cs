@@ -13,9 +13,9 @@ namespace X10D.Performant.StreamExtensions
         /// <summary>
         ///     Returns the hash of a stream using the specified hashing algorithm in terms of a <see cref="T:byte[]"/>.
         /// </summary>
-        /// <param name="stream">The stream whose hash is to be computed.</param>
+        /// <param name="stream">The <see cref="Stream"/> whose hash is to be computed.</param>
         /// <typeparam name="T">A <see cref="HashAlgorithm"/> derived type.</typeparam>
-        /// <returns>Returns a <see cref="T:byte[]"/> representing the hash of <paramref name="stream"/>.</returns>
+        /// <returns>A <see cref="T:byte[]"/> representing the hash of <paramref name="stream"/>.</returns>
         public static byte[]? GetHash<T>(this Stream stream)
             where T : HashAlgorithm
         {
@@ -24,5 +24,12 @@ namespace X10D.Performant.StreamExtensions
 
             return crypt?.ComputeHash(stream);
         }
+        
+        /// <summary>
+        ///     Creates a thread-safe (synchronized) wrapper around the specified <see cref="Stream"/> object.
+        /// </summary>
+        /// <param name="stream">The <see cref="Stream"/> object to synchronize.</param>
+        /// <returns>A thread-safe Stream object.</returns>
+        public static Stream Synchronized(this Stream stream) => Stream.Synchronized(stream);
     }
 }

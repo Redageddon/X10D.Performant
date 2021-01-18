@@ -255,7 +255,7 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,TTo?)"/>.
+        ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,TTo)"/>.
         /// </summary>
         [TestMethod]
         public void ToOrOther()

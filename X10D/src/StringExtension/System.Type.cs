@@ -22,6 +22,7 @@ namespace X10D.Performant.StringExtension
         public static Type? ReflectionOnlyGetType(this string value, bool throwIfNotFound, bool ignoreCase) =>
             Type.ReflectionOnlyGetType(value, throwIfNotFound, ignoreCase);
         
+        // ReSharper disable once InconsistentNaming
         /// <inheritdoc cref="Type.GetTypeFromProgID(string,string,bool)"/>
         public static Type? GetTypeFromProgID(this string value, string? server = null, bool throwOnError = false) =>
             Type.GetTypeFromProgID(value, server, throwOnError);

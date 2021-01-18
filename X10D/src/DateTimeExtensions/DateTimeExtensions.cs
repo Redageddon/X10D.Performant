@@ -5,7 +5,7 @@ namespace X10D.Performant.DateTimeExtensions
     /// <summary>
     ///     Extension methods for <see cref="DateTime"/>.
     /// </summary>
-    public static class DateTimeExtensions
+    public static partial class DateTimeExtensions
     {
         /// <summary>
         ///     Returns an <see cref="int"/> of the number of years since <see cref="DateTime"/> as of <see cref="DateTime"/>.

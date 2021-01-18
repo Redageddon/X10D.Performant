@@ -5,24 +5,12 @@ namespace X10D.Performant.StringExtension
 {
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="DateTime.Parse(string)"/>
-        public static DateTime Parse(this string value) =>
-            DateTime.Parse(value);
-
         /// <inheritdoc cref="DateTime.Parse(string,IFormatProvider)"/>
-        public static DateTime Parse(this string value, IFormatProvider? provider) =>
-            DateTime.Parse(value, provider);
-
-        /// <inheritdoc cref="DateTime.Parse(string,IFormatProvider)"/>
-        public static DateTime Parse(this string value, IFormatProvider? provider, DateTimeStyles styles) =>
-            DateTime.Parse(value, provider, styles);
-        
-        /// <inheritdoc cref="DateTime.ParseExact(string,string,IFormatProvider)"/>
-        public static DateTime ParseExact(this string value, string format, IFormatProvider? provider) =>
-            DateTime.ParseExact(value, format, provider);
+        public static DateTime Parse(this string value, IFormatProvider? provider = null, DateTimeStyles styles = DateTimeStyles.None) =>
+            DateTime.Parse(value, provider ?? DateTimeFormatInfo.CurrentInfo, styles);
 
         /// <inheritdoc cref="DateTime.ParseExact(string,string,IFormatProvider,DateTimeStyles)"/>
-        public static DateTime ParseExact(this string value, string format, IFormatProvider? provider, DateTimeStyles style) =>
+        public static DateTime ParseExact(this string value, string format, IFormatProvider? provider, DateTimeStyles style = DateTimeStyles.None) =>
             DateTime.ParseExact(value, format, provider, style);        
         
         /// <inheritdoc cref="DateTime.ParseExact(string,string[],IFormatProvider,DateTimeStyles)"/>

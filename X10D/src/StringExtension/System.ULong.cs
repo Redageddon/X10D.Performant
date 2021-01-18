@@ -1,13 +1,20 @@
-﻿namespace X10D.Performant.StringExtension
+﻿using System;
+using System.Globalization;
+
+namespace X10D.Performant.StringExtension
 {
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="ulong.Parse(string)"/>
-        public static ulong ToULong(this string value) =>
-            ulong.Parse(value);
-        
-        /// <inheritdoc cref="ulong.TryParse(string,out ulong)"/>
-        public static bool TryToULong(this string value, out ulong result) =>
-            ulong.TryParse(value, out result);
+        /// <inheritdoc cref="ulong.Parse(string,NumberStyles,IFormatProvider)"/>
+        public static ulong ToULong(this string value, NumberStyles style = NumberStyles.Number, IFormatProvider? provider = null) =>
+            ulong.Parse(value, style, provider ?? NumberFormatInfo.CurrentInfo);
+
+        /// <inheritdoc cref="ulong.TryParse(string,NumberStyles,IFormatProvider,out ulong)"/>
+        public static bool TryToULong(
+            this string value,
+            out ulong result,
+            NumberStyles style = NumberStyles.Number,
+            IFormatProvider? provider = null) =>
+            ulong.TryParse(value, style, provider ?? NumberFormatInfo.CurrentInfo, out result);
     }
 }

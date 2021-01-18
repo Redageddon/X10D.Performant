@@ -21,7 +21,7 @@ namespace X10D.Performant.ByteExtensions
         public static long ToLong(this ReadOnlySpan<byte> bytes) => BitConverter.ToInt64(bytes);
 
         /// <inheritdoc cref="BitConverter.ToInt64(ReadOnlySpan{byte})"/>
-        public static long ToLong(this Span<byte> bytes) => BitConverter.ToInt64(bytes);       
+        public static long ToLong(this Span<byte> bytes) => BitConverter.ToInt64(bytes);
         
         /// <inheritdoc cref="BitConverter.ToInt16(ReadOnlySpan{byte})"/>
         public static ushort ToUShort(this ReadOnlySpan<byte> bytes) => BitConverter.ToUInt16(bytes);

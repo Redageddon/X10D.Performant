@@ -16,5 +16,11 @@ namespace X10D.Performant.ReflectionExtensions
             collectionType.IsGenericType
                 ? collectionType.GetGenericArguments()[0]
                 : collectionType.GetElementType();
+
+        /// <inheritdoc cref="Type.GetTypeCode(Type)"/>
+        public static TypeCode GetTypeCode(this Type type) => Type.GetTypeCode(type);
+        
+        /// <inheritdoc cref="Type.MakeGenericSignatureType(Type,Type[])"/>
+        public static Type MakeGenericSignatureType(this Type type, params Type[] types) => Type.MakeGenericSignatureType(type, types);
     }
 }

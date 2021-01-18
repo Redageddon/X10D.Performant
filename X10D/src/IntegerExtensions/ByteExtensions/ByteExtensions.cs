@@ -68,8 +68,8 @@ namespace X10D.Performant.ByteExtensions
         /// <inheritdoc cref="BitConverter.ToInt64(byte[],int)"/>
         public static ulong ToULong(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt64(bytes, startIndex);
 
-        /// <inheritdoc cref="BitConverter.ToString(byte[])"/>
-        public static string ToSting(this byte[] bytes) => BitConverter.ToString(bytes);
+        /// <inheritdoc cref="BitConverter.ToString(byte[],int)"/>
+        public static string ToSting(this byte[] bytes, int startIndex = 0) => BitConverter.ToString(bytes, startIndex);
 
         /// <inheritdoc cref="Encoding.GetString(byte[])"/>
         public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetString(bytes);

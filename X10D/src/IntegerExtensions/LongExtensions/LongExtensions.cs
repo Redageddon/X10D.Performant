@@ -24,9 +24,6 @@ namespace X10D.Performant.LongExtensions
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="BitConverter.GetBytes(long)"/>
-        public static byte[] GetBytes(this long value) => BitConverter.GetBytes(value);
-
         /// <summary>
         ///     Determines if the <paramref name="value"/> is even.
         /// </summary>

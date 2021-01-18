@@ -25,11 +25,7 @@ namespace X10D.Performant.StreamExtensions
             return crypt?.ComputeHash(stream);
         }
         
-        /// <summary>
-        ///     Creates a thread-safe (synchronized) wrapper around the specified <see cref="Stream"/> object.
-        /// </summary>
-        /// <param name="stream">The <see cref="Stream"/> object to synchronize.</param>
-        /// <returns>A thread-safe Stream object.</returns>
+        /// <inheritdoc cref="Stream.Synchronized(Stream)"/>
         public static Stream Synchronized(this Stream stream) => Stream.Synchronized(stream);
     }
 }

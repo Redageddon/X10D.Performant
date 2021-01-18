@@ -24,9 +24,6 @@ namespace X10D.Performant.ULongExtensions
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="BitConverter.GetBytes(ulong)"/>
-        public static byte[] GetBytes(this ulong value) => BitConverter.GetBytes(value);
-
         /// <summary>
         ///     Determines if the <paramref name="value"/> is even.
         /// </summary>

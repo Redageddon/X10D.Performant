@@ -35,32 +35,16 @@ namespace X10D.Performant.StringExtension
         /// <returns>A new <see cref="string"/> with its data converted to <paramref name="to"/>.</returns>
         public static string ChangeEncoding(this string value, Encoding from, Encoding to) => to.GetString(value.GetBytes(from));
 
-        /// <summary>
-        ///     Parses a <see cref="string"/> into an <see cref="Enum"/>.
-        /// </summary>
-        /// <typeparam name="T">The type of the <see cref="Enum"/>.</typeparam>
-        /// <param name="value">The <see cref="string"/> value to parse.</param>
-        /// <param name="ignoreCase">Whether or not to ignore casing.</param>
-        /// <returns>The <see cref="Enum"/> value corresponding to the <see cref="string"/>.</returns>
+        /// <inheritdoc cref="Enum.Parse{T}(string,bool)"/>
         public static T EnumParse<T>(this string value, bool ignoreCase = false)
             where T : struct, Enum =>
             Enum.Parse<T>(value, ignoreCase);
 
-        /// <summary>
-        ///     Gets a <see cref="T:byte[]"/> representing the value the <see cref="string"/> with the provided encoding.
-        /// </summary>
-        /// <param name="value">The <see cref="string"/> to convert.</param>
-        /// <param name="encoding">The encoding to use.</param>
-        /// <returns>A <see cref="T:byte[]"/>.</returns>
-        public static byte[] GetBytes(this string value, Encoding? encoding = null)
-        {
-            encoding ??= Encoding.UTF8;
-
-            return encoding.GetBytes(value);
-        }
+        /// <inheritdoc cref="Encoding.GetBytes(string)"/>
+        public static byte[] GetBytes(this string value, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetBytes(value);
 
         /// <summary>
-        ///     Determines if all alpha characters in this <see cref="string"/> are considered lowercase.
+        ///     Determines if all alphabetical characters in this <see cref="string"/> are considered lowercase.
         /// </summary>
         /// <param name="value">The input string.</param>
         /// <returns><see langword="true"/> if all alphabetical characters are lowercase, <see langword="false"/> otherwise.</returns>
@@ -80,7 +64,7 @@ namespace X10D.Performant.StringExtension
         }
 
         /// <summary>
-        ///     Determines if all alpha characters in this <see cref="string"/> are considered uppercase.
+        ///     Determines if all alphabetical characters in this <see cref="string"/> are considered uppercase.
         /// </summary>
         /// <param name="value">The input string.</param>
         /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>

@@ -9,16 +9,16 @@ namespace X10D.Performant.CharExtensions
         public static DateTime Parse(
             this ReadOnlySpan<char> value, 
             IFormatProvider? formatProvider,
-            DateTimeStyles styles = DateTimeStyles.None) =>
-            DateTime.Parse(value, formatProvider, styles);
+            DateTimeStyles style = DateTimeStyles.None) =>
+            DateTime.Parse(value, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
 
         /// <inheritdoc cref="DateTime.ParseExact(ReadOnlySpan{char},ReadOnlySpan{char},IFormatProvider,DateTimeStyles)"/>
         public static DateTime ParseExact(
             this ReadOnlySpan<char> value,
             ReadOnlySpan<char> format,
             IFormatProvider? provider,
-            DateTimeStyles style) =>
-            DateTime.ParseExact(value, format, provider, style);
+            DateTimeStyles style = DateTimeStyles.None) =>
+            DateTime.ParseExact(value, format, provider ?? NumberFormatInfo.CurrentInfo, style);
 
         /// <inheritdoc cref="DateTime.ParseExact(ReadOnlySpan{char},string[],IFormatProvider,DateTimeStyles)"/>
         public static DateTime ParseExact(
@@ -26,6 +26,6 @@ namespace X10D.Performant.CharExtensions
             string[] formats,
             IFormatProvider? provider,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.ParseExact(value, formats, provider, style);
+            DateTime.ParseExact(value, formats, provider ?? NumberFormatInfo.CurrentInfo, style);
     }
 }

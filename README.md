@@ -8,4 +8,4 @@ X10D (pronounced *extend*), is a class library that provides extension methods f
 Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
-X10D is released under the MIT License. See [here](https://github.com/oliverbooth/X10D/blob/master/LICENSE.md) for more details.
+X10D is released under the MIT License. See [here](https://github.com/Redageddon/X10D/blob/Performant/LICENSE.md) for more details.

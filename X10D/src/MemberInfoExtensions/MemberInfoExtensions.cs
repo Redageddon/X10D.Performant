@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
+using X10D.Performant.ObjectExtensions;
 
 namespace X10D.Performant.MemberInfoExtensions
 {

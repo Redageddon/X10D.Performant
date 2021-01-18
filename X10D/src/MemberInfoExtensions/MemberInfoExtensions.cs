@@ -2,10 +2,10 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace X10D.Performant.ReflectionExtensions
+namespace X10D.Performant.MemberInfoExtensions
 {
     /// <summary>
-    ///     Extension methods for various reflection types.
+    ///     Extension methods for <see cref="MemberInfo"/>.
     /// </summary>
     public static partial class ReflectionExtensions
     {

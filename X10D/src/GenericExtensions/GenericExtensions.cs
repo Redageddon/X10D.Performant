@@ -7,7 +7,7 @@ namespace X10D.Performant.GenericExtensions
     /// <summary>
     ///     General generic extension methods.
     /// </summary>
-    public static class GenericExtensions
+    public static partial class GenericExtensions
     {
         /// <summary>
         ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.

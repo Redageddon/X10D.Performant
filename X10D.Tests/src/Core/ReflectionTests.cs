@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using X10D.Performant.ReflectionExtensions;
+using X10D.Performant.MemberInfoExtensions;
 
 namespace X10D.Tests.Core
 {
@@ -9,13 +9,13 @@ namespace X10D.Tests.Core
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
-    ///     Tests for <see cref="ReflectionExtensions"/>.
+    ///     Tests for <see cref="Performant.MemberInfoExtensions.ReflectionExtensions"/>.
     /// </summary>
     [TestClass]
     public class ReflectionTests
     {
         /// <summary>
-        ///     Test for <see cref="ReflectionExtensions.GetDefaultValue{T}(MemberInfo)"/>.
+        ///     Test for <see cref="Performant.MemberInfoExtensions.ReflectionExtensions.GetDefaultValue{T}"/>.
         /// </summary>
         [TestMethod]
         public void GetDefaultValue()
@@ -29,7 +29,7 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Test for <see cref="ReflectionExtensions.GetDescription(MemberInfo)"/>.
+        ///     Test for <see cref="Performant.MemberInfoExtensions.ReflectionExtensions.GetDescription"/>.
         /// </summary>
         [TestMethod]
         public void GetDescription()
@@ -43,7 +43,7 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Test for <see cref="ReflectionExtensions.GetDescription(MemberInfo)"/>.
+        ///     Test for <see cref="Performant.MemberInfoExtensions.ReflectionExtensions.GetDescription"/>.
         /// </summary>
         [TestMethod]
         public void SelectFromCustomAttribute()

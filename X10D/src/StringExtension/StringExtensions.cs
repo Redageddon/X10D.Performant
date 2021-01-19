@@ -35,11 +35,6 @@ namespace X10D.Performant.StringExtension
         /// <returns>A new <see cref="string"/> with its data converted to <paramref name="to"/>.</returns>
         public static string ChangeEncoding(this string value, Encoding from, Encoding to) => to.GetString(value.GetBytes(from));
 
-        /// <inheritdoc cref="Enum.Parse{T}(string,bool)"/>
-        public static T EnumParse<T>(this string value, bool ignoreCase = false)
-            where T : struct, Enum =>
-            Enum.Parse<T>(value, ignoreCase);
-
         /// <inheritdoc cref="Encoding.GetBytes(string)"/>
         public static byte[] GetBytes(this string value, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetBytes(value);
 

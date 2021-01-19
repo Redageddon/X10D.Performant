@@ -40,13 +40,13 @@ namespace X10D.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.EnumParse{T}(string,bool)"/>.
+        ///     Tests for <see cref="StringExtensions.ToEnum{T}(string,bool)"/>.
         /// </summary>
         [TestMethod]
         public void EnumParse()
         {
-            Assert.AreEqual(Alphabet.A, "0".EnumParse<Alphabet>());
-            Assert.AreEqual(Alphabet.A, "A".EnumParse<Alphabet>());
+            Assert.AreEqual(Alphabet.A, "0".ToEnum<Alphabet>());
+            Assert.AreEqual(Alphabet.A, "A".ToEnum<Alphabet>());
         }
         
         private enum Alphabet

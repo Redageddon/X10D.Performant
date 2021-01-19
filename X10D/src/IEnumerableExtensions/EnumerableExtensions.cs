@@ -8,7 +8,7 @@ namespace X10D.Performant.IEnumerableExtensions
     /// <summary>
     ///     Extension methods for <see cref="IEnumerable{T}"/>.
     /// </summary>
-    public static class EnumerableExtensions
+    public static partial class EnumerableExtensions
     {
         /// <summary>
         ///     Splits <paramref name="values"/> into chunks of size <paramref name="chunkSize"/>.

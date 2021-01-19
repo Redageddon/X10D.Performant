@@ -6,9 +6,9 @@ using System.Web;
 namespace X10D.Performant.KeyValuePairExtensions
 {
     /// <summary>
-    ///     A set of extension methods for <see cref="Dictionary{TKey,TValue}"/>.
+    ///     A set of extension methods for <see cref="KeyValuePair{TKey,TValue}"/>.
     /// </summary>
-    public static class DictionaryExtensions
+    public static class KeyValuePairExtensions
     {
         /// <summary>
         ///     Converts <paramref name="keyValuePairs"/> to an object-relational-safe connection <see cref="string"/>.

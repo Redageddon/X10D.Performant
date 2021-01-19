@@ -7,13 +7,13 @@ namespace X10D.Tests.Core
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
-    ///     Tests for <see cref="DictionaryExtensions"/>.
+    ///     Tests for <see cref="KeyValuePairExtensions"/>.
     /// </summary>
     [TestClass]
     public class DictionaryTests
     {
         /// <summary>
-        ///     Tests for <see cref="DictionaryExtensions.ToConnectionString{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
+        ///     Tests for <see cref="KeyValuePairExtensions.ToConnectionString{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
         /// </summary>
         [TestMethod]
         public void ToConnectionString()
@@ -28,7 +28,7 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DictionaryExtensions.ToGetParameters{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
+        ///     Tests for <see cref="KeyValuePairExtensions.ToGetParameters{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
         /// </summary>
         [TestMethod]
         public void ToGetParameters()
@@ -43,7 +43,7 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DictionaryExtensions.ToGetParameters{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
+        ///     Tests for <see cref="KeyValuePairExtensions.ToGetParameters{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
         /// </summary>
         [TestMethod]
         public void ToGetParametersSeparators()

@@ -8,7 +8,7 @@ namespace X10D.Performant.StreamExtensions
     /// <summary>
     ///     Extension methods for <see cref="Stream"/>.
     /// </summary>
-    public static class StreamExtensions
+    public static partial class StreamExtensions
     {
         /// <summary>
         ///     Returns the hash of a stream using the specified hashing algorithm in terms of a <see cref="T:byte[]"/>.
@@ -24,8 +24,5 @@ namespace X10D.Performant.StreamExtensions
 
             return crypt?.ComputeHash(stream);
         }
-        
-        /// <inheritdoc cref="Stream.Synchronized(Stream)"/>
-        public static Stream Synchronized(this Stream stream) => Stream.Synchronized(stream);
     }
 }

@@ -1,14 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
-using X10D.Performant.ObjectExtensions;
 
 namespace X10D.Performant.MemberInfoExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="MemberInfo"/>.
     /// </summary>
-    public static partial class ReflectionExtensions
+    public static class MemberInfoExtensions
     {
         /// <summary>
         ///     Gets the value set in this <see cref="MemberInfo"/>'s annotated <see cref="DefaultValueAttribute"/>, or <see langword="default"/> if none exists.

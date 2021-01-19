@@ -36,8 +36,5 @@ namespace X10D.Performant.FloatExtensions
         
         /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GradiansToRadians"/>
         public static float GradiansToRadians(this float angle) => angle * MathF.PI / 200;
-        
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.InverseSqrt"/>
-        public static double InverseSqrt(this double value) => 1 / Math.Sqrt(value);
     }
 }

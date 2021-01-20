@@ -14,10 +14,10 @@ Below is a list of the number of extension methods written for a given type.
 | `char`              | [X10D.Performant.CharExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/CharExtensions)                           | 64           |
 | `DateTime`          | [X10D.Performant.DateTimeExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DateTimeExtensions)                   | 9            |
 | `decimal`           | [X10D.Performant.DecimalExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DecimalExtensions/DecimalExtensions)   | 37           |         
-| `double`            | [X10D.Performant.DoubleExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DecimalExtensions/DoubleExtensions)     | 56           |        
+| `double`            | [X10D.Performant.DoubleExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DecimalExtensions/DoubleExtensions)     | 61           |        
 | `EndPoint`          | [X10D.Performant.EndPontExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/EndpointExtensions)                    | 2            |
 | `Enum`              | [X10D.Performant.EnumExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/EnumExtensions)                           | 5            |
-| `float`             | [X10D.Performant.FloatExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DecimalExtensions/FloatExtensions)       | 55           |       
+| `float`             | [X10D.Performant.FloatExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DecimalExtensions/FloatExtensions)       | 60           |       
 | `generic`           | [X10D.Performant.GenericExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/GenericExtensions)                     | 4            |
 | `Guid`              | [X10D.Performant.GuidExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/GuidExtensions)                           | 1            |
 | `IComparable`       | [X10D.Performant.ComparableExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/IComparableExtensions)              | 2            |

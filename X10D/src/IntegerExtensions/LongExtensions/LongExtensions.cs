@@ -27,21 +27,21 @@ namespace X10D.Performant.LongExtensions
         /// <summary>
         ///     Determines if the <paramref name="value"/> is even.
         /// </summary>
-        /// <param name="value">An integral value.</param>
+        /// <param name="value">An integer value.</param>
         /// <returns><see langword="true"/> if <paramref name="value"/> is even, <see langword="false"/> otherwise.</returns>
         public static bool IsEven(this long value) => value % 2 == 0;
 
         /// <summary>
         ///     Determines if the <paramref name="value"/> is odd.
         /// </summary>
-        /// <param name="value">An integral value.</param>
+        /// <param name="value">An integer value.</param>
         /// <returns><see langword="true"/> if <paramref name="value"/> is odd, <see langword="false"/> otherwise.</returns>
         public static bool IsOdd(this long value) => value % 2 != 0;
 
         /// <summary>
         ///     Gets a <see cref="bool"/> value that represents this value.
         /// </summary>
-        /// <param name="value">An integral value.</param>
+        /// <param name="value">An integer value.</param>
         /// <returns><see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.</returns>
         public static bool ToBoolean(this long value) => value != 0;
     }

@@ -7,7 +7,7 @@ namespace X10D.Performant.LongExtensions
         /// <summary>
         ///     Determines if the <paramref name="value"/> is a prime value.
         /// </summary>
-        /// <param name="value">An integral value.</param>
+        /// <param name="value">An integer value.</param>
         /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
         public static bool IsPrime(long value)
         {

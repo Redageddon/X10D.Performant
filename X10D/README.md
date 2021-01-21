@@ -9,6 +9,7 @@ Below is a list of the number of extension methods written for a given type.
 | Type                | Library                                                                                                                                | Method count |
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------- | :----------: |
 | ALL                 | `X10D.Performant`                                                                                                                      | 579          |
+| `Array`             | [X10D.Performant.ArrayExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/ArrayExtensions)                         | 25           |
 | `bool`              | [X10D.Performant.BooleanExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/BooleanExtensions)                     | 12           |
 | `byte`              | [X10D.Performant.ByteExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/IntegerExtensions/ByteExtensions)         | 30           |      
 | `char`              | [X10D.Performant.CharExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/CharExtensions)                           | 64           |
@@ -38,7 +39,7 @@ Below is a list of the number of extension methods written for a given type.
 | `Span`              | [X10D.Performant.SpanExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/SpanExtensions)                           | 6            |
 | `Stream`            | [X10D.Performant.SteamExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/StreamExtensions)                        | 2            |
 | `string`            | [X10D.Performant.StringExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/StringExtension)                        | 72           |
-| `Type`              | [X10D.Performant.TypeExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/TypeExtensions)                           | 12           |
+| `Type`              | [X10D.Performant.TypeExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/TypeExtensions)                           | 18           |
 | `uint`              | [X10D.Performant.UIntExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/IntegerExtensions/UIntExtensions)         | 9            |      
 | `ulong`             | [X10D.Performant.ULongExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/IntegerExtensions/ULongExtensions)       | 10           |       
 | `ushort`            | [X10D.Performant.UShortExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/IntegerExtensions/UShortExtensions)     | 9            |        

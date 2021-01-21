@@ -18,7 +18,7 @@ Below is a list of the number of extension methods written for a given type.
 | `EndPoint`          | [X10D.Performant.EndPontExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/EndpointExtensions)                    | 2            |
 | `Enum`              | [X10D.Performant.EnumExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/EnumExtensions)                           | 5            |
 | `float`             | [X10D.Performant.FloatExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DecimalExtensions/FloatExtensions)       | 60           |       
-| `generic`           | [X10D.Performant.GenericExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/GenericExtensions)                     | 5            |
+| `generic`           | [X10D.Performant.GenericExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/GenericExtensions)                     | 4            |
 | `Guid`              | [X10D.Performant.GuidExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/GuidExtensions)                           | 1            |
 | `IComparable`       | [X10D.Performant.ComparableExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/IComparableExtensions)              | 2            |
 | `IEnumerable`       | [X10D.Performant.EnumerableExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/IEnumerableExtensions)              | 5            |

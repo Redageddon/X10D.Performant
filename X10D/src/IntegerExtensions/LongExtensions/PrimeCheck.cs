@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace X10D.Performant.LongExtensions
+﻿namespace X10D.Performant.LongExtensions
 {
     public static partial class LongExtensions
     {
@@ -99,7 +97,7 @@ namespace X10D.Performant.LongExtensions
                     continue;
                 }
 
-                long x = (long)BigInteger.ModPow(witness, d, value);
+                long x = ModPow(witness, d, value);
 
                 if (x == 1)
                 {
@@ -123,6 +121,24 @@ namespace X10D.Performant.LongExtensions
             }
 
             return true;
+        }
+        
+        private static long ModPow(long value, long exponent, long modulus)
+        {
+            long result = 1;
+
+            while (exponent > 0)
+            {
+                if ((exponent & 1) == 1)
+                {
+                    result = result * value % modulus;
+                }
+
+                exponent >>= 1;
+                value = value * value % modulus;
+            }
+
+            return result;
         }
     }
 }

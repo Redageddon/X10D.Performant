@@ -44,5 +44,8 @@ namespace X10D.Performant.LongExtensions
         /// <param name="value">An integer value.</param>
         /// <returns><see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.</returns>
         public static bool ToBoolean(this long value) => value != 0;
+        
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsPrime"/>
+        public static bool IsPrime(this long value) => value >= 0 && ULongExtensions.ULongExtensions.IsPrime((ulong)value);
     }
 }

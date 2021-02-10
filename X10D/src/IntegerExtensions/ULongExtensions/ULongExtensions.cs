@@ -44,43 +44,5 @@ namespace X10D.Performant.ULongExtensions
         /// <param name="value">An unsigned integer value.</param>
         /// <returns><see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.</returns>
         public static bool ToBoolean(this ulong value) => value != 0;
-        
-        /// <summary>
-        ///     Determines if the <paramref name="value"/> is a prime value.
-        /// </summary>
-        /// <param name="value">An unsigned integer value.</param>
-        /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
-        public static bool IsPrime(this ulong value)
-        {
-            switch (value)
-            {
-                case < 2: return false;
-                case 2:
-                case 3: return true;
-            }
-
-            if (value % 2 == 0 ||
-                value % 3 == 0)
-            {
-                return false;
-            }
-
-            if ((value + 1) % 6 != 0 &&
-                (value - 1) % 6 != 0)
-            {
-                return false;
-            }
-
-            for (ulong i = 5; i * i <= value; i += 6)
-            {
-                if (value % i == 0 ||
-                    value % (i + 2) == 0)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
     }
 }

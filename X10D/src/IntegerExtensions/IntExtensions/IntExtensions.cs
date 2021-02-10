@@ -25,5 +25,8 @@ namespace X10D.Performant.IntExtensions
 
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean"/>
         public static bool ToBoolean(this int value) => value != 0;
+        
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsPrime"/>
+        public static bool IsPrime(this int value) => value >= 0 && ULongExtensions.ULongExtensions.IsPrime((ulong)value);
     }
 }

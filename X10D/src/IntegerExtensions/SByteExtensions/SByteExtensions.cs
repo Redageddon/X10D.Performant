@@ -26,7 +26,7 @@ namespace X10D.Performant.SByteExtensions
         /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean"/>
         public static bool ToBoolean(this sbyte value) => value != 0;
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsPrime"/>
+        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsPrime"/>
         public static bool IsPrime(this sbyte value)
         {
             switch (value)

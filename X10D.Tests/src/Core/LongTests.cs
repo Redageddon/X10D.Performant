@@ -7,13 +7,13 @@ namespace X10D.Tests.Core
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
-    ///     Tests for <see cref="LongExtensions"/>.
+    ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions"/>.
     /// </summary>
     [TestClass]
     public class LongTests
     {
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.GetBytes(long)"/>.
+        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.GetBytes(long)"/>.
         /// </summary>
         [TestMethod]
         public void GetBytes()
@@ -22,7 +22,7 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.IsEven(long)"/>.
+        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.IsEven(long)"/>.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -32,7 +32,7 @@ namespace X10D.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.IsOdd(long)"/>.
+        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.IsOdd(long)"/>.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -42,7 +42,7 @@ namespace X10D.Tests.Core
         }      
         
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.ToBoolean(long)"/>.
+        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean(long)"/>.
         /// </summary>
         [TestMethod]
         public void ToBool()
@@ -53,7 +53,7 @@ namespace X10D.Tests.Core
         }        
         
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.IsPrime(long)"/>.
+        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.IsPrime(long)"/>.
         /// </summary>
         [TestMethod]
         public void IsPrime()

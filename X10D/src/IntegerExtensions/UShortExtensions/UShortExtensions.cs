@@ -27,37 +27,6 @@ namespace X10D.Performant.UShortExtensions
         public static bool ToBoolean(this ushort value) => value != 0;
         
         /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsPrime"/>
-        public static bool IsPrime(this ushort value)
-        {
-            switch (value)
-            {
-                case < 2: return false;
-                case 2:
-                case 3: return true;
-            }
-
-            if (value % 2 == 0 ||
-                value % 3 == 0)
-            {
-                return false;
-            }
-
-            if ((value + 1) % 6 != 0 &&
-                (value - 1) % 6 != 0)
-            {
-                return false;
-            }
-
-            for (ushort i = 5; i * i <= value; i += 6)
-            {
-                if (value % i == 0 ||
-                    value % (i + 2) == 0)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
+        public static bool IsPrime(this ushort value) => ULongExtensions.ULongExtensions.IsPrime(value);
     }
 }

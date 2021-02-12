@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using X10D.Performant.IListExtensions;
@@ -71,6 +72,31 @@ namespace X10D.Performant.IEnumerableExtensions
             list.Shuffle(random);
 
             return list;
+        }
+
+        /// <summary>
+        ///     Gets each unique object from <see cref="source"/> determined by <see cref="selector"/> and compared with <see cref="Comparer{T}"/> if
+        ///     passed.
+        /// </summary>
+        /// <param name="source">The initial values being iterated through.</param>
+        /// <param name="selector">The function that determines whether an element in <see cref="source"/> should be returned.</param>
+        /// <param name="comparer">Passes a generic <see cref="IEqualityComparer"/>.</param>
+        /// <typeparam name="TSource">The type of the contained element in the <see cref="source"/> being read from.</typeparam>
+        /// <typeparam name="TKey">The type being selected distinctly from.</typeparam>
+        /// <returns>A collection of values that are specific to a selector.</returns>
+        public static IEnumerable<TSource> DistinctBy<TSource, TKey>(this IEnumerable<TSource> source,
+                                                                     Func<TSource, TKey> selector,
+                                                                     IEqualityComparer<TKey>? comparer = null)
+        {
+            HashSet<TKey> knownKeys = new(comparer);
+
+            foreach (TSource element in source)
+            {
+                if (knownKeys.Add(selector(element)))
+                {
+                    yield return element;
+                }
+            }
         }
     }
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace X10D.Performant.SByteExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="sbyte"/>.
     /// </summary>
     public static partial class SByteExtensions
     {
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.FromUnixTimestamp"/>
+        /// <inheritdoc cref="LongExtensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -17,16 +17,16 @@ namespace X10D.Performant.SByteExtensions
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsEven"/>
+        /// <inheritdoc cref="LongExtensions.IsEven"/>
         public static bool IsEven(this sbyte value) => value % 2 == 0;
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsOdd"/>
+        /// <inheritdoc cref="LongExtensions.IsOdd"/>
         public static bool IsOdd(this sbyte value) => value % 2 != 0;
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean"/>
+        /// <inheritdoc cref="LongExtensions.ToBoolean"/>
         public static bool ToBoolean(this sbyte value) => value != 0;
 
-        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsPrime"/>
+        /// <inheritdoc cref="ULongExtensions.IsPrime"/>
         public static bool IsPrime(this sbyte value)
         {
             switch (value)

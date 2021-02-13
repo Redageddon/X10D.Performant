@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace X10D.Performant.CharExtensions
+namespace X10D.Performant
 {
     public static partial class CharExtensions
     {
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GetBytes"/>
+        /// <inheritdoc cref="DoubleExtensions.GetBytes"/>
         public static byte[] GetBytes(this char value) => BitConverter.GetBytes(value);
     }
 }

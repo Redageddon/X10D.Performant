@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.RandomExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

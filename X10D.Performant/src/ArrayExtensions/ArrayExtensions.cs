@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace X10D.Performant.ArrayExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="Array"/>

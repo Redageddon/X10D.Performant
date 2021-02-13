@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Text;
 
-namespace X10D.Performant.ByteExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="byte"/>.
     /// </summary>
     public static partial class ByteExtensions
     {
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.FromUnixTimestamp"/>
+        /// <inheritdoc cref="LongExtensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this byte timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -18,16 +18,16 @@ namespace X10D.Performant.ByteExtensions
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsEven"/>
+        /// <inheritdoc cref="LongExtensions.IsEven"/>
         public static bool IsEven(this byte value) => value % 2 == 0;
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsOdd"/>
+        /// <inheritdoc cref="LongExtensions.IsOdd"/>
         public static bool IsOdd(this byte value) => value % 2 != 0;
 
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean"/>
+        /// <inheritdoc cref="LongExtensions.ToBoolean"/>
         public static bool ToBoolean(this byte value) => value != 0;
         
-        /// <inheritdoc cref="X10D.Performant.LongExtensions.LongExtensions.IsPrime"/>
+        /// <inheritdoc cref="LongExtensions.IsPrime"/>
         public static bool IsPrime(this byte value)
         {
             switch (value)

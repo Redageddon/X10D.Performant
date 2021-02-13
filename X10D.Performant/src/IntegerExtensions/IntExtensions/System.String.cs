@@ -1,6 +1,6 @@
 ﻿using System.Buffers;
 
-namespace X10D.Performant.IntExtensions
+namespace X10D.Performant
 {
     public static partial class IntExtensions
     {

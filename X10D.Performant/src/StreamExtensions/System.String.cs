@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace X10D.Performant.StreamExtensions
+namespace X10D.Performant
 {
     public static partial class StreamExtensions
     {

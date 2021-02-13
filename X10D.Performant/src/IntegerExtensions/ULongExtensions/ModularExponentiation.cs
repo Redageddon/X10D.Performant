@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-namespace X10D.Performant.ULongExtensions
+namespace X10D.Performant
 {
     public static partial class ULongExtensions
     {

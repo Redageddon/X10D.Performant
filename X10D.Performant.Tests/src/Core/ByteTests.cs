@@ -2,7 +2,6 @@ using System;
 using System.Text;
 using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.ByteExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

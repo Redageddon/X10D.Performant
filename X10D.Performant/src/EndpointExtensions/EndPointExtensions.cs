@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace X10D.Performant.EndpointExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="EndPoint"/> and derived types.

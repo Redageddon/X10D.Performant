@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant.LongExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="long"/>.
@@ -45,7 +45,7 @@ namespace X10D.Performant.LongExtensions
         /// <returns><see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.</returns>
         public static bool ToBoolean(this long value) => value != 0;
         
-        /// <inheritdoc cref="X10D.Performant.ULongExtensions.ULongExtensions.IsPrime"/>
-        public static bool IsPrime(this long value) => value >= 0 && ULongExtensions.ULongExtensions.IsPrime((ulong)value);
+        /// <inheritdoc cref="ULongExtensions.IsPrime"/>
+        public static bool IsPrime(this long value) => value >= 0 && ULongExtensions.IsPrime((ulong)value);
     }
 }

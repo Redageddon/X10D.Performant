@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant.ShortExtensions
+namespace X10D.Performant
 {
     public static partial class ShortExtensions
     {

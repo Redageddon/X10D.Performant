@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace X10D.Performant.StreamExtensions
+namespace X10D.Performant
 {
     public static partial class StreamExtensions
     {

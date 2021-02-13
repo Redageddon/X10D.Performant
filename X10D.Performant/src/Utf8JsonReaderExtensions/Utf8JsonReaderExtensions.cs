@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace X10D.Performant.Utf8JsonReaderExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="Utf8JsonReader"/>.

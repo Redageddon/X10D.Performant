@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant.UIntExtensions
+namespace X10D.Performant
 {
     public static partial class UIntExtensions
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace X10D.Performant.MemberInfoExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="MemberInfo"/>.

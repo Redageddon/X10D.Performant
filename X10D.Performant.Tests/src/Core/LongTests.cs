@@ -1,18 +1,16 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.LongExtensions;
-using X10D.Performant.ULongExtensions;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions"/>.
+    ///     Tests for <see cref="LongExtensions"/>.
     /// </summary>
     [TestClass]
     public class LongTests
     {
         /// <summary>
-        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.GetBytes(long)"/>.
+        ///     Tests for <see cref="LongExtensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
         public void GetBytes()
@@ -21,7 +19,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.IsEven(long)"/>.
+        ///     Tests for <see cref="LongExtensions.IsEven"/>.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -31,7 +29,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.IsOdd(long)"/>.
+        ///     Tests for <see cref="LongExtensions.IsOdd"/>.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -41,7 +39,7 @@ namespace X10D.Performant.Tests.Core
         }      
         
         /// <summary>
-        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.ToBoolean(long)"/>.
+        ///     Tests for <see cref="LongExtensions.ToBoolean"/>.
         /// </summary>
         [TestMethod]
         public void ToBool()
@@ -52,7 +50,7 @@ namespace X10D.Performant.Tests.Core
         }        
         
         /// <summary>
-        ///     Tests for <see cref="X10D.Performant.LongExtensions.LongExtensions.IsPrime(long)"/>.
+        ///     Tests for <see cref="LongExtensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrime()

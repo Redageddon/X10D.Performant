@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace X10D.Performant.IEnumerableExtensions
+namespace X10D.Performant
 {
     public static partial class EnumerableExtensions
     {

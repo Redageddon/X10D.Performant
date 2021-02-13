@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant.FloatExtensions
+namespace X10D.Performant
 {
     public static partial class FloatExtensions
     {

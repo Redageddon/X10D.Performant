@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace X10D.Performant.StringExtension
+namespace X10D.Performant
 {
     public static partial class StringExtensions
     {

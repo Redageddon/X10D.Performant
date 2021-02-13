@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace X10D.Performant.ULongExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="ulong"/>.

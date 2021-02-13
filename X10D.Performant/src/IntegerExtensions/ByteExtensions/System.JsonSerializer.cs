@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json;
 
-namespace X10D.Performant.ByteExtensions
+namespace X10D.Performant
 {
     public static partial class ByteExtensions
     {

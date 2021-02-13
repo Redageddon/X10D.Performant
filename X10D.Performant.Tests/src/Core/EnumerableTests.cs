@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.IEnumerableExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

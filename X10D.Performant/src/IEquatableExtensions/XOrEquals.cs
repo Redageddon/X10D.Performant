@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant.IEquatableExtensions
+namespace X10D.Performant
 {
     public static partial class EquatableExtensions
     {

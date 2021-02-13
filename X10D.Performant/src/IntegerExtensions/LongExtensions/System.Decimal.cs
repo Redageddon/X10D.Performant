@@ -1,4 +1,4 @@
-﻿namespace X10D.Performant.LongExtensions
+﻿namespace X10D.Performant
 {
     public static partial class LongExtensions
     {

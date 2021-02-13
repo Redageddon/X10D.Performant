@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using X10D.Performant.RandomExtensions;
 
-namespace X10D.Performant.IListExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="IList{T}"/>
@@ -18,7 +17,7 @@ namespace X10D.Performant.IListExtensions
         /// <typeparam name="T">Any type.</typeparam>
         public static void Random<T>(this IList<T> values, IList<T> buffer, Random? random = null)
         {
-            random ??= RandomExtensions.RandomExtensions.Random;
+            random ??= RandomExtensions.Random;
 
             for (int i = 0; i < buffer.Count; i++)
             {
@@ -35,7 +34,7 @@ namespace X10D.Performant.IListExtensions
         /// <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
         public static T OneOf<T>(this IList<T> values, Random? random = null)
         {
-            return (random ?? RandomExtensions.RandomExtensions.Random).OneOf(values);
+            return (random ?? RandomExtensions.Random).OneOf(values);
         }
 
         /// <summary>
@@ -46,7 +45,7 @@ namespace X10D.Performant.IListExtensions
         /// <param name="random">The <see cref="Random"/> instance.</param>
         public static void Shuffle<T>(this IList<T> values, Random? random = null)
         {
-            random ??= RandomExtensions.RandomExtensions.Random;
+            random ??= RandomExtensions.Random;
 
             int count = values.Count;
 

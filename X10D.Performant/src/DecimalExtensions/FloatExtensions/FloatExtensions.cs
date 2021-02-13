@@ -1,40 +1,40 @@
 ﻿using System;
 
-namespace X10D.Performant.FloatExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="float"/>.
     /// </summary>
     public static partial class FloatExtensions
     {
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GetBytes"/>
+        /// <inheritdoc cref="DoubleExtensions.GetBytes"/>
         public static byte[] GetBytes(this float value) => BitConverter.GetBytes(value);
 
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.IsEven"/>
+        /// <inheritdoc cref="DoubleExtensions.IsEven"/>
         public static bool IsEven(this float value) => value % 2 == 0;
 
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.IsOdd"/>
+        /// <inheritdoc cref="DoubleExtensions.IsOdd"/>
         public static bool IsOdd(this float value) => value % 2 != 0;
 
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.RadiansToDegrees"/>
+        /// <inheritdoc cref="DoubleExtensions.RadiansToDegrees"/>
         public static float RadiansToDegrees(this float angle) => angle * 180.0f / MathF.PI;
         
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.RadiansToGradians"/>
+        /// <inheritdoc cref="DoubleExtensions.RadiansToGradians"/>
         public static float RadiansToGradians(this float angle) => angle * 200 / MathF.PI;
 
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.DegreesToRadians"/>
+        /// <inheritdoc cref="DoubleExtensions.DegreesToRadians"/>
         public static float DegreesToRadians(this float angle) => MathF.PI * angle / 180.0f;
         
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.DegreesToGradians"/>
+        /// <inheritdoc cref="DoubleExtensions.DegreesToGradians"/>
         public static float DegreesToGradians(this float angle) => angle * 10f / 9f;      
         
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.InverseSqrt"/>
+        /// <inheritdoc cref="DoubleExtensions.InverseSqrt"/>
         public static float InverseSqrt(this float value) => 1 / MathF.Sqrt(value);
         
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GradiansToDegrees"/>
+        /// <inheritdoc cref="DoubleExtensions.GradiansToDegrees"/>
         public static float GradiansToDegrees(this float angle) => angle * 9f / 10f;       
         
-        /// <inheritdoc cref="X10D.Performant.DoubleExtensions.DoubleExtensions.GradiansToRadians"/>
+        /// <inheritdoc cref="DoubleExtensions.GradiansToRadians"/>
         public static float GradiansToRadians(this float angle) => angle * MathF.PI / 200;
     }
 }

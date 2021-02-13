@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.BooleanExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

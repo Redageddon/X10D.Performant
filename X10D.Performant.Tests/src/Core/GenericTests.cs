@@ -1,7 +1,6 @@
 using System;
 using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.GenericExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

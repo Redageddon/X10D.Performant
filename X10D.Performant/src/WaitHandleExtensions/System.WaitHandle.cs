@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace X10D.Performant.WaitHandleExtensions
+namespace X10D.Performant
 {
     public static partial class WaitHandleExtensions
     {

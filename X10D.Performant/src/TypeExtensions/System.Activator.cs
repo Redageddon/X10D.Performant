@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Reflection;
 
-namespace X10D.Performant.TypeExtensions
+namespace X10D.Performant
 {
     public static partial class ReflectionExtensions
     {

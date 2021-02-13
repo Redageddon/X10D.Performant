@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace X10D.Performant.KeyValuePairExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     A set of extension methods for <see cref="KeyValuePair{TKey,TValue}"/>.

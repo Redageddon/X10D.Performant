@@ -1,4 +1,4 @@
-﻿namespace X10D.Performant.BooleanExtensions
+﻿namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="bool"/>.

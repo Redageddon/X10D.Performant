@@ -1,7 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.IntExtensions;
-using X10D.Performant.UIntExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

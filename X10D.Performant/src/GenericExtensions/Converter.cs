@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
-using X10D.Performant.StringExtension;
 
-namespace X10D.Performant.GenericExtensions
+namespace X10D.Performant
 {
     public static partial class GenericExtensions
     {

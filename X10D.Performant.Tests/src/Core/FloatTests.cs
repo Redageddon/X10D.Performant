@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.FloatExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

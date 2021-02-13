@@ -1,4 +1,4 @@
-﻿namespace X10D.Performant.CharExtensions
+﻿namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="char"/>.

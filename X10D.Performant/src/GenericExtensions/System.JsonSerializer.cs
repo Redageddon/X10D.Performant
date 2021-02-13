@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace X10D.Performant.GenericExtensions
+namespace X10D.Performant
 {
     public static partial class GenericExtensions
     {

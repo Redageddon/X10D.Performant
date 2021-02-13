@@ -2,9 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using X10D.Performant.IListExtensions;
 
-namespace X10D.Performant.IEnumerableExtensions
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="IEnumerable{T}"/>.
@@ -50,7 +49,7 @@ namespace X10D.Performant.IEnumerableExtensions
         /// <returns>An <see cref="IEnumerable{T}"/> containing <paramref name="count"/> values.</returns>
         public static IEnumerable<T> LazyRandom<T>(this IEnumerable<T> values, int count, Random? random = null)
         {
-            random ??= RandomExtensions.RandomExtensions.Random;
+            random ??= RandomExtensions.Random;
             IList<T> array = values as IList<T> ?? values.ToArray();
 
             for (int i = 0; i < count; i++)

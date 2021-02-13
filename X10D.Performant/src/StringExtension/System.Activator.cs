@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Runtime.Remoting;
 
-namespace X10D.Performant.StringExtension
+namespace X10D.Performant
 {
     public static partial class StringExtensions
     {

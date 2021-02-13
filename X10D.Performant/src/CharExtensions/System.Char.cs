@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace X10D.Performant.CharExtensions
+namespace X10D.Performant
 {
     public static partial class CharExtensions
     {

@@ -1,6 +1,5 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using X10D.Performant.DateTimeExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

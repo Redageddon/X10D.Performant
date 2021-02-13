@@ -14,7 +14,7 @@ namespace X10D.Performant.ULongExtensions
         /// <returns><see cref="value"/> raised by <see cref="exponent"/> and then modded by <see cref="modulus"/>.</returns>
         public static ulong ModPow(ulong value, ulong exponent, ulong modulus)
         {
-            value = FastMod(value, modulus);
+            value = Mod(value, modulus);
             ulong result = 1;
 
             if ((exponent & 1) == 1)
@@ -29,7 +29,7 @@ namespace X10D.Performant.ULongExtensions
                 if (value < uint.MaxValue)
                 {
                     value *= value;
-                    value = FastMod(value, modulus);
+                    value = Mod(value, modulus);
                 }
                 else
                 {
@@ -41,7 +41,7 @@ namespace X10D.Performant.ULongExtensions
                     if (value < uint.MaxValue && result < uint.MaxValue)
                     {
                         result *= value;
-                        result = FastMod(result, modulus);
+                        result = Mod(result, modulus);
                     }
                     else
                     {
@@ -56,12 +56,12 @@ namespace X10D.Performant.ULongExtensions
         {
             if (highBits >= modulus)
             {
-                highBits = FastMod(highBits, modulus);
+                highBits = Mod(highBits, modulus);
             }
 
             if (highBits == 0)
             {
-                return FastMod(lowBits, modulus);
+                return Mod(lowBits, modulus);
             }
             
             int shift = 0;
@@ -103,7 +103,7 @@ namespace X10D.Performant.ULongExtensions
             
             if (dividedHighBits != 0)
             {
-                moddedHighBits = FastMod(highBits, modulusHighBits);
+                moddedHighBits = Mod(highBits, modulusHighBits);
                 right = (moddedHighBits << 32) | upperLowBits;
                 left = dividedHighBits * modulusLowBits;
 
@@ -127,7 +127,7 @@ namespace X10D.Performant.ULongExtensions
             }
 
             ulong quotientLow = lowerHighBits / modulusHighBits;
-            moddedHighBits = FastMod(lowerHighBits, modulusHighBits);
+            moddedHighBits = Mod(lowerHighBits, modulusHighBits);
             right = (moddedHighBits << 32) | lowerLowBits;
             left = quotientLow * modulusLowBits;
 

@@ -30,13 +30,13 @@ namespace X10D.Performant.ULongExtensions
             }
 
             if ((value & 1) == 0 ||
-                FastMod(value, 3) == 0)
+                Mod(value, 3) == 0)
             {
                 return false;
             }
 
-            if (FastMod(value + 1, 6) != 0 &&
-                FastMod(value - 1, 6) != 0)
+            if (Mod(value + 1, 6) != 0 &&
+                Mod(value - 1, 6) != 0)
             {
                 return false;
             }
@@ -50,8 +50,8 @@ namespace X10D.Performant.ULongExtensions
         {
             for (ulong i = 5; i * i <= value; i += 6)
             {
-                if (FastMod(value, i) == 0 ||
-                    FastMod(value, i + 2) == 0)
+                if (Mod(value, i) == 0 ||
+                    Mod(value, i + 2) == 0)
                 {
                     return false;
                 }
@@ -98,7 +98,7 @@ namespace X10D.Performant.ULongExtensions
 
                 for (ulong r = 1UL; x != oneLessValue && r < s; r++)
                 {
-                    x = FastMod(x * x, value);
+                    x = Mod(x * x, value);
 
                     if (x == 1UL)
                     {
@@ -113,20 +113,6 @@ namespace X10D.Performant.ULongExtensions
             }
 
             return true;
-        }
-
-        // TODO https://github.com/dotnet/runtime/issues/5213:
-        // Restore to using % and / when the JIT is able to eliminate one of the idivs.
-        // In the meantime, a * and - is measurably faster than an extra /.
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        private static ulong FastMod(ulong value, ulong modulus)
-        {
-            if (value < modulus)
-            {
-                return value;
-            }
-
-            return value - (value / modulus * modulus);
         }
     }
 }

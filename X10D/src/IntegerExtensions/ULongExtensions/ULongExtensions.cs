@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace X10D.Performant.ULongExtensions
 {
@@ -44,5 +45,22 @@ namespace X10D.Performant.ULongExtensions
         /// <param name="value">An unsigned integer value.</param>
         /// <returns><see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.</returns>
         public static bool ToBoolean(this ulong value) => value != 0;
+        
+        /// <summary>
+        ///     Returns the remainder of <see cref="value"/> / <see cref="modulus"/>.
+        /// </summary>
+        /// <param name="value">The dividend.</param>
+        /// <param name="modulus">The divisor.</param>
+        /// <returns>The remainder of <see cref="value"/> / <see cref="modulus"/>.</returns>
+        /// <remarks>
+        ///     TODO https://github.com/dotnet/runtime/issues/5213:
+        ///     Restore to using % and / when the JIT is able to eliminate one of the idivs.
+        ///     In the meantime, a * and - is measurably faster than an extra /.
+        /// </remarks>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        private static ulong Mod(ulong value, ulong modulus) =>
+            value < modulus
+                ? value
+                : value - (value / modulus * modulus);
     }
 }

@@ -7,6 +7,14 @@
         <RootNamespace>X10D.Performant</RootNamespace>
         <Authors>Redageddon, Oliver Booth</Authors>
         <NeutralLanguage>en</NeutralLanguage>
+        <Version>5.0.0</Version>
+        <AssemblyVersion>5.0.0</AssemblyVersion>
+        <FileVersion>5.0.0</FileVersion>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <RepositoryUrl>https://github.com/Redageddon/X10D/</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <Description>Performant Extension methods on crack.</Description>
@@ -14,11 +22,6 @@
         <PackageIcon>icon.png</PackageIcon>
         <PackageTags>dotnet extension-methods</PackageTags>
         <PackageVersion>5.0.0</PackageVersion>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>5.0.0</Version>
-        <AssemblyVersion>5.0.0</AssemblyVersion>
-        <FileVersion>5.0.0</FileVersion>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
     
     <ItemGroup>

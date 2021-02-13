@@ -1,25 +1,47 @@
-name: .NET
+name: .NET Core
 
-on:
-  push:
-    branches: [ Performant ]
-  pull_request:
-    branches: [ Performant ]
+on: [push, pull_request]
+
+env:
+  DOTNET_VERSION: '5.0.x'
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        runtime: [ 'ubuntu-x64', 'win-x64', 'osx-x64' ]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build ${{ matrix.runtime }}
+        run: dotnet publish -r ${{ matrix.runtime }} -c Release
+        rn: dotnet clean
+      - name: Artifact Upload ${{ matrix.runtime }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: X10D.Performant-${{ matrix.runtime }}
+          path: X10D/bin/Release/net5.0/${{ matrix.runtime }}/publish/
+
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build -c Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal

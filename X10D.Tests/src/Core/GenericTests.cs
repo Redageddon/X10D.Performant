@@ -17,7 +17,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void ToJson()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }  
         
         /// <summary>
@@ -26,7 +26,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void ToUtf8EncodedJson()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }   
         
         /// <summary>

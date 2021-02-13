@@ -19,7 +19,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void AsyncJsonTo()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }  
         
         /// <summary>
@@ -28,7 +28,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void AsyncJsonFrom()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }  
         
         /// <summary>

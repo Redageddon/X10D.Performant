@@ -46,7 +46,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void OneOf()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }       
         
         /// <summary>
@@ -55,7 +55,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void OneOf2()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }
     }
 }

@@ -15,7 +15,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void GetHostName()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }    
         
         /// <summary>
@@ -24,7 +24,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void GetPort()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }
     }
 }

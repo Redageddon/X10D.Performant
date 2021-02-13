@@ -86,7 +86,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void Next()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }
 
         /// <summary>

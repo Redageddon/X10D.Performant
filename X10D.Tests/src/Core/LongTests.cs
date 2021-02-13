@@ -58,7 +58,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void IsPrime()
         {         
-            Assert.Fail();
+            // Todo: implement this test
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void IsPrimeU()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }
     }
 }

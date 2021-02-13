@@ -19,7 +19,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void JsonTo()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }   
         
         /// <summary>

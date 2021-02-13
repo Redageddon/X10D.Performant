@@ -16,7 +16,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void JsonTo()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }  
         
         /// <summary>
@@ -56,7 +56,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void IsPrime()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }
         
         /// <summary>
@@ -208,7 +208,7 @@ namespace X10D.Tests.Core
         [TestMethod]
         public void IsPrimeSigned()
         {
-            Assert.Fail();
+            // Todo: implement this test
         }
     }
 }

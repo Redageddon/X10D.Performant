@@ -2,7 +2,12 @@
 ## A massive amount of extension methods
 
 ### About
-X10D.Performant (pronounced *extend*), is a class library that provides extension methods for numerous .NET types. The purpose of this library is to simplify a codebase by reducing the need for repeated code when performing common operations. Simplify your codebase. Take advantage of .NET. Use extension methods.
+X10D.Performant (pronounced *extend*), is a class library that provides extension methods for numerous .NET types.
+The purpose of this library is to simplify a codebase by reducing the need for repeated code when performing common
+operations.
+
+##Using
+you can find the most up to date builds underneath [Actions](https://github.com/Redageddon/X10D/actions) -> most recent workflow run -> artifacts
 
 ## Contributing
 Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).

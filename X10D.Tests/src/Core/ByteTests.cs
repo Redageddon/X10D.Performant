@@ -1,17 +1,24 @@
 using System;
 using System.Text;
-using X10D.Performant.ByteExtensions;
-
+using System.Text.Json;
+using X10D.Performant.ByteExtensions;using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Tests.Core
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     /// <summary>
     ///     Tests for <see cref="ByteExtensions"/>.
     /// </summary>
     [TestClass]
     public class ByteTests
     {
+        /// <summary>
+        ///     Tests for <see cref="ByteExtensions.JsonTo{T}(ReadOnlySpan{byte},JsonSerializerOptions)"/>.
+        /// </summary>
+        [TestMethod]
+        public void JsonTo()
+        {
+            Assert.Fail();
+        }  
+        
         /// <summary>
         ///     Tests for <see cref="ByteExtensions.IsEven"/>.
         /// </summary>

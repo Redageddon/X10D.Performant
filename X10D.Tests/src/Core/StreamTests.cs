@@ -1,5 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Security.Cryptography;
+using System.Text.Json;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using X10D.Performant.StreamExtensions;
 
@@ -11,6 +14,24 @@ namespace X10D.Tests.Core
     [TestClass]
     public class StreamTests
     {
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.AsyncJsonTo{T}(Stream,JsonSerializerOptions)"/>.
+        /// </summary>
+        [TestMethod]
+        public void AsyncJsonTo()
+        {
+            Assert.Fail();
+        }  
+        
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.AsyncJsonFrom{T}(Stream,T,JsonSerializerOptions,CancellationToken)"/>.
+        /// </summary>
+        [TestMethod]
+        public void AsyncJsonFrom()
+        {
+            Assert.Fail();
+        }  
+        
         /// <summary>
         ///     Test for <see cref="StreamExtensions.GetHash{T}"/>.
         /// </summary>

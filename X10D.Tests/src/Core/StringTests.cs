@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using X10D.Performant.StringExtension;
 
@@ -12,6 +13,15 @@ namespace X10D.Tests.Core
     [TestClass]
     public class StringTests
     {
+        /// <summary>
+        ///     Tests for <see cref="StringExtensions.JsonTo{T}(string,JsonSerializerOptions)"/>.
+        /// </summary>
+        [TestMethod]
+        public void JsonTo()
+        {
+            Assert.Fail();
+        }   
+        
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Base64Decode(string)"/>.
         /// </summary>
@@ -85,6 +95,30 @@ namespace X10D.Tests.Core
             Assert.IsFalse("ab1234cd".IsUpper());
             Assert.IsFalse("AB1234cd".IsUpper());
             Assert.IsFalse("ab1234CD".IsUpper());
+        }       
+        
+        /// <summary>
+        ///     Tests for <see cref="StringExtensions.IsAlpha(string)"/>.
+        /// </summary>
+        [TestMethod]
+        public void IsAlpha()
+        {
+            Assert.IsTrue("ABCD".IsAlpha());
+            Assert.IsTrue("abcd".IsAlpha());
+            Assert.IsFalse("AB12".IsAlpha());
+            Assert.IsFalse("1234".IsAlpha());
+        }        
+        
+        /// <summary>
+        ///     Tests for <see cref="StringExtensions.IsNumerical(string)"/>.
+        /// </summary>
+        [TestMethod]
+        public void IsNumerical()
+        {
+            Assert.IsFalse("ABCD".IsNumerical());
+            Assert.IsFalse("abcd".IsNumerical());
+            Assert.IsFalse("AB12".IsNumerical());
+            Assert.IsTrue("1234".IsNumerical());
         }
         
         /// <summary>

@@ -79,6 +79,44 @@ namespace X10D.Performant.StringExtension
             }
 
             return true;
+        }        
+        
+        /// <summary>
+        ///     Determines if all alphabetical characters in this <see cref="string"/> are considered letters.
+        /// </summary>
+        /// <param name="value">The input string.</param>
+        /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
+        public static bool IsAlpha(this string value)
+        {
+            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
+            foreach (char t in value)
+            {
+                if (!char.IsLetter(t))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }        
+        
+        /// <summary>
+        ///     Determines if all alphabetical characters in this <see cref="string"/> are considered numbers.
+        /// </summary>
+        /// <param name="value">The input string.</param>
+        /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
+        public static bool IsNumerical(this string value)
+        {
+            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
+            foreach (char t in value)
+            {
+                if (!char.IsNumber(t))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>

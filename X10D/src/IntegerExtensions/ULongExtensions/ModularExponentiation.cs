@@ -11,7 +11,7 @@ namespace X10D.Performant.ULongExtensions
         /// <param name="value">The value being raised.</param>
         /// <param name="exponent">The value that is raising.</param>
         /// <param name="modulus">The modulo to be applied to the result.</param>
-        /// <returns><see cref="value"/> raised by <see cref="exponent"/> and then modded by <see cref="modulus"/>.</returns>
+        /// <returns><paramref name="value"/> raised by <paramref name="exponent"/> and then modded by <paramref name="modulus"/>.</returns>
         public static ulong ModPow(ulong value, ulong exponent, ulong modulus)
         {
             value = Mod(value, modulus);

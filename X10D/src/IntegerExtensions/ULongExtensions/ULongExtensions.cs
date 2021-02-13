@@ -47,11 +47,11 @@ namespace X10D.Performant.ULongExtensions
         public static bool ToBoolean(this ulong value) => value != 0;
         
         /// <summary>
-        ///     Returns the remainder of <see cref="value"/> / <see cref="modulus"/>.
+        ///     Returns the remainder of <paramref name="value"/> / <paramref name="modulus"/>.
         /// </summary>
         /// <param name="value">The dividend.</param>
         /// <param name="modulus">The divisor.</param>
-        /// <returns>The remainder of <see cref="value"/> / <see cref="modulus"/>.</returns>
+        /// <returns>The remainder of <paramref name="value"/> / <paramref name="modulus"/>.</returns>
         /// <remarks>
         ///     TODO https://github.com/dotnet/runtime/issues/5213:
         ///     Restore to using % and / when the JIT is able to eliminate one of the idivs.

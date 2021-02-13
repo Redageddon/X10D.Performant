@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace X10D.Performant.ULongExtensions
+﻿namespace X10D.Performant.ULongExtensions
 {
     public static partial class ULongExtensions
     {

@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: X10D.Performant-${{ matrix.runtime }}
-          path: X10D.Performant/bin/Release/net5.0/${{ matrix.runtime }}/publish/X10D.dll
+          path: X10D.Performant/bin/Release/net5.0/${{ matrix.runtime }}/publish/X10D.Performant.dll
 
   checks:
     runs-on: ubuntu-latest

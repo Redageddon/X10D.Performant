@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="FloatExtensions"/>.
+    ///     Tests for <see cref="SingleExtensions"/>.
     /// </summary>
     [TestClass]
     public class FloatTests
     {
         /// <summary>
-        ///     Tests for <see cref="FloatExtensions.DegreesToRadians"/>.
+        ///     Tests for <see cref="SingleExtensions.DegreesToRadians"/>.
         /// </summary>
         [TestMethod]
         public void DegreesToRadians()
@@ -20,7 +20,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="FloatExtensions.GetBytes"/>.
+        ///     Tests for <see cref="SingleExtensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
         public void GetBytes()
@@ -29,7 +29,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="FloatExtensions.IsEven"/>.
+        ///     Tests for <see cref="SingleExtensions.IsEven"/>.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -39,7 +39,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="FloatExtensions.IsOdd"/>.
+        ///     Tests for <see cref="SingleExtensions.IsOdd"/>.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -49,7 +49,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="FloatExtensions.RadiansToDegrees"/>.
+        ///     Tests for <see cref="SingleExtensions.RadiansToDegrees"/>.
         /// </summary>
         [TestMethod]
         public void RadiansToDegrees()

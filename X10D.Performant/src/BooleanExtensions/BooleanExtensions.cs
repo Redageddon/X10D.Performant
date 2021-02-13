@@ -17,21 +17,21 @@
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        public static short ToShort(this bool value) => value ? 1 : 0;
+        public static short ToInt16(this bool value) => value ? 1 : 0;
 
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="int"/>.
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        public static int ToInt(this bool value) => value ? 1 : 0;
+        public static int ToInt32(this bool value) => value ? 1 : 0;
 
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="long"/>.
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        public static long ToLong(this bool value) => value ? 1 : 0;        
+        public static long ToInt64(this bool value) => value ? 1 : 0;        
         
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="decimal"/>.
@@ -66,20 +66,20 @@
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        public static ushort ToUShort(this bool value) => value ? 1 : 0;
+        public static ushort ToUInt16(this bool value) => value ? 1 : 0;
 
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="uint"/>.
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        public static uint ToUInt(this bool value) => value ? 1 : 0;
+        public static uint ToUInt32(this bool value) => value ? 1 : 0;
 
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="ulong"/>.
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        public static ulong ToULong(this bool value) => value ? 1 : 0;
+        public static ulong ToUInt64(this bool value) => value ? 1 : 0;
     }
 }

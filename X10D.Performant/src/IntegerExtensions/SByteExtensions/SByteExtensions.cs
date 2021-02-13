@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
 {
@@ -7,7 +8,7 @@ namespace X10D.Performant
     /// </summary>
     public static partial class SByteExtensions
     {
-        /// <inheritdoc cref="LongExtensions.FromUnixTimestamp"/>
+        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -17,16 +18,16 @@ namespace X10D.Performant
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="LongExtensions.IsEven"/>
-        public static bool IsEven(this sbyte value) => value % 2 == 0;
+        /// <inheritdoc cref="Int64Extensions.IsEven"/>
+        public static bool IsEven(this sbyte value) => (value & 1) == 0;
 
-        /// <inheritdoc cref="LongExtensions.IsOdd"/>
-        public static bool IsOdd(this sbyte value) => value % 2 != 0;
+        /// <inheritdoc cref="Int64Extensions.IsOdd"/>
+        public static bool IsOdd(this sbyte value) => (value & 1) == 1;
 
-        /// <inheritdoc cref="LongExtensions.ToBoolean"/>
+        /// <inheritdoc cref="Int64Extensions.ToBoolean"/>
         public static bool ToBoolean(this sbyte value) => value != 0;
 
-        /// <inheritdoc cref="ULongExtensions.IsPrime"/>
+        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
         public static bool IsPrime(this sbyte value)
         {
             switch (value)
@@ -39,12 +40,19 @@ namespace X10D.Performant
                 case 11: return true;
 
                 default:
-                    return value % 2 != 0 &&
-                           value % 3 != 0 &&
-                           value % 5 != 0 &&
-                           value % 7 != 0 &&
-                           value % 11 != 0;
+                    return Mod(value, 2) != 0 &&
+                           Mod(value, 3) != 0 &&
+                           Mod(value, 5) != 0 &&
+                           Mod(value, 7) != 0 &&
+                           Mod(value, 11) != 0;
             }
         }
+        
+        /// <inheritdoc cref="UInt64Extensions.Mod"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public static sbyte Mod(this sbyte value, sbyte modulus) =>
+            value < modulus
+                ? value
+                : (sbyte)(value - (value / modulus * modulus));
     }
 }

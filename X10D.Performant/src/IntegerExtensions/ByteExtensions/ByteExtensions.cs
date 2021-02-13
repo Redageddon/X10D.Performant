@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace X10D.Performant
@@ -8,7 +9,7 @@ namespace X10D.Performant
     /// </summary>
     public static partial class ByteExtensions
     {
-        /// <inheritdoc cref="LongExtensions.FromUnixTimestamp"/>
+        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this byte timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -18,16 +19,16 @@ namespace X10D.Performant
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="LongExtensions.IsEven"/>
+        /// <inheritdoc cref="Int64Extensions.IsEven"/>
         public static bool IsEven(this byte value) => value % 2 == 0;
 
-        /// <inheritdoc cref="LongExtensions.IsOdd"/>
+        /// <inheritdoc cref="Int64Extensions.IsOdd"/>
         public static bool IsOdd(this byte value) => value % 2 != 0;
 
-        /// <inheritdoc cref="LongExtensions.ToBoolean"/>
+        /// <inheritdoc cref="Int64Extensions.ToBoolean"/>
         public static bool ToBoolean(this byte value) => value != 0;
         
-        /// <inheritdoc cref="LongExtensions.IsPrime"/>
+        /// <inheritdoc cref="Int64Extensions.IsPrime"/>
         public static bool IsPrime(this byte value)
         {
             switch (value)
@@ -41,16 +42,23 @@ namespace X10D.Performant
                 case 13: return true;
 
                 default:
-                    return value % 2 != 0 &&
-                           value % 3 != 0 &&
-                           value % 5 != 0 &&
-                           value % 7 != 0 &&
-                           value % 11 != 0 &&
-                           value % 13 != 0;
+                    return Mod(value, 2) != 0 &&
+                           Mod(value, 3) != 0 &&
+                           Mod(value, 5) != 0 &&
+                           Mod(value, 7) != 0 &&
+                           Mod(value, 11) != 0 &&
+                           Mod(value, 13) != 0;
             }
         }
-
+        
         /// <inheritdoc cref="Encoding.GetString(byte[])"/>
         public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetString(bytes);
+        
+        /// <inheritdoc cref="UInt64Extensions.Mod"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public static byte Mod(this byte value, byte modulus) =>
+            value < modulus
+                ? value
+                : (byte)(value - (value / modulus * modulus));
     }
 }

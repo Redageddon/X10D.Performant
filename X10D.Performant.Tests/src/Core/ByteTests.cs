@@ -71,36 +71,36 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToShort(byte[],int)"/>.
+        ///     Tests for <see cref="ByteExtensions.ToInt16(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void BitsAsShort()
         {
             byte[] a = { 0xF3, 0x3F };
-            Assert.AreEqual(16371, a.ToShort());
-            Assert.AreEqual(16371, a.AsSpan().ToShort());
+            Assert.AreEqual(16371, a.ToInt16());
+            Assert.AreEqual(16371, a.AsSpan().ToInt16());
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToInt(byte[],int)"/>.
+        ///     Tests for <see cref="ByteExtensions.ToInt32(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void BitsAsInt()
         {
             byte[] a = { 0xB0, 0x0B, 0x13, 0x5F };
-            Assert.AreEqual(1595083696, a.ToInt());
-            Assert.AreEqual(1595083696, a.AsSpan().ToInt());
+            Assert.AreEqual(1595083696, a.ToInt32());
+            Assert.AreEqual(1595083696, a.AsSpan().ToInt32());
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToLong(byte[],int)"/>.
+        ///     Tests for <see cref="ByteExtensions.ToInt64(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void BitsAsLong()
         {
             byte[] a = { 0xB0, 0x0B, 0x13, 0x50, 0x05, 0x31, 0xB0, 0x0B };
-            Assert.AreEqual(842227029206305712L, a.ToLong());
-            Assert.AreEqual(842227029206305712L, a.AsSpan().ToLong());
+            Assert.AreEqual(842227029206305712L, a.ToInt64());
+            Assert.AreEqual(842227029206305712L, a.AsSpan().ToInt64());
         }
 
         /// <summary>
@@ -144,63 +144,63 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUShort(byte[],int)"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt16(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt16()
         {
             byte[] a = { 0xF3, 0x3F };
-            Assert.AreEqual(16371, a.ToUShort());
+            Assert.AreEqual(16371, a.ToUInt16());
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUShort(ReadOnlySpan{byte})"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt16(ReadOnlySpan{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt16Span()
         {
             byte[] a = { 0xF3, 0x3F };
-            Assert.AreEqual(16371, a.AsSpan().ToUShort());
+            Assert.AreEqual(16371, a.AsSpan().ToUInt16());
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt(byte[],int)"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt32(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt32()
         {
             byte[] a = { 0xB0, 0x0B, 0x13, 0x5F };
-            Assert.AreEqual(1595083696U, a.ToUInt());
+            Assert.AreEqual(1595083696U, a.ToUInt32());
         }
         
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt(ReadOnlySpan{byte})"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt32(ReadOnlySpan{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt32Span()
         {
             byte[] a = { 0xB0, 0x0B, 0x13, 0x5F };
-            Assert.AreEqual(1595083696U, a.AsSpan().ToUInt());
+            Assert.AreEqual(1595083696U, a.AsSpan().ToUInt32());
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToULong(byte[],int)"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt64(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt64()
         {
             byte[] a = { 0xB0, 0x0B, 0x13, 0x50, 0x05, 0x31, 0xB0, 0x0B };
-            Assert.AreEqual(842227029206305712UL, a.ToULong());
+            Assert.AreEqual(842227029206305712UL, a.ToUInt64());
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToULong(ReadOnlySpan{byte})"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt64(ReadOnlySpan{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt64Span()
         {
             byte[] a = { 0xB0, 0x0B, 0x13, 0x50, 0x05, 0x31, 0xB0, 0x0B };
-            Assert.AreEqual(842227029206305712UL, a.AsSpan().ToULong());
+            Assert.AreEqual(842227029206305712UL, a.AsSpan().ToUInt64());
         }
         
         /// <summary>

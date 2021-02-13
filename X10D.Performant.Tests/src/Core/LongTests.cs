@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="LongExtensions"/>.
+    ///     Tests for <see cref="Int64Extensions"/>.
     /// </summary>
     [TestClass]
     public class LongTests
     {
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.GetBytes"/>.
+        ///     Tests for <see cref="Int64Extensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
         public void GetBytes()
@@ -19,7 +19,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.IsEven"/>.
+        ///     Tests for <see cref="Int64Extensions.IsEven"/>.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -29,7 +29,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.IsOdd"/>.
+        ///     Tests for <see cref="Int64Extensions.IsOdd"/>.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -39,7 +39,7 @@ namespace X10D.Performant.Tests.Core
         }      
         
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.ToBoolean"/>.
+        ///     Tests for <see cref="Int64Extensions.ToBoolean"/>.
         /// </summary>
         [TestMethod]
         public void ToBool()
@@ -50,7 +50,7 @@ namespace X10D.Performant.Tests.Core
         }        
         
         /// <summary>
-        ///     Tests for <see cref="LongExtensions.IsPrime"/>.
+        ///     Tests for <see cref="Int64Extensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrime()
@@ -59,7 +59,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ULongExtensions.GetBytes"/>.
+        ///     Tests for <see cref="UInt64Extensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
         public void GetBytesU()
@@ -68,7 +68,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ULongExtensions.IsEven"/>.
+        ///     Tests for <see cref="UInt64Extensions.IsEven"/>.
         /// </summary>
         [TestMethod]
         public void IsEvenU()
@@ -78,7 +78,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ULongExtensions.IsOdd"/>.
+        ///     Tests for <see cref="UInt64Extensions.IsOdd"/>.
         /// </summary>
         [TestMethod]
         public void IsOddU()
@@ -88,7 +88,7 @@ namespace X10D.Performant.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="ULongExtensions.ToBoolean"/>.
+        ///     Tests for <see cref="UInt64Extensions.ToBoolean"/>.
         /// </summary>
         [TestMethod]
         public void ToBoolU()
@@ -99,7 +99,7 @@ namespace X10D.Performant.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="ULongExtensions.IsPrime"/>.
+        ///     Tests for <see cref="UInt64Extensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrimeU()

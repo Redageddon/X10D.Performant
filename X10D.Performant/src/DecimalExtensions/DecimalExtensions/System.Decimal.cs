@@ -59,28 +59,28 @@ namespace X10D.Performant
         public static double ToDouble(this decimal value) => decimal.ToDouble(value);
         
         /// <inheritdoc cref="decimal.ToInt16(decimal)"/>
-        public static short ToShort(this decimal value) => decimal.ToInt16(value);
+        public static short ToInt16(this decimal value) => decimal.ToInt16(value);
         
         /// <inheritdoc cref="decimal.ToInt32(decimal)"/>
-        public static int ToInt(this decimal value) => decimal.ToInt32(value);
+        public static int ToInt32(this decimal value) => decimal.ToInt32(value);
         
         /// <inheritdoc cref="decimal.ToInt64(decimal)"/>
-        public static long ToLong(this decimal value) => decimal.ToInt64(value);
+        public static long ToInt64(this decimal value) => decimal.ToInt64(value);
 
         /// <inheritdoc cref="decimal.ToSingle(decimal)"/>
-        public static float ToFloat(this decimal value) => decimal.ToSingle(value);
+        public static float ToSingle(this decimal value) => decimal.ToSingle(value);
         
         /// <inheritdoc cref="decimal.ToSByte(decimal)"/>
         public static sbyte ToSByte(this decimal value) => decimal.ToSByte(value);
         
         /// <inheritdoc cref="decimal.ToUInt16(decimal)"/>
-        public static ushort ToUShort(this decimal value) => decimal.ToUInt16(value);
+        public static ushort ToUInt16(this decimal value) => decimal.ToUInt16(value);
         
         /// <inheritdoc cref="decimal.ToUInt32(decimal)"/>
-        public static uint ToUInt(this decimal value) => decimal.ToUInt32(value);
+        public static uint ToUInt32(this decimal value) => decimal.ToUInt32(value);
         
         /// <inheritdoc cref="decimal.ToUInt64(decimal)"/>
-        public static ulong ToULong(this decimal value) => decimal.ToUInt64(value);
+        public static ulong ToUInt64(this decimal value) => decimal.ToUInt64(value);
         
         /// <inheritdoc cref="decimal.TryGetBits(decimal,Span{int},out int)"/>
         public static bool TryGetBits(this decimal value, Span<int> destination, out int valuesWritten) => decimal.TryGetBits(value, destination, out valuesWritten);

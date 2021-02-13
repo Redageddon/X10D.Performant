@@ -24,48 +24,48 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToShort"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToInt16"/>.
         /// </summary>
         [TestMethod]
-        public void ToShort()
+        public void ToInt16()
         {
             const bool a = true;
             const bool b = false;
             const short c = 1;
             const short d = 0;
 
-            Assert.AreEqual(c, a.ToShort());
-            Assert.AreEqual(d, b.ToShort());
+            Assert.AreEqual(c, a.ToInt16());
+            Assert.AreEqual(d, b.ToInt16());
         }
 
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToInt"/>.
         /// </summary>
         [TestMethod]
-        public void ToInt()
+        public void ToInt32()
         {
             const bool a = true;
             const bool b = false;
             const int c = 1;
             const int d = 0;
 
-            Assert.AreEqual(c, a.ToInt());
-            Assert.AreEqual(d, b.ToInt());
+            Assert.AreEqual(c, a.ToInt32());
+            Assert.AreEqual(d, b.ToInt32());
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToLong"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToInt64"/>.
         /// </summary>
         [TestMethod]
-        public void ToLong()
+        public void ToInt64()
         {
             const bool a = true;
             const bool b = false;
             const long c = 1;
             const long d = 0;
 
-            Assert.AreEqual(c, a.ToLong());
-            Assert.AreEqual(d, b.ToLong());
+            Assert.AreEqual(c, a.ToInt64());
+            Assert.AreEqual(d, b.ToInt64());
         }        
         
         /// <summary>
@@ -84,48 +84,48 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToUShort"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToUInt16"/>.
         /// </summary>
         [TestMethod]
-        public void ToUShort()
+        public void ToUInt16()
         {
             const bool a = true;
             const bool b = false;
             const ushort c = 1;
             const ushort d = 0;
 
-            Assert.AreEqual(c, a.ToUShort());
-            Assert.AreEqual(d, b.ToUShort());
+            Assert.AreEqual(c, a.ToUInt16());
+            Assert.AreEqual(d, b.ToUInt16());
         }
 
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToUInt"/>.
         /// </summary>
         [TestMethod]
-        public void ToUInt()
+        public void ToUInt32()
         {
             const bool a = true;
             const bool b = false;
             const uint c = 1;
             const uint d = 0;
 
-            Assert.AreEqual(c, a.ToUInt());
-            Assert.AreEqual(d, b.ToUInt());
+            Assert.AreEqual(c, a.ToUInt32());
+            Assert.AreEqual(d, b.ToUInt32());
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToULong"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToUInt64"/>.
         /// </summary>
         [TestMethod]
-        public void ToULong()
+        public void ToUInt64()
         {
             const bool a = true;
             const bool b = false;
             const ulong c = 1;
             const ulong d = 0;
 
-            Assert.AreEqual(c, a.ToULong());
-            Assert.AreEqual(d, b.ToULong());
+            Assert.AreEqual(c, a.ToUInt64());
+            Assert.AreEqual(d, b.ToUInt64());
         }
     }
 }

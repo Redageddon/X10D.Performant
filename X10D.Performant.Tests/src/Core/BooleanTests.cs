@@ -39,7 +39,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToInt"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToInt32"/>.
         /// </summary>
         [TestMethod]
         public void ToInt32()
@@ -99,7 +99,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToUInt"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToUInt32"/>.
         /// </summary>
         [TestMethod]
         public void ToUInt32()

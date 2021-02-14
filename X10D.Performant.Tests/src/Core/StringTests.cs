@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace X10D.Performant.Tests.Core
@@ -12,15 +11,6 @@ namespace X10D.Performant.Tests.Core
     [TestClass]
     public class StringTests
     {
-        /// <summary>
-        ///     Tests for <see cref="StringExtensions.JsonTo{T}(string,JsonSerializerOptions)"/>.
-        /// </summary>
-        [TestMethod]
-        public void JsonTo()
-        {
-            // Todo: implement this test
-        }   
-        
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Base64Decode(string)"/>.
         /// </summary>

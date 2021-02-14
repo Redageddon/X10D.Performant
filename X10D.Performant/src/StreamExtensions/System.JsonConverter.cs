@@ -12,7 +12,7 @@ namespace X10D.Performant
             await JsonSerializer.DeserializeAsync<T>(value, serializerOptions);
 
         /// <inheritdoc cref="System.Text.Json.JsonSerializer.SerializeAsync{T}(Stream,T,JsonSerializerOptions,CancellationToken)" />
-        public static async Task AsyncJsonFrom<T>(
+        public static async Task ToJsonAsync<T>(
             this Stream stream,
             T value,
             JsonSerializerOptions? serializerOptions = null,

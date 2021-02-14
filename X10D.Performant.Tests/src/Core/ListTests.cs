@@ -44,7 +44,28 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void OneOf()
         {
-            // Todo: implement this test
+            List<int> list = new()
+            {
+                11,
+                23,
+                234,
+                436,
+                57,
+                3246,
+                547,
+                235,
+                7345,
+                2467,
+                135,
+                2436234,
+                624,
+                6,
+                246,
+                2,
+            };
+            
+            Assert.IsTrue(list.Contains(list.OneOf()));
+            Assert.IsTrue(list.Contains(new[]{ 11, 2, 6 }.OneOf()));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Net;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace X10D.Performant.Tests.Core
 {
@@ -14,7 +15,8 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void GetHostName()
         {
-            // Todo: implement this test
+            EndPoint e = new DnsEndPoint("Name", 123);
+            Assert.AreEqual("Name", e.GetHostName());
         }    
         
         /// <summary>
@@ -23,7 +25,8 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void GetPort()
         {
-            // Todo: implement this test
+            EndPoint e = new DnsEndPoint("Name", 123);
+            Assert.AreEqual(123, e.GetPort());
         }
     }
 }

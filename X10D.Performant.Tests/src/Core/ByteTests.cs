@@ -1,6 +1,7 @@
 using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
-using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace X10D.Performant.Tests.Core
@@ -11,15 +12,6 @@ namespace X10D.Performant.Tests.Core
     [TestClass]
     public class ByteTests
     {
-        /// <summary>
-        ///     Tests for <see cref="ByteExtensions.JsonTo{T}(ReadOnlySpan{byte},JsonSerializerOptions)"/>.
-        /// </summary>
-        [TestMethod]
-        public void JsonTo()
-        {
-            // Todo: implement this test
-        }  
-        
         /// <summary>
         ///     Tests for <see cref="ByteExtensions.IsEven"/>.
         /// </summary>
@@ -57,7 +49,17 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void IsPrime()
         {
-            // Todo: implement this test
+            byte[] primes = 
+            {
+                2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131,
+                137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251,
+            };
+
+            for (byte i = 0; i < byte.MaxValue; i++)
+            {
+                Trace.WriteLineIf(i.IsPrime() != primes.Contains(i), i);
+                Assert.AreEqual(i.IsPrime(), primes.Contains(i));
+            }
         }
         
         /// <summary>
@@ -124,26 +126,6 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToEncodedString(byte[],Encoding)"/>.
-        /// </summary>
-        [TestMethod]
-        public void GetStringAscii()
-        {
-            byte[] a = { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64 };
-            Assert.AreEqual("Hello World", a.ToEncodedString());
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToEncodedString(System.Span{byte},Encoding)"/>.
-        /// </summary>
-        [TestMethod]
-        public void GetStringAsciiSpan()
-        {
-            byte[] a = { 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64 };
-            Assert.AreEqual("Hello World", a.AsSpan().ToEncodedString());
-        }
-
-        /// <summary>
         ///     Tests for <see cref="ByteExtensions.ToUInt16(byte[],int)"/>.
         /// </summary>
         [TestMethod]
@@ -154,7 +136,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt16(ReadOnlySpan{byte})"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt16(Span{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt16Span()
@@ -174,7 +156,7 @@ namespace X10D.Performant.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt32(ReadOnlySpan{byte})"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt32(Span{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt32Span()
@@ -194,7 +176,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt64(ReadOnlySpan{byte})"/>.
+        ///     Tests for <see cref="ByteExtensions.ToUInt64(Span{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt64Span()
@@ -204,12 +186,21 @@ namespace X10D.Performant.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.IsPrime"/>.
+        ///     Tests for <see cref="SByteExtensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrimeSigned()
         {
-            // Todo: implement this test
+            sbyte[] primes = 
+            {
+                2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127,
+            };
+
+            for (sbyte i = sbyte.MinValue; i < sbyte.MaxValue; i++)
+            {
+                Trace.WriteLineIf(i.IsPrime() != primes.Contains(i), i);
+                Assert.AreEqual(i.IsPrime(), primes.Contains(i));
+            }
         }
     }
 }

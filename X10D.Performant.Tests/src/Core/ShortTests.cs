@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace X10D.Performant.Tests.Core
@@ -55,7 +56,27 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void IsPrime()
         {         
-            // Todo: implement this test
+            short[] primes = 
+            {
+                2, 11, 101, 1_009, 10_007,
+            };
+
+            for (int i = 0; i < primes.Length; i++)
+            {
+                Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
+                Assert.IsTrue(primes[i].IsPrime());
+            }
+            
+            short[] nonPrimes = 
+            { 
+                -10_007, -1_009, -101, -11, -2, -1, 0, 1, 4, 29_001,
+            };
+            
+            for (int i = 0; i < nonPrimes.Length; i++)
+            {
+                Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
+                Assert.IsFalse(nonPrimes[i].IsPrime());
+            }
         }
 
         /// <summary>
@@ -104,7 +125,26 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void IsPrimeU()
         {
-            // Todo: implement this test
+            ushort[] primes = 
+            {
+                2, 11, 101, 1_009, 10_007,
+            };
+
+            for (int i = 0; i < primes.Length; i++)
+            {
+                Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
+                Assert.IsTrue(primes[i].IsPrime());
+            }
+            
+            ushort[] nonPrimes = 
+            { 0, 1, 4, 29_001,
+            };
+            
+            for (int i = 0; i < nonPrimes.Length; i++)
+            {
+                Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
+                Assert.IsFalse(nonPrimes[i].IsPrime());
+            }
         }
     }
 }

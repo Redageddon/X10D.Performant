@@ -84,7 +84,9 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void Next()
         {
-            // Todo: implement this test
+            DateTime current = new(2021, 2, 1);
+            DayOfWeek dayOfWeek = DayOfWeek.Monday;
+            Assert.AreEqual(new DateTime(2021, 2, 8), current.Next(dayOfWeek));
         }
 
         /// <summary>

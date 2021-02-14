@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Numerics;
 
 namespace X10D.Performant
 {
@@ -33,7 +32,7 @@ namespace X10D.Performant
                 }
                 else
                 {
-                    value = Mod128(Math.BigMul(value, value, out ulong lowBits), lowBits, modulus);
+                    value = Mod128By63(Math.BigMul(value, value, out ulong lowBits), lowBits, modulus);
                 }
                 
                 if ((exponent & 1) == 1)
@@ -45,108 +44,41 @@ namespace X10D.Performant
                     }
                     else
                     {
-                        result = Mod128(Math.BigMul(value, result, out ulong lowBits), lowBits, modulus);
+                        result = Mod128By63(Math.BigMul(value, result, out ulong lowBits), lowBits, modulus);
                     }
                 }
             }
             return result;
         }
         
-        private static ulong Mod128(ulong highBits, ulong lowBits, ulong modulus)
+        private static ulong Mod128By63(ulong highBits, ulong lowBits, ulong modulus)
         {
-            if (highBits >= modulus)
+            ulong result = 0UL;
+            ulong a = (ulong.MaxValue % modulus) + 1UL;
+            highBits = Mod(highBits, modulus);
+            while (highBits != 0UL)
             {
-                highBits = Mod(highBits, modulus);
-            }
-
-            if (highBits == 0)
-            {
-                return Mod(lowBits, modulus);
-            }
-            
-            int shift = 0;
-
-            if (modulus >> 63 == 0)
-            {
-                if (modulus >> 62 != 0)
+                if ((highBits & 1UL) == 1UL)
                 {
-                    shift = 1;
-                }
-                else if (modulus >> 61 != 0)
-                {
-                    shift = 2;
-                }
-                else if (modulus >> 60 != 0)
-                {
-                    shift = 3;
-                }
-                else
-                {
-                    shift = BitOperations.LeadingZeroCount(modulus >> 32);
-                }
-                
-                highBits = (highBits << shift) | (lowBits >> (64 - shift));
-                lowBits <<= shift;
-                modulus <<= shift;
-            }
-
-            uint lowerLowBits = (uint)lowBits;
-            ulong upperLowBits = lowBits >> 32;
-            
-            ulong lowerHighBits = (highBits << 32) + upperLowBits;
-            
-            ulong modulusLowBits = (uint)modulus;
-            ulong modulusHighBits = modulus >> 32;
-            
-            ulong dividedHighBits = highBits / modulusHighBits;
-            ulong moddedHighBits, left, right;
-            
-            if (dividedHighBits != 0)
-            {
-                moddedHighBits = Mod(highBits, modulusHighBits);
-                right = (moddedHighBits << 32) | upperLowBits;
-                left = dividedHighBits * modulusLowBits;
-
-                ulong truncatedHighBits = (uint)dividedHighBits;
-                ulong truncatedModdedHighBits = (uint)moddedHighBits;
-                while (dividedHighBits != truncatedHighBits || left > right)
-                {
-                    dividedHighBits--;
-                    moddedHighBits += modulusHighBits;
-
-                    if (moddedHighBits != truncatedModdedHighBits)
+                    result += a;
+                    if (result >= modulus)
                     {
-                        break;
+                        result -= modulus;
                     }
-
-                    right = (moddedHighBits << 32) | upperLowBits;
-                    left -= modulusLowBits;
                 }
-
-                lowerHighBits -= dividedHighBits * modulus;
-            }
-
-            ulong quotientLow = lowerHighBits / modulusHighBits;
-            moddedHighBits = Mod(lowerHighBits, modulusHighBits);
-            right = (moddedHighBits << 32) | lowerLowBits;
-            left = quotientLow * modulusLowBits;
-
-            ulong truncatedQuotientLow = (uint)quotientLow;
-            while (quotientLow != truncatedQuotientLow || left > right)
-            {
-                quotientLow--;
-                moddedHighBits += modulusHighBits;
-
-                if (moddedHighBits != (uint)moddedHighBits)
+                a <<= 1;
+                if (a >= modulus)
                 {
-                    break;
+                    a -= modulus;
                 }
-
-                right = (moddedHighBits << 32) | lowerLowBits;
-                left -= modulusLowBits;
+                highBits >>= 1;
             }
 
-            return ((lowerHighBits << 32) + (lowerLowBits - (quotientLow * modulus))) >> shift;
+            if (lowBits > modulus)
+            {
+                lowBits -= modulus;
+            }
+            return Mod(lowBits + result, modulus);
         }
     }
 }

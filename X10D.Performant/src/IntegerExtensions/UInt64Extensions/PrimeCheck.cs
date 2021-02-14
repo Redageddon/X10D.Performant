@@ -1,4 +1,7 @@
-﻿namespace X10D.Performant
+﻿using System;
+using System.Numerics;
+
+namespace X10D.Performant
 {
     public static partial class UInt64Extensions
     {
@@ -19,7 +22,7 @@
         /// </summary>
         /// <param name="value">An integer value.</param>
         /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
-        public static bool IsPrime(ulong value)
+        public static bool IsPrime(this ulong value)
         {
             switch (value)
             {
@@ -75,6 +78,7 @@
                 _                           => MillerTest(value, Lt18446744073709551616),
             };
 
+        // TODO: remove big int dependencies
         private static bool MillerTest(ulong value, ulong[] witnesses)
         {
             ulong oneLessValue = value - 1UL;
@@ -89,7 +93,10 @@
 
             for (int i = 0; i < witnesses.Length; i++)
             {
-                ulong x = ModPow(witnesses[i], d, value);
+                ulong x = value > long.MaxValue
+                    ? (ulong)BigInteger.ModPow(witnesses[i], d, value)
+                    : ModPow(witnesses[i], d, value);
+
                 if (x == 1UL)
                 {
                     continue;
@@ -97,7 +104,20 @@
 
                 for (ulong r = 1UL; x != oneLessValue && r < s; r++)
                 {
-                    x = Mod(x * x, value);
+                    if (x < uint.MaxValue)
+                    {
+                        x = Mod(x * x, value);
+                    }
+                    else if (value > long.MaxValue)
+                    {
+                        BigInteger bigX = x;
+                        BigInteger bigValue = value;
+                        x = (ulong)(bigX * bigX % bigValue);
+                    }
+                    else if (x < long.MaxValue)
+                    {
+                        x = Mod128By63(Math.BigMul(x, x, out ulong lowBits), lowBits, value);
+                    }
 
                     if (x == 1UL)
                     {
@@ -110,7 +130,7 @@
                     return false;
                 }
             }
-
+            
             return true;
         }
     }

@@ -1,5 +1,4 @@
 using System;
-using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace X10D.Performant.Tests.Core
@@ -10,24 +9,6 @@ namespace X10D.Performant.Tests.Core
     [TestClass]
     public class GenericTests
     {
-        /// <summary>
-        ///     Tests for <see cref="GenericExtensions.ToJson{T}(T,JsonSerializerOptions)"/>.
-        /// </summary>
-        [TestMethod]
-        public void ToJson()
-        {
-            // Todo: implement this test
-        }  
-        
-        /// <summary>
-        ///     Tests for <see cref="GenericExtensions.ToUtf8EncodedJson{T}(T,JsonSerializerOptions)"/>.
-        /// </summary>
-        [TestMethod]
-        public void ToUtf8EncodedJson()
-        {
-            // Todo: implement this test
-        }   
-        
         /// <summary>
         ///     Tests for <see cref="GenericExtensions.To{TFrom,TTo}"/>.
         /// </summary>

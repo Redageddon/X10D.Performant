@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace X10D.Performant.Tests.Core
@@ -55,7 +56,27 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void IsPrime()
         {
-            // Todo: implement this test
+            int[] primes = 
+            {
+                2, 11, 101, 1_009, 10_007, 100_003, 1_003_001, 10_000_019, 100_000_007, 1_000_000_007,
+            };
+
+            for (int i = 0; i < primes.Length; i++)
+            {
+                Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
+                Assert.IsTrue(primes[i].IsPrime());
+            }
+            
+            int[] nonPrimes = 
+            {
+                -1_000_000_007, -100_000_007, -10_000_019, -1_003_001, -100_001, -10_007, -1_009, -101, -11, -2, -1, 0, 1, 4, 29_001,
+            };
+            
+            for (int i = 0; i < nonPrimes.Length; i++)
+            {
+                Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
+                Assert.IsFalse(nonPrimes[i].IsPrime());
+            }
         }
 
         /// <summary>
@@ -104,7 +125,27 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void IsPrimeU()
         {
-            // Todo: implement this test
+            uint[] primes = 
+            {
+                2, 11, 101, 1_009, 10_007, 100_003, 1_003_001, 10_000_019, 100_000_007, 1_000_000_007, 4_294_967_291,
+            };
+
+            for (uint i = 0; i < primes.Length; i++)
+            {
+                Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
+                Assert.IsTrue(primes[i].IsPrime());
+            }
+            
+            uint[] nonPrimes = 
+            {
+                0, 1, 4, 29_001,
+            };
+            
+            for (uint i = 0; i < nonPrimes.Length; i++)
+            {
+                Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
+                Assert.IsFalse(nonPrimes[i].IsPrime());
+            }
         }
     }
 }

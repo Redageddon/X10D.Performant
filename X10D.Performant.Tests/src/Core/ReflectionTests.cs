@@ -7,13 +7,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="MemberInfoExtensions"/>.
+    ///     Tests for <see cref="MemberInfoExtensions" />.
     /// </summary>
     [TestClass]
     public class ReflectionTests
     {
         /// <summary>
-        ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue{T}"/>.
+        ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue{T}" />.
         /// </summary>
         [TestMethod]
         public void GetDefaultValue()
@@ -27,7 +27,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Test for <see cref="MemberInfoExtensions.GetDescription"/>.
+        ///     Test for <see cref="MemberInfoExtensions.GetDescription" />.
         /// </summary>
         [TestMethod]
         public void GetDescription()
@@ -41,7 +41,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Test for <see cref="MemberInfoExtensions.GetDescription"/>.
+        ///     Test for <see cref="MemberInfoExtensions.GetDescription" />.
         /// </summary>
         [TestMethod]
         public void SelectFromCustomAttribute()

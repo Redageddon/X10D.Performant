@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="GenericExtensions"/>.
+    ///     Tests for <see cref="GenericExtensions" />.
     /// </summary>
     [TestClass]
     public class GenericTests
     {
         /// <summary>
-        ///     Tests for <see cref="GenericExtensions.To{TFrom,TTo}"/>.
+        ///     Tests for <see cref="GenericExtensions.To{TFrom,TTo}" />.
         /// </summary>
         [TestMethod]
         public void To()
@@ -242,19 +242,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="GenericExtensions.TryTo{TFrom,TTo}"/>.
-        /// </summary>
-        [TestMethod]
-        public void TryTo()
-        {
-            Assert.IsTrue("2".TryTo(out int _2));
-            Assert.AreEqual(2, _2);
-            Assert.IsFalse("q".TryTo(out bool b));
-            Assert.IsFalse(b);
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,TTo)"/>.
+        ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,TTo)" />.
         /// </summary>
         [TestMethod]
         public void ToOrOther()
@@ -264,7 +252,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,Func{TTo})"/>.
+        ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,Func{TTo})" />.
         /// </summary>
         [TestMethod]
         public void ToOrOtherFunc()
@@ -296,6 +284,18 @@ namespace X10D.Performant.Tests.Core
                     }));
 
             Assert.IsFalse(executed);
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="GenericExtensions.TryTo{TFrom,TTo}" />.
+        /// </summary>
+        [TestMethod]
+        public void TryTo()
+        {
+            Assert.IsTrue("2".TryTo(out int _2));
+            Assert.AreEqual(2, _2);
+            Assert.IsFalse("q".TryTo(out bool b));
+            Assert.IsFalse(b);
         }
     }
 }

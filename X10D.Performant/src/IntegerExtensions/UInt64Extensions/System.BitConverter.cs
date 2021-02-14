@@ -4,7 +4,7 @@ namespace X10D.Performant
 {
     public static partial class UInt64Extensions
     {
-        /// <inheritdoc cref="BitConverter.GetBytes(ulong)"/>
+        /// <inheritdoc cref="BitConverter.GetBytes(ulong)" />
         public static byte[] GetBytes(this ulong value) => BitConverter.GetBytes(value);
     }
 }

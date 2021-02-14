@@ -11,7 +11,7 @@ namespace X10D.Performant
         /// <param name="comparisons">All values being checked against.</param>
         /// <typeparam name="T">The type being tested against.</typeparam>
         /// <returns>
-        ///     <see langword="true"/> if value is AND equaled to all of the parameters.
+        ///     <see langword="true" /> if value is AND equaled to all of the parameters.
         ///     EX: a == b and a == c and a == d.
         /// </returns>
         public static bool AndEquals<T>(this T value, params T[] comparisons)

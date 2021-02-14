@@ -4,17 +4,17 @@ using System.Collections.Generic;
 namespace X10D.Performant
 {
     /// <summary>
-    ///     Extension methods for <see cref="Random"/>.
+    ///     Extension methods for <see cref="Random" />.
     /// </summary>
     public static class RandomExtensions
     {
         /// <summary>
-        ///     Gets the <see cref="Random"/> instance to which other extension methods may refer, when one is needed but not provided.
+        ///     Gets the <see cref="Random" /> instance to which other extension methods may refer, when one is needed but not provided.
         /// </summary>
         internal static Random Random { get; } = new();
 
         /// <summary>
-        ///     Returns either <see langword="true"/> or <see langword="false" /> based on <paramref name="random" />'s next generation.
+        ///     Returns either <see langword="true" /> or <see langword="false" /> based on <paramref name="random" />'s next generation.
         /// </summary>
         /// <param name="random">The <see cref="Random" /> instance.</param>
         /// <returns>

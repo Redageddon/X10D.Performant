@@ -4,16 +4,25 @@ using System.Collections.Generic;
 namespace X10D.Performant
 {
     /// <summary>
-    ///     Extension methods for <see cref="IList{T}"/>
+    ///     Extension methods for <see cref="IList{T}" />
     /// </summary>
     public static class ListExtensions
     {
         /// <summary>
-        ///     Fills <paramref name="buffer"/> randomly with values found in <paramref name="values"/>.
+        ///     Returns a random element from <paramref name="values" /> using the <see cref="Random" /> instance.
         /// </summary>
-        /// <param name="values">The <see cref="IList{T}"/> being pulled from.</param>
-        /// <param name="buffer">The <see cref="IList{T}"/> being filled.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
+        /// <param name="values">The <see cref="IList{T}" /> being pulled from.</param>
+        /// <param name="random">The <see cref="Random" /> instance.</param>
+        /// <typeparam name="T">Any type.</typeparam>
+        /// <returns>A random element of type <typeparamref name="T" /> from <paramref name="values" />.</returns>
+        public static T OneOf<T>(this IList<T> values, Random? random = null) => (random ?? RandomExtensions.Random).OneOf(values);
+
+        /// <summary>
+        ///     Fills <paramref name="buffer" /> randomly with values found in <paramref name="values" />.
+        /// </summary>
+        /// <param name="values">The <see cref="IList{T}" /> being pulled from.</param>
+        /// <param name="buffer">The <see cref="IList{T}" /> being filled.</param>
+        /// <param name="random">The <see cref="Random" /> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
         public static void Random<T>(this IList<T> values, IList<T> buffer, Random? random = null)
         {
@@ -26,20 +35,11 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Returns a random element from <paramref name="values"/> using the <see cref="Random"/> instance.
-        /// </summary>
-        /// <param name="values">The <see cref="IList{T}"/> being pulled from.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
-        /// <typeparam name="T">Any type.</typeparam>
-        /// <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
-        public static T OneOf<T>(this IList<T> values, Random? random = null) => (random ?? RandomExtensions.Random).OneOf(values);
-
-        /// <summary>
-        ///     Shuffles <paramref name="values"/>.
+        ///     Shuffles <paramref name="values" />.
         /// </summary>
         /// <typeparam name="T">The collection type.</typeparam>
-        /// <param name="values">The <see cref="IList{T}"/> to shuffle.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
+        /// <param name="values">The <see cref="IList{T}" /> to shuffle.</param>
+        /// <param name="random">The <see cref="Random" /> instance.</param>
         public static void Shuffle<T>(this IList<T> values, Random? random = null)
         {
             random ??= RandomExtensions.Random;

@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="DateTimeExtensions"/>.
+    ///     Tests for <see cref="DateTimeExtensions" />.
     /// </summary>
     [TestClass]
     public class DateTimeTests
     {
         /// <summary>
-        ///     Tests for <see cref="DateTimeExtensions.Age(DateTime,DateTime?)"/>.
+        ///     Tests for <see cref="DateTimeExtensions.Age(DateTime,DateTime?)" />.
         /// </summary>
         [TestMethod]
         public void Age()
@@ -24,7 +24,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DateTimeExtensions.First"/>.
+        ///     Tests for <see cref="DateTimeExtensions.First" />.
         /// </summary>
         [TestMethod]
         public void First()
@@ -35,7 +35,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DateTimeExtensions.FirstDayOfMonth"/>.
+        ///     Tests for <see cref="DateTimeExtensions.FirstDayOfMonth" />.
         /// </summary>
         [TestMethod]
         public void FirstDayOfMonth()
@@ -49,7 +49,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DateTimeExtensions.Last"/>.
+        ///     Tests for <see cref="DateTimeExtensions.Last" />.
         /// </summary>
         [TestMethod]
         public void Last()
@@ -79,18 +79,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DateTimeExtensions.Next"/>.
-        /// </summary>
-        [TestMethod]
-        public void Next()
-        {
-            DateTime current = new(2021, 2, 1);
-            DayOfWeek dayOfWeek = DayOfWeek.Monday;
-            Assert.AreEqual(new DateTime(2021, 2, 8), current.Next(dayOfWeek));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="DateTimeExtensions.LastDayOfMonth"/>.
+        ///     Tests for <see cref="DateTimeExtensions.LastDayOfMonth" />.
         /// </summary>
         [TestMethod]
         public void LastDayOfMonth()
@@ -104,7 +93,18 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DateTimeExtensions.ToUnixTimeStamp"/>.
+        ///     Tests for <see cref="DateTimeExtensions.Next" />.
+        /// </summary>
+        [TestMethod]
+        public void Next()
+        {
+            DateTime current = new(2021, 2, 1);
+            DayOfWeek dayOfWeek = DayOfWeek.Monday;
+            Assert.AreEqual(new DateTime(2021, 2, 8), current.Next(dayOfWeek));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="DateTimeExtensions.ToUnixTimeStamp" />.
         /// </summary>
         [TestMethod]
         public void ToUnixTimestamp()

@@ -5,11 +5,11 @@ using System.Text;
 namespace X10D.Performant
 {
     /// <summary>
-    ///     Extension methods for <see cref="byte"/>.
+    ///     Extension methods for <see cref="byte" />.
     /// </summary>
     public static partial class ByteExtensions
     {
-        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
+        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp" />
         public static DateTime FromUnixTimestamp(this byte timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -19,16 +19,13 @@ namespace X10D.Performant
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="Int64Extensions.IsEven"/>
+        /// <inheritdoc cref="Int64Extensions.IsEven" />
         public static bool IsEven(this byte value) => value % 2 == 0;
 
-        /// <inheritdoc cref="Int64Extensions.IsOdd"/>
+        /// <inheritdoc cref="Int64Extensions.IsOdd" />
         public static bool IsOdd(this byte value) => value % 2 != 0;
 
-        /// <inheritdoc cref="Int64Extensions.ToBoolean"/>
-        public static bool ToBoolean(this byte value) => value != 0;
-
-        /// <inheritdoc cref="Int64Extensions.IsPrime"/>
+        /// <inheritdoc cref="Int64Extensions.IsPrime" />
         public static bool IsPrime(this byte value)
         {
             switch (value)
@@ -51,14 +48,17 @@ namespace X10D.Performant
             }
         }
 
-        /// <inheritdoc cref="Encoding.GetString(byte[])"/>
-        public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetString(bytes);
-
-        /// <inheritdoc cref="UInt64Extensions.Mod"/>
+        /// <inheritdoc cref="UInt64Extensions.Mod" />
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static byte Mod(this byte value, byte modulus) =>
             value < modulus
                 ? value
                 : (byte)(value - (value / modulus * modulus));
+
+        /// <inheritdoc cref="Int64Extensions.ToBoolean" />
+        public static bool ToBoolean(this byte value) => value != 0;
+
+        /// <inheritdoc cref="Encoding.GetString(byte[])" />
+        public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetString(bytes);
     }
 }

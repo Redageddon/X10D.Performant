@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="DoubleExtensions"/>.
+    ///     Tests for <see cref="DoubleExtensions" />.
     /// </summary>
     [TestClass]
     public class DoubleTests
     {
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.DegreesToRadians"/>.
+        ///     Tests for <see cref="DoubleExtensions.DegreesToRadians" />.
         /// </summary>
         [TestMethod]
         public void DegreesToRadians()
@@ -20,13 +20,13 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.GetBytes"/>.
+        ///     Tests for <see cref="DoubleExtensions.GetBytes" />.
         /// </summary>
         [TestMethod]
         public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 0x18, 0x2D, 0x44, 0x54, 0xFB, 0x21, 0x09, 0x40 }, Math.PI.GetBytes());
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.IsEven"/>.
+        ///     Tests for <see cref="DoubleExtensions.IsEven" />.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -36,7 +36,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.IsOdd"/>.
+        ///     Tests for <see cref="DoubleExtensions.IsOdd" />.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -46,7 +46,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.RadiansToDegrees"/>.
+        ///     Tests for <see cref="DoubleExtensions.RadiansToDegrees" />.
         /// </summary>
         [TestMethod]
         public void RadiansToDegrees()

@@ -3,21 +3,21 @@
 namespace X10D.Performant
 {
     /// <summary>
-    ///     Extension methods for <see cref="Span{T}"/>.
+    ///     Extension methods for <see cref="Span{T}" />.
     /// </summary>
     public static partial class SpanExtensions
     {
-        /// <inheritdoc cref="Random{T}(ReadOnlySpan{T},Span{T},Random?)"/>
+        /// <inheritdoc cref="Random{T}(ReadOnlySpan{T},Span{T},Random?)" />
         public static void Random<T>(this Span<T> values, Span<T> buffer, Random? random = null) => Random((ReadOnlySpan<T>)values, buffer, random);
 
         /// <summary>
-        ///     Generates a new random <see cref="Span{T}"/> by filling it with values found in <see param="values"/>.
+        ///     Generates a new random <see cref="Span{T}" /> by filling it with values found in <see param="values" />.
         /// </summary>
         /// <param name="values">The values being pulled.</param>
         /// <param name="count">The amount of items to be returned.</param>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="random">The <see cref="System.Random" /> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
-        /// <returns>A <see cref="Span{T}"/> containing <paramref name="count"/> amount of <typeparamref name="T"/>.</returns>
+        /// <returns>A <see cref="Span{T}" /> containing <paramref name="count" /> amount of <typeparamref name="T" />.</returns>
         public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null)
         {
             random ??= RandomExtensions.Random;
@@ -32,10 +32,10 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Shuffles a <see cref="Span{T}"/>.
+        ///     Shuffles a <see cref="Span{T}" />.
         /// </summary>
-        /// <param name="values">The <see cref="Span{T}"/> to shuffle.</param>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="values">The <see cref="Span{T}" /> to shuffle.</param>
+        /// <param name="random">The <see cref="System.Random" /> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
         public static void Shuffle<T>(this Span<T> values, Random? random = null)
         {

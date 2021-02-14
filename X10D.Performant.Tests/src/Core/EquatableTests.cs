@@ -3,13 +3,13 @@
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="EquatableExtensions"/>.
+    ///     Tests for <see cref="EquatableExtensions" />.
     /// </summary>
     [TestClass]
     public class EquatableTests
     {
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.AndEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="EquatableExtensions.AndEquals{T}(T,T,T)" />.
         /// </summary>
         [TestMethod]
         public void AndEquals()
@@ -25,87 +25,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.NAndEquals{T}(T,T,T)"/>.
-        /// </summary>
-        [TestMethod]
-        public void NAndEquals()
-        {
-            Assert.IsTrue(1.NAndEquals(0, 0, 0));
-            Assert.IsTrue(1.NAndEquals(1, 0, 0));
-            Assert.IsTrue(1.NAndEquals(0, 1, 0));
-            Assert.IsTrue(1.NAndEquals(1, 1, 0));
-            Assert.IsFalse(1.NAndEquals(0, 0, 1));
-            Assert.IsFalse(1.NAndEquals(1, 0, 1));
-            Assert.IsFalse(1.NAndEquals(0, 1, 1));
-            Assert.IsTrue(1.NAndEquals(1, 1, 1));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.NOrEquals{T}(T,T,T)"/>.
-        /// </summary>
-        [TestMethod]
-        public void NOrEquals()
-        {
-            Assert.IsFalse(1.NOrEquals(0, 0, 0));
-            Assert.IsTrue(1.NOrEquals(1, 0, 0));
-            Assert.IsTrue(1.NOrEquals(0, 1, 0));
-            Assert.IsTrue(1.NOrEquals(1, 1, 0));
-            Assert.IsFalse(1.NOrEquals(0, 0, 1));
-            Assert.IsFalse(1.NOrEquals(1, 0, 1));
-            Assert.IsFalse(1.NOrEquals(0, 1, 1));
-            Assert.IsFalse(1.NOrEquals(1, 1, 1));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.OrEquals{T}(T,T,T)"/>.
-        /// </summary>
-        [TestMethod]
-        public void OrEquals()
-        {
-            Assert.IsFalse(1.OrEquals(0, 0, 0));
-            Assert.IsTrue(1.OrEquals(1, 0, 0));
-            Assert.IsTrue(1.OrEquals(0, 1, 0));
-            Assert.IsTrue(1.OrEquals(1, 1, 0));
-            Assert.IsTrue(1.OrEquals(0, 0, 1));
-            Assert.IsTrue(1.OrEquals(1, 0, 1));
-            Assert.IsTrue(1.OrEquals(0, 1, 1));
-            Assert.IsTrue(1.OrEquals(1, 1, 1));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.XNOrEquals{T}(T,T,T)"/>.
-        /// </summary>
-        [TestMethod]
-        public void XnOrEquals()
-        {
-            Assert.IsFalse(1.XNOrEquals(0, 0, 0));
-            Assert.IsTrue(1.XNOrEquals(1, 0, 0));
-            Assert.IsTrue(1.XNOrEquals(0, 1, 0));
-            Assert.IsFalse(1.XNOrEquals(1, 1, 0));
-            Assert.IsTrue(1.XNOrEquals(0, 0, 1));
-            Assert.IsFalse(1.XNOrEquals(1, 0, 1));
-            Assert.IsFalse(1.XNOrEquals(0, 1, 1));
-            Assert.IsTrue(1.XNOrEquals(1, 1, 1));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.XOrEquals{T}(T,T,T)"/>.
-        /// </summary>
-        [TestMethod]
-        public void XOrEquals()
-        {
-            Assert.IsFalse(1.XOrEquals(0, 0, 0));
-            Assert.IsTrue(1.XOrEquals(1, 0, 0));
-            Assert.IsTrue(1.XOrEquals(0, 1, 0));
-            Assert.IsFalse(1.XOrEquals(1, 1, 0));
-            Assert.IsTrue(1.XOrEquals(0, 0, 1));
-            Assert.IsFalse(1.XOrEquals(1, 0, 1));
-            Assert.IsFalse(1.XOrEquals(0, 1, 1));
-            Assert.IsTrue(1.XOrEquals(1, 1, 1));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.AndEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="EquatableExtensions.AndEquals{T}(T,T,T)" />.
         /// </summary>
         [TestMethod]
         public void AndEqualsComparison()
@@ -121,7 +41,23 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.NAndEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="EquatableExtensions.NAndEquals{T}(T,T,T)" />.
+        /// </summary>
+        [TestMethod]
+        public void NAndEquals()
+        {
+            Assert.IsTrue(1.NAndEquals(0, 0, 0));
+            Assert.IsTrue(1.NAndEquals(1, 0, 0));
+            Assert.IsTrue(1.NAndEquals(0, 1, 0));
+            Assert.IsTrue(1.NAndEquals(1, 1, 0));
+            Assert.IsFalse(1.NAndEquals(0, 0, 1));
+            Assert.IsFalse(1.NAndEquals(1, 0, 1));
+            Assert.IsFalse(1.NAndEquals(0, 1, 1));
+            Assert.IsTrue(1.NAndEquals(1, 1, 1));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="EquatableExtensions.NAndEquals{T}(T,T,T)" />.
         /// </summary>
         [TestMethod]
         public void NAndEqualsComparison()
@@ -137,7 +73,23 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.NOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="EquatableExtensions.NOrEquals{T}(T,T,T)" />.
+        /// </summary>
+        [TestMethod]
+        public void NOrEquals()
+        {
+            Assert.IsFalse(1.NOrEquals(0, 0, 0));
+            Assert.IsTrue(1.NOrEquals(1, 0, 0));
+            Assert.IsTrue(1.NOrEquals(0, 1, 0));
+            Assert.IsTrue(1.NOrEquals(1, 1, 0));
+            Assert.IsFalse(1.NOrEquals(0, 0, 1));
+            Assert.IsFalse(1.NOrEquals(1, 0, 1));
+            Assert.IsFalse(1.NOrEquals(0, 1, 1));
+            Assert.IsFalse(1.NOrEquals(1, 1, 1));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="EquatableExtensions.NOrEquals{T}(T,T,T)" />.
         /// </summary>
         [TestMethod]
         public void NOrEqualsComparison()
@@ -153,7 +105,23 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.OrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="EquatableExtensions.OrEquals{T}(T,T,T)" />.
+        /// </summary>
+        [TestMethod]
+        public void OrEquals()
+        {
+            Assert.IsFalse(1.OrEquals(0, 0, 0));
+            Assert.IsTrue(1.OrEquals(1, 0, 0));
+            Assert.IsTrue(1.OrEquals(0, 1, 0));
+            Assert.IsTrue(1.OrEquals(1, 1, 0));
+            Assert.IsTrue(1.OrEquals(0, 0, 1));
+            Assert.IsTrue(1.OrEquals(1, 0, 1));
+            Assert.IsTrue(1.OrEquals(0, 1, 1));
+            Assert.IsTrue(1.OrEquals(1, 1, 1));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="EquatableExtensions.OrEquals{T}(T,T,T)" />.
         /// </summary>
         [TestMethod]
         public void OrEqualsComparison()
@@ -169,7 +137,23 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.XNOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="EquatableExtensions.XNOrEquals{T}(T,T,T)" />.
+        /// </summary>
+        [TestMethod]
+        public void XnOrEquals()
+        {
+            Assert.IsFalse(1.XNOrEquals(0, 0, 0));
+            Assert.IsTrue(1.XNOrEquals(1, 0, 0));
+            Assert.IsTrue(1.XNOrEquals(0, 1, 0));
+            Assert.IsFalse(1.XNOrEquals(1, 1, 0));
+            Assert.IsTrue(1.XNOrEquals(0, 0, 1));
+            Assert.IsFalse(1.XNOrEquals(1, 0, 1));
+            Assert.IsFalse(1.XNOrEquals(0, 1, 1));
+            Assert.IsTrue(1.XNOrEquals(1, 1, 1));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="EquatableExtensions.XNOrEquals{T}(T,T,T)" />.
         /// </summary>
         [TestMethod]
         public void XnOrEqualsComparison()
@@ -185,7 +169,23 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.XOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="EquatableExtensions.XOrEquals{T}(T,T,T)" />.
+        /// </summary>
+        [TestMethod]
+        public void XOrEquals()
+        {
+            Assert.IsFalse(1.XOrEquals(0, 0, 0));
+            Assert.IsTrue(1.XOrEquals(1, 0, 0));
+            Assert.IsTrue(1.XOrEquals(0, 1, 0));
+            Assert.IsFalse(1.XOrEquals(1, 1, 0));
+            Assert.IsTrue(1.XOrEquals(0, 0, 1));
+            Assert.IsFalse(1.XOrEquals(1, 0, 1));
+            Assert.IsFalse(1.XOrEquals(0, 1, 1));
+            Assert.IsTrue(1.XOrEquals(1, 1, 1));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="EquatableExtensions.XOrEquals{T}(T,T,T)" />.
         /// </summary>
         [TestMethod]
         public void XOrEqualsComparison()

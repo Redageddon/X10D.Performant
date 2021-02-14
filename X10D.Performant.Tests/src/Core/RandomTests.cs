@@ -5,13 +5,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="RandomExtensions"/>.
+    ///     Tests for <see cref="RandomExtensions" />.
     /// </summary>
     [TestClass]
     public class RandomTests
     {
         /// <summary>
-        ///     Tests for <see cref="RandomExtensions.NextBool"/>.
+        ///     Tests for <see cref="RandomExtensions.NextBool" />.
         /// </summary>
         [TestMethod]
         public void CoinToss()
@@ -40,7 +40,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,T[])"/>
+        ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,T[])" />
         /// </summary>
         [TestMethod]
         public void OneOf()
@@ -71,7 +71,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,IList{T})"/>
+        ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,IList{T})" />
         /// </summary>
         [TestMethod]
         public void OneOf2()

@@ -3,13 +3,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions"/>.
+    ///     Tests for <see cref="BooleanExtensions" />.
     /// </summary>
     [TestClass]
     public class BooleanTests
     {
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToByte"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToByte" />.
         /// </summary>
         [TestMethod]
         public void ToByte()
@@ -24,7 +24,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToInt16"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToInt16" />.
         /// </summary>
         [TestMethod]
         public void ToInt16()
@@ -39,7 +39,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToInt32"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToInt32" />.
         /// </summary>
         [TestMethod]
         public void ToInt32()
@@ -54,7 +54,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToInt64"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToInt64" />.
         /// </summary>
         [TestMethod]
         public void ToInt64()
@@ -69,7 +69,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToSByte"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToSByte" />.
         /// </summary>
         [TestMethod]
         public void ToSByte()
@@ -84,7 +84,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToUInt16"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToUInt16" />.
         /// </summary>
         [TestMethod]
         public void ToUInt16()
@@ -99,7 +99,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToUInt32"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToUInt32" />.
         /// </summary>
         [TestMethod]
         public void ToUInt32()
@@ -114,7 +114,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToUInt64"/>.
+        ///     Tests for <see cref="BooleanExtensions.ToUInt64" />.
         /// </summary>
         [TestMethod]
         public void ToUInt64()

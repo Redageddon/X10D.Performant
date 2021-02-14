@@ -18,10 +18,10 @@ namespace X10D.Performant
         private static readonly ulong[] Lt1373653 = Lt18446744073709551616[..2];
 
         /// <summary>
-        ///     Determines if the <paramref name="value"/> is a prime value.
+        ///     Determines if the <paramref name="value" /> is a prime value.
         /// </summary>
         /// <param name="value">An integer value.</param>
-        /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
+        /// <returns><see langword="true" /> if <paramref name="value" /> is prime, <see langword="false" /> otherwise.</returns>
         public static bool IsPrime(this ulong value)
         {
             switch (value)
@@ -47,20 +47,6 @@ namespace X10D.Performant
                 : IsPrimeMiller(value);
         }
 
-        private static bool IsPrimeSieve(ulong value)
-        {
-            for (ulong i = 5; i * i <= value; i += 6)
-            {
-                if (Mod(value, i) == 0 ||
-                    Mod(value, i + 2) == 0)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
         // Miller test is probabilistic, but provided enough of the right parameters it can become deterministic
         private static bool IsPrimeMiller(ulong value) =>
             value switch
@@ -77,6 +63,20 @@ namespace X10D.Performant
                 < 3_825_123_056_546_413_051 => MillerTest(value, Lt3825123056546413051),
                 _                           => MillerTest(value, Lt18446744073709551616),
             };
+
+        private static bool IsPrimeSieve(ulong value)
+        {
+            for (ulong i = 5; i * i <= value; i += 6)
+            {
+                if (Mod(value, i) == 0 ||
+                    Mod(value, i + 2) == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
 
         // TODO: remove big int dependencies
         private static bool MillerTest(ulong value, ulong[] witnesses)

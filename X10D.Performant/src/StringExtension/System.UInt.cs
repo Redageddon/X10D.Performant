@@ -5,11 +5,11 @@ namespace X10D.Performant
 {
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="uint.Parse(string,NumberStyles,IFormatProvider)"/>
+        /// <inheritdoc cref="uint.Parse(string,NumberStyles,IFormatProvider)" />
         public static uint ToUInt32(this string value, NumberStyles style = NumberStyles.Number, IFormatProvider? formatProvider = null) =>
             uint.Parse(value, style, formatProvider ?? NumberFormatInfo.CurrentInfo);
 
-        /// <inheritdoc cref="uint.TryParse(string,NumberStyles,IFormatProvider,out uint)"/>
+        /// <inheritdoc cref="uint.TryParse(string,NumberStyles,IFormatProvider,out uint)" />
         public static bool TryToUInt32(
             this string value,
             out uint result,

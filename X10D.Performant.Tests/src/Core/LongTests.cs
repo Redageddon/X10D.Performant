@@ -128,8 +128,6 @@ namespace X10D.Performant.Tests.Core
                 100_109_100_129_100_151, 1_000_000_000_000_000_003, 10_089_886_811_898_868_001,
             };
 
-            10_089_886_811_898_868_001UL.IsPrime();
-
             for (long i = 0; i < primes.Length; i++)
             {
                 Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);

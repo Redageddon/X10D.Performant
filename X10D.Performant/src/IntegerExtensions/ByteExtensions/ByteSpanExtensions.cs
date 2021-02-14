@@ -22,7 +22,7 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="BitConverter.ToInt64(ReadOnlySpan{byte})"/>
         public static long ToInt64(this Span<byte> bytes) => BitConverter.ToInt64(bytes);
-        
+
         /// <inheritdoc cref="BitConverter.ToInt16(ReadOnlySpan{byte})"/>
         public static ushort ToUInt16(this ReadOnlySpan<byte> bytes) => BitConverter.ToUInt16(bytes);
 
@@ -46,7 +46,6 @@ namespace X10D.Performant
             (encoding ?? Encoding.UTF8).GetString(bytes);
 
         /// <inheritdoc cref="Encoding.GetString(ReadOnlySpan{byte})"/>
-        public static string ToEncodedString(this Span<byte> bytes, Encoding? encoding = null) =>
-            (encoding ?? Encoding.UTF8).GetString(bytes);
+        public static string ToEncodedString(this Span<byte> bytes, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetString(bytes);
     }
 }

@@ -66,8 +66,8 @@ namespace X10D.Performant.Tests.Core
 
             Assert.AreEqual(c, a.ToInt64());
             Assert.AreEqual(d, b.ToInt64());
-        }        
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToSByte"/>.
         /// </summary>

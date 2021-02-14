@@ -39,7 +39,7 @@ namespace X10D.Performant.Tests.Core
             Assert.IsFalse(1.NAndEquals(0, 1, 1));
             Assert.IsTrue(1.NAndEquals(1, 1, 1));
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="EquatableExtensions.NOrEquals{T}(T,T,T)"/>.
         /// </summary>
@@ -71,7 +71,7 @@ namespace X10D.Performant.Tests.Core
             Assert.IsTrue(1.OrEquals(0, 1, 1));
             Assert.IsTrue(1.OrEquals(1, 1, 1));
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="EquatableExtensions.XNOrEquals{T}(T,T,T)"/>.
         /// </summary>
@@ -103,21 +103,21 @@ namespace X10D.Performant.Tests.Core
             Assert.IsFalse(1.XOrEquals(0, 1, 1));
             Assert.IsTrue(1.XOrEquals(1, 1, 1));
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="EquatableExtensions.AndEquals{T}(T,T,T)"/>.
         /// </summary>
         [TestMethod]
         public void AndEqualsComparison()
         {
-            Assert.IsFalse(1.AndEquals(new[]{0, 0, 0}));
-            Assert.IsFalse(1.AndEquals(new[]{1, 0, 0}));
-            Assert.IsFalse(1.AndEquals(new[]{0, 1, 0}));
-            Assert.IsFalse(1.AndEquals(new[]{1, 1, 0}));
-            Assert.IsFalse(1.AndEquals(new[]{0, 0, 1}));
-            Assert.IsFalse(1.AndEquals(new[]{1, 0, 1}));
-            Assert.IsFalse(1.AndEquals(new[]{0, 1, 1}));
-            Assert.IsTrue(1.AndEquals(new[]{1, 1, 1}));
+            Assert.IsFalse(1.AndEquals(new[] { 0, 0, 0 }));
+            Assert.IsFalse(1.AndEquals(new[] { 1, 0, 0 }));
+            Assert.IsFalse(1.AndEquals(new[] { 0, 1, 0 }));
+            Assert.IsFalse(1.AndEquals(new[] { 1, 1, 0 }));
+            Assert.IsFalse(1.AndEquals(new[] { 0, 0, 1 }));
+            Assert.IsFalse(1.AndEquals(new[] { 1, 0, 1 }));
+            Assert.IsFalse(1.AndEquals(new[] { 0, 1, 1 }));
+            Assert.IsTrue(1.AndEquals(new[] { 1, 1, 1 }));
         }
 
         /// <summary>
@@ -126,30 +126,30 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void NAndEqualsComparison()
         {
-            Assert.IsTrue(1.NAndEquals(new[]{0, 0, 0}));
-            Assert.IsTrue(1.NAndEquals(new[]{1, 0, 0}));
-            Assert.IsTrue(1.NAndEquals(new[]{0, 1, 0}));
-            Assert.IsTrue(1.NAndEquals(new[]{1, 1, 0}));
-            Assert.IsFalse(1.NAndEquals(new[]{0, 0, 1}));
-            Assert.IsFalse(1.NAndEquals(new[]{1, 0, 1}));
-            Assert.IsFalse(1.NAndEquals(new[]{0, 1, 1}));
-            Assert.IsTrue(1.NAndEquals(new[]{1, 1, 1}));
+            Assert.IsTrue(1.NAndEquals(new[] { 0, 0, 0 }));
+            Assert.IsTrue(1.NAndEquals(new[] { 1, 0, 0 }));
+            Assert.IsTrue(1.NAndEquals(new[] { 0, 1, 0 }));
+            Assert.IsTrue(1.NAndEquals(new[] { 1, 1, 0 }));
+            Assert.IsFalse(1.NAndEquals(new[] { 0, 0, 1 }));
+            Assert.IsFalse(1.NAndEquals(new[] { 1, 0, 1 }));
+            Assert.IsFalse(1.NAndEquals(new[] { 0, 1, 1 }));
+            Assert.IsTrue(1.NAndEquals(new[] { 1, 1, 1 }));
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="EquatableExtensions.NOrEquals{T}(T,T,T)"/>.
         /// </summary>
         [TestMethod]
         public void NOrEqualsComparison()
         {
-            Assert.IsFalse(1.NOrEquals(new[]{0, 0, 0}));
-            Assert.IsTrue(1.NOrEquals(new[]{1, 0, 0}));
-            Assert.IsTrue(1.NOrEquals(new[]{0, 1, 0}));
-            Assert.IsTrue(1.NOrEquals(new[]{1, 1, 0}));
-            Assert.IsFalse(1.NOrEquals(new[]{0, 0, 1}));
-            Assert.IsFalse(1.NOrEquals(new[]{1, 0, 1}));
-            Assert.IsFalse(1.NOrEquals(new[]{0, 1, 1}));
-            Assert.IsFalse(1.NOrEquals(new[]{1, 1, 1}));
+            Assert.IsFalse(1.NOrEquals(new[] { 0, 0, 0 }));
+            Assert.IsTrue(1.NOrEquals(new[] { 1, 0, 0 }));
+            Assert.IsTrue(1.NOrEquals(new[] { 0, 1, 0 }));
+            Assert.IsTrue(1.NOrEquals(new[] { 1, 1, 0 }));
+            Assert.IsFalse(1.NOrEquals(new[] { 0, 0, 1 }));
+            Assert.IsFalse(1.NOrEquals(new[] { 1, 0, 1 }));
+            Assert.IsFalse(1.NOrEquals(new[] { 0, 1, 1 }));
+            Assert.IsFalse(1.NOrEquals(new[] { 1, 1, 1 }));
         }
 
         /// <summary>
@@ -158,30 +158,30 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void OrEqualsComparison()
         {
-            Assert.IsFalse(1.OrEquals(new[]{0, 0, 0}));
-            Assert.IsTrue(1.OrEquals(new[]{1, 0, 0}));
-            Assert.IsTrue(1.OrEquals(new[]{0, 1, 0}));
-            Assert.IsTrue(1.OrEquals(new[]{1, 1, 0}));
-            Assert.IsTrue(1.OrEquals(new[]{0, 0, 1}));
-            Assert.IsTrue(1.OrEquals(new[]{1, 0, 1}));
-            Assert.IsTrue(1.OrEquals(new[]{0, 1, 1}));
-            Assert.IsTrue(1.OrEquals(new[]{1, 1, 1}));
+            Assert.IsFalse(1.OrEquals(new[] { 0, 0, 0 }));
+            Assert.IsTrue(1.OrEquals(new[] { 1, 0, 0 }));
+            Assert.IsTrue(1.OrEquals(new[] { 0, 1, 0 }));
+            Assert.IsTrue(1.OrEquals(new[] { 1, 1, 0 }));
+            Assert.IsTrue(1.OrEquals(new[] { 0, 0, 1 }));
+            Assert.IsTrue(1.OrEquals(new[] { 1, 0, 1 }));
+            Assert.IsTrue(1.OrEquals(new[] { 0, 1, 1 }));
+            Assert.IsTrue(1.OrEquals(new[] { 1, 1, 1 }));
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="EquatableExtensions.XNOrEquals{T}(T,T,T)"/>.
         /// </summary>
         [TestMethod]
         public void XnOrEqualsComparison()
         {
-            Assert.IsFalse(1.XNOrEquals(new[]{0, 0, 0}));
-            Assert.IsTrue(1.XNOrEquals(new[]{1, 0, 0}));
-            Assert.IsTrue(1.XNOrEquals(new[]{0, 1, 0}));
-            Assert.IsFalse(1.XNOrEquals(new[]{1, 1, 0}));
-            Assert.IsTrue(1.XNOrEquals(new[]{0, 0, 1}));
-            Assert.IsFalse(1.XNOrEquals(new[]{1, 0, 1}));
-            Assert.IsFalse(1.XNOrEquals(new[]{0, 1, 1}));
-            Assert.IsTrue(1.XNOrEquals(new[]{1, 1, 1}));
+            Assert.IsFalse(1.XNOrEquals(new[] { 0, 0, 0 }));
+            Assert.IsTrue(1.XNOrEquals(new[] { 1, 0, 0 }));
+            Assert.IsTrue(1.XNOrEquals(new[] { 0, 1, 0 }));
+            Assert.IsFalse(1.XNOrEquals(new[] { 1, 1, 0 }));
+            Assert.IsTrue(1.XNOrEquals(new[] { 0, 0, 1 }));
+            Assert.IsFalse(1.XNOrEquals(new[] { 1, 0, 1 }));
+            Assert.IsFalse(1.XNOrEquals(new[] { 0, 1, 1 }));
+            Assert.IsTrue(1.XNOrEquals(new[] { 1, 1, 1 }));
         }
 
         /// <summary>
@@ -190,14 +190,14 @@ namespace X10D.Performant.Tests.Core
         [TestMethod]
         public void XOrEqualsComparison()
         {
-            Assert.IsFalse(1.XOrEquals(new[]{0, 0, 0}));
-            Assert.IsTrue(1.XOrEquals(new[]{1, 0, 0}));
-            Assert.IsTrue(1.XOrEquals(new[]{0, 1, 0}));
-            Assert.IsFalse(1.XOrEquals(new[]{1, 1, 0}));
-            Assert.IsTrue(1.XOrEquals(new[]{0, 0, 1}));
-            Assert.IsFalse(1.XOrEquals(new[]{1, 0, 1}));
-            Assert.IsFalse(1.XOrEquals(new[]{0, 1, 1}));
-            Assert.IsTrue(1.XOrEquals(new[]{1, 1, 1}));
+            Assert.IsFalse(1.XOrEquals(new[] { 0, 0, 0 }));
+            Assert.IsTrue(1.XOrEquals(new[] { 1, 0, 0 }));
+            Assert.IsTrue(1.XOrEquals(new[] { 0, 1, 0 }));
+            Assert.IsFalse(1.XOrEquals(new[] { 1, 1, 0 }));
+            Assert.IsTrue(1.XOrEquals(new[] { 0, 0, 1 }));
+            Assert.IsFalse(1.XOrEquals(new[] { 1, 0, 1 }));
+            Assert.IsFalse(1.XOrEquals(new[] { 0, 1, 1 }));
+            Assert.IsTrue(1.XOrEquals(new[] { 1, 1, 1 }));
         }
     }
 }

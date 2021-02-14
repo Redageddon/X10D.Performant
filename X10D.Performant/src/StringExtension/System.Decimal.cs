@@ -14,7 +14,7 @@ namespace X10D.Performant
             this string value,
             out decimal result,
             NumberStyles style = NumberStyles.Number,
-            IFormatProvider? provider = null) =>
-            decimal.TryParse(value, style, provider ?? NumberFormatInfo.CurrentInfo, out result);
+            IFormatProvider? formatProvider = null) =>
+            decimal.TryParse(value, style, formatProvider ?? NumberFormatInfo.CurrentInfo, out result);
     }
 }

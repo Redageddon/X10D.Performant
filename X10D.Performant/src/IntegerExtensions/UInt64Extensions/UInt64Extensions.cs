@@ -45,7 +45,7 @@ namespace X10D.Performant
         /// <param name="value">An unsigned integer value.</param>
         /// <returns><see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.</returns>
         public static bool ToBoolean(this ulong value) => value != 0;
-        
+
         /// <summary>
         ///     Returns the remainder of <paramref name="value"/> / <paramref name="modulus"/>.
         /// </summary>

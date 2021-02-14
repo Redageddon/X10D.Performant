@@ -10,9 +10,9 @@ namespace X10D.Performant
         ///     <see cref="TimeSpan"/>.
         /// </summary>
         /// <param name="input">The input <see cref="string"/>.</param>
-        /// <param name="provider">The format provider.</param>
+        /// <param name="formatProvider">The format provider.</param>
         /// <returns>An instance of <see cref="TimeSpan"/>.</returns>
-        public static TimeSpan ShortHandParse(string input, IFormatProvider? provider = null)
+        public static TimeSpan ShortHandParse(string input, IFormatProvider? formatProvider = null)
         {
             const string realNumberPattern = @"([0-9]*\.[0-9]+|[0-9]+)";
 
@@ -24,32 +24,32 @@ namespace X10D.Performant
 
             if (match.Groups[1].Success)
             {
-                weeks = double.Parse(match.Groups[1].Value, provider);
+                weeks = double.Parse(match.Groups[1].Value, formatProvider);
             }
 
             if (match.Groups[2].Success)
             {
-                days = double.Parse(match.Groups[2].Value, provider);
+                days = double.Parse(match.Groups[2].Value, formatProvider);
             }
 
             if (match.Groups[3].Success)
             {
-                hours = double.Parse(match.Groups[3].Value, provider);
+                hours = double.Parse(match.Groups[3].Value, formatProvider);
             }
 
             if (match.Groups[4].Success)
             {
-                minutes = double.Parse(match.Groups[4].Value, provider);
+                minutes = double.Parse(match.Groups[4].Value, formatProvider);
             }
 
             if (match.Groups[5].Success)
             {
-                seconds = double.Parse(match.Groups[5].Value, provider);
+                seconds = double.Parse(match.Groups[5].Value, formatProvider);
             }
 
             if (match.Groups[6].Success)
             {
-                milliseconds = double.Parse(match.Groups[6].Value, provider);
+                milliseconds = double.Parse(match.Groups[6].Value, formatProvider);
             }
 
             TimeSpan span = TimeSpan.Zero;

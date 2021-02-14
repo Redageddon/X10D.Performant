@@ -88,7 +88,7 @@ namespace X10D.Performant
             {
                 offsetDays += 7;
             }
-            
+
             return current.AddDays(offsetDays);
         }
 

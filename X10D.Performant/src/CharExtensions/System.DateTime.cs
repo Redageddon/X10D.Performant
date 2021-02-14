@@ -6,26 +6,49 @@ namespace X10D.Performant
     public static partial class CharExtensions
     {
         /// <inheritdoc cref="DateTime.Parse(ReadOnlySpan{char},IFormatProvider,DateTimeStyles)"/>
-        public static DateTime Parse(
-            this ReadOnlySpan<char> value, 
+        public static DateTime ToDateTime(
+            this ReadOnlySpan<char> chars,
             IFormatProvider? formatProvider,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.Parse(value, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
+            DateTime.Parse(chars, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
+
+        /// <inheritdoc cref="DateTime.Parse(ReadOnlySpan{char},IFormatProvider,DateTimeStyles)"/>
+        public static DateTime ToDateTime(
+            this Span<char> chars,
+            IFormatProvider? formatProvider,
+            DateTimeStyles style = DateTimeStyles.None) =>
+            DateTime.Parse(chars, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
 
         /// <inheritdoc cref="DateTime.ParseExact(ReadOnlySpan{char},ReadOnlySpan{char},IFormatProvider,DateTimeStyles)"/>
-        public static DateTime ParseExact(
-            this ReadOnlySpan<char> value,
+        public static DateTime ToDateTimeExact(
+            this ReadOnlySpan<char> chars,
             ReadOnlySpan<char> format,
-            IFormatProvider? provider,
+            IFormatProvider? formatProvider,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.ParseExact(value, format, provider ?? NumberFormatInfo.CurrentInfo, style);
+            DateTime.ParseExact(chars, format, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
+
+        /// <inheritdoc cref="DateTime.ParseExact(ReadOnlySpan{char},ReadOnlySpan{char},IFormatProvider,DateTimeStyles)"/>
+        public static DateTime ToDateTimeExact(
+            this Span<char> chars,
+            ReadOnlySpan<char> format,
+            IFormatProvider? formatProvider,
+            DateTimeStyles style = DateTimeStyles.None) =>
+            DateTime.ParseExact(chars, format, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
 
         /// <inheritdoc cref="DateTime.ParseExact(ReadOnlySpan{char},string[],IFormatProvider,DateTimeStyles)"/>
-        public static DateTime ParseExact(
-            this ReadOnlySpan<char> value,
+        public static DateTime ToDateTimeExact(
+            this ReadOnlySpan<char> chars,
             string[] formats,
-            IFormatProvider? provider,
+            IFormatProvider? formatProvider,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.ParseExact(value, formats, provider ?? NumberFormatInfo.CurrentInfo, style);
+            DateTime.ParseExact(chars, formats, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
+
+        /// <inheritdoc cref="DateTime.ParseExact(ReadOnlySpan{char},string[],IFormatProvider,DateTimeStyles)"/>
+        public static DateTime ToDateTimeExact(
+            this Span<char> chars,
+            string[] formats,
+            IFormatProvider? formatProvider,
+            DateTimeStyles style = DateTimeStyles.None) =>
+            DateTime.ParseExact(chars, formats, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
     }
 }

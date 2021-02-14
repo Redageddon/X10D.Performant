@@ -12,9 +12,6 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="CharExtensions.Repeat"/>.
         /// </summary>
         [TestMethod]
-        public void Repeat()
-        {
-            Assert.AreEqual("aaaaaaaaaa", 'a'.Repeat(10));
-        }
+        public void Repeat() => Assert.AreEqual("aaaaaaaaaa", 'a'.Repeat(10));
     }
 }

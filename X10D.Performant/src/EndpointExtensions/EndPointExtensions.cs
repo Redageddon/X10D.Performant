@@ -17,7 +17,7 @@ namespace X10D.Performant
             {
                 IPEndPoint ip   => ip.Address.ToString(),
                 DnsEndPoint dns => dns.Host,
-                _           => string.Empty,
+                _               => string.Empty,
             };
 
         /// <summary>

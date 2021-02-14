@@ -11,14 +11,19 @@ namespace X10D.Performant.Tests.Core
     public class DictionaryTests
     {
         /// <summary>
-        ///     Tests for <see cref="KeyValuePairExtensions.ToConnectionString{T1,T2}(IEnumerable{KeyValuePair{T1,T2}})"/>.
+        ///     Tests for
+        ///     <see
+        ///         cref="KeyValuePairExtensions.ToConnectionString{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
+        ///     .
         /// </summary>
         [TestMethod]
         public void ToConnectionString()
         {
             Dictionary<string, object> dictionary = new()
             {
-                { "username", "Foo" }, { "password", "Foo Bar" }, { "port", 3306 },
+                { "username", "Foo" },
+                { "password", "Foo Bar" },
+                { "port", 3306 },
             };
 
             string connectionString = dictionary.ToConnectionString();
@@ -33,7 +38,9 @@ namespace X10D.Performant.Tests.Core
         {
             Dictionary<string, object> dictionary = new()
             {
-                { "username", "Foo" }, { "password", "Foo Bar" }, { "port", 3306 },
+                { "username", "Foo" },
+                { "password", "Foo Bar" },
+                { "port", 3306 },
             };
 
             string getParameterString = dictionary.ToGetParameters();
@@ -48,7 +55,9 @@ namespace X10D.Performant.Tests.Core
         {
             Dictionary<string, IEnumerable> dictionary = new()
             {
-                { "username", "Foo" }, { "password", "Foo Bar" }, { "port", new[] { 3, 3, 0, 6 } },
+                { "username", "Foo" },
+                { "password", "Foo Bar" },
+                { "port", new[] { 3, 3, 0, 6 } },
             };
 
             string getParameterString = dictionary.ToGetParameters(",", "-", ".");

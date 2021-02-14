@@ -9,13 +9,13 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="Math.Sign(decimal)"/>
         public static int Sign(this decimal value) => Math.Sign(value);
-        
+
         /// <inheritdoc cref="Math.Min(decimal,decimal)"/>
         public static decimal Min(this decimal value, decimal value2) => Math.Min(value, value2);
-        
+
         /// <inheritdoc cref="Math.Max(decimal,decimal)"/>
         public static decimal Max(this decimal value, decimal value2) => Math.Max(value, value2);
-        
+
         /// <inheritdoc cref="Math.Clamp(decimal,decimal,decimal)"/>
         public static decimal Clamp(this decimal value, decimal min, decimal max) => Math.Clamp(value, min, max);
     }

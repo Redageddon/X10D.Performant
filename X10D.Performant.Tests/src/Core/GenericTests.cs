@@ -194,7 +194,7 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(1, k.To<float, double>());
             Assert.AreEqual("1", k.To<float, string>());
             Assert.AreEqual(1, k.To<float, decimal>());
-            
+
             Assert.AreEqual(true, l.To<double, bool>());
             Assert.AreEqual(1, l.To<double, char>());
             Assert.AreEqual(1, l.To<double, sbyte>());
@@ -209,7 +209,7 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(1, l.To<double, double>());
             Assert.AreEqual("1", l.To<double, string>());
             Assert.AreEqual(1, l.To<double, decimal>());
-            
+
             Assert.AreEqual(true, m.To<string, bool>());
             Assert.AreEqual('1', m.To<string, char>());
             Assert.AreEqual(1, m.To<string, sbyte>());
@@ -224,7 +224,7 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(1, m.To<string, double>());
             Assert.AreEqual("1", m.To<string, string>());
             Assert.AreEqual(1, m.To<string, decimal>());
-            
+
             Assert.AreEqual(true, n.To<decimal, bool>());
             Assert.AreEqual(1, n.To<decimal, char>());
             Assert.AreEqual(1, n.To<decimal, sbyte>());
@@ -261,8 +261,8 @@ namespace X10D.Performant.Tests.Core
         {
             Assert.AreEqual(2.0, "Foo".ToOrOther(2.0));
             Assert.AreEqual(2.0, "2".ToOrOther(3));
-        }      
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,Func{TTo})"/>.
         /// </summary>
@@ -270,20 +270,31 @@ namespace X10D.Performant.Tests.Core
         public void ToOrOtherFunc()
         {
             bool executed = false;
-            Assert.AreEqual(2.0, "Foo".ToOrOther(() =>
-            {
-                executed = true;
-                return 2.0;
-            }));
+
+            Assert.AreEqual(
+                2.0,
+                "Foo".ToOrOther(
+                    () =>
+                    {
+                        executed = true;
+
+                        return 2.0;
+                    }));
+
             Assert.IsTrue(executed);
 
-            
             executed = false;
-            Assert.AreEqual(2, "2".ToOrOther(() =>
-            {
-                executed = true;
-                return 3;
-            }));
+
+            Assert.AreEqual(
+                2,
+                "2".ToOrOther(
+                    () =>
+                    {
+                        executed = true;
+
+                        return 3;
+                    }));
+
             Assert.IsFalse(executed);
         }
     }

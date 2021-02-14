@@ -125,7 +125,7 @@ namespace X10D.Performant
             where T : IEquatable<T> =>
             !(value.NAndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) && value.Equals(arg14));
 
-        /// <inheritdoc cref="NAndEquals{T}(T,T[])"/>
+        /// <inheritdoc cref="NAndEquals{T}(T,T[])" />
         public static bool NAndEquals<T>(
             this T value,
             T arg1,

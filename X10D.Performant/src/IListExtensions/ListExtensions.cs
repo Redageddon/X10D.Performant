@@ -32,10 +32,7 @@ namespace X10D.Performant
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
         /// <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
-        public static T OneOf<T>(this IList<T> values, Random? random = null)
-        {
-            return (random ?? RandomExtensions.Random).OneOf(values);
-        }
+        public static T OneOf<T>(this IList<T> values, Random? random = null) => (random ?? RandomExtensions.Random).OneOf(values);
 
         /// <summary>
         ///     Shuffles <paramref name="values"/>.

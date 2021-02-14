@@ -27,7 +27,7 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="Int64Extensions.ToBoolean"/>
         public static bool ToBoolean(this byte value) => value != 0;
-        
+
         /// <inheritdoc cref="Int64Extensions.IsPrime"/>
         public static bool IsPrime(this byte value)
         {
@@ -50,10 +50,10 @@ namespace X10D.Performant
                            Mod(value, 13) != 0;
             }
         }
-        
+
         /// <inheritdoc cref="Encoding.GetString(byte[])"/>
         public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetString(bytes);
-        
+
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static byte Mod(this byte value, byte modulus) =>

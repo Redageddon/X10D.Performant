@@ -8,9 +8,7 @@ namespace X10D.Performant
     public static class Utf8JsonReaderExtensions
     {
         /// <inheritdoc cref="System.Text.Json.JsonSerializer.Deserialize{T}(ref Utf8JsonReader,JsonSerializerOptions)"/>
-        public static T? JsonTo<T>(this ref Utf8JsonReader reader, JsonSerializerOptions? serializerOptions = null)
-        {
-            return JsonSerializer.Deserialize<T>(ref reader, serializerOptions);
-        }
+        public static T? JsonTo<T>(this ref Utf8JsonReader reader, JsonSerializerOptions? serializerOptions = null) =>
+            JsonSerializer.Deserialize<T>(ref reader, serializerOptions);
     }
 }

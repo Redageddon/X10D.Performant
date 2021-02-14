@@ -17,10 +17,8 @@
                 case "yes":
                 case "Y":
                 case "y":
-                case "1":
-                    return true;
-                default:
-                    return false;
+                case "1": return true;
+                default: return false;
             }
         }
 
@@ -41,6 +39,7 @@
                 case "y":
                 case "1":
                     result = true;
+
                     return true;
                 case "FALSE":
                 case "False":
@@ -54,9 +53,11 @@
                 case "n":
                 case "0":
                     result = false;
+
                     return true;
                 default:
                     result = false;
+
                     return false;
             }
         }

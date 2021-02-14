@@ -6,49 +6,49 @@ namespace X10D.Performant
     public static partial class StringExtensions
     {
         /// <inheritdoc cref="DateTime.Parse(string,IFormatProvider)"/>
-        public static DateTime Parse(this string value, IFormatProvider? provider = null, DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.Parse(value, provider ?? DateTimeFormatInfo.CurrentInfo, style);
+        public static DateTime ToDateTime(this string value, IFormatProvider? formatProvider = null, DateTimeStyles style = DateTimeStyles.None) =>
+            DateTime.Parse(value, formatProvider ?? DateTimeFormatInfo.CurrentInfo, style);
 
         /// <inheritdoc cref="DateTime.ParseExact(string,string,IFormatProvider,DateTimeStyles)"/>
-        public static DateTime ParseExact(
+        public static DateTime ToDateTimeExact(
             this string value,
             string format,
-            IFormatProvider? provider = null,
+            IFormatProvider? formatProvider = null,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.ParseExact(value, format, provider ?? NumberFormatInfo.CurrentInfo, style);
+            DateTime.ParseExact(value, format, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
 
         /// <inheritdoc cref="DateTime.ParseExact(string,string[],IFormatProvider,DateTimeStyles)"/>
-        public static DateTime ParseExact(
+        public static DateTime ToDateTimeExact(
             this string value,
             string[] formats,
-            IFormatProvider? provider = null,
+            IFormatProvider? formatProvider = null,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.ParseExact(value, formats, provider ?? NumberFormatInfo.CurrentInfo, style);
+            DateTime.ParseExact(value, formats, formatProvider ?? NumberFormatInfo.CurrentInfo, style);
 
         /// <inheritdoc cref="DateTime.TryParse(string,IFormatProvider,DateTimeStyles,out DateTime)"/>
-        public static bool TryParse(
+        public static bool TryToDateTime(
             this string value,
             out DateTime result,
-            IFormatProvider? provider = null,
+            IFormatProvider? formatProvider = null,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.TryParse(value, provider ?? NumberFormatInfo.CurrentInfo, style, out result);
+            DateTime.TryParse(value, formatProvider ?? NumberFormatInfo.CurrentInfo, style, out result);
 
         /// <inheritdoc cref="DateTime.TryParseExact(string,string,IFormatProvider,DateTimeStyles,out DateTime)"/>
-        public static bool TryParseExact(
+        public static bool TryToDateTimeExact(
             this string value,
             out DateTime result,
             string format,
-            IFormatProvider? provider = null,
+            IFormatProvider? formatProvider = null,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.TryParseExact(value, format, provider ?? NumberFormatInfo.CurrentInfo, style, out result);
+            DateTime.TryParseExact(value, format, formatProvider ?? NumberFormatInfo.CurrentInfo, style, out result);
 
         /// <inheritdoc cref="DateTime.TryParseExact(string,string[],IFormatProvider,DateTimeStyles,out DateTime)"/>
-        public static bool TryParseExact(
+        public static bool TryToDateTimeExact(
             this string value,
             out DateTime result,
             string[] formats,
-            IFormatProvider? provider = null,
+            IFormatProvider? formatProvider = null,
             DateTimeStyles style = DateTimeStyles.None) =>
-            DateTime.TryParseExact(value, formats, provider ?? NumberFormatInfo.CurrentInfo, style, out result);
+            DateTime.TryParseExact(value, formats, formatProvider ?? NumberFormatInfo.CurrentInfo, style, out result);
     }
 }

@@ -130,7 +130,7 @@ namespace X10D.Performant
                     return false;
                 }
             }
-            
+
             return true;
         }
     }

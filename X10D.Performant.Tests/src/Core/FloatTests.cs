@@ -7,7 +7,7 @@ namespace X10D.Performant.Tests.Core
     ///     Tests for <see cref="SingleExtensions"/>.
     /// </summary>
     [TestClass]
-    public class FloatTests
+    public class SingleTests
     {
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.DegreesToRadians"/>.
@@ -23,10 +23,7 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="SingleExtensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
-        public void GetBytes()
-        {
-            CollectionAssert.AreEqual(new byte[] { 0xDB, 0xF, 0x49, 0x40}, MathF.PI.GetBytes());
-        }
+        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 0xDB, 0xF, 0x49, 0x40 }, MathF.PI.GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.IsEven"/>.

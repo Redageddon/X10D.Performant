@@ -74,8 +74,8 @@ namespace X10D.Performant
             }
 
             return true;
-        }        
-        
+        }
+
         /// <summary>
         ///     Determines if all alphabetical characters in this <see cref="string"/> are considered letters.
         /// </summary>
@@ -93,8 +93,8 @@ namespace X10D.Performant
             }
 
             return true;
-        }        
-        
+        }
+
         /// <summary>
         ///     Determines if all alphabetical characters in this <see cref="string"/> are considered numbers.
         /// </summary>

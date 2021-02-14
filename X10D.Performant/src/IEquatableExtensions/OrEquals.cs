@@ -17,7 +17,7 @@ namespace X10D.Performant
         public static bool OrEquals<T>(this T value, params T[] comparisons)
             where T : IEquatable<T> =>
             AdvancedComparison<T, Or>(value, comparisons);
-        
+
         /// <inheritdoc cref="OrEquals{T}(T,T[])"/>
         public static bool OrEquals<T>(this T value, T arg1, T arg2)
             where T : IEquatable<T> =>

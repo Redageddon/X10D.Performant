@@ -30,8 +30,8 @@ namespace X10D.Performant.Tests.Core
         {
             Assert.IsFalse(((byte)2).IsOdd());
             Assert.IsTrue(((byte)1).IsOdd());
-        }      
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="ByteExtensions.ToBoolean"/>.
         /// </summary>
@@ -41,15 +41,15 @@ namespace X10D.Performant.Tests.Core
             Assert.IsTrue(((byte)2).ToBoolean());
             Assert.IsTrue(((byte)1).ToBoolean());
             Assert.IsFalse(((byte)0).ToBoolean());
-        }       
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="ByteExtensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrime()
         {
-            byte[] primes = 
+            byte[] primes =
             {
                 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131,
                 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251,
@@ -61,7 +61,7 @@ namespace X10D.Performant.Tests.Core
                 Assert.AreEqual(i.IsPrime(), primes.Contains(i));
             }
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="ByteExtensions.ToSting"/>.
         /// </summary>
@@ -114,7 +114,7 @@ namespace X10D.Performant.Tests.Core
             byte[] a = { 0x48, 0xc3, 0xa9, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64 };
             Assert.AreEqual("H\u00e9llo World", a.ToEncodedString());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="ByteExtensions.ToEncodedString(System.Span{byte},Encoding)"/>.
         /// </summary>
@@ -154,7 +154,7 @@ namespace X10D.Performant.Tests.Core
             byte[] a = { 0xB0, 0x0B, 0x13, 0x5F };
             Assert.AreEqual(1595083696U, a.ToUInt32());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="ByteExtensions.ToUInt32(Span{byte})"/>.
         /// </summary>
@@ -184,14 +184,14 @@ namespace X10D.Performant.Tests.Core
             byte[] a = { 0xB0, 0x0B, 0x13, 0x50, 0x05, 0x31, 0xB0, 0x0B };
             Assert.AreEqual(842227029206305712UL, a.AsSpan().ToUInt64());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="SByteExtensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrimeSigned()
         {
-            sbyte[] primes = 
+            sbyte[] primes =
             {
                 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127,
             };

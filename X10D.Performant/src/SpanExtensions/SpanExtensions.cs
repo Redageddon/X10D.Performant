@@ -34,30 +34,30 @@ namespace X10D.Performant
         /// <summary>
         ///     Shuffles a <see cref="Span{T}"/>.
         /// </summary>
-        /// <param name="source">The <see cref="Span{T}"/> to shuffle.</param>
+        /// <param name="values">The <see cref="Span{T}"/> to shuffle.</param>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
         /// <typeparam name="T">Any type.</typeparam>
-        public static void Shuffle<T>(this Span<T> source, Random? random = null)
+        public static void Shuffle<T>(this Span<T> values, Random? random = null)
         {
             random ??= RandomExtensions.Random;
 
-            int count = source.Length;
+            int count = values.Length;
 
             while (count > 0)
             {
                 int index = random.Next(count--);
 
-                T temp = source[count];
-                source[count] = source[index];
-                source[index] = temp;
+                T temp = values[count];
+                values[count] = values[index];
+                values[index] = temp;
             }
         }
 
-        /// <inheritdoc cref="Shuffled{T}(ReadOnlySpan{T},Random?)"/>
-        public static Span<T> Shuffled<T>(this Span<T> source, Random? random = null)
+        /// <inheritdoc cref="Shuffled{T}(ReadOnlySpan{T},Random?)" />
+        public static Span<T> Shuffled<T>(this Span<T> values, Random? random = null)
         {
-            Span<T> writeableSpan = new(new T[source.Length]);
-            source.CopyTo(writeableSpan);
+            Span<T> writeableSpan = new(new T[values.Length]);
+            values.CopyTo(writeableSpan);
             writeableSpan.Shuffle(random);
 
             return writeableSpan;

@@ -26,10 +26,10 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="Int64Extensions.ToBoolean"/>
         public static bool ToBoolean(this short value) => value != 0;
-        
+
         /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
-        public static bool IsPrime(this short value) => value >= 0 && UInt64Extensions.IsPrime((ulong)value);
-        
+        public static bool IsPrime(this short value) => value >= 0 && ((ulong)value).IsPrime();
+
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static short Mod(this short value, short modulus) =>

@@ -38,7 +38,7 @@ namespace X10D.Performant.Tests.Core
                 },
                 tosses);
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,T[])"/>
         /// </summary>
@@ -46,6 +46,7 @@ namespace X10D.Performant.Tests.Core
         public void OneOf()
         {
             Random random = new();
+
             IList<int> list = new List<int>
             {
                 11,
@@ -66,10 +67,9 @@ namespace X10D.Performant.Tests.Core
                 2,
             };
 
-
             Assert.IsTrue(list.Contains(random.OneOf(2, 6, 11)));
-        }       
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,IList{T})"/>
         /// </summary>
@@ -77,6 +77,7 @@ namespace X10D.Performant.Tests.Core
         public void OneOf2()
         {
             Random random = new();
+
             IList<int> list = new List<int>
             {
                 11,
@@ -96,6 +97,7 @@ namespace X10D.Performant.Tests.Core
                 246,
                 2,
             };
+
             Assert.IsTrue(list.Contains(random.OneOf(list)));
         }
     }

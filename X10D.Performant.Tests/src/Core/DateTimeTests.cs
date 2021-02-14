@@ -76,8 +76,8 @@ namespace X10D.Performant.Tests.Core
                 Assert.AreEqual(dt.Month, last.Month);
                 Assert.AreEqual(30, last.Day);
             }
-        }      
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="DateTimeExtensions.Next"/>.
         /// </summary>

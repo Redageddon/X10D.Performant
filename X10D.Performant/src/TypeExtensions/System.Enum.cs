@@ -13,7 +13,7 @@ namespace X10D.Performant
         /// <inheritdoc cref="Enum.GetNames(Type)"/>
         public static string[] GetNames(this Type enumType) => Enum.GetNames(enumType);
 
-        /// <inheritdoc cref="Enum.GetValues{T}"/>
+        /// <inheritdoc cref="Enum.GetValues(Type)"/>
         public static Array GetValues(this Type enumType) => Enum.GetValues(enumType);
 
         /// <inheritdoc cref="Enum.IsDefined(Type,object)"/>
@@ -22,7 +22,7 @@ namespace X10D.Performant
         /// <inheritdoc cref="Enum.TryParse(Type,string,bool,out object)"/>
         public static bool TryParse(this Type enumType, string value, out object? result, bool ignoreCase = false) =>
             Enum.TryParse(enumType, value, ignoreCase, out result);
-        
+
         /// <inheritdoc cref="Enum.GetUnderlyingType(Type)"/>
         public static Type GetUnderlyingType(this Type enumType) => Enum.GetUnderlyingType(enumType);
     }

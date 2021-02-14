@@ -4,12 +4,16 @@ namespace X10D.Performant
 {
     public static partial class CharExtensions
     {
-        /// <inheritdoc cref="Boolean.Parse(ReadOnlySpan{char})"/>
-        public static bool ToBool(this ReadOnlySpan<char> value) =>
-            bool.Parse(value);
-        
-        /// <inheritdoc cref="Boolean.TryParse(ReadOnlySpan{char},out bool)"/>
-        public static bool TryToBool(this ReadOnlySpan<char> value, out bool result) =>
-            bool.TryParse(value, out result);
+        /// <inheritdoc cref="bool.Parse(ReadOnlySpan{char})" />
+        public static bool ToBool(this ReadOnlySpan<char> chars) => bool.Parse(chars);
+
+        /// <inheritdoc cref="bool.Parse(ReadOnlySpan{char})" />
+        public static bool ToBool(this Span<char> chars) => bool.Parse(chars);
+
+        /// <inheritdoc cref="bool.TryParse(ReadOnlySpan{char},out bool)" />
+        public static bool TryToBool(this ReadOnlySpan<char> chars, out bool result) => bool.TryParse(chars, out result);
+
+        /// <inheritdoc cref="bool.TryParse(ReadOnlySpan{char},out bool)" />
+        public static bool TryToBool(this Span<char> chars, out bool result) => bool.TryParse(chars, out result);
     }
 }

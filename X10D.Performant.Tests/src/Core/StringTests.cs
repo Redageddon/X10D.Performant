@@ -15,29 +15,20 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="StringExtensions.Base64Decode(string)"/>.
         /// </summary>
         [TestMethod]
-        public void Base64Decode()
-        {
-            Assert.AreEqual("hello", "aGVsbG8=".Base64Decode());
-        }      
-        
+        public void Base64Decode() => Assert.AreEqual("hello", "aGVsbG8=".Base64Decode());
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Base64Encode(string)"/>.
         /// </summary>
         [TestMethod]
-        public void Base64Encode()
-        {
-            Assert.AreEqual("aGVsbG8=", "hello".Base64Encode());
-        }       
-        
+        public void Base64Encode() => Assert.AreEqual("aGVsbG8=", "hello".Base64Encode());
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.ChangeEncoding(string, Encoding, Encoding)"/>.
         /// </summary>
         [TestMethod]
-        public void ChangeEncoding()
-        {
-            Assert.AreEqual("HELLO", "ĤĚĻĻŎ".ChangeEncoding(Encoding.Latin1, Encoding.ASCII));
-        }
-        
+        public void ChangeEncoding() => Assert.AreEqual("HELLO", "ĤĚĻĻŎ".ChangeEncoding(Encoding.Latin1, Encoding.ASCII));
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.ToEnum{T}(string,bool)"/>.
         /// </summary>
@@ -47,21 +38,13 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(Alphabet.A, "0".ToEnum<Alphabet>());
             Assert.AreEqual(Alphabet.A, "A".ToEnum<Alphabet>());
         }
-        
-        private enum Alphabet
-        {
-            A,
-        }
 
         /// <summary>
         ///     Tests for <see cref="StringExtensions.GetBytes(string,Encoding)"/>.
         /// </summary>
         [TestMethod]
-        public void GetBytes()
-        {
-            CollectionAssert.AreEqual(new byte[]{84, 101, 115, 116},"Test".GetBytes());
-        }     
-        
+        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 84, 101, 115, 116 }, "Test".GetBytes());
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsLower(string)"/>.
         /// </summary>
@@ -72,8 +55,8 @@ namespace X10D.Performant.Tests.Core
             Assert.IsTrue("ab1234cd".IsLower());
             Assert.IsFalse("AB1234cd".IsLower());
             Assert.IsFalse("ab1234CD".IsLower());
-        }     
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsUpper(string)"/>.
         /// </summary>
@@ -84,8 +67,8 @@ namespace X10D.Performant.Tests.Core
             Assert.IsFalse("ab1234cd".IsUpper());
             Assert.IsFalse("AB1234cd".IsUpper());
             Assert.IsFalse("ab1234CD".IsUpper());
-        }       
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsAlpha(string)"/>.
         /// </summary>
@@ -96,8 +79,8 @@ namespace X10D.Performant.Tests.Core
             Assert.IsTrue("abcd".IsAlpha());
             Assert.IsFalse("AB12".IsAlpha());
             Assert.IsFalse("1234".IsAlpha());
-        }        
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsNumerical(string)"/>.
         /// </summary>
@@ -109,7 +92,7 @@ namespace X10D.Performant.Tests.Core
             Assert.IsFalse("AB12".IsNumerical());
             Assert.IsTrue("1234".IsNumerical());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Repeat"/>.
         /// </summary>
@@ -128,11 +111,8 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="StringExtensions.Shuffle"/>.
         /// </summary>
         [TestMethod]
-        public void Shuffle()
-        {
-            Assert.AreNotEqual("abcdefg", "abcdefg".Shuffle());
-        }
-        
+        public void Shuffle() => Assert.AreNotEqual("abcdefg", "abcdefg".Shuffle());
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Split"/>.
         /// </summary>
@@ -142,17 +122,14 @@ namespace X10D.Performant.Tests.Core
             const string str = "Hello World";
             string[] arr = str.Split(2).ToArray();
             CollectionAssert.AreEqual(new[] { "He", "ll", "o ", "Wo", "rl", "d" }, arr);
-        }        
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.ToSecureString"/>.
         /// </summary>
         [TestMethod]
-        public void ToSecureString()
-        {
-            Assert.AreEqual(4, "Test".ToSecureString().Length);
-        }
-        
+        public void ToSecureString() => Assert.AreEqual(4, "Test".ToSecureString().Length);
+
         /// <summary>
         ///     Tests for <see cref="StringExtensions.ToTimeSpan"/>.
         /// </summary>
@@ -165,6 +142,11 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(TimeSpan.FromDays(1), "1d".ToTimeSpan());
             Assert.AreEqual(TimeSpan.FromDays(8), "1w 1d".ToTimeSpan());
             Assert.AreEqual(TimeSpan.FromDays(8), "1w1d".ToTimeSpan());
+        }
+
+        private enum Alphabet
+        {
+            A,
         }
     }
 }

@@ -25,6 +25,7 @@ namespace X10D.Performant
                 {
                     return string.Empty;
                 }
+
                 if (value is string str)
                 {
                     foreach (char t in str)

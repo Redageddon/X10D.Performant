@@ -8,7 +8,7 @@ namespace X10D.Performant
         ///     Converts the <paramref name="value"/> to a <see cref="T:byte[]"/>.
         /// </summary>
         /// <param name="value">The number to convert.</param>
-        /// <returns>A <see cref="byte"/>[].</returns>
+        /// <returns>A <see cref="T:byte[]"/>.</returns>
         public static byte[] GetBytes(this double value) => BitConverter.GetBytes(value);
     }
 }

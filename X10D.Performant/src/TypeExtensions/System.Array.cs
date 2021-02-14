@@ -5,20 +5,22 @@ namespace X10D.Performant
     public static partial class ReflectionExtensions
     {
         /// <inheritdoc cref="Array.CreateInstance(Type,int)"/>
-        public static Array CreateArray(this Type arrayType, int length) => Array.CreateInstance(arrayType, length);
-        
+        public static Array CreateArray(this Type arrayType, int length1d) => Array.CreateInstance(arrayType, length1d);
+
         /// <inheritdoc cref="Array.CreateInstance(Type,int,int)"/>
-        public static Array CreateArray(this Type arrayType, int length, int length2) => Array.CreateInstance(arrayType, length, length2);
-        
+        public static Array CreateArray(this Type arrayType, int length1d, int length2d) => Array.CreateInstance(arrayType, length1d, length2d);
+
         /// <inheritdoc cref="Array.CreateInstance(Type,int,int,int)"/>
-        public static Array CreateArray(this Type arrayType, int length, int length2, int length3) => Array.CreateInstance(arrayType, length, length2, length3);
-        
+        public static Array CreateArray(this Type arrayType, int length1d, int length2d, int length3d) =>
+            Array.CreateInstance(arrayType, length1d, length2d, length3d);
+
         /// <inheritdoc cref="Array.CreateInstance(Type,int[],int[])"/>
-        public static Array CreateArray(this Type arrayType, int[] lengths, int[] loweBounds) => Array.CreateInstance(arrayType, lengths, loweBounds);
-        
+        public static Array CreateArray(this Type arrayType, int[] lengths, int[] lowerBounds) =>
+            Array.CreateInstance(arrayType, lengths, lowerBounds);
+
         /// <inheritdoc cref="Array.CreateInstance(Type,int[])"/>
         public static Array CreateArray(this Type arrayType, params int[] lengths) => Array.CreateInstance(arrayType, lengths);
-        
+
         /// <inheritdoc cref="Array.CreateInstance(Type,long[])"/>
         public static Array CreateArray(this Type arrayType, params long[] lengths) => Array.CreateInstance(arrayType, lengths);
     }

@@ -11,7 +11,7 @@ namespace X10D.Performant
         /// <param name="exponent">The value that is raising.</param>
         /// <param name="modulus">The modulo to be applied to the result.</param>
         /// <returns><paramref name="value"/> raised by <paramref name="exponent"/> and then modded by <paramref name="modulus"/>.</returns>
-        public static ulong ModPow(ulong value, ulong exponent, ulong modulus)
+        public static ulong ModPow(this ulong value, ulong exponent, ulong modulus)
         {
             value = Mod(value, modulus);
             ulong result = 1;
@@ -24,7 +24,7 @@ namespace X10D.Performant
             while (exponent != 0)
             {
                 exponent >>= 1;
-                
+
                 if (value < uint.MaxValue)
                 {
                     value *= value;
@@ -34,10 +34,11 @@ namespace X10D.Performant
                 {
                     value = Mod128By63(Math.BigMul(value, value, out ulong lowBits), lowBits, modulus);
                 }
-                
+
                 if ((exponent & 1) == 1)
                 {
-                    if (value < uint.MaxValue && result < uint.MaxValue)
+                    if (value < uint.MaxValue &&
+                        result < uint.MaxValue)
                     {
                         result *= value;
                         result = Mod(result, modulus);
@@ -48,29 +49,35 @@ namespace X10D.Performant
                     }
                 }
             }
+
             return result;
         }
-        
+
         private static ulong Mod128By63(ulong highBits, ulong lowBits, ulong modulus)
         {
             ulong result = 0UL;
             ulong a = (ulong.MaxValue % modulus) + 1UL;
             highBits = Mod(highBits, modulus);
+
             while (highBits != 0UL)
             {
                 if ((highBits & 1UL) == 1UL)
                 {
                     result += a;
+
                     if (result >= modulus)
                     {
                         result -= modulus;
                     }
                 }
+
                 a <<= 1;
+
                 if (a >= modulus)
                 {
                     a -= modulus;
                 }
+
                 highBits >>= 1;
             }
 
@@ -78,6 +85,7 @@ namespace X10D.Performant
             {
                 lowBits -= modulus;
             }
+
             return Mod(lowBits + result, modulus);
         }
     }

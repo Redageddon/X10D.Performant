@@ -49,8 +49,8 @@ namespace X10D.Performant.Tests.Core
             span.Shuffle();
 
             CollectionAssert.AreNotEqual(span.ToArray(), buffer.ToArray());
-        }        
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="SpanExtensions.Shuffled{T}(Span{T},System.Random?)"/>
         /// </summary>

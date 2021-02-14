@@ -17,7 +17,8 @@ namespace X10D.Performant
         /// <param name="chunkSize">The maximum length of the nested <see cref="IEnumerable{T}"/> collection.</param>
         /// <typeparam name="T">Any type.</typeparam>
         /// <returns>
-        ///     Returns an <see cref="IEnumerable{T}"/> of <see cref="IEnumerable{T}"/> of <typeparamref name="T"/> from <paramref name="values"/> split into chunks of size
+        ///     Returns an <see cref="IEnumerable{T}"/> of <see cref="IEnumerable{T}"/> of <typeparamref name="T"/> from <paramref name="values"/> split into
+        ///     chunks of size
         ///     <paramref name="chunkSize"/>.
         /// </returns>
         public static IEnumerable<IEnumerable<T>> LazyChunk<T>(this IEnumerable<T> values, int chunkSize)
@@ -59,37 +60,39 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Shuffles <paramref name="source"/>.
+        ///     Shuffles <paramref name="values"/>.
         /// </summary>
-        /// <param name="source">The collection to shuffle.</param>
+        /// <param name="values">The collection to shuffle.</param>
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <typeparam name="T">The collection type.</typeparam>
-        /// <returns><paramref name="source"/> shuffled.</returns>
-        public static IEnumerable<T> Shuffled<T>(this IEnumerable<T> source, Random? random = null)
+        /// <returns><paramref name="values"/> shuffled.</returns>
+        public static IEnumerable<T> Shuffled<T>(this IEnumerable<T> values, Random? random = null)
         {
-            List<T> list = new(source);
+            List<T> list = new(values);
             list.Shuffle(random);
 
             return list;
         }
 
         /// <summary>
-        ///     Gets each unique object from <paramref name="source"/> determined by <paramref name="selector"/> and compared with <see cref="Comparer{T}"/> if
+        ///     Gets each unique object from <paramref name="values"/> determined by <paramref name="selector"/> and compared with <see cref="Comparer{T}"/>
+        ///     if
         ///     passed.
         /// </summary>
-        /// <param name="source">The initial values being iterated through.</param>
-        /// <param name="selector">The function that determines whether an element in <paramref name="source"/> should be returned.</param>
+        /// <param name="values">The initial values being iterated through.</param>
+        /// <param name="selector">The function that determines whether an element in <paramref name="values"/> should be returned.</param>
         /// <param name="comparer">Passes a generic <see cref="IEqualityComparer"/>.</param>
-        /// <typeparam name="TSource">The type of the contained element in the <paramref name="source"/> being read from.</typeparam>
+        /// <typeparam name="TSource">The type of the contained element in the <paramref name="values"/> being read from.</typeparam>
         /// <typeparam name="TKey">The type being selected distinctly from.</typeparam>
         /// <returns>A collection of values that are specific to a selector.</returns>
-        public static IEnumerable<TSource> DistinctBy<TSource, TKey>(this IEnumerable<TSource> source,
-                                                                     Func<TSource, TKey> selector,
-                                                                     IEqualityComparer<TKey>? comparer = null)
+        public static IEnumerable<TSource> DistinctBy<TSource, TKey>(
+            this IEnumerable<TSource> values,
+            Func<TSource, TKey> selector,
+            IEqualityComparer<TKey>? comparer = null)
         {
             HashSet<TKey> knownKeys = new(comparer);
 
-            foreach (TSource element in source)
+            foreach (TSource element in values)
             {
                 if (knownKeys.Add(selector(element)))
                 {

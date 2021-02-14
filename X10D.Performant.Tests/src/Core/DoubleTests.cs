@@ -23,10 +23,7 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="DoubleExtensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
-        public void GetBytes()
-        {
-            CollectionAssert.AreEqual(new byte[] { 0x18, 0x2D, 0x44, 0x54, 0xFB, 0x21, 0x09, 0x40 }, Math.PI.GetBytes());
-        }
+        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 0x18, 0x2D, 0x44, 0x54, 0xFB, 0x21, 0x09, 0x40 }, Math.PI.GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="DoubleExtensions.IsEven"/>.

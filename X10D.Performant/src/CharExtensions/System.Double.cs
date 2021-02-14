@@ -5,19 +5,34 @@ namespace X10D.Performant
 {
     public static partial class CharExtensions
     {
-        /// <inheritdoc cref="Double.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)"/>
+        /// <inheritdoc cref="double.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />
         public static double ToDouble(
-            this ReadOnlySpan<char> value,
+            this ReadOnlySpan<char> chars,
             NumberStyles style = NumberStyles.Float | NumberStyles.AllowThousands,
-            IFormatProvider? provider = null) =>
-            double.Parse(value, style, provider ?? NumberFormatInfo.CurrentInfo);
+            IFormatProvider? formatProvider = null) =>
+            double.Parse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo);
 
-        /// <inheritdoc cref="Double.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out double)"/>
-        public static bool TryToFloat(
-            this ReadOnlySpan<char> value,
+        /// <inheritdoc cref="double.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />
+        public static double ToDouble(
+            this Span<char> chars,
+            NumberStyles style = NumberStyles.Float | NumberStyles.AllowThousands,
+            IFormatProvider? formatProvider = null) =>
+            double.Parse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo);
+
+        /// <inheritdoc cref="double.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out double)" />
+        public static bool TryToSingle(
+            this ReadOnlySpan<char> chars,
             out double result,
             NumberStyles style = NumberStyles.Float | NumberStyles.AllowThousands,
-            IFormatProvider? provider = null) =>
-            double.TryParse(value, style, provider ?? NumberFormatInfo.CurrentInfo, out result);
+            IFormatProvider? formatProvider = null) =>
+            double.TryParse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo, out result);
+
+        /// <inheritdoc cref="double.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out double)" />
+        public static bool TryToSingle(
+            this Span<char> chars,
+            out double result,
+            NumberStyles style = NumberStyles.Float | NumberStyles.AllowThousands,
+            IFormatProvider? formatProvider = null) =>
+            double.TryParse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo, out result);
     }
 }

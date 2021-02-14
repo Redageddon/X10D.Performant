@@ -5,16 +5,31 @@ namespace X10D.Performant
 {
     public static partial class CharExtensions
     {
-        /// <inheritdoc cref="Decimal.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)"/>
-        public static decimal ToDecimal(this ReadOnlySpan<char> value, NumberStyles style = NumberStyles.Number, IFormatProvider? provider = null) =>
-            decimal.Parse(value, style, provider ?? NumberFormatInfo.CurrentInfo);
+        /// <inheritdoc cref="decimal.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />
+        public static decimal ToDecimal(
+            this ReadOnlySpan<char> chars,
+            NumberStyles style = NumberStyles.Number,
+            IFormatProvider? formatProvider = null) =>
+            decimal.Parse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo);
 
-        /// <inheritdoc cref="Decimal.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out decimal)"/>
+        /// <inheritdoc cref="decimal.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />
+        public static decimal ToDecimal(this Span<char> chars, NumberStyles style = NumberStyles.Number, IFormatProvider? formatProvider = null) =>
+            decimal.Parse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo);
+
+        /// <inheritdoc cref="decimal.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out decimal)" />
         public static bool TryToDecimal(
-            ReadOnlySpan<char> value,
+            ReadOnlySpan<char> chars,
             out decimal result,
             NumberStyles style = NumberStyles.Number,
-            IFormatProvider? provider = null) =>
-            decimal.TryParse(value, style, provider ?? NumberFormatInfo.CurrentInfo, out result);
+            IFormatProvider? formatProvider = null) =>
+            decimal.TryParse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo, out result);
+
+        /// <inheritdoc cref="decimal.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out decimal)" />
+        public static bool TryToDecimal(
+            Span<char> chars,
+            out decimal result,
+            NumberStyles style = NumberStyles.Number,
+            IFormatProvider? formatProvider = null) =>
+            decimal.TryParse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo, out result);
     }
 }

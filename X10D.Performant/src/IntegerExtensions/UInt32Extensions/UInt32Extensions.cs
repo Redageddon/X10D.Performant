@@ -29,7 +29,7 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
         public static bool IsPrime(this uint value) => UInt64Extensions.IsPrime(value);
-        
+
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static uint Mod(this uint value, uint modulus) =>

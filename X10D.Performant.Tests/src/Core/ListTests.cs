@@ -19,7 +19,7 @@ namespace X10D.Performant.Tests.Core
             int[] array = { 1, 2, 3 };
             int[] buffer = new int[20];
             array.Random(buffer);
-            
+
             Assert.IsTrue(buffer.Contains(1));
             Assert.IsTrue(buffer.Contains(2));
             Assert.IsTrue(buffer.Contains(3));
@@ -36,8 +36,8 @@ namespace X10D.Performant.Tests.Core
             array.Shuffle();
 
             CollectionAssert.AreNotEqual(array, buffer);
-        }       
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="ListExtensions.OneOf{T}"/>
         /// </summary>
@@ -63,9 +63,9 @@ namespace X10D.Performant.Tests.Core
                 246,
                 2,
             };
-            
+
             Assert.IsTrue(list.Contains(list.OneOf()));
-            Assert.IsTrue(list.Contains(new[]{ 11, 2, 6 }.OneOf()));
+            Assert.IsTrue(list.Contains(new[] { 11, 2, 6 }.OneOf()));
         }
     }
 }

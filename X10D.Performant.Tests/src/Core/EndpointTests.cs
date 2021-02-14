@@ -17,8 +17,8 @@ namespace X10D.Performant.Tests.Core
         {
             EndPoint e = new DnsEndPoint("Name", 123);
             Assert.AreEqual("Name", e.GetHostName());
-        }    
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="EndPointExtensions.GetPort"/>
         /// </summary>

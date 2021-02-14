@@ -14,10 +14,7 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="Int16Extensions.GetBytes(short)"/>.
         /// </summary>
         [TestMethod]
-        public void GetBytes()
-        {
-            CollectionAssert.AreEqual(new byte[] { 3, 0 }, ((short)Math.PI).GetBytes());
-        }
+        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 3, 0 }, ((short)Math.PI).GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="Int16Extensions.IsEven(short)"/>.
@@ -37,8 +34,8 @@ namespace X10D.Performant.Tests.Core
         {
             Assert.IsFalse(((short)2).IsOdd());
             Assert.IsTrue(((short)1).IsOdd());
-        }      
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="Int16Extensions.ToBoolean(short)"/>.
         /// </summary>
@@ -48,30 +45,24 @@ namespace X10D.Performant.Tests.Core
             Assert.IsTrue(((short)2).ToBoolean());
             Assert.IsTrue(((short)1).ToBoolean());
             Assert.IsFalse(((short)0).ToBoolean());
-        }        
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="Int16Extensions.IsPrime(short)"/>.
         /// </summary>
         [TestMethod]
         public void IsPrime()
-        {         
-            short[] primes = 
-            {
-                2, 11, 101, 1_009, 10_007,
-            };
+        {
+            short[] primes = { 2, 11, 101, 1_009, 10_007 };
 
             for (int i = 0; i < primes.Length; i++)
             {
                 Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
                 Assert.IsTrue(primes[i].IsPrime());
             }
-            
-            short[] nonPrimes = 
-            { 
-                -10_007, -1_009, -101, -11, -2, -1, 0, 1, 4, 29_001,
-            };
-            
+
+            short[] nonPrimes = { -10_007, -1_009, -101, -11, -2, -1, 0, 1, 4, 29_001 };
+
             for (int i = 0; i < nonPrimes.Length; i++)
             {
                 Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
@@ -83,10 +74,7 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="UInt16Extensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
-        public void GetBytesU()
-        {
-            CollectionAssert.AreEqual(new byte[] { 3, 0}, ((ushort)Math.PI).GetBytes());
-        }
+        public void GetBytesU() => CollectionAssert.AreEqual(new byte[] { 3, 0 }, ((ushort)Math.PI).GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="UInt16Extensions.IsEven"/>.
@@ -107,7 +95,7 @@ namespace X10D.Performant.Tests.Core
             Assert.IsFalse(((ushort)2).IsOdd());
             Assert.IsTrue(((ushort)1).IsOdd());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="UInt16Extensions.ToBoolean"/>.
         /// </summary>
@@ -118,28 +106,23 @@ namespace X10D.Performant.Tests.Core
             Assert.IsTrue(((ushort)1).ToBoolean());
             Assert.IsTrue(((ushort)2).ToBoolean());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="UInt16Extensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrimeU()
         {
-            ushort[] primes = 
-            {
-                2, 11, 101, 1_009, 10_007,
-            };
+            ushort[] primes = { 2, 11, 101, 1_009, 10_007 };
 
             for (int i = 0; i < primes.Length; i++)
             {
                 Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
                 Assert.IsTrue(primes[i].IsPrime());
             }
-            
-            ushort[] nonPrimes = 
-            { 0, 1, 4, 29_001,
-            };
-            
+
+            ushort[] nonPrimes = { 0, 1, 4, 29_001 };
+
             for (int i = 0; i < nonPrimes.Length; i++)
             {
                 Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);

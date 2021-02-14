@@ -47,7 +47,7 @@ namespace X10D.Performant
                            Mod(value, 11) != 0;
             }
         }
-        
+
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static sbyte Mod(this sbyte value, sbyte modulus) =>

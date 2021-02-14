@@ -45,10 +45,10 @@ namespace X10D.Performant
         /// <param name="value">An integer value.</param>
         /// <returns><see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.</returns>
         public static bool ToBoolean(this long value) => value != 0L;
-        
+
         /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
-        public static bool IsPrime(this long value) => value >= 0L && UInt64Extensions.IsPrime((ulong)value);
-        
+        public static bool IsPrime(this long value) => value >= 0L && ((ulong)value).IsPrime();
+
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static long Mod(this long value, long modulus) =>

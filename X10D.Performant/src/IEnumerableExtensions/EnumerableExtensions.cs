@@ -42,28 +42,28 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="values">The values to chunk.</param>
         /// <param name="chunkSize">The maximum length of the nested <see cref="IEnumerable{T}" /> collection.</param>
-        /// <typeparam name="T">Any type.</typeparam>
+        /// <typeparam name="TSource">Any type.</typeparam>
         /// <returns>
-        ///     Returns an <see cref="IEnumerable{T}" /> of <see cref="IEnumerable{T}" /> of <typeparamref name="T" /> from <paramref name="values" /> split into
+        ///     Returns an <see cref="IEnumerable{T}" /> of <see cref="IEnumerable{T}" /> of <typeparamref name="TSource" /> from <paramref name="values" /> split into
         ///     chunks of size
         ///     <paramref name="chunkSize" />.
         /// </returns>
-        public static IEnumerable<IEnumerable<T>> LazyChunk<T>(this IEnumerable<T> values, int chunkSize)
+        public static IEnumerable<IList<TSource>> LazyChunk<TSource>(this IEnumerable<TSource> values, int chunkSize)
         {
-            T[] source = values as T[] ?? values.ToArray();
+            TSource[] source = values as TSource[] ?? values.ToArray();
             int chunks = source.Length / chunkSize;
             int leftOver = source.Length % chunkSize;
             int offset = 0;
 
             for (int i = 0; i < chunks; i++)
             {
-                yield return new ArraySegment<T>(source, offset, chunkSize);
+                yield return new ArraySegment<TSource>(source, offset, chunkSize);
                 offset += chunkSize;
             }
 
             if (leftOver > 0)
             {
-                yield return new ArraySegment<T>(source, offset, leftOver);
+                yield return new ArraySegment<TSource>(source, offset, leftOver);
             }
         }
 
@@ -73,12 +73,12 @@ namespace X10D.Performant
         /// <param name="values">The values to pull.</param>
         /// <param name="count">The amount of items to be returned.</param>
         /// <param name="random">The <see cref="Random" /> instance.</param>
-        /// <typeparam name="T">Any type.</typeparam>
+        /// <typeparam name="TSource">Any type.</typeparam>
         /// <returns>An <see cref="IEnumerable{T}" /> containing <paramref name="count" /> values.</returns>
-        public static IEnumerable<T> LazyRandom<T>(this IEnumerable<T> values, int count, Random? random = null)
+        public static IEnumerable<TSource> LazyRandom<TSource>(this IEnumerable<TSource> values, int count, Random? random = null)
         {
             random ??= RandomExtensions.Random;
-            IList<T> array = values as IList<T> ?? values.ToArray();
+            IList<TSource> array = values as IList<TSource> ?? values.ToArray();
 
             for (int i = 0; i < count; i++)
             {
@@ -91,11 +91,11 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="values">The collection to shuffle.</param>
         /// <param name="random">The <see cref="Random" /> instance.</param>
-        /// <typeparam name="T">The collection type.</typeparam>
+        /// <typeparam name="TSource">The collection type.</typeparam>
         /// <returns><paramref name="values" /> shuffled.</returns>
-        public static IEnumerable<T> Shuffled<T>(this IEnumerable<T> values, Random? random = null)
+        public static IEnumerable<TSource> Shuffled<TSource>(this IEnumerable<TSource> values, Random? random = null)
         {
-            List<T> list = new(values);
+            List<TSource> list = new(values);
             list.Shuffle(random);
 
             return list;

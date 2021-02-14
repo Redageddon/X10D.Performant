@@ -401,4 +401,10 @@ ValidationHelper.NotNull($EXPR$, $NAME$)</s:String>
 {
   public static partial class $CLASS$ {$END$}
 }</s:String>
-	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDFF12D7F3243A47B650DE314B90CB7E/UITag/@EntryValue">Class/Interface</s:String></wpf:ResourceDictionary>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDFF12D7F3243A47B650DE314B90CB7E/UITag/@EntryValue">Class/Interface</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Acosh/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Asinh/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Atanh/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Cbrt/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Sinh/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Tanh/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

@@ -12,12 +12,12 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="value">An <see cref="Enum" /> value.</param>
         /// <param name="wrap">Whether or not to wrap to the to the start of the <see cref="Enum" />. Defaults to <see langword="true" />.</param>
-        /// <typeparam name="T">An <see cref="Enum" />.</typeparam>
-        /// <returns>A <typeparamref name="T" /> value.</returns>
-        public static T NextEnumDeclaration<T>(this T value, bool wrap = true)
-            where T : struct, Enum
+        /// <typeparam name="TEnum">An <see cref="Enum" />.</typeparam>
+        /// <returns>A <typeparamref name="TEnum" /> value.</returns>
+        public static TEnum NextEnumDeclaration<TEnum>(this TEnum value, bool wrap = true)
+            where TEnum : struct, Enum
         {
-            T[] values = EnumMap<T>.Map;
+            TEnum[] values = EnumMap<TEnum>.Map;
             int i = Array.IndexOf(values, value) + 1;
 
             return values.Length == i
@@ -30,12 +30,12 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="value">An <see cref="Enum" /> value.</param>
         /// <param name="wrap">Whether or not to wrap to the to the end of the <see cref="Enum" />. Defaults to <see langword="true" />.</param>
-        /// <typeparam name="T">An <see cref="Enum" />.</typeparam>
-        /// <returns>A <typeparamref name="T" /> value.</returns>
-        public static T PreviousEnumDeclaration<T>(this T value, bool wrap = true)
-            where T : struct, Enum
+        /// <typeparam name="TEnum">An <see cref="Enum" />.</typeparam>
+        /// <returns>A <typeparamref name="TEnum" /> value.</returns>
+        public static TEnum PreviousEnumDeclaration<TEnum>(this TEnum value, bool wrap = true)
+            where TEnum : struct, Enum
         {
-            T[] values = EnumMap<T>.Map;
+            TEnum[] values = EnumMap<TEnum>.Map;
             int i = Array.IndexOf(values, value) - 1;
 
             return i < 0
@@ -43,10 +43,10 @@ namespace X10D.Performant
                 : values[i];
         }
 
-        private static class EnumMap<T>
-            where T : struct, Enum
+        private static class EnumMap<TEnum>
+            where TEnum : struct, Enum
         {
-            public static T[] Map { get; } = Enum.GetValues<T>();
+            public static TEnum[] Map { get; } = Enum.GetValues<TEnum>();
         }
     }
 }

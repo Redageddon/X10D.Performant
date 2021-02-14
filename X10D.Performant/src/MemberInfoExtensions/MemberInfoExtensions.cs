@@ -37,12 +37,9 @@ namespace X10D.Performant
 
             object? value = attribute.Value;
 
-            if (value is null)
-            {
-                return default;
-            }
-
-            return (T)value;
+            return value is null
+                ? default
+                : (T)value;
         }
 
         /// <summary>

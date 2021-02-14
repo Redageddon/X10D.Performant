@@ -79,6 +79,7 @@ namespace X10D.Performant
         }
 
         // TODO: remove big int dependencies
+        // ReSharper disable once SuggestBaseTypeForParameter
         private static bool MillerTest(ulong value, ulong[] witnesses)
         {
             ulong oneLessValue = value - 1UL;
@@ -91,6 +92,7 @@ namespace X10D.Performant
                 ++s;
             }
 
+            // ReSharper disable once ForCanBeConvertedToForeach
             for (int i = 0; i < witnesses.Length; i++)
             {
                 ulong x = value > long.MaxValue

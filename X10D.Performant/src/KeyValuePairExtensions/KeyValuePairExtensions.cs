@@ -28,6 +28,7 @@ namespace X10D.Performant
 
                 if (value is string str)
                 {
+                    // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
                     foreach (char t in str)
                     {
                         if (char.IsWhiteSpace(t))

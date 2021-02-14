@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public static partial class SingleExtensions
     {
         /// <inheritdoc cref="MathF.Acos(float)" />
@@ -89,7 +91,7 @@ namespace X10D.Performant
         public static float Round(this float value, int digits, MidpointRounding mode) => MathF.Round(value, digits, mode);
 
         /// <inheritdoc cref="MathF.ScaleB(float,int)" />
-        public static float ScaleB(this float value, int b) => MathF.ScaleB(value, b); // ReSharper disable InconsistentNaming
+        public static float ScaleB(this float value, int b) => MathF.ScaleB(value, b);
 
         /// <inheritdoc cref="MathF.Sin(float)" />
         public static float Sin(this float value) => MathF.Sin(value);

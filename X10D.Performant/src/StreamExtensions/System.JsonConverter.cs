@@ -8,13 +8,13 @@ namespace X10D.Performant
     public static partial class StreamExtensions
     {
         /// <inheritdoc cref="System.Text.Json.JsonSerializer.Deserialize{T}(string,JsonSerializerOptions)" />
-        public static async Task<T?> AsyncJsonTo<T>(this Stream value, JsonSerializerOptions? serializerOptions = null) =>
-            await JsonSerializer.DeserializeAsync<T>(value, serializerOptions);
+        public static async Task<TValue?> AsyncJsonTo<TValue>(this Stream value, JsonSerializerOptions? serializerOptions = null) =>
+            await JsonSerializer.DeserializeAsync<TValue>(value, serializerOptions);
 
         /// <inheritdoc cref="System.Text.Json.JsonSerializer.SerializeAsync{T}(Stream,T,JsonSerializerOptions,CancellationToken)" />
-        public static async Task ToJsonAsync<T>(
+        public static async Task ToJsonAsync<TValue>(
             this Stream stream,
-            T value,
+            TValue value,
             JsonSerializerOptions? serializerOptions = null,
             CancellationToken cancellationToken = default) =>
             await JsonSerializer.SerializeAsync(stream, value, serializerOptions, cancellationToken);

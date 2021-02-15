@@ -10,6 +10,16 @@ namespace X10D.Performant.Tests.Core
     public class DoubleTests
     {
         /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.DegreesToGradians" />.
+        /// </summary>
+        [TestMethod]
+        public void DegreesToGradians()
+        {
+            Assert.AreEqual(100, 90.0.DegreesToGradians());
+            Assert.AreEqual(150, 135.0.DegreesToGradians());
+        }
+
+        /// <summary>
         ///     Tests for <see cref="DoubleExtensions.DegreesToRadians" />.
         /// </summary>
         [TestMethod]
@@ -20,11 +30,35 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.GetBytes" />.
+        ///     Tests for <see cref="DoubleExtensions.GradiansToDegrees" />.
         /// </summary>
         [TestMethod]
-        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 0x18, 0x2D, 0x44, 0x54, 0xFB, 0x21, 0x09, 0x40 }, Math.PI.GetBytes());
-
+        public void GradiansToDegrees()
+        {
+            Assert.AreEqual(90, 100.0.GradiansToDegrees());
+            Assert.AreEqual(135, 150.0.GradiansToDegrees());
+        }
+        
+        /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.GradiansToRadians" />.
+        /// </summary>
+        [TestMethod]
+        public void GradiansToRadians()
+        {
+            Assert.AreEqual(Math.PI, 200.0.GradiansToRadians());
+            Assert.AreEqual(1, (200/Math.PI).GradiansToRadians());
+        }       
+        
+        /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.InverseSqrt" />.
+        /// </summary>
+        [TestMethod]
+        public void InverseSqrt()
+        {
+            Assert.AreEqual(1, 1.0.InverseSqrt());
+            Assert.AreEqual(0.5, 4.0.InverseSqrt());
+        }
+        
         /// <summary>
         ///     Tests for <see cref="DoubleExtensions.IsEven" />.
         /// </summary>
@@ -53,6 +87,16 @@ namespace X10D.Performant.Tests.Core
         {
             Assert.AreEqual(180.0, Math.PI.RadiansToDegrees());
             Assert.AreEqual(360.0, (2.0 * Math.PI).RadiansToDegrees());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.RadiansToGradians" />.
+        /// </summary>
+        [TestMethod]
+        public void RadiansToGradians()
+        {
+            Assert.AreEqual(200.0, Math.PI.RadiansToGradians());
+            Assert.AreEqual(400.0, (2.0 * Math.PI).RadiansToGradians());
         }
     }
 }

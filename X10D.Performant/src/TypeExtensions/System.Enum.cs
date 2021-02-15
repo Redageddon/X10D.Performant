@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
-    public static partial class ReflectionExtensions
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    public static partial class TypeExtensions
     {
         /// <inheritdoc cref="Enum.Format(Type,object,string)" />
         public static string Format(this Type enumType, object value, string format) => Enum.Format(enumType, value, format);

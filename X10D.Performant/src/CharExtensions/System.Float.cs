@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class CharExtensions
     {
         /// <inheritdoc cref="float.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />

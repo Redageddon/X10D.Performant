@@ -13,9 +13,6 @@ namespace X10D.Performant
         /// <inheritdoc cref="DoubleExtensions.DegreesToRadians" />
         public static float DegreesToRadians(this float angle) => MathF.PI * angle / 180.0F;
 
-        /// <inheritdoc cref="DoubleExtensions.GetBytes" />
-        public static byte[] GetBytes(this float value) => BitConverter.GetBytes(value);
-
         /// <inheritdoc cref="DoubleExtensions.GradiansToDegrees" />
         public static float GradiansToDegrees(this float angle) => angle * 9F / 10F;
 

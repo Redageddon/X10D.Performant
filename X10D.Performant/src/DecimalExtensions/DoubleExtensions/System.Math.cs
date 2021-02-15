@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public static partial class DoubleExtensions
     {
         /// <inheritdoc cref="Math.Abs(double)" />
@@ -101,7 +104,7 @@ namespace X10D.Performant
         public static double Round(this double value, int digits, MidpointRounding mode) => Math.Round(value, digits, mode);
 
         /// <inheritdoc cref="Math.ScaleB(double,int)" />
-        public static double ScaleB(this double value, int b) => Math.ScaleB(value, b); // ReSharper disable InconsistentNaming
+        public static double ScaleB(this double value, int b) => Math.ScaleB(value, b);
 
         /// <inheritdoc cref="Math.Sign(double)" />
         public static int Sign(this double value) => Math.Sign(value);

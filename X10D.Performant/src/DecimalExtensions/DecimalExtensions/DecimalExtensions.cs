@@ -1,8 +1,11 @@
-﻿namespace X10D.Performant
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="decimal" />.
     /// </summary>
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class DecimalExtensions
     {
         /// <inheritdoc cref="DoubleExtensions.DegreesToRadians" />

@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class DecimalExtensions
     {
         /// <inheritdoc cref="decimal.Add(decimal,decimal)" />
@@ -64,7 +67,6 @@ namespace X10D.Performant
         /// <inheritdoc cref="decimal.ToInt64(decimal)" />
         public static long ToInt64(this decimal value) => decimal.ToInt64(value);
 
-        // ReSharper disable once InconsistentNaming
         /// <inheritdoc cref="decimal.ToOACurrency(decimal)" />
         public static long ToOACurrency(this decimal value) => decimal.ToOACurrency(value);
 

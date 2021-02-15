@@ -1,5 +1,8 @@
-﻿namespace X10D.Performant
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class StringExtensions
     {
         /// <inheritdoc cref="char.Parse(string)" />

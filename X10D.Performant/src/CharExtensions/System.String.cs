@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class CharExtensions
     {
         /// <inheritdoc cref="string.Concat(ReadOnlySpan{char},ReadOnlySpan{char})" />

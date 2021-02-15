@@ -1,7 +1,9 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class CharExtensions
     {
         /// <inheritdoc cref="char.ConvertToUtf32(char,char)" />

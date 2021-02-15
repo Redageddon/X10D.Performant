@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class EnumerableExtensions
     {
         /// <inheritdoc cref="string.Concat{T}(IEnumerable{T})" />

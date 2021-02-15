@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,6 +10,7 @@ namespace X10D.Performant.Tests.Core
     ///     Tests for <see cref="StringExtensions" />.
     /// </summary>
     [TestClass]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public class StringTests
     {
         /// <summary>
@@ -28,16 +30,6 @@ namespace X10D.Performant.Tests.Core
         /// </summary>
         [TestMethod]
         public void ChangeEncoding() => Assert.AreEqual("HELLO", "ĤĚĻĻŎ".ChangeEncoding(Encoding.Latin1, Encoding.ASCII));
-
-        /// <summary>
-        ///     Tests for <see cref="StringExtensions.ToEnum{T}(string,bool)" />.
-        /// </summary>
-        [TestMethod]
-        public void EnumParse()
-        {
-            Assert.AreEqual(Alphabet.A, "0".ToEnum<Alphabet>());
-            Assert.AreEqual(Alphabet.A, "A".ToEnum<Alphabet>());
-        }
 
         /// <summary>
         ///     Tests for <see cref="StringExtensions.GetBytes(string,Encoding)" />.
@@ -143,10 +135,5 @@ namespace X10D.Performant.Tests.Core
         /// </summary>
         [TestMethod]
         public void ToSecureString() => Assert.AreEqual(4, "Test".ToSecureString().Length);
-
-        private enum Alphabet
-        {
-            A,
-        }
     }
 }

@@ -185,6 +185,6 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="value">The input string.</param>
         /// <returns>An instance of <see cref="TimeSpan" />.</returns>
-        public static TimeSpan ToTimeSpan(this string value) => ShortHandParse(value);
+        public static TimeSpan ToTimeSpan(this string value) => value.ShortHandParse();
     }
 }

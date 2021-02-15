@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
-    public static partial class ReflectionExtensions
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    public static partial class TypeExtensions
     {
         /// <inheritdoc cref="Array.CreateInstance(Type,int)" />
         public static Array CreateArray(this Type arrayType, int length1d) => Array.CreateInstance(arrayType, length1d);

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
-    public static partial class ReflectionExtensions
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    public static partial class TypeExtensions
     {
         /// <inheritdoc cref="Type.GetTypeCode(Type)" />
         public static TypeCode GetTypeCode(this Type type) => Type.GetTypeCode(type);

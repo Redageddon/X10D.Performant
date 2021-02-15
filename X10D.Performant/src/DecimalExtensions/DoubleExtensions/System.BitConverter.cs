@@ -1,14 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class DoubleExtensions
     {
-        /// <summary>
-        ///     Converts the <paramref name="value" /> to a <see cref="T:byte[]" />.
-        /// </summary>
-        /// <param name="value">The number to convert.</param>
-        /// <returns>A <see cref="T:byte[]" />.</returns>
+        /// <inheritdoc cref="BitConverter.GetBytes(double)"/>
         public static byte[] GetBytes(this double value) => BitConverter.GetBytes(value);
     }
 }

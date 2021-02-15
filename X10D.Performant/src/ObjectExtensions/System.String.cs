@@ -1,5 +1,8 @@
-﻿namespace X10D.Performant
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class ObjectExtensions
     {
         /// <inheritdoc cref="string.Concat(object)" />

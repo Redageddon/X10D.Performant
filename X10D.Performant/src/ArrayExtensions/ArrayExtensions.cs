@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="Array" />
     /// </summary>
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static class ArrayExtensions
     {
         /// <inheritdoc cref="Array.AsReadOnly{T}(T[])" />

@@ -12,7 +12,9 @@ namespace X10D.Performant
         ///     Returns a <see cref="Task" /> which can be awaited until the current <see cref="WaitHandle" /> receives a signal.
         /// </summary>
         /// <param name="handle">The <see cref="WaitHandle" /> instance.</param>
+        /// <param name="milliseconds">The amount of milliseconds to wait.</param>
         /// <returns>A <see cref="Task" /> which wraps <see cref="WaitHandle.WaitOne()" />.</returns>
-        public static Task WaitOneAsync(this WaitHandle handle) => new(() => handle.WaitOne());
+        public static Task<bool> WaitOneAsync(this WaitHandle handle, int milliseconds = -1) =>
+            new(() => handle.WaitOne(milliseconds));
     }
 }

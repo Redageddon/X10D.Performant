@@ -12,11 +12,9 @@ namespace X10D.Performant
         ///     Converts a <see cref="SecureString" /> to a <see cref="string" />.
         /// </summary>
         /// <param name="secureString">The <see cref="SecureString" /> to convert.</param>
-        /// <param name="extension">Whether or not to use this extension method.</param>
+        /// <param name="userName">The <see cref="string"/> to pass to the <see cref="NetworkCredential"/>.</param>
         /// <returns>A <see cref="string" />.</returns>
-        public static string? ToString(this SecureString secureString, bool extension) =>
-            extension
-                ? new NetworkCredential(string.Empty, secureString).Password
-                : secureString.ToString();
+        public static string ToNormalString(this SecureString secureString, string? userName = null) =>
+            new NetworkCredential(userName ?? string.Empty, secureString).Password;
     }
 }

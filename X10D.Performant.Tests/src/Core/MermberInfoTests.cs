@@ -10,8 +10,22 @@ namespace X10D.Performant.Tests.Core
     ///     Tests for <see cref="MemberInfoExtensions" />.
     /// </summary>
     [TestClass]
-    public class ReflectionTests
+    public class MemberInfoTests
     {
+        /// <summary>
+        ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue" />.
+        /// </summary>
+        [TestMethod]
+        public void GetDefaultValueObj()
+        {
+            TestClass klass = new();
+
+            foreach (PropertyInfo property in klass.GetType().GetProperties())
+            {
+                Assert.AreEqual("Foo", property.GetDefaultValue());
+            }
+        }
+        
         /// <summary>
         ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue{T}" />.
         /// </summary>

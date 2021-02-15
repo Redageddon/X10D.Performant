@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Reflection;
 
 namespace X10D.Performant
 {
-    public static partial class ReflectionExtensions
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    public static partial class TypeExtensions
     {
         /// <inheritdoc cref="Activator.CreateInstance(Type,BindingFlags,Binder,object[],CultureInfo,object[])" />
         public static object? CreateInstance(

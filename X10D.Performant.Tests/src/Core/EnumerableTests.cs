@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,6 +11,46 @@ namespace X10D.Performant.Tests.Core
     [TestClass]
     public class EnumerableTests
     {
+        /// <summary>
+        ///     Tests for <see cref="EnumerableExtensions.DistinctBy{TSource,TValue}" />.
+        /// </summary>
+        [TestMethod]
+        public void DistinctBy()
+        {
+            List<Point> points = new()
+            {
+                new Point(1, 1),
+                new Point(1, 2),
+                new Point(1, 3),
+                new Point(1, 4),
+                new Point(2, 5),
+                new Point(3, 5),
+                new Point(4, 5),
+                new Point(5, 5),
+            };
+
+            List<Point> xs = new()
+            {
+                new Point(1, 1),
+                new Point(2, 5),
+                new Point(3, 5),
+                new Point(4, 5),
+                new Point(5, 5),
+            };
+            
+            List<Point> ys = new()
+            {
+                new Point(1, 1),
+                new Point(1, 2),
+                new Point(1, 3),
+                new Point(1, 4),
+                new Point(2, 5),
+            };
+
+            CollectionAssert.AreEqual(xs, points.DistinctBy(e => e.X).ToList());
+            CollectionAssert.AreEqual(ys, points.DistinctBy(e => e.Y).ToList());
+        }
+        
         /// <summary>
         ///     Tests for <see cref="EnumerableExtensions.LazyChunk{T}" />.
         /// </summary>

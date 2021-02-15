@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 namespace X10D.Performant
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class CharExtensions
     {
         /// <inheritdoc cref="short.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />
-        public static short
-            ToInt16(this ReadOnlySpan<char> chars, NumberStyles style = NumberStyles.Integer, IFormatProvider? formatProvider = null) =>
+        public static short ToInt16(
+            this ReadOnlySpan<char> chars,
+            NumberStyles style = NumberStyles.Integer,
+            IFormatProvider? formatProvider = null) =>
             short.Parse(chars, style, formatProvider ?? NumberFormatInfo.CurrentInfo);
 
         /// <inheritdoc cref="short.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />

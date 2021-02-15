@@ -6,19 +6,19 @@ using System.Linq;
 namespace X10D.Performant
 {
     /// <summary>
-    ///     Extension methods for <see cref="IEnumerable{T}" />.
+    ///     Extension methods for <see cref="IEnumerable{T}"/>.
     /// </summary>
     public static partial class EnumerableExtensions
     {
         /// <summary>
-        ///     Gets each unique object from <paramref name="values" /> determined by <paramref name="selector" /> and compared with <see cref="Comparer{T}" />
+        ///     Gets each unique object from <paramref name="values"/> determined by <paramref name="selector"/> and compared with <see cref="Comparer{T}"/>
         ///     if
         ///     passed.
         /// </summary>
         /// <param name="values">The initial values being iterated through.</param>
-        /// <param name="selector">The function that determines whether an element in <paramref name="values" /> should be returned.</param>
-        /// <param name="comparer">Passes a generic <see cref="IEqualityComparer" />.</param>
-        /// <typeparam name="TSource">The type of the contained element in the <paramref name="values" /> being read from.</typeparam>
+        /// <param name="selector">The function that determines whether an element in <paramref name="values"/> should be returned.</param>
+        /// <param name="comparer">Passes a generic <see cref="IEqualityComparer"/>.</param>
+        /// <typeparam name="TSource">The type of the contained element in the <paramref name="values"/> being read from.</typeparam>
         /// <typeparam name="TKey">The type being selected distinctly from.</typeparam>
         /// <returns>A collection of values that are specific to a selector.</returns>
         public static IEnumerable<TSource> DistinctBy<TSource, TKey>(
@@ -38,15 +38,15 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Splits <paramref name="values" /> into chunks of size <paramref name="chunkSize" />.
+        ///     Splits <paramref name="values"/> into chunks of size <paramref name="chunkSize"/>.
         /// </summary>
         /// <param name="values">The values to chunk.</param>
-        /// <param name="chunkSize">The maximum length of the nested <see cref="IEnumerable{T}" /> collection.</param>
+        /// <param name="chunkSize">The maximum length of the nested <see cref="IEnumerable{T}"/> collection.</param>
         /// <typeparam name="TSource">Any type.</typeparam>
         /// <returns>
-        ///     Returns an <see cref="IEnumerable{T}" /> of <see cref="IEnumerable{T}" /> of <typeparamref name="TSource" /> from <paramref name="values" /> split into
+        ///     Returns an <see cref="IEnumerable{T}"/> of <see cref="IEnumerable{T}"/> of <typeparamref name="TSource"/> from <paramref name="values"/> split into
         ///     chunks of size
-        ///     <paramref name="chunkSize" />.
+        ///     <paramref name="chunkSize"/>.
         /// </returns>
         public static IEnumerable<IList<TSource>> LazyChunk<TSource>(this IEnumerable<TSource> values, int chunkSize)
         {
@@ -68,13 +68,13 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Lazily generates a new random <see cref="IEnumerable{T}" /> by filling it with values found in <paramref name="values" />.
+        ///     Lazily generates a new random <see cref="IEnumerable{T}"/> by filling it with values found in <paramref name="values"/>.
         /// </summary>
         /// <param name="values">The values to pull.</param>
         /// <param name="count">The amount of items to be returned.</param>
-        /// <param name="random">The <see cref="Random" /> instance.</param>
+        /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <typeparam name="TSource">Any type.</typeparam>
-        /// <returns>An <see cref="IEnumerable{T}" /> containing <paramref name="count" /> values.</returns>
+        /// <returns>An <see cref="IEnumerable{T}"/> containing <paramref name="count"/> values.</returns>
         public static IEnumerable<TSource> LazyRandom<TSource>(this IEnumerable<TSource> values, int count, Random? random = null)
         {
             random ??= RandomExtensions.Random;
@@ -87,12 +87,12 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Shuffles <paramref name="values" />.
+        ///     Shuffles <paramref name="values"/>.
         /// </summary>
         /// <param name="values">The collection to shuffle.</param>
-        /// <param name="random">The <see cref="Random" /> instance.</param>
+        /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <typeparam name="TSource">The collection type.</typeparam>
-        /// <returns><paramref name="values" /> shuffled.</returns>
+        /// <returns><paramref name="values"/> shuffled.</returns>
         public static IEnumerable<TSource> Shuffled<TSource>(this IEnumerable<TSource> values, Random? random = null)
         {
             List<TSource> list = new(values);

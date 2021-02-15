@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="SecureStringExtensions" />.
+    ///     Tests for <see cref="SecureStringExtensions"/>.
     /// </summary>
     [TestClass]
     public class SecureStringTests
     {
         /// <summary>
-        ///     Test for <see cref="SecureStringExtensions.ToNormalString" />.
+        ///     Test for <see cref="SecureStringExtensions.ToNormalString"/>.
         /// </summary>
         [TestMethod]
         public void ToNormalString()

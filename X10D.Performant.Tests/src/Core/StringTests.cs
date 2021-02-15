@@ -7,38 +7,38 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="StringExtensions" />.
+    ///     Tests for <see cref="StringExtensions"/>.
     /// </summary>
     [TestClass]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public class StringTests
     {
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.Base64Decode(string)" />.
+        ///     Tests for <see cref="StringExtensions.Base64Decode(string)"/>.
         /// </summary>
         [TestMethod]
         public void Base64Decode() => Assert.AreEqual("hello", "aGVsbG8=".Base64Decode());
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.Base64Encode(string)" />.
+        ///     Tests for <see cref="StringExtensions.Base64Encode(string)"/>.
         /// </summary>
         [TestMethod]
         public void Base64Encode() => Assert.AreEqual("aGVsbG8=", "hello".Base64Encode());
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.ChangeEncoding(string, Encoding, Encoding)" />.
+        ///     Tests for <see cref="StringExtensions.ChangeEncoding(string, Encoding, Encoding)"/>.
         /// </summary>
         [TestMethod]
         public void ChangeEncoding() => Assert.AreEqual("HELLO", "ĤĚĻĻŎ".ChangeEncoding(Encoding.Latin1, Encoding.ASCII));
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.GetBytes(string,Encoding)" />.
+        ///     Tests for <see cref="StringExtensions.GetBytes(string,Encoding)"/>.
         /// </summary>
         [TestMethod]
         public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 84, 101, 115, 116 }, "Test".GetBytes());
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.IsAlpha(string)" />.
+        ///     Tests for <see cref="StringExtensions.IsAlpha(string)"/>.
         /// </summary>
         [TestMethod]
         public void IsAlpha()
@@ -50,7 +50,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.IsLower(string)" />.
+        ///     Tests for <see cref="StringExtensions.IsLower(string)"/>.
         /// </summary>
         [TestMethod]
         public void IsLower()
@@ -62,7 +62,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.IsNumerical(string)" />.
+        ///     Tests for <see cref="StringExtensions.IsNumerical(string)"/>.
         /// </summary>
         [TestMethod]
         public void IsNumerical()
@@ -74,7 +74,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.IsUpper(string)" />.
+        ///     Tests for <see cref="StringExtensions.IsUpper(string)"/>.
         /// </summary>
         [TestMethod]
         public void IsUpper()
@@ -86,7 +86,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.Repeat" />.
+        ///     Tests for <see cref="StringExtensions.Repeat"/>.
         /// </summary>
         [TestMethod]
         public void Repeat()
@@ -100,13 +100,13 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.Shuffle" />.
+        ///     Tests for <see cref="StringExtensions.Shuffle"/>.
         /// </summary>
         [TestMethod]
         public void Shuffle() => Assert.AreNotEqual("abcdefg", "abcdefg".Shuffle());
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.Split" />.
+        ///     Tests for <see cref="StringExtensions.Split"/>.
         /// </summary>
         [TestMethod]
         public void Split()
@@ -117,7 +117,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.ToTimeSpan" />.
+        ///     Tests for <see cref="StringExtensions.ToTimeSpan"/>.
         /// </summary>
         [TestMethod]
         public void TestParser()
@@ -131,7 +131,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.ToSecureString" />.
+        ///     Tests for <see cref="StringExtensions.ToSecureString"/>.
         /// </summary>
         [TestMethod]
         public void ToSecureString() => Assert.AreEqual(4, "Test".ToSecureString().Length);

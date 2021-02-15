@@ -5,13 +5,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="StreamExtensions" />.
+    ///     Tests for <see cref="StreamExtensions"/>.
     /// </summary>
     [TestClass]
     public class StreamTests
     {
         /// <summary>
-        ///     Test for <see cref="StreamExtensions.GetHash{T}" />.
+        ///     Test for <see cref="StreamExtensions.GetHash{T}"/>.
         /// </summary>
         [TestMethod]
         public void GetHash()

@@ -6,12 +6,12 @@ namespace X10D.Performant
     public static partial class StringExtensions
     {
         /// <summary>
-        ///     Parses a shorthand <see cref="TimeSpan" /> <see cref="string" /> (e.g. 3w 2d 1.5h) and converts it to an instance of
-        ///     <see cref="TimeSpan" />.
+        ///     Parses a shorthand <see cref="TimeSpan"/> <see cref="string"/> (e.g. 3w 2d 1.5h) and converts it to an instance of
+        ///     <see cref="TimeSpan"/>.
         /// </summary>
-        /// <param name="input">The input <see cref="string" />.</param>
+        /// <param name="input">The input <see cref="string"/>.</param>
         /// <param name="formatProvider">The format provider.</param>
-        /// <returns>An instance of <see cref="TimeSpan" />.</returns>
+        /// <returns>An instance of <see cref="TimeSpan"/>.</returns>
         public static TimeSpan ShortHandParse(this string input, IFormatProvider? formatProvider = null)
         {
             const string realNumberPattern = @"([0-9]*\.[0-9]+|[0-9]+)";

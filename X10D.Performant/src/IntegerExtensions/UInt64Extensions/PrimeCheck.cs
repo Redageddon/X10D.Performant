@@ -18,10 +18,10 @@ namespace X10D.Performant
         private static readonly ulong[] Lt1373653 = Lt18446744073709551616[..2];
 
         /// <summary>
-        ///     Determines if the <paramref name="value" /> is a prime value.
+        ///     Determines if the <paramref name="value"/> is a prime value.
         /// </summary>
         /// <param name="value">An integer value.</param>
-        /// <returns><see langword="true" /> if <paramref name="value" /> is prime, <see langword="false" /> otherwise.</returns>
+        /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
         public static bool IsPrime(this ulong value)
         {
             switch (value)

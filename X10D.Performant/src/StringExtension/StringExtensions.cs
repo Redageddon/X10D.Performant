@@ -6,41 +6,41 @@ using System.Text;
 namespace X10D.Performant
 {
     /// <summary>
-    ///     Extension methods for <see cref="string" />.
+    ///     Extension methods for <see cref="string"/>.
     /// </summary>
     public static partial class StringExtensions
     {
         /// <summary>
-        ///     Decodes a base-64 encoded <see cref="string" />.
+        ///     Decodes a base-64 encoded <see cref="string"/>.
         /// </summary>
-        /// <param name="value">The base-64 <see cref="string" /> to decode.</param>
-        /// <returns>The <see cref="string" /> in plain text.</returns>
+        /// <param name="value">The base-64 <see cref="string"/> to decode.</param>
+        /// <returns>The <see cref="string"/> in plain text.</returns>
         public static string Base64Decode(this string value) => Convert.FromBase64String(value).ToEncodedString();
 
         /// <summary>
-        ///     Encodes a base-64 encoded <see cref="string" />.
+        ///     Encodes a base-64 encoded <see cref="string"/>.
         /// </summary>
-        /// <param name="value">The plain text <see cref="string" /> to decode.</param>
-        /// <returns>The <see cref="string" /> in plain text.</returns>
+        /// <param name="value">The plain text <see cref="string"/> to decode.</param>
+        /// <returns>The <see cref="string"/> in plain text.</returns>
         public static string Base64Encode(this string value) => Convert.ToBase64String(value.GetBytes());
 
         /// <summary>
-        ///     Converts this <see cref="string" /> from one encoding to another.
+        ///     Converts this <see cref="string"/> from one encoding to another.
         /// </summary>
-        /// <param name="value">The input <see cref="string" />.</param>
+        /// <param name="value">The input <see cref="string"/>.</param>
         /// <param name="from">The input encoding.</param>
         /// <param name="to">The output encoding.</param>
-        /// <returns>A new <see cref="string" /> with its data converted to <paramref name="to" />.</returns>
+        /// <returns>A new <see cref="string"/> with its data converted to <paramref name="to"/>.</returns>
         public static string ChangeEncoding(this string value, Encoding from, Encoding to) => to.GetString(value.GetBytes(from));
 
-        /// <inheritdoc cref="Encoding.GetBytes(string)" />
+        /// <inheritdoc cref="Encoding.GetBytes(string)"/>
         public static byte[] GetBytes(this string value, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetBytes(value);
 
         /// <summary>
-        ///     Determines if all alphabetical characters in this <see cref="string" /> are considered letters.
+        ///     Determines if all alphabetical characters in this <see cref="string"/> are considered letters.
         /// </summary>
         /// <param name="value">The input string.</param>
-        /// <returns><see langword="true" /> if all alphabetical characters are uppercase, <see langword="false" /> otherwise.</returns>
+        /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
         public static bool IsAlpha(this string value)
         {
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
@@ -56,10 +56,10 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Determines if all alphabetical characters in this <see cref="string" /> are considered lowercase.
+        ///     Determines if all alphabetical characters in this <see cref="string"/> are considered lowercase.
         /// </summary>
         /// <param name="value">The input string.</param>
-        /// <returns><see langword="true" /> if all alphabetical characters are lowercase, <see langword="false" /> otherwise.</returns>
+        /// <returns><see langword="true"/> if all alphabetical characters are lowercase, <see langword="false"/> otherwise.</returns>
         public static bool IsLower(this string value)
         {
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
@@ -76,10 +76,10 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Determines if all alphabetical characters in this <see cref="string" /> are considered numbers.
+        ///     Determines if all alphabetical characters in this <see cref="string"/> are considered numbers.
         /// </summary>
         /// <param name="value">The input string.</param>
-        /// <returns><see langword="true" /> if all alphabetical characters are uppercase, <see langword="false" /> otherwise.</returns>
+        /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
         public static bool IsNumerical(this string value)
         {
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
@@ -95,10 +95,10 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Determines if all alphabetical characters in this <see cref="string" /> are considered uppercase.
+        ///     Determines if all alphabetical characters in this <see cref="string"/> are considered uppercase.
         /// </summary>
         /// <param name="value">The input string.</param>
-        /// <returns><see langword="true" /> if all alphabetical characters are uppercase, <see langword="false" /> otherwise.</returns>
+        /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
         public static bool IsUpper(this string value)
         {
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
@@ -115,11 +115,11 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Repeats a <see cref="string" /> a specified number of times.
+        ///     Repeats a <see cref="string"/> a specified number of times.
         /// </summary>
         /// <param name="value">The string to repeat.</param>
         /// <param name="count">The repeat count.</param>
-        /// <returns>A <see cref="string" /> whose value is <paramref name="value" /> repeated <paramref name="count" /> times.</returns>
+        /// <returns>A <see cref="string"/> whose value is <paramref name="value"/> repeated <paramref name="count"/> times.</returns>
         public static string Repeat(this string value, double count)
         {
             if (value.Length == 0)
@@ -139,21 +139,21 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Shuffles the characters in the <see cref="string" />.
+        ///     Shuffles the characters in the <see cref="string"/>.
         /// </summary>
-        /// <param name="value">The <see cref="string" /> to shuffle.</param>
-        /// <param name="random">The <see cref="Random" /> instance.</param>
-        /// <returns>A <see cref="string" /> containing the characters in <paramref name="value" />, rearranged.</returns>
+        /// <param name="value">The <see cref="string"/> to shuffle.</param>
+        /// <param name="random">The <see cref="Random"/> instance.</param>
+        /// <returns>A <see cref="string"/> containing the characters in <paramref name="value"/>, rearranged.</returns>
         public static string Shuffle(this string value, Random? random = null) => new(value.AsSpan().Shuffled(random));
 
         /// <summary>
-        ///     Splits the <see cref="string" /> into chunks that are no greater than <paramref name="chunkSize" /> in length.
+        ///     Splits the <see cref="string"/> into chunks that are no greater than <paramref name="chunkSize"/> in length.
         /// </summary>
-        /// <param name="value">The <see cref="string" /> to split.</param>
-        /// <param name="chunkSize">The maximum length of each <see cref="string" /> in the returned result.</param>
+        /// <param name="value">The <see cref="string"/> to split.</param>
+        /// <param name="chunkSize">The maximum length of each <see cref="string"/> in the returned result.</param>
         /// <returns>
-        ///     An <see cref="IEnumerable{T}" /> containing <see cref="string" /> instances which are no greater than
-        ///     <paramref name="chunkSize" /> in length.
+        ///     An <see cref="IEnumerable{T}"/> containing <see cref="string"/> instances which are no greater than
+        ///     <paramref name="chunkSize"/> in length.
         /// </returns>
         public static IEnumerable<string> Split(this string value, int chunkSize)
         {
@@ -164,10 +164,10 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Converts a <see cref="string" /> to a <see cref="SecureString" />.
+        ///     Converts a <see cref="string"/> to a <see cref="SecureString"/>.
         /// </summary>
-        /// <param name="value">The <see cref="string" /> to convert.</param>
-        /// <returns>A <see cref="SecureString" />.</returns>
+        /// <param name="value">The <see cref="string"/> to convert.</param>
+        /// <returns>A <see cref="SecureString"/>.</returns>
         public static SecureString ToSecureString(this string value)
         {
             SecureString result = new();
@@ -181,10 +181,10 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Parses a shorthand time span <see cref="string" /> (e.g. 3w 2d 1.5h) and converts it to an instance of <see cref="TimeSpan" />.
+        ///     Parses a shorthand time span <see cref="string"/> (e.g. 3w 2d 1.5h) and converts it to an instance of <see cref="TimeSpan"/>.
         /// </summary>
         /// <param name="value">The input string.</param>
-        /// <returns>An instance of <see cref="TimeSpan" />.</returns>
+        /// <returns>An instance of <see cref="TimeSpan"/>.</returns>
         public static TimeSpan ToTimeSpan(this string value) => value.ShortHandParse();
     }
 }

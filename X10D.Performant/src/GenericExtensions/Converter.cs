@@ -6,22 +6,24 @@ namespace X10D.Performant
     public static partial class GenericExtensions
     {
         /// <summary>
-        ///     Converts the <paramref name="value" /> to a <typeparamref name="TTo" />.
+        ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.
         /// </summary>
         /// <param name="value">The object to convert.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>The value converted to <typeparamref name="TTo" />.</returns>
+        /// <returns>The value converted to <typeparamref name="TTo"/>.</returns>
+        [CLSCompliant(false)]
         public static TTo? To<TFrom, TTo>(this TFrom value) => Convert<TFrom, TTo>.Function(value);
 
         /// <summary>
-        ///     Converts the <paramref name="value" /> to a <typeparamref name="TTo" />, returning <paramref name="other" /> on fail.
+        ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>, returning <paramref name="other"/> on fail.
         /// </summary>
         /// <param name="value">The object to convert.</param>
         /// <param name="other">The backup value.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>The a <typeparamref name="TTo" /> value.</returns>
+        /// <returns>The a <typeparamref name="TTo"/> value.</returns>
+        [CLSCompliant(false)]
         public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, TTo? other)
         {
             if (!value.TryTo(out TTo? output))
@@ -33,13 +35,14 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Converts the <paramref name="value" /> to a <typeparamref name="TTo" />, executing and returning <paramref name="other" /> on fail.
+        ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>, executing and returning <paramref name="other"/> on fail.
         /// </summary>
         /// <param name="value">The object to convert.</param>
         /// <param name="other">The unloaded value to get.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>The value converted to <typeparamref name="TTo" />.</returns>
+        /// <returns>The value converted to <typeparamref name="TTo"/>.</returns>
+        [CLSCompliant(false)]
         public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, Func<TTo> other)
         {
             if (!value.TryTo(out TTo? output))
@@ -51,13 +54,14 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Converts the <paramref name="value" /> to a <typeparamref name="TTo" />.
+        ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.
         /// </summary>
         /// <param name="value">The object to convert.</param>
-        /// <param name="result">The value converted to <typeparamref name="TTo" />.</param>
+        /// <param name="result">The value converted to <typeparamref name="TTo"/>.</param>
         /// <typeparam name="TFrom">The type to convert from.</typeparam>
         /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns><see langword="true" /> if a conversion was successful, or <see langword="false" /> otherwise.</returns>
+        /// <returns><see langword="true"/> if a conversion was successful, or <see langword="false"/> otherwise.</returns>
+        [CLSCompliant(false)]
         public static bool TryTo<TFrom, TTo>(this TFrom value, out TTo? result)
         {
             try
@@ -120,7 +124,7 @@ namespace X10D.Performant
                         Convert<string, float>.Function = float.Parse;
                         Convert<string, double>.Function = double.Parse;
                         Convert<string, decimal>.Function = decimal.Parse;
-                        Convert<string, TimeSpan>.Function = v => StringExtensions.ShortHandParse(v);
+                        Convert<string, TimeSpan>.Function = v => v.ShortHandParse();
                     }
                     else
                     {

@@ -6,16 +6,16 @@ using System.Security.Cryptography;
 namespace X10D.Performant
 {
     /// <summary>
-    ///     Extension methods for <see cref="Stream" />.
+    ///     Extension methods for <see cref="Stream"/>.
     /// </summary>
     public static partial class StreamExtensions
     {
         /// <summary>
-        ///     Returns the hash of a stream using the specified hashing algorithm in terms of a <see cref="T:byte[]" />.
+        ///     Returns the hash of a stream using the specified hashing algorithm in terms of a <see cref="T:byte[]"/>.
         /// </summary>
-        /// <param name="stream">The <see cref="Stream" /> whose hash is to be computed.</param>
-        /// <typeparam name="T">A <see cref="HashAlgorithm" /> derived type.</typeparam>
-        /// <returns>A <see cref="T:byte[]" /> representing the hash of <paramref name="stream" />.</returns>
+        /// <param name="stream">The <see cref="Stream"/> whose hash is to be computed.</param>
+        /// <typeparam name="T">A <see cref="HashAlgorithm"/> derived type.</typeparam>
+        /// <returns>A <see cref="T:byte[]"/> representing the hash of <paramref name="stream"/>.</returns>
         public static byte[]? GetHash<T>(this Stream stream)
             where T : HashAlgorithm
         {

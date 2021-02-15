@@ -7,13 +7,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="ByteExtensions" />.
+    ///     Tests for <see cref="ByteExtensions"/>.
     /// </summary>
     [TestClass]
     public class ByteTests
     {
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToSting" />.
+        ///     Tests for <see cref="ByteExtensions.ToSting"/>.
         /// </summary>
         [TestMethod]
         public void AsString()
@@ -23,7 +23,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToInt32(byte[],int)" />.
+        ///     Tests for <see cref="ByteExtensions.ToInt32(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void BitsAsInt()
@@ -34,7 +34,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToInt64(byte[],int)" />.
+        ///     Tests for <see cref="ByteExtensions.ToInt64(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void BitsAsLong()
@@ -45,7 +45,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToInt16(byte[],int)" />.
+        ///     Tests for <see cref="ByteExtensions.ToInt16(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void BitsAsShort()
@@ -56,7 +56,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt16(byte[],int)" />.
+        ///     Tests for <see cref="ByteExtensions.ToUInt16(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt16()
@@ -66,7 +66,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt16(Span{byte})" />.
+        ///     Tests for <see cref="ByteExtensions.ToUInt16(Span{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt16Span()
@@ -76,7 +76,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt32(byte[],int)" />.
+        ///     Tests for <see cref="ByteExtensions.ToUInt32(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt32()
@@ -86,7 +86,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt32(Span{byte})" />.
+        ///     Tests for <see cref="ByteExtensions.ToUInt32(Span{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt32Span()
@@ -96,7 +96,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt64(byte[],int)" />.
+        ///     Tests for <see cref="ByteExtensions.ToUInt64(byte[],int)"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt64()
@@ -106,7 +106,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToUInt64(Span{byte})" />.
+        ///     Tests for <see cref="ByteExtensions.ToUInt64(Span{byte})"/>.
         /// </summary>
         [TestMethod]
         public void GetUInt64Span()
@@ -116,7 +116,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToEncodedString(System.Span{byte},Encoding)" />.
+        ///     Tests for <see cref="ByteExtensions.ToEncodedString(System.Span{byte},Encoding)"/>.
         /// </summary>
         [TestMethod]
         public void GetUtf8Span()
@@ -126,7 +126,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToEncodedString(byte[],Encoding)" />.
+        ///     Tests for <see cref="ByteExtensions.ToEncodedString(byte[],Encoding)"/>.
         /// </summary>
         [TestMethod]
         public void GetUtf8String()
@@ -136,7 +136,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.IsEven" />.
+        ///     Tests for <see cref="ByteExtensions.IsEven"/>.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -146,7 +146,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.IsOdd" />.
+        ///     Tests for <see cref="ByteExtensions.IsOdd"/>.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -156,7 +156,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.IsPrime" />.
+        ///     Tests for <see cref="ByteExtensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrime()
@@ -175,7 +175,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="SByteExtensions.IsPrime" />.
+        ///     Tests for <see cref="SByteExtensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrimeSigned()
@@ -193,7 +193,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToBoolean" />.
+        ///     Tests for <see cref="ByteExtensions.ToBoolean"/>.
         /// </summary>
         [TestMethod]
         public void ToBool()

@@ -46,7 +46,7 @@ namespace X10D.Performant
         /// <param name="value">The value being raised.</param>
         /// <param name="exponent">The value that is raising.</param>
         /// <param name="modulus">The modulo to be applied to the result.</param>
-        /// <returns><paramref name="value" /> raised by <paramref name="exponent" /> and then modded by <paramref name="modulus" />.</returns>
+        /// <returns><paramref name="value"/> raised by <paramref name="exponent"/> and then modded by <paramref name="modulus"/>.</returns>
         public static ulong ModPow(this ulong value, ulong exponent, ulong modulus)
         {
             value = Mod(value, modulus);

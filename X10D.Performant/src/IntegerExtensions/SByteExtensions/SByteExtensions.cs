@@ -4,11 +4,12 @@ using System.Runtime.CompilerServices;
 namespace X10D.Performant
 {
     /// <summary>
-    ///     Extension methods for <see cref="sbyte" />.
+    ///     Extension methods for <see cref="sbyte"/>.
     /// </summary>
+    [CLSCompliant(false)]
     public static partial class SByteExtensions
     {
-        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp" />
+        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMillis = false)
         {
             DateTimeOffset offset = isMillis
@@ -18,13 +19,13 @@ namespace X10D.Performant
             return offset.DateTime;
         }
 
-        /// <inheritdoc cref="Int64Extensions.IsEven" />
+        /// <inheritdoc cref="Int64Extensions.IsEven"/>
         public static bool IsEven(this sbyte value) => (value & 1) == 0;
 
-        /// <inheritdoc cref="Int64Extensions.IsOdd" />
+        /// <inheritdoc cref="Int64Extensions.IsOdd"/>
         public static bool IsOdd(this sbyte value) => (value & 1) == 1;
 
-        /// <inheritdoc cref="UInt64Extensions.IsPrime" />
+        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
         public static bool IsPrime(this sbyte value)
         {
             switch (value)
@@ -45,14 +46,14 @@ namespace X10D.Performant
             }
         }
 
-        /// <inheritdoc cref="UInt64Extensions.Mod" />
+        /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static sbyte Mod(this sbyte value, sbyte modulus) =>
             value < modulus
                 ? value
                 : (sbyte)(value - (value / modulus * modulus));
 
-        /// <inheritdoc cref="Int64Extensions.ToBoolean" />
+        /// <inheritdoc cref="Int64Extensions.ToBoolean"/>
         public static bool ToBoolean(this sbyte value) => value != 0;
     }
 }

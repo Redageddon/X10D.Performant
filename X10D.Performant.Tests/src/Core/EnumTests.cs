@@ -3,13 +3,13 @@
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="EnumExtensions" />.
+    ///     Tests for <see cref="EnumExtensions"/>.
     /// </summary>
     [TestClass]
     public class EnumTests
     {
         /// <summary>
-        ///     Tests for <see cref="EnumExtensions.NextEnumDeclaration{T}(T,bool)" />.
+        ///     Tests for <see cref="EnumExtensions.NextEnumDeclaration{T}(T,bool)"/>.
         /// </summary>
         [TestMethod]
         public void NextEnumDeclaration()
@@ -20,7 +20,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EnumExtensions.PreviousEnumDeclaration{T}(T,bool)" />.
+        ///     Tests for <see cref="EnumExtensions.PreviousEnumDeclaration{T}(T,bool)"/>.
         /// </summary>
         [TestMethod]
         public void PreviousEnumDeclaration()

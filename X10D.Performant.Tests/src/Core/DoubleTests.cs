@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="DoubleExtensions" />.
+    ///     Tests for <see cref="DoubleExtensions"/>.
     /// </summary>
     [TestClass]
     public class DoubleTests
     {
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.DegreesToGradians" />.
+        ///     Tests for <see cref="DoubleExtensions.DegreesToGradians"/>.
         /// </summary>
         [TestMethod]
         public void DegreesToGradians()
@@ -20,7 +20,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.DegreesToRadians" />.
+        ///     Tests for <see cref="DoubleExtensions.DegreesToRadians"/>.
         /// </summary>
         [TestMethod]
         public void DegreesToRadians()
@@ -30,7 +30,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.GradiansToDegrees" />.
+        ///     Tests for <see cref="DoubleExtensions.GradiansToDegrees"/>.
         /// </summary>
         [TestMethod]
         public void GradiansToDegrees()
@@ -40,7 +40,7 @@ namespace X10D.Performant.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.GradiansToRadians" />.
+        ///     Tests for <see cref="DoubleExtensions.GradiansToRadians"/>.
         /// </summary>
         [TestMethod]
         public void GradiansToRadians()
@@ -50,7 +50,7 @@ namespace X10D.Performant.Tests.Core
         }       
         
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.InverseSqrt" />.
+        ///     Tests for <see cref="DoubleExtensions.InverseSqrt"/>.
         /// </summary>
         [TestMethod]
         public void InverseSqrt()
@@ -60,7 +60,7 @@ namespace X10D.Performant.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.IsEven" />.
+        ///     Tests for <see cref="DoubleExtensions.IsEven"/>.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -70,7 +70,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.IsOdd" />.
+        ///     Tests for <see cref="DoubleExtensions.IsOdd"/>.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -80,7 +80,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.RadiansToDegrees" />.
+        ///     Tests for <see cref="DoubleExtensions.RadiansToDegrees"/>.
         /// </summary>
         [TestMethod]
         public void RadiansToDegrees()
@@ -90,7 +90,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.RadiansToGradians" />.
+        ///     Tests for <see cref="DoubleExtensions.RadiansToGradians"/>.
         /// </summary>
         [TestMethod]
         public void RadiansToGradians()

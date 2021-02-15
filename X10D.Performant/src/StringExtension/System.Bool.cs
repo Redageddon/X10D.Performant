@@ -2,7 +2,7 @@
 {
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="bool.Parse(string)" />
+        /// <inheritdoc cref="bool.Parse(string)"/>
         public static bool ToBool(this string value)
         {
             switch (value)
@@ -22,7 +22,7 @@
             }
         }
 
-        /// <inheritdoc cref="bool.TryParse(string,out bool)" />
+        /// <inheritdoc cref="bool.TryParse(string,out bool)"/>
         public static bool TryToBool(this string value, out bool result)
         {
             switch (value)

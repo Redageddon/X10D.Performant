@@ -5,13 +5,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="ListExtensions" />
+    ///     Tests for <see cref="ListExtensions"/>
     /// </summary>
     [TestClass]
     public class ListTests
     {
         /// <summary>
-        ///     Tests for <see cref="ListExtensions.OneOf{T}" />
+        ///     Tests for <see cref="ListExtensions.OneOf{T}"/>
         /// </summary>
         [TestMethod]
         public void OneOf()
@@ -41,7 +41,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ListExtensions.Random{T}(IList{T},IList{T},System.Random?)" />
+        ///     Tests for <see cref="ListExtensions.Random{T}(IList{T},IList{T},System.Random?)"/>
         /// </summary>
         [TestMethod]
         public void Random()
@@ -56,7 +56,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ListExtensions.Shuffle{T}(IList{T},System.Random?)" />
+        ///     Tests for <see cref="ListExtensions.Shuffle{T}(IList{T},System.Random?)"/>
         /// </summary>
         [TestMethod]
         public void Shuffle()

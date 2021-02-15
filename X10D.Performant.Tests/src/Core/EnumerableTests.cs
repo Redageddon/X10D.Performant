@@ -6,13 +6,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="EnumerableExtensions" />.
+    ///     Tests for <see cref="EnumerableExtensions"/>.
     /// </summary>
     [TestClass]
     public class EnumerableTests
     {
         /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.DistinctBy{TSource,TValue}" />.
+        ///     Tests for <see cref="EnumerableExtensions.DistinctBy{TSource,TValue}"/>.
         /// </summary>
         [TestMethod]
         public void DistinctBy()
@@ -52,7 +52,7 @@ namespace X10D.Performant.Tests.Core
         }
         
         /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.LazyChunk{T}" />.
+        ///     Tests for <see cref="EnumerableExtensions.LazyChunk{T}"/>.
         /// </summary>
         [TestMethod]
         public void LazyChunk()
@@ -68,7 +68,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.LazyRandom{T}" />
+        ///     Tests for <see cref="EnumerableExtensions.LazyRandom{T}"/>
         /// </summary>
         [TestMethod]
         public void LazyRandom()
@@ -81,7 +81,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.Shuffled{T}" />
+        ///     Tests for <see cref="EnumerableExtensions.Shuffled{T}"/>
         /// </summary>
         [TestMethod]
         public void Shuffled()

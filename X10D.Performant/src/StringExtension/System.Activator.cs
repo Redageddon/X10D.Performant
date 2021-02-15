@@ -9,7 +9,7 @@ namespace X10D.Performant
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="Activator.CreateInstance(string,string,bool,BindingFlags,Binder,object[],CultureInfo,object[])" />
+        /// <inheritdoc cref="Activator.CreateInstance(string,string,bool,BindingFlags,Binder,object[],CultureInfo,object[])"/>
         public static ObjectHandle? CreateInstance(
             this string assemblyName,
             string typeName,
@@ -21,7 +21,7 @@ namespace X10D.Performant
             object?[]? activationAttributes = null) =>
             Activator.CreateInstance(assemblyName, typeName, ignoreCase, bindingFlags, binder, args, culture, activationAttributes);
 
-        /// <inheritdoc cref="Activator.CreateInstance(string,string,bool,BindingFlags,Binder,object[],CultureInfo,object[])" />
+        /// <inheritdoc cref="Activator.CreateInstance(string,string,bool,BindingFlags,Binder,object[],CultureInfo,object[])"/>
         public static ObjectHandle? CreateInstanceFrom(
             string assemblyFile,
             string typeName,

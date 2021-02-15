@@ -7,15 +7,15 @@ namespace X10D.Performant
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class CharExtensions
     {
-        /// <inheritdoc cref="int.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />
+        /// <inheritdoc cref="int.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)"/>
         public static int ToInt32(this ReadOnlySpan<char> chars, NumberStyles style = NumberStyles.Integer, IFormatProvider? provider = null) =>
             int.Parse(chars, style, provider ?? NumberFormatInfo.CurrentInfo);
 
-        /// <inheritdoc cref="int.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />
+        /// <inheritdoc cref="int.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)"/>
         public static int ToInt32(this Span<char> chars, NumberStyles style = NumberStyles.Integer, IFormatProvider? provider = null) =>
             int.Parse(chars, style, provider ?? NumberFormatInfo.CurrentInfo);
 
-        /// <inheritdoc cref="int.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out int)" />
+        /// <inheritdoc cref="int.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out int)"/>
         public static bool TryToInt32(
             this ReadOnlySpan<char> chars,
             out int result,
@@ -23,7 +23,7 @@ namespace X10D.Performant
             IFormatProvider? provider = null) =>
             int.TryParse(chars, style, provider ?? NumberFormatInfo.CurrentInfo, out result);
 
-        /// <inheritdoc cref="int.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out int)" />
+        /// <inheritdoc cref="int.TryParse(ReadOnlySpan{char},NumberStyles,IFormatProvider,out int)"/>
         public static bool TryToInt32(
             this Span<char> chars,
             out int result,

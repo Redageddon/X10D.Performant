@@ -3,13 +3,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="ComparableExtensions" />.
+    ///     Tests for <see cref="ComparableExtensions"/>.
     /// </summary>
     [TestClass]
     public class ComparableTests
     {
         /// <summary>
-        ///     Tests for <see cref="ComparableExtensions.Between{T}" />.
+        ///     Tests for <see cref="ComparableExtensions.Between{T}"/>.
         /// </summary>
         [TestMethod]
         public void Between()
@@ -20,7 +20,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ComparableExtensions.Outside{T}" />.
+        ///     Tests for <see cref="ComparableExtensions.Outside{T}"/>.
         /// </summary>
         [TestMethod]
         public void Outside()

@@ -7,11 +7,11 @@ namespace X10D.Performant
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="short.Parse(string,NumberStyles,IFormatProvider)" />
+        /// <inheritdoc cref="short.Parse(string,NumberStyles,IFormatProvider)"/>
         public static short ToInt16(this string value, NumberStyles style = NumberStyles.Number, IFormatProvider? formatProvider = null) =>
             short.Parse(value, style, formatProvider ?? NumberFormatInfo.CurrentInfo);
 
-        /// <inheritdoc cref="short.TryParse(string,NumberStyles,IFormatProvider,out short)" />
+        /// <inheritdoc cref="short.TryParse(string,NumberStyles,IFormatProvider,out short)"/>
         public static bool TryToInt16(
             this string value,
             out short result,

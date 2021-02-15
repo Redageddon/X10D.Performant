@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="SpanExtensions" />
+    ///     Tests for <see cref="SpanExtensions"/>
     /// </summary>
     [TestClass]
     public class SpanTests
     {
         /// <summary>
-        ///     Tests for <see cref="SpanExtensions.Random{T}(ReadOnlySpan{T},Span{T},System.Random?)" />
+        ///     Tests for <see cref="SpanExtensions.Random{T}(ReadOnlySpan{T},Span{T},System.Random?)"/>
         /// </summary>
         [TestMethod]
         public void Random()
@@ -25,7 +25,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="SpanExtensions.Random{T}(Span{T},int,System.Random?)" />
+        ///     Tests for <see cref="SpanExtensions.Random{T}(Span{T},int,System.Random?)"/>
         /// </summary>
         [TestMethod]
         public void Random2()
@@ -39,7 +39,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="SpanExtensions.Shuffle{T}(Span{T},System.Random?)" />
+        ///     Tests for <see cref="SpanExtensions.Shuffle{T}(Span{T},System.Random?)"/>
         /// </summary>
         [TestMethod]
         public void Shuffle()
@@ -52,7 +52,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="SpanExtensions.Shuffled{T}(Span{T},System.Random?)" />
+        ///     Tests for <see cref="SpanExtensions.Shuffled{T}(Span{T},System.Random?)"/>
         /// </summary>
         [TestMethod]
         public void Shuffled()

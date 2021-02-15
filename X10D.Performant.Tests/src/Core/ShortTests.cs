@@ -5,25 +5,25 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="Int16Extensions" />.
+    ///     Tests for <see cref="Int16Extensions"/>.
     /// </summary>
     [TestClass]
     public class ShortTests
     {
         /// <summary>
-        ///     Tests for <see cref="Int16Extensions.GetBytes(short)" />.
+        ///     Tests for <see cref="Int16Extensions.GetBytes(short)"/>.
         /// </summary>
         [TestMethod]
         public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 3, 0 }, ((short)Math.PI).GetBytes());
 
         /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.GetBytes" />.
+        ///     Tests for <see cref="UInt16Extensions.GetBytes"/>.
         /// </summary>
         [TestMethod]
         public void GetBytesU() => CollectionAssert.AreEqual(new byte[] { 3, 0 }, ((ushort)Math.PI).GetBytes());
 
         /// <summary>
-        ///     Tests for <see cref="Int16Extensions.IsEven(short)" />.
+        ///     Tests for <see cref="Int16Extensions.IsEven(short)"/>.
         /// </summary>
         [TestMethod]
         public void IsEven()
@@ -33,7 +33,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.IsEven" />.
+        ///     Tests for <see cref="UInt16Extensions.IsEven"/>.
         /// </summary>
         [TestMethod]
         public void IsEvenU()
@@ -43,7 +43,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="Int16Extensions.IsOdd(short)" />.
+        ///     Tests for <see cref="Int16Extensions.IsOdd(short)"/>.
         /// </summary>
         [TestMethod]
         public void IsOdd()
@@ -53,7 +53,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.IsOdd" />.
+        ///     Tests for <see cref="UInt16Extensions.IsOdd"/>.
         /// </summary>
         [TestMethod]
         public void IsOddU()
@@ -63,7 +63,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="Int16Extensions.IsPrime(short)" />.
+        ///     Tests for <see cref="Int16Extensions.IsPrime(short)"/>.
         /// </summary>
         [TestMethod]
         public void IsPrime()
@@ -86,7 +86,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.IsPrime" />.
+        ///     Tests for <see cref="UInt16Extensions.IsPrime"/>.
         /// </summary>
         [TestMethod]
         public void IsPrimeU()
@@ -109,7 +109,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="Int16Extensions.ToBoolean(short)" />.
+        ///     Tests for <see cref="Int16Extensions.ToBoolean(short)"/>.
         /// </summary>
         [TestMethod]
         public void ToBool()
@@ -120,7 +120,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.ToBoolean" />.
+        ///     Tests for <see cref="UInt16Extensions.ToBoolean"/>.
         /// </summary>
         [TestMethod]
         public void ToBoolU()

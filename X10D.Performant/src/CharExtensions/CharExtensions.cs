@@ -26,13 +26,17 @@ namespace X10D.Performant
         /// <exception cref="ArgumentException">If <paramref name="value"/> is not a character.</exception>
         public static char GetNextLetter(this char value, int amount = 1, bool wrap = false, bool isUpper = false)
         {
+            const int lowerChar = 'a';
+            const int higherChar = 'z';
+            const int alphabetCount = higherChar - lowerChar + 1;
+            
             value = value.ToLower();
-            if (value < 97 || value > 122)
+            if (value < lowerChar || value > higherChar)
             {
                 throw new ArgumentException($"{nameof(value)} should be a letter");
             }
             
-            amount %= 26;
+            amount %= alphabetCount;
             
             if (wrap)
             {
@@ -43,15 +47,15 @@ namespace X10D.Performant
                         : value;
                 }
 
-                value = (char)(96 + ((value - 96 + amount) % 26));
+                value = (char)(lowerChar + ((value - lowerChar + amount) % alphabetCount));
             }
             else
             {
-                if (value + amount >= 122)
+                if (value + amount >= higherChar)
                 {
                     value = 'z';
                 }
-                else if (value + amount <= 97)
+                else if (value + amount <= lowerChar)
                 {
                     value = 'a';
                 }

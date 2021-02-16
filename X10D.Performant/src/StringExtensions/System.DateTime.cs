@@ -7,7 +7,7 @@ namespace X10D.Performant
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="DateTime.Parse(string,IFormatProvider)"/>
+        /// <inheritdoc cref="DateTime.Parse(string,IFormatProvider,DateTimeStyles)"/>
         public static DateTime ToDateTime(this string value, IFormatProvider? formatProvider = null, DateTimeStyles style = DateTimeStyles.None) =>
             DateTime.Parse(value, formatProvider ?? DateTimeFormatInfo.CurrentInfo, style);
 

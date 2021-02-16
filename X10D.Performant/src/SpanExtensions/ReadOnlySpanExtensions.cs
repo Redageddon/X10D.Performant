@@ -22,7 +22,7 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Shuffles a <see cref="Span{T}"/>.
+        ///     Shuffles a <see cref="ReadOnlySpan{T}"/>.
         /// </summary>
         /// <param name="values">The <see cref="Span{T}"/> to shuffle.</param>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>

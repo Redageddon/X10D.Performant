@@ -7,7 +7,7 @@ namespace X10D.Performant
     /// </summary>
     public static partial class SpanExtensions
     {
-        /// <inheritdoc cref="Random{T}(ReadOnlySpan{T},Span{T},Random?)"/>
+        /// <inheritdoc cref="Random{T}(ReadOnlySpan{T},Span{T},Random)"/>
         public static void Random<T>(this Span<T> values, Span<T> buffer, Random? random = null) => Random((ReadOnlySpan<T>)values, buffer, random);
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace X10D.Performant
             }
         }
 
-        /// <inheritdoc cref="Shuffled{T}(ReadOnlySpan{T},Random?)"/>
+        /// <inheritdoc cref="Shuffled{T}(ReadOnlySpan{T},Random)"/>
         public static Span<T> Shuffled<T>(this Span<T> values, Random? random = null)
         {
             Span<T> writeableSpan = new(new T[values.Length]);

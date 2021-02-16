@@ -10,7 +10,7 @@ namespace X10D.Performant
     [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static class Utf8JsonReaderExtensions
     {
-        /// <inheritdoc cref="System.Text.Json.JsonSerializer.Deserialize{T}(ref Utf8JsonReader,JsonSerializerOptions)"/>
+        /// <inheritdoc cref="JsonSerializer.Deserialize{T}(ref Utf8JsonReader,JsonSerializerOptions)"/>
         public static TValue? JsonTo<TValue>(this ref Utf8JsonReader reader, JsonSerializerOptions? serializerOptions = null) =>
             JsonSerializer.Deserialize<TValue>(ref reader, serializerOptions);
     }

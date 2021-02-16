@@ -2,26 +2,30 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <Authors>Redageddon, Oliver Booth</Authors>
+        <Configuration>Release</Configuration>
+        <Copyright>MIT</Copyright>
+        <Description>Performant Extension methods on crack.</Description>
+        <FileVersion>6.0.0.0</FileVersion>
+        <Version>6.0.0.0</Version>
+        <RepositoryUrl>https://github.com/Redageddon/X10D/</RepositoryUrl>
+        <NeutralLanguage>en</NeutralLanguage>
+    </PropertyGroup>
+    
+    <PropertyGroup>
         <nullable>Enable</nullable>
         <LangVersion>Latest</LangVersion>
         <RootNamespace>X10D.Performant</RootNamespace>
-        <Authors>Redageddon, Oliver Booth</Authors>
-        <NeutralLanguage>en</NeutralLanguage>
-        <Version>6.0.0</Version>
-        <AssemblyVersion>6.0.0</AssemblyVersion>
-        <FileVersion>6.0.0</FileVersion>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
     
     <PropertyGroup>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-        <RepositoryUrl>https://github.com/Redageddon/X10D/</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <RepositoryType>git</RepositoryType>
-        <Description>Performant Extension methods on crack.</Description>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageIcon>icon.png</PackageIcon>
         <PackageTags>dotnet extension-methods</PackageTags>
-        <PackageVersion>6.0.0</PackageVersion>
+        <PackageVersion>6.0.0.0</PackageVersion>
     </PropertyGroup>
     
     <ItemGroup>

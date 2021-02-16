@@ -1,18 +1,17 @@
 ﻿using System.Net;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="EndPointExtensions"/>
     /// </summary>
-    [TestClass]
     public class EndpointTests
     {
         /// <summary>
         ///     Tests for <see cref="EndPointExtensions.GetHostName"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetHostName()
         {
             EndPoint e = new DnsEndPoint("Name", 123);
@@ -22,7 +21,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="EndPointExtensions.GetPort"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetPort()
         {
             EndPoint e = new DnsEndPoint("Name", 123);

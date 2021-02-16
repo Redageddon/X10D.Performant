@@ -1,18 +1,17 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="GenericExtensions"/>.
     /// </summary>
-    [TestClass]
     public class GenericTests
     {
         /// <summary>
         ///     Tests for <see cref="GenericExtensions.To{TFrom,TTo}"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void To()
         {
             const bool a = true;
@@ -244,7 +243,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,TTo)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToOrOther()
         {
             Assert.AreEqual(2.0, "Foo".ToOrOther(2.0));
@@ -254,7 +253,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="GenericExtensions.ToOrOther{TFrom,TTo}(TFrom,Func{TTo})"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToOrOtherFunc()
         {
             bool executed = false;
@@ -289,7 +288,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="GenericExtensions.TryTo{TFrom,TTo}"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TryTo()
         {
             Assert.IsTrue("2".TryTo(out int _2));

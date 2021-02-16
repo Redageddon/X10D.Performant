@@ -1,17 +1,16 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="BooleanExtensions"/>.
     /// </summary>
-    [TestClass]
     public class BooleanTests
     {
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToByte"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToByte()
         {
             const bool a = true;
@@ -26,7 +25,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToDecimal"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToDecimal()
         {
             const bool a = true;
@@ -41,7 +40,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToDouble"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToDouble()
         {
             const bool a = true;
@@ -56,7 +55,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToInt16"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToInt16()
         {
             const bool a = true;
@@ -71,7 +70,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToInt32"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToInt32()
         {
             const bool a = true;
@@ -86,7 +85,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToInt64"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToInt64()
         {
             const bool a = true;
@@ -101,7 +100,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToSByte"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToSByte()
         {
             const bool a = true;
@@ -116,7 +115,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToSingle"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToFloat()
         {
             const bool a = true;
@@ -131,7 +130,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToUInt16"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToUInt16()
         {
             const bool a = true;
@@ -146,7 +145,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToUInt32"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToUInt32()
         {
             const bool a = true;
@@ -161,7 +160,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToUInt64"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToUInt64()
         {
             const bool a = true;

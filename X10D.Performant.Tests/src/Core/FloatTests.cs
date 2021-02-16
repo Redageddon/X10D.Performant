@@ -1,18 +1,17 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="SingleExtensions"/>.
     /// </summary>
-    [TestClass]
     public class SingleTests
     {
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.DegreesToGradians"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void DegreesToGradians()
         {
             Assert.AreEqual(100, 90.0F.DegreesToGradians());
@@ -22,7 +21,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.DegreesToRadians"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void DegreesToRadians()
         {
             Assert.AreEqual(MathF.PI, 180.0F.DegreesToRadians());
@@ -32,7 +31,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.GradiansToDegrees"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GradiansToDegrees()
         {
             Assert.AreEqual(90, 100.0F.GradiansToDegrees());
@@ -42,7 +41,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.GradiansToRadians"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GradiansToRadians()
         {
             Assert.AreEqual(MathF.PI, 200.0F.GradiansToRadians());
@@ -52,7 +51,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.InverseSqrt"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void InverseSqrt()
         {
             Assert.AreEqual(1, 1.0F.InverseSqrt());
@@ -62,7 +61,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.IsEven"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsEven()
         {
             Assert.IsTrue(2.0F.IsEven());
@@ -72,7 +71,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.IsOdd"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsOdd()
         {
             Assert.IsFalse(2.0F.IsOdd());
@@ -82,7 +81,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.RadiansToDegrees"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void RadiansToDegrees()
         {
             Assert.AreEqual(180.0F, MathF.PI.RadiansToDegrees());
@@ -92,7 +91,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="SingleExtensions.RadiansToGradians"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void RadiansToGradians()
         {
             Assert.AreEqual(200.0F, MathF.PI.RadiansToGradians());

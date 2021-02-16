@@ -1,19 +1,18 @@
 ﻿using System.IO;
 using System.Security.Cryptography;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="StreamExtensions"/>.
     /// </summary>
-    [TestClass]
     public class StreamTests
     {
         /// <summary>
         ///     Test for <see cref="StreamExtensions.GetHash{T}"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetHash()
         {
             MemoryStream stream = new();

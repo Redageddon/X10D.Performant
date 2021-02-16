@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="ListExtensions"/>
     /// </summary>
-    [TestClass]
     public class ListTests
     {
         /// <summary>
         ///     Tests for <see cref="ListExtensions.OneOf{T}"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void OneOf()
         {
             List<int> list = new()
@@ -43,7 +42,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="ListExtensions.Random{T}(IList{T},IList{T},System.Random?)"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Random()
         {
             int[] array = { 1, 2, 3 };
@@ -58,7 +57,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="ListExtensions.Shuffle{T}(IList{T},System.Random?)"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Shuffle()
         {
             int[] array = { 1, 1, 1, 2, 2, 2, 3, 3, 3 };

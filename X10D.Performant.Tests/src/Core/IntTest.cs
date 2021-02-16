@@ -1,31 +1,30 @@
 ﻿using System;
 using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="Int32Extensions"/>.
     /// </summary>
-    [TestClass]
     public class IntTests
     {
         /// <summary>
         ///     Tests for <see cref="Int32Extensions.GetBytes"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 3, 0, 0, 0 }, ((int)Math.PI).GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="UInt32Extensions.GetBytes"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetBytesU() => CollectionAssert.AreEqual(new byte[] { 3, 0, 0, 0 }, ((uint)Math.PI).GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="Int32Extensions.IsEven"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsEven()
         {
             Assert.IsTrue(2.IsEven());
@@ -35,7 +34,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="UInt32Extensions.IsEven"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsEvenU()
         {
             Assert.IsTrue(2u.IsEven());
@@ -45,7 +44,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="Int32Extensions.IsOdd"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsOdd()
         {
             Assert.IsFalse(2.IsOdd());
@@ -55,7 +54,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="UInt32Extensions.IsOdd"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsOddU()
         {
             Assert.IsFalse(2u.IsOdd());
@@ -65,7 +64,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="Int32Extensions.IsPrime"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsPrime()
         {
             int[] primes = { 2, 11, 101, 1_009, 10_007, 100_003, 1_003_001, 10_000_019, 100_000_007, 1_000_000_007 };
@@ -91,7 +90,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="UInt32Extensions.IsPrime"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsPrimeU()
         {
             uint[] primes = { 2, 11, 101, 1_009, 10_007, 100_003, 1_003_001, 10_000_019, 100_000_007, 1_000_000_007, 4_294_967_291 };
@@ -114,7 +113,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="Int32Extensions.ToBoolean"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToBool()
         {
             Assert.IsTrue(2.ToBoolean());
@@ -125,7 +124,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="UInt32Extensions.ToBoolean"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToBoolU()
         {
             Assert.IsFalse(0u.ToBoolean());

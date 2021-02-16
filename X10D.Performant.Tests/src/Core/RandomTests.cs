@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="RandomExtensions"/>.
     /// </summary>
-    [TestClass]
     public class RandomTests
     {
         /// <summary>
         ///     Tests for <see cref="RandomExtensions.NextBool"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void CoinToss()
         {
             Random random = new();
@@ -42,7 +41,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,T[])"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void OneOf()
         {
             Random random = new();
@@ -73,7 +72,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,IList{T})"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void OneOf2()
         {
             Random random = new();

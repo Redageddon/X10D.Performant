@@ -1,17 +1,16 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="EnumExtensions"/>.
     /// </summary>
-    [TestClass]
     public class EnumTests
     {
         /// <summary>
         ///     Tests for <see cref="EnumExtensions.NextEnumDeclaration{T}(T,bool)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void NextEnumDeclaration()
         {
             Assert.AreEqual(Test.B, Test.A.NextEnumDeclaration());
@@ -22,7 +21,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="EnumExtensions.PreviousEnumDeclaration{T}(T,bool)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void PreviousEnumDeclaration()
         {
             Assert.AreEqual(Test.C, Test.D.PreviousEnumDeclaration());

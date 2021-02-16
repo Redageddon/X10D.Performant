@@ -2,45 +2,44 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="StringExtensions"/>.
     /// </summary>
-    [TestClass]
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public class StringTests
     {
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Base64Decode(string)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Base64Decode() => Assert.AreEqual("hello", "aGVsbG8=".Base64Decode());
 
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Base64Encode(string)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Base64Encode() => Assert.AreEqual("aGVsbG8=", "hello".Base64Encode());
 
         /// <summary>
         ///     Tests for <see cref="StringExtensions.ChangeEncoding(string, Encoding, Encoding)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ChangeEncoding() => Assert.AreEqual("HELLO", "ĤĚĻĻŎ".ChangeEncoding(Encoding.Latin1, Encoding.ASCII));
 
         /// <summary>
         ///     Tests for <see cref="StringExtensions.GetBytes(string,Encoding)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 84, 101, 115, 116 }, "Test".GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsAlpha(string)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsAlpha()
         {
             Assert.IsTrue("ABCD".IsAlpha());
@@ -52,7 +51,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsLower(string)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsLower()
         {
             Assert.IsFalse("AB1234CD".IsLower());
@@ -64,7 +63,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsNumerical(string)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsNumerical()
         {
             Assert.IsFalse("ABCD".IsNumerical());
@@ -76,7 +75,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsUpper(string)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsUpper()
         {
             Assert.IsTrue("AB1234CD".IsUpper());
@@ -88,7 +87,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Repeat"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Repeat()
         {
             Assert.AreEqual("", "abc".Repeat(0));
@@ -102,13 +101,13 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Shuffle"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Shuffle() => Assert.AreNotEqual("abcdefg", "abcdefg".Shuffle());
 
         /// <summary>
         ///     Tests for <see cref="StringExtensions.Split"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Split()
         {
             const string str = "Hello World";
@@ -119,7 +118,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="StringExtensions.ToTimeSpan"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestParser()
         {
             Assert.AreEqual(TimeSpan.FromHours(3), "3h".ToTimeSpan());
@@ -133,7 +132,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="StringExtensions.ToSecureString"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToSecureString() => Assert.AreEqual(4, "Test".ToSecureString().Length);
     }
 }

@@ -1,31 +1,30 @@
 ﻿using System;
 using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="Int16Extensions"/>.
     /// </summary>
-    [TestClass]
     public class ShortTests
     {
         /// <summary>
         ///     Tests for <see cref="Int16Extensions.GetBytes(short)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 3, 0 }, ((short)Math.PI).GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="UInt16Extensions.GetBytes"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetBytesU() => CollectionAssert.AreEqual(new byte[] { 3, 0 }, ((ushort)Math.PI).GetBytes());
 
         /// <summary>
         ///     Tests for <see cref="Int16Extensions.IsEven(short)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsEven()
         {
             Assert.IsTrue(((short)2).IsEven());
@@ -35,7 +34,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="UInt16Extensions.IsEven"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsEvenU()
         {
             Assert.IsTrue(((ushort)2).IsEven());
@@ -45,7 +44,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="Int16Extensions.IsOdd(short)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsOdd()
         {
             Assert.IsFalse(((short)2).IsOdd());
@@ -55,7 +54,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="UInt16Extensions.IsOdd"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsOddU()
         {
             Assert.IsFalse(((ushort)2).IsOdd());
@@ -65,7 +64,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="Int16Extensions.IsPrime(short)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsPrime()
         {
             short[] primes = { 2, 11, 101, 1_009, 10_007 };
@@ -88,7 +87,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="UInt16Extensions.IsPrime"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IsPrimeU()
         {
             ushort[] primes = { 2, 11, 101, 1_009, 10_007 };
@@ -111,7 +110,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="Int16Extensions.ToBoolean(short)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToBool()
         {
             Assert.IsTrue(((short)2).ToBoolean());
@@ -122,7 +121,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="UInt16Extensions.ToBoolean"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToBoolU()
         {
             Assert.IsFalse(((ushort)0).ToBoolean());

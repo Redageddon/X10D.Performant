@@ -1,20 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="EnumerableExtensions"/>.
     /// </summary>
-    [TestClass]
     public class EnumerableTests
     {
         /// <summary>
         ///     Tests for <see cref="EnumerableExtensions.DistinctBy{TSource,TValue}"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void DistinctBy()
         {
             List<Point> points = new()
@@ -54,7 +53,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="EnumerableExtensions.LazyChunk{T}"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void LazyChunk()
         {
             byte[] foo = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
@@ -70,7 +69,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="EnumerableExtensions.LazyRandom{T}"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void LazyRandom()
         {
             int[] array = { 1, 1, 1, 2, 2, 2, 3, 3, 3 };
@@ -83,7 +82,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="EnumerableExtensions.Shuffled{T}"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Shuffled()
         {
             int[] array = { 1, 1, 1, 2, 2, 2, 3, 3, 3 };

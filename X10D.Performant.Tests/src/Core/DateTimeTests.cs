@@ -1,18 +1,17 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="DateTimeExtensions"/>.
     /// </summary>
-    [TestClass]
     public class DateTimeTests
     {
         /// <summary>
         ///     Tests for <see cref="DateTimeExtensions.Age(DateTime,DateTime?)"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Age()
         {
             // no choice but to create dynamic based on today's date.
@@ -26,7 +25,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="DateTimeExtensions.First"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void First()
         {
             DateTime dt = new(2018, 6, 20);
@@ -37,7 +36,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="DateTimeExtensions.FirstDayOfMonth"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void FirstDayOfMonth()
         {
             DateTime dt = new(2018, 6, 20);
@@ -51,7 +50,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="DateTimeExtensions.Last"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Last()
         {
             {
@@ -81,7 +80,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="DateTimeExtensions.LastDayOfMonth"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void LastDayOfMonth()
         {
             DateTime dt = new(2016, 2, 4);
@@ -95,7 +94,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="DateTimeExtensions.Next"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Next()
         {
             DateTime current = new(2021, 2, 1);
@@ -106,7 +105,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="DateTimeExtensions.ToUnixTimeStamp"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToUnixTimestamp()
         {
             DateTime dt = new(2015, 10, 21, 1, 0, 0, DateTimeKind.Utc);

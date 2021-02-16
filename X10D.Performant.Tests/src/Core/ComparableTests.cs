@@ -1,17 +1,16 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="ComparableExtensions"/>.
     /// </summary>
-    [TestClass]
     public class ComparableTests
     {
         /// <summary>
         ///     Tests for <see cref="ComparableExtensions.Between{T}"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Between()
         {
             Assert.IsFalse(1.Between(2, 4));
@@ -22,7 +21,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Tests for <see cref="ComparableExtensions.Outside{T}"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Outside()
         {
             Assert.IsTrue(1.Outside(2, 4));

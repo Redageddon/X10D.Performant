@@ -2,20 +2,19 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="MemberInfoExtensions"/>.
     /// </summary>
-    [TestClass]
     public class MemberInfoTests
     {
         /// <summary>
         ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetDefaultValueObj()
         {
             TestClass klass = new();
@@ -29,7 +28,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue{T}"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetDefaultValue()
         {
             TestClass klass = new();
@@ -43,7 +42,7 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Test for <see cref="MemberInfoExtensions.GetDescription"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetDescription()
         {
             TestClass klass = new();
@@ -57,20 +56,20 @@ namespace X10D.Performant.Tests.Core
         /// <summary>
         ///     Test for <see cref="MemberInfoExtensions.GetDescription"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void SelectFromCustomAttribute()
         {
             TestClass klass = new();
 
             foreach (PropertyInfo property in klass.GetType().GetProperties())
             {
-                string value = property.SelectFromCustomAttribute<TestAttribute, string>(a => a?.TestValue);
+                string value = property.SelectFromCustomAttribute<SampleAttribute, string>(a => a?.TestValue);
                 Assert.AreEqual("Bar", value);
             }
         }
 
         [AttributeUsage(AttributeTargets.Property)]
-        private sealed class TestAttribute : Attribute
+        private sealed class SampleAttribute : Attribute
         {
             public string TestValue { get; set; }
         }
@@ -80,7 +79,7 @@ namespace X10D.Performant.Tests.Core
             [SuppressMessage("ReSharper", "UnusedMember.Local", Justification = "Used in Reflection")]
             [System.ComponentModel.Description("Test description")]
             [DefaultValue("Foo")]
-            [Test(TestValue = "Bar")]
+            [Sample(TestValue = "Bar")]
             public string TestProperty { get; set; }
         }
     }

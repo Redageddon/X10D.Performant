@@ -1,18 +1,17 @@
 ﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="TypeExtensions"/>
     /// </summary>
-    [TestClass]
     public class TypeTests
     {
         /// <summary>
         ///     Tests for <see cref="TypeExtensions.GetContainedType"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetContainedType()
         {
             Assert.AreEqual(typeof(int), typeof(int[]).GetContainedType());

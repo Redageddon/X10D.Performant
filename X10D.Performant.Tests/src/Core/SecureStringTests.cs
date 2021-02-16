@@ -1,18 +1,17 @@
 ﻿using System.Security;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="SecureStringExtensions"/>.
     /// </summary>
-    [TestClass]
     public class SecureStringTests
     {
         /// <summary>
         ///     Test for <see cref="SecureStringExtensions.ToNormalString"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToNormalString()
         {
             SecureString secureString = new();

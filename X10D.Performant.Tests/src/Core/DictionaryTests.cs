@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="KeyValuePairExtensions"/>.
     /// </summary>
-    [TestClass]
     public class DictionaryTests
     {
         /// <summary>
@@ -16,7 +15,7 @@ namespace X10D.Performant.Tests.Core
         ///         cref="KeyValuePairExtensions.ToConnectionString{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
         ///     .
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToConnectionString()
         {
             Dictionary<string, object> dictionary = new()
@@ -35,7 +34,7 @@ namespace X10D.Performant.Tests.Core
         ///     <see cref="KeyValuePairExtensions.ToGetParameters{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
         ///     .
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToGetParameters()
         {
             Dictionary<string, object> dictionary = new()
@@ -54,7 +53,7 @@ namespace X10D.Performant.Tests.Core
         ///     <see cref="KeyValuePairExtensions.ToGetParameters{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
         ///     .
         /// </summary>
-        [TestMethod]
+        [Test]
         public void ToGetParametersSeparators()
         {
             Dictionary<string, IEnumerable> dictionary = new()

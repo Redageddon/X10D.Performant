@@ -1,18 +1,17 @@
 ﻿using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="WaitHandleExtensions"/>
     /// </summary>
-    [TestClass]
     public class WaitHandleTests
     {
         /// <summary>
         ///     Tests for <see cref="WaitHandleExtensions.WaitOneAsync"/>
         /// </summary>
-        [TestMethod]
+        [Test]
         public void WaitOneAsync()
         {
             Inner();

@@ -1,23 +1,22 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
     ///     Tests for <see cref="CharExtensions"/>.
     /// </summary>
-    [TestClass]
     public class CharTests
     {
         /// <summary>
         ///     Tests for <see cref="CharExtensions.Repeat"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void Repeat() => Assert.AreEqual("aaaaaaaaaa", 'a'.Repeat(10));
         
         /// <summary>
         ///     Tests for <see cref="CharExtensions.GetNextLetter"/>.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetNextLetter()
         {
             Assert.AreEqual('b', 'a'.GetNextLetter());

@@ -8,11 +8,11 @@ Below is a list of the number of extension methods written for a given type.
 
 | Type                | Library                                                                                                                                | Method count |
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------- | :----------: |
-| ALL                 | `X10D.Performant`                                                                                                                      | 591          |
+| ALL                 | `X10D.Performant`                                                                                                                      | 592          |
 | `Array`             | [X10D.Performant.ArrayExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/ArrayExtensions)                         | 25           |
 | `bool`              | [X10D.Performant.BooleanExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/BooleanExtensions)                     | 12           |
 | `byte`              | [X10D.Performant.ByteExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/IntegerExtensions/ByteExtensions)         | 31           |      
-| `char`              | [X10D.Performant.CharExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/CharExtensions)                           | 64           |
+| `char`              | [X10D.Performant.CharExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/CharExtensions)                           | 65           |
 | `DateTime`          | [X10D.Performant.DateTimeExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DateTimeExtensions)                   | 9            |
 | `decimal`           | [X10D.Performant.DecimalExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DecimalExtensions/DecimalExtensions)   | 37           |         
 | `double`            | [X10D.Performant.DoubleExtensions](https://github.com/Redageddon/X10D/tree/Performant/X10D/src/DecimalExtensions/DoubleExtensions)     | 61           |        

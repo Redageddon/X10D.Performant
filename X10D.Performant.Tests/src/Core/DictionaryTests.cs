@@ -10,6 +10,31 @@ namespace X10D.Performant.Tests.Core
     public class DictionaryTests
     {
         /// <summary>
+        ///     Tests for <see cref="KeyValuePairExtensions.FlipKeyValues{TKey,TValue}(IEnumerable{KeyValuePair{TKey, TValue}})"/>
+        /// </summary>
+        [Test]
+        public void FlipKeyValues()
+        {
+            Dictionary<string, int> dictionary = new()
+            {
+                {"4", 4},
+                {"3", 3},
+                {"2", 2},
+                {"1", 1},
+            };
+            
+            Dictionary<int, string> dictionary2 = new()
+            {
+                {4, "4"},
+                {3, "3"},
+                {2, "2"},
+                {1, "1"},
+            };
+
+            CollectionAssert.AreEqual(dictionary2, dictionary.FlipKeyValues());
+        }
+
+        /// <summary>
         ///     Tests for
         ///     <see
         ///         cref="KeyValuePairExtensions.ToConnectionString{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>

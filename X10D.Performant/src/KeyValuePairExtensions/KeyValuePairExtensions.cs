@@ -11,6 +11,22 @@ namespace X10D.Performant
     public static class KeyValuePairExtensions
     {
         /// <summary>
+        ///     Flips the keys and values ot values and keys.
+        /// </summary>
+        /// <param name="keyValuePairs">The pairs.</param>
+        /// <typeparam name="TKey">The key type.</typeparam>
+        /// <typeparam name="TValue">The value type.</typeparam>
+        /// <returns>A collection of <see cref="keyValuePairs"/> that have their values as keys.</returns>
+        public static IEnumerable<KeyValuePair<TValue, TKey>> FlipKeyValues<TKey, TValue>(
+            this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
+        {
+            foreach ((TKey key, TValue value) in keyValuePairs)
+            {
+                yield return new KeyValuePair<TValue, TKey>(value, key);
+            }
+        }
+
+        /// <summary>
         ///     Converts <paramref name="keyValuePairs"/> to an object-relational-safe connection <see cref="string"/>.
         /// </summary>
         /// <param name="keyValuePairs">The pairs.</param>

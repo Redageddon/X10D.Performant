@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -130,6 +131,21 @@ namespace X10D.Performant.Tests.Core
             Assert.IsFalse(0u.ToBoolean());
             Assert.IsTrue(1u.ToBoolean());
             Assert.IsTrue(2u.ToBoolean());
+        }        
+        
+        /// <summary>
+        ///     Tests for <see cref="UInt32Extensions.ToColor"/>.
+        /// </summary>
+        [Test]
+        public void ToColor()
+        {
+            Assert.AreEqual(Color.FromArgb(0, 0, 0, 0), 0U.ToColor());
+            Assert.AreEqual(Color.FromArgb(0, 0, 0, 255), 255U.ToColor());
+            Assert.AreEqual(Color.FromArgb(0, 0, 255, 255), 65_535U.ToColor());
+            Assert.AreEqual(Color.FromArgb(0, 255, 255, 255), 16_777_215U.ToColor());
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), (~0U).ToColor());
+            Assert.AreEqual(Color.FromArgb(170, 170, 170, 170), 0b10101010_10101010_10101010_10101010U.ToColor());
+            Assert.AreEqual(Color.FromArgb(85, 85, 85, 85), 0b01010101_01010101_01010101_01010101U.ToColor());
         }
     }
 }

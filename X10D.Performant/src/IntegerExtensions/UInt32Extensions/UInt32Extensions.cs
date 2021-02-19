@@ -38,16 +38,5 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="UInt64Extensions.ToBoolean"/>
         public static bool ToBoolean(this uint value) => value != 0;
-        
-        /// <summary>
-        ///     Converts this uint into a color based on the bytes.
-        /// </summary>
-        /// <param name="value">The value containing the color bytes.</param>
-        /// <returns>A new color.</returns>
-        public static Color ToColor(this uint value)
-        {
-            byte[] bytes = BitConverter.GetBytes(value);
-            return Color.FromArgb(bytes[3], bytes[2], bytes[1], bytes[0]);
-        }
     }
 }

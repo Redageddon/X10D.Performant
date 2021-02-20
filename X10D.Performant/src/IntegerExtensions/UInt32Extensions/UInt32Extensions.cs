@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant

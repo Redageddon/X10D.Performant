@@ -40,10 +40,21 @@ namespace X10D.Performant.Tests.Core
         public void ColorWithHsb()
         {
             Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 0.0f, 0.0f, 1.0f));
-            Assert.AreEqual(Color.FromArgb(0, 0, 0, 0), Color.Transparent.With(255, 0.0f, 0.0f, 0.0f));
-            Assert.AreEqual(Color.FromArgb(255, 191, 170, 64), Color.Transparent.With(255, 0.5f, 0.5f, 0.5f));
-            Assert.AreEqual(Color.FromArgb(255, 80, 61, 48), Color.Transparent.With(255, 0.25f, 0.25f, 0.25f));
-            Assert.AreEqual(Color.FromArgb(255, 80, 61, 48), Color.Transparent.With(255, 0.25f, 0.25f, 0.25f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 0.0f, 0.0f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(0, 255, 255, 255), Color.Transparent.With(0, 0.0f, 0.0f, 1.0f));
+            Assert.AreEqual(Color.FromArgb(0, 0, 0, 0), Color.Transparent.With(0, 0.0f, 0.0f, 0.0f));
+            
+            Assert.AreEqual(Color.FromArgb(255, 63, 79, 47), Color.Transparent.With(255, 90f, 0.25f, 0.25f));
+            Assert.AreEqual(Color.FromArgb(255, 127, 191, 63), Color.Transparent.With(255, 90f, 0.5f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 191, 239, 143), Color.Transparent.With(255, 90f, 0.75f, 0.75f));
+            
+            Assert.AreEqual(Color.FromArgb(255, 47, 79, 79), Color.Transparent.With(255, 180f, 0.25f, 0.25f));
+            Assert.AreEqual(Color.FromArgb(255, 63, 191, 191), Color.Transparent.With(255, 180f, 0.5f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 143, 239, 239), Color.Transparent.With(255, 180f, 0.75f, 0.75f));
+            
+            Assert.AreEqual(Color.FromArgb(255, 63, 47, 79), Color.Transparent.With(255, 270f, 0.25f, 0.25f));
+            Assert.AreEqual(Color.FromArgb(255, 127, 63, 191), Color.Transparent.With(255, 270f, 0.5f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 191, 143, 239), Color.Transparent.With(255, 270f, 0.75f, 0.75f));
         }
     }
 }

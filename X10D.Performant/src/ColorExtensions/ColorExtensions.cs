@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 #pragma warning disable 8629
 
 namespace X10D.Performant
@@ -28,9 +29,9 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="color">The initial <see cref="Color"/>.</param>
         /// <param name="alpha">The new alpha.</param>
-        /// <param name="hue">The new hue.</param>
-        /// <param name="saturation">The new saturation.</param>
-        /// <param name="brightness">The new brightness.</param>
+        /// <param name="hue">The new hue within the range of 0 - 360.</param>
+        /// <param name="saturation">The new saturation within the range of 0.0 - 1.0.</param>
+        /// <param name="brightness">The new brightness within the range of 0.0 - 1.0.</param>
         /// <returns>A new <see cref="Color"/> with any of the supplied hsb values overridden.</returns>
         public static Color With(this Color color, byte? alpha = null, float? hue = null, float? saturation = null, float? brightness = null)
         {
@@ -38,9 +39,27 @@ namespace X10D.Performant
             saturation ??= color.GetSaturation();
             brightness ??= color.GetBrightness();
             alpha ??= color.A;
+            
+            float c = (1 - Math.Abs((2 * (float)brightness) - 1)) * (float)saturation;
+            float x = c * (1 - Math.Abs(((float)hue / 60 % 2) - 1));
+            float m = (float)brightness - (c / 2);
 
-            //Todo: convert hsb to color
-            return Color.Transparent;
+            
+            (double r, double g, double b) prime = (hue % 360.0) switch
+            {
+                < 60   => (c, x, 0),
+                < 120  => (x, c, 0),
+                < 180  => (0, c, x),
+                < 240  => (0, x, c),
+                < 300  => (x, 0, c),
+                _      => (c, 0, x),
+            };
+
+            byte r = (byte)((prime.r + m) * 255);
+            byte g = (byte)((prime.g + m) * 255);
+            byte b = (byte)((prime.b + m) * 255);
+
+            return Color.FromArgb((byte)alpha,r, g, b);
         }
     }
 }

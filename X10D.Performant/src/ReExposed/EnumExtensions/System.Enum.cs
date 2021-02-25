@@ -4,10 +4,11 @@ using System.Diagnostics.CodeAnalysis;
 namespace X10D.Performant.ReExposed
 {
     /// <summary>
-    ///     Extension methods for <see cref="Enum"/>.
+    ///     Extension methods for <see cref="Enum" />.
     /// </summary>
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public static partial class EnumExtensions
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
+    public static class EnumExtensions
     {
         /// <inheritdoc cref="Enum.GetName{TEnum}(TEnum)" />
         public static string? GetName<TEnum>(this TEnum value)

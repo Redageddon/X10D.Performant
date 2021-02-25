@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -57,7 +58,7 @@ namespace X10D.Performant
             public bool Execute(bool left, bool right) => left ^ right;
         }
 
-        // ReSharper disable once InconsistentNaming
+        [SuppressMessage("ReSharper", "InconsistentNaming")]
         private struct XNOr : IOperable
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

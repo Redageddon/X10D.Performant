@@ -5,6 +5,7 @@ namespace X10D.Performant.ReExposed
 {
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class DecimalExtensions
     {
         /// <inheritdoc cref="decimal.Add(decimal,decimal)" />

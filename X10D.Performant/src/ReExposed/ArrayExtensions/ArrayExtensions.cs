@@ -9,6 +9,7 @@ namespace X10D.Performant.ReExposed
     /// <summary>
     ///     Extension methods for <see cref="Array" />
     /// </summary>
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static class ArrayExtensions
     {

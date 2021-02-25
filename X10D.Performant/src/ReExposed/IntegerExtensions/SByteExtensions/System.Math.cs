@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace X10D.Performant.ReExposed
 {
     /// <summary>
-    ///     Extension methods for <see cref="sbyte"/>.
+    ///     Extension methods for <see cref="sbyte" />.
     /// </summary>
-    public static partial class SByteExtensions
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
+    public static class SByteExtensions
     {
         /// <inheritdoc cref="Math.Abs(sbyte)" />
         public static sbyte Abs(this sbyte value) => Math.Abs(value);

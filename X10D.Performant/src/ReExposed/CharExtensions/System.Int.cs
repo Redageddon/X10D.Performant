@@ -5,6 +5,7 @@ using System.Globalization;
 namespace X10D.Performant.ReExposed
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class CharExtensions
     {
         /// <inheritdoc cref="int.Parse(ReadOnlySpan{char},NumberStyles,IFormatProvider)" />

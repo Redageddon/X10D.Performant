@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 
 namespace X10D.Performant
@@ -80,7 +81,8 @@ namespace X10D.Performant
 
         private static class Convert<TFrom, TTo>
         {
-            // ReSharper disable once FieldCanBeMadeReadOnly.Local
+            [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Local")]
+            [SuppressMessage("ReSharper", "ConvertIfStatementToSwitchStatement")]
             internal static Func<TFrom, TTo> Function = tFrom =>
             {
                 if (tFrom is TTo to)
@@ -134,8 +136,7 @@ namespace X10D.Performant
                 }
                 else if (tFrom is char)
                 {
-                    // ReSharper disable once CompareOfFloatsByEqualityOperator
-                    Convert<char, bool>.Function = v => char.GetNumericValue(v) == 1;
+                    Convert<char, bool>.Function = v => char.GetNumericValue(v) != 0;
                     Convert<char, sbyte>.Function = v => (sbyte)char.GetNumericValue(v);
                     Convert<char, byte>.Function = v => (byte)char.GetNumericValue(v);
                     Convert<char, short>.Function = v => (short)char.GetNumericValue(v);

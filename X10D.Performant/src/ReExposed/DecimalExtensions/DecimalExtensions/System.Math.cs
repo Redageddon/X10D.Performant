@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace X10D.Performant.ReExposed
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class DecimalExtensions
     {
         /// <inheritdoc cref="Math.Abs(decimal)" />

@@ -1,5 +1,4 @@
 ﻿using System;
-using X10D.Performant.ReExposed;
 
 namespace X10D.Performant
 {
@@ -31,7 +30,7 @@ namespace X10D.Performant
             const int higherChar = 'z';
             const int alphabetCount = higherChar - lowerChar + 1;
             
-            value = value.ToLower();
+            value = char.ToLower(value);
             if (value < lowerChar || value > higherChar)
             {
                 throw new ArgumentException($"{nameof(value)} should be a letter");
@@ -44,7 +43,7 @@ namespace X10D.Performant
                 if (amount == 0)
                 {
                     return isUpper
-                        ? value.ToUpper()
+                        ? char.ToUpper(value)
                         : value;
                 }
 
@@ -72,7 +71,7 @@ namespace X10D.Performant
 
             if (isUpper)
             {
-                value = value.ToUpper();
+                value = char.ToUpper(value);
             }
 
             return value;

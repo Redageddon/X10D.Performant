@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Web;
 
@@ -33,6 +34,7 @@ namespace X10D.Performant
         /// <typeparam name="TKey">The key type.</typeparam>
         /// <typeparam name="TValue">The value type.</typeparam>
         /// <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
+        [SuppressMessage("ReSharper", "ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator")]
         public static string ToConnectionString<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {
             static string? SanitizeValue<T>(T value)
@@ -44,7 +46,6 @@ namespace X10D.Performant
 
                 if (value is string str)
                 {
-                    // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
                     foreach (char t in str)
                     {
                         if (char.IsWhiteSpace(t))

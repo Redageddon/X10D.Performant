@@ -4,10 +4,11 @@ using System.Diagnostics.CodeAnalysis;
 namespace X10D.Performant.ReExposed
 {
     /// <summary>
-    ///     Extension methods for <see cref="DateTime"/>.
+    ///     Extension methods for <see cref="DateTime" />.
     /// </summary>
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public static partial class DateTimeExtensions
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
+    public static class DateTimeExtensions
     {
         /// <inheritdoc cref="DateTime.Compare(DateTime,DateTime)" />
         public static int Compare(this DateTime value, DateTime comparison) => DateTime.Compare(value, comparison);

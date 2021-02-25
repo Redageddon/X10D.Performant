@@ -6,6 +6,7 @@ namespace X10D.Performant.ReExposed
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class StringExtensions
     {
         /// <inheritdoc cref="Type.GetType(string,bool,bool)" />

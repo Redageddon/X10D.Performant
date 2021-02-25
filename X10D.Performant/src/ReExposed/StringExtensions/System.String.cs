@@ -6,6 +6,7 @@ using System.Globalization;
 namespace X10D.Performant.ReExposed
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class StringExtensions
     {
         /// <inheritdoc cref="string.Compare(string,int,string,int,int,bool)" />

@@ -5,9 +5,10 @@ using System.Threading;
 namespace X10D.Performant.ReExposed
 {
     /// <summary>
-    ///     Extension methods for<see cref="WaitHandle"/>.
+    ///     Extension methods for<see cref="WaitHandle" />.
     /// </summary>
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static class WaitHandleExtensions
     {
         /// <inheritdoc cref="WaitHandle.SignalAndWait(WaitHandle,WaitHandle,TimeSpan,bool)" />

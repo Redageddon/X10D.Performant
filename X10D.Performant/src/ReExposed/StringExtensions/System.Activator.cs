@@ -7,6 +7,7 @@ using System.Runtime.Remoting;
 namespace X10D.Performant.ReExposed
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class StringExtensions
     {
         /// <inheritdoc cref="Activator.CreateInstance(string,string,bool,BindingFlags,Binder,object[],CultureInfo,object[])" />

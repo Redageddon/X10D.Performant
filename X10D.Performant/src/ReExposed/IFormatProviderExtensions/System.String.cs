@@ -4,10 +4,11 @@ using System.Diagnostics.CodeAnalysis;
 namespace X10D.Performant.ReExposed
 {
     /// <summary>
-    ///     Extension methods for<see cref="IFormatProvider"/>.
+    ///     Extension methods for<see cref="IFormatProvider" />.
     /// </summary>
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public static partial class FormatProviderExtensions
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
+    public static class FormatProviderExtensions
     {
         /// <inheritdoc cref="string.Format(IFormatProvider,string,object)" />
         public static string Format(this IFormatProvider formatProvider, string format, object value) => string.Format(formatProvider, format, value);

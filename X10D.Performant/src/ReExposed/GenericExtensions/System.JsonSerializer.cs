@@ -3,8 +3,12 @@ using System.Text.Json;
 
 namespace X10D.Performant.ReExposed
 {
+    /// <summary>
+    ///     General generic extension methods.
+    /// </summary>
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public static partial class GenericExtensions
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
+    public static class GenericExtensions
     {
         /// <inheritdoc cref="System.Text.Json.JsonSerializer.Serialize{T}(T,JsonSerializerOptions)" />
         public static string ToJson<TValue>(this TValue value, JsonSerializerOptions? jsonSerializerOptions = null) =>

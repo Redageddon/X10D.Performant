@@ -3,6 +3,7 @@
 namespace X10D.Performant.ReExposed
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class ObjectExtensions
     {
         /// <inheritdoc cref="string.Concat(object)" />

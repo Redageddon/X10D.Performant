@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Security;
 using System.Text;
 
@@ -8,6 +9,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="string"/>.
     /// </summary>
+    [SuppressMessage("ReSharper", "ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator")]
     public static partial class StringExtensions
     {
         /// <summary>
@@ -43,7 +45,6 @@ namespace X10D.Performant
         /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
         public static bool IsAlpha(this string value)
         {
-            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (char t in value)
             {
                 if (!char.IsLetter(t))
@@ -62,7 +63,6 @@ namespace X10D.Performant
         /// <returns><see langword="true"/> if all alphabetical characters are lowercase, <see langword="false"/> otherwise.</returns>
         public static bool IsLower(this string value)
         {
-            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (char t in value)
             {
                 if (char.IsLetter(t) &&
@@ -82,7 +82,6 @@ namespace X10D.Performant
         /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
         public static bool IsNumerical(this string value)
         {
-            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (char t in value)
             {
                 if (!char.IsNumber(t))
@@ -101,7 +100,6 @@ namespace X10D.Performant
         /// <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
         public static bool IsUpper(this string value)
         {
-            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (char t in value)
             {
                 if (char.IsLetter(t) &&

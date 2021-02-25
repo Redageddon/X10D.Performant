@@ -3,6 +3,7 @@
 namespace X10D.Performant.ReExposed
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class DoubleExtensions
     {
         /// <inheritdoc cref="double.IsFinite(double)" />

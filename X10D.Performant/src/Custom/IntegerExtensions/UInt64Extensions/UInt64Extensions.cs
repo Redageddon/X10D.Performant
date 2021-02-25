@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -17,6 +18,7 @@ namespace X10D.Performant
         ///     Whether or not the input value should be treated as milliseconds. Defaults to <see langword="false"/>.
         /// </param>
         /// <returns>A <see cref="DateTime"/> representing <paramref name="timestamp"/> seconds since the Unix epoch.</returns>
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public static DateTime FromUnixTimestamp(this ulong timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <summary>

@@ -17,7 +17,7 @@ namespace X10D.Performant
         /// <param name="keyValuePairs">The pairs.</param>
         /// <typeparam name="TKey">The key type.</typeparam>
         /// <typeparam name="TValue">The value type.</typeparam>
-        /// <returns>A collection of <see cref="keyValuePairs"/> that have their values as keys.</returns>
+        /// <returns>A collection of <paramref name="keyValuePairs"/> that have their values as keys.</returns>
         public static IEnumerable<KeyValuePair<TValue, TKey>> FlipKeyValues<TKey, TValue>(
             this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {

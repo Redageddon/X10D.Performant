@@ -13,18 +13,11 @@ namespace X10D.Performant
         ///     Converts the <paramref name="timestamp"/> to a <see cref="DateTime"/> treating it as a Unix timestamp.
         /// </summary>
         /// <param name="timestamp">The timestamp.</param>
-        /// <param name="isMillis">
+        /// <param name="isMilliseconds">
         ///     Whether or not the input value should be treated as milliseconds. Defaults to <see langword="false"/>.
         /// </param>
         /// <returns>A <see cref="DateTime"/> representing <paramref name="timestamp"/> seconds since the Unix epoch.</returns>
-        public static DateTime FromUnixTimestamp(this ulong timestamp, bool isMillis = false)
-        {
-            DateTimeOffset offset = isMillis
-                ? DateTimeOffset.FromUnixTimeMilliseconds((long)timestamp)
-                : DateTimeOffset.FromUnixTimeSeconds((long)timestamp);
-
-            return offset.DateTime;
-        }
+        public static DateTime FromUnixTimestamp(this ulong timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <summary>
         ///     Determines if the <paramref name="value"/> is even.

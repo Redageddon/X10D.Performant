@@ -10,14 +10,7 @@ namespace X10D.Performant
     public static partial class SByteExtensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
-        public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMillis = false)
-        {
-            DateTimeOffset offset = isMillis
-                ? DateTimeOffset.FromUnixTimeMilliseconds(timestamp)
-                : DateTimeOffset.FromUnixTimeSeconds(timestamp);
-
-            return offset.DateTime;
-        }
+        public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="Int64Extensions.IsEven"/>
         public static bool IsEven(this sbyte value) => (value & 1) == 0;

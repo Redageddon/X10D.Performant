@@ -10,14 +10,7 @@ namespace X10D.Performant
     public static partial class ByteExtensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
-        public static DateTime FromUnixTimestamp(this byte timestamp, bool isMillis = false)
-        {
-            DateTimeOffset offset = isMillis
-                ? DateTimeOffset.FromUnixTimeMilliseconds(timestamp)
-                : DateTimeOffset.FromUnixTimeSeconds(timestamp);
-
-            return offset.DateTime;
-        }
+        public static DateTime FromUnixTimestamp(this byte timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="Int64Extensions.IsEven"/>
         public static bool IsEven(this byte value) => value % 2 == 0;

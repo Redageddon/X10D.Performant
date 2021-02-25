@@ -10,14 +10,7 @@ namespace X10D.Performant
     public static partial class UInt16Extensions
     {
         /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>
-        public static DateTime FromUnixTimestamp(this ushort timestamp, bool isMillis = false)
-        {
-            DateTimeOffset offset = isMillis
-                ? DateTimeOffset.FromUnixTimeMilliseconds(timestamp)
-                : DateTimeOffset.FromUnixTimeSeconds(timestamp);
-
-            return offset.DateTime;
-        }
+        public static DateTime FromUnixTimestamp(this ushort timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="UInt64Extensions.IsEven"/>
         public static bool IsEven(this ushort value) => value % 2 == 0;

@@ -1,0 +1,15 @@
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace X10D.Performant.ReExposed
+{
+    /// <summary>
+    ///     Extension methods for <see cref="RuntimeTypeHandle"/>.
+    /// </summary>
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    public static partial class RuntimeTypeHandleExtensions
+    {
+        /// <inheritdoc cref="Type.GetTypeFromHandle(RuntimeTypeHandle)" />
+        public static Type GetTypeFromHandle(this RuntimeTypeHandle handle) => Type.GetTypeFromHandle(handle);
+    }
+}

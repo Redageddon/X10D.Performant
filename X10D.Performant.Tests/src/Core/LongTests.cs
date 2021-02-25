@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -9,18 +8,6 @@ namespace X10D.Performant.Tests.Core
     /// </summary>
     public class LongTests
     {
-        /// <summary>
-        ///     Tests for <see cref="Int64Extensions.GetBytes"/>.
-        /// </summary>
-        [Test]
-        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 3, 0, 0, 0, 0, 0, 0, 0 }, ((long)Math.PI).GetBytes());
-
-        /// <summary>
-        ///     Tests for <see cref="UInt64Extensions.GetBytes"/>.
-        /// </summary>
-        [Test]
-        public void GetBytesU() => CollectionAssert.AreEqual(new byte[] { 3, 0, 0, 0, 0, 0, 0, 0 }, ((ulong)Math.PI).GetBytes());
-
         /// <summary>
         ///     Tests for <see cref="Int64Extensions.IsEven"/>.
         /// </summary>

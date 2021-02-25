@@ -38,5 +38,9 @@
             <PackagePath />
         </Content>
     </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="src\Custom" />
+    </ItemGroup>
 
 </Project>

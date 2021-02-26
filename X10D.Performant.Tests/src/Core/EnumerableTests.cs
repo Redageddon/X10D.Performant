@@ -67,19 +67,6 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.LazyRandom{T}"/>
-        /// </summary>
-        [Test]
-        public void LazyRandom()
-        {
-            int[] array = { 1, 1, 1, 2, 2, 2, 3, 3, 3 };
-            int[] collection = array.LazyRandom(10).ToArray();
-
-            Assert.AreEqual(10, collection.Length);
-            CollectionAssert.AreNotEqual(array, collection);
-        }
-
-        /// <summary>
         ///     Tests for <see cref="EnumerableExtensions.Shuffled{T}"/>
         /// </summary>
         [Test]

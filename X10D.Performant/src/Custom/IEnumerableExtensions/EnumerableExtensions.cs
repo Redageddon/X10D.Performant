@@ -66,25 +66,6 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Lazily generates a new random <see cref="IEnumerable{T}"/> by filling it with values found in <paramref name="values"/>.
-        /// </summary>
-        /// <param name="values">The values to pull.</param>
-        /// <param name="count">The amount of items to be returned.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
-        /// <typeparam name="TSource">Any type.</typeparam>
-        /// <returns>An <see cref="IEnumerable{T}"/> containing <paramref name="count"/> values.</returns>
-        public static IEnumerable<TSource> LazyRandom<TSource>(this IEnumerable<TSource> values, int count, Random? random = null)
-        {
-            random ??= RandomExtensions.Random;
-            IList<TSource> array = values as IList<TSource> ?? values.ToArray();
-
-            for (int i = 0; i < count; i++)
-            {
-                yield return array[random.Next(0, array.Count)];
-            }
-        }
-
-        /// <summary>
         ///     Shuffles <paramref name="values"/>.
         /// </summary>
         /// <param name="values">The collection to shuffle.</param>

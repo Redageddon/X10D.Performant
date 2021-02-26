@@ -65,18 +65,5 @@ namespace X10D.Performant.Tests.Core
             CollectionAssert.AreEqual(new byte[] { 0x05, 0x06 }, chunks.ElementAt(2).ToList());
             CollectionAssert.AreEqual(new byte[] { 0x07, 0x08 }, chunks.ElementAt(3).ToList());
         }
-
-        /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.Shuffled{T}"/>
-        /// </summary>
-        [Test]
-        public void Shuffled()
-        {
-            int[] array = { 1, 1, 1, 2, 2, 2, 3, 3, 3 };
-            int[] collection = array.Shuffled().ToArray();
-
-            Assert.AreEqual(array.Length, collection.Length);
-            CollectionAssert.AreNotEqual(array, collection);
-        }
     }
 }

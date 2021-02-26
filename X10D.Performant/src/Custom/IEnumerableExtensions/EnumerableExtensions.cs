@@ -64,20 +64,5 @@ namespace X10D.Performant
                 yield return new ArraySegment<TSource>(source, offset, leftOver);
             }
         }
-
-        /// <summary>
-        ///     Shuffles <paramref name="values"/>.
-        /// </summary>
-        /// <param name="values">The collection to shuffle.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
-        /// <typeparam name="TSource">The collection type.</typeparam>
-        /// <returns><paramref name="values"/> shuffled.</returns>
-        public static IEnumerable<TSource> Shuffled<TSource>(this IEnumerable<TSource> values, Random? random = null)
-        {
-            List<TSource> list = new(values);
-            list.Shuffle(random);
-
-            return list;
-        }
     }
 }

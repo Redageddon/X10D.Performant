@@ -25,17 +25,19 @@ namespace X10D.Performant.Tests.Core
                 random.NextBool(), random.NextBool(),
             };
 
-            CollectionAssert.AreNotEqual(
-                new[] { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true },
-                tosses);
+            CollectionAssert.AreNotEqual(new[]
+                                         {
+                                             true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true,
+                                             true, true, true,
+                                         },
+                                         tosses);
 
-            CollectionAssert.AreNotEqual(
-                new[]
-                {
-                    false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
-                    false, false,
-                },
-                tosses);
+            CollectionAssert.AreNotEqual(new[]
+                                         {
+                                             false, false, false, false, false, false, false, false, false, false, false, false, false, false,
+                                             false, false, false, false, false, false,
+                                         },
+                                         tosses);
         }
 
         /// <summary>

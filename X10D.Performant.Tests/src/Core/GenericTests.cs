@@ -258,29 +258,25 @@ namespace X10D.Performant.Tests.Core
         {
             bool executed = false;
 
-            Assert.AreEqual(
-                2.0,
-                "Foo".ToOrOther(
-                    () =>
-                    {
-                        executed = true;
+            Assert.AreEqual(2.0,
+                            "Foo".ToOrOther(() =>
+                            {
+                                executed = true;
 
-                        return 2.0;
-                    }));
+                                return 2.0;
+                            }));
 
             Assert.IsTrue(executed);
 
             executed = false;
 
-            Assert.AreEqual(
-                2,
-                "2".ToOrOther(
-                    () =>
-                    {
-                        executed = true;
+            Assert.AreEqual(2,
+                            "2".ToOrOther(() =>
+                            {
+                                executed = true;
 
-                        return 3;
-                    }));
+                                return 3;
+                            }));
 
             Assert.IsFalse(executed);
         }

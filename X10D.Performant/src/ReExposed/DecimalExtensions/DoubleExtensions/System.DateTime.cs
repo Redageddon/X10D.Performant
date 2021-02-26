@@ -8,7 +8,7 @@ namespace X10D.Performant.ReExposed
     [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class DoubleExtensions
     {
-        /// <inheritdoc cref="DateTime.FromOADate(double)" />
+        /// <inheritdoc cref="DateTime.FromOADate(double)"/>
         public static DateTime FromOADate(this double value) => DateTime.FromOADate(value);
     }
 }

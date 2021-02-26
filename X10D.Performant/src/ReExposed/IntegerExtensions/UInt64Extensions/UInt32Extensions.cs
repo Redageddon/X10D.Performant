@@ -4,9 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 namespace X10D.Performant.ReExposed
 {
     /// <summary>
-    ///     Extension methods for <see cref="ulong" />.
+    ///     Extension methods for <see cref="ulong"/>.
     /// </summary>
     [SuppressMessage("ReSharper", "UnusedType.Global")]
     [CLSCompliant(false)]
-    public static partial class UInt64Extensions { }
+    public static partial class UInt64Extensions {}
 }

@@ -30,7 +30,7 @@ namespace X10D.Performant
         /// </returns>
         public static T? GetDefaultValue<T>(this MemberInfo member)
         {
-            if (!(member.GetCustomAttribute<DefaultValueAttribute>() is { } attribute))
+            if (!(member.GetCustomAttribute<DefaultValueAttribute>() is {} attribute))
             {
                 return default;
             }
@@ -51,7 +51,7 @@ namespace X10D.Performant
         /// </returns>
         public static string GetDescription(this MemberInfo member)
         {
-            if (!(member.GetCustomAttribute<DescriptionAttribute>() is { } attribute))
+            if (!(member.GetCustomAttribute<DescriptionAttribute>() is {} attribute))
             {
                 return string.Empty;
             }
@@ -70,12 +70,11 @@ namespace X10D.Performant
         /// <returns>
         ///     Returns an instance of <typeparamref name="TReturn"/> as provided from <paramref name="selector"/>.
         /// </returns>
-        public static TReturn? SelectFromCustomAttribute<TAttribute, TReturn>(
-            this MemberInfo member,
-            Func<TAttribute, TReturn> selector)
+        public static TReturn? SelectFromCustomAttribute<TAttribute, TReturn>(this MemberInfo member,
+                                                                              Func<TAttribute, TReturn> selector)
             where TAttribute : Attribute
         {
-            if (!(member.GetCustomAttribute<TAttribute>() is { } attribute))
+            if (!(member.GetCustomAttribute<TAttribute>() is {} attribute))
             {
                 return default;
             }

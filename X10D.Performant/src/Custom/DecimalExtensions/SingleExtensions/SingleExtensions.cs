@@ -5,7 +5,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="float"/>.
     /// </summary>
-    public static partial class SingleExtensions
+    public static class SingleExtensions
     {
         /// <inheritdoc cref="DoubleExtensions.DegreesToGradians"/>
         public static float DegreesToGradians(this float angle) => angle * 10F / 9F;

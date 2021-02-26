@@ -37,7 +37,7 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(90, 100.0.GradiansToDegrees());
             Assert.AreEqual(135, 150.0.GradiansToDegrees());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="DoubleExtensions.GradiansToRadians"/>.
         /// </summary>
@@ -45,9 +45,9 @@ namespace X10D.Performant.Tests.Core
         public void GradiansToRadians()
         {
             Assert.AreEqual(Math.PI, 200.0.GradiansToRadians());
-            Assert.AreEqual(1, (200/Math.PI).GradiansToRadians());
-        }       
-        
+            Assert.AreEqual(1, (200 / Math.PI).GradiansToRadians());
+        }
+
         /// <summary>
         ///     Tests for <see cref="DoubleExtensions.InverseSqrt"/>.
         /// </summary>
@@ -57,7 +57,7 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(1, 1.0.InverseSqrt());
             Assert.AreEqual(0.5, 4.0.InverseSqrt());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="DoubleExtensions.IsEven"/>.
         /// </summary>

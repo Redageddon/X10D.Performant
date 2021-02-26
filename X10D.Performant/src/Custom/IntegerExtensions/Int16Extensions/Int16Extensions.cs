@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -6,10 +7,12 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="short"/>.
     /// </summary>
-    public static partial class Int16Extensions
+    public static class Int16Extensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
-        public static DateTime FromUnixTimestamp(this short timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
+        public static DateTime FromUnixTimestamp(this short timestamp, bool isMilliseconds = false) =>
+            ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="Int64Extensions.IsEven"/>
         public static bool IsEven(this short value) => (value & 1) == 0;

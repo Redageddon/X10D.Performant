@@ -3,5 +3,5 @@
     /// <summary>
     ///     General generic extension methods.
     /// </summary>
-    public static partial class GenericExtensions { }
+    public static partial class GenericExtensions {}
 }

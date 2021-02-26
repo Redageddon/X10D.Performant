@@ -19,7 +19,8 @@ namespace X10D.Performant
         /// </param>
         /// <returns>A <see cref="DateTime"/> representing <paramref name="timestamp"/> seconds since the Unix epoch.</returns>
         [SuppressMessage("ReSharper", "UnusedMember.Global")]
-        public static DateTime FromUnixTimestamp(this ulong timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
+        public static DateTime FromUnixTimestamp(this ulong timestamp, bool isMilliseconds = false) =>
+            ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <summary>
         ///     Determines if the <paramref name="value"/> is even.

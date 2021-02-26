@@ -73,8 +73,8 @@ namespace X10D.Performant
 
                 if ((exponent & 1) == 1)
                 {
-                    if (value < uint.MaxValue &&
-                        result < uint.MaxValue)
+                    if (value < uint.MaxValue
+                     && result < uint.MaxValue)
                     {
                         result *= value;
                         result = Mod(result, modulus);

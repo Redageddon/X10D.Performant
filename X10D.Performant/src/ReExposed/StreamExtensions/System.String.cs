@@ -7,7 +7,7 @@ namespace X10D.Performant.ReExposed
     [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class StreamExtensions
     {
-        /// <inheritdoc cref="Stream.Synchronized(Stream)" />
+        /// <inheritdoc cref="Stream.Synchronized(Stream)"/>
         public static Stream Synchronized(this Stream stream) => Stream.Synchronized(stream);
     }
 }

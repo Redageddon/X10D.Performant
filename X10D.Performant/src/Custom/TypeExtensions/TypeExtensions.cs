@@ -5,7 +5,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="Type"/>.
     /// </summary>
-    public static partial class TypeExtensions
+    public static class TypeExtensions
     {
         /// <summary>
         ///     Gets the <see cref="Type"/> contained within this <see cref="Type"/>.

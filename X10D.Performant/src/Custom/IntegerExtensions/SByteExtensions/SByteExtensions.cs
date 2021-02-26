@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -7,10 +8,12 @@ namespace X10D.Performant
     ///     Extension methods for <see cref="sbyte"/>.
     /// </summary>
     [CLSCompliant(false)]
-    public static partial class SByteExtensions
+    public static class SByteExtensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
-        public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
+        public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMilliseconds = false) =>
+            ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="Int64Extensions.IsEven"/>
         public static bool IsEven(this sbyte value) => (value & 1) == 0;
@@ -31,11 +34,11 @@ namespace X10D.Performant
                 case 11: return true;
 
                 default:
-                    return Mod(value, 2) != 0 &&
-                           Mod(value, 3) != 0 &&
-                           Mod(value, 5) != 0 &&
-                           Mod(value, 7) != 0 &&
-                           Mod(value, 11) != 0;
+                    return Mod(value, 2) != 0
+                        && Mod(value, 3) != 0
+                        && Mod(value, 5) != 0
+                        && Mod(value, 7) != 0
+                        && Mod(value, 11) != 0;
             }
         }
 

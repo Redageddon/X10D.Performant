@@ -103,9 +103,9 @@ namespace X10D.Performant
                 }
                 else if (tFrom is string)
                 {
-                    if (toType.IsPrimitive ||
-                        toType == typeof(decimal) ||
-                        toType == typeof(TimeSpan))
+                    if (toType.IsPrimitive
+                     || toType == typeof(decimal)
+                     || toType == typeof(TimeSpan))
                     {
                         Convert<string, bool>.Function = v => v switch
                         {
@@ -151,8 +151,8 @@ namespace X10D.Performant
                 }
                 else if (toType == typeof(bool))
                 {
-                    if (fromType.IsPrimitive ||
-                        fromType == typeof(decimal))
+                    if (fromType.IsPrimitive
+                     || fromType == typeof(decimal))
                     {
                         Convert<char, bool>.Function = v => v != 0;
                         Convert<sbyte, bool>.Function = v => v != 0;
@@ -173,8 +173,8 @@ namespace X10D.Performant
                         Function = Expression.Lambda<Func<TFrom, TTo>>(convert, from).Compile();
                     }
                 }
-                else if (tFrom is bool &&
-                         toType == typeof(decimal))
+                else if (tFrom is bool
+                      && toType == typeof(decimal))
                 {
                     Convert<bool, decimal>.Function = v => v ? 1 : 0;
                 }

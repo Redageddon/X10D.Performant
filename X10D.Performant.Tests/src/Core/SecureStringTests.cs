@@ -18,7 +18,7 @@ namespace X10D.Performant.Tests.Core
             secureString.AppendChar('h');
             secureString.AppendChar('a');
             secureString.AppendChar('t');
-            
+
             Assert.AreEqual("hat", secureString.ToNormalString());
         }
     }

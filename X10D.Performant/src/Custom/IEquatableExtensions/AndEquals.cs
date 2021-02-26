@@ -71,80 +71,76 @@ namespace X10D.Performant
             value.AndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) && value.Equals(arg11);
 
         /// <inheritdoc cref="AndEquals{T}(T,T[])"/>
-        public static bool AndEquals<T>(
-            this T value,
-            T arg1,
-            T arg2,
-            T arg3,
-            T arg4,
-            T arg5,
-            T arg6,
-            T arg7,
-            T arg8,
-            T arg9,
-            T arg10,
-            T arg11,
-            T arg12)
+        public static bool AndEquals<T>(this T value,
+                                        T arg1,
+                                        T arg2,
+                                        T arg3,
+                                        T arg4,
+                                        T arg5,
+                                        T arg6,
+                                        T arg7,
+                                        T arg8,
+                                        T arg9,
+                                        T arg10,
+                                        T arg11,
+                                        T arg12)
             where T : IEquatable<T> =>
             value.AndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) && value.Equals(arg12);
 
         /// <inheritdoc cref="AndEquals{T}(T,T[])"/>
-        public static bool AndEquals<T>(
-            this T value,
-            T arg1,
-            T arg2,
-            T arg3,
-            T arg4,
-            T arg5,
-            T arg6,
-            T arg7,
-            T arg8,
-            T arg9,
-            T arg10,
-            T arg11,
-            T arg12,
-            T arg13)
+        public static bool AndEquals<T>(this T value,
+                                        T arg1,
+                                        T arg2,
+                                        T arg3,
+                                        T arg4,
+                                        T arg5,
+                                        T arg6,
+                                        T arg7,
+                                        T arg8,
+                                        T arg9,
+                                        T arg10,
+                                        T arg11,
+                                        T arg12,
+                                        T arg13)
             where T : IEquatable<T> =>
             value.AndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12) && value.Equals(arg13);
 
         /// <inheritdoc cref="AndEquals{T}(T,T[])"/>
-        public static bool AndEquals<T>(
-            this T value,
-            T arg1,
-            T arg2,
-            T arg3,
-            T arg4,
-            T arg5,
-            T arg6,
-            T arg7,
-            T arg8,
-            T arg9,
-            T arg10,
-            T arg11,
-            T arg12,
-            T arg13,
-            T arg14)
+        public static bool AndEquals<T>(this T value,
+                                        T arg1,
+                                        T arg2,
+                                        T arg3,
+                                        T arg4,
+                                        T arg5,
+                                        T arg6,
+                                        T arg7,
+                                        T arg8,
+                                        T arg9,
+                                        T arg10,
+                                        T arg11,
+                                        T arg12,
+                                        T arg13,
+                                        T arg14)
             where T : IEquatable<T> =>
             value.AndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) && value.Equals(arg14);
 
         /// <inheritdoc cref="AndEquals{T}(T,T[])"/>
-        public static bool AndEquals<T>(
-            this T value,
-            T arg1,
-            T arg2,
-            T arg3,
-            T arg4,
-            T arg5,
-            T arg6,
-            T arg7,
-            T arg8,
-            T arg9,
-            T arg10,
-            T arg11,
-            T arg12,
-            T arg13,
-            T arg14,
-            T arg15)
+        public static bool AndEquals<T>(this T value,
+                                        T arg1,
+                                        T arg2,
+                                        T arg3,
+                                        T arg4,
+                                        T arg5,
+                                        T arg6,
+                                        T arg7,
+                                        T arg8,
+                                        T arg9,
+                                        T arg10,
+                                        T arg11,
+                                        T arg12,
+                                        T arg13,
+                                        T arg14,
+                                        T arg15)
             where T : IEquatable<T> =>
             value.AndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14) && value.Equals(arg15);
     }

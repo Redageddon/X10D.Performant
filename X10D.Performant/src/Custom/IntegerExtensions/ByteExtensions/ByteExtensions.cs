@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -7,10 +8,12 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="byte"/>.
     /// </summary>
-    public static partial class ByteExtensions
+    public static class ByteExtensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
-        public static DateTime FromUnixTimestamp(this byte timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
+        public static DateTime FromUnixTimestamp(this byte timestamp, bool isMilliseconds = false) =>
+            ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="Int64Extensions.IsEven"/>
         public static bool IsEven(this byte value) => value % 2 == 0;
@@ -32,12 +35,12 @@ namespace X10D.Performant
                 case 13: return true;
 
                 default:
-                    return Mod(value, 2) != 0 &&
-                           Mod(value, 3) != 0 &&
-                           Mod(value, 5) != 0 &&
-                           Mod(value, 7) != 0 &&
-                           Mod(value, 11) != 0 &&
-                           Mod(value, 13) != 0;
+                    return Mod(value, 2) != 0
+                        && Mod(value, 3) != 0
+                        && Mod(value, 5) != 0
+                        && Mod(value, 7) != 0
+                        && Mod(value, 11) != 0
+                        && Mod(value, 13) != 0;
             }
         }
 

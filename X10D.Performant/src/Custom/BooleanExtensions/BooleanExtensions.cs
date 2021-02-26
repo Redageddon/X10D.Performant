@@ -5,7 +5,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="bool"/>.
     /// </summary>
-    public static partial class BooleanExtensions
+    public static class BooleanExtensions
     {
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="byte"/>.

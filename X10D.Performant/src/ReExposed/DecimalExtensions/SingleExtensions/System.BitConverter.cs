@@ -7,7 +7,7 @@ namespace X10D.Performant.ReExposed
     [SuppressMessage("ReSharper", "UnusedType.Global")]
     public static partial class SingleExtensions
     {
-        /// <inheritdoc cref="BitConverter.GetBytes(float)" />
+        /// <inheritdoc cref="BitConverter.GetBytes(float)"/>
         public static byte[] GetBytes(this float value) => BitConverter.GetBytes(value);
     }
 }

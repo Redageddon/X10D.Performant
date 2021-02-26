@@ -5,16 +5,8 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="char"/>.
     /// </summary>
-    public static partial class CharExtensions
+    public static class CharExtensions
     {
-        /// <summary>
-        ///     Repeats a <see cref="char"/> a specified number of times.
-        /// </summary>
-        /// <param name="value">The <see cref="char"/> to repeat.</param>
-        /// <param name="count">The amount of times to repeat.</param>
-        /// <returns>A <see cref="string"/> whose value is <paramref name="value"/> repeated <paramref name="count"/> times.</returns>
-        public static string Repeat(this char value, int count) => new(value, count);
-
         /// <summary>
         ///     Gets the next or previous letter by a specified amount.
         /// </summary>
@@ -29,15 +21,18 @@ namespace X10D.Performant
             const int lowerChar = 'a';
             const int higherChar = 'z';
             const int alphabetCount = higherChar - lowerChar + 1;
-            
+
             value = char.ToLower(value);
-            if (value < lowerChar || value > higherChar)
+
+            if (value < lowerChar
+             || value > higherChar)
             {
                 throw new ArgumentException($"{nameof(value)} should be a letter");
             }
-            
+
             amount %= alphabetCount;
-            
+            int offset = amount + value;
+
             if (wrap)
             {
                 if (amount == 0)
@@ -47,15 +42,15 @@ namespace X10D.Performant
                         : value;
                 }
 
-                value = (char)(lowerChar + ((value - lowerChar + amount) % alphabetCount));
+                value = (char)(lowerChar + (offset - lowerChar).Mod(alphabetCount));
             }
             else
             {
-                if (value + amount >= higherChar)
+                if (offset >= higherChar)
                 {
                     value = 'z';
                 }
-                else if (value + amount <= lowerChar)
+                else if (offset <= lowerChar)
                 {
                     value = 'a';
                 }
@@ -65,16 +60,21 @@ namespace X10D.Performant
                 }
                 else
                 {
-                    value = (char)(value + amount);
+                    value = (char)offset;
                 }
             }
 
-            if (isUpper)
-            {
-                value = char.ToUpper(value);
-            }
-
-            return value;
+            return isUpper
+                ? char.ToUpper(value)
+                : value;
         }
+
+        /// <summary>
+        ///     Repeats a <see cref="char"/> a specified number of times.
+        /// </summary>
+        /// <param name="value">The <see cref="char"/> to repeat.</param>
+        /// <param name="count">The amount of times to repeat.</param>
+        /// <returns>A <see cref="string"/> whose value is <paramref name="value"/> repeated <paramref name="count"/> times.</returns>
+        public static string Repeat(this char value, int count) => new(value, count);
     }
 }

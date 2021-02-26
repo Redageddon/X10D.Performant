@@ -15,6 +15,7 @@ namespace X10D.Performant.Tests.Core
         public void WaitOneAsync()
         {
             Inner();
+
             static async void Inner()
             {
                 WaitHandle waitHandle = new ManualResetEvent(true);

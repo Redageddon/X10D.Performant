@@ -65,8 +65,8 @@ namespace X10D.Performant
         {
             foreach (char t in value)
             {
-                if (char.IsLetter(t) &&
-                    !char.IsLower(t))
+                if (char.IsLetter(t)
+                 && !char.IsLower(t))
                 {
                     return false;
                 }
@@ -102,8 +102,8 @@ namespace X10D.Performant
         {
             foreach (char t in value)
             {
-                if (char.IsLetter(t) &&
-                    !char.IsUpper(t))
+                if (char.IsLetter(t)
+                 && !char.IsUpper(t))
                 {
                     return false;
                 }

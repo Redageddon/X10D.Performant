@@ -35,8 +35,8 @@ namespace X10D.Performant.Tests.Core
 
             Assert.AreEqual(c, a.ToDecimal());
             Assert.AreEqual(d, b.ToDecimal());
-        }      
-        
+        }
+
         /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToDouble"/>.
         /// </summary>
@@ -50,6 +50,21 @@ namespace X10D.Performant.Tests.Core
 
             Assert.AreEqual(c, a.ToDouble());
             Assert.AreEqual(d, b.ToDouble());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="BooleanExtensions.ToSingle"/>.
+        /// </summary>
+        [Test]
+        public void ToFloat()
+        {
+            const bool a = true;
+            const bool b = false;
+            const float c = 1.0f;
+            const float d = 0.0f;
+
+            Assert.AreEqual(c, a.ToSingle());
+            Assert.AreEqual(d, b.ToSingle());
         }
 
         /// <summary>
@@ -110,21 +125,6 @@ namespace X10D.Performant.Tests.Core
 
             Assert.AreEqual(c, a.ToSByte());
             Assert.AreEqual(d, b.ToSByte());
-        }      
-        
-        /// <summary>
-        ///     Tests for <see cref="BooleanExtensions.ToSingle"/>.
-        /// </summary>
-        [Test]
-        public void ToFloat()
-        {
-            const bool a = true;
-            const bool b = false;
-            const float c = 1.0f;
-            const float d = 0.0f;
-
-            Assert.AreEqual(c, a.ToSingle());
-            Assert.AreEqual(d, b.ToSingle());
         }
 
         /// <summary>

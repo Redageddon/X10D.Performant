@@ -8,7 +8,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="IEnumerable{T}"/>.
     /// </summary>
-    public static partial class EnumerableExtensions
+    public static class EnumerableExtensions
     {
         /// <summary>
         ///     Gets each unique object from <paramref name="values"/> determined by <paramref name="selector"/> and compared with <see cref="Comparer{T}"/>
@@ -21,10 +21,9 @@ namespace X10D.Performant
         /// <typeparam name="TSource">The type of the contained element in the <paramref name="values"/> being read from.</typeparam>
         /// <typeparam name="TKey">The type being selected distinctly from.</typeparam>
         /// <returns>A collection of values that are specific to a selector.</returns>
-        public static IEnumerable<TSource> DistinctBy<TSource, TKey>(
-            this IEnumerable<TSource> values,
-            Func<TSource, TKey> selector,
-            IEqualityComparer<TKey>? comparer = null)
+        public static IEnumerable<TSource> DistinctBy<TSource, TKey>(this IEnumerable<TSource> values,
+                                                                     Func<TSource, TKey> selector,
+                                                                     IEqualityComparer<TKey>? comparer = null)
         {
             HashSet<TKey> knownKeys = new(comparer);
 
@@ -44,11 +43,10 @@ namespace X10D.Performant
         /// <param name="chunkSize">The maximum length of the nested <see cref="IEnumerable{T}"/> collection.</param>
         /// <typeparam name="TSource">Any type.</typeparam>
         /// <returns>
-        ///     Returns an <see cref="IEnumerable{T}"/> of <see cref="IEnumerable{T}"/> of <typeparamref name="TSource"/> from <paramref name="values"/> split into
-        ///     chunks of size
-        ///     <paramref name="chunkSize"/>.
+        ///     Returns an <see cref="IEnumerable{T}"/> of <see cref="IEnumerable{T}"/> of <typeparamref name="TSource"/> from
+        ///     <paramref name="values"/> split int chunks of size <paramref name="chunkSize"/>.
         /// </returns>
-        public static IEnumerable<IList<TSource>> LazyChunk<TSource>(this IEnumerable<TSource> values, int chunkSize)
+        public static IEnumerable<IEnumerable<TSource>> LazyChunk<TSource>(this IEnumerable<TSource> values, int chunkSize)
         {
             TSource[] source = values as TSource[] ?? values.ToArray();
             int chunks = source.Length / chunkSize;

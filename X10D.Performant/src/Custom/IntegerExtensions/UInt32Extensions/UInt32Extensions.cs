@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -7,10 +8,12 @@ namespace X10D.Performant
     ///     Extension methods for <see cref="uint"/>.
     /// </summary>
     [CLSCompliant(false)]
-    public static partial class UInt32Extensions
+    public static class UInt32Extensions
     {
         /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>
-        public static DateTime FromUnixTimestamp(this uint timestamp, bool isMilliseconds = false) => ((long)timestamp).FromUnixTimestamp(isMilliseconds);
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
+        public static DateTime FromUnixTimestamp(this uint timestamp, bool isMilliseconds = false) =>
+            ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="UInt64Extensions.IsEven"/>
         public static bool IsEven(this uint value) => (value & 1) == 0;

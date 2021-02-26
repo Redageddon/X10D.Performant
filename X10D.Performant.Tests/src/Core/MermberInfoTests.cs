@@ -12,20 +12,6 @@ namespace X10D.Performant.Tests.Core
     public class MemberInfoTests
     {
         /// <summary>
-        ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue"/>.
-        /// </summary>
-        [Test]
-        public void GetDefaultValueObj()
-        {
-            TestClass klass = new();
-
-            foreach (PropertyInfo property in klass.GetType().GetProperties())
-            {
-                Assert.AreEqual("Foo", property.GetDefaultValue());
-            }
-        }
-        
-        /// <summary>
         ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue{T}"/>.
         /// </summary>
         [Test]
@@ -36,6 +22,20 @@ namespace X10D.Performant.Tests.Core
             foreach (PropertyInfo property in klass.GetType().GetProperties())
             {
                 Assert.AreEqual("Foo", property.GetDefaultValue<string>());
+            }
+        }
+
+        /// <summary>
+        ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue"/>.
+        /// </summary>
+        [Test]
+        public void GetDefaultValueObj()
+        {
+            TestClass klass = new();
+
+            foreach (PropertyInfo property in klass.GetType().GetProperties())
+            {
+                Assert.AreEqual("Foo", property.GetDefaultValue());
             }
         }
 

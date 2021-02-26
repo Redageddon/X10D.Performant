@@ -6,7 +6,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="long"/>.
     /// </summary>
-    public static partial class Int64Extensions
+    public static class Int64Extensions
     {
         /// <summary>
         ///     Converts the <paramref name="timestamp"/> to a <see cref="DateTime"/> treating it as a Unix timestamp.
@@ -21,7 +21,7 @@ namespace X10D.Performant
             DateTimeOffset offset = isMilliseconds
                 ? DateTimeOffset.FromUnixTimeMilliseconds(timestamp)
                 : DateTimeOffset.FromUnixTimeSeconds(timestamp);
-            
+
             return offset.DateTime;
         }
 

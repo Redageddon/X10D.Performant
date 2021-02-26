@@ -8,7 +8,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="Stream"/>.
     /// </summary>
-    public static partial class StreamExtensions
+    public static class StreamExtensions
     {
         /// <summary>
         ///     Returns the hash of a stream using the specified hashing algorithm in terms of a <see cref="T:byte[]"/>.

@@ -3,8 +3,8 @@
 namespace X10D.Performant.ReExposed
 {
     /// <summary>
-    ///     Extension methods for <see cref="decimal" />.
+    ///     Extension methods for <see cref="decimal"/>.
     /// </summary>
     [SuppressMessage("ReSharper", "UnusedType.Global")]
-    public static partial class DecimalExtensions { }
+    public static partial class DecimalExtensions {}
 }

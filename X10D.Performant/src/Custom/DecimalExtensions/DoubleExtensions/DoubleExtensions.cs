@@ -5,7 +5,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="double"/>.
     /// </summary>
-    public static partial class DoubleExtensions
+    public static class DoubleExtensions
     {
         /// <summary>
         ///     Converts <paramref name="angle"/> from degrees to gradians.

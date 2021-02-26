@@ -18,8 +18,7 @@ namespace X10D.Performant
         /// <typeparam name="TKey">The key type.</typeparam>
         /// <typeparam name="TValue">The value type.</typeparam>
         /// <returns>A collection of <paramref name="keyValuePairs"/> that have their values as keys.</returns>
-        public static IEnumerable<KeyValuePair<TValue, TKey>> FlipKeyValues<TKey, TValue>(
-            this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
+        public static IEnumerable<KeyValuePair<TValue, TKey>> FlipKeyValues<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {
             foreach ((TKey key, TValue value) in keyValuePairs)
             {
@@ -112,8 +111,8 @@ namespace X10D.Performant
                 {
                     string? k = HttpUtility.UrlEncode(key?.ToString());
 
-                    string v = HttpUtility.UrlEncode(
-                        string.Join(separators[index > separatorsLength ? separatorsLength : index++], value.OfType<object>()));
+                    string v = HttpUtility.UrlEncode(string.Join(separators[index > separatorsLength ? separatorsLength : index++],
+                                                                 value.OfType<object>()));
 
                     yield return $"{k}={v}";
                 }

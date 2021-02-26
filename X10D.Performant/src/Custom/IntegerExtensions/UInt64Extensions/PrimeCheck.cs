@@ -31,14 +31,14 @@ namespace X10D.Performant
                 case < 4: return true;
             }
 
-            if ((value & 1) == 0 ||
-                Mod(value, 3) == 0)
+            if ((value & 1) == 0
+             || Mod(value, 3) == 0)
             {
                 return false;
             }
 
-            if (Mod(value + 1, 6) != 0 &&
-                Mod(value - 1, 6) != 0)
+            if (Mod(value + 1, 6) != 0
+             && Mod(value - 1, 6) != 0)
             {
                 return false;
             }
@@ -69,8 +69,8 @@ namespace X10D.Performant
         {
             for (ulong i = 5; i * i <= value; i += 6)
             {
-                if (Mod(value, i) == 0 ||
-                    Mod(value, i + 2) == 0)
+                if (Mod(value, i) == 0
+                 || Mod(value, i + 2) == 0)
                 {
                     return false;
                 }

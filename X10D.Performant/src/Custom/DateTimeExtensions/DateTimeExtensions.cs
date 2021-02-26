@@ -5,7 +5,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="DateTime"/>.
     /// </summary>
-    public static partial class DateTimeExtensions
+    public static class DateTimeExtensions
     {
         /// <summary>
         ///     Returns an <see cref="int"/> of the number of years since <see cref="DateTime"/> as of <see cref="DateTime"/>.
@@ -15,9 +15,10 @@ namespace X10D.Performant
         /// <returns>An <see cref="int"/> representing the number of years since <paramref name="date"/> as of <paramref name="asOf"/>.</returns>
         public static int Age(this DateTime date, DateTime? asOf = null)
         {
-            asOf ??= DateTime.Today;
+            const double daysInYear = 365.2425;
+            TimeSpan offset = (asOf ?? DateTime.Today).Date - TimeSpan.FromDays(1) - date.Date;
 
-            return (int)(((asOf.Value.Date - TimeSpan.FromDays(1) - date.Date).TotalDays + 1) / 365.2425);
+            return (int)((offset.TotalDays + 1) / daysInYear);
         }
 
         /// <summary>
@@ -104,7 +105,9 @@ namespace X10D.Performant
         {
             DateTimeOffset offset = time;
 
-            return useMillis ? offset.ToUnixTimeMilliseconds() : offset.ToUnixTimeSeconds();
+            return useMillis
+                ? offset.ToUnixTimeMilliseconds()
+                : offset.ToUnixTimeSeconds();
         }
     }
 }

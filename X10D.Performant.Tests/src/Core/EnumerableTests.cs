@@ -36,7 +36,7 @@ namespace X10D.Performant.Tests.Core
                 new Point(4, 5),
                 new Point(5, 5),
             };
-            
+
             List<Point> ys = new()
             {
                 new Point(1, 1),
@@ -49,7 +49,7 @@ namespace X10D.Performant.Tests.Core
             CollectionAssert.AreEqual(xs, points.DistinctBy(e => e.X).ToList());
             CollectionAssert.AreEqual(ys, points.DistinctBy(e => e.Y).ToList());
         }
-        
+
         /// <summary>
         ///     Tests for <see cref="EnumerableExtensions.LazyChunk{T}"/>.
         /// </summary>

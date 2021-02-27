@@ -64,6 +64,13 @@ namespace X10D.Performant.Tests.Core
             CollectionAssert.AreEqual(new byte[] { 0x03, 0x04 }, chunks.ElementAt(1).ToList());
             CollectionAssert.AreEqual(new byte[] { 0x05, 0x06 }, chunks.ElementAt(2).ToList());
             CollectionAssert.AreEqual(new byte[] { 0x07, 0x08 }, chunks.ElementAt(3).ToList());
+
+            IEnumerable<IEnumerable<byte>> chunks2 = foo.LazyChunk(3).ToArray();
+
+            Assert.AreEqual(3, chunks2.Count());
+            CollectionAssert.AreEqual(new byte[] { 0x01, 0x02, 0x03 }, chunks2.ElementAt(0).ToList());
+            CollectionAssert.AreEqual(new byte[] { 0x04, 0x05, 0x06 }, chunks2.ElementAt(1).ToList());
+            CollectionAssert.AreEqual(new byte[] { 0x07, 0x08, 0x00 }, chunks2.ElementAt(2).ToList());
         }
     }
 }

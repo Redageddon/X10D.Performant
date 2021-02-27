@@ -23,7 +23,7 @@ Below is a list of the number of extension methods written for a given type.
 | `generic`           | [X10D.Performant.GenericExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/GenericExtensions)                        | 6            |
 | `Guid`              | [X10D.Performant.GuidExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/GuidExtensions)                           | 1            |
 | `IComparable`       | [X10D.Performant.ComparableExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IComparableExtensions)                 | 2            |
-| `IEnumerable`       | [X10D.Performant.EnumerableExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IEnumerableExtensions)                 | 6            |
+| `IEnumerable`       | [X10D.Performant.EnumerableExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IEnumerableExtensions)                 | 4            |
 | `IEquatable`        | [X10D.Performant.EquatableExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IEquatableExtensions)                   | 90           |
 | `IFormatProvider`   | [X10D.Performant.FormatProvider](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/IFormatProviderExtensions)                | 8            |
 | `IList`             | [X10D.Performant.ListExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IListExtensions)                             | 3            |

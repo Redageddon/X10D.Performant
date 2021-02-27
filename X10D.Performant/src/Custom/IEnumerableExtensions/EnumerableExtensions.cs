@@ -48,20 +48,26 @@ namespace X10D.Performant
         /// </returns>
         public static IEnumerable<IEnumerable<TSource>> LazyChunk<TSource>(this IEnumerable<TSource> values, int chunkSize)
         {
-            TSource[] source = values as TSource[] ?? values.ToArray();
-            int chunks = source.Length / chunkSize;
-            int leftOver = source.Length % chunkSize;
-            int offset = 0;
+            TSource[]? array = null;
+            int count = 0;
 
-            for (int i = 0; i < chunks; i++)
+            foreach (TSource item in values)
             {
-                yield return new ArraySegment<TSource>(source, offset, chunkSize);
-                offset += chunkSize;
+                array ??= new TSource[chunkSize];
+
+                array[count++] = item;
+
+                if (count == chunkSize)
+                {
+                    yield return array;
+                    array = null;
+                    count = 0;
+                }
             }
 
-            if (leftOver > 0)
+            if (array != null && count > 0)
             {
-                yield return new ArraySegment<TSource>(source, offset, leftOver);
+                yield return array;
             }
         }
     }

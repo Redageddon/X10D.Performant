@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -13,31 +14,46 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="RandomExtensions.NextBool"/>.
         /// </summary>
         [Test]
-        public void CoinToss()
+        public void NextBool()
         {
-            Random random = new();
+            Random random = new(1);
 
-            bool[] tosses =
-            {
-                random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(),
-                random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(),
-                random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(), random.NextBool(),
-                random.NextBool(), random.NextBool(),
-            };
+            Assert.IsFalse(random.NextBool());
+            Assert.IsFalse(random.NextBool());
+            Assert.IsFalse(random.NextBool());
+            Assert.IsTrue(random.NextBool());
+            Assert.IsTrue(random.NextBool());
+            Assert.IsFalse(random.NextBool());
+            Assert.IsFalse(random.NextBool());
+        }
 
-            CollectionAssert.AreNotEqual(new[]
-                                         {
-                                             true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true,
-                                             true, true, true,
-                                         },
-                                         tosses);
+        /// <summary>
+        ///     Tests for <see cref="RandomExtensions.NextColorAhsb"/>.
+        /// </summary>
+        [Test]
+        public void NextColorAhsb()
+        {
+            Random random = new(1);
 
-            CollectionAssert.AreNotEqual(new[]
-                                         {
-                                             false, false, false, false, false, false, false, false, false, false, false, false, false, false,
-                                             false, false, false, false, false, false,
-                                         },
-                                         tosses);
+            Assert.AreEqual(Color.FromArgb(63, 223, 169, 169), random.NextColorAhsb());
+            Assert.AreEqual(Color.FromArgb(167, 245, 235, 235), random.NextColorAhsb());
+            Assert.AreEqual(Color.FromArgb(25, 65, 61, 61), random.NextColorAhsb());
+
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), random.NextColorAhsb(minAlpha: 255, minBrightness: 1));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), random.NextColorAhsb(minAlpha: 255, maxBrightness: 0));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="RandomExtensions.NextColorArgb"/>.
+        /// </summary>
+        [Test]
+        public void NextColorArgb()
+        {
+            Random random = new(1);
+
+            Assert.AreEqual(Color.FromArgb(63, 28, 119, 196), random.NextColorArgb());
+            Assert.AreEqual(Color.FromArgb(167, 110, 90, 240), random.NextColorArgb());
+            Assert.AreEqual(Color.FromArgb(25, 163, 7, 63), random.NextColorArgb());
         }
 
         /// <summary>

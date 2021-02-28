@@ -79,6 +79,48 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.Lerp"/>.
+        /// </summary>
+        [Test]
+        public void Lerp()
+        {
+            Assert.AreEqual(0, 0.25.Lerp(0, 0));
+            Assert.AreEqual(0, 0.5.Lerp(0, 0));
+            Assert.AreEqual(0, 0.75.Lerp(0, 0));
+            Assert.AreEqual(0, -0.25.Lerp(0, 0));
+            Assert.AreEqual(0, -0.5.Lerp(0, 0));
+            Assert.AreEqual(0, -0.75.Lerp(0, 0));
+
+            Assert.AreEqual(0.25, 0.25.Lerp(0, 1));
+            Assert.AreEqual(0.5, 0.5.Lerp(0, 1));
+            Assert.AreEqual(0.75, 0.75.Lerp(0, 1));
+            Assert.AreEqual(25, 0.25.Lerp(0, 100));
+            Assert.AreEqual(50, 0.5.Lerp(0, 100));
+            Assert.AreEqual(75, 0.75.Lerp(0, 100));
+
+            Assert.AreEqual(-0.25, -0.25.Lerp(0, 1));
+            Assert.AreEqual(-0.5, -0.5.Lerp(0, 1));
+            Assert.AreEqual(-0.75, -0.75.Lerp(0, 1));
+            Assert.AreEqual(-25, -0.25.Lerp(0, 100));
+            Assert.AreEqual(-50, -0.5.Lerp(0, 100));
+            Assert.AreEqual(-75, -0.75.Lerp(0, 100));
+
+            Assert.AreEqual(0.75, 0.25.Lerp(1, 0));
+            Assert.AreEqual(0.5, 0.5.Lerp(1, 0));
+            Assert.AreEqual(0.25, 0.75.Lerp(1, 0));
+            Assert.AreEqual(75, 0.25.Lerp(100, 0));
+            Assert.AreEqual(50, 0.5.Lerp(100, 0));
+            Assert.AreEqual(25, 0.75.Lerp(100, 0));
+
+            Assert.AreEqual(-0.75, -0.25.Lerp(1, 0));
+            Assert.AreEqual(-0.5, -0.5.Lerp(1, 0));
+            Assert.AreEqual(-0.25, -0.75.Lerp(1, 0));
+            Assert.AreEqual(-75, -0.25.Lerp(100, 0));
+            Assert.AreEqual(-50, -0.5.Lerp(100, 0));
+            Assert.AreEqual(-25, -0.75.Lerp(100, 0));
+        }
+
+        /// <summary>
         ///     Tests for <see cref="DoubleExtensions.RadiansToDegrees"/>.
         /// </summary>
         [Test]

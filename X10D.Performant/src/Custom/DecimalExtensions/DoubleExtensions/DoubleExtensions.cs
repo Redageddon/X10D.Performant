@@ -65,7 +65,7 @@ namespace X10D.Performant
         /// <returns>
         ///     A value that is between <paramref name="lowerValue"/> and <paramref name="higherValue"/> by a percent of <paramref name="alpha"/>.
         /// </returns>
-        public static double Lerp(this double alpha, double lowerValue = 0, double higherValue = 1) => (lowerValue * (1 - alpha)) + (higherValue * alpha);
+        public static double Lerp(this double alpha, double lowerValue, double higherValue) => (lowerValue * (1 - alpha)) + (higherValue * alpha);
 
         /// <summary>
         ///     Converts <paramref name="angle"/> from radians to degrees.

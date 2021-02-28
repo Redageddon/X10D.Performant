@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 
 #pragma warning disable 8629
@@ -23,7 +24,7 @@ namespace X10D.Performant
             Color.FromArgb(((alpha ?? color.A) << 24)
                          | ((red ?? color.R) << 16)
                          | ((green ?? color.G) << 8)
-                         | ((blue ?? color.B) << 0));
+                         | (blue ?? color.B));
 
         /// <summary>
         ///     Changes any of the hsb values from a <see cref="Color"/>.
@@ -41,25 +42,31 @@ namespace X10D.Performant
             brightness ??= color.GetBrightness();
             alpha ??= color.A;
 
-            float c = (1 - Math.Abs((2 * (float)brightness) - 1)) * (float)saturation;
-            float x = c * (1 - Math.Abs(((float)hue / 60 % 2) - 1));
-            float m = (float)brightness - (c / 2);
+            return ColorFromAhsb((byte)alpha, (float)hue, (float)saturation, (float)brightness);
+        }
 
-            (double r, double g, double b) prime = (hue % 360.0f) switch
+        [SuppressMessage("ReSharper", "IdentifierTypo")]
+        internal static Color ColorFromAhsb(byte alpha, float hue, float saturation, float brightness)
+        {
+            float c = (1 - Math.Abs((2 * brightness) - 1)) * saturation;
+            float x = c * (1 - Math.Abs((hue / 60 % 2) - 1));
+            float m = brightness - (c / 2);
+
+            (float red, float green, float blue) = (hue % 360.0f) switch
             {
-                < 60  => (c, x, 0),
-                < 120 => (x, c, 0),
-                < 180 => (0, c, x),
-                < 240 => (0, x, c),
-                < 300 => (x, 0, c),
-                _     => (c, 0, x),
+                < 60  => (c + m, x + m, m),
+                < 120 => (x + m, c + m, m),
+                < 180 => (m, c + m, x + m),
+                < 240 => (m, x + m, c + m),
+                < 300 => (x + m, m, c + m),
+                _     => (c + m, m, x + m),
             };
 
-            byte r = (byte)((prime.r + m) * 255);
-            byte g = (byte)((prime.g + m) * 255);
-            byte b = (byte)((prime.b + m) * 255);
+            int r = (int)(red * byte.MaxValue);
+            int g = (int)(green * byte.MaxValue);
+            int b = (int)(blue * byte.MaxValue);
 
-            return Color.FromArgb((byte)alpha, r, g, b);
+            return Color.FromArgb((alpha << 24) | (r << 16) | (g << 8) | b);
         }
     }
 }

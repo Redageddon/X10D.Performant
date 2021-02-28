@@ -29,7 +29,7 @@ namespace X10D.Performant
         public static bool IsOdd(this float value) => value % 2F != 0F;
 
         /// <inheritdoc cref="DoubleExtensions.Lerp"/>
-        public static float Lerp(this float alpha, float lowerValue, float higherValue) => (lowerValue * (1 - alpha)) + (higherValue * alpha);
+        public static float Lerp(this float alpha, float firstValue, float secondValue) => (firstValue * (1 - alpha)) + (secondValue * alpha);
 
         /// <inheritdoc cref="DoubleExtensions.RadiansToDegrees"/>
         public static float RadiansToDegrees(this float angle) => angle * 180.0F / MathF.PI;

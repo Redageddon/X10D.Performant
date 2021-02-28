@@ -8,18 +8,18 @@ Below is a list of the number of extension methods written for a given type.
 
 | Type                | Library                                                                                                                                                            | Method count |
 | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------: |
-| ALL                 | `X10D.Performant`                                                                                                                                                  | 590          |
+| ALL                 | `X10D.Performant`                                                                                                                                                  | 594          |
 | `Array`             | [X10D.Performant.ArrayExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/ArrayExtensions)                         | 25           |
 | `bool`              | [X10D.Performant.BooleanExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/BooleanExtensions)                        | 12           |
 | `byte`              | [X10D.Performant.ByteExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/ByteExtensions)            | 31           |      
 | `char`              | [X10D.Performant.CharExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/CharExtensions)                              | 65           |
 | `color`             | [X10D.Performant.ColorExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/ColorExtensions)                            | 2            |
 | `DateTime`          | [X10D.Performant.DateTimeExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/DateTimeExtensions)                      | 9            |
-| `decimal`           | [X10D.Performant.DecimalExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/DecimalExtensions/DecimalExtensions)   | 33           |         
+| `decimal`           | [X10D.Performant.DecimalExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/DecimalExtensions/DecimalExtensions)   | 34           |         
 | `double`            | [X10D.Performant.DoubleExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/DecimalExtensions/DoubleExtensions)        | 61           |        
 | `EndPoint`          | [X10D.Performant.EndPontExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/EndpointExtensions)                       | 2            |
 | `Enum`              | [X10D.Performant.EnumExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/EnumExtensions)                              | 5            |
-| `float`             | [X10D.Performant.FloatExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/DecimalExtensions/SingleExtensions)         | 60           |       
+| `float`             | [X10D.Performant.FloatExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/DecimalExtensions/SingleExtensions)         | 61           |       
 | `generic`           | [X10D.Performant.GenericExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/GenericExtensions)                        | 6            |
 | `Guid`              | [X10D.Performant.GuidExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/GuidExtensions)                           | 1            |
 | `IComparable`       | [X10D.Performant.ComparableExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IComparableExtensions)                 | 2            |
@@ -32,7 +32,7 @@ Below is a list of the number of extension methods written for a given type.
 | `long`              | [X10D.Performant.LongExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/Int64Extensions)           | 17           |      
 | `MemberInfo`        | [X10D.Performant.MemberInfoExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/MemberInfoExtensions)                  | 4            |
 | `object`            | [X10D.Performant.ObjectExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/ObjectExtensions)                       | 7            |
-| `Random`            | [X10D.Performant.RandomExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/RandomExtensions)                          | 3            |
+| `Random`            | [X10D.Performant.RandomExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/RandomExtensions)                          | 2            |
 | `RuntimeTypeHandle` | [X10D.Performant.RuntimeTypeHandleExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/RuntimeTypeHandleExtensions) | 1            | 
 | `sbyte`             | [X10D.Performant.SByteExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/SByteExtensions)          | 10           |       
 | `SecureString`      | [X10D.Performant.SecureStringExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/SecureStringExtensions)              | 1            |

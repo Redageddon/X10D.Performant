@@ -11,6 +11,30 @@ namespace X10D.Performant
     /// </summary>
     public static class ColorExtensions
     {
+        [SuppressMessage("ReSharper", "IdentifierTypo")]
+        internal static Color ColorFromAhsb(byte alpha, float hue, float saturation, float brightness)
+        {
+            float c = (1 - Math.Abs((2 * brightness) - 1)) * saturation;
+            float x = c * (1 - Math.Abs((hue / 60 % 2) - 1));
+            float m = brightness - (c / 2);
+
+            (float red, float green, float blue) = (hue % 360.0f) switch
+            {
+                < 60  => (c + m, x + m, m),
+                < 120 => (x + m, c + m, m),
+                < 180 => (m, c + m, x + m),
+                < 240 => (m, x + m, c + m),
+                < 300 => (x + m, m, c + m),
+                _     => (c + m, m, x + m),
+            };
+
+            int r = (int)(red * byte.MaxValue);
+            int g = (int)(green * byte.MaxValue);
+            int b = (int)(blue * byte.MaxValue);
+
+            return Color.FromArgb((alpha << 24) | (r << 16) | (g << 8) | b);
+        }
+
         /// <summary>
         ///     Changes any of the rgb values from a <see cref="Color"/>.
         /// </summary>
@@ -43,30 +67,6 @@ namespace X10D.Performant
             alpha ??= color.A;
 
             return ColorFromAhsb((byte)alpha, (float)hue, (float)saturation, (float)brightness);
-        }
-
-        [SuppressMessage("ReSharper", "IdentifierTypo")]
-        internal static Color ColorFromAhsb(byte alpha, float hue, float saturation, float brightness)
-        {
-            float c = (1 - Math.Abs((2 * brightness) - 1)) * saturation;
-            float x = c * (1 - Math.Abs((hue / 60 % 2) - 1));
-            float m = brightness - (c / 2);
-
-            (float red, float green, float blue) = (hue % 360.0f) switch
-            {
-                < 60  => (c + m, x + m, m),
-                < 120 => (x + m, c + m, m),
-                < 180 => (m, c + m, x + m),
-                < 240 => (m, x + m, c + m),
-                < 300 => (x + m, m, c + m),
-                _     => (c + m, m, x + m),
-            };
-
-            int r = (int)(red * byte.MaxValue);
-            int g = (int)(green * byte.MaxValue);
-            int b = (int)(blue * byte.MaxValue);
-
-            return Color.FromArgb((alpha << 24) | (r << 16) | (g << 8) | b);
         }
     }
 }

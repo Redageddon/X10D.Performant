@@ -64,7 +64,8 @@ namespace X10D.Performant
                 }
             }
 
-            if (array != null && count > 0)
+            if (array != null
+             && count > 0)
             {
                 yield return array;
             }

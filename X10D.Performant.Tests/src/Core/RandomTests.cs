@@ -39,8 +39,8 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(Color.FromArgb(167, 245, 235, 235), random.NextColorAhsb());
             Assert.AreEqual(Color.FromArgb(25, 65, 61, 61), random.NextColorAhsb());
 
-            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), random.NextColorAhsb(minAlpha: 255, minBrightness: 1));
-            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), random.NextColorAhsb(minAlpha: 255, maxBrightness: 0));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), random.NextColorAhsb(255, minBrightness: 1));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), random.NextColorAhsb(255, maxBrightness: 0));
         }
 
         /// <summary>

@@ -36,16 +36,15 @@ namespace X10D.Performant
         /// <param name="minBrightness">The lowest brightness value to randomize.</param>
         /// <param name="maxBrightness">The highest brightness value to randomize.</param>
         /// <returns>A new random color with the supplied ahsv values.</returns>
-        public static Color NextColorAhsb(
-            this Random random,
-            byte minAlpha = byte.MinValue,
-            byte maxAlpha = byte.MaxValue,
-            float minHue = 0,
-            float maxHue = 1,
-            float minSaturation = 0,
-            float maxSaturation = 1,
-            float minBrightness = 0,
-            float maxBrightness = 1)
+        public static Color NextColorAhsb(this Random random,
+                                          byte minAlpha = byte.MinValue,
+                                          byte maxAlpha = byte.MaxValue,
+                                          float minHue = 0,
+                                          float maxHue = 1,
+                                          float minSaturation = 0,
+                                          float maxSaturation = 1,
+                                          float minBrightness = 0,
+                                          float maxBrightness = 1)
         {
             byte a = (byte)random.Next(minAlpha, maxAlpha);
             float h = (float)random.NextDouble().Lerp(minHue, maxHue);
@@ -68,16 +67,15 @@ namespace X10D.Performant
         /// <param name="minBlue">The lowest blue value to randomize.</param>
         /// <param name="maxBlue">The highest blue value to randomize.</param>
         /// <returns>A new random color with the supplied argb values.</returns>
-        public static Color NextColorArgb(
-            this Random random,
-            byte minAlpha = byte.MinValue,
-            byte maxAlpha = byte.MaxValue,
-            byte minRed = byte.MinValue,
-            byte maxRed = byte.MaxValue,
-            byte minGreen = byte.MinValue,
-            byte maxGreen = byte.MaxValue,
-            byte minBlue = byte.MinValue,
-            byte maxBlue = byte.MaxValue) =>
+        public static Color NextColorArgb(this Random random,
+                                          byte minAlpha = byte.MinValue,
+                                          byte maxAlpha = byte.MaxValue,
+                                          byte minRed = byte.MinValue,
+                                          byte maxRed = byte.MaxValue,
+                                          byte minGreen = byte.MinValue,
+                                          byte maxGreen = byte.MaxValue,
+                                          byte minBlue = byte.MinValue,
+                                          byte maxBlue = byte.MaxValue) =>
             Color.FromArgb((random.Next(minAlpha, maxAlpha) << 24)
                          | (random.Next(minRed, maxRed) << 16)
                          | (random.Next(minGreen, maxGreen) << 8)

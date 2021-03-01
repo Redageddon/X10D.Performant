@@ -27,17 +27,11 @@ namespace X10D.Performant
             return crypt?.ComputeHash(stream);
         }
 
+        public static Color ReadArgbColor(this Stream stream, bool littleEndian = true) => Color.FromArgb(stream.ReadInt32(littleEndian));
+
         public static bool ReadBoolean(this Stream stream) => stream.ReadByte() != 0;
 
         public static char ReadChar(this Stream stream) => (char)stream.ReadByte();
-
-        public static string ReadString(this Stream stream, int size, Encoding? encoding = null)
-        {
-            Span<byte> buffer = stackalloc byte[size];
-            stream.Read(buffer);
-
-            return (encoding ?? Encoding.Default).GetString(buffer);
-        }
 
         public static decimal ReadDecimal(this Stream stream, bool littleEndian = true)
         {
@@ -51,22 +45,21 @@ namespace X10D.Performant
             return new decimal(buffer);
         }
 
-        public static Color ReadRgbColor(this Stream stream, bool littleEndian = true) => Color.FromArgb((255 << 24) | stream.ReadInt32(littleEndian));
+        public static double ReadDouble(this Stream stream, bool littleEndian = true)
+        {
+            Span<byte> buffer = stackalloc byte[8];
+            stream.Read(buffer);
 
-        public static Color ReadArgbColor(this Stream stream, bool littleEndian = true) => Color.FromArgb(stream.ReadInt32(littleEndian));
+            if (!littleEndian)
+            {
+                buffer.Reverse();
+            }
 
-        public static float ReadSingle(this Stream stream, bool littleEndian = true) =>
-            BitConverter.Int32BitsToSingle(littleEndian
-                                               ? stream.ReadByte() | (stream.ReadByte() << 8) | (stream.ReadByte() << 16) | (stream.ReadByte() << 24)
-                                               : (stream.ReadByte() << 24) | (stream.ReadByte() << 16) | (stream.ReadByte() << 8) | stream.ReadByte());
+            return BitConverter.ToDouble(buffer);
+        }
 
         public static short ReadInt16(this Stream stream, bool littleEndian = true) =>
             (short)(littleEndian
-                ? stream.ReadByte() | (stream.ReadByte() << 8)
-                : (stream.ReadByte() << 8) | stream.ReadByte());
-
-        public static ushort ReadUInt16(this Stream stream, bool littleEndian = true) =>
-            (ushort)(littleEndian
                 ? stream.ReadByte() | (stream.ReadByte() << 8)
                 : (stream.ReadByte() << 8) | stream.ReadByte());
 
@@ -74,11 +67,6 @@ namespace X10D.Performant
             littleEndian
                 ? stream.ReadByte() | (stream.ReadByte() << 8) | (stream.ReadByte() << 16) | (stream.ReadByte() << 24)
                 : (stream.ReadByte() << 24) | (stream.ReadByte() << 16) | (stream.ReadByte() << 8) | stream.ReadByte();
-
-        public static uint ReadUInt32(this Stream stream, bool littleEndian = true) =>
-            (uint)(littleEndian
-                ? stream.ReadByte() | (stream.ReadByte() << 8) | (stream.ReadByte() << 16) | (stream.ReadByte() << 24)
-                : (stream.ReadByte() << 24) | (stream.ReadByte() << 16) | (stream.ReadByte() << 8) | stream.ReadByte());
 
         public static long ReadInt64(this Stream stream, bool littleEndian = true)
         {
@@ -93,6 +81,35 @@ namespace X10D.Performant
             return BitConverter.ToInt64(buffer);
         }
 
+        public static Color ReadRgbColor(this Stream stream, bool littleEndian = true) =>
+            Color.FromArgb((255 << 24) | stream.ReadInt32(littleEndian));
+
+        public static float ReadSingle(this Stream stream, bool littleEndian = true) =>
+            BitConverter.Int32BitsToSingle(littleEndian
+                                               ? stream.ReadByte() | (stream.ReadByte() << 8) | (stream.ReadByte() << 16) | (stream.ReadByte() << 24)
+                                               : (stream.ReadByte() << 24)
+                                               | (stream.ReadByte() << 16)
+                                               | (stream.ReadByte() << 8)
+                                               | stream.ReadByte());
+
+        public static string ReadString(this Stream stream, int size, Encoding? encoding = null)
+        {
+            Span<byte> buffer = stackalloc byte[size];
+            stream.Read(buffer);
+
+            return (encoding ?? Encoding.Default).GetString(buffer);
+        }
+
+        public static ushort ReadUInt16(this Stream stream, bool littleEndian = true) =>
+            (ushort)(littleEndian
+                ? stream.ReadByte() | (stream.ReadByte() << 8)
+                : (stream.ReadByte() << 8) | stream.ReadByte());
+
+        public static uint ReadUInt32(this Stream stream, bool littleEndian = true) =>
+            (uint)(littleEndian
+                ? stream.ReadByte() | (stream.ReadByte() << 8) | (stream.ReadByte() << 16) | (stream.ReadByte() << 24)
+                : (stream.ReadByte() << 24) | (stream.ReadByte() << 16) | (stream.ReadByte() << 8) | stream.ReadByte());
+
         public static ulong ReadUInt64(this Stream stream, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[8];
@@ -104,19 +121,6 @@ namespace X10D.Performant
             }
 
             return BitConverter.ToUInt64(buffer);
-        }
-
-        public static double ReadDouble(this Stream stream, bool littleEndian = true)
-        {
-            Span<byte> buffer = stackalloc byte[8];
-            stream.Read(buffer);
-
-            if (!littleEndian)
-            {
-                buffer.Reverse();
-            }
-
-            return BitConverter.ToDouble(buffer);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace X10D.Performant
         public static string ChangeEncoding(this string value, Encoding from, Encoding to) => to.GetString(value.GetBytes(from));
 
         /// <inheritdoc cref="Encoding.GetBytes(string)"/>
-        public static byte[] GetBytes(this string value, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetBytes(value);
+        public static byte[] GetBytes(this string value, Encoding? encoding = null) => (encoding ?? Encoding.Default).GetBytes(value);
 
         /// <summary>
         ///     Determines if all alphabetical characters in this <see cref="string"/> are considered letters.

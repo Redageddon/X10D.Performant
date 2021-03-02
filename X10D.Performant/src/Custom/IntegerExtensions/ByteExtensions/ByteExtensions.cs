@@ -55,6 +55,6 @@ namespace X10D.Performant
         public static bool ToBoolean(this byte value) => value != 0;
 
         /// <inheritdoc cref="Encoding.GetString(byte[])"/>
-        public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.UTF8).GetString(bytes);
+        public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.Default).GetString(bytes);
     }
 }

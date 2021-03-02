@@ -22,7 +22,7 @@
     <PropertyGroup>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <RepositoryType>git</RepositoryType>
-        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+        <PackageLicenseFile>MIT-LICENSE.md</PackageLicenseFile>
         <PackageIcon>icon.png</PackageIcon>
         <PackageTags>dotnet extension-methods</PackageTags>
         <PackageVersion>10.0.0.0</PackageVersion>
@@ -33,14 +33,10 @@
             <Pack>True</Pack>
             <PackagePath />
         </Content>
-        <Content Include="..\LICENSE.md">
+        <Content Include="..\MIT-LICENSE.md">
             <Pack>True</Pack>
             <PackagePath />
         </Content>
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="src\Custom" />
     </ItemGroup>
 
 </Project>

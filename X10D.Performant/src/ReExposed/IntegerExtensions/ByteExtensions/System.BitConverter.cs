@@ -17,7 +17,7 @@ namespace X10D.Performant.ReExposed
         public static long ToInt64(this byte[] bytes, int startIndex = 0) => BitConverter.ToInt64(bytes, startIndex);
 
         /// <inheritdoc cref="BitConverter.ToString(byte[],int)"/>
-        public static string ToString(this byte[] bytes, int startIndex = 0) => BitConverter.ToString(bytes, startIndex);
+        public static string AsString(this byte[] bytes, int startIndex = 0) => BitConverter.ToString(bytes, startIndex);
 
         /// <inheritdoc cref="BitConverter.ToInt16(byte[],int)"/>
         [CLSCompliant(false)]

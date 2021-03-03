@@ -16,15 +16,18 @@ namespace X10D.Performant
         ///     Decodes a base-64 encoded <see cref="string"/>.
         /// </summary>
         /// <param name="value">The base-64 <see cref="string"/> to decode.</param>
+        /// <param name="encoding">The encoding that the <see cref="string"/> is read into.</param>
         /// <returns>The <see cref="string"/> in plain text.</returns>
-        public static string Base64Decode(this string value) => Convert.FromBase64String(value).ToEncodedString();
+        public static string Base64Decode(this string value, Encoding? encoding = null) =>
+            (encoding ?? Encoding.Default).GetString(Convert.FromBase64String(value));
 
         /// <summary>
         ///     Encodes a base-64 encoded <see cref="string"/>.
         /// </summary>
         /// <param name="value">The plain text <see cref="string"/> to decode.</param>
+        /// <param name="encoding">The encoding that the <see cref="string"/> is read into.</param>
         /// <returns>The <see cref="string"/> in plain text.</returns>
-        public static string Base64Encode(this string value) => Convert.ToBase64String(value.GetBytes());
+        public static string Base64Encode(this string value, Encoding? encoding = null) => Convert.ToBase64String(value.GetBytes(encoding));
 
         /// <summary>
         ///     Converts this <see cref="string"/> from one encoding to another.
@@ -118,19 +121,28 @@ namespace X10D.Performant
         /// <param name="value">The string to repeat.</param>
         /// <param name="count">The repeat count.</param>
         /// <returns>A <see cref="string"/> whose value is <paramref name="value"/> repeated <paramref name="count"/> times.</returns>
-        public static string Repeat(this string value, double count)
+        public static string Repeat(this string value, int count)
         {
-            if (value.Length == 0)
+            switch (value.Length)
             {
-                return string.Empty;
+                case 0: return string.Empty;
+                case 1: return value;
             }
 
-            int size = (int)Math.Ceiling(value.Length * count);
+            int size = value.Length * count;
             Span<char> span = stackalloc char[size];
 
-            for (int i = 0; i < size; i++)
+            int p = 0;
+            int i = 0;
+
+            while (i < size)
             {
-                span[i] = value[i % value.Length];
+                if (p == value.Length)
+                {
+                    p = 0;
+                }
+
+                span[i++] = value[p++];
             }
 
             return new string(span);
@@ -177,12 +189,5 @@ namespace X10D.Performant
 
             return result;
         }
-
-        /// <summary>
-        ///     Parses a shorthand time span <see cref="string"/> (e.g. 3w 2d 1.5h) and converts it to an instance of <see cref="TimeSpan"/>.
-        /// </summary>
-        /// <param name="value">The input string.</param>
-        /// <returns>An instance of <see cref="TimeSpan"/>.</returns>
-        public static TimeSpan ToTimeSpan(this string value) => value.ShortHandParse();
     }
 }

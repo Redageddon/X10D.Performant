@@ -13,13 +13,13 @@ namespace X10D.Performant.Tests.Core
     public class StringTests
     {
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.Base64Decode(string)"/>.
+        ///     Tests for <see cref="StringExtensions.Base64Decode(string, Encoding)"/>.
         /// </summary>
         [Test]
         public void Base64Decode() => Assert.AreEqual("hello", "aGVsbG8=".Base64Decode());
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.Base64Encode(string)"/>.
+        ///     Tests for <see cref="StringExtensions.Base64Encode(string, Encoding)"/>.
         /// </summary>
         [Test]
         public void Base64Encode() => Assert.AreEqual("aGVsbG8=", "hello".Base64Encode());
@@ -93,9 +93,6 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual("", "abc".Repeat(0));
             Assert.AreEqual("abc", "abc".Repeat(1));
             Assert.AreEqual("abcabc", "abc".Repeat(2));
-            Assert.AreEqual("abcabca", "abc".Repeat(2.3));
-            Assert.AreEqual("abcabcab", "abc".Repeat(2.6));
-            Assert.AreEqual("abcdabcdab", "abcd".Repeat(2.5));
         }
 
         /// <summary>
@@ -116,17 +113,17 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.ToTimeSpan"/>.
+        ///     Tests for <see cref="StringExtensions.ShortHandParse"/>.
         /// </summary>
         [Test]
         public void TestParser()
         {
-            Assert.AreEqual(TimeSpan.FromHours(3), "3h".ToTimeSpan());
-            Assert.AreEqual(TimeSpan.FromMinutes(2.5), "2.5m".ToTimeSpan());
-            Assert.AreEqual(TimeSpan.FromHours(1), "60m".ToTimeSpan());
-            Assert.AreEqual(TimeSpan.FromDays(1), "1d".ToTimeSpan());
-            Assert.AreEqual(TimeSpan.FromDays(8), "1w 1d".ToTimeSpan());
-            Assert.AreEqual(TimeSpan.FromDays(8), "1w1d".ToTimeSpan());
+            Assert.AreEqual(TimeSpan.FromHours(3), "3h".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromMinutes(2.5), "2.5m".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromHours(1), "60m".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromDays(1), "1d".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromDays(8), "1w 1d".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromDays(8), "1w1d".ShortHandParse());
         }
 
         /// <summary>

@@ -6,7 +6,6 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="ulong"/>.
     /// </summary>
-    [CLSCompliant(false)]
     public static partial class UInt64Extensions
     {
         /// <summary>

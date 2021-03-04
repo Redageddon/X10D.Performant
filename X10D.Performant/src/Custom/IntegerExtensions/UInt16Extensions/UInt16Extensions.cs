@@ -6,7 +6,6 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="ushort"/>.
     /// </summary>
-    [CLSCompliant(false)]
     public static class UInt16Extensions
     {
         /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>

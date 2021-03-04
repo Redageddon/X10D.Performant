@@ -6,7 +6,6 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="sbyte"/>.
     /// </summary>
-    [CLSCompliant(false)]
     public static class SByteExtensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>

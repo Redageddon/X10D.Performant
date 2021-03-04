@@ -6,7 +6,6 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="uint"/>.
     /// </summary>
-    [CLSCompliant(false)]
     public static class UInt32Extensions
     {
         /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>

@@ -7,7 +7,6 @@ namespace X10D.Performant.ReExposed
     ///     Extension methods for <see cref="sbyte"/>.
     /// </summary>
     [SuppressMessage("ReSharper", "UnusedType.Global")]
-    [CLSCompliant(false)]
     public static class SByteExtensions
     {
         /// <inheritdoc cref="Math.Abs(sbyte)"/>

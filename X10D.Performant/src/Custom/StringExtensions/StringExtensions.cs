@@ -123,10 +123,10 @@ namespace X10D.Performant
         /// <returns>A <see cref="string"/> whose value is <paramref name="value"/> repeated <paramref name="count"/> times.</returns>
         public static string Repeat(this string value, int count)
         {
-            switch (value.Length)
+            if (value.Length == 0
+             || count <= 0)
             {
-                case 0: return string.Empty;
-                case 1: return value;
+                return string.Empty;
             }
 
             int size = value.Length * count;

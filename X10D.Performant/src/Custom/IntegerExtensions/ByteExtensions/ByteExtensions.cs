@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace X10D.Performant
 {
@@ -11,15 +9,14 @@ namespace X10D.Performant
     public static class ByteExtensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
-        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public static DateTime FromUnixTimestamp(this byte timestamp, bool isMilliseconds = false) =>
             ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="Int64Extensions.IsEven"/>
-        public static bool IsEven(this byte value) => value % 2 == 0;
+        public static bool IsEven(this byte value) => (value & 1) == 0;
 
         /// <inheritdoc cref="Int64Extensions.IsOdd"/>
-        public static bool IsOdd(this byte value) => value % 2 != 0;
+        public static bool IsOdd(this byte value) => (value & 1) != 0;
 
         /// <inheritdoc cref="Int64Extensions.IsPrime"/>
         public static bool IsPrime(this byte value)
@@ -47,14 +44,11 @@ namespace X10D.Performant
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static byte Mod(this byte value, byte modulus) =>
-            value < modulus
+            value < modulus && value > 0
                 ? value
                 : (byte)(value - (value / modulus * modulus));
 
         /// <inheritdoc cref="Int64Extensions.ToBoolean"/>
         public static bool ToBoolean(this byte value) => value != 0;
-
-        /// <inheritdoc cref="Encoding.GetString(byte[])"/>
-        public static string ToEncodedString(this byte[] bytes, Encoding? encoding = null) => (encoding ?? Encoding.Default).GetString(bytes);
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -11,7 +10,6 @@ namespace X10D.Performant
     public static class UInt32Extensions
     {
         /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>
-        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public static DateTime FromUnixTimestamp(this uint timestamp, bool isMilliseconds = false) =>
             ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 

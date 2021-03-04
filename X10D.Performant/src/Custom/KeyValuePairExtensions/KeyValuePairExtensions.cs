@@ -36,7 +36,7 @@ namespace X10D.Performant
         [SuppressMessage("ReSharper", "ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator")]
         public static string ToConnectionString<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {
-            static string? SanitizeValue<T>(T value)
+            static string? SanitizeValue(TValue value)
             {
                 if (value is null)
                 {
@@ -61,7 +61,7 @@ namespace X10D.Performant
             {
                 foreach ((TKey key, TValue value) in keyValuePairs)
                 {
-                    yield return $"{key}={SanitizeValue(value?.ToString())}";
+                    yield return $"{key}={SanitizeValue(value)}";
                 }
             }
 

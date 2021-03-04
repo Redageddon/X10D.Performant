@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -210,6 +211,8 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(1, l.To<double, decimal>());
 
             Assert.AreEqual(true, m.To<string, bool>());
+            Assert.AreEqual(false, "0".To<string, bool>());
+            Assert.AreEqual(true, "true".To<string, bool>());
             Assert.AreEqual('1', m.To<string, char>());
             Assert.AreEqual(1, m.To<string, sbyte>());
             Assert.AreEqual(1, m.To<string, byte>());
@@ -223,6 +226,8 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(1, m.To<string, double>());
             Assert.AreEqual("1", m.To<string, string>());
             Assert.AreEqual(1, m.To<string, decimal>());
+            Assert.AreEqual(TimeSpan.Parse("1.00:00:00"), m.To<string, TimeSpan>());
+            Assert.AreEqual(new CustomParse(1), m.To<string, CustomParse>());
 
             Assert.AreEqual(true, n.To<decimal, bool>());
             Assert.AreEqual(1, n.To<decimal, char>());
@@ -238,6 +243,8 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(1, n.To<decimal, decimal>());
             Assert.AreEqual("1", n.To<decimal, string>());
             Assert.AreEqual(1, n.To<decimal, decimal>());
+
+            Assert.AreEqual(true, new CustomBool(1).To<CustomBool, bool>());
         }
 
         /// <summary>
@@ -258,26 +265,19 @@ namespace X10D.Performant.Tests.Core
         {
             bool executed = false;
 
-            Assert.AreEqual(2.0,
-                            "Foo".ToOrOther(() =>
-                            {
-                                executed = true;
+            double DoubleLambda()
+            {
+                executed = true;
 
-                                return 2.0;
-                            }));
+                return 2.0;
+            }
 
+            Assert.AreEqual(2D, "Foo".ToOrOther(DoubleLambda));
             Assert.IsTrue(executed);
 
             executed = false;
 
-            Assert.AreEqual(2,
-                            "2".ToOrOther(() =>
-                            {
-                                executed = true;
-
-                                return 3;
-                            }));
-
+            Assert.AreEqual(2D, "2".ToOrOther(DoubleLambda));
             Assert.IsFalse(executed);
         }
 
@@ -291,6 +291,33 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(2, _2);
             Assert.IsFalse("q".TryTo(out bool b));
             Assert.IsFalse(b);
+        }
+
+        private struct CustomParse
+        {
+            [SuppressMessage("ReSharper", "NotAccessedField.Local")]
+            private int i;
+
+            internal CustomParse(int i)
+            {
+                this.i = i;
+            }
+
+            [SuppressMessage("ReSharper", "UnusedMember.Local")]
+            internal static CustomParse Parse(string s) => new() { i = int.Parse(s) };
+        }
+
+        private readonly struct CustomBool
+        {
+            [SuppressMessage("ReSharper", "NotAccessedField.Local")]
+            private readonly byte b;
+
+            public CustomBool(byte b)
+            {
+                this.b = b;
+            }
+
+            public static explicit operator bool(CustomBool customBool) => customBool.b != 0;
         }
     }
 }

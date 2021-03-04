@@ -7,6 +7,9 @@ namespace X10D.Performant.ReExposed
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static partial class ByteExtensions
     {
+        /// <inheritdoc cref="BitConverter.ToString(byte[],int)"/>
+        public static string AsString(this byte[] bytes, int startIndex = 0) => BitConverter.ToString(bytes, startIndex);
+
         /// <inheritdoc cref="BitConverter.ToInt16(byte[],int)"/>
         public static short ToInt16(this byte[] bytes, int startIndex = 0) => BitConverter.ToInt16(bytes, startIndex);
 
@@ -15,9 +18,6 @@ namespace X10D.Performant.ReExposed
 
         /// <inheritdoc cref="BitConverter.ToInt64(byte[],int)"/>
         public static long ToInt64(this byte[] bytes, int startIndex = 0) => BitConverter.ToInt64(bytes, startIndex);
-
-        /// <inheritdoc cref="BitConverter.ToString(byte[],int)"/>
-        public static string AsString(this byte[] bytes, int startIndex = 0) => BitConverter.ToString(bytes, startIndex);
 
         /// <inheritdoc cref="BitConverter.ToInt16(byte[],int)"/>
         [CLSCompliant(false)]

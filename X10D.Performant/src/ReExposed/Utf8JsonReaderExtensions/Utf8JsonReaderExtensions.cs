@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
-namespace X10D.Performant
+namespace X10D.Performant.ReExposed
 {
     /// <summary>
     ///     Extension methods for <see cref="Utf8JsonReader"/>.

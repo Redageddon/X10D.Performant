@@ -17,11 +17,9 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void GetDefaultValue()
         {
-            TestClass klass = new();
-
-            foreach (PropertyInfo property in klass.GetType().GetProperties())
+            foreach (FieldInfo field in typeof(TestClass).GetFields())
             {
-                Assert.AreEqual("Foo", property.GetDefaultValue<string>());
+                Assert.AreEqual("Foo", field.GetDefaultValue<string>());
             }
         }
 
@@ -31,11 +29,9 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void GetDefaultValueObj()
         {
-            TestClass klass = new();
-
-            foreach (PropertyInfo property in klass.GetType().GetProperties())
+            foreach (FieldInfo field in typeof(TestClass).GetFields())
             {
-                Assert.AreEqual("Foo", property.GetDefaultValue());
+                Assert.AreEqual("Foo", field.GetDefaultValue());
             }
         }
 
@@ -45,11 +41,9 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void GetDescription()
         {
-            TestClass klass = new();
-
-            foreach (PropertyInfo property in klass.GetType().GetProperties())
+            foreach (FieldInfo field in typeof(TestClass).GetFields())
             {
-                Assert.AreEqual("Test description", property.GetDescription());
+                Assert.AreEqual("Test description", field.GetDescription());
             }
         }
 
@@ -59,16 +53,14 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void SelectFromCustomAttribute()
         {
-            TestClass klass = new();
-
-            foreach (PropertyInfo property in klass.GetType().GetProperties())
+            foreach (FieldInfo field in typeof(TestClass).GetFields())
             {
-                string value = property.SelectFromCustomAttribute<SampleAttribute, string>(a => a?.TestValue);
+                string value = field.SelectFromCustomAttribute<SampleAttribute, string>(a => a?.TestValue);
                 Assert.AreEqual("Bar", value);
             }
         }
 
-        [AttributeUsage(AttributeTargets.Property)]
+        [AttributeUsage(AttributeTargets.Field)]
         private sealed class SampleAttribute : Attribute
         {
             public string TestValue { get; set; }
@@ -76,11 +68,13 @@ namespace X10D.Performant.Tests.Core
 
         private sealed class TestClass
         {
+            #pragma warning disable 649
             [SuppressMessage("ReSharper", "UnusedMember.Local", Justification = "Used in Reflection")]
             [System.ComponentModel.Description("Test description")]
             [DefaultValue("Foo")]
             [Sample(TestValue = "Bar")]
-            public string TestProperty { get; set; }
+            public string TestField;
+            #pragma warning restore 649
         }
     }
 }

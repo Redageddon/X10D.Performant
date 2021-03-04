@@ -16,22 +16,117 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void ColorWithHsb()
         {
-            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 0.0f, 0.0f, 1.0f));
-            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 0.0f, 0.0f, 0.0f));
-            Assert.AreEqual(Color.FromArgb(0, 255, 255, 255), Color.Transparent.With(0, 0.0f, 0.0f, 1.0f));
-            Assert.AreEqual(Color.FromArgb(0, 0, 0, 0), Color.Transparent.With(0, 0.0f, 0.0f, 0.0f));
+            // 0 brightness
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 0.0f, 0f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 60.0f, 0f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 120.0f, 0f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 180.0f, 0f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 240.0f, 0f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 300.0f, 0f, 0.0f));
 
-            Assert.AreEqual(Color.FromArgb(255, 63, 79, 47), Color.Transparent.With(255, 90f, 0.25f, 0.25f));
-            Assert.AreEqual(Color.FromArgb(255, 127, 191, 63), Color.Transparent.With(255, 90f, 0.5f, 0.5f));
-            Assert.AreEqual(Color.FromArgb(255, 191, 239, 143), Color.Transparent.With(255, 90f, 0.75f, 0.75f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 0.0f, 0.25f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 60.0f, 0.25f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 120.0f, 0.25f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 180.0f, 0.25f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 240.0f, 0.25f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 300.0f, 0.25f, 0.0f));
 
-            Assert.AreEqual(Color.FromArgb(255, 47, 79, 79), Color.Transparent.With(255, 180f, 0.25f, 0.25f));
-            Assert.AreEqual(Color.FromArgb(255, 63, 191, 191), Color.Transparent.With(255, 180f, 0.5f, 0.5f));
-            Assert.AreEqual(Color.FromArgb(255, 143, 239, 239), Color.Transparent.With(255, 180f, 0.75f, 0.75f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 0.0f, 0.5f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 60.0f, 0.5f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 120.0f, 0.5f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 180.0f, 0.5f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 240.0f, 0.5f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 300.0f, 0.5f, 0.0f));
 
-            Assert.AreEqual(Color.FromArgb(255, 63, 47, 79), Color.Transparent.With(255, 270f, 0.25f, 0.25f));
-            Assert.AreEqual(Color.FromArgb(255, 127, 63, 191), Color.Transparent.With(255, 270f, 0.5f, 0.5f));
-            Assert.AreEqual(Color.FromArgb(255, 191, 143, 239), Color.Transparent.With(255, 270f, 0.75f, 0.75f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 0.0f, 0.75f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 60.0f, 0.75f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 120.0f, 0.75f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 180.0f, 0.75f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 240.0f, 0.75f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 300.0f, 0.75f, 0.0f));
+
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 0.0f, 1f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 60.0f, 1f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 120.0f, 1f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 180.0f, 1f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 240.0f, 1f, 0.0f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), Color.Transparent.With(255, 300.0f, 1f, 0.0f));
+
+            // 1 brightness
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 0.0f, 0f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 60.0f, 0f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 120.0f, 0f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 180.0f, 0f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 240.0f, 0f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 300.0f, 0f, 1f));
+
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 0.0f, 0.25f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 60.0f, 0.25f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 120.0f, 0.25f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 180.0f, 0.25f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 240.0f, 0.25f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 300.0f, 0.25f, 1f));
+
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 0.0f, 0.5f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 60.0f, 0.5f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 120.0f, 0.5f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 180.0f, 0.5f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 240.0f, 0.5f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 300.0f, 0.5f, 1f));
+
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 0.0f, 0.75f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 60.0f, 0.75f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 120.0f, 0.75f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 180.0f, 0.75f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 240.0f, 0.75f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 300.0f, 0.75f, 1f));
+
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 0.0f, 1f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 60.0f, 1f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 120.0f, 1f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 180.0f, 1f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 240.0f, 1f, 1f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), Color.Transparent.With(255, 300.0f, 1f, 1f));
+
+            // 0 saturation
+            Assert.AreEqual(Color.FromArgb(255, 128, 128, 128), Color.Transparent.With(255, 0.0f, 0f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 128, 128, 128), Color.Transparent.With(255, 60.0f, 0f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 128, 128, 128), Color.Transparent.With(255, 120.0f, 0f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 128, 128, 128), Color.Transparent.With(255, 180.0f, 0f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 128, 128, 128), Color.Transparent.With(255, 240.0f, 0f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 128, 128, 128), Color.Transparent.With(255, 300.0f, 0f, 0.5f));
+
+            // 0.25 saturation
+            Assert.AreEqual(Color.FromArgb(255, 159, 96, 96), Color.Transparent.With(255, 0.0f, 0.25f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 159, 159, 96), Color.Transparent.With(255, 60.0f, 0.25f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 96, 159, 96), Color.Transparent.With(255, 120.0f, 0.25f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 96, 159, 159), Color.Transparent.With(255, 180.0f, 0.25f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 96, 96, 159), Color.Transparent.With(255, 240.0f, 0.25f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 159, 96, 159), Color.Transparent.With(255, 300.0f, 0.25f, 0.5f));
+
+            // 0.5 saturation
+            Assert.AreEqual(Color.FromArgb(255, 191, 64, 64), Color.Transparent.With(255, 0.0f, 0.5f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 191, 191, 64), Color.Transparent.With(255, 60.0f, 0.5f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 64, 191, 64), Color.Transparent.With(255, 120.0f, 0.5f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 64, 191, 191), Color.Transparent.With(255, 180.0f, 0.5f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 64, 64, 191), Color.Transparent.With(255, 240.0f, 0.5f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 191, 64, 191), Color.Transparent.With(255, 300.0f, 0.5f, 0.5f));
+
+            // 0.75 saturation
+            Assert.AreEqual(Color.FromArgb(255, 223, 32, 32), Color.Transparent.With(255, 0.0f, 0.75f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 223, 223, 32), Color.Transparent.With(255, 60.0f, 0.75f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 32, 223, 32), Color.Transparent.With(255, 120.0f, 0.75f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 32, 223, 223), Color.Transparent.With(255, 180.0f, 0.75f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 32, 32, 223), Color.Transparent.With(255, 240.0f, 0.75f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 223, 32, 223), Color.Transparent.With(255, 300.0f, 0.75f, 0.5f));
+
+            // 1 saturation
+            Assert.AreEqual(Color.FromArgb(255, 255, 0, 0), Color.Transparent.With(255, 0.0f, 1f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 255, 0), Color.Transparent.With(255, 60.0f, 1f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 255, 0), Color.Transparent.With(255, 120.0f, 1f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 255, 255), Color.Transparent.With(255, 180.0f, 1f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 0, 0, 255), Color.Transparent.With(255, 240.0f, 1f, 0.5f));
+            Assert.AreEqual(Color.FromArgb(255, 255, 0, 255), Color.Transparent.With(255, 300.0f, 1f, 0.5f));
         }
 
         /// <summary>

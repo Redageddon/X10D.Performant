@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -10,7 +9,6 @@ namespace X10D.Performant
     public static class Int16Extensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
-        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public static DateTime FromUnixTimestamp(this short timestamp, bool isMilliseconds = false) =>
             ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
@@ -26,7 +24,7 @@ namespace X10D.Performant
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static short Mod(this short value, short modulus) =>
-            value < modulus
+            value < modulus && value > 0
                 ? value
                 : (short)(value - (value / modulus * modulus));
 

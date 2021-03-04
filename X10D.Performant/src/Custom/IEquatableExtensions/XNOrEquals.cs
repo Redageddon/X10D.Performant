@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
 {
@@ -22,56 +23,67 @@ namespace X10D.Performant
             AdvancedComparison<T, XNOr>(value, comparisons);
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1) ^ value.Equals(arg2));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2) ^ value.Equals(arg3));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2, arg3) ^ value.Equals(arg4));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2, arg3, arg4) ^ value.Equals(arg5));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5) ^ value.Equals(arg6));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5, arg6) ^ value.Equals(arg7));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7) ^ value.Equals(arg8));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) ^ value.Equals(arg9));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) ^ value.Equals(arg10));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11)
             where T : IEquatable<T> =>
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) ^ value.Equals(arg11));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value,
                                          T arg1,
                                          T arg2,
@@ -89,6 +101,7 @@ namespace X10D.Performant
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) ^ value.Equals(arg12));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value,
                                          T arg1,
                                          T arg2,
@@ -107,6 +120,7 @@ namespace X10D.Performant
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12) ^ value.Equals(arg13));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value,
                                          T arg1,
                                          T arg2,
@@ -126,6 +140,7 @@ namespace X10D.Performant
             !(value.XNOrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) ^ value.Equals(arg14));
 
         /// <inheritdoc cref="XNOrEquals{T}(T,T[])"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool XNOrEquals<T>(this T value,
                                          T arg1,
                                          T arg2,

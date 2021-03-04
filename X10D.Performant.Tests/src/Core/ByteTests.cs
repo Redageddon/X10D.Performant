@@ -1,6 +1,6 @@
+using System;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -11,13 +11,23 @@ namespace X10D.Performant.Tests.Core
     public class ByteTests
     {
         /// <summary>
-        ///     Tests for <see cref="ByteExtensions.ToEncodedString(byte[],Encoding)"/>.
+        ///     Tests for <see cref="ByteExtensions.FromUnixTimestamp"/>.
         /// </summary>
         [Test]
-        public void GetUtf8String()
+        public void FromUnixTimestamp()
         {
-            byte[] a = { 0x48, 0xc3, 0xa9, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64 };
-            Assert.AreEqual("H\u00e9llo World", a.ToEncodedString());
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:04:15"), ((byte)255).FromUnixTimestamp());
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:00.255"), ((byte)255).FromUnixTimestamp(true));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SByteExtensions.FromUnixTimestamp"/>.
+        /// </summary>
+        [Test]
+        public void FromUnixTimestampU()
+        {
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:02:07"), ((sbyte)127).FromUnixTimestamp());
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:00.127"), ((sbyte)127).FromUnixTimestamp(true));
         }
 
         /// <summary>
@@ -31,6 +41,16 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
+        ///     Tests for <see cref="SByteExtensions.IsEven"/>.
+        /// </summary>
+        [Test]
+        public void IsEvenS()
+        {
+            Assert.IsTrue(((sbyte)2).IsEven());
+            Assert.IsFalse(((sbyte)1).IsEven());
+        }
+
+        /// <summary>
         ///     Tests for <see cref="ByteExtensions.IsOdd"/>.
         /// </summary>
         [Test]
@@ -38,6 +58,16 @@ namespace X10D.Performant.Tests.Core
         {
             Assert.IsFalse(((byte)2).IsOdd());
             Assert.IsTrue(((byte)1).IsOdd());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SByteExtensions.IsOdd"/>.
+        /// </summary>
+        [Test]
+        public void IsOddS()
+        {
+            Assert.IsFalse(((sbyte)2).IsOdd());
+            Assert.IsTrue(((sbyte)1).IsOdd());
         }
 
         /// <summary>
@@ -63,7 +93,7 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="SByteExtensions.IsPrime"/>.
         /// </summary>
         [Test]
-        public void IsPrimeSigned()
+        public void IsPrimeS()
         {
             sbyte[] primes =
             {
@@ -78,6 +108,41 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
+        ///     Tests for <see cref="ByteExtensions.Mod"/>.
+        /// </summary>
+        [Test]
+        public void Mod()
+        {
+            for (byte i = 100; i < 200; i++)
+            {
+                for (byte j = 100; j < 200; j++)
+                {
+                    Assert.AreEqual(i % j, i.Mod(j));
+                }
+            }
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SByteExtensions.Mod"/>.
+        /// </summary>
+        [Test]
+        public void ModS()
+        {
+            for (sbyte i = -100; i < 100; i++)
+            {
+                for (sbyte j = -100; j < 100; j++)
+                {
+                    if (j == 0)
+                    {
+                        continue;
+                    }
+
+                    Assert.AreEqual(i % j, i.Mod(j));
+                }
+            }
+        }
+
+        /// <summary>
         ///     Tests for <see cref="ByteExtensions.ToBoolean"/>.
         /// </summary>
         [Test]
@@ -86,6 +151,17 @@ namespace X10D.Performant.Tests.Core
             Assert.IsTrue(((byte)2).ToBoolean());
             Assert.IsTrue(((byte)1).ToBoolean());
             Assert.IsFalse(((byte)0).ToBoolean());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SByteExtensions.ToBoolean"/>.
+        /// </summary>
+        [Test]
+        public void ToBoolS()
+        {
+            Assert.IsTrue(((sbyte)2).ToBoolean());
+            Assert.IsTrue(((sbyte)1).ToBoolean());
+            Assert.IsFalse(((sbyte)0).ToBoolean());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -8,6 +9,26 @@ namespace X10D.Performant.Tests.Core
     /// </summary>
     public class IntTests
     {
+        /// <summary>
+        ///     Tests for <see cref="Int32Extensions.FromUnixTimestamp"/>.
+        /// </summary>
+        [Test]
+        public void FromUnixTimestamp()
+        {
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), 1234.FromUnixTimestamp());
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), 1234.FromUnixTimestamp(true));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="UInt32Extensions.FromUnixTimestamp"/>.
+        /// </summary>
+        [Test]
+        public void FromUnixTimestampU()
+        {
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), 1234U.FromUnixTimestamp());
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), 1234U.FromUnixTimestamp(true));
+        }
+
         /// <summary>
         ///     Tests for <see cref="Int32Extensions.IsEven"/>.
         /// </summary>
@@ -94,6 +115,41 @@ namespace X10D.Performant.Tests.Core
             {
                 Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
                 Assert.IsFalse(nonPrimes[i].IsPrime());
+            }
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="Int32Extensions.Mod"/>.
+        /// </summary>
+        [Test]
+        public void Mod()
+        {
+            for (int i = -100; i < 100; i++)
+            {
+                for (int j = -100; j < 100; j++)
+                {
+                    if (j == 0)
+                    {
+                        continue;
+                    }
+
+                    Assert.AreEqual(i % j, i.Mod(j));
+                }
+            }
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="UInt32Extensions.Mod"/>.
+        /// </summary>
+        [Test]
+        public void ModU()
+        {
+            for (uint i = 1; i < 200; i++)
+            {
+                for (uint j = 1; j < 200; j++)
+                {
+                    Assert.AreEqual(i % j, i.Mod(j));
+                }
             }
         }
 

@@ -50,10 +50,11 @@ namespace X10D.Performant.Tests.Core
                 { "username", "Foo" },
                 { "password", "Foo Bar" },
                 { "port", 3306 },
+                { "null", null },
             };
 
             string connectionString = dictionary.ToConnectionString();
-            Assert.AreEqual("username=Foo;password=\"Foo Bar\";port=3306", connectionString);
+            Assert.AreEqual("username=Foo;password=\"Foo Bar\";port=3306;null=", connectionString);
         }
 
         /// <summary>

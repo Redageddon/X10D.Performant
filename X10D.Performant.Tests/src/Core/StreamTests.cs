@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -38,32 +39,19 @@ namespace X10D.Performant.Tests.Core
 
             Color[] colors =
             {
-                Color.FromArgb(0b00000000, 0b00000000, 0b00000000, 0b00000000),
-                Color.FromArgb(0b00000000, 0b00000000, 0b00000000, 0b11111111),
-                Color.FromArgb(0b00000000, 0b00000000, 0b11111111, 0b11111111),
-                Color.FromArgb(0b00000000, 0b11111111, 0b11111111, 0b11111111),
-                Color.FromArgb(0b11111111, 0b11111111, 0b11111111, 0b11111111),
-                Color.FromArgb(0b11111111, 0b00000000, 0b00000000, 0b00000000),
-                Color.FromArgb(0b11111111, 0b11111111, 0b00000000, 0b00000000),
-                Color.FromArgb(0b11111111, 0b11111111, 0b11111111, 0b00000000),
-                Color.FromArgb(0b10000000, 0b10000000, 0b10000000, 0b10000000),
-                Color.FromArgb(0b00000001, 0b00000001, 0b00000001, 0b00000001),
+                Color.FromArgb(0b00000000, 0b00000000, 0b00000000, 0b00000000), Color.FromArgb(0b00000000, 0b00000000, 0b00000000, 0b11111111),
+                Color.FromArgb(0b00000000, 0b00000000, 0b11111111, 0b11111111), Color.FromArgb(0b00000000, 0b11111111, 0b11111111, 0b11111111),
+                Color.FromArgb(0b11111111, 0b11111111, 0b11111111, 0b11111111), Color.FromArgb(0b11111111, 0b00000000, 0b00000000, 0b00000000),
+                Color.FromArgb(0b11111111, 0b11111111, 0b00000000, 0b00000000), Color.FromArgb(0b11111111, 0b11111111, 0b11111111, 0b00000000),
+                Color.FromArgb(0b10000000, 0b10000000, 0b10000000, 0b10000000), Color.FromArgb(0b00000001, 0b00000001, 0b00000001, 0b00000001),
             };
-
-            for (int i = 0; i < colors.Length; i++)
-            {
-                Color color = colors[i];
-                stream.Write(new[] { color.A, color.R, color.G, color.B });
-                stream.Position = i * 4;
-                Assert.AreEqual(color, stream.ReadArgbColor());
-            }
 
             for (int i = 0; i < colors.Length; i++)
             {
                 Color color = colors[i];
                 stream.Write(new[] { color.B, color.G, color.R, color.A });
                 stream.Position = i * 4;
-                Assert.AreEqual(color, stream.ReadArgbColor(false));
+                Assert.AreEqual(color, stream.ReadArgbColor());
             }
         }
 
@@ -84,28 +72,49 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StreamExtensions.ReadChar"/>
-        /// </summary>
-        [Test]
-        public void ReadChar()
-        {
-            using MemoryStream stream = new();
-            stream.WriteByte((byte)'a');
-            stream.WriteByte((byte)'b');
-            stream.WriteByte((byte)'c');
-            stream.Position = 0;
-            Assert.AreEqual('a', stream.ReadChar());
-            Assert.AreEqual('b', stream.ReadChar());
-            Assert.AreEqual('c', stream.ReadChar());
-        }
-
-        /// <summary>
         ///     Tests for <see cref="StreamExtensions.ReadDecimal"/>
         /// </summary>
         [Test]
         public void ReadDecimal()
         {
-            // Todo: implement
+            using MemoryStream stream = new();
+            using BinaryWriter writer = new(stream);
+
+            decimal[] decimals = { decimal.MinValue, 0, decimal.MaxValue };
+
+            foreach (decimal d in decimals)
+            {
+                writer.Write(d);
+            }
+
+            stream.Position = 0;
+
+            foreach (decimal d in decimals)
+            {
+                Assert.AreEqual(d, stream.ReadDecimal());
+            }
+
+            stream.Position = 0;
+
+            foreach (decimal d in decimals)
+            {
+                int[] bits = decimal.GetBits(d);
+                Array.Reverse(bits);
+
+                foreach (int bit in bits)
+                {
+                    byte[] bytes = BitConverter.GetBytes(bit);
+                    Array.Reverse(bytes);
+                    writer.Write(bytes);
+                }
+            }
+
+            stream.Position = 0;
+
+            foreach (decimal d in decimals)
+            {
+                Assert.AreEqual(d, stream.ReadDecimal(false));
+            }
         }
 
         /// <summary>
@@ -114,7 +123,22 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void ReadDouble()
         {
-            // Todo: implement
+            using MemoryStream stream = new();
+            using BinaryWriter writer = new(stream);
+
+            double[] doubles = { double.MinValue, 0, double.MaxValue };
+
+            foreach (double d in doubles)
+            {
+                writer.Write(d);
+            }
+
+            stream.Position = 0;
+
+            foreach (double d in doubles)
+            {
+                Assert.AreEqual(d, stream.ReadDouble());
+            }
         }
 
         /// <summary>
@@ -124,42 +148,20 @@ namespace X10D.Performant.Tests.Core
         public void ReadInt16()
         {
             using MemoryStream stream = new();
-            BinaryWriter writer = new(stream);
+            using BinaryWriter writer = new(stream);
 
-            unchecked
+            byte[][] littleEndian = { new byte[] { 0xFF, 0x00 }, new byte[] { 0x00, 0xFF }, new byte[] { 0xFF, 0xFF } };
+
+            foreach (byte[] b in littleEndian)
             {
-                short[] shorts =
-                {
-                    0b00000000_00000000,
-                    (short)0b11111111_00000000,
-                    (short)0b11111111_11111111,
-                    0b00000000_11111111,
-                };
-
-                short[] reversedShorts =
-                {
-                    0b00000000_00000000,
-                    0b00000000_11111111,
-                    (short)0b11111111_11111111,
-                    (short)0b11111111_00000000,
-                };
-
-                for (int i = 0; i < shorts.Length; i++)
-                {
-                    int value = shorts[i];
-                    writer.Write(value);
-                    stream.Position = i * 2;
-                    Assert.AreEqual(shorts[i], stream.ReadInt16());
-                }
-
-                for (int i = 0; i < shorts.Length; i++)
-                {
-                    int value = shorts[i];
-                    writer.Write(value);
-                    stream.Position = i * 2;
-                    Assert.AreEqual(reversedShorts[i], stream.ReadInt16(false));
-                }
+                writer.Write(b);
             }
+
+            stream.Position = 0;
+
+            Assert.AreEqual(255, stream.ReadInt16());
+            Assert.AreEqual(-256, stream.ReadInt16());
+            Assert.AreEqual(-1, stream.ReadInt16());
         }
 
         /// <summary>
@@ -169,50 +171,25 @@ namespace X10D.Performant.Tests.Core
         public void ReadInt32()
         {
             using MemoryStream stream = new();
-            BinaryWriter writer = new(stream);
+            using BinaryWriter writer = new(stream);
 
-            unchecked
+            byte[][] littleEndian =
             {
-                int[] ints =
-                {
-                    0b00000000_00000000_00000000_00000000,
-                    (int)0b11111111_00000000_00000000_00000000,
-                    (int)0b11111111_11111111_00000000_00000000,
-                    (int)0b11111111_11111111_11111111_00000000,
-                    (int)0b11111111_11111111_11111111_11111111,
-                    0b00000000_11111111_11111111_11111111,
-                    0b00000000_00000000_11111111_11111111,
-                    0b00000000_00000000_00000000_11111111,
-                };
+                new byte[] { 0xFF, 0x00, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0xFF, 0x00 },
+                new byte[] { 0xFF, 0xFF, 0xFF, 0xFF },
+            };
 
-                int[] reversedInts =
-                {
-                    0b00000000_00000000_00000000_00000000,
-                    0b00000000_00000000_00000000_11111111,
-                    0b00000000_00000000_11111111_11111111,
-                    0b00000000_11111111_11111111_11111111,
-                    (int)0b11111111_11111111_11111111_11111111,
-                    (int)0b11111111_11111111_11111111_00000000,
-                    (int)0b11111111_11111111_00000000_00000000,
-                    (int)0b11111111_00000000_00000000_00000000,
-                };
-
-                for (int i = 0; i < ints.Length; i++)
-                {
-                    int value = ints[i];
-                    writer.Write(value);
-                    stream.Position = i * 4;
-                    Assert.AreEqual(ints[i], stream.ReadInt32());
-                }
-
-                for (int i = 0; i < ints.Length; i++)
-                {
-                    int value = ints[i];
-                    writer.Write(value);
-                    stream.Position = i * 4;
-                    Assert.AreEqual(reversedInts[i], stream.ReadInt32(false));
-                }
+            foreach (byte[] b in littleEndian)
+            {
+                writer.Write(b);
             }
+
+            stream.Position = 0;
+
+            Assert.AreEqual(255, stream.ReadInt32());
+            Assert.AreEqual(65535, stream.ReadInt32());
+            Assert.AreEqual(16777215, stream.ReadInt32());
+            Assert.AreEqual(-1, stream.ReadInt32());
         }
 
         /// <summary>
@@ -222,66 +199,31 @@ namespace X10D.Performant.Tests.Core
         public void ReadInt64()
         {
             using MemoryStream stream = new();
-            BinaryWriter writer = new(stream);
+            using BinaryWriter writer = new(stream);
 
-            unchecked
+            byte[][] littleEndian =
             {
-                long[] longs =
-                {
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-                    (long)0b11111111_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-                    (long)0b11111111_11111111_00000000_00000000_00000000_00000000_00000000_00000000,
-                    (long)0b11111111_11111111_11111111_00000000_00000000_00000000_00000000_00000000,
-                    (long)0b11111111_11111111_11111111_11111111_00000000_00000000_00000000_00000000,
-                    (long)0b11111111_11111111_11111111_11111111_11111111_00000000_00000000_00000000,
-                    (long)0b11111111_11111111_11111111_11111111_11111111_11111111_00000000_00000000,
-                    (long)0b11111111_11111111_11111111_11111111_11111111_11111111_11111111_00000000,
-                    (long)0b11111111_11111111_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_11111111_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_11111111,
-                };
+                new byte[] { 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
+                new byte[] { 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00 },
+                new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00 },
+                new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00 }, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF },
+            };
 
-                long[] reversedLongs =
-                {
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_11111111_11111111_11111111_11111111_11111111_11111111_11111111,
-                    (long)0b11111111_11111111_11111111_11111111_11111111_11111111_11111111_11111111,
-                    (long)0b11111111_11111111_11111111_11111111_11111111_11111111_11111111_00000000,
-                    (long)0b11111111_11111111_11111111_11111111_11111111_11111111_00000000_00000000,
-                    (long)0b11111111_11111111_11111111_11111111_11111111_00000000_00000000_00000000,
-                    (long)0b11111111_11111111_11111111_11111111_00000000_00000000_00000000_00000000,
-                    (long)0b11111111_11111111_11111111_00000000_00000000_00000000_00000000_00000000,
-                    (long)0b11111111_11111111_00000000_00000000_00000000_00000000_00000000_00000000,
-                    (long)0b11111111_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-                };
-
-                for (int i = 0; i < longs.Length; i++)
-                {
-                    long value = longs[i];
-                    writer.Write(value);
-                    stream.Position = i * 8;
-                    Assert.AreEqual(longs[i], stream.ReadInt64());
-                }
-
-                for (int i = 0; i < longs.Length; i++)
-                {
-                    long value = longs[i];
-                    writer.Write(value);
-                    stream.Position = i * 8;
-                    Assert.AreEqual(reversedLongs[i], stream.ReadInt64(false));
-                }
+            foreach (byte[] b in littleEndian)
+            {
+                writer.Write(b);
             }
+
+            stream.Position = 0;
+
+            Assert.AreEqual(255, stream.ReadInt64());
+            Assert.AreEqual(65535, stream.ReadInt64());
+            Assert.AreEqual(16777215, stream.ReadInt64());
+            Assert.AreEqual(4294967295, stream.ReadInt64());
+            Assert.AreEqual(1099511627775, stream.ReadInt64());
+            Assert.AreEqual(281474976710655, stream.ReadInt64());
+            Assert.AreEqual(72057594037927935, stream.ReadInt64());
+            Assert.AreEqual(-1, stream.ReadInt64());
         }
 
         /// <summary>
@@ -294,30 +236,22 @@ namespace X10D.Performant.Tests.Core
 
             Color[] colors =
             {
-                Color.FromArgb(0b00000000, 0b00000000, 0b00000000),
-                Color.FromArgb(0b11111111, 0b00000000, 0b00000000),
-                Color.FromArgb(0b00000000, 0b11111111, 0b00000000),
-                Color.FromArgb(0b11111111, 0b11111111, 0b00000000),
-                Color.FromArgb(0b00000000, 0b00000000, 0b11111111),
-                Color.FromArgb(0b11111111, 0b00000000, 0b11111111),
-                Color.FromArgb(0b00000000, 0b11111111, 0b11111111),
-                Color.FromArgb(0b11111111, 0b11111111, 0b11111111),
+                Color.FromArgb(0b00000000, 0b00000000, 0b00000000), Color.FromArgb(0b11111111, 0b00000000, 0b00000000),
+                Color.FromArgb(0b00000000, 0b11111111, 0b00000000), Color.FromArgb(0b11111111, 0b11111111, 0b00000000),
+                Color.FromArgb(0b00000000, 0b00000000, 0b11111111), Color.FromArgb(0b11111111, 0b00000000, 0b11111111),
+                Color.FromArgb(0b00000000, 0b11111111, 0b11111111), Color.FromArgb(0b11111111, 0b11111111, 0b11111111),
             };
 
-            for (int i = 0; i < colors.Length; i++)
+            foreach (Color color in colors)
             {
-                Color color = colors[i];
-                stream.Write(new[] { color.R, color.G, color.B });
-                stream.Position = i * 3;
-                Assert.AreEqual(color, stream.ReadRgbColor());
+                stream.Write(new[] { color.B, color.G, color.R });
             }
 
-            for (int i = 0; i < colors.Length; i++)
+            stream.Position = 0;
+
+            foreach (Color color in colors)
             {
-                Color color = colors[i];
-                stream.Write(new[] { color.B, color.G, color.R });
-                stream.Position = i * 3;
-                Assert.AreEqual(color, stream.ReadRgbColor(false));
+                Assert.AreEqual(color, stream.ReadRgbColor());
             }
         }
 
@@ -327,7 +261,22 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void ReadSingle()
         {
-            // Todo: implement
+            using MemoryStream stream = new();
+            using BinaryWriter writer = new(stream);
+
+            float[] floats = { float.MinValue, 0, float.MaxValue };
+
+            foreach (float f in floats)
+            {
+                writer.Write(f);
+            }
+
+            stream.Position = 0;
+
+            foreach (float f in floats)
+            {
+                Assert.AreEqual(f, stream.ReadSingle());
+            }
         }
 
         /// <summary>
@@ -354,42 +303,19 @@ namespace X10D.Performant.Tests.Core
         public void ReadUInt16()
         {
             using MemoryStream stream = new();
-            BinaryWriter writer = new(stream);
+            using BinaryWriter writer = new(stream);
 
-            unchecked
+            byte[][] littleEndian = { new byte[] { 0xFF, 0x00 }, new byte[] { 0xFF, 0xFF } };
+
+            foreach (byte[] b in littleEndian)
             {
-                ushort[] shorts =
-                {
-                    0b00000000_00000000,
-                    0b11111111_00000000,
-                    0b11111111_11111111,
-                    0b00000000_11111111,
-                };
-
-                ushort[] reversedShorts =
-                {
-                    0b00000000_00000000,
-                    0b00000000_11111111,
-                    0b11111111_11111111,
-                    0b11111111_00000000,
-                };
-
-                for (int i = 0; i < shorts.Length; i++)
-                {
-                    int value = shorts[i];
-                    writer.Write(value);
-                    stream.Position = i * 2;
-                    Assert.AreEqual(shorts[i], stream.ReadUInt16());
-                }
-
-                for (int i = 0; i < shorts.Length; i++)
-                {
-                    int value = shorts[i];
-                    writer.Write(value);
-                    stream.Position = i * 2;
-                    Assert.AreEqual(reversedShorts[i], stream.ReadUInt16(false));
-                }
+                writer.Write(b);
             }
+
+            stream.Position = 0;
+
+            Assert.AreEqual(255, stream.ReadUInt16());
+            Assert.AreEqual(65535, stream.ReadUInt16());
         }
 
         /// <summary>
@@ -399,50 +325,25 @@ namespace X10D.Performant.Tests.Core
         public void ReadUInt32()
         {
             using MemoryStream stream = new();
-            BinaryWriter writer = new(stream);
+            using BinaryWriter writer = new(stream);
 
-            unchecked
+            byte[][] littleEndian =
             {
-                uint[] ints =
-                {
-                    0b00000000_00000000_00000000_00000000,
-                    0b11111111_00000000_00000000_00000000,
-                    0b11111111_11111111_00000000_00000000,
-                    0b11111111_11111111_11111111_00000000,
-                    0b11111111_11111111_11111111_11111111,
-                    0b00000000_11111111_11111111_11111111,
-                    0b00000000_00000000_11111111_11111111,
-                    0b00000000_00000000_00000000_11111111,
-                };
+                new byte[] { 0xFF, 0x00, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0xFF, 0x00 },
+                new byte[] { 0xFF, 0xFF, 0xFF, 0xFF },
+            };
 
-                uint[] reversedInts =
-                {
-                    0b00000000_00000000_00000000_00000000,
-                    0b00000000_00000000_00000000_11111111,
-                    0b00000000_00000000_11111111_11111111,
-                    0b00000000_11111111_11111111_11111111,
-                    0b11111111_11111111_11111111_11111111,
-                    0b11111111_11111111_11111111_00000000,
-                    0b11111111_11111111_00000000_00000000,
-                    0b11111111_00000000_00000000_00000000,
-                };
-
-                for (int i = 0; i < ints.Length; i++)
-                {
-                    uint value = ints[i];
-                    writer.Write(value);
-                    stream.Position = i * 4;
-                    Assert.AreEqual(ints[i], stream.ReadUInt32());
-                }
-
-                for (int i = 0; i < ints.Length; i++)
-                {
-                    uint value = ints[i];
-                    writer.Write(value);
-                    stream.Position = i * 4;
-                    Assert.AreEqual(reversedInts[i], stream.ReadUInt32(false));
-                }
+            foreach (byte[] b in littleEndian)
+            {
+                writer.Write(b);
             }
+
+            stream.Position = 0;
+
+            Assert.AreEqual(255, stream.ReadUInt32());
+            Assert.AreEqual(65535, stream.ReadUInt32());
+            Assert.AreEqual(16777215, stream.ReadUInt32());
+            Assert.AreEqual(4294967295, stream.ReadUInt32());
         }
 
         /// <summary>
@@ -452,66 +353,31 @@ namespace X10D.Performant.Tests.Core
         public void ReadUInt64()
         {
             using MemoryStream stream = new();
-            BinaryWriter writer = new(stream);
+            using BinaryWriter writer = new(stream);
 
-            unchecked
+            byte[][] littleEndian =
             {
-                ulong[] longs =
-                {
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-                    0b11111111_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-                    0b11111111_11111111_00000000_00000000_00000000_00000000_00000000_00000000,
-                    0b11111111_11111111_11111111_00000000_00000000_00000000_00000000_00000000,
-                    0b11111111_11111111_11111111_11111111_00000000_00000000_00000000_00000000,
-                    0b11111111_11111111_11111111_11111111_11111111_00000000_00000000_00000000,
-                    0b11111111_11111111_11111111_11111111_11111111_11111111_00000000_00000000,
-                    0b11111111_11111111_11111111_11111111_11111111_11111111_11111111_00000000,
-                    0b11111111_11111111_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_11111111_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_11111111,
-                };
+                new byte[] { 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
+                new byte[] { 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00 },
+                new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00 }, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00 },
+                new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00 }, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF },
+            };
 
-                ulong[] reversedLongs =
-                {
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_00000000_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_00000000_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_00000000_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_00000000_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_00000000_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b00000000_11111111_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b11111111_11111111_11111111_11111111_11111111_11111111_11111111_11111111,
-                    0b11111111_11111111_11111111_11111111_11111111_11111111_11111111_00000000,
-                    0b11111111_11111111_11111111_11111111_11111111_11111111_00000000_00000000,
-                    0b11111111_11111111_11111111_11111111_11111111_00000000_00000000_00000000,
-                    0b11111111_11111111_11111111_11111111_00000000_00000000_00000000_00000000,
-                    0b11111111_11111111_11111111_00000000_00000000_00000000_00000000_00000000,
-                    0b11111111_11111111_00000000_00000000_00000000_00000000_00000000_00000000,
-                    0b11111111_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
-                };
-
-                for (int i = 0; i < longs.Length; i++)
-                {
-                    ulong value = longs[i];
-                    writer.Write(value);
-                    stream.Position = i * 8;
-                    Assert.AreEqual(longs[i], stream.ReadUInt64());
-                }
-
-                for (int i = 0; i < longs.Length; i++)
-                {
-                    ulong value = longs[i];
-                    writer.Write(value);
-                    stream.Position = i * 8;
-                    Assert.AreEqual(reversedLongs[i], stream.ReadUInt64(false));
-                }
+            foreach (byte[] b in littleEndian)
+            {
+                writer.Write(b);
             }
+
+            stream.Position = 0;
+
+            Assert.AreEqual(255, stream.ReadUInt64());
+            Assert.AreEqual(65535, stream.ReadUInt64());
+            Assert.AreEqual(16777215, stream.ReadUInt64());
+            Assert.AreEqual(4294967295, stream.ReadUInt64());
+            Assert.AreEqual(1099511627775, stream.ReadUInt64());
+            Assert.AreEqual(281474976710655, stream.ReadUInt64());
+            Assert.AreEqual(72057594037927935, stream.ReadUInt64());
+            Assert.AreEqual(18446744073709551615, stream.ReadUInt64());
         }
     }
 }

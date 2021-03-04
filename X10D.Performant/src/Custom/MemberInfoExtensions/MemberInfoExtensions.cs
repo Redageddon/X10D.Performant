@@ -30,16 +30,13 @@ namespace X10D.Performant
         /// </returns>
         public static T? GetDefaultValue<T>(this MemberInfo member)
         {
-            if (!(member.GetCustomAttribute<DefaultValueAttribute>() is {} attribute))
-            {
-                return default;
-            }
+            DefaultValueAttribute? customAttribute = member.GetCustomAttribute<DefaultValueAttribute>();
 
-            object? value = attribute.Value;
+            object? obj = customAttribute?.Value;
 
-            return value is null
-                ? default
-                : (T)value;
+            return obj != null
+                ? (T)obj
+                : default;
         }
 
         /// <summary>
@@ -51,12 +48,9 @@ namespace X10D.Performant
         /// </returns>
         public static string GetDescription(this MemberInfo member)
         {
-            if (!(member.GetCustomAttribute<DescriptionAttribute>() is {} attribute))
-            {
-                return string.Empty;
-            }
+            DescriptionAttribute? customAttribute = member.GetCustomAttribute<DescriptionAttribute>();
 
-            return attribute.Description;
+            return customAttribute?.Description ?? string.Empty;
         }
 
         /// <summary>
@@ -74,12 +68,11 @@ namespace X10D.Performant
                                                                               Func<TAttribute, TReturn> selector)
             where TAttribute : Attribute
         {
-            if (!(member.GetCustomAttribute<TAttribute>() is {} attribute))
-            {
-                return default;
-            }
+            TAttribute? customAttribute = member.GetCustomAttribute<TAttribute>();
 
-            return selector(attribute);
+            return (object?)customAttribute == null
+                ? default
+                : selector(customAttribute);
         }
     }
 }

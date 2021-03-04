@@ -46,7 +46,7 @@ namespace X10D.Performant
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static long Mod(this long value, long modulus) =>
-            value < modulus
+            value < modulus && value > 0
                 ? value
                 : value - (value / modulus * modulus);
 

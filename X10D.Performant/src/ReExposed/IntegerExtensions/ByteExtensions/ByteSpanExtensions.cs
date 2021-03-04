@@ -9,11 +9,10 @@ namespace X10D.Performant.ReExposed
     public static partial class ByteExtensions
     {
         /// <inheritdoc cref="Encoding.GetString(ReadOnlySpan{byte})"/>
-        public static string ToEncodedString(this ReadOnlySpan<byte> bytes, Encoding? encoding = null) =>
-            (encoding ?? Encoding.Default).GetString(bytes);
+        public static string GetString(this ReadOnlySpan<byte> bytes, Encoding? encoding = null) => (encoding ?? Encoding.Default).GetString(bytes);
 
         /// <inheritdoc cref="Encoding.GetString(ReadOnlySpan{byte})"/>
-        public static string ToEncodedString(this Span<byte> bytes, Encoding? encoding = null) => (encoding ?? Encoding.Default).GetString(bytes);
+        public static string GetString(this Span<byte> bytes, Encoding? encoding = null) => (encoding ?? Encoding.Default).GetString(bytes);
 
         /// <inheritdoc cref="BitConverter.ToInt16(ReadOnlySpan{byte})"/>
         public static short ToInt16(this ReadOnlySpan<byte> bytes) => BitConverter.ToInt16(bytes);

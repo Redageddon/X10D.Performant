@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -11,15 +10,14 @@ namespace X10D.Performant
     public static class UInt16Extensions
     {
         /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>
-        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public static DateTime FromUnixTimestamp(this ushort timestamp, bool isMilliseconds = false) =>
             ((long)timestamp).FromUnixTimestamp(isMilliseconds);
 
         /// <inheritdoc cref="UInt64Extensions.IsEven"/>
-        public static bool IsEven(this ushort value) => value % 2 == 0;
+        public static bool IsEven(this ushort value) => (value & 1) == 0;
 
         /// <inheritdoc cref="UInt64Extensions.IsOdd"/>
-        public static bool IsOdd(this ushort value) => value % 2 != 0;
+        public static bool IsOdd(this ushort value) => (value & 1) != 0;
 
         /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
         public static bool IsPrime(this ushort value) => UInt64Extensions.IsPrime(value);

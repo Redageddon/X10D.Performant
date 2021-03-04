@@ -37,12 +37,6 @@ namespace X10D.Performant
                 return false;
             }
 
-            if (Mod(value + 1, 6) != 0
-             && Mod(value - 1, 6) != 0)
-            {
-                return false;
-            }
-
             return value < ushort.MaxValue
                 ? IsPrimeSieve(value)
                 : IsPrimeMiller(value);
@@ -67,10 +61,10 @@ namespace X10D.Performant
 
         private static bool IsPrimeSieve(ulong value)
         {
-            for (ulong i = 5; i * i <= value; i += 6)
+            for (ulong i = 5; i * i <= value; i += 6UL)
             {
-                if (Mod(value, i) == 0
-                 || Mod(value, i + 2) == 0)
+                if (Mod(value, i) == 0UL
+                 || Mod(value, i + 2UL) == 0UL)
                 {
                     return false;
                 }

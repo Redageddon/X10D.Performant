@@ -25,6 +25,7 @@ namespace X10D.Performant
 
         private interface IOperable
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             public bool Execute(bool left, bool right);
         }
 

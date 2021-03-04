@@ -30,6 +30,7 @@ namespace X10D.Performant
                 throw new ArgumentException($"{nameof(value)} should be a letter");
             }
 
+            // in this case, it is faster than calling the Mod extension
             amount %= alphabetCount;
             int offset = amount + value;
 

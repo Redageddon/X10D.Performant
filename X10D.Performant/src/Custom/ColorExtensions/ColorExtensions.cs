@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
-
-#pragma warning disable 8629
 
 namespace X10D.Performant
 {
@@ -11,12 +8,11 @@ namespace X10D.Performant
     /// </summary>
     public static class ColorExtensions
     {
-        [SuppressMessage("ReSharper", "IdentifierTypo")]
         internal static Color ColorFromAhsb(byte alpha, float hue, float saturation, float brightness)
         {
-            float c = (1 - Math.Abs((2 * brightness) - 1)) * saturation;
-            float x = c * (1 - Math.Abs((hue / 60 % 2) - 1));
-            float m = brightness - (c / 2);
+            float c = (1f - Math.Abs((2f * brightness) - 1f)) * saturation;
+            float x = c * (1f - Math.Abs((hue / 60f % 2f) - 1f));
+            float m = brightness - (c / 2f);
 
             (float red, float green, float blue) = (hue % 360.0f) switch
             {
@@ -28,9 +24,9 @@ namespace X10D.Performant
                 _     => (c + m, m, x + m),
             };
 
-            int r = (int)(red * byte.MaxValue);
-            int g = (int)(green * byte.MaxValue);
-            int b = (int)(blue * byte.MaxValue);
+            int r = (int)Math.Round(red * byte.MaxValue);
+            int g = (int)Math.Round(green * byte.MaxValue);
+            int b = (int)Math.Round(blue * byte.MaxValue);
 
             return Color.FromArgb((alpha << 24) | (r << 16) | (g << 8) | b);
         }

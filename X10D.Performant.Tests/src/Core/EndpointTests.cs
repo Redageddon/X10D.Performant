@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Sockets;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -8,14 +9,19 @@ namespace X10D.Performant.Tests.Core
     /// </summary>
     public class EndpointTests
     {
+        private readonly EndPoint dns = new DnsEndPoint("Name", byte.MaxValue);
+        private readonly EndPoint ip = new IPEndPoint(int.MaxValue, byte.MaxValue);
+        private readonly EndPoint other = new UnixDomainSocketEndPoint("Test");
+
         /// <summary>
         ///     Tests for <see cref="EndPointExtensions.GetHostName"/>
         /// </summary>
         [Test]
         public void GetHostName()
         {
-            EndPoint e = new DnsEndPoint("Name", 123);
-            Assert.AreEqual("Name", e.GetHostName());
+            Assert.AreEqual("Name", this.dns.GetHostName());
+            Assert.AreEqual("255.255.255.127", this.ip.GetHostName());
+            Assert.AreEqual(string.Empty, this.other.GetHostName());
         }
 
         /// <summary>
@@ -24,8 +30,9 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void GetPort()
         {
-            EndPoint e = new DnsEndPoint("Name", 123);
-            Assert.AreEqual(123, e.GetPort());
+            Assert.AreEqual(255, this.dns.GetPort());
+            Assert.AreEqual(255, this.ip.GetPort());
+            Assert.AreEqual(0, this.other.GetPort());
         }
     }
 }

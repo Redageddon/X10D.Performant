@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -8,6 +9,26 @@ namespace X10D.Performant.Tests.Core
     /// </summary>
     public class LongTests
     {
+        /// <summary>
+        ///     Tests for <see cref="Int64Extensions.FromUnixTimestamp"/>.
+        /// </summary>
+        [Test]
+        public void FromUnixTimestamp()
+        {
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), 1234L.FromUnixTimestamp());
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), 1234L.FromUnixTimestamp(true));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="UInt64Extensions.FromUnixTimestamp"/>.
+        /// </summary>
+        [Test]
+        public void FromUnixTimestampU()
+        {
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), 1234UL.FromUnixTimestamp());
+            Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), 1234UL.FromUnixTimestamp(true));
+        }
+
         /// <summary>
         ///     Tests for <see cref="Int64Extensions.IsEven"/>.
         /// </summary>
@@ -56,15 +77,15 @@ namespace X10D.Performant.Tests.Core
         {
             long[] primes =
             {
-                2, 11, 101, 1_009, 10_007, 100_003, 1_003_001, 10_000_019, 100_000_007, 1_000_000_007, 10_000_000_019, 100_123_456_789,
-                1_000_000_000_039, 10_000_000_000_283, 100_000_000_105_583, 1_000_000_000_100_011, 10_000_000_002_065_383,
-                100_109_100_129_100_151, 1_000_000_000_000_000_003,
+                1_372_051, 9_040_861, 25_122_011, 3_211_891_519, 4_734_234_247, 1_116_295_198_451, 2_090_609_914_951, 3_278_744_415_797,
+                333_555_577_577_777, 3_441_173_392_933_731_913,
             };
 
             for (long i = 0; i < primes.Length; i++)
             {
-                Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
-                Assert.IsTrue(primes[i].IsPrime());
+                bool isPrime = primes[i].IsPrime();
+                Trace.WriteLineIf(!isPrime, primes[i]);
+                Assert.IsTrue(isPrime);
             }
 
             long[] nonPrimes =
@@ -74,8 +95,9 @@ namespace X10D.Performant.Tests.Core
 
             for (long i = 0; i < nonPrimes.Length; i++)
             {
-                Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
-                Assert.IsFalse(nonPrimes[i].IsPrime());
+                bool isPrime = nonPrimes[i].IsPrime();
+                Trace.WriteLineIf(isPrime, nonPrimes[i]);
+                Assert.IsFalse(isPrime);
             }
         }
 
@@ -87,23 +109,59 @@ namespace X10D.Performant.Tests.Core
         {
             ulong[] primes =
             {
-                2, 11, 101, 1_009, 10_007, 100_003, 1_003_001, 10_000_019, 100_000_007, 1_000_000_007, 10_000_000_019, 100_123_456_789,
-                1_000_000_000_039, 10_000_000_000_283, 100_000_000_105_583, 1_000_000_000_100_011, 10_000_000_002_065_383,
-                100_109_100_129_100_151, 1_000_000_000_000_000_003, 10_089_886_811_898_868_001,
+                2, 1_372_051, 9_040_861, 25_122_011, 3_211_891_519, 4_734_234_247, 1_116_295_198_451, 2_090_609_914_951, 3_278_744_415_797,
+                333_555_577_577_777, 3_441_173_392_933_731_913, 10_089_886_811_898_868_001,
             };
 
             for (long i = 0; i < primes.Length; i++)
             {
-                Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
-                Assert.IsTrue(primes[i].IsPrime());
+                bool isPrime = primes[i].IsPrime();
+                Trace.WriteLineIf(!isPrime, primes[i]);
+                Assert.IsTrue(isPrime);
             }
 
-            ulong[] nonPrimes = { 0, 1, 4, 29_001 };
+            ulong[] nonPrimes = { 0, 1, 4, 6, 25, 65545, 75361 };
 
-            for (long i = 0; i < nonPrimes.Length; i++)
+            for (int i = 0; i < nonPrimes.Length; i++)
             {
-                Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
-                Assert.IsFalse(nonPrimes[i].IsPrime());
+                bool isPrime = nonPrimes[i].IsPrime();
+                Trace.WriteLineIf(isPrime, nonPrimes[i]);
+                Assert.IsFalse(isPrime);
+            }
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="Int64Extensions.Mod"/>.
+        /// </summary>
+        [Test]
+        public void Mod()
+        {
+            for (long i = -100; i < 100; i++)
+            {
+                for (long j = -100; j < 100; j++)
+                {
+                    if (j == 0)
+                    {
+                        continue;
+                    }
+
+                    Assert.AreEqual(i % j, i.Mod(j));
+                }
+            }
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="UInt64Extensions.Mod"/>.
+        /// </summary>
+        [Test]
+        public void ModU()
+        {
+            for (ulong i = 1; i < 200; i++)
+            {
+                for (ulong j = 1; j < 200; j++)
+                {
+                    Assert.AreEqual(i % j, i.Mod(j));
+                }
             }
         }
 

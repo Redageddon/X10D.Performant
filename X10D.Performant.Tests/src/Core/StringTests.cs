@@ -90,6 +90,7 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void Repeat()
         {
+            Assert.AreEqual("", "abc".Repeat(-1));
             Assert.AreEqual("", "abc".Repeat(0));
             Assert.AreEqual("abc", "abc".Repeat(1));
             Assert.AreEqual("abcabc", "abc".Repeat(2));
@@ -118,10 +119,12 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void TestParser()
         {
-            Assert.AreEqual(TimeSpan.FromHours(3), "3h".ShortHandParse());
-            Assert.AreEqual(TimeSpan.FromMinutes(2.5), "2.5m".ShortHandParse());
-            Assert.AreEqual(TimeSpan.FromHours(1), "60m".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromDays(7), "1w".ShortHandParse());
             Assert.AreEqual(TimeSpan.FromDays(1), "1d".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromHours(1), "1h".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromMinutes(1), "1m".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromSeconds(1), "1s".ShortHandParse());
+            Assert.AreEqual(TimeSpan.FromMilliseconds(1), "1ms".ShortHandParse());
             Assert.AreEqual(TimeSpan.FromDays(8), "1w 1d".ShortHandParse());
             Assert.AreEqual(TimeSpan.FromDays(8), "1w1d".ShortHandParse());
         }

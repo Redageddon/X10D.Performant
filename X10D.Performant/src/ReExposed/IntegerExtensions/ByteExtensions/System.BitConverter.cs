@@ -20,15 +20,12 @@ namespace X10D.Performant.ReExposed
         public static long ToInt64(this byte[] bytes, int startIndex = 0) => BitConverter.ToInt64(bytes, startIndex);
 
         /// <inheritdoc cref="BitConverter.ToInt16(byte[],int)"/>
-        [CLSCompliant(false)]
         public static ushort ToUInt16(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt16(bytes, startIndex);
 
         /// <inheritdoc cref="BitConverter.ToInt32(byte[],int)"/>
-        [CLSCompliant(false)]
         public static uint ToUInt32(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt32(bytes, startIndex);
 
         /// <inheritdoc cref="BitConverter.ToInt64(byte[],int)"/>
-        [CLSCompliant(false)]
         public static ulong ToUInt64(this byte[] bytes, int startIndex = 0) => BitConverter.ToUInt64(bytes, startIndex);
     }
 }

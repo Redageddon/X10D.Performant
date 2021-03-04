@@ -40,7 +40,6 @@ namespace X10D.Performant
         public static bool IsOdd(this long value) => (value & 1L) == 1L;
 
         /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
-        [CLSCompliant(false)]
         public static bool IsPrime(this long value) => value >= 0L && ((ulong)value).IsPrime();
 
         /// <inheritdoc cref="UInt64Extensions.Mod"/>

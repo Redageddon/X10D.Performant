@@ -221,7 +221,6 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         /// <returns>An <see cref="ushort"/> from read data.</returns>
-        [CLSCompliant(false)]
         public static ushort ReadUInt16(this Stream stream, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfUInt16];
@@ -238,7 +237,6 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         /// <returns>An <see cref="uint"/> from read data.</returns>
-        [CLSCompliant(false)]
         public static uint ReadUInt32(this Stream stream, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfUInt32];
@@ -255,7 +253,6 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         /// <returns>An <see cref="ulong"/> from read data.</returns>
-        [CLSCompliant(false)]
         public static ulong ReadUInt64(this Stream stream, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfUInt64];

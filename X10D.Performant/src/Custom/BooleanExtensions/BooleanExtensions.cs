@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace X10D.Performant
+﻿namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="bool"/>.
@@ -54,7 +52,6 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        [CLSCompliant(false)]
         public static sbyte ToSByte(this bool value) => value ? 1 : 0;
 
         /// <summary>
@@ -69,7 +66,6 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        [CLSCompliant(false)]
         public static ushort ToUInt16(this bool value) => value ? 1 : 0;
 
         /// <summary>
@@ -77,7 +73,6 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        [CLSCompliant(false)]
         public static uint ToUInt32(this bool value) => value ? 1U : 0U;
 
         /// <summary>
@@ -85,7 +80,6 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
-        [CLSCompliant(false)]
         public static ulong ToUInt64(this bool value) => value ? 1UL : 0UL;
     }
 }

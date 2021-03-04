@@ -72,22 +72,18 @@ namespace X10D.Performant.ReExposed
         public static long ToOACurrency(this decimal value) => decimal.ToOACurrency(value);
 
         /// <inheritdoc cref="decimal.ToSByte(decimal)"/>
-        [CLSCompliant(false)]
         public static sbyte ToSByte(this decimal value) => decimal.ToSByte(value);
 
         /// <inheritdoc cref="decimal.ToSingle(decimal)"/>
         public static float ToSingle(this decimal value) => decimal.ToSingle(value);
 
         /// <inheritdoc cref="decimal.ToUInt16(decimal)"/>
-        [CLSCompliant(false)]
         public static ushort ToUInt16(this decimal value) => decimal.ToUInt16(value);
 
         /// <inheritdoc cref="decimal.ToUInt32(decimal)"/>
-        [CLSCompliant(false)]
         public static uint ToUInt32(this decimal value) => decimal.ToUInt32(value);
 
         /// <inheritdoc cref="decimal.ToUInt64(decimal)"/>
-        [CLSCompliant(false)]
         public static ulong ToUInt64(this decimal value) => decimal.ToUInt64(value);
 
         /// <inheritdoc cref="decimal.Truncate(decimal)"/>

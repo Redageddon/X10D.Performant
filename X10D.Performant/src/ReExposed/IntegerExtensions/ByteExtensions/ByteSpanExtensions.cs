@@ -33,27 +33,21 @@ namespace X10D.Performant.ReExposed
         public static long ToInt64(this Span<byte> bytes) => BitConverter.ToInt64(bytes);
 
         /// <inheritdoc cref="BitConverter.ToInt16(ReadOnlySpan{byte})"/>
-        [CLSCompliant(false)]
         public static ushort ToUInt16(this ReadOnlySpan<byte> bytes) => BitConverter.ToUInt16(bytes);
 
         /// <inheritdoc cref="BitConverter.ToInt16(ReadOnlySpan{byte})"/>
-        [CLSCompliant(false)]
         public static ushort ToUInt16(this Span<byte> bytes) => BitConverter.ToUInt16(bytes);
 
         /// <inheritdoc cref="BitConverter.ToInt32(ReadOnlySpan{byte})"/>
-        [CLSCompliant(false)]
         public static uint ToUInt32(this ReadOnlySpan<byte> bytes) => BitConverter.ToUInt32(bytes);
 
         /// <inheritdoc cref="BitConverter.ToInt32(ReadOnlySpan{byte})"/>
-        [CLSCompliant(false)]
         public static uint ToUInt32(this Span<byte> bytes) => BitConverter.ToUInt32(bytes);
 
         /// <inheritdoc cref="BitConverter.ToInt64(ReadOnlySpan{byte})"/>
-        [CLSCompliant(false)]
         public static ulong ToUInt64(this ReadOnlySpan<byte> bytes) => BitConverter.ToUInt64(bytes);
 
         /// <inheritdoc cref="BitConverter.ToInt64(ReadOnlySpan{byte})"/>
-        [CLSCompliant(false)]
         public static ulong ToUInt64(this Span<byte> bytes) => BitConverter.ToUInt64(bytes);
     }
 }

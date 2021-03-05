@@ -46,11 +46,15 @@ namespace X10D.Performant.Tests.Core
                 Color.FromArgb(0b10000000, 0b10000000, 0b10000000, 0b10000000), Color.FromArgb(0b00000001, 0b00000001, 0b00000001, 0b00000001),
             };
 
-            for (int i = 0; i < colors.Length; i++)
+            foreach (Color color in colors)
             {
-                Color color = colors[i];
                 stream.Write(new[] { color.B, color.G, color.R, color.A });
-                stream.Position = i * 4;
+            }
+
+            stream.ResetPosition();
+
+            foreach (Color color in colors)
+            {
                 Assert.AreEqual(color, stream.ReadArgbColor());
             }
         }
@@ -65,7 +69,7 @@ namespace X10D.Performant.Tests.Core
             stream.WriteByte(0);
             stream.WriteByte(1);
             stream.WriteByte(2);
-            stream.Position = 0;
+            stream.ResetPosition();
             Assert.IsFalse(stream.ReadBoolean());
             Assert.IsTrue(stream.ReadBoolean());
             Assert.IsTrue(stream.ReadBoolean());
@@ -87,14 +91,14 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(d);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             foreach (decimal d in decimals)
             {
                 Assert.AreEqual(d, stream.ReadDecimal());
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             foreach (decimal d in decimals)
             {
@@ -109,7 +113,7 @@ namespace X10D.Performant.Tests.Core
                 }
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             foreach (decimal d in decimals)
             {
@@ -133,7 +137,7 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(d);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             foreach (double d in doubles)
             {
@@ -157,7 +161,7 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(b);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             Assert.AreEqual(255, stream.ReadInt16());
             Assert.AreEqual(-256, stream.ReadInt16());
@@ -184,7 +188,7 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(b);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             Assert.AreEqual(255, stream.ReadInt32());
             Assert.AreEqual(65535, stream.ReadInt32());
@@ -214,7 +218,7 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(b);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             Assert.AreEqual(255, stream.ReadInt64());
             Assert.AreEqual(65535, stream.ReadInt64());
@@ -247,7 +251,7 @@ namespace X10D.Performant.Tests.Core
                 stream.Write(new[] { color.B, color.G, color.R });
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             foreach (Color color in colors)
             {
@@ -271,7 +275,7 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(f);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             foreach (float f in floats)
             {
@@ -312,7 +316,7 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(b);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             Assert.AreEqual(255, stream.ReadUInt16());
             Assert.AreEqual(65535, stream.ReadUInt16());
@@ -338,7 +342,7 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(b);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             Assert.AreEqual(255, stream.ReadUInt32());
             Assert.AreEqual(65535, stream.ReadUInt32());
@@ -368,7 +372,7 @@ namespace X10D.Performant.Tests.Core
                 writer.Write(b);
             }
 
-            stream.Position = 0;
+            stream.ResetPosition();
 
             Assert.AreEqual(255, stream.ReadUInt64());
             Assert.AreEqual(65535, stream.ReadUInt64());
@@ -378,6 +382,267 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(281474976710655, stream.ReadUInt64());
             Assert.AreEqual(72057594037927935, stream.ReadUInt64());
             Assert.AreEqual(18446744073709551615, stream.ReadUInt64());
+        }
+
+        // Tests are assumed to pass at this point, so it is safe to test the write methods with the read methods for the sake of clarity.
+        // If any of the previous methods fail, then these next methods have a possibility of giving false negatives or false positives.
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.WriteArgbColor"/>.
+        /// </summary>
+        [Test]
+        public void WriteArgbColor()
+        {
+            MemoryStream stream = new();
+            Color c = Color.FromArgb(123, 45, 67, 89);
+
+            stream.WriteArgbColor(c);
+            stream.WriteArgbColor(c, false);
+            stream.ResetPosition();
+
+            Assert.AreEqual(c, stream.ReadArgbColor());
+            Assert.AreEqual(c, stream.ReadArgbColor(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteBoolean()
+        {
+            MemoryStream stream = new();
+            const bool t = true;
+            const bool f = true;
+
+            stream.Write(t);
+            stream.Write(f);
+            stream.ResetPosition();
+
+            Assert.AreEqual(t, stream.ReadBoolean());
+            Assert.AreEqual(f, stream.ReadBoolean());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,decimal,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteDecimal()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(decimal.MaxValue);
+            stream.Write(decimal.MinValue);
+            stream.Write(decimal.MaxValue, false);
+            stream.Write(decimal.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(decimal.MaxValue, stream.ReadDecimal());
+            Assert.AreEqual(decimal.MinValue, stream.ReadDecimal());
+            Assert.AreEqual(decimal.MaxValue, stream.ReadDecimal(false));
+            Assert.AreEqual(decimal.MinValue, stream.ReadDecimal(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,double,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteDouble()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(double.MaxValue);
+            stream.Write(double.MinValue);
+            stream.Write(double.MaxValue, false);
+            stream.Write(double.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(double.MaxValue, stream.ReadDouble());
+            Assert.AreEqual(double.MinValue, stream.ReadDouble());
+            Assert.AreEqual(double.MaxValue, stream.ReadDouble(false));
+            Assert.AreEqual(double.MinValue, stream.ReadDouble(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,short,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteShort()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(short.MaxValue);
+            stream.Write(short.MinValue);
+            stream.Write(short.MaxValue, false);
+            stream.Write(short.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(short.MaxValue, stream.ReadInt16());
+            Assert.AreEqual(short.MinValue, stream.ReadInt16());
+            Assert.AreEqual(short.MaxValue, stream.ReadInt16(false));
+            Assert.AreEqual(short.MinValue, stream.ReadInt16(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,int,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteInt()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(int.MaxValue);
+            stream.Write(int.MinValue);
+            stream.Write(int.MaxValue, false);
+            stream.Write(int.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(int.MaxValue, stream.ReadInt32());
+            Assert.AreEqual(int.MinValue, stream.ReadInt32());
+            Assert.AreEqual(int.MaxValue, stream.ReadInt32(false));
+            Assert.AreEqual(int.MinValue, stream.ReadInt32(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,long,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteLong()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(long.MaxValue);
+            stream.Write(long.MinValue);
+            stream.Write(long.MaxValue, false);
+            stream.Write(long.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(long.MaxValue, stream.ReadInt64());
+            Assert.AreEqual(long.MinValue, stream.ReadInt64());
+            Assert.AreEqual(long.MaxValue, stream.ReadInt64(false));
+            Assert.AreEqual(long.MinValue, stream.ReadInt64(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.WriteRgbColor"/>.
+        /// </summary>
+        [Test]
+        public void WriteRgbColor()
+        {
+            MemoryStream stream = new();
+            Color c = Color.FromArgb(255, 123, 45, 67);
+
+            stream.WriteArgbColor(c);
+            stream.WriteArgbColor(c, false);
+            stream.ResetPosition();
+
+            Assert.AreEqual(c, stream.ReadArgbColor());
+            Assert.AreEqual(c, stream.ReadArgbColor(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,float,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteSingle()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(float.MaxValue);
+            stream.Write(float.MinValue);
+            stream.Write(float.MaxValue, false);
+            stream.Write(float.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(float.MaxValue, stream.ReadSingle());
+            Assert.AreEqual(float.MinValue, stream.ReadSingle());
+            Assert.AreEqual(float.MaxValue, stream.ReadSingle(false));
+            Assert.AreEqual(float.MinValue, stream.ReadSingle(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,string,Encoding)"/>.
+        /// </summary>
+        [Test]
+        public void WriteString()
+        {
+            MemoryStream stream = new();
+            const string s = "Hello there";
+            stream.Write(s);
+            stream.Write(s, Encoding.BigEndianUnicode);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(s, stream.ReadString(s.Length));
+            Assert.AreEqual(s, stream.ReadString(s.Length * 2, Encoding.BigEndianUnicode));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,ushort,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteUShort()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(ushort.MaxValue);
+            stream.Write(ushort.MinValue);
+            stream.Write(ushort.MaxValue, false);
+            stream.Write(ushort.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(ushort.MaxValue, stream.ReadUInt16());
+            Assert.AreEqual(ushort.MinValue, stream.ReadUInt16());
+            Assert.AreEqual(ushort.MaxValue, stream.ReadUInt16(false));
+            Assert.AreEqual(ushort.MinValue, stream.ReadUInt16(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,uint,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteUInt()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(uint.MaxValue);
+            stream.Write(uint.MinValue);
+            stream.Write(uint.MaxValue, false);
+            stream.Write(uint.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(uint.MaxValue, stream.ReadUInt32());
+            Assert.AreEqual(uint.MinValue, stream.ReadUInt32());
+            Assert.AreEqual(uint.MaxValue, stream.ReadUInt32(false));
+            Assert.AreEqual(uint.MinValue, stream.ReadUInt32(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,ulong,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteULong()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(ulong.MaxValue);
+            stream.Write(ulong.MinValue);
+            stream.Write(ulong.MaxValue, false);
+            stream.Write(ulong.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(ulong.MaxValue, stream.ReadUInt64());
+            Assert.AreEqual(ulong.MinValue, stream.ReadUInt64());
+            Assert.AreEqual(ulong.MaxValue, stream.ReadUInt64(false));
+            Assert.AreEqual(ulong.MinValue, stream.ReadUInt64(false));
         }
     }
 }

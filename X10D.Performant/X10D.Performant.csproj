@@ -11,14 +11,14 @@
         <RepositoryUrl>https://github.com/Redageddon/X10D/</RepositoryUrl>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>
-    
+
     <PropertyGroup>
         <nullable>Enable</nullable>
         <LangVersion>Latest</LangVersion>
         <RootNamespace>X10D.Performant</RootNamespace>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
-    
+
     <PropertyGroup>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <RepositoryType>git</RepositoryType>
@@ -27,7 +27,7 @@
         <PackageTags>dotnet extension-methods</PackageTags>
         <PackageVersion>10.0.0.0</PackageVersion>
     </PropertyGroup>
-    
+
     <ItemGroup>
         <Content Include="..\icon.png">
             <Pack>True</Pack>

@@ -146,25 +146,6 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Reads an rgb <see cref="Color"/> from a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        /// <returns>A <see cref="Color"/> from read data.</returns>
-        public static Color ReadRgbColor(this Stream stream, bool littleEndian = true)
-        {
-            Span<byte> buffer = stackalloc byte[SizeOfArgbColor];
-            buffer[0] = (byte)stream.ReadByte();
-            buffer[1] = (byte)stream.ReadByte();
-            buffer[2] = (byte)stream.ReadByte();
-            buffer[3] = byte.MaxValue;
-
-            return Color.FromArgb(littleEndian
-                                      ? BinaryPrimitives.ReadInt32LittleEndian(buffer)
-                                      : BinaryPrimitives.ReadInt32BigEndian(buffer));
-        }
-
-        /// <summary>
         ///     Reads a <see cref="float"/> from a stream.
         /// </summary>
         /// <param name="stream">The stream that holds the data.</param>

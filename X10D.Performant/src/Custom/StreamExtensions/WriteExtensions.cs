@@ -161,28 +161,6 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Writes an rgb <see cref="Color"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="Color"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteRgbColor(this Stream stream, Color value, bool littleEndian = true)
-        {
-            Span<byte> buffer = stackalloc byte[SizeOfArgbColor];
-
-            if (littleEndian)
-            {
-                BinaryPrimitives.WriteInt32LittleEndian(buffer, (value.R << 16) | (value.G << 8) | value.B);
-            }
-            else
-            {
-                BinaryPrimitives.WriteInt32BigEndian(buffer, (value.B << 16) | (value.G << 8) | value.R);
-            }
-
-            stream.Write(buffer.Slice(3));
-        }
-
-        /// <summary>
         ///     Writes a <see cref="float"/> to a stream.
         /// </summary>
         /// <param name="stream">The stream that holds the data.</param>

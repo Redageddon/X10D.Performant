@@ -231,35 +231,6 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StreamExtensions.ReadRgbColor"/>
-        /// </summary>
-        [Test]
-        public void ReadRgbColor()
-        {
-            using MemoryStream stream = new();
-
-            Color[] colors =
-            {
-                Color.FromArgb(0b00000000, 0b00000000, 0b00000000), Color.FromArgb(0b11111111, 0b00000000, 0b00000000),
-                Color.FromArgb(0b00000000, 0b11111111, 0b00000000), Color.FromArgb(0b11111111, 0b11111111, 0b00000000),
-                Color.FromArgb(0b00000000, 0b00000000, 0b11111111), Color.FromArgb(0b11111111, 0b00000000, 0b11111111),
-                Color.FromArgb(0b00000000, 0b11111111, 0b11111111), Color.FromArgb(0b11111111, 0b11111111, 0b11111111),
-            };
-
-            foreach (Color color in colors)
-            {
-                stream.Write(new[] { color.B, color.G, color.R });
-            }
-
-            stream.ResetPosition();
-
-            foreach (Color color in colors)
-            {
-                Assert.AreEqual(color, stream.ReadRgbColor());
-            }
-        }
-
-        /// <summary>
         ///     Tests for <see cref="StreamExtensions.ReadSingle"/>
         /// </summary>
         [Test]
@@ -525,23 +496,6 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(long.MinValue, stream.ReadInt64());
             Assert.AreEqual(long.MaxValue, stream.ReadInt64(false));
             Assert.AreEqual(long.MinValue, stream.ReadInt64(false));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="StreamExtensions.WriteRgbColor"/>.
-        /// </summary>
-        [Test]
-        public void WriteRgbColor()
-        {
-            MemoryStream stream = new();
-            Color c = Color.FromArgb(255, 123, 45, 67);
-
-            stream.WriteArgbColor(c);
-            stream.WriteArgbColor(c, false);
-            stream.ResetPosition();
-
-            Assert.AreEqual(c, stream.ReadArgbColor());
-            Assert.AreEqual(c, stream.ReadArgbColor(false));
         }
 
         /// <summary>

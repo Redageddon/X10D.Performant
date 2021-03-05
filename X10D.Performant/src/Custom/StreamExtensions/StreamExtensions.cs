@@ -24,5 +24,11 @@ namespace X10D.Performant
 
             return crypt?.ComputeHash(stream);
         }
+
+        /// <summary>
+        ///     Sets this streams position back to 0.
+        /// </summary>
+        /// <param name="stream">The stream being reset.</param>
+        public static void ResetPosition(this Stream stream) => stream.Position = 0;
     }
 }

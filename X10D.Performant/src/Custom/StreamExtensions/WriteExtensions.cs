@@ -35,7 +35,7 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="bool"/> to be written to a stream.</param>
-        public static void WriteBoolean(this Stream stream, bool value) => stream.WriteByte(value ? 1 : 0);
+        public static void Write(this Stream stream, bool value) => stream.WriteByte(value ? 1 : 0);
 
         /// <summary>
         ///     Writes a <see cref="decimal"/> to a stream.
@@ -43,7 +43,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="decimal"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteDecimal(this Stream stream, decimal value, bool littleEndian = true)
+        public static void Write(this Stream stream, decimal value, bool littleEndian = true)
         {
             int[] bits = decimal.GetBits(value);
             Span<byte> lo = stackalloc byte[SizeOfInt32];
@@ -57,11 +57,6 @@ namespace X10D.Performant
                 BinaryPrimitives.WriteInt32LittleEndian(mid, bits[1]);
                 BinaryPrimitives.WriteInt32LittleEndian(hi, bits[2]);
                 BinaryPrimitives.WriteInt32LittleEndian(flags, bits[3]);
-
-                stream.Write(lo);
-                stream.Write(mid);
-                stream.Write(hi);
-                stream.Write(flags);
             }
             else
             {
@@ -69,12 +64,12 @@ namespace X10D.Performant
                 BinaryPrimitives.WriteInt32BigEndian(mid, bits[2]);
                 BinaryPrimitives.WriteInt32BigEndian(hi, bits[1]);
                 BinaryPrimitives.WriteInt32BigEndian(flags, bits[0]);
-
-                stream.Write(flags);
-                stream.Write(hi);
-                stream.Write(mid);
-                stream.Write(lo);
             }
+
+            stream.Write(lo);
+            stream.Write(mid);
+            stream.Write(hi);
+            stream.Write(flags);
         }
 
         /// <summary>
@@ -83,7 +78,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="double"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void ReadDouble(this Stream stream, double value, bool littleEndian = true)
+        public static void Write(this Stream stream, double value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfDouble];
 
@@ -105,7 +100,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="short"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteInt16(this Stream stream, short value, bool littleEndian = true)
+        public static void Write(this Stream stream, short value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfInt16];
 
@@ -127,7 +122,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="int"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteInt32(this Stream stream, int value, bool littleEndian = true)
+        public static void Write(this Stream stream, int value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfInt32];
 
@@ -149,7 +144,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="long"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteInt64(this Stream stream, long value, bool littleEndian = true)
+        public static void Write(this Stream stream, long value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfInt64];
 
@@ -193,7 +188,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="float"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteSingle(this Stream stream, float value, bool littleEndian = true)
+        public static void Write(this Stream stream, float value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfSingle];
 
@@ -215,7 +210,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="string"/> to be written to a stream.</param>
         /// <param name="encoding">The encoding of the string.</param>
-        public static void WriteString(this Stream stream, string value, Encoding? encoding = null) =>
+        public static void Write(this Stream stream, string value, Encoding? encoding = null) =>
             stream.Write((encoding ?? Encoding.Default).GetBytes(value));
 
         /// <summary>
@@ -224,7 +219,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="ushort"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteUInt16(this Stream stream, ushort value, bool littleEndian = true)
+        public static void Write(this Stream stream, ushort value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfUInt16];
 
@@ -246,7 +241,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="uint"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteUInt32(this Stream stream, uint value, bool littleEndian = true)
+        public static void Write(this Stream stream, uint value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfUInt32];
 
@@ -268,7 +263,7 @@ namespace X10D.Performant
         /// <param name="stream">The stream that holds the data.</param>
         /// <param name="value">The <see cref="ulong"/> to be written to a stream.</param>
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteUInt64(this Stream stream, ulong value, bool littleEndian = true)
+        public static void Write(this Stream stream, ulong value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[SizeOfUInt64];
 

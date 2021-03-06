@@ -1,4 +1,6 @@
-﻿namespace X10D.Performant
+﻿using System;
+
+namespace X10D.Performant
 {
     /// <summary>
     ///     Extension methods for <see cref="bool"/>.
@@ -46,6 +48,20 @@
         /// <param name="value">A <see cref="bool"/>.</param>
         /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
         public static long ToInt64(this bool value) => value ? 1L : 0L;
+
+        /// <summary>
+        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="IntPtr"/>.
+        /// </summary>
+        /// <param name="value">A <see cref="bool"/>.</param>
+        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        public static nint ToNInt(this bool value) => value ? 1 : 0;
+
+        /// <summary>
+        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="UIntPtr"/>.
+        /// </summary>
+        /// <param name="value">A <see cref="bool"/>.</param>
+        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        public static nuint ToNUInt(this bool value) => value ? 1 : 0;
 
         /// <summary>
         ///     Gets the value of this <see cref="bool"/> as represented by <see cref="sbyte"/>.

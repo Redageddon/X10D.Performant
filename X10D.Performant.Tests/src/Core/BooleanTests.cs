@@ -113,6 +113,36 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
+        ///     Tests for <see cref="BooleanExtensions.ToNInt"/>.
+        /// </summary>
+        [Test]
+        public void ToNInt()
+        {
+            const bool a = true;
+            const bool b = false;
+
+            const nint c = 1;
+            const nint d = 0;
+            Assert.AreEqual(c, a.ToNInt());
+            Assert.AreEqual(d, b.ToNInt());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="BooleanExtensions.ToNUInt"/>.
+        /// </summary>
+        [Test]
+        public void ToNUInt()
+        {
+            const bool a = true;
+            const bool b = false;
+
+            const nuint c = 1;
+            const nuint d = 0;
+            Assert.AreEqual(c, a.ToNUInt());
+            Assert.AreEqual(d, b.ToNUInt());
+        }
+
+        /// <summary>
         ///     Tests for <see cref="BooleanExtensions.ToSByte"/>.
         /// </summary>
         [Test]

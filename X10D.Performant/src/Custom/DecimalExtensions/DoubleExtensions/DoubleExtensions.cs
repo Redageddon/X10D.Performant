@@ -8,6 +8,18 @@ namespace X10D.Performant
     public static class DoubleExtensions
     {
         /// <summary>
+        ///     Returns true if 2 <see cref="decimal"/>s are within a certain tolerance of each other.
+        /// </summary>
+        /// <param name="value1">The first value to compare.</param>
+        /// <param name="value2">The second value to compare.</param>
+        /// <param name="tolerance">The difference allowed between the two values before <see langword="false"/> is returned.</param>
+        /// <returns>
+        ///     <see langword="true"/> if <paramref name="value1"/> and <paramref name="value2"/> are within <paramref name="tolerance"/> distance,
+        ///     else <see langword="false"/>.</returns>
+        public static bool AlmostEquals(this double value1, double value2, double tolerance = double.Epsilon) =>
+            Math.Abs(value1 - value2) < Math.Abs(tolerance);
+
+        /// <summary>
         ///     Converts <paramref name="angle"/> from degrees to gradians.
         /// </summary>
         /// <param name="angle">The angle in degrees.</param>

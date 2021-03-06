@@ -7,6 +7,10 @@ namespace X10D.Performant
     /// </summary>
     public static class SingleExtensions
     {
+        /// <inheritdoc cref="DoubleExtensions.AlmostEquals"/>
+        public static bool AlmostEquals(this float value1, float value2, float tolerance = float.Epsilon) =>
+            Math.Abs(value1 - value2) < Math.Abs(tolerance);
+
         /// <inheritdoc cref="DoubleExtensions.DegreesToGradians"/>
         public static float DegreesToGradians(this float angle) => angle * 10F / 9F;
 

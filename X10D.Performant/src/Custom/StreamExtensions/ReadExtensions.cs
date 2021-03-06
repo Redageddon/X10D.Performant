@@ -8,17 +8,6 @@ namespace X10D.Performant
 {
     public static partial class StreamExtensions
     {
-        private const int SizeOfDecimal = sizeof(decimal);
-        private const int SizeOfDouble = sizeof(double);
-        private const int SizeOfInt64 = sizeof(long);
-        private const int SizeOfUInt64 = sizeof(ulong);
-        private const int SizeOfSingle = sizeof(float);
-        private const int SizeOfInt32 = sizeof(int);
-        private const int SizeOfUInt32 = sizeof(uint);
-        private const int SizeOfInt16 = sizeof(short);
-        private const int SizeOfUInt16 = sizeof(ushort);
-        private const int SizeOfArgbColor = 4;
-
         /// <summary>
         ///     Reads an argb <see cref="Color"/> from a stream.
         /// </summary>
@@ -27,7 +16,7 @@ namespace X10D.Performant
         /// <returns>A <see cref="Color"/> from read data.</returns>
         public static Color ReadArgbColor(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfArgbColor];
+            Span<byte> buffer = stackalloc byte[sizeof(int)];
             stream.Read(buffer);
 
             return Color.FromArgb(littleEndian
@@ -50,7 +39,7 @@ namespace X10D.Performant
         /// <returns>A <see cref="decimal"/> from read data.</returns>
         public static decimal ReadDecimal(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfDecimal];
+            Span<byte> buffer = stackalloc byte[sizeof(decimal)];
             stream.Read(buffer);
 
             int lo;
@@ -73,10 +62,7 @@ namespace X10D.Performant
                 flags = BinaryPrimitives.ReadInt32BigEndian(buffer);
             }
 
-            Span<int> bits = stackalloc int[]
-            {
-                lo, mid, hi, flags,
-            };
+            Span<int> bits = stackalloc int[] { lo, mid, hi, flags };
 
             return new decimal(bits);
         }
@@ -89,7 +75,7 @@ namespace X10D.Performant
         /// <returns>A <see cref="double"/> from read data.</returns>
         public static double ReadDouble(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfDouble];
+            Span<byte> buffer = stackalloc byte[sizeof(double)];
             stream.Read(buffer);
 
             return littleEndian
@@ -105,7 +91,7 @@ namespace X10D.Performant
         /// <returns>A <see cref="short"/> from read data.</returns>
         public static short ReadInt16(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfInt16];
+            Span<byte> buffer = stackalloc byte[sizeof(short)];
             stream.Read(buffer);
 
             return littleEndian
@@ -121,7 +107,7 @@ namespace X10D.Performant
         /// <returns>An <see cref="int"/> from read data.</returns>
         public static int ReadInt32(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfInt32];
+            Span<byte> buffer = stackalloc byte[sizeof(int)];
             stream.Read(buffer);
 
             return littleEndian
@@ -137,7 +123,7 @@ namespace X10D.Performant
         /// <returns>A <see cref="long"/> from read data.</returns>
         public static long ReadInt64(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfInt64];
+            Span<byte> buffer = stackalloc byte[sizeof(long)];
             stream.Read(buffer);
 
             return littleEndian
@@ -153,7 +139,7 @@ namespace X10D.Performant
         /// <returns>A <see cref="float"/> from read data.</returns>
         public static float ReadSingle(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfSingle];
+            Span<byte> buffer = stackalloc byte[sizeof(float)];
             stream.Read(buffer);
 
             return littleEndian
@@ -184,7 +170,7 @@ namespace X10D.Performant
         /// <returns>An <see cref="ushort"/> from read data.</returns>
         public static ushort ReadUInt16(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfUInt16];
+            Span<byte> buffer = stackalloc byte[sizeof(ushort)];
             stream.Read(buffer);
 
             return littleEndian
@@ -200,7 +186,7 @@ namespace X10D.Performant
         /// <returns>An <see cref="uint"/> from read data.</returns>
         public static uint ReadUInt32(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfUInt32];
+            Span<byte> buffer = stackalloc byte[sizeof(uint)];
             stream.Read(buffer);
 
             return littleEndian
@@ -216,7 +202,7 @@ namespace X10D.Performant
         /// <returns>An <see cref="ulong"/> from read data.</returns>
         public static ulong ReadUInt64(this Stream stream, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfUInt64];
+            Span<byte> buffer = stackalloc byte[sizeof(ulong)];
             stream.Read(buffer);
 
             return littleEndian

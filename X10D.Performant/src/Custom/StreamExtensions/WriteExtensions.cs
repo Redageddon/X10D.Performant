@@ -16,7 +16,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void WriteArgbColor(this Stream stream, Color value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfArgbColor];
+            Span<byte> buffer = stackalloc byte[sizeof(int)];
 
             if (littleEndian)
             {
@@ -46,10 +46,10 @@ namespace X10D.Performant
         public static void Write(this Stream stream, decimal value, bool littleEndian = true)
         {
             int[] bits = decimal.GetBits(value);
-            Span<byte> lo = stackalloc byte[SizeOfInt32];
-            Span<byte> mid = stackalloc byte[SizeOfInt32];
-            Span<byte> hi = stackalloc byte[SizeOfInt32];
-            Span<byte> flags = stackalloc byte[SizeOfInt32];
+            Span<byte> lo = stackalloc byte[sizeof(int)];
+            Span<byte> mid = stackalloc byte[sizeof(int)];
+            Span<byte> hi = stackalloc byte[sizeof(int)];
+            Span<byte> flags = stackalloc byte[sizeof(int)];
 
             if (littleEndian)
             {
@@ -80,7 +80,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void Write(this Stream stream, double value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfDouble];
+            Span<byte> buffer = stackalloc byte[sizeof(double)];
 
             if (littleEndian)
             {
@@ -102,7 +102,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void Write(this Stream stream, short value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfInt16];
+            Span<byte> buffer = stackalloc byte[sizeof(short)];
 
             if (littleEndian)
             {
@@ -124,7 +124,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void Write(this Stream stream, int value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfInt32];
+            Span<byte> buffer = stackalloc byte[sizeof(int)];
 
             if (littleEndian)
             {
@@ -146,7 +146,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void Write(this Stream stream, long value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfInt64];
+            Span<byte> buffer = stackalloc byte[sizeof(long)];
 
             if (littleEndian)
             {
@@ -168,7 +168,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void Write(this Stream stream, float value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfSingle];
+            Span<byte> buffer = stackalloc byte[sizeof(float)];
 
             if (littleEndian)
             {
@@ -199,7 +199,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void Write(this Stream stream, ushort value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfUInt16];
+            Span<byte> buffer = stackalloc byte[sizeof(ushort)];
 
             if (littleEndian)
             {
@@ -221,7 +221,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void Write(this Stream stream, uint value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfUInt32];
+            Span<byte> buffer = stackalloc byte[sizeof(uint)];
 
             if (littleEndian)
             {
@@ -243,7 +243,7 @@ namespace X10D.Performant
         /// <param name="littleEndian">Whether or not the data is little endian.</param>
         public static void Write(this Stream stream, ulong value, bool littleEndian = true)
         {
-            Span<byte> buffer = stackalloc byte[SizeOfUInt64];
+            Span<byte> buffer = stackalloc byte[sizeof(ulong)];
 
             if (littleEndian)
             {

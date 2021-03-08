@@ -96,9 +96,7 @@ namespace X10D.Performant
         /// <param name="maxValue">
         ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
         /// </param>
-        /// <returns>
-        ///     A random double-precision floating point number between <paramref name="minValue"/> and <paramref name="maxValue"/>.
-        /// </returns>
+        /// <returns>A random <see cref="double"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
         public static double NextDouble(this Random random, double minValue, double maxValue) =>
             ((maxValue - minValue) * random.NextDouble()) + minValue;
 
@@ -115,7 +113,7 @@ namespace X10D.Performant
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
         /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
         /// <param name="maxValue">
-        ///     The inclusive lower bound of the random number returned. This value must be greater than or equal to <paramref name="minValue" />.
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue" />.
         /// </param>
         /// <returns>A random <see cref="float"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
         public static float NextSingle(this Random random, float minValue, float maxValue) => (float)random.NextDouble(minValue, maxValue);

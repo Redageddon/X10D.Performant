@@ -26,7 +26,7 @@ namespace X10D.Performant
         /// </summary>
         /// <param name="random">The <see cref="Random"/> instance.</param>
         /// <returns>
-        ///     Returns <see langword="true"/> or <see langword="false"/> depending on the return value from <see cref="System.Random.NextDouble"/>.
+        ///     <see langword="true"/> if <see cref="System.Random.NextDouble()"/> is greater than or equal to 0.5 else <see langword="false"/>.
         /// </returns>
         public static bool NextBoolean(this Random random) => random.NextDouble() >= 0.5;
 

@@ -161,6 +161,25 @@ namespace X10D.Performant
         public static sbyte NextSByte(this Random random, sbyte minValue, sbyte maxValue) => (sbyte)random.Next(minValue, maxValue);
 
         /// <summary>
+        ///     Returns a random <see cref="short"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxValue">The inclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        /// <returns>A random <see cref="short"/> between 0 and <paramref name="maxValue"/>.</returns>
+        public static short NextShort(this Random random, short maxValue = short.MaxValue) => (short)random.Next(maxValue);
+
+        /// <summary>
+        ///     Returns a random <see cref="short"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        /// </param>
+        /// <returns>A random <see cref="short"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        public static short NextShort(this Random random, short minValue, short maxValue) => (short)random.Next(minValue, maxValue);
+
+        /// <summary>
         ///     Returns a random <see cref="float"/> between 0 and 1.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>

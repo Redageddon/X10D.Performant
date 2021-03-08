@@ -146,7 +146,7 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="ByteExtensions.ToBoolean"/>.
         /// </summary>
         [Test]
-        public void ToBool()
+        public void ToBoolean()
         {
             Assert.IsTrue(((byte)2).ToBoolean());
             Assert.IsTrue(((byte)1).ToBoolean());
@@ -157,7 +157,7 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="SByteExtensions.ToBoolean"/>.
         /// </summary>
         [Test]
-        public void ToBoolS()
+        public void ToBooleanS()
         {
             Assert.IsTrue(((sbyte)2).ToBoolean());
             Assert.IsTrue(((sbyte)1).ToBoolean());

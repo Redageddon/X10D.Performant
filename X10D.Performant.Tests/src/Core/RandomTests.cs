@@ -11,20 +11,20 @@ namespace X10D.Performant.Tests.Core
     public class RandomTests
     {
         /// <summary>
-        ///     Tests for <see cref="RandomExtensions.NextBool"/>.
+        ///     Tests for <see cref="RandomExtensions.NextBoolean"/>.
         /// </summary>
         [Test]
         public void NextBool()
         {
             Random random = new(1);
 
-            Assert.IsFalse(random.NextBool());
-            Assert.IsFalse(random.NextBool());
-            Assert.IsFalse(random.NextBool());
-            Assert.IsTrue(random.NextBool());
-            Assert.IsTrue(random.NextBool());
-            Assert.IsFalse(random.NextBool());
-            Assert.IsFalse(random.NextBool());
+            Assert.IsFalse(random.NextBoolean());
+            Assert.IsFalse(random.NextBoolean());
+            Assert.IsFalse(random.NextBoolean());
+            Assert.IsTrue(random.NextBoolean());
+            Assert.IsTrue(random.NextBoolean());
+            Assert.IsFalse(random.NextBoolean());
+            Assert.IsFalse(random.NextBoolean());
         }
 
         /// <summary>

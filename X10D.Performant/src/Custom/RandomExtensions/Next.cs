@@ -28,7 +28,7 @@ namespace X10D.Performant
         /// <returns>
         ///     Returns <see langword="true"/> or <see langword="false"/> depending on the return value from <see cref="System.Random.NextDouble"/>.
         /// </returns>
-        public static bool NextBool(this Random random) => random.NextDouble() >= 0.5;
+        public static bool NextBoolean(this Random random) => random.NextDouble() >= 0.5;
 
         /// <summary>
         ///     Creates a new random color with the supplied hsv values.

@@ -62,7 +62,7 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Creates a new random color with the supplied hsv values.
+        ///     Creates a new random <see cref="Color"/> with the supplied hsv values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance that determines the randomness of the color.</param>
         /// <param name="minAlpha">The lowest alpha value to randomize.</param>
@@ -89,7 +89,7 @@ namespace X10D.Performant
                          | random.Next(minBlue, maxBlue));
 
         /// <summary>
-        ///     Returns a random double-precision floating point number that is within a specified range.
+        ///     Returns a random <see cref="double"/> that is within a specified range.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
         /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
@@ -101,5 +101,23 @@ namespace X10D.Performant
         /// </returns>
         public static double NextDouble(this Random random, double minValue, double maxValue) =>
             ((maxValue - minValue) * random.NextDouble()) + minValue;
+
+        /// <summary>
+        ///     Returns a random single-precision floating point number between 0 and 1.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <returns>A random <see cref="float"/> between 0 and 1.</returns>
+        public static float NextSingle(this Random random) => (float)random.NextDouble();
+
+        /// <summary>
+        ///     Returns a random <see cref="float"/> that is within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">
+        ///     The inclusive lower bound of the random number returned. This value must be greater than or equal to <paramref name="minValue" />.
+        /// </param>
+        /// <returns>A random <see cref="float"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        public static float NextSingle(this Random random, float minValue, float maxValue) => (float)random.NextDouble(minValue, maxValue);
     }
 }

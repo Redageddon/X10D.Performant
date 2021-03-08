@@ -31,6 +31,25 @@ namespace X10D.Performant
         public static bool NextBoolean(this Random random) => random.NextDouble() >= 0.5;
 
         /// <summary>
+        ///     Returns a random single-precision floating point number between 0 and 1.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxValue">The inclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        /// <returns>A random <see cref="byte"/> between 0 and <paramref name="maxValue"/>.</returns>
+        public static byte NextByte(this Random random, byte maxValue = byte.MaxValue) => (byte)random.Next(maxValue);
+
+        /// <summary>
+        ///     Returns a random single-precision floating point number between 0 and 1.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        /// </param>
+        /// <returns>A random <see cref="float"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        public static byte NextByte(this Random random, byte minValue, byte maxValue) => (byte)random.Next(minValue, maxValue);
+
+        /// <summary>
         ///     Creates a new random color with the supplied hsv values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance that determines the randomness of the color.</param>

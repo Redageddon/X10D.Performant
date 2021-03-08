@@ -43,7 +43,7 @@ namespace X10D.Performant
                 : values[i];
         }
 
-        private static class EnumMap<TEnum>
+        internal static class EnumMap<TEnum>
             where TEnum : struct, Enum
         {
             public static TEnum[] Map { get; } = Enum.GetValues<TEnum>();

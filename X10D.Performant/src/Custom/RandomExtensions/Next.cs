@@ -254,7 +254,13 @@ namespace X10D.Performant
         /// <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
         /// <returns>A random <see cref="ulong"/> between 0 and <paramref name="maxValue"/>.</returns>
         // TODO: remove decimal usage and ensure only 1 random.Next is called
-        public static ulong NextUInt64(this Random random, ulong maxValue = ulong.MaxValue) => (ulong)(maxValue * (decimal)random.NextDouble());
+        public static ulong NextUInt64(this Random random, ulong maxValue = ulong.MaxValue)
+        {
+            // Introduces a larger range of distribution but all values are still included so random.NextDecimal() is safe to use here.
+            decimal value = (decimal)random.Next() / ulong.MaxValue;
+
+            return (ulong)(maxValue * value);
+        }
 
         /// <summary>
         ///     Returns a random <see cref="ulong"/> within a specified range.
@@ -266,8 +272,13 @@ namespace X10D.Performant
         /// </param>
         /// <returns>A random <see cref="ulong"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
         // TODO: remove decimal usage and ensure only 1 random.Next is called
-        public static ulong NextUInt64(this Random random, ulong minValue, ulong maxValue) =>
-            (ulong)(((maxValue - minValue) * (decimal)random.NextDouble()) + minValue);
+        public static ulong NextUInt64(this Random random, ulong minValue, ulong maxValue)
+        {
+            // Introduces a larger range of distribution but all values are still included so random.NextDecimal() is safe to use here.
+            decimal value = (decimal)random.Next() / ulong.MaxValue;
+
+            return (ulong)(((maxValue - minValue) * value) + minValue);
+        }
 
         /// <summary>
         ///     Returns a random <see cref="ushort"/> within a specified range.

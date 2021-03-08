@@ -50,6 +50,18 @@ namespace X10D.Performant
         public static byte NextByte(this Random random, byte minValue, byte maxValue) => (byte)random.Next(minValue, maxValue);
 
         /// <summary>
+        ///     Returns a random <see cref="char"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random <see cref="char"/> returned.</param>
+        /// <param name="maxValue">
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        /// </param>
+        /// <returns>A random <see cref="char"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        /// <remarks>Although the input is a <see cref="char"/> it is treated as an int, which is something that should be kept in mind.</remarks>
+        public static char NextChar(this Random random, char minValue = 'a', char maxValue = 'z') => (char)random.Next(minValue, maxValue + 1);
+
+        /// <summary>
         ///     Creates a new random color with the supplied hsv values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance that determines the randomness of the color.</param>

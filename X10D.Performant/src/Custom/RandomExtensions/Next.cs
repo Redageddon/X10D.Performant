@@ -143,6 +143,28 @@ namespace X10D.Performant
             ((maxValue - minValue) * random.NextDouble()) + minValue;
 
         /// <summary>
+        ///     Returns a random <see cref="long"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxValue">The inclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        /// <returns>A random <see cref="long"/> between 0 and <paramref name="maxValue"/>.</returns>
+        // TODO: remove decimal usage and ensure only 1 random.Next is called
+        public static long NextLong(this Random random, long maxValue = long.MaxValue) => (long)(maxValue * (decimal)random.NextDouble());
+
+        /// <summary>
+        ///     Returns a random <see cref="long"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        /// </param>
+        /// <returns>A random <see cref="long"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        // TODO: remove decimal usage and ensure only 1 random.Next is called
+        public static long NextLong(this Random random, long minValue, long maxValue) =>
+            (long)(((maxValue - minValue) * (decimal)random.NextDouble()) + minValue);
+
+        /// <summary>
         ///     Returns a random <see cref="sbyte"/> within a specified range.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
@@ -223,6 +245,28 @@ namespace X10D.Performant
         /// <returns>A random <see cref="uint"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
         public static uint NextUInt(this Random random, uint minValue, uint maxValue) =>
             (uint)(((maxValue - minValue) * random.NextDouble()) + minValue);
+
+        /// <summary>
+        ///     Returns a random <see cref="ulong"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxValue">The inclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        /// <returns>A random <see cref="ulong"/> between 0 and <paramref name="maxValue"/>.</returns>
+        // TODO: remove decimal usage and ensure only 1 random.Next is called
+        public static ulong NextULong(this Random random, ulong maxValue = ulong.MaxValue) => (ulong)(maxValue * (decimal)random.NextDouble());
+
+        /// <summary>
+        ///     Returns a random <see cref="ulong"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        /// </param>
+        /// <returns>A random <see cref="ulong"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        // TODO: remove decimal usage and ensure only 1 random.Next is called
+        public static ulong NextULong(this Random random, ulong minValue, ulong maxValue) =>
+            (ulong)(((maxValue - minValue) * (decimal)random.NextDouble()) + minValue);
 
         /// <summary>
         ///     Returns a random <see cref="ushort"/> within a specified range.

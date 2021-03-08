@@ -220,5 +220,24 @@ namespace X10D.Performant
         /// <returns>A random <see cref="uint"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
         public static uint NextUInt(this Random random, byte minValue, byte maxValue) =>
             (uint)(((maxValue - minValue) * random.NextDouble()) + minValue);
+
+        /// <summary>
+        ///     Returns a random <see cref="ushort"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxValue">The inclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        /// <returns>A random <see cref="ushort"/> between 0 and <paramref name="maxValue"/>.</returns>
+        public static ushort NextUShort(this Random random, ushort maxValue = ushort.MaxValue) => (ushort)random.Next(maxValue);
+
+        /// <summary>
+        ///     Returns a random <see cref="ushort"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        /// </param>
+        /// <returns>A random <see cref="ushort"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        public static ushort NextUShort(this Random random, ushort minValue, ushort maxValue) => (ushort)random.Next(minValue, maxValue);
     }
 }

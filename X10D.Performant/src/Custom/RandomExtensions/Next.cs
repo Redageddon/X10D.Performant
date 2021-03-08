@@ -221,7 +221,7 @@ namespace X10D.Performant
         ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
         /// </param>
         /// <returns>A random <see cref="uint"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
-        public static uint NextUInt(this Random random, byte minValue, byte maxValue) =>
+        public static uint NextUInt(this Random random, uint minValue, uint maxValue) =>
             (uint)(((maxValue - minValue) * random.NextDouble()) + minValue);
 
         /// <summary>

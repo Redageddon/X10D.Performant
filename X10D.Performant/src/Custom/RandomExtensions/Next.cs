@@ -111,6 +111,16 @@ namespace X10D.Performant
         ///     Returns a random <see cref="double"/> that is within a specified range.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxValue">
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to 0.
+        /// </param>
+        /// <returns>A random <see cref="double"/> between 0 and <paramref name="maxValue"/>.</returns>
+        public static double NextDouble(this Random random, double maxValue) => maxValue * random.NextDouble();
+
+        /// <summary>
+        ///     Returns a random <see cref="double"/> that is within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
         /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
         /// <param name="maxValue">
         ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
@@ -123,8 +133,11 @@ namespace X10D.Performant
         ///     Returns a random single-precision floating point number between 0 and 1.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <returns>A random <see cref="float"/> between 0 and 1.</returns>
-        public static float NextSingle(this Random random) => (float)random.NextDouble();
+        /// <param name="maxValue">
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="0"/>.
+        /// </param>
+        /// <returns>A random <see cref="float"/> between 0 and <see cref="maxValue"/>.</returns>
+        public static float NextSingle(this Random random, float maxValue = 1) => (float)random.NextDouble(0, maxValue);
 
         /// <summary>
         ///     Returns a random <see cref="float"/> that is within a specified range.
@@ -132,7 +145,7 @@ namespace X10D.Performant
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
         /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
         /// <param name="maxValue">
-        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue" />.
+        ///     The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
         /// </param>
         /// <returns>A random <see cref="float"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
         public static float NextSingle(this Random random, float minValue, float maxValue) => (float)random.NextDouble(minValue, maxValue);

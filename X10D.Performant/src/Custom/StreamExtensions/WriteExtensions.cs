@@ -9,28 +9,6 @@ namespace X10D.Performant
     public static partial class StreamExtensions
     {
         /// <summary>
-        ///     Writes an argb <see cref="Color"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="Color"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteArgbColor(this Stream stream, Color value, bool littleEndian = true)
-        {
-            Span<byte> buffer = stackalloc byte[sizeof(int)];
-
-            if (littleEndian)
-            {
-                BinaryPrimitives.WriteInt32LittleEndian(buffer, value.ToArgb());
-            }
-            else
-            {
-                BinaryPrimitives.WriteInt32BigEndian(buffer, value.ToArgb());
-            }
-
-            stream.Write(buffer);
-        }
-
-        /// <summary>
         ///     Writes a <see cref="bool"/> to a stream.
         /// </summary>
         /// <param name="stream">The stream that holds the data.</param>
@@ -252,6 +230,28 @@ namespace X10D.Performant
             else
             {
                 BinaryPrimitives.WriteUInt64BigEndian(buffer, value);
+            }
+
+            stream.Write(buffer);
+        }
+
+        /// <summary>
+        ///     Writes an argb <see cref="Color"/> to a stream.
+        /// </summary>
+        /// <param name="stream">The stream that holds the data.</param>
+        /// <param name="value">The <see cref="Color"/> to be written to a stream.</param>
+        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        public static void WriteArgbColor(this Stream stream, Color value, bool littleEndian = true)
+        {
+            Span<byte> buffer = stackalloc byte[sizeof(int)];
+
+            if (littleEndian)
+            {
+                BinaryPrimitives.WriteInt32LittleEndian(buffer, value.ToArgb());
+            }
+            else
+            {
+                BinaryPrimitives.WriteInt32BigEndian(buffer, value.ToArgb());
             }
 
             stream.Write(buffer);

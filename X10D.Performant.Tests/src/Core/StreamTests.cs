@@ -436,27 +436,6 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="StreamExtensions.Write(Stream,short,bool)"/>.
-        /// </summary>
-        [Test]
-        public void WriteShort()
-        {
-            MemoryStream stream = new();
-
-            stream.Write(short.MaxValue);
-            stream.Write(short.MinValue);
-            stream.Write(short.MaxValue, false);
-            stream.Write(short.MinValue, false);
-
-            stream.ResetPosition();
-
-            Assert.AreEqual(short.MaxValue, stream.ReadInt16());
-            Assert.AreEqual(short.MinValue, stream.ReadInt16());
-            Assert.AreEqual(short.MaxValue, stream.ReadInt16(false));
-            Assert.AreEqual(short.MinValue, stream.ReadInt16(false));
-        }
-
-        /// <summary>
         ///     Tests for <see cref="StreamExtensions.Write(Stream,int,bool)"/>.
         /// </summary>
         [Test]
@@ -499,6 +478,27 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,short,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteShort()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(short.MaxValue);
+            stream.Write(short.MinValue);
+            stream.Write(short.MaxValue, false);
+            stream.Write(short.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(short.MaxValue, stream.ReadInt16());
+            Assert.AreEqual(short.MinValue, stream.ReadInt16());
+            Assert.AreEqual(short.MaxValue, stream.ReadInt16(false));
+            Assert.AreEqual(short.MinValue, stream.ReadInt16(false));
+        }
+
+        /// <summary>
         ///     Tests for <see cref="StreamExtensions.Write(Stream,float,bool)"/>.
         /// </summary>
         [Test]
@@ -534,27 +534,6 @@ namespace X10D.Performant.Tests.Core
 
             Assert.AreEqual(s, stream.ReadString(s.Length));
             Assert.AreEqual(s, stream.ReadString(s.Length * 2, Encoding.BigEndianUnicode));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="StreamExtensions.Write(Stream,ushort,bool)"/>.
-        /// </summary>
-        [Test]
-        public void WriteUShort()
-        {
-            MemoryStream stream = new();
-
-            stream.Write(ushort.MaxValue);
-            stream.Write(ushort.MinValue);
-            stream.Write(ushort.MaxValue, false);
-            stream.Write(ushort.MinValue, false);
-
-            stream.ResetPosition();
-
-            Assert.AreEqual(ushort.MaxValue, stream.ReadUInt16());
-            Assert.AreEqual(ushort.MinValue, stream.ReadUInt16());
-            Assert.AreEqual(ushort.MaxValue, stream.ReadUInt16(false));
-            Assert.AreEqual(ushort.MinValue, stream.ReadUInt16(false));
         }
 
         /// <summary>
@@ -597,6 +576,27 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(ulong.MinValue, stream.ReadUInt64());
             Assert.AreEqual(ulong.MaxValue, stream.ReadUInt64(false));
             Assert.AreEqual(ulong.MinValue, stream.ReadUInt64(false));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,ushort,bool)"/>.
+        /// </summary>
+        [Test]
+        public void WriteUShort()
+        {
+            MemoryStream stream = new();
+
+            stream.Write(ushort.MaxValue);
+            stream.Write(ushort.MinValue);
+            stream.Write(ushort.MaxValue, false);
+            stream.Write(ushort.MinValue, false);
+
+            stream.ResetPosition();
+
+            Assert.AreEqual(ushort.MaxValue, stream.ReadUInt16());
+            Assert.AreEqual(ushort.MinValue, stream.ReadUInt16());
+            Assert.AreEqual(ushort.MaxValue, stream.ReadUInt16(false));
+            Assert.AreEqual(ushort.MinValue, stream.ReadUInt16(false));
         }
     }
 }

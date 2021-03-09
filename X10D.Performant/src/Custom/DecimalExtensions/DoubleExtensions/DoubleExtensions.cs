@@ -5,47 +5,20 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="double"/>.
     /// </summary>
-    public static class DoubleExtensions
+    public static partial class DoubleExtensions
     {
         /// <summary>
-        ///     Returns true if 2 <see cref="decimal"/>s are within a certain tolerance of each other.
+        ///     Returns true if 2 numbers are within a certain tolerance of each other.
         /// </summary>
         /// <param name="value1">The first value to compare.</param>
         /// <param name="value2">The second value to compare.</param>
         /// <param name="tolerance">The difference allowed between the two values before <see langword="false"/> is returned.</param>
         /// <returns>
         ///     <see langword="true"/> if <paramref name="value1"/> and <paramref name="value2"/> are within <paramref name="tolerance"/> distance,
-        ///     else <see langword="false"/>.</returns>
+        ///     else <see langword="false"/>.
+        /// </returns>
         public static bool AlmostEquals(this double value1, double value2, double tolerance = double.Epsilon) =>
             Math.Abs(value1 - value2) < Math.Abs(tolerance);
-
-        /// <summary>
-        ///     Converts <paramref name="angle"/> from degrees to gradians.
-        /// </summary>
-        /// <param name="angle">The angle in degrees.</param>
-        /// <returns><paramref name="angle"/> in gradians.</returns>
-        public static double DegreesToGradians(this double angle) => angle * 10D / 9D;
-
-        /// <summary>
-        ///     Converts <paramref name="angle"/> from degrees to radians.
-        /// </summary>
-        /// <param name="angle">The angle in degrees.</param>
-        /// <returns><paramref name="angle"/> in radians.</returns>
-        public static double DegreesToRadians(this double angle) => Math.PI * angle / 180.0D;
-
-        /// <summary>
-        ///     Converts <paramref name="angle"/> from gradians to degrees.
-        /// </summary>
-        /// <param name="angle">The angle in gradians.</param>
-        /// <returns><paramref name="angle"/> in degrees.</returns>
-        public static double GradiansToDegrees(this double angle) => angle * 9D / 10D;
-
-        /// <summary>
-        ///     Converts <paramref name="angle"/> from gradians to radians.
-        /// </summary>
-        /// <param name="angle">The angle in gradians.</param>
-        /// <returns><paramref name="angle"/> in radians.</returns>
-        public static double GradiansToRadians(this double angle) => angle * Math.PI / 200D;
 
         /// <summary>
         ///     Takes the inverse square root of <paramref name="value"/>.
@@ -78,19 +51,5 @@ namespace X10D.Performant
         ///     A value that is between <paramref name="firstValue"/> and <paramref name="secondValue"/> by a percent of <paramref name="alpha"/>.
         /// </returns>
         public static double Lerp(this double alpha, double firstValue, double secondValue) => (firstValue * (1 - alpha)) + (secondValue * alpha);
-
-        /// <summary>
-        ///     Converts <paramref name="angle"/> from radians to degrees.
-        /// </summary>
-        /// <param name="angle">The angle in radians.</param>
-        /// <returns><paramref name="angle"/> in degrees.</returns>
-        public static double RadiansToDegrees(this double angle) => angle * 180.0D / Math.PI;
-
-        /// <summary>
-        ///     Converts <paramref name="angle"/> from radians to gradians.
-        /// </summary>
-        /// <param name="angle">The angle in radians.</param>
-        /// <returns><paramref name="angle"/> in gradians.</returns>
-        public static double RadiansToGradians(this double angle) => angle * 200D / Math.PI;
     }
 }

@@ -6,22 +6,6 @@ namespace X10D.Performant
     public static partial class RandomExtensions
     {
         /// <summary>
-        ///     Returns a random value that is defined in a specified enum.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <typeparam name="TEnum">An enumeration type.</typeparam>
-        /// <returns>
-        ///     Returns a random enum value from <typeparamref name="TEnum"/> specified by <paramref name="random"/>.
-        /// </returns>
-        public static TEnum NextEnum<TEnum>(this Random random)
-            where TEnum : struct, Enum
-        {
-            TEnum[] values = EnumExtensions.EnumMap<TEnum>.Map;
-
-            return values[random.Next(values.Length)];
-        }
-
-        /// <summary>
         ///     Returns either <see langword="true"/> or <see langword="false"/> based on <paramref name="random"/>'s next generation.
         /// </summary>
         /// <param name="random">The <see cref="Random"/> instance.</param>
@@ -143,6 +127,42 @@ namespace X10D.Performant
             ((maxValue - minValue) * random.NextDouble()) + minValue;
 
         /// <summary>
+        ///     Returns a random value that is defined in a specified enum.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <typeparam name="TEnum">An enumeration type.</typeparam>
+        /// <returns>
+        ///     Returns a random enum value from <typeparamref name="TEnum"/> specified by <paramref name="random"/>.
+        /// </returns>
+        public static TEnum NextEnum<TEnum>(this Random random)
+            where TEnum : struct, Enum
+        {
+            TEnum[] values = EnumExtensions.EnumMap<TEnum>.Map;
+
+            return values[random.Next(values.Length)];
+        }
+
+        /// <summary>
+        ///     Returns a random <see cref="short"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        /// <returns>A random <see cref="short"/> between 0 and <paramref name="maxValue"/>.</returns>
+        public static short NextInt16(this Random random, short maxValue = short.MaxValue) => (short)(maxValue * random.NextDouble());
+
+        /// <summary>
+        ///     Returns a random <see cref="short"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">
+        ///     The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        /// </param>
+        /// <returns>A random <see cref="short"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        public static short NextInt16(this Random random, short minValue, short maxValue) =>
+            (short)(((maxValue - minValue) * random.NextDouble()) + minValue);
+
+        /// <summary>
         ///     Returns a random <see cref="long"/> within a specified range.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
@@ -196,26 +216,6 @@ namespace X10D.Performant
             (sbyte)(((maxValue - minValue) * random.NextDouble()) + minValue);
 
         /// <summary>
-        ///     Returns a random <see cref="short"/> within a specified range.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
-        /// <returns>A random <see cref="short"/> between 0 and <paramref name="maxValue"/>.</returns>
-        public static short NextInt16(this Random random, short maxValue = short.MaxValue) => (short)(maxValue * random.NextDouble());
-
-        /// <summary>
-        ///     Returns a random <see cref="short"/> within a specified range.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
-        /// <param name="maxValue">
-        ///     The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
-        /// </param>
-        /// <returns>A random <see cref="short"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
-        public static short NextInt16(this Random random, short minValue, short maxValue) =>
-            (short)(((maxValue - minValue) * random.NextDouble()) + minValue);
-
-        /// <summary>
         ///     Returns a random <see cref="float"/> between 0 and <paramref name="maxValue"/>.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
@@ -236,6 +236,26 @@ namespace X10D.Performant
         /// <returns>A random <see cref="float"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
         public static float NextSingle(this Random random, float minValue, float maxValue) =>
             ((maxValue - minValue) * (float)random.NextDouble()) + minValue;
+
+        /// <summary>
+        ///     Returns a random <see cref="ushort"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        /// <returns>A random <see cref="ushort"/> between 0 and <paramref name="maxValue"/>.</returns>
+        public static ushort NextUInt16(this Random random, ushort maxValue = ushort.MaxValue) => (ushort)(random.NextDouble() * maxValue);
+
+        /// <summary>
+        ///     Returns a random <see cref="ushort"/> within a specified range.
+        /// </summary>
+        /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">
+        ///     The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        /// </param>
+        /// <returns>A random <see cref="ushort"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        public static ushort NextUInt16(this Random random, ushort minValue, ushort maxValue) =>
+            (ushort)(((maxValue - minValue) * random.NextDouble()) + minValue);
 
         /// <summary>
         ///     Returns a random <see cref="uint"/> within a specified range.
@@ -289,25 +309,5 @@ namespace X10D.Performant
 
             return (ulong)(((maxValue - minValue) * value) + minValue);
         }
-
-        /// <summary>
-        ///     Returns a random <see cref="ushort"/> within a specified range.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
-        /// <returns>A random <see cref="ushort"/> between 0 and <paramref name="maxValue"/>.</returns>
-        public static ushort NextUInt16(this Random random, ushort maxValue = ushort.MaxValue) => (ushort)(random.NextDouble() * maxValue);
-
-        /// <summary>
-        ///     Returns a random <see cref="ushort"/> within a specified range.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
-        /// <param name="maxValue">
-        ///     The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
-        /// </param>
-        /// <returns>A random <see cref="ushort"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
-        public static ushort NextUInt16(this Random random, ushort minValue, ushort maxValue) =>
-            (ushort)(((maxValue - minValue) * random.NextDouble()) + minValue);
     }
 }

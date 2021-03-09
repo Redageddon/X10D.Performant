@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
 {
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public static partial class EquatableExtensions
     {

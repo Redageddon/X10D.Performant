@@ -1,4 +1,3 @@
-using System;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core
@@ -36,7 +35,6 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual('A', 'z'.GetNextLetter(-25, isUpper: true));
             Assert.AreEqual('Z', 'z'.GetNextLetter(-26, true, true));
             Assert.AreEqual('Y', 'z'.GetNextLetter(-27, true, true));
-            Assert.Throws<ArgumentException>(() => '1'.GetNextLetter());
         }
 
         /// <summary>

@@ -1,4 +1,7 @@
-﻿using System;
+// This class is auto generated and will be overridden if any changes are made.
+// To make edits to this class edit the X10D.Generator project.
+
+using System;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant
@@ -81,79 +84,25 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="NAndEquals{T}(T,T[])"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool NAndEquals<T>(this T value,
-                                         T arg1,
-                                         T arg2,
-                                         T arg3,
-                                         T arg4,
-                                         T arg5,
-                                         T arg6,
-                                         T arg7,
-                                         T arg8,
-                                         T arg9,
-                                         T arg10,
-                                         T arg11,
-                                         T arg12)
+        public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11, T arg12)
             where T : IEquatable<T> =>
             !(value.NAndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) && value.Equals(arg12));
 
         /// <inheritdoc cref="NAndEquals{T}(T,T[])"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool NAndEquals<T>(this T value,
-                                         T arg1,
-                                         T arg2,
-                                         T arg3,
-                                         T arg4,
-                                         T arg5,
-                                         T arg6,
-                                         T arg7,
-                                         T arg8,
-                                         T arg9,
-                                         T arg10,
-                                         T arg11,
-                                         T arg12,
-                                         T arg13)
+        public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11, T arg12, T arg13)
             where T : IEquatable<T> =>
             !(value.NAndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12) && value.Equals(arg13));
 
         /// <inheritdoc cref="NAndEquals{T}(T,T[])"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool NAndEquals<T>(this T value,
-                                         T arg1,
-                                         T arg2,
-                                         T arg3,
-                                         T arg4,
-                                         T arg5,
-                                         T arg6,
-                                         T arg7,
-                                         T arg8,
-                                         T arg9,
-                                         T arg10,
-                                         T arg11,
-                                         T arg12,
-                                         T arg13,
-                                         T arg14)
+        public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11, T arg12, T arg13, T arg14)
             where T : IEquatable<T> =>
             !(value.NAndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) && value.Equals(arg14));
 
         /// <inheritdoc cref="NAndEquals{T}(T,T[])"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool NAndEquals<T>(this T value,
-                                         T arg1,
-                                         T arg2,
-                                         T arg3,
-                                         T arg4,
-                                         T arg5,
-                                         T arg6,
-                                         T arg7,
-                                         T arg8,
-                                         T arg9,
-                                         T arg10,
-                                         T arg11,
-                                         T arg12,
-                                         T arg13,
-                                         T arg14,
-                                         T arg15)
+        public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11, T arg12, T arg13, T arg14, T arg15)
             where T : IEquatable<T> =>
             !(value.NAndEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14) && value.Equals(arg15));
     }

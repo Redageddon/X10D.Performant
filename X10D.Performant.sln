@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X10D.Performant", "X10D.Per
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X10D.Performant.Tests", "X10D.Performant.Tests\X10D.Performant.Tests.csproj", "{DF228EA2-D8EC-4A40-8917-E1E62E3B7D8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X10D.Generator", "X10D.Generator\X10D.Generator.csproj", "{5010317B-9DCF-4CD3-83B9-9BE77DE3F8F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DF228EA2-D8EC-4A40-8917-E1E62E3B7D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF228EA2-D8EC-4A40-8917-E1E62E3B7D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF228EA2-D8EC-4A40-8917-E1E62E3B7D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5010317B-9DCF-4CD3-83B9-9BE77DE3F8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5010317B-9DCF-4CD3-83B9-9BE77DE3F8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5010317B-9DCF-4CD3-83B9-9BE77DE3F8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5010317B-9DCF-4CD3-83B9-9BE77DE3F8F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

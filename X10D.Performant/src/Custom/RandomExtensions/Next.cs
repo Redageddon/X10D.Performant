@@ -222,7 +222,7 @@ namespace X10D.Performant
         /// <param name="maxValue">
         ///     The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.
         /// </param>
-        /// <returns>A random <see cref="float"/> between 0 and <see cref="maxValue"/>.</returns>
+        /// <returns>A random <see cref="float"/> between 0 and <paramref name="maxValue"/>.</returns>
         public static float NextSingle(this Random random, float maxValue = 1F) => maxValue * (float)random.NextDouble();
 
         /// <summary>

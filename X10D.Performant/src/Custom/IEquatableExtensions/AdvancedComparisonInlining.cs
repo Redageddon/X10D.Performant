@@ -59,7 +59,6 @@ namespace X10D.Performant
             public bool Execute(bool left, bool right) => left ^ right;
         }
 
-        [SuppressMessage("ReSharper", "InconsistentNaming")]
         private struct XNOr : IOperable
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

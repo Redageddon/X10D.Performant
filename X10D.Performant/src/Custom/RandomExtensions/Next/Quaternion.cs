@@ -9,7 +9,7 @@ namespace X10D.Performant
         ///     Returns a new random <see cref="Quaternion"/> with supplied ranges.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
+        /// <param name="ensureOneNextCall">If <see langword="true"/> <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
         /// <param name="xMin">The inclusive lower bound of <see cref="Quaternion.X"/>.</param>
         /// <param name="xMax">The exclusive upper bound of <see cref="Quaternion.X"/>.</param>
         /// <param name="yMin">The inclusive lower bound of <see cref="Quaternion.Y"/>.</param>

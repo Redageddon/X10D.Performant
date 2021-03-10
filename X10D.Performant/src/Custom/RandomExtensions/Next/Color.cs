@@ -17,7 +17,7 @@ namespace X10D.Performant
         /// <param name="maxSaturation">The highest saturation value to randomize.</param>
         /// <param name="minBrightness">The lowest brightness value to randomize.</param>
         /// <param name="maxBrightness">The highest brightness value to randomize.</param>
-        /// <returns>A new random color with the supplied ahsv values.</returns>
+        /// <returns>A new <see cref="Color"/> with the supplied ahsb values.</returns>
         public static Color NextColorAhsb(this Random random,
                                           byte minAlpha = byte.MinValue,
                                           byte maxAlpha = byte.MaxValue,
@@ -48,7 +48,7 @@ namespace X10D.Performant
         /// <param name="maxGreen">The highest green value to randomize.</param>
         /// <param name="minBlue">The lowest blue value to randomize.</param>
         /// <param name="maxBlue">The highest blue value to randomize.</param>
-        /// <returns>A new random color with the supplied argb values.</returns>
+        /// <returns>A new <see cref="Color"/> with the supplied argb values.</returns>
         public static Color NextColorArgb(this Random random,
                                           byte minAlpha = byte.MinValue,
                                           byte maxAlpha = byte.MaxValue,

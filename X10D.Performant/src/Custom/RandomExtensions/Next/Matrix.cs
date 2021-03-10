@@ -6,10 +6,12 @@ namespace X10D.Performant
     public static partial class RandomExtensions
     {
         /// <summary>
-        ///     Returns a new random <see cref="Matrix3x2"/>.
+        ///     Creates a new random <see cref="Matrix3x2"/> with supplied values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If <see langword="true"/> <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
+        /// <param name="ensureOneNextCall">
+        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        /// </param>
         /// <param name="m11Min">The inclusive lower bound of <see cref="Matrix3x2.M11"/>.</param>
         /// <param name="m11Max">The exclusive upper bound of <see cref="Matrix3x2.M11"/>.</param>
         /// <param name="m12Min">The inclusive lower bound of <see cref="Matrix3x2.M12"/>.</param>
@@ -23,7 +25,7 @@ namespace X10D.Performant
         /// <param name="m32Min">The inclusive lower bound of <see cref="Matrix3x2.M32"/>.</param>
         /// <param name="m32Max">The exclusive upper bound of <see cref="Matrix3x2.M32"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Matrix3x2"/> with
+        ///     A new <see cref="Matrix3x2"/> with
         ///     <see cref="Matrix3x2.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
         ///     <see cref="Matrix3x2.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
         ///     <see cref="Matrix3x2.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
@@ -67,7 +69,7 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Returns a new random <see cref="Matrix3x2"/>.
+        ///     Creates a new random <see cref="Matrix3x2"/> with supplied values.
         /// </summary>
         /// <param name="randomM11">The <see cref="System.Random"/> instance that determines the <see cref="Matrix3x2.M11"/> value.</param>
         /// <param name="randomM12">The <see cref="System.Random"/> instance that determines the <see cref="Matrix3x2.M12"/> value.</param>
@@ -88,7 +90,7 @@ namespace X10D.Performant
         /// <param name="m32Min">The inclusive lower bound of <see cref="Matrix3x2.M32"/>.</param>
         /// <param name="m32Max">The exclusive upper bound of <see cref="Matrix3x2.M32"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Matrix3x2"/> with
+        ///     A new <see cref="Matrix3x2"/> with
         ///     <see cref="Matrix3x2.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
         ///     <see cref="Matrix3x2.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
         ///     <see cref="Matrix3x2.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
@@ -128,10 +130,12 @@ namespace X10D.Performant
                 randomM32.NextSingle(m32Min, m32Max));
 
         /// <summary>
-        ///     Returns a new random <see cref="Matrix4x4"/>.
+        ///     Creates a new random <see cref="Matrix4x4"/> with supplied values..
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If <see langword="true"/> <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
+        /// <param name="ensureOneNextCall">
+        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        /// </param>
         /// <param name="m11Min">The inclusive lower bound of <see cref="Matrix4x4.M11"/>.</param>
         /// <param name="m11Max">The exclusive upper bound of <see cref="Matrix4x4.M11"/>.</param>
         /// <param name="m12Min">The inclusive lower bound of <see cref="Matrix4x4.M12"/>.</param>
@@ -165,7 +169,7 @@ namespace X10D.Performant
         /// <param name="m44Min">The inclusive lower bound of <see cref="Matrix4x4.M44"/>.</param>
         /// <param name="m44Max">The exclusive upper bound of <see cref="Matrix4x4.M44"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Matrix3x2"/> with
+        ///     A new <see cref="Matrix3x2"/> with
         ///     <see cref="Matrix4x4.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
         ///     <see cref="Matrix4x4.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
         ///     <see cref="Matrix4x4.M13"/> between <paramref name="m13Min"/> and <paramref name="m13Min"/>,
@@ -259,7 +263,7 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Returns a new random <see cref="Matrix4x4"/>.
+        ///     Creates a new random <see cref="Matrix4x4"/> with supplied values.
         /// </summary>
         /// <param name="randomM11">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M11"/> value.</param>
         /// <param name="randomM12">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M12"/> value.</param>
@@ -310,7 +314,7 @@ namespace X10D.Performant
         /// <param name="m44Min">The inclusive lower bound of <see cref="Matrix4x4.M44"/>.</param>
         /// <param name="m44Max">The exclusive upper bound of <see cref="Matrix4x4.M44"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Matrix3x2"/> with
+        ///     A new <see cref="Matrix3x2"/> with
         ///     <see cref="Matrix4x4.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
         ///     <see cref="Matrix4x4.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
         ///     <see cref="Matrix4x4.M13"/> between <paramref name="m13Min"/> and <paramref name="m13Min"/>,

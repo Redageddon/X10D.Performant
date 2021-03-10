@@ -6,16 +6,18 @@ namespace X10D.Performant
     public static partial class RandomExtensions
     {
         /// <summary>
-        ///     Returns a new random <see cref="Vector2"/> with supplied ranges.
+        ///     Creates a new random <see cref="Vector2"/> with supplied values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
+        /// <param name="ensureOneNextCall">
+        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        /// </param>
         /// <param name="xMin">The inclusive lower bound of <see cref="Vector2.X"/>.</param>
         /// <param name="xMax">The exclusive upper bound of <see cref="Vector2.X"/>.</param>
         /// <param name="yMin">The inclusive lower bound of <see cref="Vector2.Y"/>.</param>
         /// <param name="yMax">The exclusive upper bound of <see cref="Vector2.Y"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Vector2"/> with
+        ///     A new <see cref="Vector2"/> with
         ///     <see cref="Vector2.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/> and
         ///     <see cref="Vector2.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>.
         /// </returns>
@@ -38,7 +40,7 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Returns a new random <see cref="Vector2"/> with supplied ranges.
+        ///     Creates a new random <see cref="Vector2"/> with supplied values.
         /// </summary>
         /// <param name="randomX">The <see cref="System.Random"/> instance that determines the <see cref="Vector2.X"/> value.</param>
         /// <param name="randomY">The <see cref="System.Random"/> instance that determines the <see cref="Vector2.Y"/> value.</param>
@@ -47,7 +49,7 @@ namespace X10D.Performant
         /// <param name="yMin">The inclusive lower bound of <see cref="Vector2.Y"/>.</param>
         /// <param name="yMax">The exclusive upper bound of <see cref="Vector2.Y"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Vector2"/> with
+        ///     A new <see cref="Vector2"/> with
         ///     <see cref="Vector2.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/> and
         ///     <see cref="Vector2.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/> with
         ///     <see cref="Vector2.X"/> chosen by <paramref name="randomX"/> and
@@ -62,10 +64,12 @@ namespace X10D.Performant
             new(randomX.NextSingle(xMin, xMax), randomY.NextSingle(yMin, yMax));
 
         /// <summary>
-        ///     Returns a new random <see cref="Vector3"/> with supplied ranges.
+        ///     Creates a new random <see cref="Vector3"/> with supplied values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
+        /// <param name="ensureOneNextCall">
+        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        /// </param>
         /// <param name="xMin">The inclusive lower bound of <see cref="Vector3.X"/>.</param>
         /// <param name="xMax">The exclusive upper bound of <see cref="Vector3.X"/>.</param>
         /// <param name="yMin">The inclusive lower bound of <see cref="Vector3.Y"/>.</param>
@@ -73,7 +77,7 @@ namespace X10D.Performant
         /// <param name="zMin">The inclusive lower bound of <see cref="Vector3.Z"/>.</param>
         /// <param name="zMax">The exclusive upper bound of <see cref="Vector3.Z"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Vector3"/> with
+        ///     A new <see cref="Vector3"/> with
         ///     <see cref="Vector3.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
         ///     <see cref="Vector3.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>, and
         ///     <see cref="Vector3.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>.
@@ -102,7 +106,7 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Returns a new random <see cref="Vector3"/> with supplied ranges.
+        ///     Creates a new random <see cref="Vector3"/> with supplied values.
         /// </summary>
         /// <param name="randomX">The <see cref="System.Random"/> instance that determines the <see cref="Vector3.X"/> value.</param>
         /// <param name="randomY">The <see cref="System.Random"/> instance that determines the <see cref="Vector3.Y"/> value.</param>
@@ -114,7 +118,7 @@ namespace X10D.Performant
         /// <param name="zMin">The inclusive lower bound of <see cref="Vector4.Z"/>.</param>
         /// <param name="zMax">The exclusive upper bound of <see cref="Vector4.Z"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Vector3"/> with
+        ///     A new <see cref="Vector3"/> with
         ///     <see cref="Vector3.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
         ///     <see cref="Vector3.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>, and
         ///     <see cref="Vector3.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/> with
@@ -136,10 +140,12 @@ namespace X10D.Performant
                 randomZ.NextSingle(zMin, zMax));
 
         /// <summary>
-        ///     Returns a new random <see cref="Vector4"/> with supplied ranges.
+        ///     Creates a new random <see cref="Vector4"/> with supplied values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
+        /// <param name="ensureOneNextCall">
+        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        /// </param>
         /// <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
         /// <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
         /// <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>
@@ -149,7 +155,7 @@ namespace X10D.Performant
         /// <param name="wMin">The inclusive lower bound of <see cref="Vector4.W"/>.</param>
         /// <param name="wMax">The exclusive upper bound of <see cref="Vector4.W"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Vector4"/> with
+        ///     A new <see cref="Vector4"/> with
         ///     <see cref="Vector4.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
         ///     <see cref="Vector4.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
         ///     <see cref="Vector4.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
@@ -183,7 +189,7 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Returns a new random <see cref="Vector4"/> with supplied ranges.
+        ///     Creates a new random <see cref="Vector4"/> with supplied values.
         /// </summary>
         /// <param name="randomX">The <see cref="System.Random"/> instance that determines the <see cref="Vector4.X"/> value.</param>
         /// <param name="randomY">The <see cref="System.Random"/> instance that determines the <see cref="Vector4.Y"/> value.</param>
@@ -198,7 +204,7 @@ namespace X10D.Performant
         /// <param name="wMin">The inclusive lower bound of <see cref="Vector4.W"/>.</param>
         /// <param name="wMax">The exclusive upper bound of <see cref="Vector4.W"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Vector4"/> with
+        ///     A new <see cref="Vector4"/> with
         ///     <see cref="Vector4.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
         ///     <see cref="Vector4.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
         ///     <see cref="Vector4.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and

@@ -6,10 +6,12 @@ namespace X10D.Performant
     public static partial class RandomExtensions
     {
         /// <summary>
-        ///     Returns a new random <see cref="Plane"/> with supplied ranges.
+        ///     Creates a new random <see cref="Plane"/> with supplied values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
+        /// <param name="ensureOneNextCall">
+        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        /// </param>
         /// <param name="xMin">The inclusive lower bound of the X value of <see cref="Plane.Normal"/>.</param>
         /// <param name="xMax">The exclusive upper bound of the X value of <see cref="Plane.Normal"/>.</param>
         /// <param name="yMin">The inclusive lower bound of the Y value of <see cref="Plane.Normal"/>.</param>
@@ -19,7 +21,7 @@ namespace X10D.Performant
         /// <param name="dMin">The inclusive lower bound of <see cref="Plane.D"/>.</param>
         /// <param name="dMax">The exclusive upper bound of <see cref="Plane.D"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Plane"/> with
+        ///     A new <see cref="Plane"/> with
         ///     the X value of <see cref="Plane.Normal"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
         ///     the Y value of <see cref="Plane.Normal"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
         ///     the Z value of <see cref="Plane.Normal"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
@@ -53,7 +55,7 @@ namespace X10D.Performant
         }
 
         /// <summary>
-        ///     Returns a new random <see cref="Plane"/> with supplied ranges.
+        ///     Creates a new random <see cref="Plane"/> with supplied values.
         /// </summary>
         /// <param name="randomX">The <see cref="System.Random"/> instance that determines X for the <see cref="Plane.Normal"/> value.</param>
         /// <param name="randomY">The <see cref="System.Random"/> instance that determines Y for the <see cref="Plane.Normal"/> value.</param>
@@ -68,7 +70,7 @@ namespace X10D.Performant
         /// <param name="dMin">The inclusive lower bound of <see cref="Plane.D"/>.</param>
         /// <param name="dMax">The exclusive upper bound of <see cref="Plane.D"/>.</param>
         /// <returns>
-        ///     A new random <see cref="Plane"/> with
+        ///     A new <see cref="Plane"/> with
         ///     the X value of <see cref="Plane.Normal"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
         ///     the Y value of <see cref="Plane.Normal"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
         ///     the Z value of <see cref="Plane.Normal"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and

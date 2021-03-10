@@ -8,7 +8,7 @@ Below is a list of the number of extension methods written for a given type.
 
 | Type                | Library                                                                                                                                                            | Method count |
 | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------: |
-| ALL                 | `X10D.Performant`                                                                                                                                                  | 644          |
+| ALL                 | `X10D.Performant`                                                                                                                                                  | 650          |
 | `Array`             | [X10D.Performant.ArrayExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/ArrayExtensions)                         | 25           |
 | `bool`              | [X10D.Performant.BooleanExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/BooleanExtensions)                        | 14           |
 | `byte`              | [X10D.Performant.ByteExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/ByteExtensions)            | 31           |      
@@ -32,7 +32,7 @@ Below is a list of the number of extension methods written for a given type.
 | `long`              | [X10D.Performant.LongExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/Int64Extensions)           | 17           |      
 | `MemberInfo`        | [X10D.Performant.MemberInfoExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/MemberInfoExtensions)                  | 4            |
 | `object`            | [X10D.Performant.ObjectExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/ObjectExtensions)                       | 7            |
-| `Random`            | [X10D.Performant.RandomExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/RandomExtensions)                          | 31           |
+| `Random`            | [X10D.Performant.RandomExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/RandomExtensions)                          | 37           |
 | `RuntimeTypeHandle` | [X10D.Performant.RuntimeTypeHandleExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/RuntimeTypeHandleExtensions) | 1            | 
 | `sbyte`             | [X10D.Performant.SByteExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/SByteExtensions)          | 10           |       
 | `SecureString`      | [X10D.Performant.SecureStringExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/SecureStringExtensions)              | 1            |

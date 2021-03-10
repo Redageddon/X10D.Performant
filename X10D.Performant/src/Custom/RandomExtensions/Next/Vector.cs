@@ -9,7 +9,7 @@ namespace X10D.Performant
         ///     Returns a new random <see cref="Vector2"/> with supplied ranges.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has next called once.</param>
+        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
         /// <param name="xMin">The inclusive lower bound of <see cref="Vector2.X"/>.</param>
         /// <param name="xMax">The exclusive upper bound of <see cref="Vector2.X"/>.</param>
         /// <param name="yMin">The inclusive lower bound of <see cref="Vector2.Y"/>.</param>
@@ -65,7 +65,7 @@ namespace X10D.Performant
         ///     Returns a new random <see cref="Vector3"/> with supplied ranges.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has next called once.</param>
+        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
         /// <param name="xMin">The inclusive lower bound of <see cref="Vector3.X"/>.</param>
         /// <param name="xMax">The exclusive upper bound of <see cref="Vector3.X"/>.</param>
         /// <param name="yMin">The inclusive lower bound of <see cref="Vector3.Y"/>.</param>
@@ -139,7 +139,7 @@ namespace X10D.Performant
         ///     Returns a new random <see cref="Vector4"/> with supplied ranges.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has next called once.</param>
+        /// <param name="ensureOneNextCall">If true <paramref name="random"/> only has <see cref="System.Random.Next()"/> called once.</param>
         /// <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
         /// <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
         /// <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>

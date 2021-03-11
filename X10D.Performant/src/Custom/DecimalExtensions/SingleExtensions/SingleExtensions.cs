@@ -19,8 +19,5 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="DoubleExtensions.IsOdd"/>
         public static bool IsOdd(this float value) => value % 2F != 0F;
-
-        /// <inheritdoc cref="DoubleExtensions.Lerp"/>
-        public static float Lerp(this float alpha, float firstValue, float secondValue) => (firstValue * (1 - alpha)) + (secondValue * alpha);
     }
 }

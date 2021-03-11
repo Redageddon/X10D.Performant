@@ -8,7 +8,7 @@ Below is a list of the number of extension methods written for a given type.
 
 | Type                | Library                                                                                                                                                            | Method count |
 | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------: |
-| ALL                 | `X10D.Performant`                                                                                                                                                  | 665          |
+| ALL                 | `X10D.Performant`                                                                                                                                                  | 666          |
 | `Array`             | [X10D.Performant.ArrayExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/ArrayExtensions)                         | 25           |
 | `bool`              | [X10D.Performant.BooleanExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/BooleanExtensions)                        | 14           |
 | `byte`              | [X10D.Performant.ByteExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/ByteExtensions)            | 31           |
@@ -44,6 +44,7 @@ Below is a list of the number of extension methods written for a given type.
 | `uint`              | [X10D.Performant.UIntExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/UInt32Extensions)          | 10           |
 | `ulong`             | [X10D.Performant.ULongExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/UInt64Extensions)         | 11           |
 | `ushort`            | [X10D.Performant.UShortExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/IntegerExtensions/UInt16Extensions)        | 9            |
+| `Vecto2`            | [X10D.Performant.Vector2Extensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/Custom/VectorExtensions)                         | 1            |
 | `WaitHandle`        | [X10D.Performant.WaitHandleExtensions](https://github.com/Redageddon/X10D.Performant/tree/Master/X10D.Performant/src/ReExposed/WaitHandleExtensions)               | 6            |
 
 

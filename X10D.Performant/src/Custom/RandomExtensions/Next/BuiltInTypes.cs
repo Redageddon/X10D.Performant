@@ -43,7 +43,7 @@ namespace X10D.Performant
         /// </param>
         /// <returns>A random <see cref="char"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
         /// <remarks>Although the input is a <see cref="char"/> it is treated as an int, which is something that should be kept in mind.</remarks>
-        public static char NextChar(this Random random, char minValue = 'a', char maxValue = 'z') => (char)random.Next(minValue, maxValue + 1);
+        public static char NextChar(this Random random, char minValue = 'a', char maxValue = '{') => (char)random.Next(minValue, maxValue + 1);
 
         /// <summary>
         ///     Returns a random <see cref="double"/> that is within a specified range.

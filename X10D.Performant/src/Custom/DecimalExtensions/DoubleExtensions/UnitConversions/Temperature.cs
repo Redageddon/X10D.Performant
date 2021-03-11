@@ -13,7 +13,7 @@
         ///     Converts <paramref name="celsius"/> to Fahrenheit.
         /// </summary>
         /// <param name="celsius">The temperature value measured in celsius.</param>
-        /// <returns>A fahrenheit value from a celsius value.</returns>
+        /// <returns>A celsius value from a fahrenheit value.</returns>
         public static double CelsiusToFahrenheit(this double celsius) => (celsius * 9 / 5) + 32;
     }
 }

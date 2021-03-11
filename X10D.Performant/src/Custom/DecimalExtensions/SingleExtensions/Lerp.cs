@@ -16,5 +16,14 @@
                 >= 1 => secondValue,
                 _    => (firstValue * (1 - alpha)) + (secondValue * alpha),
             };
+
+        /// <inheritdoc cref="ClampedLerp"/>
+        public static double ClampedLerpTo(this double firstValue, double secondValue, double alpha) =>
+            alpha switch
+            {
+                <= 0 => firstValue,
+                >= 1 => secondValue,
+                _    => (firstValue * (1 - alpha)) + (secondValue * alpha),
+            };
     }
 }

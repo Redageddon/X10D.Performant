@@ -22,5 +22,12 @@
         /// <param name="celsius">The temperature value measured in celsius.</param>
         /// <returns>A celsius value from a fahrenheit value.</returns>
         public static double CelsiusToFahrenheit(this double celsius) => (celsius * 9 / 5) + 32;
+
+        /// <summary>
+        ///     Converts <paramref name="celsius"/> to Kelvin.
+        /// </summary>
+        /// <param name="celsius">The temperature value measured in celsius.</param>
+        /// <returns>A Kelvin value from a celsius value.</returns>
+        public static double CelsiusToKelvin(this double celsius) => celsius + 273.15;
     }
 }

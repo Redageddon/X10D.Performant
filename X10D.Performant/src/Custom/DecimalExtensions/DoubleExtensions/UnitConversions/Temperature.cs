@@ -10,6 +10,13 @@
         public static double FahrenheitToCelsius(this double fahrenheit) => (fahrenheit - 32) * 5 / 9;
 
         /// <summary>
+        ///     Converts <paramref name="fahrenheit"/> to Kelvin.
+        /// </summary>
+        /// <param name="fahrenheit">The temperature value measured in fahrenheit.</param>
+        /// <returns>A kelvin value from a fahrenheit value.</returns>
+        public static double FahrenheitToKelvin(this double fahrenheit) => ((fahrenheit - 32) * 5 / 9) + 273.15;
+
+        /// <summary>
         ///     Converts <paramref name="celsius"/> to Fahrenheit.
         /// </summary>
         /// <param name="celsius">The temperature value measured in celsius.</param>

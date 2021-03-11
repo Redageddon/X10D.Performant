@@ -9,13 +9,13 @@ namespace X10D.Performant
         ///     Creates a new <see cref="DateTime"/> with supplied values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="minTicks">The inclusive upper bound of ticks.</param>
+        /// <param name="maxTicks">The exclusive lower bound of ticks.</param>
         /// <param name="ensureOneNextCall">
         ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
         /// </param>
-        /// <param name="minTicks">The inclusive upper bound of ticks.</param>
-        /// <param name="maxTicks">The exclusive lower bound of ticks.</param>
         /// <returns>A new <see cref="DateTime"/>.</returns>
-        public static DateTime NextDateTime(this Random random, bool ensureOneNextCall = false, long minTicks = 0, long maxTicks = long.MaxValue)
+        public static DateTime NextDateTime(this Random random, long minTicks, long maxTicks, bool ensureOneNextCall = false)
         {
             if (ensureOneNextCall)
             {
@@ -31,12 +31,12 @@ namespace X10D.Performant
         ///     Creates a new <see cref="DateTime"/> with supplied values.
         /// </summary>
         /// <param name="random">The <see cref="System.Random"/> instance.</param>
+        /// <param name="maxTicks">The exclusive lower bound of ticks.</param>
         /// <param name="ensureOneNextCall">
         ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
         /// </param>
-        /// <param name="maxTicks">The exclusive lower bound of ticks.</param>
         /// <returns>A new <see cref="DateTime"/>.</returns>
-        public static DateTime NextDateTime(this Random random, bool ensureOneNextCall = false, long maxTicks = long.MaxValue)
+        public static DateTime NextDateTime(this Random random, long maxTicks, bool ensureOneNextCall = false)
         {
             if (ensureOneNextCall)
             {

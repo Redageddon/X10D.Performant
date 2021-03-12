@@ -1,8 +1,11 @@
-﻿namespace X10D.Performant
+﻿using System.Runtime.CompilerServices;
+
+namespace X10D.Performant
 {
     public static partial class ByteExtensions
     {
         /// <inheritdoc cref="Int64Extensions.IsPrime"/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPrime(this byte value)
         {
             switch (value)

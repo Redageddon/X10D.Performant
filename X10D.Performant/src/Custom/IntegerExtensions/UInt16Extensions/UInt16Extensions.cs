@@ -6,7 +6,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="ushort"/>.
     /// </summary>
-    public static class UInt16Extensions
+    public static partial class UInt16Extensions
     {
         /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this ushort timestamp, bool isMilliseconds = false) =>
@@ -17,9 +17,6 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="UInt64Extensions.IsOdd"/>
         public static bool IsOdd(this ushort value) => (value & 1) != 0;
-
-        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
-        public static bool IsPrime(this ushort value) => UInt64Extensions.IsPrime(value);
 
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

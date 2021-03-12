@@ -6,7 +6,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="short"/>.
     /// </summary>
-    public static class Int16Extensions
+    public static partial class Int16Extensions
     {
         /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this short timestamp, bool isMilliseconds = false) =>
@@ -17,9 +17,6 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="Int64Extensions.IsOdd"/>
         public static bool IsOdd(this short value) => (value & 1) == 1;
-
-        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
-        public static bool IsPrime(this short value) => value >= 0 && ((ulong)value).IsPrime();
 
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

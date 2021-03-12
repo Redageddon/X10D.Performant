@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
@@ -22,8 +23,9 @@ namespace X10D.Performant
         ///     Determines if the <paramref name="value"/> is a prime value.
         /// </summary>
         /// <param name="value">An integer value.</param>
+        /// <param name="useCache">Gives the user the ability to use cache of type <see cref="HashSet{T}"/>.</param>
         /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
-        public static bool IsPrime(this ulong value)
+        public static bool IsPrime(this ulong value, bool useCache = false)
         {
             switch (value)
             {

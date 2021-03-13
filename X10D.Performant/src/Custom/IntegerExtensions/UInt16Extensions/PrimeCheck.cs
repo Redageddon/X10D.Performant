@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using X10D.Performant.ByteExtensions;
+using X10D.Performant.UInt64Extensions;
 
-namespace X10D.Performant
+namespace X10D.Performant.UInt16Extensions
 {
     public static partial class UInt16Extensions
     {

@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using X10D.Performant.SingleExtensions;
 
 namespace X10D.Performant.VectorExtensions
 {

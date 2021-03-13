@@ -1,14 +1,15 @@
 ﻿using NUnit.Framework;
+using X10D.Performant.IEquatableExtensions;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="EquatableExtensions"/>.
+    ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions"/>.
     /// </summary>
     public class EquatableTests
     {
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.AndEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.AndEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void AndEquals()
@@ -32,7 +33,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.AndEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.AndEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void AndEqualsComparison()
@@ -56,7 +57,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.NAndEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.NAndEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void NAndEquals()
@@ -80,7 +81,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.NAndEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.NAndEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void NAndEqualsComparison()
@@ -104,7 +105,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.NOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.NOrEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void NOrEquals()
@@ -128,7 +129,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.NOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.NOrEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void NOrEqualsComparison()
@@ -152,7 +153,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.OrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.OrEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void OrEquals()
@@ -176,7 +177,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.OrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.OrEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void OrEqualsComparison()
@@ -200,7 +201,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.XNOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.XNOrEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void XnOrEquals()
@@ -224,7 +225,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.XNOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.XNOrEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void XnOrEqualsComparison()
@@ -248,7 +249,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.XOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.XOrEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void XOrEquals()
@@ -272,7 +273,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EquatableExtensions.XOrEquals{T}(T,T,T)"/>.
+        ///     Tests for <see cref="IEquatableExtensions.EquatableExtensions.XOrEquals{T}(T,T,T)"/>.
         /// </summary>
         [Test]
         public void XOrEqualsComparison()

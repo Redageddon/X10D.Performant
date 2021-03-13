@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using NUnit.Framework;
+using X10D.Performant.Int64Extensions;
+using X10D.Performant.UInt64Extensions;
 
 namespace X10D.Performant.Tests.Core
 {

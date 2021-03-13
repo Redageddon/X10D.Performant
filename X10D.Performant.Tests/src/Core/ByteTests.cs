@@ -2,6 +2,8 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using NUnit.Framework;
+using X10D.Performant.ByteExtensions;
+using X10D.Performant.SByteExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

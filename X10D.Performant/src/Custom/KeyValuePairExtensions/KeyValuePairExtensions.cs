@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Web;
 
-namespace X10D.Performant
+namespace X10D.Performant.KeyValuePairExtensions
 {
     /// <summary>
     ///     A set of extension methods for <see cref="KeyValuePair{TKey,TValue}"/>.

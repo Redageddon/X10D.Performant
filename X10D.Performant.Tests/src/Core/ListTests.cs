@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using X10D.Performant.IListExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

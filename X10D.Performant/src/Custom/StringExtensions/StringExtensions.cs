@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security;
+using X10D.Performant.SpanExtensions;
 
-namespace X10D.Performant
+namespace X10D.Performant.StringExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="string"/>.

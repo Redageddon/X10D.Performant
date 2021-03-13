@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
+using X10D.Performant.GenericExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

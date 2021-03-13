@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 
-namespace X10D.Performant
+namespace X10D.Performant.StreamExtensions
 {
     public static partial class StreamExtensions
     {

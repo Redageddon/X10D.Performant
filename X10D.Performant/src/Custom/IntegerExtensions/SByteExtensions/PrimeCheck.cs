@@ -1,4 +1,6 @@
-﻿namespace X10D.Performant
+﻿using X10D.Performant.UInt64Extensions;
+
+namespace X10D.Performant.SByteExtensions
 {
     public static partial class SByteExtensions
     {

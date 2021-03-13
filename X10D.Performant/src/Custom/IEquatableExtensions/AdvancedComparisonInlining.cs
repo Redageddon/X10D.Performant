@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace X10D.Performant
+namespace X10D.Performant.IEquatableExtensions
 {
     /// <summary>
     ///     The class responsible for generic value comparisons

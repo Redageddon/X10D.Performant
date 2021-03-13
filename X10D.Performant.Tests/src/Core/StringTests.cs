@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
+using X10D.Performant.StringExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

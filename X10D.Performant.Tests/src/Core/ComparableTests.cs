@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using X10D.Performant.IComparableExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

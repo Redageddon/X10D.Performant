@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using NUnit.Framework;
+using X10D.Performant.IEnumerableExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

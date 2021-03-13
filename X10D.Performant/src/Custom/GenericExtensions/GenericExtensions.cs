@@ -1,4 +1,4 @@
-﻿namespace X10D.Performant
+﻿namespace X10D.Performant.GenericExtensions
 {
     /// <summary>
     ///     General generic extension methods.

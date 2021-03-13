@@ -1,4 +1,8 @@
-﻿namespace X10D.Performant
+﻿using X10D.Performant.ByteExtensions;
+using X10D.Performant.Int16Extensions;
+using X10D.Performant.UInt64Extensions;
+
+namespace X10D.Performant.Int32Extensions
 {
     public static partial class Int32Extensions
     {

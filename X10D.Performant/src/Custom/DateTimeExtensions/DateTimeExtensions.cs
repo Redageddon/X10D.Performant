@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant
+namespace X10D.Performant.DateTimeExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="DateTime"/>.

@@ -5,7 +5,7 @@
         private const string StartingChunk = @"using System;
 using System.Runtime.CompilerServices;
 
-namespace X10D.Performant
+namespace X10D.Performant.IEquatableExtensions
 {
     public static partial class EquatableExtensions
     {

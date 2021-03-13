@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace X10D.Performant
+namespace X10D.Performant.RandomExtensions
 {
     public static partial class RandomExtensions
     {

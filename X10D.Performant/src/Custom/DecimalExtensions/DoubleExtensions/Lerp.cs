@@ -1,4 +1,4 @@
-﻿namespace X10D.Performant
+﻿namespace X10D.Performant.DoubleExtensions
 {
     public static partial class DoubleExtensions
     {

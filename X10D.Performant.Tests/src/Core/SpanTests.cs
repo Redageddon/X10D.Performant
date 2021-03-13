@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using X10D.Performant.SpanExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

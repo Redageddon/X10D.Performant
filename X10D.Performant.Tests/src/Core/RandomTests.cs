@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using NUnit.Framework;
+using X10D.Performant.RandomExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

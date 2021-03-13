@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant
+namespace X10D.Performant.SpanExtensions
 {
     public static partial class SpanExtensions
     {
@@ -13,7 +13,7 @@ namespace X10D.Performant
         /// <typeparam name="T">Any type.</typeparam>
         public static void Random<T>(this ReadOnlySpan<T> values, Span<T> buffer, Random? random = null)
         {
-            random ??= RandomExtensions.Random;
+            random ??= RandomExtensions.RandomExtensions.Random;
 
             for (int i = 0; i < buffer.Length; i++)
             {

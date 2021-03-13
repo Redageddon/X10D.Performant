@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant
+namespace X10D.Performant.SpanExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="Span{T}"/>.
@@ -20,7 +20,7 @@ namespace X10D.Performant
         /// <returns>A <see cref="Span{T}"/> containing <paramref name="count"/> amount of <typeparamref name="T"/>.</returns>
         public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null)
         {
-            random ??= RandomExtensions.Random;
+            random ??= RandomExtensions.RandomExtensions.Random;
             Span<T> buffer = new(new T[count]);
 
             for (int i = 0; i < count; i++)
@@ -39,7 +39,7 @@ namespace X10D.Performant
         /// <typeparam name="T">Any type.</typeparam>
         public static void Shuffle<T>(this Span<T> values, Random? random = null)
         {
-            random ??= RandomExtensions.Random;
+            random ??= RandomExtensions.RandomExtensions.Random;
 
             int count = values.Length;
 

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using X10D.Performant.DoubleExtensions;
 
-namespace X10D.Performant
+namespace X10D.Performant.RandomExtensions
 {
     public static partial class RandomExtensions
     {
@@ -33,7 +34,7 @@ namespace X10D.Performant
             float s = (float)random.NextDouble().Lerp(minSaturation, maxSaturation);
             float b = (float)random.NextDouble().Lerp(minBrightness, maxBrightness);
 
-            return ColorExtensions.ColorFromAhsb(a, h, s, b);
+            return ColorExtensions.ColorExtensions.ColorFromAhsb(a, h, s, b);
         }
 
         /// <summary>

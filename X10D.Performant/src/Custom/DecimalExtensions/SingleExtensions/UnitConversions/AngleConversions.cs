@@ -1,6 +1,7 @@
 ﻿using System;
+using X10D.Performant.DoubleExtensions;
 
-namespace X10D.Performant
+namespace X10D.Performant.SingleExtensions
 {
     public static partial class SingleExtensions
     {

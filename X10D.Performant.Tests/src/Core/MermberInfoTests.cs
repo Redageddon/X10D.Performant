@@ -3,16 +3,17 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using NUnit.Framework;
+using X10D.Performant.MemberInfoExtensions;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="MemberInfoExtensions"/>.
+    ///     Tests for <see cref="Performant.MemberInfoExtensions.MemberInfoExtensions"/>.
     /// </summary>
     public class MemberInfoTests
     {
         /// <summary>
-        ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue{T}"/>.
+        ///     Test for <see cref="Performant.MemberInfoExtensions.MemberInfoExtensions.GetDefaultValue{T}"/>.
         /// </summary>
         [Test]
         public void GetDefaultValue()
@@ -24,7 +25,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Test for <see cref="MemberInfoExtensions.GetDefaultValue"/>.
+        ///     Test for <see cref="Performant.MemberInfoExtensions.MemberInfoExtensions.GetDefaultValue"/>.
         /// </summary>
         [Test]
         public void GetDefaultValueObj()
@@ -36,7 +37,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Test for <see cref="MemberInfoExtensions.GetDescription"/>.
+        ///     Test for <see cref="Performant.MemberInfoExtensions.MemberInfoExtensions.GetDescription"/>.
         /// </summary>
         [Test]
         public void GetDescription()
@@ -48,7 +49,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Test for <see cref="MemberInfoExtensions.GetDescription"/>.
+        ///     Test for <see cref="Performant.MemberInfoExtensions.MemberInfoExtensions.GetDescription"/>.
         /// </summary>
         [Test]
         public void SelectFromCustomAttribute()

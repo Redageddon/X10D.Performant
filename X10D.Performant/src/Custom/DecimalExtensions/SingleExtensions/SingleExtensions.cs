@@ -1,6 +1,7 @@
 ﻿using System;
+using X10D.Performant.DoubleExtensions;
 
-namespace X10D.Performant
+namespace X10D.Performant.SingleExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="float"/>.

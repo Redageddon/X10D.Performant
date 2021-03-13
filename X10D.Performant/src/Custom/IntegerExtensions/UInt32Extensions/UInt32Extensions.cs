@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using X10D.Performant.Int64Extensions;
+using X10D.Performant.UInt64Extensions;
 
-namespace X10D.Performant
+namespace X10D.Performant.UInt32Extensions
 {
     /// <summary>
     ///     Extension methods for <see cref="uint"/>.

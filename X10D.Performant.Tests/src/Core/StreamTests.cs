@@ -4,6 +4,8 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using NUnit.Framework;
+using X10D.Performant.StreamExtensions;
+using X10D.Performant.StringExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Security.Cryptography;
 
-namespace X10D.Performant
+namespace X10D.Performant.StreamExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="Stream"/>.

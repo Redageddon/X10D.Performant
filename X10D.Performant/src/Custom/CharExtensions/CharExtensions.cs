@@ -1,6 +1,7 @@
 ﻿using System;
+using X10D.Performant.Int32Extensions;
 
-namespace X10D.Performant
+namespace X10D.Performant.CharExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="char"/>.

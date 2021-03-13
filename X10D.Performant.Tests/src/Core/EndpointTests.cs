@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 using NUnit.Framework;
+using X10D.Performant.EndpointExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

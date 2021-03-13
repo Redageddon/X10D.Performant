@@ -1,4 +1,5 @@
-﻿using X10D.Generator.EquatableExtensionsBuilder;
+﻿using System.Diagnostics.CodeAnalysis;
+using X10D.Generator.EquatableExtensionsBuilder;
 
 namespace X10D.Generator
 {
@@ -11,6 +12,7 @@ namespace X10D.Generator
 
         public const string CustomPath = "../../../../X10D.Performant/src/Custom";
 
+        [SuppressMessage("ReSharper", "UnusedVariable")]
         public static void Main()
         {
             EquatableBuilder equatable = new();

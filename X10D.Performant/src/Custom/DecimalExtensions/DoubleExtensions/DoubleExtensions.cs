@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant
+namespace X10D.Performant.DoubleExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="double"/>.

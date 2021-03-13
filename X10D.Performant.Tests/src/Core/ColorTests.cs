@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using NUnit.Framework;
+using X10D.Performant.ColorExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

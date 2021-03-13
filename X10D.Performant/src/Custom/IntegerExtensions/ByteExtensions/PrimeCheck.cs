@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
+using X10D.Performant.Int64Extensions;
 
-namespace X10D.Performant
+namespace X10D.Performant.ByteExtensions
 {
     public static partial class ByteExtensions
     {

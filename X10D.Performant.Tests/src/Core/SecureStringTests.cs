@@ -1,5 +1,6 @@
 ﻿using System.Security;
 using NUnit.Framework;
+using X10D.Performant.SecureStringExtensions;
 
 namespace X10D.Performant.Tests.Core
 {

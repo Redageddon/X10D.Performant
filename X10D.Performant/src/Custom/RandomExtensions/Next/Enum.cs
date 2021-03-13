@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X10D.Performant
+namespace X10D.Performant.RandomExtensions
 {
     public static partial class RandomExtensions
     {
@@ -15,7 +15,7 @@ namespace X10D.Performant
         public static TEnum NextEnum<TEnum>(this Random random)
             where TEnum : struct, Enum
         {
-            TEnum[] values = EnumExtensions.EnumMap<TEnum>.Map;
+            TEnum[] values = EnumExtensions.EnumExtensions.EnumMap<TEnum>.Map;
 
             return values[random.Next(values.Length)];
         }

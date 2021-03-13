@@ -1,4 +1,6 @@
-﻿namespace X10D.Performant
+﻿using X10D.Performant.DoubleExtensions;
+
+namespace X10D.Performant.SingleExtensions
 {
     public static partial class SingleExtensions
     {

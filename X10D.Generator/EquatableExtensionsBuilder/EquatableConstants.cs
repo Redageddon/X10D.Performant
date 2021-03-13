@@ -1,11 +1,8 @@
-﻿namespace X10D.Generator
+﻿namespace X10D.Generator.EquatableExtensionsBuilder
 {
-    public static partial class Program
+    public partial class EquatableBuilder
     {
-        private const string StartingChunk = @"// This class is auto generated and will be overridden if any changes are made.
-// To make edits to this class edit the X10D.Generator project.
-
-using System;
+        private const string StartingChunk = @"using System;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant

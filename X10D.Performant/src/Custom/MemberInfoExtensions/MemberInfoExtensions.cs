@@ -70,7 +70,7 @@ namespace X10D.Performant.MemberInfoExtensions
         {
             TAttribute? customAttribute = member.GetCustomAttribute<TAttribute>();
 
-            return (object?)customAttribute == null
+            return customAttribute == null
                 ? default
                 : selector(customAttribute);
         }

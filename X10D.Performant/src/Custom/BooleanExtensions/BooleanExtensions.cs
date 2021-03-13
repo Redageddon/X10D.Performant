@@ -1,101 +1,47 @@
-﻿using System;
-
-namespace X10D.Performant.BooleanExtensions
+﻿namespace X10D.Performant.BooleanExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="bool"/>.
     /// </summary>
     public static class BooleanExtensions
     {
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="byte"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToByte"]'/>
         public static byte ToByte(this bool value) => value ? 1 : 0;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="decimal"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToDecimal"]'/>
         public static decimal ToDecimal(this bool value) => value ? 1M : 0M;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="double"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToDouble"]'/>
         public static double ToDouble(this bool value) => value ? 1D : 0D;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="short"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToInt16"]'/>
         public static short ToInt16(this bool value) => value ? 1 : 0;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="int"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToInt32"]'/>
         public static int ToInt32(this bool value) => value ? 1 : 0;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="long"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToInt64"]'/>
         public static long ToInt64(this bool value) => value ? 1L : 0L;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="IntPtr"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToNInt"]'/>
         public static nint ToNInt(this bool value) => value ? 1 : 0;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="UIntPtr"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToUNInt"]'/>
         public static nuint ToNUInt(this bool value) => value ? 1 : 0;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="sbyte"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToSByte"]'/>
         public static sbyte ToSByte(this bool value) => value ? 1 : 0;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="float"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToSingle"]'/>
         public static float ToSingle(this bool value) => value ? 1F : 0F;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="ushort"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToUInt16"]'/>
         public static ushort ToUInt16(this bool value) => value ? 1 : 0;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="uint"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToUInt32"]'/>
         public static uint ToUInt32(this bool value) => value ? 1U : 0U;
 
-        /// <summary>
-        ///     Gets the value of this <see cref="bool"/> as represented by <see cref="ulong"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="bool"/>.</param>
-        /// <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+        /// <include file='BooleanExtensions.xml' path='members/member[@name="ToUInt64"]'/>
         public static ulong ToUInt64(this bool value) => value ? 1UL : 0UL;
     }
 }

@@ -1,0 +1,93 @@
+﻿<members>
+    <member name="ToByte">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="byte"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToDecimal">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="decimal"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToDouble">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="double"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToInt16">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="short"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToInt32">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="int"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToInt64">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="long"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToNInt">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="nint"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToNUInt">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="unint"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToSByte">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="sbyte"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToSingle">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="float"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToUInt16">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="ushort"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToUInt32">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="uint"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+    <member name="ToUInt64">
+        <summary>
+            Gets the value of this <see cref="bool"/> as represented by <see cref="ulong"/>.
+        </summary>
+        <param name="value">A <see cref="bool"/>.</param>
+        <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
+    </member>
+</members>

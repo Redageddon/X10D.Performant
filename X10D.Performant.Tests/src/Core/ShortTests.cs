@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using NUnit.Framework;
 
 namespace X10D.Performant.Tests.Core

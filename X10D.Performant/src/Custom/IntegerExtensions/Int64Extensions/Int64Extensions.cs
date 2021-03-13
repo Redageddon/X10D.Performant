@@ -6,7 +6,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="long"/>.
     /// </summary>
-    public static class Int64Extensions
+    public static partial class Int64Extensions
     {
         /// <summary>
         ///     Converts the <paramref name="timestamp"/> to a <see cref="DateTime"/> treating it as a Unix timestamp.
@@ -38,9 +38,6 @@ namespace X10D.Performant
         /// <param name="value">An integer value.</param>
         /// <returns><see langword="true"/> if <paramref name="value"/> is odd, <see langword="false"/> otherwise.</returns>
         public static bool IsOdd(this long value) => (value & 1L) == 1L;
-
-        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
-        public static bool IsPrime(this long value) => value >= 0L && ((ulong)value).IsPrime();
 
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

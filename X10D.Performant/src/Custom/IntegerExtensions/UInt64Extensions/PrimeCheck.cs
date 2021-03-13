@@ -28,14 +28,31 @@ namespace X10D.Performant
         /// <param name="value">An integer value.</param>
         /// <param name="useCache">Gives the user the ability to use cache of type <see cref="HashSet{T}"/>.</param>
         /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
-        public static bool IsPrime(this ulong value, bool useCache = false) =>
-            value switch
+        public static bool IsPrime(this ulong value, bool useCache = false)
+        {
+            switch (value)
             {
-                < 2               => false,
-                < byte.MaxValue   => ((byte)value).IsPrime(),
-                < ushort.MaxValue => ((ushort)value).IsPrime(useCache),
-                _                 => IsPrimeMiller(value),
-            };
+                case < 2:               return false;
+                case < byte.MaxValue:   return ((byte)value).IsPrime();
+                case < ushort.MaxValue: return ((ushort)value).IsPrime(useCache);
+            }
+
+            if (useCache)
+            {
+                if (IsPrimeMiller(value))
+                {
+                    Primes.Add(value);
+
+                    return true;
+                }
+
+                NonPrimes.Add(value);
+
+                return false;
+            }
+
+            return IsPrimeMiller(value);
+        }
 
         // Miller test is probabilistic, but provided enough of the right parameters it can become deterministic
         private static bool IsPrimeMiller(ulong value) =>

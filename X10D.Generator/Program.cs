@@ -9,6 +9,8 @@ namespace X10D.Generator
 
 ";
 
+        public const string CustomPath = "../../../../X10D.Performant/src/Custom";
+
         public static void Main()
         {
             EquatableBuilder equatable = new();

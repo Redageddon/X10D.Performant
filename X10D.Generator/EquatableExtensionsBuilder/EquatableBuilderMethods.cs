@@ -22,7 +22,7 @@ namespace X10D.Generator.EquatableExtensionsBuilder
 
             classBuilder.AppendJoin(Environment.NewLine, strings);
 
-            classBuilder.Append(EquatableBuilder.EndingChunk);
+            classBuilder.Append(EndingChunk);
 
             return classBuilder.ToString();
         }

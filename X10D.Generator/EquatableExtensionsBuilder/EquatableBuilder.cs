@@ -13,12 +13,12 @@ namespace X10D.Generator.EquatableExtensionsBuilder
             string xorClass = GetClass("XOr", "^", false, 15, XOrDocumentation);
             string xnorClass = GetClass("XNOr", "^", true, 15, XNOrDocumentation);
 
-            File.WriteAllText("../../../../X10D.Performant/src/Custom/IEquatableExtensions/AndEquals.g.cs", andClass);
-            File.WriteAllText("../../../../X10D.Performant/src/Custom/IEquatableExtensions/NAndEquals.g.cs", nandClass);
-            File.WriteAllText("../../../../X10D.Performant/src/Custom/IEquatableExtensions/OrEquals.g.cs", orClass);
-            File.WriteAllText("../../../../X10D.Performant/src/Custom/IEquatableExtensions/NOrEquals.g.cs", norClass);
-            File.WriteAllText("../../../../X10D.Performant/src/Custom/IEquatableExtensions/XOrEquals.g.cs", xorClass);
-            File.WriteAllText("../../../../X10D.Performant/src/Custom/IEquatableExtensions/XNOrEquals.g.cs", xnorClass);
+            File.WriteAllText(Path.Combine(Program.CustomPath, "IEquatableExtensions/AndEquals.g.cs"), andClass);
+            File.WriteAllText(Path.Combine(Program.CustomPath, "IEquatableExtensions/NAndEquals.g.cs"), nandClass);
+            File.WriteAllText(Path.Combine(Program.CustomPath, "IEquatableExtensions/OrEquals.g.cs"), orClass);
+            File.WriteAllText(Path.Combine(Program.CustomPath, "IEquatableExtensions/NOrEquals.g.cs"), norClass);
+            File.WriteAllText(Path.Combine(Program.CustomPath, "IEquatableExtensions/XOrEquals.g.cs"), xorClass);
+            File.WriteAllText(Path.Combine(Program.CustomPath, "IEquatableExtensions/XNOrEquals.g.cs"), xnorClass);
         }
     }
 }

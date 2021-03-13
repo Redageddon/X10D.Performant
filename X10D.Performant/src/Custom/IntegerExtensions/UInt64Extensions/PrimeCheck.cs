@@ -7,6 +7,9 @@ namespace X10D.Performant
 {
     public static partial class UInt64Extensions
     {
+        private static readonly HashSet<ulong> Primes = new();
+        private static readonly HashSet<ulong> NonPrimes = new();
+
         private static readonly ulong[] Lt18446744073709551616 = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
         private static readonly ulong[] Lt3825123056546413051 = Lt18446744073709551616[..9];
         private static readonly ulong[] Lt341550071728321 = Lt18446744073709551616[..7];
@@ -25,24 +28,14 @@ namespace X10D.Performant
         /// <param name="value">An integer value.</param>
         /// <param name="useCache">Gives the user the ability to use cache of type <see cref="HashSet{T}"/>.</param>
         /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
-        public static bool IsPrime(this ulong value, bool useCache = false)
-        {
-            switch (value)
+        public static bool IsPrime(this ulong value, bool useCache = false) =>
+            value switch
             {
-                case < 2: return false;
-                case < 4: return true;
-            }
-
-            if ((value & 1) == 0
-             || Mod(value, 3) == 0)
-            {
-                return false;
-            }
-
-            return value < ushort.MaxValue
-                ? IsPrimeSieve(value)
-                : IsPrimeMiller(value);
-        }
+                < 2               => false,
+                < byte.MaxValue   => ((byte)value).IsPrime(),
+                < ushort.MaxValue => ((ushort)value).IsPrime(useCache),
+                _                 => IsPrimeMiller(value),
+            };
 
         // Miller test is probabilistic, but provided enough of the right parameters it can become deterministic
         private static bool IsPrimeMiller(ulong value) =>
@@ -60,20 +53,6 @@ namespace X10D.Performant
                 < 3_825_123_056_546_413_051 => MillerTest(value, Lt3825123056546413051),
                 _                           => MillerTest(value, Lt18446744073709551616),
             };
-
-        private static bool IsPrimeSieve(ulong value)
-        {
-            for (ulong i = 5; i * i <= value; i += 6UL)
-            {
-                if (Mod(value, i) == 0UL
-                 || Mod(value, i + 2UL) == 0UL)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
 
         // TODO: remove big int dependencies
         [SuppressMessage("ReSharper", "ForCanBeConvertedToForeach")]

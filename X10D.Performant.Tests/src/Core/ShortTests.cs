@@ -70,7 +70,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="Int16Extensions.IsPrime(short)"/>.
+        ///     Tests for <see cref="Int16Extensions.IsPrime"/>.
         /// </summary>
         [Test]
         public void IsPrime()
@@ -79,7 +79,11 @@ namespace X10D.Performant.Tests.Core
 
             for (int i = 0; i < primes.Length; i++)
             {
-                Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
+                if (!primes[i].IsPrime())
+                {
+                    Console.WriteLine(primes[i]);
+                }
+
                 Assert.IsTrue(primes[i].IsPrime());
             }
 
@@ -87,7 +91,11 @@ namespace X10D.Performant.Tests.Core
 
             for (int i = 0; i < nonPrimes.Length; i++)
             {
-                Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
+                if (nonPrimes[i].IsPrime())
+                {
+                    Console.WriteLine(nonPrimes[i]);
+                }
+
                 Assert.IsFalse(nonPrimes[i].IsPrime());
             }
         }
@@ -102,7 +110,11 @@ namespace X10D.Performant.Tests.Core
 
             for (int i = 0; i < primes.Length; i++)
             {
-                Trace.WriteLineIf(!primes[i].IsPrime(), primes[i]);
+                if (!primes[i].IsPrime())
+                {
+                    Console.WriteLine(primes[i]);
+                }
+
                 Assert.IsTrue(primes[i].IsPrime());
             }
 
@@ -110,7 +122,11 @@ namespace X10D.Performant.Tests.Core
 
             for (int i = 0; i < nonPrimes.Length; i++)
             {
-                Trace.WriteLineIf(nonPrimes[i].IsPrime(), nonPrimes[i]);
+                if (nonPrimes[i].IsPrime())
+                {
+                    Console.WriteLine(nonPrimes[i]);
+                }
+
                 Assert.IsFalse(nonPrimes[i].IsPrime());
             }
         }

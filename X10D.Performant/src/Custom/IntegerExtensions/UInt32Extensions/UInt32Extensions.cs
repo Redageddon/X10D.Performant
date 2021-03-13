@@ -6,7 +6,7 @@ namespace X10D.Performant
     /// <summary>
     ///     Extension methods for <see cref="uint"/>.
     /// </summary>
-    public static class UInt32Extensions
+    public static partial class UInt32Extensions
     {
         /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>
         public static DateTime FromUnixTimestamp(this uint timestamp, bool isMilliseconds = false) =>
@@ -17,9 +17,6 @@ namespace X10D.Performant
 
         /// <inheritdoc cref="UInt64Extensions.IsOdd"/>
         public static bool IsOdd(this uint value) => (value & 1) == 1;
-
-        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
-        public static bool IsPrime(this uint value) => UInt64Extensions.IsPrime(value);
 
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

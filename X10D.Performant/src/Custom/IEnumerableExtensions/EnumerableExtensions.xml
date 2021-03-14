@@ -1,0 +1,26 @@
+﻿<members>
+    <member name="DistinctBy">
+        <summary>
+            Gets each unique object from <paramref name="values"/> determined by <paramref name="selector"/> and compared with 
+            <see cref="Comparer{T}"/>if passed.
+        </summary>
+        <param name="values">The initial values being iterated through.</param>
+        <param name="selector">The function that determines whether an element in <paramref name="values"/> should be returned.</param>
+        <param name="comparer">Passes a generic <see cref="IEqualityComparer"/>.</param>
+        <typeparam name="TSource">The type of the contained element in the <paramref name="values"/> being read from.</typeparam>
+        <typeparam name="TKey">The type being selected distinctly from.</typeparam>
+        <returns>A collection of values that are specific to a selector.</returns>
+    </member>
+    <member name="LazyChunk">
+        <summary>
+            Splits <paramref name="values"/> into chunks of size <paramref name="chunkSize"/>.
+        </summary>
+        <param name="values">The values to chunk.</param>
+        <param name="chunkSize">The maximum length of the nested <see cref="IEnumerable{T}"/> collection.</param>
+        <typeparam name="TSource">Any type.</typeparam>
+        <returns>
+            Returns an <see cref="IEnumerable{T}"/> of <see cref="IEnumerable{T}"/> of <typeparamref name="TSource"/> from
+            <paramref name="values"/> split int chunks of size <paramref name="chunkSize"/>.
+        </returns>
+    </member>
+</members>

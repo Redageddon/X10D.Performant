@@ -1,0 +1,39 @@
+﻿<members>
+    <member name="FlipKeyValues">
+        <summary>
+            Flips the keys and values ot values and keys.
+        </summary>
+        <param name="keyValuePairs">The pairs.</param>
+        <typeparam name="TKey">The key type.</typeparam>
+        <typeparam name="TValue">The value type.</typeparam>
+        <returns>A collection of <paramref name="keyValuePairs"/> that have their values as keys.</returns>
+    </member>
+    <member name="ToConnectionString">
+        <summary>
+            Converts <paramref name="keyValuePairs"/> to an object-relational-safe connection <see cref="string"/>.
+        </summary>
+        <param name="keyValuePairs">The pairs.</param>
+        <typeparam name="TKey">The key type.</typeparam>
+        <typeparam name="TValue">The value type.</typeparam>
+        <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T}"/> as a key=value; set.</returns>
+    </member>
+    <member name="ToGetParameters">
+        <summary>
+            Converts <paramref name="keyValuePairs"/> to a HTTP GET parameter <see cref="string"/>.
+        </summary>
+        <param name="keyValuePairs">The pairs.</param>
+        <typeparam name="TKey">The key type.</typeparam>
+        <typeparam name="TValue">The value type.</typeparam>
+        <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T}"/> as a key=value; set.</returns>
+    </member>
+    <member name="ToGetParametersSeparators">
+        <summary>
+            Converts <paramref name="keyValuePairs"/> to a HTTP GET parameter <see cref="string"/> with specific separators.
+        </summary>
+        <param name="keyValuePairs">The dictionary.</param>
+        <param name="separators"> Joins <see name="TValue"/> by the chosen <see cref="string"/> values.</param>
+        <typeparam name="TKey">The key type.</typeparam>
+        <typeparam name="TValue">The value type.</typeparam>
+        <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T}"/> as a key=value; set.</returns>
+    </member>
+</members>

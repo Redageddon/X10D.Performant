@@ -11,13 +11,7 @@ namespace X10D.Performant.KeyValuePairExtensions
     /// </summary>
     public static class KeyValuePairExtensions
     {
-        /// <summary>
-        ///     Flips the keys and values ot values and keys.
-        /// </summary>
-        /// <param name="keyValuePairs">The pairs.</param>
-        /// <typeparam name="TKey">The key type.</typeparam>
-        /// <typeparam name="TValue">The value type.</typeparam>
-        /// <returns>A collection of <paramref name="keyValuePairs"/> that have their values as keys.</returns>
+        /// <include file='KeyValuePairExtensions.xml' path='members/member[@name="FlipKeyValues"]'/>
         public static IEnumerable<KeyValuePair<TValue, TKey>> FlipKeyValues<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {
             foreach ((TKey key, TValue value) in keyValuePairs)
@@ -26,13 +20,7 @@ namespace X10D.Performant.KeyValuePairExtensions
             }
         }
 
-        /// <summary>
-        ///     Converts <paramref name="keyValuePairs"/> to an object-relational-safe connection <see cref="string"/>.
-        /// </summary>
-        /// <param name="keyValuePairs">The pairs.</param>
-        /// <typeparam name="TKey">The key type.</typeparam>
-        /// <typeparam name="TValue">The value type.</typeparam>
-        /// <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
+        /// <include file='KeyValuePairExtensions.xml' path='members/member[@name="ToConnectionString"]'/>
         [SuppressMessage("ReSharper", "ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator")]
         public static string ToConnectionString<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {
@@ -68,13 +56,7 @@ namespace X10D.Performant.KeyValuePairExtensions
             return string.Join(";", InternalIterator());
         }
 
-        /// <summary>
-        ///     Converts <paramref name="keyValuePairs"/> to a HTTP GET parameter <see cref="string"/>.
-        /// </summary>
-        /// <param name="keyValuePairs">The pairs.</param>
-        /// <typeparam name="TKey">The key type.</typeparam>
-        /// <typeparam name="TValue">The value type.</typeparam>
-        /// <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
+        /// <include file='KeyValuePairExtensions.xml' path='members/member[@name="ToGetParameters"]'/>
         public static string ToGetParameters<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
         {
             IEnumerable<string> InternalIterator()
@@ -91,14 +73,7 @@ namespace X10D.Performant.KeyValuePairExtensions
             return string.Join("&", InternalIterator());
         }
 
-        /// <summary>
-        ///     Converts <paramref name="keyValuePairs"/> to a HTTP GET parameter <see cref="string"/> with specific separators.
-        /// </summary>
-        /// <param name="keyValuePairs">The dictionary.</param>
-        /// <param name="separators"> Joins <see name="TValue"/> by the chosen <see cref="string"/> values.</param>
-        /// <typeparam name="TKey">The key type.</typeparam>
-        /// <typeparam name="TValue">The value type.</typeparam>
-        /// <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T1,T2}"/> as a key=value; set.</returns>
+        /// <include file='KeyValuePairExtensions.xml' path='members/member[@name="ToGetParametersSeparators"]'/>
         public static string ToGetParameters<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs, params string[] separators)
             where TValue : IEnumerable
         {

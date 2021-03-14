@@ -9,14 +9,7 @@ namespace X10D.Performant.Int64Extensions
     /// </summary>
     public static partial class Int64Extensions
     {
-        /// <summary>
-        ///     Converts the <paramref name="timestamp"/> to a <see cref="DateTime"/> treating it as a Unix timestamp.
-        /// </summary>
-        /// <param name="timestamp">The timestamp.</param>
-        /// <param name="isMilliseconds">
-        ///     Whether or not the input value should be treated as milliseconds. Defaults to <see langword="false"/>.
-        /// </param>
-        /// <returns>A <see cref="DateTime"/> representing <paramref name="timestamp"/> seconds since the Unix epoch.</returns>
+        /// <include file='Int64Extensions.xml' path='members/member[@name="FromUnixTimestamp"]'/>
         public static DateTime FromUnixTimestamp(this long timestamp, bool isMilliseconds = false)
         {
             DateTimeOffset offset = isMilliseconds
@@ -26,18 +19,10 @@ namespace X10D.Performant.Int64Extensions
             return offset.DateTime;
         }
 
-        /// <summary>
-        ///     Determines if the <paramref name="value"/> is even.
-        /// </summary>
-        /// <param name="value">An integer value.</param>
-        /// <returns><see langword="true"/> if <paramref name="value"/> is even, <see langword="false"/> otherwise.</returns>
+        /// <include file='Int64Extensions.xml' path='members/member[@name="IsEven"]'/>
         public static bool IsEven(this long value) => (value & 1L) == 0L;
 
-        /// <summary>
-        ///     Determines if the <paramref name="value"/> is odd.
-        /// </summary>
-        /// <param name="value">An integer value.</param>
-        /// <returns><see langword="true"/> if <paramref name="value"/> is odd, <see langword="false"/> otherwise.</returns>
+        /// <include file='Int64Extensions.xml' path='members/member[@name="IsOdd"]'/>
         public static bool IsOdd(this long value) => (value & 1L) == 1L;
 
         /// <inheritdoc cref="UInt64Extensions.Mod"/>
@@ -47,11 +32,7 @@ namespace X10D.Performant.Int64Extensions
                 ? value
                 : value - (value / modulus * modulus);
 
-        /// <summary>
-        ///     Gets a <see cref="bool"/> value that represents this value.
-        /// </summary>
-        /// <param name="value">An integer value.</param>
-        /// <returns><see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.</returns>
+        /// <include file='Int64Extensions.xml' path='members/member[@name="ToBoolean"]'/>
         public static bool ToBoolean(this long value) => value != 0L;
     }
 }

@@ -24,12 +24,7 @@ namespace X10D.Performant.UInt64Extensions
         private static readonly ulong[] Lt9080191 = { 31, 73 };
         private static readonly ulong[] Lt1373653 = Lt18446744073709551616[..2];
 
-        /// <summary>
-        ///     Determines if the <paramref name="value"/> is a prime value.
-        /// </summary>
-        /// <param name="value">An integer value.</param>
-        /// <param name="useCache">Gives the user the ability to use cache of type <see cref="HashSet{T}"/>.</param>
-        /// <returns><see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.</returns>
+        /// <include file='UInt64Extensions.xml' path='members/member[@name="IsPrime"]'/>
         public static bool IsPrime(this ulong value, bool useCache = false)
         {
             switch (value)

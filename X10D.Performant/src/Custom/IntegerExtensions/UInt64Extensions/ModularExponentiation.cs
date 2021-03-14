@@ -40,13 +40,7 @@ namespace X10D.Performant.UInt64Extensions
             return Mod(lowBits + result, modulus);
         }
 
-        /// <summary>
-        ///     Performs a fast and overflow proof modular exponentiation.
-        /// </summary>
-        /// <param name="value">The value being raised.</param>
-        /// <param name="exponent">The value that is raising.</param>
-        /// <param name="modulus">The modulo to be applied to the result.</param>
-        /// <returns><paramref name="value"/> raised by <paramref name="exponent"/> and then modded by <paramref name="modulus"/>.</returns>
+        /// <include file='UInt64Extensions.xml' path='members/member[@name="ModPow"]'/>
         public static ulong ModPow(this ulong value, ulong exponent, ulong modulus)
         {
             value = Mod(value, modulus);

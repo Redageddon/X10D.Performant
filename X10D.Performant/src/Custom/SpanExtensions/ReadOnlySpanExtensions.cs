@@ -4,13 +4,7 @@ namespace X10D.Performant.SpanExtensions
 {
     public static partial class SpanExtensions
     {
-        /// <summary>
-        ///     Fills a buffer randomly with values found in <paramref name="buffer"/>.
-        /// </summary>
-        /// <param name="values">The values being pulled.</param>
-        /// <param name="buffer">The buffer being filled.</param>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <typeparam name="T">Any type.</typeparam>
+        /// <include file='SpanExtensions.xml' path='members/member[@name="RandomReadOnly"]'/>
         public static void Random<T>(this ReadOnlySpan<T> values, Span<T> buffer, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;
@@ -21,12 +15,7 @@ namespace X10D.Performant.SpanExtensions
             }
         }
 
-        /// <summary>
-        ///     Shuffles a <see cref="ReadOnlySpan{T}"/>.
-        /// </summary>
-        /// <param name="values">The <see cref="Span{T}"/> to shuffle.</param>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <typeparam name="T">Any type.</typeparam>
+        /// <include file='SpanExtensions.xml' path='members/member[@name="Shuffled"]'/>
         public static ReadOnlySpan<T> Shuffled<T>(this ReadOnlySpan<T> values, Random? random = null)
         {
             Span<T> writeableSpan = new(new T[values.Length]);

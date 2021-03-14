@@ -10,14 +10,7 @@ namespace X10D.Performant.SpanExtensions
         /// <inheritdoc cref="Random{T}(ReadOnlySpan{T},Span{T},Random)"/>
         public static void Random<T>(this Span<T> values, Span<T> buffer, Random? random = null) => Random((ReadOnlySpan<T>)values, buffer, random);
 
-        /// <summary>
-        ///     Generates a new random <see cref="Span{T}"/> by filling it with values found in <see param="values"/>.
-        /// </summary>
-        /// <param name="values">The values being pulled.</param>
-        /// <param name="count">The amount of items to be returned.</param>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <typeparam name="T">Any type.</typeparam>
-        /// <returns>A <see cref="Span{T}"/> containing <paramref name="count"/> amount of <typeparamref name="T"/>.</returns>
+        /// <include file='SpanExtensions.xml' path='members/member[@name="RandomNew"]'/>
         public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;
@@ -31,12 +24,7 @@ namespace X10D.Performant.SpanExtensions
             return buffer;
         }
 
-        /// <summary>
-        ///     Shuffles a <see cref="Span{T}"/>.
-        /// </summary>
-        /// <param name="values">The <see cref="Span{T}"/> to shuffle.</param>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <typeparam name="T">Any type.</typeparam>
+        /// <include file='SpanExtensions.xml' path='members/member[@name="Shuffle"]'/>
         public static void Shuffle<T>(this Span<T> values, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;
@@ -53,7 +41,7 @@ namespace X10D.Performant.SpanExtensions
             }
         }
 
-        /// <inheritdoc cref="Shuffled{T}(ReadOnlySpan{T},Random)"/>
+        /// <include file='SpanExtensions.xml' path='members/member[@name="Shuffled"]'/>
         public static Span<T> Shuffled<T>(this Span<T> values, Random? random = null)
         {
             Span<T> writeableSpan = new(new T[values.Length]);

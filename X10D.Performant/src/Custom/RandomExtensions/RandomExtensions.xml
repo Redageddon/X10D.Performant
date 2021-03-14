@@ -1,0 +1,876 @@
+﻿<members>
+    <member name="NextBoolean">
+        <summary>
+            Returns either <see langword="true"/> or <see langword="false"/> based on <paramref name="random"/>'s next generation.
+        </summary>
+        <param name="random">The <see cref="System.Random"/> instance.</param>
+        <returns>
+            <see langword="true"/> if <see cref="System.Random.NextDouble()"/> is greater than or equal to 0.5, else <see langword="false"/>.
+        </returns>
+    </member>
+    <member name="NextByte">
+        <summary>
+            Returns a random <see cref="byte"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        <returns>A random <see cref="byte"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextByteMax">
+        <summary>
+            Returns a random <see cref="byte"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="byte"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextChar">
+        <summary>
+            Returns a random <see cref="char"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random <see cref="char"/> returned.</param>
+        <param name="maxValue">
+            The inclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="char"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+        <remarks>Although the input is a <see cref="char"/> it is treated as an int, which is something that should be kept in mind.</remarks>
+    </member>
+    <member name="NextDouble">
+        <summary>
+            Returns a random <see cref="double"/> that is within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.
+        </param>
+        <returns>A random <see cref="double"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextDoubleMax">
+        <summary>
+            Returns a random <see cref="double"/> that is within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="double"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextInt16">
+        <summary>
+            Returns a random <see cref="short"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        <returns>A random <see cref="short"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextInt16Max">
+        <summary>
+            Returns a random <see cref="short"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="short"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextInt64">
+        <summary>
+            Returns a random <see cref="long"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        <returns>A random <see cref="long"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextInt64Max">
+        <summary>
+            Returns a random <see cref="long"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="long"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextSByte">
+        <summary>
+            Returns a random <see cref="sbyte"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        <returns>A random <see cref="sbyte"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextSByteMax">
+        <summary>
+            Returns a random <see cref="sbyte"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="sbyte"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextSingle">
+        <summary>
+            Returns a random <see cref="float"/> between 0 and <paramref name="maxValue"/>.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.
+        </param>
+        <returns>A random <see cref="float"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextSingleMax">
+        <summary>
+            Returns a random <see cref="float"/> that is within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="float"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextUInt16">
+        <summary>
+            Returns a random <see cref="ushort"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        <returns>A random <see cref="ushort"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextUInt16Max">
+        <summary>
+            Returns a random <see cref="ushort"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="ushort"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextUInt32">
+        <summary>
+            Returns a random <see cref="uint"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        <returns>A random <see cref="uint"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextUInt32Max">
+        <summary>
+            Returns a random <see cref="uint"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="uint"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextUInt64">
+        <summary>
+            Returns a random <see cref="ulong"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">The exclusive upper bound of the random number returned. This value must be greater than or equal to 0.</param>
+        <returns>A random <see cref="ulong"/> between 0 and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextUInt64Max">
+        <summary>
+            Returns a random <see cref="ulong"/> within a specified range.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        <param name="maxValue">
+            The exclusive upper bound of the random number returned. This value must be greater than or equal to <paramref name="minValue"/>.
+        </param>
+        <returns>A random <see cref="ulong"/> between <paramref name="minValue"/> and <paramref name="maxValue"/>.</returns>
+    </member>
+    <member name="NextColorAhsb">
+        <summary>
+            Creates a new random <see cref="Color"/> with the supplied hsv values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance that determines the randomness of the color.</param>
+        <param name="minAlpha">The lowest alpha value to randomize.</param>
+        <param name="maxAlpha">The highest alpha value to randomize.</param>
+        <param name="minHue">The lowest hue value to randomize.</param>
+        <param name="maxHue">The highest hue value to randomize.</param>
+        <param name="minSaturation">The lowest saturation value to randomize.</param>
+        <param name="maxSaturation">The highest saturation value to randomize.</param>
+        <param name="minBrightness">The lowest brightness value to randomize.</param>
+        <param name="maxBrightness">The highest brightness value to randomize.</param>
+        <returns>A new <see cref="Color"/> with the supplied ahsb values.</returns>
+    </member>
+    <member name="NextColorArgb">
+        <summary>
+            Creates a new random <see cref="Color"/> with the supplied hsv values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance that determines the randomness of the color.</param>
+        <param name="minAlpha">The lowest alpha value to randomize.</param>
+        <param name="maxAlpha">The highest alpha value to randomize.</param>
+        <param name="minRed">The lowest red value to randomize.</param>
+        <param name="maxRed">The highest red value to randomize.</param>
+        <param name="minGreen">The lowest green value to randomize.</param>
+        <param name="maxGreen">The highest green value to randomize.</param>
+        <param name="minBlue">The lowest blue value to randomize.</param>
+        <param name="maxBlue">The highest blue value to randomize.</param>
+        <returns>A new <see cref="Color"/> with the supplied argb values.</returns>
+    </member>
+    <member name="NextDateTimeMax">
+        <summary>
+            Creates a new <see cref="DateTime"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minTicks">The inclusive upper bound of ticks.</param>
+        <param name="maxTicks">The exclusive lower bound of ticks.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <returns>A new <see cref="DateTime"/>.</returns>
+    </member>
+    <member name="NextDateTime">
+        <summary>
+            Creates a new <see cref="DateTime"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxTicks">The exclusive lower bound of ticks.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <returns>A new <see cref="DateTime"/>.</returns>
+    </member>
+    <member name="NextDateTimeOverload">
+        <summary>
+            Creates a new <see cref="DateTime"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <param name="yearMin">The inclusive lower bound for the random year.</param>
+        <param name="yearMax">The exclusive upper bound for the random year.</param>
+        <param name="monthMin">The inclusive lower bound for the random month.</param>
+        <param name="monthMax">The exclusive upper bound for the random month.</param>
+        <param name="dayMin">The inclusive lower bound for the random day.</param>
+        <param name="dayMax">The exclusive upper bound for the random day.</param>
+        <param name="hourMin">The inclusive lower bound for the random hour.</param>
+        <param name="hourMax">The exclusive upper bound for the random hour.</param>
+        <param name="minuteMin">The inclusive lower bound for the random minute.</param>
+        <param name="minuteMax">The exclusive upper bound for the random minute.</param>
+        <param name="secondMin">The inclusive lower bound for the random second.</param>
+        <param name="secondMax">The exclusive upper bound for the random second.</param>
+        <param name="millisecondMin">The inclusive lower bound for the random millisecond.</param>
+        <param name="millisecondMax">The exclusive upper bound for the random millisecond.</param>
+        <returns>
+            A new <see cref="DateTime"/> with
+            year between <paramref name="yearMin"/> and <paramref name="yearMax"/>,
+            month between <paramref name="monthMin"/> and <paramref name="monthMax"/>,
+            day between <paramref name="dayMin"/> and <paramref name="dayMax"/>,
+            hour between <paramref name="hourMin"/> and <paramref name="hourMax"/>,
+            minute between <paramref name="minuteMin"/> and <paramref name="minuteMax"/>,
+            second between <paramref name="secondMin"/> and <paramref name="secondMax"/>, and
+            millisecond between <paramref name="millisecondMin"/> and <paramref name="millisecondMax"/>.
+        </returns>
+    </member>
+    <member name="NextDateTimeRandomOverload">
+        <summary>
+            Creates a new <see cref="DateTime"/> with supplied values.
+        </summary>
+        <param name="randomYear">The <see cref="Random"/> instance that determines the value for the year.</param>
+        <param name="randomMonth">The <see cref="Random"/> instance that determines the value for the month.</param>
+        <param name="randomDay">The <see cref="Random"/> instance that determines the value for the day.</param>
+        <param name="randomHour">The <see cref="Random"/> instance that determines the value for the hour.</param>
+        <param name="randomMinute">The <see cref="Random"/> instance that determines the value for the minute.</param>
+        <param name="randomSecond">The <see cref="Random"/> instance that determines the value for the second.</param>
+        <param name="randomMillisecond">The <see cref="Random"/> instance that determines the value for the millisecond.</param>
+        <param name="yearMin">The inclusive lower bound for the random year.</param>
+        <param name="yearMax">The exclusive upper bound for the random year.</param>
+        <param name="monthMin">The inclusive lower bound for the random month.</param>
+        <param name="monthMax">The exclusive upper bound for the random month.</param>
+        <param name="dayMin">The inclusive lower bound for the random day.</param>
+        <param name="dayMax">The exclusive upper bound for the random day.</param>
+        <param name="hourMin">The inclusive lower bound for the random hour.</param>
+        <param name="hourMax">The exclusive upper bound for the random hour.</param>
+        <param name="minuteMin">The inclusive lower bound for the random minute.</param>
+        <param name="minuteMax">The exclusive upper bound for the random minute.</param>
+        <param name="secondMin">The inclusive lower bound for the random second.</param>
+        <param name="secondMax">The exclusive upper bound for the random second.</param>
+        <param name="millisecondMin">The inclusive lower bound for the random millisecond.</param>
+        <param name="millisecondMax">The exclusive upper bound for the random millisecond.</param>
+        <returns>
+            A new <see cref="DateTime"/> with
+            year between <paramref name="yearMin"/> and <paramref name="yearMax"/>,
+            month between <paramref name="monthMin"/> and <paramref name="monthMax"/>,
+            day between <paramref name="dayMin"/> and <paramref name="dayMax"/>,
+            hour between <paramref name="hourMin"/> and <paramref name="hourMax"/>,
+            minute between <paramref name="minuteMin"/> and <paramref name="minuteMax"/>,
+            second between <paramref name="secondMin"/> and <paramref name="secondMax"/>, and
+            millisecond between <paramref name="millisecondMin"/> and <paramref name="millisecondMax"/> with
+            year chosen by <paramref name="randomYear"/>,
+            month chosen by <paramref name="randomMonth"/>,
+            day chosen by <paramref name="randomDay"/>,
+            hour chosen by <paramref name="randomHour"/>,
+            minute chosen by <paramref name="randomMinute"/>,
+            second chosen by <paramref name="randomSecond"/>, and
+            millisecond chosen by <paramref name="randomMillisecond"/>.
+        </returns>
+    </member>
+    <member name="NextEnum">
+        <summary>
+            Returns a random value that is defined in a specified enum.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <typeparam name="TEnum">An enumeration type.</typeparam>
+        <returns>
+            Returns a random enum value from <typeparamref name="TEnum"/> specified by <paramref name="random"/>.
+        </returns>
+    </member>
+    <member name="NextIndexMax">
+        <summary>
+            Creates a new random <see cref="Index"/> with the supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="minValue">The inclusive lower bound of the range.</param>
+        <param name="maxValue">The exclusive upper bound of the range.</param>
+        <param name="fromEnd">Indicating if the index is from the start or from the end.</param>
+        <returns>A new <see cref="Index"/> with supplied values.</returns>
+    </member>
+    <member name="NextIndex">
+        <summary>
+            Creates a new random <see cref="Index"/> with the supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="maxValue">The exclusive upper bound of the range.</param>
+        <param name="fromEnd">Indicating if the index is from the start or from the end.</param>
+        <returns>A new <see cref="Index"/> with supplied values.</returns>
+    </member>
+    <member name="NextRangeMax">
+        <summary>
+            Creates a new random <see cref="Range"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="indexStartMin">The inclusive lower bound of the starting index.</param>
+        <param name="indexStartMax">The exclusive upper bound of the starting index.</param>
+        <param name="indexEndMin">The inclusive lower bound of the ending index.</param>
+        <param name="indexEndMax">The exclusive upper bound of the ending index.</param>
+        <param name="indexStartFromEnd">Indicating if the starting index is from the start or from the end.</param>
+        <param name="indexEndFromEnd">Indicating if the ending index is from the start or from the end.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <returns>A new <see cref="Range"/> with supplied values.</returns>
+    </member>
+    <member name="NextRange">
+        <summary>
+            Creates a new random <see cref="Range"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="indexStartMax">The exclusive upper bound of the starting index.</param>
+        <param name="indexEndMax">The exclusive upper bound of the ending index.</param>
+        <param name="indexStartFromEnd">Indicating if the starting index is from the start or from the end.</param>
+        <param name="indexEndFromEnd">Indicating if the ending index is from the start or from the end.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <returns>A new <see cref="Range"/> with supplied values.</returns>
+    </member>
+    <member name="NextMatrix3X2">
+        <summary>
+            Creates a new random <see cref="Matrix3x2"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <param name="m11Min">The inclusive lower bound of <see cref="Matrix3x2.M11"/>.</param>
+        <param name="m11Max">The exclusive upper bound of <see cref="Matrix3x2.M11"/>.</param>
+        <param name="m12Min">The inclusive lower bound of <see cref="Matrix3x2.M12"/>.</param>
+        <param name="m12Max">The exclusive upper bound of <see cref="Matrix3x2.M12"/>.</param>
+        <param name="m21Min">The inclusive lower bound of <see cref="Matrix3x2.M21"/>.</param>
+        <param name="m21Max">The exclusive upper bound of <see cref="Matrix3x2.M21"/>.</param>
+        <param name="m22Min">The inclusive lower bound of <see cref="Matrix3x2.M22"/>.</param>
+        <param name="m22Max">The exclusive upper bound of <see cref="Matrix3x2.M22"/>.</param>
+        <param name="m31Min">The inclusive lower bound of <see cref="Matrix3x2.M31"/>.</param>
+        <param name="m31Max">The exclusive upper bound of <see cref="Matrix3x2.M31"/>.</param>
+        <param name="m32Min">The inclusive lower bound of <see cref="Matrix3x2.M32"/>.</param>
+        <param name="m32Max">The exclusive upper bound of <see cref="Matrix3x2.M32"/>.</param>
+        <returns>
+            A new <see cref="Matrix3x2"/> with
+            <see cref="Matrix3x2.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
+            <see cref="Matrix3x2.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
+            <see cref="Matrix3x2.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
+            <see cref="Matrix3x2.M22"/> between <paramref name="m22Min"/> and <paramref name="m22Min"/>,
+            <see cref="Matrix3x2.M31"/> between <paramref name="m31Min"/> and <paramref name="m31Min"/>, and
+            <see cref="Matrix3x2.M32"/> between <paramref name="m32Min"/> and <paramref name="m32Min"/>.
+        </returns>
+    </member>
+    <member name="NextMatrix3X2Random">
+        <summary>
+            Creates a new random <see cref="Matrix3x2"/> with supplied values.
+        </summary>
+        <param name="randomM11">The <see cref="Random"/> instance that determines the <see cref="Matrix3x2.M11"/> value.</param>
+        <param name="randomM12">The <see cref="Random"/> instance that determines the <see cref="Matrix3x2.M12"/> value.</param>
+        <param name="randomM21">The <see cref="Random"/> instance that determines the <see cref="Matrix3x2.M21"/> value.</param>
+        <param name="randomM22">The <see cref="Random"/> instance that determines the <see cref="Matrix3x2.M22"/> value.</param>
+        <param name="randomM31">The <see cref="Random"/> instance that determines the <see cref="Matrix3x2.M31"/> value.</param>
+        <param name="randomM32">The <see cref="Random"/> instance that determines the <see cref="Matrix3x2.M32"/> value.</param>
+        <param name="m11Min">The inclusive lower bound of <see cref="Matrix3x2.M11"/>.</param>
+        <param name="m11Max">The exclusive upper bound of <see cref="Matrix3x2.M11"/>.</param>
+        <param name="m12Min">The inclusive lower bound of <see cref="Matrix3x2.M12"/>.</param>
+        <param name="m12Max">The exclusive upper bound of <see cref="Matrix3x2.M12"/>.</param>
+        <param name="m21Min">The inclusive lower bound of <see cref="Matrix3x2.M21"/>.</param>
+        <param name="m21Max">The exclusive upper bound of <see cref="Matrix3x2.M21"/>.</param>
+        <param name="m22Min">The inclusive lower bound of <see cref="Matrix3x2.M22"/>.</param>
+        <param name="m22Max">The exclusive upper bound of <see cref="Matrix3x2.M22"/>.</param>
+        <param name="m31Min">The inclusive lower bound of <see cref="Matrix3x2.M31"/>.</param>
+        <param name="m31Max">The exclusive upper bound of <see cref="Matrix3x2.M31"/>.</param>
+        <param name="m32Min">The inclusive lower bound of <see cref="Matrix3x2.M32"/>.</param>
+        <param name="m32Max">The exclusive upper bound of <see cref="Matrix3x2.M32"/>.</param>
+        <returns>
+            A new <see cref="Matrix3x2"/> with
+            <see cref="Matrix3x2.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
+            <see cref="Matrix3x2.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
+            <see cref="Matrix3x2.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
+            <see cref="Matrix3x2.M22"/> between <paramref name="m22Min"/> and <paramref name="m22Min"/>,
+            <see cref="Matrix3x2.M31"/> between <paramref name="m31Min"/> and <paramref name="m31Min"/>, and
+            <see cref="Matrix3x2.M32"/> between <paramref name="m32Min"/> and <paramref name="m32Min"/> with
+            <see cref="Matrix3x2.M11"/> chosen by <paramref name="randomM11"/>,
+            <see cref="Matrix3x2.M12"/> chosen by <paramref name="randomM12"/>,
+            <see cref="Matrix3x2.M21"/> chosen by <paramref name="randomM21"/>,
+            <see cref="Matrix3x2.M22"/> chosen by <paramref name="randomM22"/>,
+            <see cref="Matrix3x2.M31"/> chosen by <paramref name="randomM31"/>, and
+            <see cref="Matrix3x2.M32"/> chosen by <paramref name="randomM32"/>.
+        </returns>
+    </member>
+    <member name="NextMatrix4X4">
+        <summary>
+            Creates a new random <see cref="Matrix4x4"/> with supplied values..
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <param name="m11Min">The inclusive lower bound of <see cref="Matrix4x4.M11"/>.</param>
+        <param name="m11Max">The exclusive upper bound of <see cref="Matrix4x4.M11"/>.</param>
+        <param name="m12Min">The inclusive lower bound of <see cref="Matrix4x4.M12"/>.</param>
+        <param name="m12Max">The exclusive upper bound of <see cref="Matrix4x4.M12"/>.</param>
+        <param name="m13Min">The inclusive lower bound of <see cref="Matrix4x4.M13"/>.</param>
+        <param name="m13Max">The exclusive upper bound of <see cref="Matrix4x4.M13"/>.</param>
+        <param name="m14Min">The inclusive lower bound of <see cref="Matrix4x4.M14"/>.</param>
+        <param name="m14Max">The exclusive upper bound of <see cref="Matrix4x4.M14"/>.</param>
+        <param name="m21Min">The inclusive lower bound of <see cref="Matrix4x4.M21"/>.</param>
+        <param name="m21Max">The exclusive upper bound of <see cref="Matrix4x4.M21"/>.</param>
+        <param name="m22Min">The inclusive lower bound of <see cref="Matrix4x4.M22"/>.</param>
+        <param name="m22Max">The exclusive upper bound of <see cref="Matrix4x4.M22"/>.</param>
+        <param name="m23Min">The inclusive lower bound of <see cref="Matrix4x4.M23"/>.</param>
+        <param name="m23Max">The exclusive upper bound of <see cref="Matrix4x4.M23"/>.</param>
+        <param name="m24Min">The inclusive lower bound of <see cref="Matrix4x4.M24"/>.</param>
+        <param name="m24Max">The exclusive upper bound of <see cref="Matrix4x4.M24"/>.</param>
+        <param name="m31Min">The inclusive lower bound of <see cref="Matrix4x4.M31"/>.</param>
+        <param name="m31Max">The exclusive upper bound of <see cref="Matrix4x4.M31"/>.</param>
+        <param name="m32Min">The inclusive lower bound of <see cref="Matrix4x4.M32"/>.</param>
+        <param name="m32Max">The exclusive upper bound of <see cref="Matrix4x4.M32"/>.</param>
+        <param name="m33Min">The inclusive lower bound of <see cref="Matrix4x4.M33"/>.</param>
+        <param name="m33Max">The exclusive upper bound of <see cref="Matrix4x4.M33"/>.</param>
+        <param name="m34Min">The inclusive lower bound of <see cref="Matrix4x4.M34"/>.</param>
+        <param name="m34Max">The exclusive upper bound of <see cref="Matrix4x4.M34"/>.</param>
+        <param name="m41Min">The inclusive lower bound of <see cref="Matrix4x4.M41"/>.</param>
+        <param name="m41Max">The exclusive upper bound of <see cref="Matrix4x4.M41"/>.</param>
+        <param name="m42Min">The inclusive lower bound of <see cref="Matrix4x4.M42"/>.</param>
+        <param name="m42Max">The exclusive upper bound of <see cref="Matrix4x4.M42"/>.</param>
+        <param name="m43Min">The inclusive lower bound of <see cref="Matrix4x4.M43"/>.</param>
+        <param name="m43Max">The exclusive upper bound of <see cref="Matrix4x4.M43"/>.</param>
+        <param name="m44Min">The inclusive lower bound of <see cref="Matrix4x4.M44"/>.</param>
+        <param name="m44Max">The exclusive upper bound of <see cref="Matrix4x4.M44"/>.</param>
+        <returns>
+            A new <see cref="Matrix3x2"/> with
+            <see cref="Matrix4x4.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
+            <see cref="Matrix4x4.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
+            <see cref="Matrix4x4.M13"/> between <paramref name="m13Min"/> and <paramref name="m13Min"/>,
+            <see cref="Matrix4x4.M14"/> between <paramref name="m14Min"/> and <paramref name="m14Min"/>,
+            <see cref="Matrix4x4.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
+            <see cref="Matrix4x4.M22"/> between <paramref name="m22Min"/> and <paramref name="m22Min"/>,
+            <see cref="Matrix4x4.M23"/> between <paramref name="m23Min"/> and <paramref name="m23Min"/>,
+            <see cref="Matrix4x4.M24"/> between <paramref name="m24Min"/> and <paramref name="m24Min"/>,
+            <see cref="Matrix4x4.M31"/> between <paramref name="m31Min"/> and <paramref name="m31Min"/>,
+            <see cref="Matrix4x4.M32"/> between <paramref name="m32Min"/> and <paramref name="m32Min"/>,
+            <see cref="Matrix4x4.M33"/> between <paramref name="m33Min"/> and <paramref name="m33Min"/>,
+            <see cref="Matrix4x4.M34"/> between <paramref name="m34Min"/> and <paramref name="m34Min"/>,
+            <see cref="Matrix4x4.M41"/> between <paramref name="m41Min"/> and <paramref name="m41Min"/>,
+            <see cref="Matrix4x4.M42"/> between <paramref name="m42Min"/> and <paramref name="m42Min"/>,
+            <see cref="Matrix4x4.M43"/> between <paramref name="m43Min"/> and <paramref name="m43Min"/>, and
+            <see cref="Matrix4x4.M44"/> between <paramref name="m44Min"/> and <paramref name="m44Min"/>.
+        </returns>
+    </member>
+    <member name="NextMatrix4X4Random">
+        <summary>
+            Creates a new random <see cref="Matrix4x4"/> with supplied values.
+        </summary>
+        <param name="randomM11">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M11"/> value.</param>
+        <param name="randomM12">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M12"/> value.</param>
+        <param name="randomM13">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M13"/> value.</param>
+        <param name="randomM14">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M14"/> value.</param>
+        <param name="randomM21">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M21"/> value.</param>
+        <param name="randomM22">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M22"/> value.</param>
+        <param name="randomM23">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M23"/> value.</param>
+        <param name="randomM24">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M24"/> value.</param>
+        <param name="randomM31">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M31"/> value.</param>
+        <param name="randomM32">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M32"/> value.</param>
+        <param name="randomM33">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M33"/> value.</param>
+        <param name="randomM34">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M34"/> value.</param>
+        <param name="randomM41">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M41"/> value.</param>
+        <param name="randomM42">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M42"/> value.</param>
+        <param name="randomM43">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M43"/> value.</param>
+        <param name="randomM44">The <see cref="Random"/> instance that determines the <see cref="Matrix4x4.M44"/> value.</param>
+        <param name="m11Min">The inclusive lower bound of <see cref="Matrix4x4.M11"/>.</param>
+        <param name="m11Max">The exclusive upper bound of <see cref="Matrix4x4.M11"/>.</param>
+        <param name="m12Min">The inclusive lower bound of <see cref="Matrix4x4.M12"/>.</param>
+        <param name="m12Max">The exclusive upper bound of <see cref="Matrix4x4.M12"/>.</param>
+        <param name="m13Min">The inclusive lower bound of <see cref="Matrix4x4.M13"/>.</param>
+        <param name="m13Max">The exclusive upper bound of <see cref="Matrix4x4.M13"/>.</param>
+        <param name="m14Min">The inclusive lower bound of <see cref="Matrix4x4.M14"/>.</param>
+        <param name="m14Max">The exclusive upper bound of <see cref="Matrix4x4.M14"/>.</param>
+        <param name="m21Min">The inclusive lower bound of <see cref="Matrix4x4.M21"/>.</param>
+        <param name="m21Max">The exclusive upper bound of <see cref="Matrix4x4.M21"/>.</param>
+        <param name="m22Min">The inclusive lower bound of <see cref="Matrix4x4.M22"/>.</param>
+        <param name="m22Max">The exclusive upper bound of <see cref="Matrix4x4.M22"/>.</param>
+        <param name="m23Min">The inclusive lower bound of <see cref="Matrix4x4.M23"/>.</param>
+        <param name="m23Max">The exclusive upper bound of <see cref="Matrix4x4.M23"/>.</param>
+        <param name="m24Min">The inclusive lower bound of <see cref="Matrix4x4.M24"/>.</param>
+        <param name="m24Max">The exclusive upper bound of <see cref="Matrix4x4.M24"/>.</param>
+        <param name="m31Min">The inclusive lower bound of <see cref="Matrix4x4.M31"/>.</param>
+        <param name="m31Max">The exclusive upper bound of <see cref="Matrix4x4.M31"/>.</param>
+        <param name="m32Min">The inclusive lower bound of <see cref="Matrix4x4.M32"/>.</param>
+        <param name="m32Max">The exclusive upper bound of <see cref="Matrix4x4.M32"/>.</param>
+        <param name="m33Min">The inclusive lower bound of <see cref="Matrix4x4.M33"/>.</param>
+        <param name="m33Max">The exclusive upper bound of <see cref="Matrix4x4.M33"/>.</param>
+        <param name="m34Min">The inclusive lower bound of <see cref="Matrix4x4.M34"/>.</param>
+        <param name="m34Max">The exclusive upper bound of <see cref="Matrix4x4.M34"/>.</param>
+        <param name="m41Min">The inclusive lower bound of <see cref="Matrix4x4.M41"/>.</param>
+        <param name="m41Max">The exclusive upper bound of <see cref="Matrix4x4.M41"/>.</param>
+        <param name="m42Min">The inclusive lower bound of <see cref="Matrix4x4.M42"/>.</param>
+        <param name="m42Max">The exclusive upper bound of <see cref="Matrix4x4.M42"/>.</param>
+        <param name="m43Min">The inclusive lower bound of <see cref="Matrix4x4.M43"/>.</param>
+        <param name="m43Max">The exclusive upper bound of <see cref="Matrix4x4.M43"/>.</param>
+        <param name="m44Min">The inclusive lower bound of <see cref="Matrix4x4.M44"/>.</param>
+        <param name="m44Max">The exclusive upper bound of <see cref="Matrix4x4.M44"/>.</param>
+        <returns>
+            A new <see cref="Matrix3x2"/> with
+            <see cref="Matrix4x4.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
+            <see cref="Matrix4x4.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
+            <see cref="Matrix4x4.M13"/> between <paramref name="m13Min"/> and <paramref name="m13Min"/>,
+            <see cref="Matrix4x4.M14"/> between <paramref name="m14Min"/> and <paramref name="m14Min"/>,
+            <see cref="Matrix4x4.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
+            <see cref="Matrix4x4.M22"/> between <paramref name="m22Min"/> and <paramref name="m22Min"/>,
+            <see cref="Matrix4x4.M23"/> between <paramref name="m23Min"/> and <paramref name="m23Min"/>,
+            <see cref="Matrix4x4.M24"/> between <paramref name="m24Min"/> and <paramref name="m24Min"/>,
+            <see cref="Matrix4x4.M31"/> between <paramref name="m31Min"/> and <paramref name="m31Min"/>,
+            <see cref="Matrix4x4.M32"/> between <paramref name="m32Min"/> and <paramref name="m32Min"/>,
+            <see cref="Matrix4x4.M33"/> between <paramref name="m33Min"/> and <paramref name="m33Min"/>,
+            <see cref="Matrix4x4.M34"/> between <paramref name="m34Min"/> and <paramref name="m34Min"/>,
+            <see cref="Matrix4x4.M41"/> between <paramref name="m41Min"/> and <paramref name="m41Min"/>,
+            <see cref="Matrix4x4.M42"/> between <paramref name="m42Min"/> and <paramref name="m42Min"/>,
+            <see cref="Matrix4x4.M43"/> between <paramref name="m43Min"/> and <paramref name="m43Min"/>, and
+            <see cref="Matrix4x4.M44"/> between <paramref name="m44Min"/> and <paramref name="m44Min"/> with
+            <see cref="Matrix4x4.M11"/> chosen by <paramref name="randomM11"/>,
+            <see cref="Matrix4x4.M12"/> chosen by <paramref name="randomM12"/>,
+            <see cref="Matrix4x4.M13"/> chosen by <paramref name="randomM13"/>,
+            <see cref="Matrix4x4.M14"/> chosen by <paramref name="randomM14"/>,
+            <see cref="Matrix4x4.M21"/> chosen by <paramref name="randomM21"/>,
+            <see cref="Matrix4x4.M22"/> chosen by <paramref name="randomM22"/>,
+            <see cref="Matrix4x4.M23"/> chosen by <paramref name="randomM23"/>,
+            <see cref="Matrix4x4.M24"/> chosen by <paramref name="randomM24"/>,
+            <see cref="Matrix4x4.M31"/> chosen by <paramref name="randomM31"/>,
+            <see cref="Matrix4x4.M32"/> chosen by <paramref name="randomM32"/>,
+            <see cref="Matrix4x4.M33"/> chosen by <paramref name="randomM33"/>,
+            <see cref="Matrix4x4.M34"/> chosen by <paramref name="randomM34"/>,
+            <see cref="Matrix4x4.M41"/> chosen by <paramref name="randomM41"/>,
+            <see cref="Matrix4x4.M42"/> chosen by <paramref name="randomM42"/>,
+            <see cref="Matrix4x4.M43"/> chosen by <paramref name="randomM43"/> and
+            <see cref="Matrix4x4.M44"/> chosen by <paramref name="randomM44"/>.
+        </returns>
+    </member>
+    <member name="NextPlane">
+        <summary>
+            Creates a new random <see cref="Plane"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <param name="xMin">The inclusive lower bound of the X value of <see cref="Plane.Normal"/>.</param>
+        <param name="xMax">The exclusive upper bound of the X value of <see cref="Plane.Normal"/>.</param>
+        <param name="yMin">The inclusive lower bound of the Y value of <see cref="Plane.Normal"/>.</param>
+        <param name="yMax">The exclusive upper bound of the Y value of <see cref="Plane.Normal"/>.</param>
+        <param name="zMin">The inclusive lower bound of the Z value of <see cref="Plane.Normal"/>.</param>
+        <param name="zMax">The exclusive upper bound of the Z value of <see cref="Plane.Normal"/>.</param>
+        <param name="dMin">The inclusive lower bound of <see cref="Plane.D"/>.</param>
+        <param name="dMax">The exclusive upper bound of <see cref="Plane.D"/>.</param>
+        <returns>
+            A new <see cref="Plane"/> with
+            the X value of <see cref="Plane.Normal"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
+            the Y value of <see cref="Plane.Normal"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
+            the Z value of <see cref="Plane.Normal"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
+            <see cref="Plane.D"/> between <paramref name="dMin"/> and <paramref name="dMax"/>.
+        </returns>
+    </member>
+    <member name="NextPlaneRandom">
+        <summary>
+            Creates a new random <see cref="Plane"/> with supplied values.
+        </summary>
+        <param name="randomX">The <see cref="Random"/> instance that determines X for the <see cref="Plane.Normal"/> value.</param>
+        <param name="randomY">The <see cref="Random"/> instance that determines Y for the <see cref="Plane.Normal"/> value.</param>
+        <param name="randomZ">The <see cref="Random"/> instance that determines Z for the <see cref="Plane.Normal"/> value.</param>
+        <param name="randomD">The <see cref="Random"/> instance that determines the <see cref="Plane.D"/> value.</param>
+        <param name="xMin">The inclusive lower bound of the X value of <see cref="Plane.Normal"/>.</param>
+        <param name="xMax">The exclusive upper bound of the X value of <see cref="Plane.Normal"/>.</param>
+        <param name="yMin">The inclusive lower bound of the Y value of <see cref="Plane.Normal"/>.</param>
+        <param name="yMax">The exclusive upper bound of the Y value of <see cref="Plane.Normal"/>.</param>
+        <param name="zMin">The inclusive lower bound of the Z value of <see cref="Plane.Normal"/>.</param>
+        <param name="zMax">The exclusive upper bound of the Z value of <see cref="Plane.Normal"/>.</param>
+        <param name="dMin">The inclusive lower bound of <see cref="Plane.D"/>.</param>
+        <param name="dMax">The exclusive upper bound of <see cref="Plane.D"/>.</param>
+        <returns>
+            A new <see cref="Plane"/> with
+            the X value of <see cref="Plane.Normal"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
+            the Y value of <see cref="Plane.Normal"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
+            the Z value of <see cref="Plane.Normal"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
+            <see cref="Plane.D"/> between <paramref name="dMin"/> and <paramref name="dMax"/> with
+            the X value of<see cref="Plane.Normal"/> chosen by <paramref name="randomX"/>,
+            the Y value of<see cref="Plane.Normal"/> chosen by <paramref name="randomY"/>,
+            the Z value of<see cref="Plane.Normal"/> chosen by <paramref name="randomZ"/>, and
+            <see cref="Plane.D"/> chosen by <paramref name="randomD"/>.
+        </returns>
+    </member>
+    <member name="NextQuaternion">
+        <summary>
+            Creates a new random <see cref="Quaternion"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <param name="xMin">The inclusive lower bound of <see cref="Quaternion.X"/>.</param>
+        <param name="xMax">The exclusive upper bound of <see cref="Quaternion.X"/>.</param>
+        <param name="yMin">The inclusive lower bound of <see cref="Quaternion.Y"/>.</param>
+        <param name="yMax">The exclusive upper bound of <see cref="Quaternion.Y"/>.</param>
+        <param name="zMin">The inclusive lower bound of <see cref="Quaternion.Z"/>.</param>
+        <param name="zMax">The exclusive upper bound of <see cref="Quaternion.Z"/>.</param>
+        <param name="wMin">The inclusive lower bound of <see cref="Quaternion.W"/>.</param>
+        <param name="wMax">The exclusive upper bound of <see cref="Quaternion.W"/>.</param>
+        <returns>
+            A new <see cref="Quaternion"/> with
+            <see cref="Quaternion.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
+            <see cref="Quaternion.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
+            <see cref="Quaternion.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
+            <see cref="Quaternion.W"/> between <paramref name="wMin"/> and <paramref name="wMax"/>.
+        </returns>
+    </member>
+    <member name="NextQuaternionRandom">
+        <summary>
+            Creates a new random <see cref="Quaternion"/> with supplied values.
+        </summary>
+        <param name="randomX">The <see cref="Random"/> instance that determines the <see cref="Quaternion.X"/> value.</param>
+        <param name="randomY">The <see cref="Random"/> instance that determines the <see cref="Quaternion.Y"/> value.</param>
+        <param name="randomZ">The <see cref="Random"/> instance that determines the <see cref="Quaternion.Z"/> value.</param>
+        <param name="randomW">The <see cref="Random"/> instance that determines the <see cref="Quaternion.W"/> value.</param>
+        <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
+        <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
+        <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>
+        <param name="yMax">The exclusive upper bound of <see cref="Vector4.Y"/>.</param>
+        <param name="zMin">The inclusive lower bound of <see cref="Vector4.Z"/>.</param>
+        <param name="zMax">The exclusive upper bound of <see cref="Vector4.Z"/>.</param>
+        <param name="wMin">The inclusive lower bound of <see cref="Vector4.W"/>.</param>
+        <param name="wMax">The exclusive upper bound of <see cref="Vector4.W"/>.</param>
+        <returns>
+            A new <see cref="Quaternion"/> with
+            <see cref="Quaternion.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
+            <see cref="Quaternion.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
+            <see cref="Quaternion.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
+            <see cref="Quaternion.W"/> between <paramref name="wMin"/> and <paramref name="wMax"/> with
+            <see cref="Quaternion.X"/> chosen by <paramref name="randomX"/>,
+            <see cref="Quaternion.Y"/> chosen by <paramref name="randomY"/>,
+            <see cref="Quaternion.Z"/> chosen by <paramref name="randomZ"/>, and
+            <see cref="Quaternion.W"/> chosen by <paramref name="randomW"/>.
+        </returns>
+    </member>
+    <member name="NextRandom">
+        <summary>
+            Creates a new <see cref="System.Random"/> from an already existing <see cref="System.Random"/>.
+        </summary>
+        <param name="random">The random instance getting the seed.</param>
+        <returns>A new <see cref="System.Random"/> instance with the seed provided by <paramref name="random"/>.</returns>
+    </member>
+    <member name="NextString">
+        <summary>
+            Creates a new <see cref="string"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="charCount">The amount of chars in the string.</param>
+        <param name="startingChar">The inclusive lower bound.</param>
+        <param name="endingChar">The exclusive upper bound.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <returns>A new random <see cref="string"/>.</returns>
+    </member>
+    <member name="NextVector2">
+        <summary>
+            Creates a new random <see cref="Vector2"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <param name="xMin">The inclusive lower bound of <see cref="Vector2.X"/>.</param>
+        <param name="xMax">The exclusive upper bound of <see cref="Vector2.X"/>.</param>
+        <param name="yMin">The inclusive lower bound of <see cref="Vector2.Y"/>.</param>
+        <param name="yMax">The exclusive upper bound of <see cref="Vector2.Y"/>.</param>
+        <returns>
+            A new <see cref="Vector2"/> with
+            <see cref="Vector2.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/> and
+            <see cref="Vector2.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>.
+        </returns>
+    </member>
+    <member name="NextVector2Random">
+        <summary>
+            Creates a new random <see cref="Vector2"/> with supplied values.
+        </summary>
+        <param name="randomX">The <see cref="Random"/> instance that determines the <see cref="Vector2.X"/> value.</param>
+        <param name="randomY">The <see cref="Random"/> instance that determines the <see cref="Vector2.Y"/> value.</param>
+        <param name="xMin">The inclusive lower bound of <see cref="Vector2.X"/>.</param>
+        <param name="xMax">The exclusive upper bound of <see cref="Vector2.X"/>.</param>
+        <param name="yMin">The inclusive lower bound of <see cref="Vector2.Y"/>.</param>
+        <param name="yMax">The exclusive upper bound of <see cref="Vector2.Y"/>.</param>
+        <returns>
+            A new <see cref="Vector2"/> with
+            <see cref="Vector2.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/> and
+            <see cref="Vector2.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/> with
+            <see cref="Vector2.X"/> chosen by <paramref name="randomX"/> and
+            <see cref="Vector2.Y"/> chosen by <paramref name="randomY"/>.
+        </returns>
+    </member>
+    <member name="NextVector3">
+        <summary>
+            Creates a new random <see cref="Vector3"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <param name="xMin">The inclusive lower bound of <see cref="Vector3.X"/>.</param>
+        <param name="xMax">The exclusive upper bound of <see cref="Vector3.X"/>.</param>
+        <param name="yMin">The inclusive lower bound of <see cref="Vector3.Y"/>.</param>
+        <param name="yMax">The exclusive upper bound of <see cref="Vector3.Y"/>.</param>
+        <param name="zMin">The inclusive lower bound of <see cref="Vector3.Z"/>.</param>
+        <param name="zMax">The exclusive upper bound of <see cref="Vector3.Z"/>.</param>
+        <returns>
+            A new <see cref="Vector3"/> with
+            <see cref="Vector3.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
+            <see cref="Vector3.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>, and
+            <see cref="Vector3.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>.
+        </returns>
+    </member>
+    <member name="NextVector3Random">
+        <summary>
+            Creates a new random <see cref="Vector3"/> with supplied values.
+        </summary>
+        <param name="randomX">The <see cref="Random"/> instance that determines the <see cref="Vector3.X"/> value.</param>
+        <param name="randomY">The <see cref="Random"/> instance that determines the <see cref="Vector3.Y"/> value.</param>
+        <param name="randomZ">The <see cref="Random"/> instance that determines the <see cref="Vector3.Z"/> value.</param>
+        <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
+        <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
+        <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>
+        <param name="yMax">The exclusive upper bound of <see cref="Vector4.Y"/>.</param>
+        <param name="zMin">The inclusive lower bound of <see cref="Vector4.Z"/>.</param>
+        <param name="zMax">The exclusive upper bound of <see cref="Vector4.Z"/>.</param>
+        <returns>
+            A new <see cref="Vector3"/> with
+            <see cref="Vector3.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
+            <see cref="Vector3.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>, and
+            <see cref="Vector3.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/> with
+            <see cref="Vector3.X"/> chosen by <paramref name="randomX"/>,
+            <see cref="Vector3.Y"/> chosen by <paramref name="randomY"/>, and
+            <see cref="Vector3.Z"/> chosen by <paramref name="randomZ"/>.
+        </returns>
+    </member>
+    <member name="NextVector4">
+        <summary>
+            Creates a new random <see cref="Vector4"/> with supplied values.
+        </summary>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <param name="ensureOneNextCall">
+            If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
+        </param>
+        <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
+        <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
+        <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>
+        <param name="yMax">The exclusive upper bound of <see cref="Vector4.Y"/>.</param>
+        <param name="zMin">The inclusive lower bound of <see cref="Vector4.Z"/>.</param>
+        <param name="zMax">The exclusive upper bound of <see cref="Vector4.Z"/>.</param>
+        <param name="wMin">The inclusive lower bound of <see cref="Vector4.W"/>.</param>
+        <param name="wMax">The exclusive upper bound of <see cref="Vector4.W"/>.</param>
+        <returns>
+            A new <see cref="Vector4"/> with
+            <see cref="Vector4.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
+            <see cref="Vector4.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
+            <see cref="Vector4.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
+            <see cref="Vector4.W"/> between <paramref name="wMin"/> and <paramref name="wMax"/>.
+        </returns>
+    </member>
+    <member name="NextVector4Random">
+        <summary>
+            Creates a new random <see cref="Vector4"/> with supplied values.
+        </summary>
+        <param name="randomX">The <see cref="Random"/> instance that determines the <see cref="Vector4.X"/> value.</param>
+        <param name="randomY">The <see cref="Random"/> instance that determines the <see cref="Vector4.Y"/> value.</param>
+        <param name="randomZ">The <see cref="Random"/> instance that determines the <see cref="Vector4.Z"/> value.</param>
+        <param name="randomW">The <see cref="Random"/> instance that determines the <see cref="Vector4.W"/> value.</param>
+        <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
+        <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
+        <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>
+        <param name="yMax">The exclusive upper bound of <see cref="Vector4.Y"/>.</param>
+        <param name="zMin">The inclusive lower bound of <see cref="Vector4.Z"/>.</param>
+        <param name="zMax">The exclusive upper bound of <see cref="Vector4.Z"/>.</param>
+        <param name="wMin">The inclusive lower bound of <see cref="Vector4.W"/>.</param>
+        <param name="wMax">The exclusive upper bound of <see cref="Vector4.W"/>.</param>
+        <returns>
+            A new <see cref="Vector4"/> with
+            <see cref="Vector4.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
+            <see cref="Vector4.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
+            <see cref="Vector4.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
+            <see cref="Vector4.W"/> between <paramref name="wMin"/> and <paramref name="wMax"/> with
+            <see cref="Vector4.X"/> chosen by <paramref name="randomX"/>,
+            <see cref="Vector4.Y"/> chosen by <paramref name="randomY"/>,
+            <see cref="Vector4.Z"/> chosen by <paramref name="randomZ"/>, and
+            <see cref="Vector4.W"/> chosen by <paramref name="randomW"/>.
+        </returns>
+    </member>
+    <member name="OneOf">
+        <summary>
+            Returns a random element from <paramref name="values"/> using the <see cref="System.Random"/> instance.
+        </summary>
+        <param name="random">The <see cref="System.Random"/> instance.</param>
+        <param name="values">The collection from which to draw.</param>
+        <typeparam name="T">The collection type.</typeparam>
+        <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
+    </member>
+    <member name="OneOfIList">
+        <summary>
+            Returns a random element from <paramref name="values"/> using the <see cref="System.Random"/> instance.
+        </summary>
+        <param name="random">The <see cref="System.Random"/> instance.</param>
+        <param name="values">The collection from which to draw.</param>
+        <typeparam name="T">The collection type.</typeparam>
+        <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
+    </member>
+</members>

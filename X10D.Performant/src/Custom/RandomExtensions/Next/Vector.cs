@@ -5,22 +5,7 @@ namespace X10D.Performant.RandomExtensions
 {
     public static partial class RandomExtensions
     {
-        /// <summary>
-        ///     Creates a new random <see cref="Vector2"/> with supplied values.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <param name="xMin">The inclusive lower bound of <see cref="Vector2.X"/>.</param>
-        /// <param name="xMax">The exclusive upper bound of <see cref="Vector2.X"/>.</param>
-        /// <param name="yMin">The inclusive lower bound of <see cref="Vector2.Y"/>.</param>
-        /// <param name="yMax">The exclusive upper bound of <see cref="Vector2.Y"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Vector2"/> with
-        ///     <see cref="Vector2.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/> and
-        ///     <see cref="Vector2.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextVector2"]'/>
         public static Vector2 NextVector2(this Random random,
                                           bool ensureOneNextCall = false,
                                           float xMin = 0,
@@ -39,22 +24,7 @@ namespace X10D.Performant.RandomExtensions
             return new Vector2(random.NextSingle(), random.NextSingle());
         }
 
-        /// <summary>
-        ///     Creates a new random <see cref="Vector2"/> with supplied values.
-        /// </summary>
-        /// <param name="randomX">The <see cref="System.Random"/> instance that determines the <see cref="Vector2.X"/> value.</param>
-        /// <param name="randomY">The <see cref="System.Random"/> instance that determines the <see cref="Vector2.Y"/> value.</param>
-        /// <param name="xMin">The inclusive lower bound of <see cref="Vector2.X"/>.</param>
-        /// <param name="xMax">The exclusive upper bound of <see cref="Vector2.X"/>.</param>
-        /// <param name="yMin">The inclusive lower bound of <see cref="Vector2.Y"/>.</param>
-        /// <param name="yMax">The exclusive upper bound of <see cref="Vector2.Y"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Vector2"/> with
-        ///     <see cref="Vector2.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/> and
-        ///     <see cref="Vector2.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/> with
-        ///     <see cref="Vector2.X"/> chosen by <paramref name="randomX"/> and
-        ///     <see cref="Vector2.Y"/> chosen by <paramref name="randomY"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextVector2Random"]'/>
         public static Vector2 NextVector2(this Random randomX,
                                           Random randomY,
                                           float xMin = 0,
@@ -63,25 +33,7 @@ namespace X10D.Performant.RandomExtensions
                                           float yMax = 1) =>
             new(randomX.NextSingle(xMin, xMax), randomY.NextSingle(yMin, yMax));
 
-        /// <summary>
-        ///     Creates a new random <see cref="Vector3"/> with supplied values.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <param name="xMin">The inclusive lower bound of <see cref="Vector3.X"/>.</param>
-        /// <param name="xMax">The exclusive upper bound of <see cref="Vector3.X"/>.</param>
-        /// <param name="yMin">The inclusive lower bound of <see cref="Vector3.Y"/>.</param>
-        /// <param name="yMax">The exclusive upper bound of <see cref="Vector3.Y"/>.</param>
-        /// <param name="zMin">The inclusive lower bound of <see cref="Vector3.Z"/>.</param>
-        /// <param name="zMax">The exclusive upper bound of <see cref="Vector3.Z"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Vector3"/> with
-        ///     <see cref="Vector3.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
-        ///     <see cref="Vector3.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>, and
-        ///     <see cref="Vector3.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextVector3"]'/>
         public static Vector3 NextVector3(this Random random,
                                           bool ensureOneNextCall = false,
                                           float xMin = 0,
@@ -105,27 +57,7 @@ namespace X10D.Performant.RandomExtensions
                                random.NextSingle(zMin, zMax));
         }
 
-        /// <summary>
-        ///     Creates a new random <see cref="Vector3"/> with supplied values.
-        /// </summary>
-        /// <param name="randomX">The <see cref="System.Random"/> instance that determines the <see cref="Vector3.X"/> value.</param>
-        /// <param name="randomY">The <see cref="System.Random"/> instance that determines the <see cref="Vector3.Y"/> value.</param>
-        /// <param name="randomZ">The <see cref="System.Random"/> instance that determines the <see cref="Vector3.Z"/> value.</param>
-        /// <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
-        /// <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
-        /// <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>
-        /// <param name="yMax">The exclusive upper bound of <see cref="Vector4.Y"/>.</param>
-        /// <param name="zMin">The inclusive lower bound of <see cref="Vector4.Z"/>.</param>
-        /// <param name="zMax">The exclusive upper bound of <see cref="Vector4.Z"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Vector3"/> with
-        ///     <see cref="Vector3.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
-        ///     <see cref="Vector3.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>, and
-        ///     <see cref="Vector3.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/> with
-        ///     <see cref="Vector3.X"/> chosen by <paramref name="randomX"/>,
-        ///     <see cref="Vector3.Y"/> chosen by <paramref name="randomY"/>, and
-        ///     <see cref="Vector3.Z"/> chosen by <paramref name="randomZ"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextVector3Random"]'/>
         public static Vector3 NextVector3(this Random randomX,
                                           Random randomY,
                                           Random randomZ,
@@ -139,28 +71,7 @@ namespace X10D.Performant.RandomExtensions
                 randomY.NextSingle(yMin, yMax),
                 randomZ.NextSingle(zMin, zMax));
 
-        /// <summary>
-        ///     Creates a new random <see cref="Vector4"/> with supplied values.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
-        /// <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
-        /// <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>
-        /// <param name="yMax">The exclusive upper bound of <see cref="Vector4.Y"/>.</param>
-        /// <param name="zMin">The inclusive lower bound of <see cref="Vector4.Z"/>.</param>
-        /// <param name="zMax">The exclusive upper bound of <see cref="Vector4.Z"/>.</param>
-        /// <param name="wMin">The inclusive lower bound of <see cref="Vector4.W"/>.</param>
-        /// <param name="wMax">The exclusive upper bound of <see cref="Vector4.W"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Vector4"/> with
-        ///     <see cref="Vector4.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
-        ///     <see cref="Vector4.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
-        ///     <see cref="Vector4.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
-        ///     <see cref="Vector4.W"/> between <paramref name="wMin"/> and <paramref name="wMax"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextVector4"]'/>
         public static Vector4 NextVector4(this Random random,
                                           bool ensureOneNextCall = false,
                                           float xMin = 0,
@@ -188,32 +99,7 @@ namespace X10D.Performant.RandomExtensions
                                random.NextSingle(wMin, wMax));
         }
 
-        /// <summary>
-        ///     Creates a new random <see cref="Vector4"/> with supplied values.
-        /// </summary>
-        /// <param name="randomX">The <see cref="System.Random"/> instance that determines the <see cref="Vector4.X"/> value.</param>
-        /// <param name="randomY">The <see cref="System.Random"/> instance that determines the <see cref="Vector4.Y"/> value.</param>
-        /// <param name="randomZ">The <see cref="System.Random"/> instance that determines the <see cref="Vector4.Z"/> value.</param>
-        /// <param name="randomW">The <see cref="System.Random"/> instance that determines the <see cref="Vector4.W"/> value.</param>
-        /// <param name="xMin">The inclusive lower bound of <see cref="Vector4.X"/>.</param>
-        /// <param name="xMax">The exclusive upper bound of <see cref="Vector4.X"/>.</param>
-        /// <param name="yMin">The inclusive lower bound of <see cref="Vector4.Y"/>.</param>
-        /// <param name="yMax">The exclusive upper bound of <see cref="Vector4.Y"/>.</param>
-        /// <param name="zMin">The inclusive lower bound of <see cref="Vector4.Z"/>.</param>
-        /// <param name="zMax">The exclusive upper bound of <see cref="Vector4.Z"/>.</param>
-        /// <param name="wMin">The inclusive lower bound of <see cref="Vector4.W"/>.</param>
-        /// <param name="wMax">The exclusive upper bound of <see cref="Vector4.W"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Vector4"/> with
-        ///     <see cref="Vector4.X"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
-        ///     <see cref="Vector4.Y"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
-        ///     <see cref="Vector4.Z"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
-        ///     <see cref="Vector4.W"/> between <paramref name="wMin"/> and <paramref name="wMax"/> with
-        ///     <see cref="Vector4.X"/> chosen by <paramref name="randomX"/>,
-        ///     <see cref="Vector4.Y"/> chosen by <paramref name="randomY"/>,
-        ///     <see cref="Vector4.Z"/> chosen by <paramref name="randomZ"/>, and
-        ///     <see cref="Vector4.W"/> chosen by <paramref name="randomW"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextVector4Random"]'/>
         public static Vector4 NextVector4(this Random randomX,
                                           Random randomY,
                                           Random randomZ,

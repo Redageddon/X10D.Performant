@@ -5,28 +5,7 @@ namespace X10D.Performant.RandomExtensions
 {
     public static partial class RandomExtensions
     {
-        /// <summary>
-        ///     Creates a new random <see cref="Plane"/> with supplied values.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <param name="xMin">The inclusive lower bound of the X value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="xMax">The exclusive upper bound of the X value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="yMin">The inclusive lower bound of the Y value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="yMax">The exclusive upper bound of the Y value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="zMin">The inclusive lower bound of the Z value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="zMax">The exclusive upper bound of the Z value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="dMin">The inclusive lower bound of <see cref="Plane.D"/>.</param>
-        /// <param name="dMax">The exclusive upper bound of <see cref="Plane.D"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Plane"/> with
-        ///     the X value of <see cref="Plane.Normal"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
-        ///     the Y value of <see cref="Plane.Normal"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
-        ///     the Z value of <see cref="Plane.Normal"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
-        ///     <see cref="Plane.D"/> between <paramref name="dMin"/> and <paramref name="dMax"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextPlane"]'/>
         public static Plane NextPlane(this Random random,
                                       bool ensureOneNextCall = false,
                                       float xMin = 0,
@@ -54,32 +33,7 @@ namespace X10D.Performant.RandomExtensions
                              random.NextSingle(dMin, dMax));
         }
 
-        /// <summary>
-        ///     Creates a new random <see cref="Plane"/> with supplied values.
-        /// </summary>
-        /// <param name="randomX">The <see cref="System.Random"/> instance that determines X for the <see cref="Plane.Normal"/> value.</param>
-        /// <param name="randomY">The <see cref="System.Random"/> instance that determines Y for the <see cref="Plane.Normal"/> value.</param>
-        /// <param name="randomZ">The <see cref="System.Random"/> instance that determines Z for the <see cref="Plane.Normal"/> value.</param>
-        /// <param name="randomD">The <see cref="System.Random"/> instance that determines the <see cref="Plane.D"/> value.</param>
-        /// <param name="xMin">The inclusive lower bound of the X value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="xMax">The exclusive upper bound of the X value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="yMin">The inclusive lower bound of the Y value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="yMax">The exclusive upper bound of the Y value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="zMin">The inclusive lower bound of the Z value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="zMax">The exclusive upper bound of the Z value of <see cref="Plane.Normal"/>.</param>
-        /// <param name="dMin">The inclusive lower bound of <see cref="Plane.D"/>.</param>
-        /// <param name="dMax">The exclusive upper bound of <see cref="Plane.D"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Plane"/> with
-        ///     the X value of <see cref="Plane.Normal"/> between <paramref name="xMin"/> and <paramref name="xMax"/>,
-        ///     the Y value of <see cref="Plane.Normal"/> between <paramref name="yMin"/> and <paramref name="yMax"/>,
-        ///     the Z value of <see cref="Plane.Normal"/> between <paramref name="zMin"/> and <paramref name="zMax"/>, and
-        ///     <see cref="Plane.D"/> between <paramref name="dMin"/> and <paramref name="dMax"/> with
-        ///     the X value of<see cref="Plane.Normal"/> chosen by <paramref name="randomX"/>,
-        ///     the Y value of<see cref="Plane.Normal"/> chosen by <paramref name="randomY"/>,
-        ///     the Z value of<see cref="Plane.Normal"/> chosen by <paramref name="randomZ"/>, and
-        ///     <see cref="Plane.D"/> chosen by <paramref name="randomD"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextPlaneRandom"]'/>
         public static Plane NextPlane(this Random randomX,
                                       Random randomY,
                                       Random randomZ,

@@ -5,16 +5,7 @@ namespace X10D.Performant.RandomExtensions
 {
     public static partial class RandomExtensions
     {
-        /// <summary>
-        ///     Creates a new <see cref="DateTime"/> with supplied values.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="minTicks">The inclusive upper bound of ticks.</param>
-        /// <param name="maxTicks">The exclusive lower bound of ticks.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <returns>A new <see cref="DateTime"/>.</returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextDateTimeMax"]'/>
         public static DateTime NextDateTime(this Random random, long minTicks, long maxTicks, bool ensureOneNextCall = false)
         {
             if (ensureOneNextCall)
@@ -27,15 +18,7 @@ namespace X10D.Performant.RandomExtensions
             return new DateTime(random.NextInt64(minTicks, maxTicks));
         }
 
-        /// <summary>
-        ///     Creates a new <see cref="DateTime"/> with supplied values.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="maxTicks">The exclusive lower bound of ticks.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <returns>A new <see cref="DateTime"/>.</returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextDateTime"]'/>
         public static DateTime NextDateTime(this Random random, long maxTicks, bool ensureOneNextCall = false)
         {
             if (ensureOneNextCall)
@@ -48,37 +31,7 @@ namespace X10D.Performant.RandomExtensions
             return new DateTime(random.NextInt64(maxTicks));
         }
 
-        /// <summary>
-        ///     Creates a new <see cref="DateTime"/> with supplied values.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <param name="yearMin">The inclusive lower bound for the random year.</param>
-        /// <param name="yearMax">The exclusive upper bound for the random year.</param>
-        /// <param name="monthMin">The inclusive lower bound for the random month.</param>
-        /// <param name="monthMax">The exclusive upper bound for the random month.</param>
-        /// <param name="dayMin">The inclusive lower bound for the random day.</param>
-        /// <param name="dayMax">The exclusive upper bound for the random day.</param>
-        /// <param name="hourMin">The inclusive lower bound for the random hour.</param>
-        /// <param name="hourMax">The exclusive upper bound for the random hour.</param>
-        /// <param name="minuteMin">The inclusive lower bound for the random minute.</param>
-        /// <param name="minuteMax">The exclusive upper bound for the random minute.</param>
-        /// <param name="secondMin">The inclusive lower bound for the random second.</param>
-        /// <param name="secondMax">The exclusive upper bound for the random second.</param>
-        /// <param name="millisecondMin">The inclusive lower bound for the random millisecond.</param>
-        /// <param name="millisecondMax">The exclusive upper bound for the random millisecond.</param>
-        /// <returns>
-        ///     A new <see cref="DateTime"/> with
-        ///     year between <paramref name="yearMin"/> and <paramref name="yearMax"/>,
-        ///     month between <paramref name="monthMin"/> and <paramref name="monthMax"/>,
-        ///     day between <paramref name="dayMin"/> and <paramref name="dayMax"/>,
-        ///     hour between <paramref name="hourMin"/> and <paramref name="hourMax"/>,
-        ///     minute between <paramref name="minuteMin"/> and <paramref name="minuteMax"/>,
-        ///     second between <paramref name="secondMin"/> and <paramref name="secondMax"/>, and
-        ///     millisecond between <paramref name="millisecondMin"/> and <paramref name="millisecondMax"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextDateTimeOverload"]'/>
         [SuppressMessage("ReSharper",
                          "MethodOverloadWithOptionalParameter",
                          Justification = "Other method should be used unless custom params are passed")]
@@ -121,47 +74,7 @@ namespace X10D.Performant.RandomExtensions
                                 random.Next(millisecondMin, millisecondMax));
         }
 
-        /// <summary>
-        ///     Creates a new <see cref="DateTime"/> with supplied values.
-        /// </summary>
-        /// <param name="randomYear">The <see cref="System.Random"/> instance that determines the value for the year.</param>
-        /// <param name="randomMonth">The <see cref="System.Random"/> instance that determines the value for the month.</param>
-        /// <param name="randomDay">The <see cref="System.Random"/> instance that determines the value for the day.</param>
-        /// <param name="randomHour">The <see cref="System.Random"/> instance that determines the value for the hour.</param>
-        /// <param name="randomMinute">The <see cref="System.Random"/> instance that determines the value for the minute.</param>
-        /// <param name="randomSecond">The <see cref="System.Random"/> instance that determines the value for the second.</param>
-        /// <param name="randomMillisecond">The <see cref="System.Random"/> instance that determines the value for the millisecond.</param>
-        /// <param name="yearMin">The inclusive lower bound for the random year.</param>
-        /// <param name="yearMax">The exclusive upper bound for the random year.</param>
-        /// <param name="monthMin">The inclusive lower bound for the random month.</param>
-        /// <param name="monthMax">The exclusive upper bound for the random month.</param>
-        /// <param name="dayMin">The inclusive lower bound for the random day.</param>
-        /// <param name="dayMax">The exclusive upper bound for the random day.</param>
-        /// <param name="hourMin">The inclusive lower bound for the random hour.</param>
-        /// <param name="hourMax">The exclusive upper bound for the random hour.</param>
-        /// <param name="minuteMin">The inclusive lower bound for the random minute.</param>
-        /// <param name="minuteMax">The exclusive upper bound for the random minute.</param>
-        /// <param name="secondMin">The inclusive lower bound for the random second.</param>
-        /// <param name="secondMax">The exclusive upper bound for the random second.</param>
-        /// <param name="millisecondMin">The inclusive lower bound for the random millisecond.</param>
-        /// <param name="millisecondMax">The exclusive upper bound for the random millisecond.</param>
-        /// <returns>
-        ///     A new <see cref="DateTime"/> with
-        ///     year between <paramref name="yearMin"/> and <paramref name="yearMax"/>,
-        ///     month between <paramref name="monthMin"/> and <paramref name="monthMax"/>,
-        ///     day between <paramref name="dayMin"/> and <paramref name="dayMax"/>,
-        ///     hour between <paramref name="hourMin"/> and <paramref name="hourMax"/>,
-        ///     minute between <paramref name="minuteMin"/> and <paramref name="minuteMax"/>,
-        ///     second between <paramref name="secondMin"/> and <paramref name="secondMax"/>, and
-        ///     millisecond between <paramref name="millisecondMin"/> and <paramref name="millisecondMax"/> with
-        ///     year chosen by <paramref name="randomYear"/>,
-        ///     month chosen by <paramref name="randomMonth"/>,
-        ///     day chosen by <paramref name="randomDay"/>,
-        ///     hour chosen by <paramref name="randomHour"/>,
-        ///     minute chosen by <paramref name="randomMinute"/>,
-        ///     second chosen by <paramref name="randomSecond"/>, and
-        ///     millisecond chosen by <paramref name="randomMillisecond"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextDateTimeRandomOverload"]'/>
         public static DateTime NextDateTime(this Random randomYear,
                                             Random randomMonth,
                                             Random randomDay,

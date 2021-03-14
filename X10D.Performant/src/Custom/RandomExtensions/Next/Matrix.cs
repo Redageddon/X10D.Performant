@@ -5,34 +5,7 @@ namespace X10D.Performant.RandomExtensions
 {
     public static partial class RandomExtensions
     {
-        /// <summary>
-        ///     Creates a new random <see cref="Matrix3x2"/> with supplied values.
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <param name="m11Min">The inclusive lower bound of <see cref="Matrix3x2.M11"/>.</param>
-        /// <param name="m11Max">The exclusive upper bound of <see cref="Matrix3x2.M11"/>.</param>
-        /// <param name="m12Min">The inclusive lower bound of <see cref="Matrix3x2.M12"/>.</param>
-        /// <param name="m12Max">The exclusive upper bound of <see cref="Matrix3x2.M12"/>.</param>
-        /// <param name="m21Min">The inclusive lower bound of <see cref="Matrix3x2.M21"/>.</param>
-        /// <param name="m21Max">The exclusive upper bound of <see cref="Matrix3x2.M21"/>.</param>
-        /// <param name="m22Min">The inclusive lower bound of <see cref="Matrix3x2.M22"/>.</param>
-        /// <param name="m22Max">The exclusive upper bound of <see cref="Matrix3x2.M22"/>.</param>
-        /// <param name="m31Min">The inclusive lower bound of <see cref="Matrix3x2.M31"/>.</param>
-        /// <param name="m31Max">The exclusive upper bound of <see cref="Matrix3x2.M31"/>.</param>
-        /// <param name="m32Min">The inclusive lower bound of <see cref="Matrix3x2.M32"/>.</param>
-        /// <param name="m32Max">The exclusive upper bound of <see cref="Matrix3x2.M32"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Matrix3x2"/> with
-        ///     <see cref="Matrix3x2.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
-        ///     <see cref="Matrix3x2.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
-        ///     <see cref="Matrix3x2.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
-        ///     <see cref="Matrix3x2.M22"/> between <paramref name="m22Min"/> and <paramref name="m22Min"/>,
-        ///     <see cref="Matrix3x2.M31"/> between <paramref name="m31Min"/> and <paramref name="m31Min"/>, and
-        ///     <see cref="Matrix3x2.M32"/> between <paramref name="m32Min"/> and <paramref name="m32Min"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextMatrix3X2"]'/>
         public static Matrix3x2 NextMatrix3X2(this Random random,
                                               bool ensureOneNextCall = false,
                                               float m11Min = 0,
@@ -68,42 +41,7 @@ namespace X10D.Performant.RandomExtensions
                                  random.NextSingle(m32Min, m32Max));
         }
 
-        /// <summary>
-        ///     Creates a new random <see cref="Matrix3x2"/> with supplied values.
-        /// </summary>
-        /// <param name="randomM11">The <see cref="System.Random"/> instance that determines the <see cref="Matrix3x2.M11"/> value.</param>
-        /// <param name="randomM12">The <see cref="System.Random"/> instance that determines the <see cref="Matrix3x2.M12"/> value.</param>
-        /// <param name="randomM21">The <see cref="System.Random"/> instance that determines the <see cref="Matrix3x2.M21"/> value.</param>
-        /// <param name="randomM22">The <see cref="System.Random"/> instance that determines the <see cref="Matrix3x2.M22"/> value.</param>
-        /// <param name="randomM31">The <see cref="System.Random"/> instance that determines the <see cref="Matrix3x2.M31"/> value.</param>
-        /// <param name="randomM32">The <see cref="System.Random"/> instance that determines the <see cref="Matrix3x2.M32"/> value.</param>
-        /// <param name="m11Min">The inclusive lower bound of <see cref="Matrix3x2.M11"/>.</param>
-        /// <param name="m11Max">The exclusive upper bound of <see cref="Matrix3x2.M11"/>.</param>
-        /// <param name="m12Min">The inclusive lower bound of <see cref="Matrix3x2.M12"/>.</param>
-        /// <param name="m12Max">The exclusive upper bound of <see cref="Matrix3x2.M12"/>.</param>
-        /// <param name="m21Min">The inclusive lower bound of <see cref="Matrix3x2.M21"/>.</param>
-        /// <param name="m21Max">The exclusive upper bound of <see cref="Matrix3x2.M21"/>.</param>
-        /// <param name="m22Min">The inclusive lower bound of <see cref="Matrix3x2.M22"/>.</param>
-        /// <param name="m22Max">The exclusive upper bound of <see cref="Matrix3x2.M22"/>.</param>
-        /// <param name="m31Min">The inclusive lower bound of <see cref="Matrix3x2.M31"/>.</param>
-        /// <param name="m31Max">The exclusive upper bound of <see cref="Matrix3x2.M31"/>.</param>
-        /// <param name="m32Min">The inclusive lower bound of <see cref="Matrix3x2.M32"/>.</param>
-        /// <param name="m32Max">The exclusive upper bound of <see cref="Matrix3x2.M32"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Matrix3x2"/> with
-        ///     <see cref="Matrix3x2.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
-        ///     <see cref="Matrix3x2.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
-        ///     <see cref="Matrix3x2.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
-        ///     <see cref="Matrix3x2.M22"/> between <paramref name="m22Min"/> and <paramref name="m22Min"/>,
-        ///     <see cref="Matrix3x2.M31"/> between <paramref name="m31Min"/> and <paramref name="m31Min"/>, and
-        ///     <see cref="Matrix3x2.M32"/> between <paramref name="m32Min"/> and <paramref name="m32Min"/> with
-        ///     <see cref="Matrix3x2.M11"/> chosen by <paramref name="randomM11"/>,
-        ///     <see cref="Matrix3x2.M12"/> chosen by <paramref name="randomM12"/>,
-        ///     <see cref="Matrix3x2.M21"/> chosen by <paramref name="randomM21"/>,
-        ///     <see cref="Matrix3x2.M22"/> chosen by <paramref name="randomM22"/>,
-        ///     <see cref="Matrix3x2.M31"/> chosen by <paramref name="randomM31"/>, and
-        ///     <see cref="Matrix3x2.M32"/> chosen by <paramref name="randomM32"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextMatrix3X2Ranom"]'/>
         public static Matrix3x2 NextMatrix3X2(this Random randomM11,
                                               Random randomM12,
                                               Random randomM21,
@@ -129,64 +67,7 @@ namespace X10D.Performant.RandomExtensions
                 randomM31.NextSingle(m31Min, m31Max),
                 randomM32.NextSingle(m32Min, m32Max));
 
-        /// <summary>
-        ///     Creates a new random <see cref="Matrix4x4"/> with supplied values..
-        /// </summary>
-        /// <param name="random">The <see cref="System.Random"/> instance.</param>
-        /// <param name="ensureOneNextCall">
-        ///     If <see langword="true"/> <paramref name="random"/> has <see cref="System.Random.Next()"/> called only one time.
-        /// </param>
-        /// <param name="m11Min">The inclusive lower bound of <see cref="Matrix4x4.M11"/>.</param>
-        /// <param name="m11Max">The exclusive upper bound of <see cref="Matrix4x4.M11"/>.</param>
-        /// <param name="m12Min">The inclusive lower bound of <see cref="Matrix4x4.M12"/>.</param>
-        /// <param name="m12Max">The exclusive upper bound of <see cref="Matrix4x4.M12"/>.</param>
-        /// <param name="m13Min">The inclusive lower bound of <see cref="Matrix4x4.M13"/>.</param>
-        /// <param name="m13Max">The exclusive upper bound of <see cref="Matrix4x4.M13"/>.</param>
-        /// <param name="m14Min">The inclusive lower bound of <see cref="Matrix4x4.M14"/>.</param>
-        /// <param name="m14Max">The exclusive upper bound of <see cref="Matrix4x4.M14"/>.</param>
-        /// <param name="m21Min">The inclusive lower bound of <see cref="Matrix4x4.M21"/>.</param>
-        /// <param name="m21Max">The exclusive upper bound of <see cref="Matrix4x4.M21"/>.</param>
-        /// <param name="m22Min">The inclusive lower bound of <see cref="Matrix4x4.M22"/>.</param>
-        /// <param name="m22Max">The exclusive upper bound of <see cref="Matrix4x4.M22"/>.</param>
-        /// <param name="m23Min">The inclusive lower bound of <see cref="Matrix4x4.M23"/>.</param>
-        /// <param name="m23Max">The exclusive upper bound of <see cref="Matrix4x4.M23"/>.</param>
-        /// <param name="m24Min">The inclusive lower bound of <see cref="Matrix4x4.M24"/>.</param>
-        /// <param name="m24Max">The exclusive upper bound of <see cref="Matrix4x4.M24"/>.</param>
-        /// <param name="m31Min">The inclusive lower bound of <see cref="Matrix4x4.M31"/>.</param>
-        /// <param name="m31Max">The exclusive upper bound of <see cref="Matrix4x4.M31"/>.</param>
-        /// <param name="m32Min">The inclusive lower bound of <see cref="Matrix4x4.M32"/>.</param>
-        /// <param name="m32Max">The exclusive upper bound of <see cref="Matrix4x4.M32"/>.</param>
-        /// <param name="m33Min">The inclusive lower bound of <see cref="Matrix4x4.M33"/>.</param>
-        /// <param name="m33Max">The exclusive upper bound of <see cref="Matrix4x4.M33"/>.</param>
-        /// <param name="m34Min">The inclusive lower bound of <see cref="Matrix4x4.M34"/>.</param>
-        /// <param name="m34Max">The exclusive upper bound of <see cref="Matrix4x4.M34"/>.</param>
-        /// <param name="m41Min">The inclusive lower bound of <see cref="Matrix4x4.M41"/>.</param>
-        /// <param name="m41Max">The exclusive upper bound of <see cref="Matrix4x4.M41"/>.</param>
-        /// <param name="m42Min">The inclusive lower bound of <see cref="Matrix4x4.M42"/>.</param>
-        /// <param name="m42Max">The exclusive upper bound of <see cref="Matrix4x4.M42"/>.</param>
-        /// <param name="m43Min">The inclusive lower bound of <see cref="Matrix4x4.M43"/>.</param>
-        /// <param name="m43Max">The exclusive upper bound of <see cref="Matrix4x4.M43"/>.</param>
-        /// <param name="m44Min">The inclusive lower bound of <see cref="Matrix4x4.M44"/>.</param>
-        /// <param name="m44Max">The exclusive upper bound of <see cref="Matrix4x4.M44"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Matrix3x2"/> with
-        ///     <see cref="Matrix4x4.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
-        ///     <see cref="Matrix4x4.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
-        ///     <see cref="Matrix4x4.M13"/> between <paramref name="m13Min"/> and <paramref name="m13Min"/>,
-        ///     <see cref="Matrix4x4.M14"/> between <paramref name="m14Min"/> and <paramref name="m14Min"/>,
-        ///     <see cref="Matrix4x4.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
-        ///     <see cref="Matrix4x4.M22"/> between <paramref name="m22Min"/> and <paramref name="m22Min"/>,
-        ///     <see cref="Matrix4x4.M23"/> between <paramref name="m23Min"/> and <paramref name="m23Min"/>,
-        ///     <see cref="Matrix4x4.M24"/> between <paramref name="m24Min"/> and <paramref name="m24Min"/>,
-        ///     <see cref="Matrix4x4.M31"/> between <paramref name="m31Min"/> and <paramref name="m31Min"/>,
-        ///     <see cref="Matrix4x4.M32"/> between <paramref name="m32Min"/> and <paramref name="m32Min"/>,
-        ///     <see cref="Matrix4x4.M33"/> between <paramref name="m33Min"/> and <paramref name="m33Min"/>,
-        ///     <see cref="Matrix4x4.M34"/> between <paramref name="m34Min"/> and <paramref name="m34Min"/>,
-        ///     <see cref="Matrix4x4.M41"/> between <paramref name="m41Min"/> and <paramref name="m41Min"/>,
-        ///     <see cref="Matrix4x4.M42"/> between <paramref name="m42Min"/> and <paramref name="m42Min"/>,
-        ///     <see cref="Matrix4x4.M43"/> between <paramref name="m43Min"/> and <paramref name="m43Min"/>, and
-        ///     <see cref="Matrix4x4.M44"/> between <paramref name="m44Min"/> and <paramref name="m44Min"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextMatrix4X4"]'/>
         public static Matrix4x4 NextMatrix4X4(this Random random,
                                               bool ensureOneNextCall = false,
                                               float m11Min = 0,
@@ -262,92 +143,7 @@ namespace X10D.Performant.RandomExtensions
                                  random.NextSingle(m44Min, m44Max));
         }
 
-        /// <summary>
-        ///     Creates a new random <see cref="Matrix4x4"/> with supplied values.
-        /// </summary>
-        /// <param name="randomM11">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M11"/> value.</param>
-        /// <param name="randomM12">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M12"/> value.</param>
-        /// <param name="randomM13">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M13"/> value.</param>
-        /// <param name="randomM14">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M14"/> value.</param>
-        /// <param name="randomM21">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M21"/> value.</param>
-        /// <param name="randomM22">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M22"/> value.</param>
-        /// <param name="randomM23">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M23"/> value.</param>
-        /// <param name="randomM24">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M24"/> value.</param>
-        /// <param name="randomM31">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M31"/> value.</param>
-        /// <param name="randomM32">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M32"/> value.</param>
-        /// <param name="randomM33">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M33"/> value.</param>
-        /// <param name="randomM34">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M34"/> value.</param>
-        /// <param name="randomM41">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M41"/> value.</param>
-        /// <param name="randomM42">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M42"/> value.</param>
-        /// <param name="randomM43">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M43"/> value.</param>
-        /// <param name="randomM44">The <see cref="System.Random"/> instance that determines the <see cref="Matrix4x4.M44"/> value.</param>
-        /// <param name="m11Min">The inclusive lower bound of <see cref="Matrix4x4.M11"/>.</param>
-        /// <param name="m11Max">The exclusive upper bound of <see cref="Matrix4x4.M11"/>.</param>
-        /// <param name="m12Min">The inclusive lower bound of <see cref="Matrix4x4.M12"/>.</param>
-        /// <param name="m12Max">The exclusive upper bound of <see cref="Matrix4x4.M12"/>.</param>
-        /// <param name="m13Min">The inclusive lower bound of <see cref="Matrix4x4.M13"/>.</param>
-        /// <param name="m13Max">The exclusive upper bound of <see cref="Matrix4x4.M13"/>.</param>
-        /// <param name="m14Min">The inclusive lower bound of <see cref="Matrix4x4.M14"/>.</param>
-        /// <param name="m14Max">The exclusive upper bound of <see cref="Matrix4x4.M14"/>.</param>
-        /// <param name="m21Min">The inclusive lower bound of <see cref="Matrix4x4.M21"/>.</param>
-        /// <param name="m21Max">The exclusive upper bound of <see cref="Matrix4x4.M21"/>.</param>
-        /// <param name="m22Min">The inclusive lower bound of <see cref="Matrix4x4.M22"/>.</param>
-        /// <param name="m22Max">The exclusive upper bound of <see cref="Matrix4x4.M22"/>.</param>
-        /// <param name="m23Min">The inclusive lower bound of <see cref="Matrix4x4.M23"/>.</param>
-        /// <param name="m23Max">The exclusive upper bound of <see cref="Matrix4x4.M23"/>.</param>
-        /// <param name="m24Min">The inclusive lower bound of <see cref="Matrix4x4.M24"/>.</param>
-        /// <param name="m24Max">The exclusive upper bound of <see cref="Matrix4x4.M24"/>.</param>
-        /// <param name="m31Min">The inclusive lower bound of <see cref="Matrix4x4.M31"/>.</param>
-        /// <param name="m31Max">The exclusive upper bound of <see cref="Matrix4x4.M31"/>.</param>
-        /// <param name="m32Min">The inclusive lower bound of <see cref="Matrix4x4.M32"/>.</param>
-        /// <param name="m32Max">The exclusive upper bound of <see cref="Matrix4x4.M32"/>.</param>
-        /// <param name="m33Min">The inclusive lower bound of <see cref="Matrix4x4.M33"/>.</param>
-        /// <param name="m33Max">The exclusive upper bound of <see cref="Matrix4x4.M33"/>.</param>
-        /// <param name="m34Min">The inclusive lower bound of <see cref="Matrix4x4.M34"/>.</param>
-        /// <param name="m34Max">The exclusive upper bound of <see cref="Matrix4x4.M34"/>.</param>
-        /// <param name="m41Min">The inclusive lower bound of <see cref="Matrix4x4.M41"/>.</param>
-        /// <param name="m41Max">The exclusive upper bound of <see cref="Matrix4x4.M41"/>.</param>
-        /// <param name="m42Min">The inclusive lower bound of <see cref="Matrix4x4.M42"/>.</param>
-        /// <param name="m42Max">The exclusive upper bound of <see cref="Matrix4x4.M42"/>.</param>
-        /// <param name="m43Min">The inclusive lower bound of <see cref="Matrix4x4.M43"/>.</param>
-        /// <param name="m43Max">The exclusive upper bound of <see cref="Matrix4x4.M43"/>.</param>
-        /// <param name="m44Min">The inclusive lower bound of <see cref="Matrix4x4.M44"/>.</param>
-        /// <param name="m44Max">The exclusive upper bound of <see cref="Matrix4x4.M44"/>.</param>
-        /// <returns>
-        ///     A new <see cref="Matrix3x2"/> with
-        ///     <see cref="Matrix4x4.M11"/> between <paramref name="m11Min"/> and <paramref name="m11Min"/>,
-        ///     <see cref="Matrix4x4.M12"/> between <paramref name="m12Min"/> and <paramref name="m12Min"/>,
-        ///     <see cref="Matrix4x4.M13"/> between <paramref name="m13Min"/> and <paramref name="m13Min"/>,
-        ///     <see cref="Matrix4x4.M14"/> between <paramref name="m14Min"/> and <paramref name="m14Min"/>,
-        ///     <see cref="Matrix4x4.M21"/> between <paramref name="m21Min"/> and <paramref name="m21Min"/>,
-        ///     <see cref="Matrix4x4.M22"/> between <paramref name="m22Min"/> and <paramref name="m22Min"/>,
-        ///     <see cref="Matrix4x4.M23"/> between <paramref name="m23Min"/> and <paramref name="m23Min"/>,
-        ///     <see cref="Matrix4x4.M24"/> between <paramref name="m24Min"/> and <paramref name="m24Min"/>,
-        ///     <see cref="Matrix4x4.M31"/> between <paramref name="m31Min"/> and <paramref name="m31Min"/>,
-        ///     <see cref="Matrix4x4.M32"/> between <paramref name="m32Min"/> and <paramref name="m32Min"/>,
-        ///     <see cref="Matrix4x4.M33"/> between <paramref name="m33Min"/> and <paramref name="m33Min"/>,
-        ///     <see cref="Matrix4x4.M34"/> between <paramref name="m34Min"/> and <paramref name="m34Min"/>,
-        ///     <see cref="Matrix4x4.M41"/> between <paramref name="m41Min"/> and <paramref name="m41Min"/>,
-        ///     <see cref="Matrix4x4.M42"/> between <paramref name="m42Min"/> and <paramref name="m42Min"/>,
-        ///     <see cref="Matrix4x4.M43"/> between <paramref name="m43Min"/> and <paramref name="m43Min"/>, and
-        ///     <see cref="Matrix4x4.M44"/> between <paramref name="m44Min"/> and <paramref name="m44Min"/> with
-        ///     <see cref="Matrix4x4.M11"/> chosen by <paramref name="randomM11"/>,
-        ///     <see cref="Matrix4x4.M12"/> chosen by <paramref name="randomM12"/>,
-        ///     <see cref="Matrix4x4.M13"/> chosen by <paramref name="randomM13"/>,
-        ///     <see cref="Matrix4x4.M14"/> chosen by <paramref name="randomM14"/>,
-        ///     <see cref="Matrix4x4.M21"/> chosen by <paramref name="randomM21"/>,
-        ///     <see cref="Matrix4x4.M22"/> chosen by <paramref name="randomM22"/>,
-        ///     <see cref="Matrix4x4.M23"/> chosen by <paramref name="randomM23"/>,
-        ///     <see cref="Matrix4x4.M24"/> chosen by <paramref name="randomM24"/>,
-        ///     <see cref="Matrix4x4.M31"/> chosen by <paramref name="randomM31"/>,
-        ///     <see cref="Matrix4x4.M32"/> chosen by <paramref name="randomM32"/>,
-        ///     <see cref="Matrix4x4.M33"/> chosen by <paramref name="randomM33"/>,
-        ///     <see cref="Matrix4x4.M34"/> chosen by <paramref name="randomM34"/>,
-        ///     <see cref="Matrix4x4.M41"/> chosen by <paramref name="randomM41"/>,
-        ///     <see cref="Matrix4x4.M42"/> chosen by <paramref name="randomM42"/>,
-        ///     <see cref="Matrix4x4.M43"/> chosen by <paramref name="randomM43"/> and
-        ///     <see cref="Matrix4x4.M44"/> chosen by <paramref name="randomM44"/>.
-        /// </returns>
+        /// <include file='../RandomExtensions.xml' path='members/member[@name="NextMatrix4X4Random"]'/>
         public static Matrix4x4 NextMatrix4X4(this Random randomM11,
                                               Random randomM12,
                                               Random randomM13,

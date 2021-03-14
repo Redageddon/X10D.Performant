@@ -1,0 +1,20 @@
+﻿<members>
+    <member name="NextEnumDeclaration">
+        <summary>
+            Returns the next value in an <see cref="Enum"/> using <paramref name="value"/> as a starting point.
+        </summary>
+        <param name="value">An <see cref="Enum"/> value.</param>
+        <param name="wrap">Whether or not to wrap to the to the start of the <see cref="Enum"/>. Defaults to <see langword="true"/>.</param>
+        <typeparam name="TEnum">An <see cref="Enum"/>.</typeparam>
+        <returns>A <typeparamref name="TEnum"/> value.</returns>
+    </member>
+    <member name="PreviousEnumDeclaration">
+        <summary>
+            Returns the previous value in an <see cref="Enum"/> using <paramref name="value"/> as a starting point.
+        </summary>
+        <param name="value">An <see cref="Enum"/> value.</param>
+        <param name="wrap">Whether or not to wrap to the to the end of the <see cref="Enum"/>. Defaults to <see langword="true"/>.</param>
+        <typeparam name="TEnum">An <see cref="Enum"/>.</typeparam>
+        <returns>A <typeparamref name="TEnum"/> value.</returns>
+    </member>
+</members>

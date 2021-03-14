@@ -7,13 +7,7 @@ namespace X10D.Performant.EnumExtensions
     /// </summary>
     public static class EnumExtensions
     {
-        /// <summary>
-        ///     Returns the next value in an <see cref="Enum"/> using <paramref name="value"/> as a starting point.
-        /// </summary>
-        /// <param name="value">An <see cref="Enum"/> value.</param>
-        /// <param name="wrap">Whether or not to wrap to the to the start of the <see cref="Enum"/>. Defaults to <see langword="true"/>.</param>
-        /// <typeparam name="TEnum">An <see cref="Enum"/>.</typeparam>
-        /// <returns>A <typeparamref name="TEnum"/> value.</returns>
+        /// <include file='EnumExtensions.xml' path='members/member[@name="NextEnumDeclaration"]'/>
         public static TEnum NextEnumDeclaration<TEnum>(this TEnum value, bool wrap = true)
             where TEnum : struct, Enum
         {
@@ -25,13 +19,7 @@ namespace X10D.Performant.EnumExtensions
                 : values[i];
         }
 
-        /// <summary>
-        ///     Returns the previous value in an <see cref="Enum"/> using <paramref name="value"/> as a starting point.
-        /// </summary>
-        /// <param name="value">An <see cref="Enum"/> value.</param>
-        /// <param name="wrap">Whether or not to wrap to the to the end of the <see cref="Enum"/>. Defaults to <see langword="true"/>.</param>
-        /// <typeparam name="TEnum">An <see cref="Enum"/>.</typeparam>
-        /// <returns>A <typeparamref name="TEnum"/> value.</returns>
+        /// <include file='EnumExtensions.xml' path='members/member[@name="PreviousEnumDeclaration"]'/>
         public static TEnum PreviousEnumDeclaration<TEnum>(this TEnum value, bool wrap = true)
             where TEnum : struct, Enum
         {

@@ -8,22 +8,11 @@ namespace X10D.Performant.IListExtensions
     /// </summary>
     public static class ListExtensions
     {
-        /// <summary>
-        ///     Returns a random element from <paramref name="values"/> using the <see cref="Random"/> instance.
-        /// </summary>
-        /// <param name="values">The <see cref="IList{T}"/> being pulled from.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
-        /// <typeparam name="T">Any type.</typeparam>
-        /// <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
-        public static T OneOf<T>(this IList<T> values, Random? random = null) => values[(random ?? RandomExtensions.RandomExtensions.Random).Next(values.Count)];
+        /// <include file='ListExtensions.xml' path='members/member[@name="OneOf"]'/>
+        public static T OneOf<T>(this IList<T> values, Random? random = null) =>
+            values[(random ?? RandomExtensions.RandomExtensions.Random).Next(values.Count)];
 
-        /// <summary>
-        ///     Fills <paramref name="buffer"/> randomly with values found in <paramref name="values"/>.
-        /// </summary>
-        /// <param name="values">The <see cref="IList{T}"/> being pulled from.</param>
-        /// <param name="buffer">The <see cref="IList{T}"/> being filled.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
-        /// <typeparam name="T">Any type.</typeparam>
+        /// <include file='ListExtensions.xml' path='members/member[@name="Random"]'/>
         public static void Random<T>(this IList<T> values, IList<T> buffer, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;
@@ -34,12 +23,7 @@ namespace X10D.Performant.IListExtensions
             }
         }
 
-        /// <summary>
-        ///     Shuffles <paramref name="values"/>.
-        /// </summary>
-        /// <typeparam name="T">The collection type.</typeparam>
-        /// <param name="values">The <see cref="IList{T}"/> to shuffle.</param>
-        /// <param name="random">The <see cref="Random"/> instance.</param>
+        /// <include file='ListExtensions.xml' path='members/member[@name="Shuffle"]'/>
         public static void Shuffle<T>(this IList<T> values, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;

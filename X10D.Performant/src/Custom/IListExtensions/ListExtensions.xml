@@ -1,0 +1,28 @@
+﻿<members>
+    <member name="OneOf">
+        <summary>
+            Returns a random element from <paramref name="values"/> using the <see cref="Random"/> instance.
+        </summary>
+        <param name="values">The <see cref="IList{T}"/> being pulled from.</param>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <typeparam name="T">Any type.</typeparam>
+        <returns>A random element of type <typeparamref name="T"/> from <paramref name="values"/>.</returns>
+    </member>
+    <member name="Random">
+        <summary>
+            Fills <paramref name="buffer"/> randomly with values found in <paramref name="values"/>.
+        </summary>
+        <param name="values">The <see cref="IList{T}"/> being pulled from.</param>
+        <param name="buffer">The <see cref="IList{T}"/> being filled.</param>
+        <param name="random">The <see cref="Random"/> instance.</param>
+        <typeparam name="T">Any type.</typeparam>
+    </member>
+    <member name="Shuffle">
+        <summary>
+            Shuffles <paramref name="values"/>.
+        </summary>
+        <typeparam name="T">The collection type.</typeparam>
+        <param name="values">The <see cref="IList{T}"/> to shuffle.</param>
+        <param name="random">The <see cref="Random"/> instance.</param>
+    </member>
+</members>

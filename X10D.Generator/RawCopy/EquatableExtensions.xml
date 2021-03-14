@@ -1,5 +1,5 @@
 ﻿<members>
-    <member name="AndEquals">
+    <member name="AndEquals1">
         <summary>
             Checks if this element is AND equaled to all of the parameters.
         </summary>
@@ -11,7 +11,7 @@
             EX: a == b and a == c and a == d.
         </returns>
     </member>
-    <member name="NAndEquals">
+    <member name="NAndEquals1">
         <summary>
             Checks if this element is NAND equaled to all of the parameters.
         </summary>
@@ -23,7 +23,7 @@
             EX: !(!(a == b and a == c) and a == d).
         </returns>
     </member>
-    <member name="NOrEquals">
+    <member name="NOrEquals1">
         <summary>
             Checks if this element is NOR equaled to all of the parameters.
         </summary>
@@ -35,7 +35,7 @@
             EX: !(!(a == b or a == c) or a == d).
         </returns>
     </member>
-    <member name="OrEquals">
+    <member name="OrEquals1">
         <summary>
             Checks if this element is OR equaled to all of the parameters.
         </summary>
@@ -47,7 +47,7 @@
             EX: a == b or a == c or a == d.
         </returns>
     </member>
-    <member name="XNOrEquals">
+    <member name="XNOrEquals1">
         <summary>
             Checks if this element is XNOR equaled to all of the parameters.
         </summary>
@@ -59,7 +59,7 @@
             EX: !(!(a == b ^ a == c) ^ a == d).
         </returns>
     </member>
-    <member name="XOrEquals">
+    <member name="XOrEquals1">
         <summary>
             Checks if this element is XOR equaled to all of the parameters.
         </summary>

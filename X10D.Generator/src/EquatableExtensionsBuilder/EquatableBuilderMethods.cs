@@ -45,6 +45,8 @@ namespace X10D.Generator
 
             #endregion
 
+            #region methodBuild
+
             if (isReversedType)
             {
                 returnsStringBuilder.Append("!(");
@@ -83,7 +85,9 @@ namespace X10D.Generator
                 returnsStringBuilder.Append(')');
             }
 
-            return @$"        /// <inheritdoc cref=""{type}Equals{{T}}(T,T[])""/>
+            #endregion
+
+            return @$"        /// <include file='EquatableExtensions.xml' path='members/member[@name=""{type}Equals{argsCount}""]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool {type}Equals<T>(this T value, {argsStringBuilder})
             where T : IEquatable<T> =>
@@ -92,7 +96,7 @@ namespace X10D.Generator
         }
 
         private static string GetParamsMethod(string type) =>
-            $"        /// <include file='EquatableExtensions.xml' path='members/member[@name=\"{type}Equals\"]'/>"
+            $"        /// <include file='EquatableExtensions.xml' path='members/member[@name=\"{type}Equals1\"]'/>"
           + @$"
         public static bool {type}Equals<T>(this T value, params T[] comparisons)
             where T : IEquatable<T> =>

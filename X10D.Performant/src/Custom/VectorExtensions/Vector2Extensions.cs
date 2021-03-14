@@ -8,65 +8,22 @@ namespace X10D.Performant.VectorExtensions
     /// </summary>
     public static class Vector2Extensions
     {
-        /// <summary>
-        ///     Performs bilinear interpolation between two <see cref="Vector2"/>.
-        /// </summary>
-        /// <param name="alpha">The <see cref="Vector2"/> that holds the X and Y alpha change values.</param>
-        /// <param name="firstValue">The <see cref="Vector2"/> that holds the first X and Y values.</param>
-        /// <param name="secondValue">The <see cref="Vector2"/> that holds the second X and Y values.</param>
-        /// <returns>
-        ///     A new <see cref="Vector2"/> with
-        ///     <paramref name="firstValue"/>'s X value and <paramref name="secondValue"/>'s X value between <paramref name="alpha"/>'s X value, and
-        ///     <paramref name="firstValue"/>'s Y value and <paramref name="secondValue"/>'s Y value between <paramref name="alpha"/>'s Y value.
-        /// </returns>
+        /// <include file='VectorExtensions.xml' path='members/member[@name="Lerp"]'/>
         public static Vector2 Lerp(this Vector2 alpha, Vector2 firstValue, Vector2 secondValue) =>
             new(alpha.X.Lerp(firstValue.X, secondValue.X),
                 alpha.Y.Lerp(firstValue.Y, secondValue.Y));
 
-        /// <summary>
-        ///     Performs bilinear interpolation between two <see cref="Vector2"/>.
-        /// </summary>
-        /// <param name="alpha">The <see cref="Vector2"/> that holds the X and Y alpha change values.</param>
-        /// <param name="firstValue">The <see cref="Vector2"/> that holds the first X and Y values.</param>
-        /// <param name="secondValue">The <see cref="Vector2"/> that holds the second X and Y values.</param>
-        /// <returns>
-        ///     A new <see cref="Vector2"/> with
-        ///     <paramref name="firstValue"/>'s X value and <paramref name="secondValue"/>'s X value between <paramref name="alpha"/>'s X value, and
-        ///     <paramref name="firstValue"/>'s Y value and <paramref name="secondValue"/>'s Y value between <paramref name="alpha"/>'s Y value with
-        ///     <see cref="Vector2.X"/> and <see cref="Vector2.Y"/> clamped.
-        /// </returns>
+        /// <include file='VectorExtensions.xml' path='members/member[@name="ClampedXYLerp"]'/>
         public static Vector2 ClampedXYLerp(this Vector2 alpha, Vector2 firstValue, Vector2 secondValue) =>
             new(alpha.X.ClampedLerp(firstValue.X, secondValue.X),
                 alpha.Y.ClampedLerp(firstValue.Y, secondValue.Y));
 
-        /// <summary>
-        ///     Performs bilinear interpolation between two <see cref="Vector2"/>.
-        /// </summary>
-        /// <param name="alpha">The <see cref="Vector2"/> that holds the X and Y alpha change values.</param>
-        /// <param name="firstValue">The <see cref="Vector2"/> that holds the first X and Y values.</param>
-        /// <param name="secondValue">The <see cref="Vector2"/> that holds the second X and Y values.</param>
-        /// <returns>
-        ///     A new <see cref="Vector2"/> with
-        ///     <paramref name="firstValue"/>'s X value and <paramref name="secondValue"/>'s X value between <paramref name="alpha"/>'s X value, and
-        ///     <paramref name="firstValue"/>'s Y value and <paramref name="secondValue"/>'s Y value between <paramref name="alpha"/>'s Y value with
-        ///     <see cref="Vector2.Y"/> clamped.
-        /// </returns>
+        /// <include file='VectorExtensions.xml' path='members/member[@name="ClampedYLerp"]'/>
         public static Vector2 ClampedYLerp(this Vector2 alpha, Vector2 firstValue, Vector2 secondValue) =>
             new(alpha.X.Lerp(firstValue.X, secondValue.X),
                 alpha.Y.ClampedLerp(firstValue.Y, secondValue.Y));
 
-        /// <summary>
-        ///     Performs bilinear interpolation between two <see cref="Vector2"/>.
-        /// </summary>
-        /// <param name="alpha">The <see cref="Vector2"/> that holds the X and Y alpha change values.</param>
-        /// <param name="firstValue">The <see cref="Vector2"/> that holds the first X and Y values.</param>
-        /// <param name="secondValue">The <see cref="Vector2"/> that holds the second X and Y values.</param>
-        /// <returns>
-        ///     A new <see cref="Vector2"/> with
-        ///     <paramref name="firstValue"/>'s X value and <paramref name="secondValue"/>'s X value between <paramref name="alpha"/>'s X value, and
-        ///     <paramref name="firstValue"/>'s Y value and <paramref name="secondValue"/>'s Y value between <paramref name="alpha"/>'s Y value with
-        ///     <see cref="Vector2.X"/> clamped.
-        /// </returns>
+        /// <include file='VectorExtensions.xml' path='members/member[@name="ClampedXLerp"]'/>
         public static Vector2 ClampedXLerp(this Vector2 alpha, Vector2 firstValue, Vector2 secondValue) =>
             new(alpha.X.ClampedLerp(firstValue.X, secondValue.X),
                 alpha.Y.Lerp(firstValue.Y, secondValue.Y));

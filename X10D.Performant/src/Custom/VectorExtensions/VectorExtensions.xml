@@ -1,0 +1,57 @@
+﻿<members>
+    <member name="Lerp">
+        <summary>
+            Performs bilinear interpolation between two <see cref="Vector2"/>.
+        </summary>
+        <param name="alpha">The <see cref="Vector2"/> that holds the X and Y alpha change values.</param>
+        <param name="firstValue">The <see cref="Vector2"/> that holds the first X and Y values.</param>
+        <param name="secondValue">The <see cref="Vector2"/> that holds the second X and Y values.</param>
+        <returns>
+            A new <see cref="Vector2"/> with
+            <paramref name="firstValue"/>'s X value and <paramref name="secondValue"/>'s X value between <paramref name="alpha"/>'s X value, and
+            <paramref name="firstValue"/>'s Y value and <paramref name="secondValue"/>'s Y value between <paramref name="alpha"/>'s Y value.
+        </returns>
+    </member>
+    <member name="ClampedXYLerp">
+        <summary>
+            Performs bilinear interpolation between two <see cref="Vector2"/>.
+        </summary>
+        <param name="alpha">The <see cref="Vector2"/> that holds the X and Y alpha change values.</param>
+        <param name="firstValue">The <see cref="Vector2"/> that holds the first X and Y values.</param>
+        <param name="secondValue">The <see cref="Vector2"/> that holds the second X and Y values.</param>
+        <returns>
+            A new <see cref="Vector2"/> with
+            <paramref name="firstValue"/>'s X value and <paramref name="secondValue"/>'s X value between <paramref name="alpha"/>'s X value, and
+            <paramref name="firstValue"/>'s Y value and <paramref name="secondValue"/>'s Y value between <paramref name="alpha"/>'s Y value with
+            <see cref="Vector2.X"/> and <see cref="Vector2.Y"/> clamped.
+        </returns>
+    </member>
+    <member name="ClampedYLerp">
+        <summary>
+            Performs bilinear interpolation between two <see cref="Vector2"/>.
+        </summary>
+        <param name="alpha">The <see cref="Vector2"/> that holds the X and Y alpha change values.</param>
+        <param name="firstValue">The <see cref="Vector2"/> that holds the first X and Y values.</param>
+        <param name="secondValue">The <see cref="Vector2"/> that holds the second X and Y values.</param>
+        <returns>
+            A new <see cref="Vector2"/> with
+            <paramref name="firstValue"/>'s X value and <paramref name="secondValue"/>'s X value between <paramref name="alpha"/>'s X value, and
+            <paramref name="firstValue"/>'s Y value and <paramref name="secondValue"/>'s Y value between <paramref name="alpha"/>'s Y value with
+            <see cref="Vector2.Y"/> clamped.
+        </returns>
+    </member>
+    <member name="ClampedXLerp">
+        <summary>
+            Performs bilinear interpolation between two <see cref="Vector2"/>.
+        </summary>
+        <param name="alpha">The <see cref="Vector2"/> that holds the X and Y alpha change values.</param>
+        <param name="firstValue">The <see cref="Vector2"/> that holds the first X and Y values.</param>
+        <param name="secondValue">The <see cref="Vector2"/> that holds the second X and Y values.</param>
+        <returns>
+            A new <see cref="Vector2"/> with
+            <paramref name="firstValue"/>'s X value and <paramref name="secondValue"/>'s X value between <paramref name="alpha"/>'s X value, and
+            <paramref name="firstValue"/>'s Y value and <paramref name="secondValue"/>'s Y value between <paramref name="alpha"/>'s Y value with
+            <see cref="Vector2.X"/> clamped.
+        </returns>
+    </member>
+</members>

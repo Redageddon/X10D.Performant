@@ -27,15 +27,6 @@ namespace X10D.Generator.EquatableExtensionsBuilder
             return classBuilder.ToString();
         }
 
-        private static string GetParamsMethod(string type, string documentation) =>
-            documentation +
-            @$"
-        public static bool {type}Equals<T>(this T value, params T[] comparisons)
-            where T : IEquatable<T> =>
-            AdvancedComparison<T, {type}>(value, comparisons);
-
-";
-
         private static string GetOverloadsMethod(string type, string binarySeparationType, bool isReversedType, int argsCount)
         {
             StringBuilder argsStringBuilder = new();
@@ -99,5 +90,14 @@ namespace X10D.Generator.EquatableExtensionsBuilder
             {returnsStringBuilder};
 ";
         }
+
+        private static string GetParamsMethod(string type, string documentation) =>
+            documentation
+          + @$"
+        public static bool {type}Equals<T>(this T value, params T[] comparisons)
+            where T : IEquatable<T> =>
+            AdvancedComparison<T, {type}>(value, comparisons);
+
+";
     }
 }

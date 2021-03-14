@@ -8,7 +8,11 @@ namespace X10D.Performant.RandomExtensions
         private static readonly StringBuilder StringBuilder = new();
 
         /// <include file='../RandomExtensions.xml' path='members/member[@name="NextString"]'/>
-        public static string NextString(this Random random, int charCount, char startingChar = 'a', char endingChar = '{', bool ensureOneNextCall = false)
+        public static string NextString(this Random random,
+                                        int charCount,
+                                        char startingChar = 'a',
+                                        char endingChar = '{',
+                                        bool ensureOneNextCall = false)
         {
             StringBuilder.Clear();
             StringBuilder.Capacity = charCount;

@@ -9,8 +9,7 @@ namespace X10D.Performant.RandomExtensions
             new(random.Next(minValue, maxValue), fromEnd);
 
         /// <include file='../RandomExtensions.xml' path='members/member[@name="NextIndex"]'/>
-        public static Index NextIndex(this Random random, int maxValue, bool fromEnd = false) =>
-            new(random.Next(maxValue), fromEnd);
+        public static Index NextIndex(this Random random, int maxValue, bool fromEnd = false) => new(random.Next(maxValue), fromEnd);
 
         /// <include file='../RandomExtensions.xml' path='members/member[@name="NextRangeMax"]'/>
         public static Range NextRange(this Random random,

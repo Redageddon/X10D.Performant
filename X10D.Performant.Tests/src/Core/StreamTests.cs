@@ -361,7 +361,7 @@ namespace X10D.Performant.Tests.Core
         // If any of the previous methods fail, then these next methods have a possibility of giving false negatives or false positives.
 
         /// <summary>
-        ///     Tests for <see cref="StreamExtensions.WriteArgbColor"/>.
+        ///     Tests for <see cref="StreamExtensions.Write(Stream,Color,bool)"/>.
         /// </summary>
         [Test]
         public void WriteArgbColor()
@@ -369,8 +369,8 @@ namespace X10D.Performant.Tests.Core
             MemoryStream stream = new();
             Color c = Color.FromArgb(123, 45, 67, 89);
 
-            stream.WriteArgbColor(c);
-            stream.WriteArgbColor(c, false);
+            stream.Write(c);
+            stream.Write(c, false);
             stream.ResetPosition();
 
             Assert.AreEqual(c, stream.ReadArgbColor());

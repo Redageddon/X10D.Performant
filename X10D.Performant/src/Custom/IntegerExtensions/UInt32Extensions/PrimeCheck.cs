@@ -10,10 +10,10 @@ namespace X10D.Performant.UInt32Extensions
         public static bool IsPrime(this uint value, bool useCache = false) =>
             value switch
             {
-                < 2              => false,
-                < byte.MaxValue  => ((byte)value).IsPrime(),
+                < 2               => false,
+                < byte.MaxValue   => ((byte)value).IsPrime(),
                 < ushort.MaxValue => ((ushort)value).IsPrime(useCache),
-                _                => ((ulong)value).IsPrime(useCache),
+                _                 => ((ulong)value).IsPrime(useCache),
             };
     }
 }

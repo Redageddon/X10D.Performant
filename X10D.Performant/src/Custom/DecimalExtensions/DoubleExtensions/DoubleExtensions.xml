@@ -1,7 +1,7 @@
 ﻿<members>
     <member name="AlmostEquals">
         <summary>
-            Returns true if 2 numbers are within a certain tolerance of each other.
+            Returns true if 2 <see cref="double"/>'s are within a certain tolerance of each other.
         </summary>
         <param name="value1">The first value to compare.</param>
         <param name="value2">The second value to compare.</param>
@@ -15,21 +15,21 @@
         <summary>
             Takes the inverse square root of <paramref name="value"/>.
         </summary>
-        <param name="value">A double precision floating point value.</param>
+        <param name="value">The <see cref="double"/> value.</param>
         <returns>1 divided by the square root of <paramref name="value"/>.</returns>
     </member>
     <member name="IsEven">
         <summary>
             Determines if the <paramref name="value"/> is even.
         </summary>
-        <param name="value">The number.</param>
+        <param name="value">The <see cref="double"/> value.</param>
         <returns><see langword="true"/> if <paramref name="value"/> is even, <see langword="false"/> otherwise.</returns>
     </member>
     <member name="IsOdd">
         <summary>
             Determines if the <paramref name="value"/> is odd.
         </summary>
-        <param name="value">The number.</param>
+        <param name="value">The <see cref="double"/> value.</param>
         <returns><see langword="true"/> if <paramref name="value"/> is odd, <see langword="false"/> otherwise.</returns>
     </member>
     <member name="Lerp">

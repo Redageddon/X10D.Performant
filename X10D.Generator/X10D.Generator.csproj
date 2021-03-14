@@ -5,10 +5,6 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="src" />
-    </ItemGroup>
-
     <ItemGroup>      
         <None Update="RawCopy\EquatableExtensions.xml">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -1,10 +1,8 @@
-﻿using X10D.Performant.DoubleExtensions;
-
 namespace X10D.Performant.SingleExtensions
 {
     public static partial class SingleExtensions
     {
-        /// <inheritdoc cref="DoubleExtensions.ClampedLerp"/>
+        /// <include file='SingleExtensions.copy.xml' path='members/member[@name="ClampedLerp"]'/>
         public static float ClampedLerp(this float alpha, float firstValue, float secondValue) =>
             alpha switch
             {
@@ -13,8 +11,8 @@ namespace X10D.Performant.SingleExtensions
                 _    => (firstValue * (1 - alpha)) + (secondValue * alpha),
             };
 
-        /// <inheritdoc cref="ClampedLerp"/>
-        public static double ClampedLerpTo(this double firstValue, double secondValue, double alpha) =>
+        /// <include file='SingleExtensions.copy.xml' path='members/member[@name="ClampedLerp"]'/>
+        public static float ClampedLerpTo(this float firstValue, float secondValue, float alpha) =>
             alpha switch
             {
                 <= 0 => firstValue,
@@ -22,10 +20,10 @@ namespace X10D.Performant.SingleExtensions
                 _    => (firstValue * (1 - alpha)) + (secondValue * alpha),
             };
 
-        /// <inheritdoc cref="DoubleExtensions.Lerp"/>
+        /// <include file='SingleExtensions.copy.xml' path='members/member[@name="Lerp"]'/>
         public static float Lerp(this float alpha, float firstValue, float secondValue) => (firstValue * (1 - alpha)) + (secondValue * alpha);
 
-        /// <inheritdoc cref="Lerp"/>
+        /// <include file='SingleExtensions.copy.xml' path='members/member[@name="Lerp"]'/>
         public static float LerpTo(this float firstValue, float secondValue, float alpha) => (firstValue * (1 - alpha)) + (secondValue * alpha);
     }
 }

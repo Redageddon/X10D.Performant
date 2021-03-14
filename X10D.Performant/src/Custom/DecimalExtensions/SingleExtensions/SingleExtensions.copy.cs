@@ -1,5 +1,4 @@
-﻿using System;
-using X10D.Performant.DoubleExtensions;
+using System;
 
 namespace X10D.Performant.SingleExtensions
 {
@@ -8,17 +7,17 @@ namespace X10D.Performant.SingleExtensions
     /// </summary>
     public static partial class SingleExtensions
     {
-        /// <inheritdoc cref="DoubleExtensions.AlmostEquals"/>
+        /// <include file='SingleExtensions.copy.xml' path='members/member[@name="AlmostEquals"]'/>
         public static bool AlmostEquals(this float value1, float value2, float tolerance = float.Epsilon) =>
-            Math.Abs(value1 - value2) < Math.Abs(tolerance);
+            MathF.Abs(value1 - value2) < MathF.Abs(tolerance);
 
-        /// <inheritdoc cref="DoubleExtensions.InverseSqrt"/>
+        /// <include file='SingleExtensions.copy.xml' path='members/member[@name="InverseSqrt"]'/>
         public static float InverseSqrt(this float value) => 1F / MathF.Sqrt(value);
 
-        /// <inheritdoc cref="DoubleExtensions.IsEven"/>
+        /// <include file='SingleExtensions.copy.xml' path='members/member[@name="IsEven"]'/>
         public static bool IsEven(this float value) => value % 2F == 0F;
 
-        /// <inheritdoc cref="DoubleExtensions.IsOdd"/>
+        /// <include file='SingleExtensions.copy.xml' path='members/member[@name="IsOdd"]'/>
         public static bool IsOdd(this float value) => value % 2F != 0F;
     }
 }

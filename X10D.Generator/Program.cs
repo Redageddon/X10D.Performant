@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using X10D.Generator.FileRegenerator;
 
 namespace X10D.Generator
 {
@@ -15,6 +16,7 @@ namespace X10D.Generator
         public static void Main()
         {
             EquatableBuilder equatable = new();
+            Regenerator regenerator = new();
         }
     }
 }

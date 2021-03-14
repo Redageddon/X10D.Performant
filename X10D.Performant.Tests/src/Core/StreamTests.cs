@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 using System.Text;
 using NUnit.Framework;
 using X10D.Performant.StreamExtensions;
-using X10D.Performant.StringExtensions;
 
 namespace X10D.Performant.Tests.Core
 {
@@ -264,11 +263,11 @@ namespace X10D.Performant.Tests.Core
         {
             const string hello = "hello there";
 
-            byte[] bytes = hello.GetBytes();
+            byte[] bytes = ReExposed.StringExtensions.GetBytes(hello);
             using MemoryStream stream = new(bytes);
             Assert.AreEqual(hello, stream.ReadString(hello.Length));
 
-            byte[] reversedBytes = hello.GetBytes(Encoding.BigEndianUnicode);
+            byte[] reversedBytes = ReExposed.StringExtensions.GetBytes(hello, Encoding.BigEndianUnicode);
             using MemoryStream reversedStream = new(reversedBytes);
             Assert.AreEqual(hello, reversedStream.ReadString(reversedBytes.Length, Encoding.BigEndianUnicode));
         }

@@ -35,7 +35,7 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="StringExtensions.GetBytes(string,Encoding)"/>.
         /// </summary>
         [Test]
-        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 84, 101, 115, 116 }, "Test".GetBytes());
+        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 84, 101, 115, 116 }, ReExposed.StringExtensions.GetBytes("Test"));
 
         /// <summary>
         ///     Tests for <see cref="StringExtensions.IsAlpha(string)"/>.

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using X10D.Performant.ReExposed;
 
 namespace X10D.Performant.StringExtensions
 {
@@ -14,8 +15,5 @@ namespace X10D.Performant.StringExtensions
 
         /// <include file='StringExtensions.xml' path='members/member[@name="ChangeEncoding"]'/>
         public static string ChangeEncoding(this string value, Encoding from, Encoding to) => to.GetString(value.GetBytes(from));
-
-        /// <inheritdoc cref="Encoding.GetBytes(string)"/>
-        public static byte[] GetBytes(this string value, Encoding? encoding = null) => (encoding ?? Encoding.Default).GetBytes(value);
     }
 }

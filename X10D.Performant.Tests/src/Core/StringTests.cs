@@ -32,12 +32,6 @@ namespace X10D.Performant.Tests.Core
         public void ChangeEncoding() => Assert.AreEqual("HELLO", "ĤĚĻĻŎ".ChangeEncoding(Encoding.Latin1, Encoding.ASCII));
 
         /// <summary>
-        ///     Tests for <see cref="StringExtensions.GetBytes(string,Encoding)"/>.
-        /// </summary>
-        [Test]
-        public void GetBytes() => CollectionAssert.AreEqual(new byte[] { 84, 101, 115, 116 }, ReExposed.StringExtensions.GetBytes("Test"));
-
-        /// <summary>
         ///     Tests for <see cref="StringExtensions.IsAlpha(string)"/>.
         /// </summary>
         [Test]

@@ -8,19 +8,10 @@ namespace X10D.Performant.StreamExtensions
 {
     public static partial class StreamExtensions
     {
-        /// <summary>
-        ///     Writes a <see cref="bool"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="bool"/> to be written to a stream.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteBoolean"]'/>
         public static void Write(this Stream stream, bool value) => stream.WriteByte(value ? 1 : 0);
 
-        /// <summary>
-        ///     Writes a <see cref="decimal"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="decimal"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteDecimal"]'/>
         public static void Write(this Stream stream, decimal value, bool littleEndian = true)
         {
             int[] bits = decimal.GetBits(value);
@@ -50,12 +41,7 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(flags);
         }
 
-        /// <summary>
-        ///     Writes a <see cref="double"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="double"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteDouble"]'/>
         public static void Write(this Stream stream, double value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(double)];
@@ -72,12 +58,7 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(buffer);
         }
 
-        /// <summary>
-        ///     Writes a <see cref="short"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="short"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteInt16"]'/>
         public static void Write(this Stream stream, short value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(short)];
@@ -94,12 +75,7 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(buffer);
         }
 
-        /// <summary>
-        ///     Writes a <see cref="int"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="int"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteInt32"]'/>
         public static void Write(this Stream stream, int value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(int)];
@@ -116,12 +92,7 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(buffer);
         }
 
-        /// <summary>
-        ///     Writes a <see cref="long"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="long"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteInt64"]'/>
         public static void Write(this Stream stream, long value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(long)];
@@ -138,12 +109,7 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(buffer);
         }
 
-        /// <summary>
-        ///     Writes a <see cref="float"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="float"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteSingle"]'/>
         public static void Write(this Stream stream, float value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(float)];
@@ -160,21 +126,11 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(buffer);
         }
 
-        /// <summary>
-        ///     Writes a <see cref="string"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="string"/> to be written to a stream.</param>
-        /// <param name="encoding">The encoding of the string.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteString"]'/>
         public static void Write(this Stream stream, string value, Encoding? encoding = null) =>
             stream.Write((encoding ?? Encoding.Default).GetBytes(value));
 
-        /// <summary>
-        ///     Writes a <see cref="ushort"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="ushort"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteUInt16"]'/>
         public static void Write(this Stream stream, ushort value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(ushort)];
@@ -191,12 +147,7 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(buffer);
         }
 
-        /// <summary>
-        ///     Writes a <see cref="uint"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="uint"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteUInt32"]'/>
         public static void Write(this Stream stream, uint value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(uint)];
@@ -213,12 +164,7 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(buffer);
         }
 
-        /// <summary>
-        ///     Writes a <see cref="ulong"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="ulong"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteUInt64"]'/>
         public static void Write(this Stream stream, ulong value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(ulong)];
@@ -235,13 +181,8 @@ namespace X10D.Performant.StreamExtensions
             stream.Write(buffer);
         }
 
-        /// <summary>
-        ///     Writes an argb <see cref="Color"/> to a stream.
-        /// </summary>
-        /// <param name="stream">The stream that holds the data.</param>
-        /// <param name="value">The <see cref="Color"/> to be written to a stream.</param>
-        /// <param name="littleEndian">Whether or not the data is little endian.</param>
-        public static void WriteArgbColor(this Stream stream, Color value, bool littleEndian = true)
+        /// <include file='StreamExtensions.xml' path='members/member[@name="WriteColor"]'/>
+        public static void Write(this Stream stream, Color value, bool littleEndian = true)
         {
             Span<byte> buffer = stackalloc byte[sizeof(int)];
 

@@ -10,12 +10,7 @@ namespace X10D.Performant.StreamExtensions
     /// </summary>
     public static partial class StreamExtensions
     {
-        /// <summary>
-        ///     Returns the hash of a stream using the specified hashing algorithm in terms of a <see cref="T:byte[]"/>.
-        /// </summary>
-        /// <param name="stream">The <see cref="Stream"/> whose hash is to be computed.</param>
-        /// <typeparam name="T">A <see cref="HashAlgorithm"/> derived type.</typeparam>
-        /// <returns>A <see cref="T:byte[]"/> representing the hash of <paramref name="stream"/>.</returns>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="GetHash"]'/>
         public static byte[]? GetHash<T>(this Stream stream)
             where T : HashAlgorithm
         {
@@ -25,10 +20,7 @@ namespace X10D.Performant.StreamExtensions
             return crypt?.ComputeHash(stream);
         }
 
-        /// <summary>
-        ///     Sets this streams position back to 0.
-        /// </summary>
-        /// <param name="stream">The stream being reset.</param>
+        /// <include file='StreamExtensions.xml' path='members/member[@name="ResetPosition"]'/>
         public static void ResetPosition(this Stream stream) => stream.Position = 0;
     }
 }

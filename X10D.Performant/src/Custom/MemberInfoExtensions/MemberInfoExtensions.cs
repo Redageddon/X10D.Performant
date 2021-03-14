@@ -9,25 +9,10 @@ namespace X10D.Performant.MemberInfoExtensions
     /// </summary>
     public static class MemberInfoExtensions
     {
-        /// <summary>
-        ///     Gets the value set in this <see cref="MemberInfo"/>'s annotated <see cref="DefaultValueAttribute"/>, or <see langword="default"/> if none
-        ///     exists.
-        /// </summary>
-        /// <param name="member">A <see cref="MemberInfo"/>.</param>
-        /// <returns>
-        ///     Returns an <see cref="object"/> representing the value stored in this <see cref="MemberInfo"/>'s <see cref="DefaultValueAttribute"/>.
-        /// </returns>
+        /// <include file='MemberInfoExtensions.xml' path='members/member[@name="GetDefaultValue"]'/>
         public static object? GetDefaultValue(this MemberInfo member) => member.GetDefaultValue<object>();
 
-        /// <summary>
-        ///     Gets the value set in this <see cref="MemberInfo"/>'s annotated <see cref="DefaultValueAttribute"/>, or <see langword="default"/> if none
-        ///     exists.
-        /// </summary>
-        /// <param name="member">The member.</param>
-        /// <typeparam name="T">The type to which the value should cast.</typeparam>
-        /// <returns>
-        ///     Returns an instance of <typeparamref name="T"/> representing the value stored in this member's <see cref="DefaultValueAttribute"/>.
-        /// </returns>
+        /// <include file='MemberInfoExtensions.xml' path='members/member[@name="GetDefaultValueGeneric"]'/>
         public static T? GetDefaultValue<T>(this MemberInfo member)
         {
             DefaultValueAttribute? customAttribute = member.GetCustomAttribute<DefaultValueAttribute>();
@@ -39,13 +24,7 @@ namespace X10D.Performant.MemberInfoExtensions
                 : default;
         }
 
-        /// <summary>
-        ///     Gets the value set in this <see cref="MemberInfo"/>'s annotated <see cref="DescriptionAttribute"/>.
-        /// </summary>
-        /// <param name="member">The member.</param>
-        /// <returns>
-        ///     Returns a <see cref="string"/> representing the value stored in this member's <see cref="DescriptionAttribute"/>.
-        /// </returns>
+        /// <include file='MemberInfoExtensions.xml' path='members/member[@name="GetDescription"]'/>
         public static string GetDescription(this MemberInfo member)
         {
             DescriptionAttribute? customAttribute = member.GetCustomAttribute<DescriptionAttribute>();
@@ -53,17 +32,7 @@ namespace X10D.Performant.MemberInfoExtensions
             return customAttribute?.Description ?? string.Empty;
         }
 
-        /// <summary>
-        ///     Retrieves a custom attribute of a specified type that is applied to the specified member, and passes it to a selector delegate in
-        ///     order to select one or more the members in the attribute.
-        /// </summary>
-        /// <param name="member">The member.</param>
-        /// <param name="selector">The selector delegate.</param>
-        /// <typeparam name="TAttribute">The attribute type.</typeparam>
-        /// <typeparam name="TReturn">The return type of the <paramref name="selector"/> delegate.</typeparam>
-        /// <returns>
-        ///     Returns an instance of <typeparamref name="TReturn"/> as provided from <paramref name="selector"/>.
-        /// </returns>
+        /// <include file='MemberInfoExtensions.xml' path='members/member[@name="SelectFromCustomAttribute"]'/>
         public static TReturn? SelectFromCustomAttribute<TAttribute, TReturn>(this MemberInfo member,
                                                                               Func<TAttribute, TReturn> selector)
             where TAttribute : Attribute

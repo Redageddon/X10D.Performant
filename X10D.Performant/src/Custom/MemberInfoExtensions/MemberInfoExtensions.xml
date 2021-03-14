@@ -1,0 +1,45 @@
+﻿<members>
+    <member name="GetDefaultValue">
+        <summary>
+            Gets the value set in this <see cref="MemberInfo"/>'s annotated <see cref="DefaultValueAttribute"/>, or <see langword="default"/> if none
+            exists.
+        </summary>
+        <param name="member">A <see cref="MemberInfo"/>.</param>
+        <returns>
+            Returns an <see cref="object"/> representing the value stored in this <see cref="MemberInfo"/>'s <see cref="DefaultValueAttribute"/>.
+        </returns>
+    </member>
+    <member name="GetDefaultValueGeneric">
+        <summary>
+            Gets the value set in this <see cref="MemberInfo"/>'s annotated <see cref="DefaultValueAttribute"/>, or <see langword="default"/> if none
+            exists.
+        </summary>
+        <param name="member">The member.</param>
+        <typeparam name="T">The type to which the value should cast.</typeparam>
+        <returns>
+            Returns an instance of <typeparamref name="T"/> representing the value stored in this member's <see cref="DefaultValueAttribute"/>.
+        </returns>
+    </member>
+    <member name="GetDescription">
+        <summary>
+            Gets the value set in this <see cref="MemberInfo"/>'s annotated <see cref="DescriptionAttribute"/>.
+        </summary>
+        <param name="member">The member.</param>
+        <returns>
+            Returns a <see cref="string"/> representing the value stored in this member's <see cref="DescriptionAttribute"/>.
+        </returns>
+    </member>
+    <member name="SelectFromCustomAttribute">
+        <summary>
+            Retrieves a custom attribute of a specified type that is applied to the specified member, and passes it to a selector delegate in
+            order to select one or more the members in the attribute.
+        </summary>
+        <param name="member">The member.</param>
+        <param name="selector">The selector delegate.</param>
+        <typeparam name="TAttribute">The attribute type.</typeparam>
+        <typeparam name="TReturn">The return type of the <paramref name="selector"/> delegate.</typeparam>
+        <returns>
+            Returns an instance of <typeparamref name="TReturn"/> as provided from <paramref name="selector"/>.
+        </returns>
+    </member>
+</members>

@@ -4,25 +4,15 @@ using System.Linq.Expressions;
 
 namespace X10D.Performant.GenericExtensions
 {
+    /// <summary>
+    ///     General generic extension methods.
+    /// </summary>
     public static partial class GenericExtensions
     {
-        /// <summary>
-        ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.
-        /// </summary>
-        /// <param name="value">The object to convert.</param>
-        /// <typeparam name="TFrom">The type to convert from.</typeparam>
-        /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>The value converted to <typeparamref name="TTo"/>.</returns>
+        /// <include file='GenericExtensions.xml' path='members/member[@name="To"]'/>
         public static TTo? To<TFrom, TTo>(this TFrom value) => Convert<TFrom, TTo>.Function(value);
 
-        /// <summary>
-        ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>, returning <paramref name="other"/> on fail.
-        /// </summary>
-        /// <param name="value">The object to convert.</param>
-        /// <param name="other">The backup value.</param>
-        /// <typeparam name="TFrom">The type to convert from.</typeparam>
-        /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>The a <typeparamref name="TTo"/> value.</returns>
+        /// <include file='GenericExtensions.xml' path='members/member[@name="ToOrOther"]'/>
         public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, TTo? other)
         {
             if (!value.TryTo(out TTo? output))
@@ -33,14 +23,7 @@ namespace X10D.Performant.GenericExtensions
             return output;
         }
 
-        /// <summary>
-        ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>, executing and returning <paramref name="other"/> on fail.
-        /// </summary>
-        /// <param name="value">The object to convert.</param>
-        /// <param name="other">The unloaded value to get.</param>
-        /// <typeparam name="TFrom">The type to convert from.</typeparam>
-        /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns>The value converted to <typeparamref name="TTo"/>.</returns>
+        /// <include file='GenericExtensions.xml' path='members/member[@name="ToOrOtherFunc"]'/>
         public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, Func<TTo> other)
         {
             if (!value.TryTo(out TTo? output))
@@ -51,14 +34,7 @@ namespace X10D.Performant.GenericExtensions
             return output;
         }
 
-        /// <summary>
-        ///     Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.
-        /// </summary>
-        /// <param name="value">The object to convert.</param>
-        /// <param name="result">The value converted to <typeparamref name="TTo"/>.</param>
-        /// <typeparam name="TFrom">The type to convert from.</typeparam>
-        /// <typeparam name="TTo">The type to convert to.</typeparam>
-        /// <returns><see langword="true"/> if a conversion was successful, or <see langword="false"/> otherwise.</returns>
+        /// <include file='GenericExtensions.xml' path='members/member[@name="TryTo"]'/>
         public static bool TryTo<TFrom, TTo>(this TFrom value, out TTo? result)
         {
             try

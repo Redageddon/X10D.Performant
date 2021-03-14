@@ -1,0 +1,41 @@
+﻿<members>
+    <member name="To">
+        <summary>
+            Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.
+        </summary>
+        <param name="value">The object to convert.</param>
+        <typeparam name="TFrom">The type to convert from.</typeparam>
+        <typeparam name="TTo">The type to convert to.</typeparam>
+        <returns>The value converted to <typeparamref name="TTo"/>.</returns>
+    </member>
+    <member name="ToOrOther">
+        <summary>
+            Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>, returning <paramref name="other"/> on fail.
+        </summary>
+        <param name="value">The object to convert.</param>
+        <param name="other">The backup value.</param>
+        <typeparam name="TFrom">The type to convert from.</typeparam>
+        <typeparam name="TTo">The type to convert to.</typeparam>
+        <returns>The a <typeparamref name="TTo"/> value.</returns>
+    </member>
+    <member name="ToOrOtherFunc">
+        <summary>
+            Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>, executing and returning <paramref name="other"/> on fail.
+        </summary>
+        <param name="value">The object to convert.</param>
+        <param name="other">The unloaded value to get.</param>
+        <typeparam name="TFrom">The type to convert from.</typeparam>
+        <typeparam name="TTo">The type to convert to.</typeparam>
+        <returns>The value converted to <typeparamref name="TTo"/>.</returns>
+    </member>
+    <member name="TryTo">
+        <summary>
+            Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.
+        </summary>
+        <param name="value">The object to convert.</param>
+        <param name="result">The value converted to <typeparamref name="TTo"/>.</param>
+        <typeparam name="TFrom">The type to convert from.</typeparam>
+        <typeparam name="TTo">The type to convert to.</typeparam>
+        <returns><see langword="true"/> if a conversion was successful, or <see langword="false"/> otherwise.</returns>
+    </member>
+</members>

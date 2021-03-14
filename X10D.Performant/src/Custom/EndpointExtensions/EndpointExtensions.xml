@@ -1,4 +1,4 @@
-﻿<members>
+<members>
     <member name="GetHostName">
         <summary>
             Gets the <see cref="EndPoint"/> hostname.

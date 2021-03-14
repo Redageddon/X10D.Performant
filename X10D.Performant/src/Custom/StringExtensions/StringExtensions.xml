@@ -1,0 +1,98 @@
+﻿<members>
+    <member name="IsAlpha">
+        <summary>
+            Determines if all alphabetical characters in this <see cref="string"/> are considered letters.
+        </summary>
+        <param name="value">The input string.</param>
+        <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
+    </member>
+    <member name="IsLower">
+        <summary>
+            Determines if all alphabetical characters in this <see cref="string"/> are considered lowercase.
+        </summary>
+        <param name="value">The input string.</param>
+        <returns><see langword="true"/> if all alphabetical characters are lowercase, <see langword="false"/> otherwise.</returns>
+    </member>
+    <member name="IsNumerical">
+        <summary>
+            Determines if all alphabetical characters in this <see cref="string"/> are considered numbers.
+        </summary>
+        <param name="value">The input string.</param>
+        <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
+    </member>
+    <member name="IsUpper">
+        <summary>
+            Determines if all alphabetical characters in this <see cref="string"/> are considered uppercase.
+        </summary>
+        <param name="value">The input string.</param>
+        <returns><see langword="true"/> if all alphabetical characters are uppercase, <see langword="false"/> otherwise.</returns>
+    </member>
+    <member name="Base64Decode">
+        <summary>
+            Decodes a base-64 encoded <see cref="string"/>.
+        </summary>
+        <param name="value">The base-64 <see cref="string"/> to decode.</param>
+        <param name="encoding">The encoding that the <see cref="string"/> is read into.</param>
+        <returns>The <see cref="string"/> in plain text.</returns>
+    </member>
+    <member name="Base64Encode">
+        <summary>
+            Encodes a base-64 encoded <see cref="string"/>.
+        </summary>
+        <param name="value">The plain text <see cref="string"/> to decode.</param>
+        <param name="encoding">The encoding that the <see cref="string"/> is read into.</param>
+        <returns>The <see cref="string"/> in plain text.</returns>
+    </member>
+    <member name="ChangeEncoding">
+        <summary>
+            Converts this <see cref="string"/> from one encoding to another.
+        </summary>
+        <param name="value">The input <see cref="string"/>.</param>
+        <param name="from">The input encoding.</param>
+        <param name="to">The output encoding.</param>
+        <returns>A new <see cref="string"/> with its data converted to <paramref name="to"/>.</returns>
+    </member>
+    <member name="Repeat">
+        <summary>
+            Repeats a <see cref="string"/> a specified number of times.
+        </summary>
+        <param name="value">The string to repeat.</param>
+        <param name="count">The repeat count.</param>
+        <returns>A <see cref="string"/> whose value is <paramref name="value"/> repeated <paramref name="count"/> times.</returns>
+    </member>
+    <member name="Shuffle">
+        <summary>
+            Shuffles the characters in the <see cref="string"/>.
+        </summary>
+        <param name="value">The <see cref="string"/> to shuffle.</param>
+        <param name="random">The <see cref="System.Random"/> instance.</param>
+        <returns>A <see cref="string"/> containing the characters in <paramref name="value"/>, rearranged.</returns>
+    </member>
+    <member name="Split">
+        <summary>
+            Splits the <see cref="string"/> into chunks that are no greater than <paramref name="chunkSize"/> in length.
+        </summary>
+        <param name="value">The <see cref="string"/> to split.</param>
+        <param name="chunkSize">The maximum length of each <see cref="string"/> in the returned result.</param>
+        <returns>
+            An <see cref="IEnumerable{T}"/> containing <see cref="string"/> instances which are no greater than
+            <paramref name="chunkSize"/> in length.
+        </returns>
+    </member>
+    <member name="ToSecureString">
+        <summary>
+            Converts a <see cref="string"/> to a <see cref="SecureString"/>.
+        </summary>
+        <param name="value">The <see cref="string"/> to convert.</param>
+        <returns>A <see cref="SecureString"/>.</returns>
+    </member>
+    <member name="ShortHandParse">
+        <summary>
+            Parses a shorthand <see cref="TimeSpan"/> <see cref="string"/>  and converts it to an instance of
+            <see cref="TimeSpan"/>.
+        </summary>
+        <param name="input">The input <see cref="string"/>.</param>
+        <param name="formatProvider">The format provider.</param>
+        <returns>An instance of <see cref="TimeSpan"/>.</returns>
+    </member>
+</members>

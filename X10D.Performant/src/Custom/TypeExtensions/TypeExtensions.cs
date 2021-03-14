@@ -7,14 +7,7 @@ namespace X10D.Performant.TypeExtensions
     /// </summary>
     public static class TypeExtensions
     {
-        /// <summary>
-        ///     Gets the <see cref="Type"/> contained within this <see cref="Type"/>.
-        /// </summary>
-        /// <param name="collectionType">The <see cref="Type"/> being checked.</param>
-        /// <returns>
-        ///     The contained <see cref="Type"/>.
-        ///     EX: <see cref="T:List{int}"/> or <see cref="T:int[]"/> will return int.
-        /// </returns>
+        /// <include file='TypeExtensions.xml' path='members/member[@name="GetContainedType"]'/>
         public static Type? GetContainedType(this Type collectionType) =>
             collectionType.IsGenericType
                 ? collectionType.GetGenericArguments()[0]

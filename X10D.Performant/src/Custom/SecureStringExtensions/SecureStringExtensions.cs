@@ -8,12 +8,7 @@ namespace X10D.Performant.SecureStringExtensions
     /// </summary>
     public static class SecureStringExtensions
     {
-        /// <summary>
-        ///     Converts a <see cref="SecureString"/> to a <see cref="string"/>.
-        /// </summary>
-        /// <param name="secureString">The <see cref="SecureString"/> to convert.</param>
-        /// <param name="userName">The <see cref="string"/> to pass to the <see cref="NetworkCredential"/>.</param>
-        /// <returns>A <see cref="string"/>.</returns>
+        /// <include file='SecureStringExtensions.xml' path='members/member[@name="ToNormalString"]'/>
         public static string ToNormalString(this SecureString secureString, string? userName = null) =>
             new NetworkCredential(userName ?? string.Empty, secureString).Password;
     }

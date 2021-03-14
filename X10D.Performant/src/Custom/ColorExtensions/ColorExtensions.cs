@@ -31,30 +31,14 @@ namespace X10D.Performant.ColorExtensions
             return Color.FromArgb((alpha << 24) | (r << 16) | (g << 8) | b);
         }
 
-        /// <summary>
-        ///     Changes any of the rgb values from a <see cref="Color"/>.
-        /// </summary>
-        /// <param name="color">The initial <see cref="Color"/>.</param>
-        /// <param name="alpha">The new alpha.</param>
-        /// <param name="red">The new red.</param>
-        /// <param name="green">The new green.</param>
-        /// <param name="blue">The new blue.</param>
-        /// <returns>A new <see cref="Color"/> with any of the supplied rgb values overridden.</returns>
+        /// <include file='ColorExtensions.xml' path='members/member[@name="WithArgb"]'/>
         public static Color With(this Color color, byte? alpha = null, byte? red = null, byte? green = null, byte? blue = null) =>
             Color.FromArgb(((alpha ?? color.A) << 24)
                          | ((red ?? color.R) << 16)
                          | ((green ?? color.G) << 8)
                          | (blue ?? color.B));
 
-        /// <summary>
-        ///     Changes any of the hsb values from a <see cref="Color"/>.
-        /// </summary>
-        /// <param name="color">The initial <see cref="Color"/>.</param>
-        /// <param name="alpha">The new alpha.</param>
-        /// <param name="hue">The new hue within the range of 0 - 360.</param>
-        /// <param name="saturation">The new saturation within the range of 0.0 - 1.0.</param>
-        /// <param name="brightness">The new brightness within the range of 0.0 - 1.0.</param>
-        /// <returns>A new <see cref="Color"/> with any of the supplied hsb values overridden.</returns>
+        /// <include file='ColorExtensions.xml' path='members/member[@name="WithAhsb"]'/>
         public static Color With(this Color color, byte? alpha = null, float? hue = null, float? saturation = null, float? brightness = null)
         {
             hue ??= color.GetHue();

@@ -6,7 +6,7 @@
         </summary>
         <param name="values">The initial values being iterated through.</param>
         <param name="selector">The function that determines whether an element in <paramref name="values"/> should be returned.</param>
-        <param name="comparer">Passes a generic <see cref="IEqualityComparer"/>.</param>
+        <param name="comparer">Passes a generic <see cref="IEqualityComparer{T}"/>.</param>
         <typeparam name="TSource">The type of the contained element in the <paramref name="values"/> being read from.</typeparam>
         <typeparam name="TKey">The type being selected distinctly from.</typeparam>
         <returns>A collection of values that are specific to a selector.</returns>

@@ -1,7 +1,7 @@
 ﻿<members>
     <member name="FlipKeyValues">
         <summary>
-            Flips the keys and values ot values and keys.
+            Flips the keys and values to values and keys.
         </summary>
         <param name="keyValuePairs">The pairs.</param>
         <typeparam name="TKey">The key type.</typeparam>
@@ -15,7 +15,9 @@
         <param name="keyValuePairs">The pairs.</param>
         <typeparam name="TKey">The key type.</typeparam>
         <typeparam name="TValue">The value type.</typeparam>
-        <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T}"/> as a key=value; set.</returns>
+        <returns>
+            A <see cref="string"/> representing the <see cref="IEnumerable{T}"/> of <see cref="KeyValuePair{TKey,TValue}"/> as a key=value; set.
+        </returns>
     </member>
     <member name="ToGetParameters">
         <summary>
@@ -24,7 +26,9 @@
         <param name="keyValuePairs">The pairs.</param>
         <typeparam name="TKey">The key type.</typeparam>
         <typeparam name="TValue">The value type.</typeparam>
-        <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T}"/> as a key=value; set.</returns>
+        <returns>
+            A <see cref="string"/> representing the <see cref="IEnumerable{T}"/> of <see cref="KeyValuePair{TKey,TValue}"/> as a key=value; set.
+        </returns>
     </member>
     <member name="ToGetParametersSeparators">
         <summary>
@@ -34,6 +38,8 @@
         <param name="separators"> Joins <see name="TValue"/> by the chosen <see cref="string"/> values.</param>
         <typeparam name="TKey">The key type.</typeparam>
         <typeparam name="TValue">The value type.</typeparam>
-        <returns>A <see cref="string"/> representing the <see cref="IReadOnlyDictionary{T}"/> as a key=value; set.</returns>
+        <returns>
+            A <see cref="string"/> representing the <see cref="IEnumerable{T}"/> of <see cref="KeyValuePair{TKey,TValue}"/> as a key=value; set.
+        </returns>
     </member>
 </members>

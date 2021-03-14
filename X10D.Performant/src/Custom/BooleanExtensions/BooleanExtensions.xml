@@ -43,14 +43,14 @@
     </member>
     <member name="ToNInt">
         <summary>
-            Gets the value of this <see cref="bool"/> as represented by <see cref="nint"/>.
+            Gets the value of this <see cref="bool"/> as represented by <see cref="System.IntPtr"/>.
         </summary>
         <param name="value">A <see cref="bool"/>.</param>
         <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>
     </member>
     <member name="ToNUInt">
         <summary>
-            Gets the value of this <see cref="bool"/> as represented by <see cref="unint"/>.
+            Gets the value of this <see cref="bool"/> as represented by <see cref="System.UIntPtr"/>.
         </summary>
         <param name="value">A <see cref="bool"/>.</param>
         <returns>1 if <paramref name="value"/> is <see langword="true"/>, or 0 otherwise.</returns>

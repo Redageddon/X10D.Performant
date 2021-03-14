@@ -13,7 +13,7 @@ namespace X10D.Performant.VectorExtensions
             new(alpha.X.ClampedLerp(firstValue.X, secondValue.X),
                 alpha.Y.Lerp(firstValue.Y, secondValue.Y));
 
-        /// <inheritdoc cref="ClampedXLerp"/>
+        /// <include file='VectorExtensions.xml' path='members/member[@name="ClampedXLerp"]'/>
         public static Vector2 ClampedXLerpTo(this Vector2 firstValue, Vector2 secondValue, Vector2 alpha) =>
             new(alpha.X.ClampedLerp(firstValue.X, secondValue.X),
                 alpha.Y.Lerp(firstValue.Y, secondValue.Y));
@@ -23,7 +23,7 @@ namespace X10D.Performant.VectorExtensions
             new(alpha.X.ClampedLerp(firstValue.X, secondValue.X),
                 alpha.Y.ClampedLerp(firstValue.Y, secondValue.Y));
 
-        /// <inheritdoc cref="ClampedXYLerp"/>
+        /// <include file='VectorExtensions.xml' path='members/member[@name="ClampedXYLerp"]'/>
         public static Vector2 ClampedXYLerpTo(this Vector2 firstValue, Vector2 secondValue, Vector2 alpha) =>
             new(alpha.X.ClampedLerp(firstValue.X, secondValue.X),
                 alpha.Y.ClampedLerp(firstValue.Y, secondValue.Y));
@@ -33,7 +33,7 @@ namespace X10D.Performant.VectorExtensions
             new(alpha.X.Lerp(firstValue.X, secondValue.X),
                 alpha.Y.ClampedLerp(firstValue.Y, secondValue.Y));
 
-        /// <inheritdoc cref="ClampedYLerp"/>
+        /// <include file='VectorExtensions.xml' path='members/member[@name="ClampedYLerp"]'/>
         public static Vector2 ClampedYLerpTo(this Vector2 firstValue, Vector2 secondValue, Vector2 alpha) =>
             new(alpha.X.Lerp(firstValue.X, secondValue.X),
                 alpha.Y.ClampedLerp(firstValue.Y, secondValue.Y));
@@ -43,7 +43,7 @@ namespace X10D.Performant.VectorExtensions
             new(alpha.X.Lerp(firstValue.X, secondValue.X),
                 alpha.Y.Lerp(firstValue.Y, secondValue.Y));
 
-        /// <inheritdoc cref="Lerp"/>
+        /// <include file='VectorExtensions.xml' path='members/member[@name="Lerp"]'/>
         public static Vector2 LerpTo(this Vector2 firstValue, Vector2 secondValue, Vector2 alpha) =>
             new(alpha.X.Lerp(firstValue.X, secondValue.X),
                 alpha.Y.Lerp(firstValue.Y, secondValue.Y));

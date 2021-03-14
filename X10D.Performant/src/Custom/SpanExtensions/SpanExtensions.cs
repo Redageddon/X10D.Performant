@@ -7,7 +7,7 @@ namespace X10D.Performant.SpanExtensions
     /// </summary>
     public static partial class SpanExtensions
     {
-        /// <inheritdoc cref="Random{T}(ReadOnlySpan{T},Span{T},Random)"/>
+        /// <include file='SpanExtensions.xml' path='members/member[@name="RandomReadOnly"]'/>
         public static void Random<T>(this Span<T> values, Span<T> buffer, Random? random = null) => Random((ReadOnlySpan<T>)values, buffer, random);
 
         /// <include file='SpanExtensions.xml' path='members/member[@name="RandomNew"]'/>

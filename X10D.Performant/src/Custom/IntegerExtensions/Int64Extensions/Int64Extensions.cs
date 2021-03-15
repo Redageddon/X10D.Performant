@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
-using X10D.Performant.UInt64Extensions;
 
 namespace X10D.Performant.Int64Extensions
 {
@@ -18,12 +16,5 @@ namespace X10D.Performant.Int64Extensions
 
             return offset.DateTime;
         }
-
-        /// <inheritdoc cref="UInt64Extensions.Mod"/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static long Mod(this long value, long modulus) =>
-            value < modulus && value > 0
-                ? value
-                : value - (value / modulus * modulus);
     }
 }

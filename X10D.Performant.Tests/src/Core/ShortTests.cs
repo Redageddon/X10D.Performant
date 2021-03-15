@@ -147,6 +147,12 @@ namespace X10D.Performant.Tests.Core
                         continue;
                     }
 
+                    if (i % j != i.Mod(j))
+                    {
+                        Console.WriteLine(i);
+                        Console.WriteLine(j);
+                    }
+
                     Assert.AreEqual(i % j, i.Mod(j));
                 }
             }

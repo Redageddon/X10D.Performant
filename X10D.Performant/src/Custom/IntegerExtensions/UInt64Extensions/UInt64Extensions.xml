@@ -43,6 +43,7 @@
     <member name="Mod">
         <summary>
             Returns the remainder of <paramref name="value"/> / <paramref name="modulus"/>.
+            This is precisely the same as the c# modulo "%" operator, just faster than the current implementation.
         </summary>
         <param name="value">The dividend.</param>
         <param name="modulus">The divisor.</param>

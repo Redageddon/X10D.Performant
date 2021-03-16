@@ -1,12 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using X10D.Performant.Int64Extensions;
-
-namespace X10D.Performant.ByteExtensions
+﻿namespace X10D.Performant.ByteExtensions
 {
     public static partial class ByteExtensions
     {
-        /// <inheritdoc cref="Int64Extensions.IsPrime"/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <include file='ByteExtensions.copy.xml' path='members/member[@name="IsPrime"]'/>
         public static bool IsPrime(this byte value)
         {
             switch (value)

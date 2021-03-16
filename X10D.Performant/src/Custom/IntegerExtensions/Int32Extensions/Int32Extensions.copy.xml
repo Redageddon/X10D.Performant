@@ -1,10 +1,10 @@
-﻿<members>
+<members>
     <member name="ModPow">
         <summary>
             Performs a fast and overflow proof modular exponentiation.
         </summary>
-        <param name="value">The <see cref="ulong"/> being raised by <paramref name="exponent"/>.</param>
-        <param name="exponent">The <see cref="ulong"/> that is raising <paramref name="value"/>.</param>
+        <param name="value">The <see cref="int"/> being raised by <paramref name="exponent"/>.</param>
+        <param name="exponent">The <see cref="int"/> that is raising <paramref name="value"/>.</param>
         <param name="modulus">The modulo to be applied to the result.</param>
         <returns>
             <paramref name="value"/> raised by <paramref name="exponent"/> and then modded by <paramref name="modulus"/>.
@@ -14,7 +14,7 @@
         <summary>
             Determines if <paramref name="value"/> is a prime value.
         </summary>
-        <param name="value">The <see cref="ulong"/> value.</param>
+        <param name="value">The <see cref="int"/> value.</param>
         <param name="useCache">Gives the user the ability to use a cache of type <see cref="System.Collections.Generic.HashSet{T}"/>.</param>
         <returns>
             <see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.
@@ -24,7 +24,7 @@
         <summary>
             Converts the <paramref name="timestamp"/> to a <see cref="DateTime"/> treating it as a Unix timestamp.
         </summary>
-        <param name="timestamp">The <see cref="ulong"/> value.</param>
+        <param name="timestamp">The <see cref="int"/> value.</param>
         <param name="isMilliseconds">
             Whether or not the input value should be treated as milliseconds.
             Defaults to <see langword="false"/>.
@@ -37,7 +37,7 @@
         <summary>
             Determines if the <paramref name="value"/> is even.
         </summary>
-        <param name="value">The <see cref="ulong"/> value.</param>
+        <param name="value">The <see cref="int"/> value.</param>
         <returns>
             <see langword="true"/> if <paramref name="value"/> is even, <see langword="false"/> otherwise.
         </returns>
@@ -46,7 +46,7 @@
         <summary>
             Determines if the <paramref name="value"/> is odd.
         </summary>
-        <param name="value">The <see cref="ulong"/> value.</param>
+        <param name="value">The <see cref="int"/> value.</param>
         <returns>
             <see langword="true"/> if <paramref name="value"/> is odd, <see langword="false"/> otherwise.
         </returns>
@@ -69,9 +69,9 @@
     </member>
     <member name="ToBoolean">
         <summary>
-            Converts a <see cref="ulong"/> into a <see cref="bool"/>.
+            Converts a <see cref="int"/> into a <see cref="bool"/>.
         </summary>
-        <param name="value">The <see cref="ulong"/> value.</param>
+        <param name="value">The <see cref="int"/> value.</param>
         <returns>
             <see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.
         </returns>

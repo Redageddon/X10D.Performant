@@ -2,7 +2,7 @@
 {
     public static partial class ByteExtensions
     {
-        /// <include file='../UInt64Extensions/UInt64Extensions.xml' path='members/member[@name="Mod"]'/>
+        /// <include file='ByteExtensions.copy.xml' path='members/member[@name="Mod"]'/>
         public static byte Mod(this byte value, byte modulus)
         {
             if (value < modulus)

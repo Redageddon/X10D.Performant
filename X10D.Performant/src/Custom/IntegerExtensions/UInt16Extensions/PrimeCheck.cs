@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using X10D.Performant.ByteExtensions;
-using X10D.Performant.UInt64Extensions;
 
 namespace X10D.Performant.UInt16Extensions
 {
@@ -10,7 +9,7 @@ namespace X10D.Performant.UInt16Extensions
         private static readonly HashSet<ushort> Primes = new();
         private static readonly HashSet<ushort> NonPrimes = new();
 
-        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
+        /// <include file='UInt16Extensions.copy.xml' path='members/member[@name="IsPrime"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsPrime(this ushort value, bool useCache = false)
         {

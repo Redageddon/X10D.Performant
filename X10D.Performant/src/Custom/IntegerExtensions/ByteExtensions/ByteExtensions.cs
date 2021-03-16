@@ -8,7 +8,7 @@ namespace X10D.Performant.ByteExtensions
     /// </summary>
     public static partial class ByteExtensions
     {
-        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
+        /// <include file='ByteExtensions.copy.xml' path='members/member[@name="FromUnixTimestamp"]'/>
         public static DateTime FromUnixTimestamp(this byte timestamp, bool isMilliseconds = false) =>
             ((long)timestamp).FromUnixTimestamp(isMilliseconds);
     }

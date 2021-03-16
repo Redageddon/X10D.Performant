@@ -2,7 +2,7 @@
 {
     public static partial class UInt32Extensions
     {
-        /// <include file='../UInt64Extensions/UInt64Extensions.xml' path='members/member[@name="Mod"]'/>
+        /// <include file='UInt32Extensions.copy.xml' path='members/member[@name="Mod"]'/>
         public static uint Mod(this uint value, uint modulus)
         {
             if (value < modulus)

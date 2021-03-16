@@ -1,16 +1,14 @@
-﻿using X10D.Performant.UInt64Extensions;
-
 namespace X10D.Performant.UInt32Extensions
 {
     public static partial class UInt32Extensions
     {
-        /// <inheritdoc cref="UInt64Extensions.IsEven"/>
+        /// <include file='UInt32Extensions.copy.xml' path='members/member[@name="IsEven"]'/>
         public static bool IsEven(this uint value) => (value & 1) == 0;
 
-        /// <inheritdoc cref="UInt64Extensions.IsOdd"/>
+        /// <include file='UInt32Extensions.copy.xml' path='members/member[@name="IsOdd"]'/>
         public static bool IsOdd(this uint value) => (value & 1) == 1;
 
-        /// <inheritdoc cref="UInt64Extensions.ToBoolean"/>
+        /// <include file='UInt32Extensions.copy.xml' path='members/member[@name="ToBoolean"]'/>
         public static bool ToBoolean(this uint value) => value != 0;
     }
 }

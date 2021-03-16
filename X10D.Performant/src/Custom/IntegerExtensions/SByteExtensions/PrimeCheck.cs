@@ -1,10 +1,8 @@
-﻿using X10D.Performant.UInt64Extensions;
-
-namespace X10D.Performant.SByteExtensions
+﻿namespace X10D.Performant.SByteExtensions
 {
     public static partial class SByteExtensions
     {
-        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
+        /// <include file='SByteExtensions.copy.xml' path='members/member[@name="IsPrime"]'/>
         public static bool IsPrime(this sbyte value)
         {
             switch (value)

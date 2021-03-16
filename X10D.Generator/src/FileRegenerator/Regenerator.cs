@@ -8,6 +8,7 @@ namespace X10D.Generator.FileRegenerator
         public Regenerator()
         {
             RegenerateSingleExtensions();
+            RegenerateIntegerExtensions();
         }
 
         private static void RegenerateSingleExtensions()
@@ -45,6 +46,98 @@ namespace X10D.Generator.FileRegenerator
                        Path.Combine(singlePath, "SingleExtensions.copy.xml"),
                        new[] { "double", "Double" },
                        new[] { "float", "Single" });
+        }
+
+        private static void RegenerateIntegerExtensions()
+        {
+            string ulongPath = Path.Combine(Program.CustomPath, "IntegerExtensions/UInt64Extensions/");
+            string uintPath = Path.Combine(Program.CustomPath, "IntegerExtensions/UInt32Extensions/");
+            string ushortPath = Path.Combine(Program.CustomPath, "IntegerExtensions/UInt16Extensions/");
+            string sbytePath = Path.Combine(Program.CustomPath, "IntegerExtensions/SByteExtensions/");
+            string longPath = Path.Combine(Program.CustomPath, "IntegerExtensions/Int64Extensions/");
+            string intPath = Path.Combine(Program.CustomPath, "IntegerExtensions/Int32Extensions/");
+            string shortPath = Path.Combine(Program.CustomPath, "IntegerExtensions/Int16Extensions/");
+            string bytePath = Path.Combine(Program.CustomPath, "IntegerExtensions/ByteExtensions/");
+
+            #region BooleanConversions
+
+            Regenerate(Path.Combine(ulongPath, "BooleanConversions.cs"),
+                       Path.Combine(uintPath, "BooleanConversions.copy.cs"),
+                       new[] { "ulong", "UInt64", ".xml" },
+                       new[] { "uint", "UInt32", ".copy.xml" });
+
+            Regenerate(Path.Combine(ulongPath, "BooleanConversions.cs"),
+                       Path.Combine(ushortPath, "BooleanConversions.copy.cs"),
+                       new[] { "ulong", "UInt64", ".xml" },
+                       new[] { "ushort", "UInt16", ".copy.xml" });
+
+            Regenerate(Path.Combine(ulongPath, "BooleanConversions.cs"),
+                       Path.Combine(sbytePath, "BooleanConversions.copy.cs"),
+                       new[] { "ulong", "UInt64", ".xml" },
+                       new[] { "sbyte", "SByte", ".copy.xml" });
+
+            Regenerate(Path.Combine(ulongPath, "BooleanConversions.cs"),
+                       Path.Combine(longPath, "BooleanConversions.copy.cs"),
+                       new[] { "ulong", "UInt64", ".xml" },
+                       new[] { "long", "Int64", ".copy.xml" });
+
+            Regenerate(Path.Combine(ulongPath, "BooleanConversions.cs"),
+                       Path.Combine(intPath, "BooleanConversions.copy.cs"),
+                       new[] { "ulong", "UInt64", ".xml" },
+                       new[] { "int", "Int32", ".copy.xml" });
+
+            Regenerate(Path.Combine(ulongPath, "BooleanConversions.cs"),
+                       Path.Combine(shortPath, "BooleanConversions.copy.cs"),
+                       new[] { "ulong", "UInt64", ".xml" },
+                       new[] { "short", "Int16", ".copy.xml" });
+
+            Regenerate(Path.Combine(ulongPath, "BooleanConversions.cs"),
+                       Path.Combine(bytePath, "BooleanConversions.copy.cs"),
+                       new[] { "ulong", "UInt64", ".xml" },
+                       new[] { "byte", "Byte", ".copy.xml" });
+
+            #endregion
+
+            #region XmlCopy
+
+            Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
+                       Path.Combine(uintPath, "UInt32Extensions.copy.xml"),
+                       new[] { "ulong" },
+                       new[] { "uint" });
+
+            Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
+                       Path.Combine(ushortPath, "UInt16Extensions.copy.xml"),
+                       new[] { "ulong" },
+                       new[] { "ushort" });
+
+            Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
+                       Path.Combine(sbytePath, "SByteExtensions.copy.xml"),
+                       new[] { "ulong", @"
+        <param name=""useCache"">Gives the user the ability to use a cache of type <see cref=""System.Collections.Generic.HashSet{T}""/>.</param>" },
+                       new[] { "sbyte", "" });
+
+            Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
+                       Path.Combine(longPath, "Int64Extensions.copy.xml"),
+                       new[] { "ulong" },
+                       new[] { "long" });
+
+            Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
+                       Path.Combine(intPath, "Int32Extensions.copy.xml"),
+                       new[] { "ulong" },
+                       new[] { "int" });
+
+            Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
+                       Path.Combine(shortPath, "Int16Extensions.copy.xml"),
+                       new[] { "ulong" },
+                       new[] { "short" });
+
+            Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
+                       Path.Combine(bytePath, "ByteExtensions.copy.xml"),
+                       new[] { "ulong", @"
+        <param name=""useCache"">Gives the user the ability to use a cache of type <see cref=""System.Collections.Generic.HashSet{T}""/>.</param>" },
+                       new[] { "byte", "" });
+
+            #endregion
         }
 
         private static void Regenerate(string startingPath, string endingPath, string[] selectedWords, string[] replacedWords)

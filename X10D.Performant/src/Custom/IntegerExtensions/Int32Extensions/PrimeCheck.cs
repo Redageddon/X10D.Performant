@@ -6,7 +6,7 @@ namespace X10D.Performant.Int32Extensions
 {
     public static partial class Int32Extensions
     {
-        /// <inheritdoc cref="UInt64Extensions.IsPrime"/>
+        /// <include file='Int32Extensions.copy.xml' path='members/member[@name="IsPrime"]'/>
         public static bool IsPrime(this int value, bool useCache = false) =>
             value switch
             {

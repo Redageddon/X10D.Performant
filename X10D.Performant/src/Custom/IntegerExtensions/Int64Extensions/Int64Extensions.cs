@@ -7,7 +7,7 @@ namespace X10D.Performant.Int64Extensions
     /// </summary>
     public static partial class Int64Extensions
     {
-        /// <include file='Int64Extensions.xml' path='members/member[@name="FromUnixTimestamp"]'/>
+        /// <include file='Int64Extensions.copy.xml' path='members/member[@name="FromUnixTimestamp"]'/>
         public static DateTime FromUnixTimestamp(this long timestamp, bool isMilliseconds = false)
         {
             DateTimeOffset offset = isMilliseconds

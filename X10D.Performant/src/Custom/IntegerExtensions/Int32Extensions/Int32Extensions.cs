@@ -8,7 +8,7 @@ namespace X10D.Performant.Int32Extensions
     /// </summary>
     public static partial class Int32Extensions
     {
-        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
+        /// <include file='Int32Extensions.copy.xml' path='members/member[@name="FromUnixTimestamp"]'/>
         public static DateTime FromUnixTimestamp(this int timestamp, bool isMilliseconds = false) =>
             ((long)timestamp).FromUnixTimestamp(isMilliseconds);
     }

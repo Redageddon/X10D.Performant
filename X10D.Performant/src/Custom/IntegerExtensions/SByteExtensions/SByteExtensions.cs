@@ -8,7 +8,7 @@ namespace X10D.Performant.SByteExtensions
     /// </summary>
     public static partial class SByteExtensions
     {
-        /// <inheritdoc cref="Int64Extensions.FromUnixTimestamp"/>
+        /// <include file='SByteExtensions.copy.xml' path='members/member[@name="FromUnixTimestamp"]'/>
         public static DateTime FromUnixTimestamp(this sbyte timestamp, bool isMilliseconds = false) =>
             ((long)timestamp).FromUnixTimestamp(isMilliseconds);
     }

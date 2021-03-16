@@ -1,6 +1,5 @@
 ﻿using System;
 using X10D.Performant.Int64Extensions;
-using X10D.Performant.UInt64Extensions;
 
 namespace X10D.Performant.UInt16Extensions
 {
@@ -9,7 +8,7 @@ namespace X10D.Performant.UInt16Extensions
     /// </summary>
     public static partial class UInt16Extensions
     {
-        /// <inheritdoc cref="UInt64Extensions.FromUnixTimestamp"/>
+        /// <include file='UInt16Extensions.copy.xml' path='members/member[@name="FromUnixTimestamp"]'/>
         public static DateTime FromUnixTimestamp(this ushort timestamp, bool isMilliseconds = false) =>
             ((long)timestamp).FromUnixTimestamp(isMilliseconds);
     }

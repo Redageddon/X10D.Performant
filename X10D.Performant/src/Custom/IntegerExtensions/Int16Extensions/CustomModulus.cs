@@ -32,8 +32,7 @@
                     case 1 << 11:
                     case 1 << 12:
                     case 1 << 13:
-                    case 1 << 14:
-                        return (short)(value & (modulus - 1));
+                    case 1 << 14: return (short)(value & (modulus - 1));
                 }
             }
 

@@ -30,10 +30,8 @@
                 case 1 << 11:
                 case 1 << 12:
                 case 1 << 13:
-                case 1 << 14:
-                    return (ushort)(value & (modulus - 1));
-                default:
-                    return (ushort)(value - (value / modulus * modulus));
+                case 1 << 14: return (ushort)(value & (modulus - 1));
+                default: return (ushort)(value - (value / modulus * modulus));
             }
         }
     }

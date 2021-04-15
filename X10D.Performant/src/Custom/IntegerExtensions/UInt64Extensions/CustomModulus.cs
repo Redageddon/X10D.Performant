@@ -80,10 +80,8 @@
                 case 1L << 60:
                 case 1L << 61:
                 case 1L << 62:
-                case 1UL << 63:
-                    return value & (modulus - 1);
-                default:
-                    return value - (value / modulus * modulus);
+                case 1UL << 63: return value & (modulus - 1);
+                default: return value - (value / modulus * modulus);
             }
         }
     }

@@ -47,10 +47,8 @@
                 case 1 << 27:
                 case 1 << 28:
                 case 1 << 29:
-                case 1 << 30:
-                    return value & (modulus - 1);
-                default:
-                    return value - (value / modulus * modulus);
+                case 1 << 30: return value & (modulus - 1);
+                default: return value - (value / modulus * modulus);
             }
         }
     }

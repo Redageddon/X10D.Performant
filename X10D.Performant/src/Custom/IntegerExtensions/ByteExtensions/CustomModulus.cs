@@ -24,8 +24,7 @@
                 case 1 << 4:
                 case 1 << 5:
                 case 1 << 6:
-                case 1 << 7:
-                    return (byte)(value & (modulus - 1));
+                case 1 << 7: return (byte)(value & (modulus - 1));
                 default: return (byte)(value - (value / modulus * modulus));
             }
         }

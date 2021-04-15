@@ -11,41 +11,22 @@ namespace X10D.Generator.FileRegenerator
             RegenerateIntegerExtensions();
         }
 
-        private static void RegenerateSingleExtensions()
+        private static void Regenerate(string startingPath, string endingPath, string[] selectedWords, string[] replacedWords)
         {
-            string doublePath = Path.Combine(Program.CustomPath, "DecimalExtensions/DoubleExtensions/");
-            string singlePath = Path.Combine(Program.CustomPath, "DecimalExtensions/SingleExtensions/");
+            if (selectedWords.Length != replacedWords.Length)
+            {
+                throw new ArgumentOutOfRangeException(nameof(selectedWords) + " and " + nameof(replacedWords),
+                                                      "replacements should have the same amount of elements.");
+            }
 
-            Directory.CreateDirectory(singlePath);
-            Directory.CreateDirectory(Path.Combine(singlePath, "UnitConversions"));
+            string contents = File.ReadAllText(startingPath);
 
-            string[] selectedWords = { "double", "Double", "Math", "D ", "D;", "D)", ".xml" };
-            string[] replacedWords = { "float", "Single", "MathF", "F ", "F;", "F)", ".copy.xml" };
+            for (int i = 0; i < selectedWords.Length; i++)
+            {
+                contents = contents.Replace(selectedWords[i], replacedWords[i]);
+            }
 
-            Regenerate(Path.Combine(doublePath, "DoubleExtensions.cs"),
-                       Path.Combine(singlePath, "SingleExtensions.copy.cs"),
-                       selectedWords,
-                       replacedWords);
-
-            Regenerate(Path.Combine(doublePath, "Lerp.cs"),
-                       Path.Combine(singlePath, "Lerp.copy.cs"),
-                       selectedWords,
-                       replacedWords);
-
-            Regenerate(Path.Combine(doublePath, "UnitConversions", "Angle.cs"),
-                       Path.Combine(singlePath, "UnitConversions", "Angle.copy.cs"),
-                       selectedWords,
-                       replacedWords);
-
-            Regenerate(Path.Combine(doublePath, "UnitConversions", "Temperature.cs"),
-                       Path.Combine(singlePath, "UnitConversions", "Temperature.copy.cs"),
-                       selectedWords,
-                       replacedWords);
-
-            Regenerate(Path.Combine(doublePath, "DoubleExtensions.xml"),
-                       Path.Combine(singlePath, "SingleExtensions.copy.xml"),
-                       new[] { "double", "Double" },
-                       new[] { "float", "Single" });
+            File.WriteAllText(endingPath, contents);
         }
 
         private static void RegenerateIntegerExtensions()
@@ -112,8 +93,11 @@ namespace X10D.Generator.FileRegenerator
 
             Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
                        Path.Combine(sbytePath, "SByteExtensions.copy.xml"),
-                       new[] { "ulong", @"
-        <param name=""useCache"">Gives the user the ability to use a cache of type <see cref=""System.Collections.Generic.HashSet{T}""/>.</param>" },
+                       new[]
+                       {
+                           "ulong", @"
+        <param name=""useCache"">Gives the user the ability to use a cache of type <see cref=""System.Collections.Generic.HashSet{T}""/>.</param>",
+                       },
                        new[] { "sbyte", "" });
 
             Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
@@ -133,28 +117,51 @@ namespace X10D.Generator.FileRegenerator
 
             Regenerate(Path.Combine(ulongPath, "UInt64Extensions.xml"),
                        Path.Combine(bytePath, "ByteExtensions.copy.xml"),
-                       new[] { "ulong", @"
-        <param name=""useCache"">Gives the user the ability to use a cache of type <see cref=""System.Collections.Generic.HashSet{T}""/>.</param>" },
+                       new[]
+                       {
+                           "ulong", @"
+        <param name=""useCache"">Gives the user the ability to use a cache of type <see cref=""System.Collections.Generic.HashSet{T}""/>.</param>",
+                       },
                        new[] { "byte", "" });
 
             #endregion
         }
 
-        private static void Regenerate(string startingPath, string endingPath, string[] selectedWords, string[] replacedWords)
+        private static void RegenerateSingleExtensions()
         {
-            if (selectedWords.Length != replacedWords.Length)
-            {
-                throw new ArgumentOutOfRangeException(nameof(selectedWords) + " and " + nameof(replacedWords), "replacements should have the same amount of elements.");
-            }
+            string doublePath = Path.Combine(Program.CustomPath, "DecimalExtensions/DoubleExtensions/");
+            string singlePath = Path.Combine(Program.CustomPath, "DecimalExtensions/SingleExtensions/");
 
-            string contents = File.ReadAllText(startingPath);
+            Directory.CreateDirectory(singlePath);
+            Directory.CreateDirectory(Path.Combine(singlePath, "UnitConversions"));
 
-            for (int i = 0; i < selectedWords.Length; i++)
-            {
-                contents = contents.Replace(selectedWords[i], replacedWords[i]);
-            }
+            string[] selectedWords = { "double", "Double", "Math", "D ", "D;", "D)", ".xml" };
+            string[] replacedWords = { "float", "Single", "MathF", "F ", "F;", "F)", ".copy.xml" };
 
-            File.WriteAllText(endingPath, contents);
+            Regenerate(Path.Combine(doublePath, "DoubleExtensions.cs"),
+                       Path.Combine(singlePath, "SingleExtensions.copy.cs"),
+                       selectedWords,
+                       replacedWords);
+
+            Regenerate(Path.Combine(doublePath, "Lerp.cs"),
+                       Path.Combine(singlePath, "Lerp.copy.cs"),
+                       selectedWords,
+                       replacedWords);
+
+            Regenerate(Path.Combine(doublePath, "UnitConversions", "Angle.cs"),
+                       Path.Combine(singlePath, "UnitConversions", "Angle.copy.cs"),
+                       selectedWords,
+                       replacedWords);
+
+            Regenerate(Path.Combine(doublePath, "UnitConversions", "Temperature.cs"),
+                       Path.Combine(singlePath, "UnitConversions", "Temperature.copy.cs"),
+                       selectedWords,
+                       replacedWords);
+
+            Regenerate(Path.Combine(doublePath, "DoubleExtensions.xml"),
+                       Path.Combine(singlePath, "SingleExtensions.copy.xml"),
+                       new[] { "double", "Double" },
+                       new[] { "float", "Single" });
         }
     }
 }

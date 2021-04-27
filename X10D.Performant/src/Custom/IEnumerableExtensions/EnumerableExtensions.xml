@@ -23,4 +23,14 @@
             <paramref name="values"/> split int chunks of size <paramref name="chunkSize"/>.
         </returns>
     </member>
+    <member name="SelectWhere">
+        <summary>
+            Combines Select and Where into a single statement for efficiency.
+        </summary>
+        <param name="values">The values to iterate over.</param>
+        <param name="predicate">Determines whether the current value is going to be selected.</param>
+        <param name="selector">Changes the current value in some way.</param>
+        <typeparam name="TSource">Any type.</typeparam>
+        <returns>An <see cref="IEnumerable{T}"/> of type <typeparamref name="TSource"/>.</returns>
+    </member>
 </members>

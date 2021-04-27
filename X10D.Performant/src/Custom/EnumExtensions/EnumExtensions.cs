@@ -14,8 +14,12 @@ namespace X10D.Performant.EnumExtensions
             TEnum[] values = EnumMap<TEnum>.Map;
             int i = Array.IndexOf(values, value) + 1;
 
+            int wrapIndex = wrap
+                ? 0
+                : i - 1;
+
             return values.Length == i
-                ? values[wrap ? 0 : i - 1]
+                ? values[wrapIndex]
                 : values[i];
         }
 
@@ -26,8 +30,12 @@ namespace X10D.Performant.EnumExtensions
             TEnum[] values = EnumMap<TEnum>.Map;
             int i = Array.IndexOf(values, value) - 1;
 
+            int wrapIndex = wrap
+                ? values.Length - 1
+                : 0;
+
             return i < 0
-                ? values[wrap ? values.Length - 1 : 0]
+                ? values[wrapIndex]
                 : values[i];
         }
 

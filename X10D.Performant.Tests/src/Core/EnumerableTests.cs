@@ -73,5 +73,17 @@ namespace X10D.Performant.Tests.Core
             CollectionAssert.AreEqual(new byte[] { 0x04, 0x05, 0x06 }, chunks2.ElementAt(1).ToList());
             CollectionAssert.AreEqual(new byte[] { 0x07, 0x08, 0x00 }, chunks2.ElementAt(2).ToList());
         }
+
+        /// <summary>
+        ///     Tests for <see cref="EnumerableExtensions.SelectWhere{T}"/>.
+        /// </summary>
+        [Test]
+        public void SelectWhere()
+        {
+            int[] array = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            CollectionAssert.AreEqual(new[] { 0, 4, 8, 12, 16 }, array.SelectWhere(e => e * 2, e => e % 2 == 0));
+            CollectionAssert.AreEqual(new[] { 0, 0, 0, 0 }, array.SelectWhere(e => e * 0, e => e % 3 == 0));
+        }
     }
 }

@@ -24,6 +24,32 @@ namespace X10D.Performant.IEnumerableExtensions
             }
         }
 
+        /// <include file='EnumerableExtensions.xml' path='members/member[@name="ForEach0"]'/>
+        public static IEnumerable<TSource> ForEach<TSource>(this IEnumerable<TSource> values, Action<TSource> action)
+        {
+            using IEnumerator<TSource> iterator = values.GetEnumerator();
+
+            while (iterator.MoveNext())
+            {
+                action(iterator.Current);
+
+                yield return iterator.Current;
+            }
+        }
+
+        /// <include file='EnumerableExtensions.xml' path='members/member[@name="ForEach1"]'/>
+        public static IEnumerable<TSource> ForEach<TSource>(this IEnumerable<TSource> values, Action action)
+        {
+            using IEnumerator<TSource> iterator = values.GetEnumerator();
+
+            while (iterator.MoveNext())
+            {
+                action();
+
+                yield return iterator.Current;
+            }
+        }
+
         /// <include file='EnumerableExtensions.xml' path='members/member[@name="LazyChunk"]'/>
         public static IEnumerable<IEnumerable<TSource>> LazyChunk<TSource>(this IEnumerable<TSource> values, int chunkSize)
         {

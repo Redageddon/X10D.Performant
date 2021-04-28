@@ -3,16 +3,17 @@ using System.Drawing;
 using System.Linq;
 using NUnit.Framework;
 using X10D.Performant.IEnumerableExtensions;
+using X10D.Performant.ReExposed;
 
 namespace X10D.Performant.Tests.Core
 {
     /// <summary>
-    ///     Tests for <see cref="EnumerableExtensions"/>.
+    ///     Tests for <see cref="IEnumerableExtensions.EnumerableExtensions"/>.
     /// </summary>
     public class EnumerableTests
     {
         /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.DistinctBy{TSource,TValue}"/>.
+        ///     Tests for <see cref="IEnumerableExtensions.EnumerableExtensions.DistinctBy{TSource,TValue}"/>.
         /// </summary>
         [Test]
         public void DistinctBy()
@@ -52,7 +53,41 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.LazyChunk{T}"/>.
+        ///     Tests for <see cref="IEnumerableExtensions.EnumerableExtensions.ForEach{T}(IEnumerable{T},Action{T})"/>.
+        /// </summary>
+        [Test]
+        public void ForEach0()
+        {
+            int i = 0;
+            int e = 0;
+
+            int[] arr = { 1, 2, 3 };
+            arr.ForEach(() => i++).ElementAt(arr.Length - 1);
+            arr.ForEach(() => e++).ElementAt(arr.Length - 2);
+
+            Assert.AreEqual(3, i);
+            Assert.AreEqual(2, e);
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="IEnumerableExtensions.EnumerableExtensions.ForEach{T}(IEnumerable{T},Action)"/>.
+        /// </summary>
+        [Test]
+        public void ForEach1()
+        {
+            int i = 0;
+            int e = 0;
+
+            int[] arr = { 1, 2, 3 };
+            arr.ForEach(f => i += f).ElementAt(arr.Length - 1);
+            arr.ForEach(f => e += f).ElementAt(arr.Length - 2);
+
+            Assert.AreEqual(6, i);
+            Assert.AreEqual(3, e);
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="IEnumerableExtensions.EnumerableExtensions.LazyChunk{T}"/>.
         /// </summary>
         [Test]
         public void LazyChunk()
@@ -75,7 +110,7 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="EnumerableExtensions.SelectWhere{T}"/>.
+        ///     Tests for <see cref="IEnumerableExtensions.EnumerableExtensions.SelectWhere{T}"/>.
         /// </summary>
         [Test]
         public void SelectWhere()

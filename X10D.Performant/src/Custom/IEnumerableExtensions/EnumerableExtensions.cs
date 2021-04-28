@@ -8,6 +8,14 @@ namespace X10D.Performant.IEnumerableExtensions
     /// </summary>
     public static class EnumerableExtensions
     {
+        /// <include file='EnumerableExtensions.xml' path='members/member[@name="Consume"]'/>
+        public static void Consume<TSource>(this IEnumerable<TSource> values)
+        {
+            using IEnumerator<TSource> enumerator = values.GetEnumerator();
+
+            while (enumerator.MoveNext()) {}
+        }
+
         /// <include file='EnumerableExtensions.xml' path='members/member[@name="DistinctBy"]'/>
         public static IEnumerable<TSource> DistinctBy<TSource, TKey>(this IEnumerable<TSource> values,
                                                                      Func<TSource, TKey> selector,

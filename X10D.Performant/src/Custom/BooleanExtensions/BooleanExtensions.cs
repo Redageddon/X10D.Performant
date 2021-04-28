@@ -1,4 +1,6 @@
-﻿namespace X10D.Performant.BooleanExtensions
+﻿using System.Runtime.CompilerServices;
+
+namespace X10D.Performant.BooleanExtensions
 {
     /// <summary>
     ///     Extension methods for <see cref="bool"/>.
@@ -6,42 +8,42 @@
     public static class BooleanExtensions
     {
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToByte"]'/>
-        public static byte ToByte(this bool value) => (byte)(value ? 1 : 0);
+        public static byte ToByte(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToDecimal"]'/>
-        public static decimal ToDecimal(this bool value) => value ? 1M : 0M;
+        public static decimal ToDecimal(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToDouble"]'/>
-        public static double ToDouble(this bool value) => value ? 1D : 0D;
+        public static double ToDouble(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToInt16"]'/>
-        public static short ToInt16(this bool value) => (short)(value ? 1 : 0);
+        public static short ToInt16(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToInt32"]'/>
-        public static int ToInt32(this bool value) => value ? 1 : 0;
+        public static int ToInt32(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToInt64"]'/>
-        public static long ToInt64(this bool value) => value ? 1L : 0L;
+        public static long ToInt64(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToNInt"]'/>
-        public static nint ToNInt(this bool value) => value ? 1 : 0;
+        public static nint ToNInt(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToUNInt"]'/>
-        public static nuint ToNUInt(this bool value) => (nuint)(value ? 1 : 0);
+        public static nuint ToNUInt(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToSByte"]'/>
-        public static sbyte ToSByte(this bool value) => (sbyte)(value ? 1 : 0);
+        public static sbyte ToSByte(this bool value) => Unsafe.As<bool, sbyte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToSingle"]'/>
-        public static float ToSingle(this bool value) => value ? 1F : 0F;
+        public static float ToSingle(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToUInt16"]'/>
-        public static ushort ToUInt16(this bool value) => (ushort)(value ? 1 : 0);
+        public static ushort ToUInt16(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToUInt32"]'/>
-        public static uint ToUInt32(this bool value) => value ? 1U : 0U;
+        public static uint ToUInt32(this bool value) => Unsafe.As<bool, byte>(ref value);
 
         /// <include file='BooleanExtensions.xml' path='members/member[@name="ToUInt64"]'/>
-        public static ulong ToUInt64(this bool value) => value ? 1UL : 0UL;
+        public static ulong ToUInt64(this bool value) => Unsafe.As<bool, byte>(ref value);
     }
 }

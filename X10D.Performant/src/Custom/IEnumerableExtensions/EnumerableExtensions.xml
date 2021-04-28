@@ -1,4 +1,11 @@
 ﻿<members>
+    <member name="Consume">
+        <summary>
+            Consumes all elements in an <see cref="IEnumerable{T}"/>.
+        </summary>
+        <param name="values">The values being consumed and ignored.</param>
+        <typeparam name="TSource">Any type.</typeparam>
+    </member>        
     <member name="DistinctBy">
         <summary>
             Gets each unique object from <paramref name="values"/> determined by <paramref name="selector"/> and compared with 

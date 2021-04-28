@@ -66,9 +66,6 @@ namespace X10D.Performant.ReExposed
         public static int FindLastIndex<T>(this T[] values, Predicate<T> match, int index = 0, int? count = null) =>
             Array.FindLastIndex(values, index, count ?? values.Length - index, match);
 
-        /// <inheritdoc cref="Array.ForEach{T}(T[],Action{T})"/>
-        public static void ForEach<T>(this T[] values, Action<T> action) => Array.ForEach(values, action);
-
         /// <inheritdoc cref="Array.IndexOf(Array,object,int,int)"/>
         public static int IndexOf(this Array array, object? value, int index = 0, int? count = null) =>
             Array.IndexOf(array, value, index, count ?? array.Length - index);

@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using NUnit.Framework;
 using X10D.Performant.IEnumerableExtensions;
-using X10D.Performant.ReExposed;
 
 namespace X10D.Performant.Tests.Core
 {
@@ -13,7 +13,20 @@ namespace X10D.Performant.Tests.Core
     public class EnumerableTests
     {
         /// <summary>
-        ///     Tests for <see cref="IEnumerableExtensions.EnumerableExtensions.DistinctBy{TSource,TValue}"/>.
+        ///     Tests for <see cref="IEnumerableExtensions.Consume"/>.
+        /// </summary>
+        [Test]
+        public void Consume()
+        {
+            const int count = 10;
+            int i = 0;
+
+            Enumerable.Repeat(0, count).ForEach(() => i++).Consume();
+            Assert.AreEqual(count, i);
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="IEnumerableExtensions.DistinctBy{TSource,TValue}"/>.
         /// </summary>
         [Test]
         public void DistinctBy()

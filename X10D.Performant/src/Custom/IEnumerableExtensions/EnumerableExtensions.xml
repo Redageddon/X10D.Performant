@@ -10,6 +10,24 @@
         <typeparam name="TSource">The type of the contained element in the <paramref name="values"/> being read from.</typeparam>
         <typeparam name="TKey">The type being selected distinctly from.</typeparam>
         <returns>A collection of values that are specific to a selector.</returns>
+    </member>    
+    <member name="ForEach0">
+        <summary>
+            Does an action with an input on every lazy evaluation.
+        </summary>
+        <param name="values">The values to iterate through.</param>
+        <param name="action">The single parameter <see cref="Action{T}"/> to execute for each item in <paramref name="values"/>.</param>
+        <typeparam name="TSource">Any type.</typeparam>
+        <returns>The same values from <paramref name="values"/>.</returns>
+    </member>    
+    <member name="ForEach1">
+        <summary>
+            Does an action with an input on every lazy evaluation.
+        </summary>
+        <param name="values">The values to iterate through.</param>
+        <param name="action">The parameterless <see cref="Action"/> to execute for each item in <paramref name="values"/>.</param>
+        <typeparam name="TSource">Any type.</typeparam>
+        <returns>The same values from <paramref name="values"/>.</returns>
     </member>
     <member name="LazyChunk">
         <summary>

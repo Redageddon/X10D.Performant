@@ -20,9 +20,12 @@ namespace X10D.Performant.Tests.Core
         {
             const int count = 10;
             int i = 0;
+            int e = 0;
 
             Enumerable.Repeat(0, count).ForEach(() => i++).Consume();
+            Enumerable.Repeat(0, count).ForEach(() => e++).Consume(count / 2);
             Assert.AreEqual(count, i);
+            Assert.AreEqual(count / 2, e);
         }
 
         /// <summary>
@@ -75,8 +78,8 @@ namespace X10D.Performant.Tests.Core
             int e = 0;
 
             int[] arr = { 1, 2, 3 };
-            arr.ForEach(() => i++).ElementAt(arr.Length - 1);
-            arr.ForEach(() => e++).ElementAt(arr.Length - 2);
+            arr.ForEach(() => i++).Consume(arr.Length);
+            arr.ForEach(() => e++).Consume(arr.Length - 1);
 
             Assert.AreEqual(3, i);
             Assert.AreEqual(2, e);
@@ -92,8 +95,8 @@ namespace X10D.Performant.Tests.Core
             int e = 0;
 
             int[] arr = { 1, 2, 3 };
-            arr.ForEach(f => i += f).ElementAt(arr.Length - 1);
-            arr.ForEach(f => e += f).ElementAt(arr.Length - 2);
+            arr.ForEach(f => i += f).Consume(arr.Length);
+            arr.ForEach(f => e += f).Consume(arr.Length - 1);
 
             Assert.AreEqual(6, i);
             Assert.AreEqual(3, e);

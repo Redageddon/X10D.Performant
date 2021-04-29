@@ -8,7 +8,7 @@ namespace X10D.Performant.RandomExtensions
     /// </summary>
     public static partial class RandomExtensions
     {
-        internal static Random Random { get; } = new();
+        internal static readonly Random Random = new();
 
         /// <include file='RandomExtensions.xml' path='members/member[@name="OneOf"]'/>
         public static T OneOf<T>(this Random random, params T[] values) => random.OneOf((IList<T>)values);

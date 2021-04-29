@@ -6,7 +6,7 @@ namespace X10D.Performant.ColorExtensions
     /// <summary>
     ///     Extension methods for <see cref="Color"/>.
     /// </summary>
-    public static class ColorExtensions
+    public static partial class ColorExtensions
     {
         internal static Color ColorFromAhsb(byte alpha, float hue, float saturation, float brightness)
         {

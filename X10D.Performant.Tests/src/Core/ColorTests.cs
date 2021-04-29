@@ -12,6 +12,18 @@ namespace X10D.Performant.Tests.Core
     public class ColorTests
     {
         /// <summary>
+        ///     Tests for <see cref="ColorExtensions.And"/>.
+        /// </summary>
+        [Test]
+        public void And()
+        {
+            Color color1 = Color.FromArgb(0b00000000_00000000_00000001_00000001);
+            Color color2 = Color.FromArgb(0b00000000_00000001_00000000_00000001);
+
+            Assert.AreEqual(Color.FromArgb(0, 0, 0, 1), color1.And(color2));
+        }
+
+        /// <summary>
         ///     Tests for <see cref="ColorExtensions.With(Color,byte?,float?,float?,float?)"/>.
         /// </summary>
         [Test]
@@ -151,6 +163,30 @@ namespace X10D.Performant.Tests.Core
                 Trace.WriteLineIf(normalConstruction != withConstruction, i);
                 Assert.AreEqual(normalConstruction, withConstruction);
             }
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="ColorExtensions.Or"/>.
+        /// </summary>
+        [Test]
+        public void Or()
+        {
+            Color color1 = Color.FromArgb(0b00000000_00000000_00000001_00000001);
+            Color color2 = Color.FromArgb(0b00000000_00000001_00000000_00000001);
+
+            Assert.AreEqual(Color.FromArgb(0, 1, 1, 1), color1.Or(color2));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="ColorExtensions.XOr"/>.
+        /// </summary>
+        [Test]
+        public void XOr()
+        {
+            Color color1 = Color.FromArgb(0b00000000_00000000_00000001_00000001);
+            Color color2 = Color.FromArgb(0b00000000_00000001_00000000_00000001);
+
+            Assert.AreEqual(Color.FromArgb(0, 1, 1, 0), color1.XOr(color2));
         }
     }
 }

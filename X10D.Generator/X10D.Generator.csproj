@@ -6,9 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>      
-        <None Update="RawCopy\EquatableExtensions.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>      
         <None Update="RawCopy\AdvancedComparisonInlining.cs.copy">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>

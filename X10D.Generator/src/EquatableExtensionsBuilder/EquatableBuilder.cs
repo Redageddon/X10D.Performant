@@ -15,10 +15,6 @@ namespace X10D.Generator
 
             Directory.CreateDirectory(Path.Combine(Program.CustomPath, "IEquatableExtensions"));
 
-            File.Copy("RawCopy/EquatableExtensions.xml",
-                      Path.Combine(Program.CustomPath, "IEquatableExtensions/EquatableExtensions.xml"),
-                      true);
-
             File.Copy("RawCopy/AdvancedComparisonInlining.cs.copy",
                       Path.Combine(Program.CustomPath, "IEquatableExtensions/AdvancedComparisonInlining.copy.cs"),
                       true);

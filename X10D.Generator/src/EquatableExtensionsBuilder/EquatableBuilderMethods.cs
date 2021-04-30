@@ -48,7 +48,7 @@ namespace X10D.Generator
 
             string returns = GetReturnRecursive(argsCount - 1, binarySeparationType, isReversedType);
 
-            return @$"        /// <include file='EquatableExtensions.xml' path='members/member[@name=""{type}Equals{argsCount}""]'/>
+            return @$"        /// <include file='EquatableExtensions.g.xml' path='members/member[@name=""{type}Equals{argsCount}""]'/>
         public static bool {type}Equals<T>(this T value, {args})
             where T : IEquatable<T> =>
             {returns};
@@ -56,7 +56,7 @@ namespace X10D.Generator
         }
 
         private static string GetParamsMethod(string type) =>
-            $"        /// <include file='EquatableExtensions.xml' path='members/member[@name=\"{type}Equals1\"]'/>"
+            $"        /// <include file='EquatableExtensions.g.xml' path='members/member[@name=\"{type}Equals1\"]'/>"
           + @$"
         public static bool {type}Equals<T>(this T value, params T[] comparisons)
             where T : IEquatable<T> =>

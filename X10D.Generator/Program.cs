@@ -16,6 +16,7 @@ namespace X10D.Generator
         public static void Main()
         {
             EquatableBuilder equatable = new();
+            EquatableDocumentationBuilder documentationBuilder = new();
             Regenerator regenerator = new();
         }
     }

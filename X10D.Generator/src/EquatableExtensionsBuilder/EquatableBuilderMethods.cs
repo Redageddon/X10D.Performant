@@ -49,7 +49,6 @@ namespace X10D.Generator
             string returns = GetReturnRecursive(argsCount - 1, binarySeparationType, isReversedType);
 
             return @$"        /// <include file='EquatableExtensions.xml' path='members/member[@name=""{type}Equals{argsCount}""]'/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool {type}Equals<T>(this T value, {args})
             where T : IEquatable<T> =>
             {returns};

@@ -6,6 +6,21 @@ namespace X10D.Generator
 {
     public partial class EquatableBuilder
     {
+        private static string GetArgs(int argsCount)
+        {
+            List<string> strings = new();
+            StringBuilder argsStringBuilder = new();
+
+            for (int i = 0; i < argsCount; i++)
+            {
+                strings.Add("T arg" + (i + 1));
+            }
+
+            argsStringBuilder.Append(string.Join(", ", strings));
+
+            return argsStringBuilder.ToString();
+        }
+
         private static string GetClass(string type, string binarySeparationType, bool isReversedType, int argsCount)
         {
             StringBuilder classBuilder = new();
@@ -29,69 +44,15 @@ namespace X10D.Generator
 
         private static string GetOverloadsMethod(string type, string binarySeparationType, bool isReversedType, int argsCount)
         {
-            StringBuilder argsStringBuilder = new();
-            StringBuilder returnsStringBuilder = new();
+            string args = GetArgs(argsCount);
 
-            #region argsBuild
-
-            List<string> strings = new();
-
-            for (int i = 0; i < argsCount; i++)
-            {
-                strings.Add("T arg" + (i + 1));
-            }
-
-            argsStringBuilder.Append(string.Join(", ", strings));
-
-            #endregion
-
-            #region methodBuild
-
-            if (isReversedType)
-            {
-                returnsStringBuilder.Append("!(");
-            }
-
-            if (argsCount == 2)
-            {
-                returnsStringBuilder.Append("value.Equals(arg1) ");
-                returnsStringBuilder.Append(binarySeparationType);
-                returnsStringBuilder.Append(" value.Equals(arg2)");
-            }
-            else
-            {
-                returnsStringBuilder.Append("value.");
-                returnsStringBuilder.Append(type);
-                returnsStringBuilder.Append("Equals(");
-
-                strings.Clear();
-
-                for (int i = 0; i < argsCount - 1; i++)
-                {
-                    strings.Add("arg" + (i + 1));
-                }
-
-                returnsStringBuilder.Append(string.Join(", ", strings));
-
-                returnsStringBuilder.Append(") ");
-                returnsStringBuilder.Append(binarySeparationType);
-                returnsStringBuilder.Append(" value.Equals(arg");
-                returnsStringBuilder.Append(argsCount);
-                returnsStringBuilder.Append(')');
-            }
-
-            if (isReversedType)
-            {
-                returnsStringBuilder.Append(')');
-            }
-
-            #endregion
+            string returns = GetReturnRecursive(argsCount - 1, binarySeparationType, isReversedType);
 
             return @$"        /// <include file='EquatableExtensions.xml' path='members/member[@name=""{type}Equals{argsCount}""]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool {type}Equals<T>(this T value, {argsStringBuilder})
+        public static bool {type}Equals<T>(this T value, {args})
             where T : IEquatable<T> =>
-            {returnsStringBuilder};
+            {returns};
 ";
         }
 
@@ -103,5 +64,19 @@ namespace X10D.Generator
             AdvancedComparison<T, {type}>(value, comparisons);
 
 ";
+
+        private static string GetReturnRecursive(int argsCount, string type, bool isTypeNot)
+        {
+            if (argsCount <= 0)
+            {
+                return $"value.Equals(arg{argsCount + 1})";
+            }
+
+            string currentValue = $"{GetReturnRecursive(argsCount - 1, type, isTypeNot)} {type} value.Equals(arg{argsCount + 1})";
+
+            return isTypeNot
+                ? $"!({currentValue})"
+                : currentValue;
+        }
     }
 }

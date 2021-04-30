@@ -23,78 +23,222 @@ namespace X10D.Performant.IEquatableExtensions
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2) || value.Equals(arg3);
+            value.Equals(arg1) || value.Equals(arg2) || value.Equals(arg3);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals4"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3) || value.Equals(arg4);
+            value.Equals(arg1) || value.Equals(arg2) || value.Equals(arg3) || value.Equals(arg4);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals5"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4) || value.Equals(arg5);
+            value.Equals(arg1) || value.Equals(arg2) || value.Equals(arg3) || value.Equals(arg4) || value.Equals(arg5);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals6"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5) || value.Equals(arg6);
+            value.Equals(arg1) || value.Equals(arg2) || value.Equals(arg3) || value.Equals(arg4) || value.Equals(arg5) || value.Equals(arg6);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals7"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6) || value.Equals(arg7);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals8"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7) || value.Equals(arg8);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7)
+         || value.Equals(arg8);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals9"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) || value.Equals(arg9);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7)
+         || value.Equals(arg8)
+         || value.Equals(arg9);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals10"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) || value.Equals(arg10);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7)
+         || value.Equals(arg8)
+         || value.Equals(arg9)
+         || value.Equals(arg10);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals11"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) || value.Equals(arg11);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7)
+         || value.Equals(arg8)
+         || value.Equals(arg9)
+         || value.Equals(arg10)
+         || value.Equals(arg11);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals12"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11, T arg12)
+        public static bool OrEquals<T>(this T value,
+                                       T arg1,
+                                       T arg2,
+                                       T arg3,
+                                       T arg4,
+                                       T arg5,
+                                       T arg6,
+                                       T arg7,
+                                       T arg8,
+                                       T arg9,
+                                       T arg10,
+                                       T arg11,
+                                       T arg12)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) || value.Equals(arg12);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7)
+         || value.Equals(arg8)
+         || value.Equals(arg9)
+         || value.Equals(arg10)
+         || value.Equals(arg11)
+         || value.Equals(arg12);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals13"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11, T arg12, T arg13)
+        public static bool OrEquals<T>(this T value,
+                                       T arg1,
+                                       T arg2,
+                                       T arg3,
+                                       T arg4,
+                                       T arg5,
+                                       T arg6,
+                                       T arg7,
+                                       T arg8,
+                                       T arg9,
+                                       T arg10,
+                                       T arg11,
+                                       T arg12,
+                                       T arg13)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12) || value.Equals(arg13);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7)
+         || value.Equals(arg8)
+         || value.Equals(arg9)
+         || value.Equals(arg10)
+         || value.Equals(arg11)
+         || value.Equals(arg12)
+         || value.Equals(arg13);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals14"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11, T arg12, T arg13, T arg14)
+        public static bool OrEquals<T>(this T value,
+                                       T arg1,
+                                       T arg2,
+                                       T arg3,
+                                       T arg4,
+                                       T arg5,
+                                       T arg6,
+                                       T arg7,
+                                       T arg8,
+                                       T arg9,
+                                       T arg10,
+                                       T arg11,
+                                       T arg12,
+                                       T arg13,
+                                       T arg14)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) || value.Equals(arg14);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7)
+         || value.Equals(arg8)
+         || value.Equals(arg9)
+         || value.Equals(arg10)
+         || value.Equals(arg11)
+         || value.Equals(arg12)
+         || value.Equals(arg13)
+         || value.Equals(arg14);
 
         /// <include file='EquatableExtensions.xml' path='members/member[@name="OrEquals15"]'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool OrEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11, T arg12, T arg13, T arg14, T arg15)
+        public static bool OrEquals<T>(this T value,
+                                       T arg1,
+                                       T arg2,
+                                       T arg3,
+                                       T arg4,
+                                       T arg5,
+                                       T arg6,
+                                       T arg7,
+                                       T arg8,
+                                       T arg9,
+                                       T arg10,
+                                       T arg11,
+                                       T arg12,
+                                       T arg13,
+                                       T arg14,
+                                       T arg15)
             where T : IEquatable<T> =>
-            value.OrEquals(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14) || value.Equals(arg15);
+            value.Equals(arg1)
+         || value.Equals(arg2)
+         || value.Equals(arg3)
+         || value.Equals(arg4)
+         || value.Equals(arg5)
+         || value.Equals(arg6)
+         || value.Equals(arg7)
+         || value.Equals(arg8)
+         || value.Equals(arg9)
+         || value.Equals(arg10)
+         || value.Equals(arg11)
+         || value.Equals(arg12)
+         || value.Equals(arg13)
+         || value.Equals(arg14)
+         || value.Equals(arg15);
     }
 }

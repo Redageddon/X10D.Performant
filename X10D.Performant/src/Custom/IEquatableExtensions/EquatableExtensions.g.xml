@@ -1,0 +1,1712 @@
+<members>
+    <member name="AndEquals1">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="comparisons">All values being checked against.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals2">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals3">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals4">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals5">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals6">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals7">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals8">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals9">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals10">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals11">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals12">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals13">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals14">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="AndEquals15">
+        <summary>
+            Checks if this element is AND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg15">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is AND equaled to all of the parameters.
+            EX: a == b and a == c and a == d.
+        </returns>
+    </member>
+    <member name="NAndEquals1">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="comparisons">All values being checked against.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals2">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals3">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals4">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals5">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals6">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals7">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals8">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals9">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals10">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals11">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals12">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals13">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals14">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NAndEquals15">
+        <summary>
+            Checks if this element is NAND equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg15">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NAND equaled to all of the parameters.
+            EX: !(!(a == b and a == c) and a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals1">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="comparisons">All values being checked against.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals2">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals3">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals4">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals5">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals6">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals7">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals8">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals9">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals10">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals11">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals12">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals13">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals14">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="NOrEquals15">
+        <summary>
+            Checks if this element is NOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg15">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is NOR equaled to all of the parameters.
+            EX: !(!(a == b or a == c) or a == d).
+        </returns>
+    </member>
+    <member name="OrEquals1">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="comparisons">All values being checked against.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals2">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals3">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals4">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals5">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals6">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals7">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals8">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals9">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals10">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals11">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals12">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals13">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals14">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="OrEquals15">
+        <summary>
+            Checks if this element is OR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg15">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is OR equaled to all of the parameters.
+            EX: a == b or a == c or a == d.
+        </returns>
+    </member>
+    <member name="XNOrEquals1">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="comparisons">All values being checked against.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals2">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals3">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals4">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals5">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals6">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals7">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals8">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals9">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals10">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals11">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals12">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals13">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals14">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XNOrEquals15">
+        <summary>
+            Checks if this element is XNOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg15">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XNOR equaled to all of the parameters.
+            EX: !(!(a == b ^ a == c) ^ a == d).
+        </returns>
+    </member>
+    <member name="XOrEquals1">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="comparisons">All values being checked against.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals2">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals3">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals4">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals5">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals6">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals7">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals8">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals9">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals10">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals11">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals12">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals13">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals14">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+    <member name="XOrEquals15">
+        <summary>
+            Checks if this element is XOR equaled to all of the parameters.
+        </summary>
+        <param name="value">The value being checked into.</param>
+        <param name="arg1">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg2">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg3">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg4">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg5">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg6">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg7">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg8">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg9">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg10">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg11">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg12">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg13">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg14">A <typeparamref name="T"/> being checked.</param>
+        <param name="arg15">A <typeparamref name="T"/> being checked.</param>
+        <typeparam name="T">The type being tested against.</typeparam>
+        <returns>
+            <see langword="true"/> if value is XOR equaled to all of the parameters.
+            EX: a == b ^ a == c ^ a == d.
+        </returns>
+    </member>
+</members>

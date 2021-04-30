@@ -7,45 +7,45 @@ namespace X10D.Performant.IEquatableExtensions
 {
     public static partial class EquatableExtensions
     {
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals1"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals1"]'/>
         public static bool NAndEquals<T>(this T value, params T[] comparisons)
             where T : IEquatable<T> =>
             AdvancedComparison<T, NAnd>(value, comparisons);
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals2"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals2"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2)
             where T : IEquatable<T> =>
             !(value.Equals(arg1) && value.Equals(arg2));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals3"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals3"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3)
             where T : IEquatable<T> =>
             !(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals4"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals4"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4)
             where T : IEquatable<T> =>
             !(!(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3)) && value.Equals(arg4));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals5"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals5"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5)
             where T : IEquatable<T> =>
             !(!(!(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3)) && value.Equals(arg4)) && value.Equals(arg5));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals6"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals6"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6)
             where T : IEquatable<T> =>
             !(!(!(!(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3)) && value.Equals(arg4)) && value.Equals(arg5))
            && value.Equals(arg6));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals7"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals7"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7)
             where T : IEquatable<T> =>
             !(!(!(!(!(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3)) && value.Equals(arg4)) && value.Equals(arg5))
              && value.Equals(arg6))
            && value.Equals(arg7));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals8"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals8"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8)
             where T : IEquatable<T> =>
             !(!(!(!(!(!(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3)) && value.Equals(arg4)) && value.Equals(arg5))
@@ -53,7 +53,7 @@ namespace X10D.Performant.IEquatableExtensions
              && value.Equals(arg7))
            && value.Equals(arg8));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals9"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals9"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9)
             where T : IEquatable<T> =>
             !(!(!(!(!(!(!(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3)) && value.Equals(arg4)) && value.Equals(arg5))
@@ -62,7 +62,7 @@ namespace X10D.Performant.IEquatableExtensions
              && value.Equals(arg8))
            && value.Equals(arg9));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals10"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals10"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10)
             where T : IEquatable<T> =>
             !(!(!(!(!(!(!(!(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3)) && value.Equals(arg4)) && value.Equals(arg5))
@@ -72,7 +72,7 @@ namespace X10D.Performant.IEquatableExtensions
              && value.Equals(arg9))
            && value.Equals(arg10));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals11"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals11"]'/>
         public static bool NAndEquals<T>(this T value, T arg1, T arg2, T arg3, T arg4, T arg5, T arg6, T arg7, T arg8, T arg9, T arg10, T arg11)
             where T : IEquatable<T> =>
             !(!(!(!(!(!(!(!(!(!(value.Equals(arg1) && value.Equals(arg2)) && value.Equals(arg3)) && value.Equals(arg4)) && value.Equals(arg5))
@@ -83,7 +83,7 @@ namespace X10D.Performant.IEquatableExtensions
              && value.Equals(arg10))
            && value.Equals(arg11));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals12"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals12"]'/>
         public static bool NAndEquals<T>(this T value,
                                          T arg1,
                                          T arg2,
@@ -107,7 +107,7 @@ namespace X10D.Performant.IEquatableExtensions
              && value.Equals(arg11))
            && value.Equals(arg12));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals13"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals13"]'/>
         public static bool NAndEquals<T>(this T value,
                                          T arg1,
                                          T arg2,
@@ -133,7 +133,7 @@ namespace X10D.Performant.IEquatableExtensions
              && value.Equals(arg12))
            && value.Equals(arg13));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals14"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals14"]'/>
         public static bool NAndEquals<T>(this T value,
                                          T arg1,
                                          T arg2,
@@ -161,7 +161,7 @@ namespace X10D.Performant.IEquatableExtensions
              && value.Equals(arg13))
            && value.Equals(arg14));
 
-        /// <include file='EquatableExtensions.xml' path='members/member[@name="NAndEquals15"]'/>
+        /// <include file='EquatableExtensions.g.xml' path='members/member[@name="NAndEquals15"]'/>
         public static bool NAndEquals<T>(this T value,
                                          T arg1,
                                          T arg2,

@@ -4,6 +4,7 @@
             Consumes all elements in an <see cref="IEnumerable{T}"/>.
         </summary>
         <param name="values">The values being consumed and ignored.</param>
+        <param name="consumeCount">The amount to consume up to.</param>
         <typeparam name="TSource">Any type.</typeparam>
     </member>        
     <member name="DistinctBy">

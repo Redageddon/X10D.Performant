@@ -1,4 +1,5 @@
 ﻿using System;
+using X10D.Performant.BooleanExtensions;
 
 namespace X10D.Performant.EnumExtensions
 {
@@ -14,13 +15,11 @@ namespace X10D.Performant.EnumExtensions
             TEnum[] values = EnumMap<TEnum>.Map;
             int i = Array.IndexOf(values, value) + 1;
 
-            int wrapIndex = wrap
-                ? 0
-                : i - 1;
+            int index = values.Length == i
+                ? (!wrap).ToByte() * (i - 1)
+                : i;
 
-            return values.Length == i
-                ? values[wrapIndex]
-                : values[i];
+            return values[index];
         }
 
         /// <include file='EnumExtensions.xml' path='members/member[@name="PreviousEnumDeclaration"]'/>
@@ -28,21 +27,19 @@ namespace X10D.Performant.EnumExtensions
             where TEnum : struct, Enum
         {
             TEnum[] values = EnumMap<TEnum>.Map;
-            int i = Array.IndexOf(values, value) - 1;
+            int location = Array.IndexOf(values, value);
 
-            int wrapIndex = wrap
-                ? values.Length - 1
-                : 0;
+            int index = location == 0
+                ? wrap.ToByte() * (values.Length - 1)
+                : location - 1;
 
-            return i < 0
-                ? values[wrapIndex]
-                : values[i];
+            return values[index];
         }
 
         internal static class EnumMap<TEnum>
             where TEnum : struct, Enum
         {
-            public static TEnum[] Map { get; } = Enum.GetValues<TEnum>();
+            public static readonly TEnum[] Map = Enum.GetValues<TEnum>();
         }
     }
 }

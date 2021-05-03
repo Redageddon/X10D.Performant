@@ -10,8 +10,8 @@ namespace X10D.Performant.CharExtensions
         /// <include file='CharExtensions.xml' path='members/member[@name="GetNextLetter"]'/>
         public static char GetNextLetter(this char value, int amount = 1, bool wrap = false, bool isUpper = false)
         {
-            const int lowerChar = 'a';
-            const int higherChar = 'z';
+            const char lowerChar = 'a';
+            const char higherChar = 'z';
             const int alphabetCount = higherChar - lowerChar + 1;
 
             value = char.ToLower(value);
@@ -35,11 +35,11 @@ namespace X10D.Performant.CharExtensions
             {
                 if (offset >= higherChar)
                 {
-                    value = 'z';
+                    value = higherChar;
                 }
                 else if (offset <= lowerChar)
                 {
-                    value = 'a';
+                    value = lowerChar;
                 }
                 else if (amount == 1)
                 {

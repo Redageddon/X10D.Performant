@@ -3,13 +3,14 @@ using System.Buffers.Binary;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using X10D.Performant.BooleanExtensions;
 
 namespace X10D.Performant.StreamExtensions
 {
     public static partial class StreamExtensions
     {
         /// <include file='StreamExtensions.xml' path='members/member[@name="WriteBoolean"]'/>
-        public static void Write(this Stream stream, bool value) => stream.WriteByte((byte)(value ? 1 : 0));
+        public static void Write(this Stream stream, bool value) => stream.WriteByte(value.ToByte());
 
         /// <include file='StreamExtensions.xml' path='members/member[@name="WriteDecimal"]'/>
         public static void Write(this Stream stream, decimal value, bool littleEndian = true)

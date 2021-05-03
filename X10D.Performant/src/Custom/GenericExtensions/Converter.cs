@@ -13,26 +13,16 @@ namespace X10D.Performant.GenericExtensions
         public static TTo? To<TFrom, TTo>(this TFrom value) => Convert<TFrom, TTo>.Function(value);
 
         /// <include file='GenericExtensions.xml' path='members/member[@name="ToOrOther"]'/>
-        public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, TTo? other)
-        {
-            if (!value.TryTo(out TTo? output))
-            {
-                output = other;
-            }
-
-            return output;
-        }
+        public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, TTo? other) =>
+            !value.TryTo(out TTo? output)
+                ? other
+                : output;
 
         /// <include file='GenericExtensions.xml' path='members/member[@name="ToOrOtherFunc"]'/>
-        public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, Func<TTo> other)
-        {
-            if (!value.TryTo(out TTo? output))
-            {
-                output = other();
-            }
-
-            return output;
-        }
+        public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, Func<TTo> other) =>
+            !value.TryTo(out TTo? output)
+                ? other()
+                : output;
 
         /// <include file='GenericExtensions.xml' path='members/member[@name="TryTo"]'/>
         public static bool TryTo<TFrom, TTo>(this TFrom value, out TTo? result)

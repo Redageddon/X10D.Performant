@@ -1,4 +1,5 @@
 ﻿using System;
+using X10D.Performant.BooleanExtensions;
 
 namespace X10D.Performant.DateTimeExtensions
 {
@@ -21,12 +22,9 @@ namespace X10D.Performant.DateTimeExtensions
         {
             DateTime first = current.FirstDayOfMonth();
 
-            if (first.DayOfWeek != dayOfWeek)
-            {
-                first = first.Next(dayOfWeek);
-            }
-
-            return first;
+            return first.DayOfWeek != dayOfWeek
+                ? first.Next(dayOfWeek)
+                : first;
         }
 
         /// <include file='DateTimeExtensions.xml' path='members/member[@name="FirstDayOfMonth"]'/>
@@ -39,9 +37,8 @@ namespace X10D.Performant.DateTimeExtensions
             DayOfWeek lastDayOfWeek = last.DayOfWeek;
 
             int diff = dayOfWeek - lastDayOfWeek;
-            int offset = diff > 0 ? diff - 7 : diff;
 
-            return last.AddDays(offset);
+            return last.AddDays(diff - (7 * (diff > 0).ToByte()));
         }
 
         /// <include file='DateTimeExtensions.xml' path='members/member[@name="LastDayOfMonth"]'/>
@@ -57,12 +54,7 @@ namespace X10D.Performant.DateTimeExtensions
         {
             int offsetDays = dayOfWeek - current.DayOfWeek;
 
-            if (offsetDays <= 0)
-            {
-                offsetDays += 7;
-            }
-
-            return current.AddDays(offsetDays);
+            return current.AddDays(offsetDays + (7 * (offsetDays <= 0).ToByte()));
         }
 
         /// <include file='DateTimeExtensions.xml' path='members/member[@name="ToUnixTimeStamp"]'/>

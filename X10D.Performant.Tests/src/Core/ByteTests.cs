@@ -115,10 +115,15 @@ namespace X10D.Performant.Tests.Core
         [Test]
         public void Mod()
         {
-            for (byte i = 100; i < 200; i++)
+            for (byte i = 0; i < byte.MaxValue; i++)
             {
-                for (byte j = 100; j < 200; j++)
+                for (byte j = 0; j < byte.MaxValue; j++)
                 {
+                    if (j == 0)
+                    {
+                        continue;
+                    }
+
                     Assert.AreEqual(i % j, i.Mod(j));
                 }
             }

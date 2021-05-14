@@ -78,7 +78,7 @@ namespace X10D.Performant.Tests.Core
             int e = 0;
 
             int[] arr = { 1, 2, 3 };
-            arr.ForEach(() => i++).Consume(arr.Length);
+            arr.ForEach(() => i++).Consume();
             arr.ForEach(() => e++).Consume(arr.Length - 1);
 
             Assert.AreEqual(3, i);
@@ -95,7 +95,7 @@ namespace X10D.Performant.Tests.Core
             int e = 0;
 
             int[] arr = { 1, 2, 3 };
-            arr.ForEach(f => i += f).Consume(arr.Length);
+            arr.ForEach(f => i += f).Consume();
             arr.ForEach(f => e += f).Consume(arr.Length - 1);
 
             Assert.AreEqual(6, i);

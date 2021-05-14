@@ -79,13 +79,13 @@ namespace X10D.Performant.Tests.Core
         {
             long[] primes =
             {
-                1_372_051, 9_040_861, 25_122_011, 3_211_891_519, 4_734_234_247, 1_116_295_198_451, 2_090_609_914_951, 3_278_744_415_797,
+                2, 11, 101, 1_009, 10_007, 1_372_051, 9_040_861, 25_122_011, 3_211_891_519, 4_734_234_247, 1_116_295_198_451, 2_090_609_914_951, 3_278_744_415_797,
                 333_555_577_577_777, 3_441_173_392_933_731_913,
             };
 
             for (long i = 0; i < primes.Length; i++)
             {
-                bool isPrime = primes[i].IsPrime();
+                bool isPrime = primes[i].IsPrime(true);
                 Trace.WriteLineIf(!isPrime, primes[i]);
                 Assert.IsTrue(isPrime);
             }
@@ -97,7 +97,7 @@ namespace X10D.Performant.Tests.Core
 
             for (long i = 0; i < nonPrimes.Length; i++)
             {
-                bool isPrime = nonPrimes[i].IsPrime();
+                bool isPrime = nonPrimes[i].IsPrime(true);
                 Trace.WriteLineIf(isPrime, nonPrimes[i]);
                 Assert.IsFalse(isPrime);
             }
@@ -111,13 +111,13 @@ namespace X10D.Performant.Tests.Core
         {
             ulong[] primes =
             {
-                2, 1_372_051, 9_040_861, 25_122_011, 3_211_891_519, 4_734_234_247, 1_116_295_198_451, 2_090_609_914_951, 3_278_744_415_797,
+                2, 11, 101, 1_009, 10_007, 1_372_051, 9_040_861, 25_122_011, 3_211_891_519, 4_734_234_247, 1_116_295_198_451, 2_090_609_914_951, 3_278_744_415_797,
                 333_555_577_577_777, 3_441_173_392_933_731_913, 10_089_886_811_898_868_001,
             };
 
             for (long i = 0; i < primes.Length; i++)
             {
-                bool isPrime = primes[i].IsPrime();
+                bool isPrime = primes[i].IsPrime(true);
                 Trace.WriteLineIf(!isPrime, primes[i]);
                 Assert.IsTrue(isPrime);
             }
@@ -126,7 +126,7 @@ namespace X10D.Performant.Tests.Core
 
             for (int i = 0; i < nonPrimes.Length; i++)
             {
-                bool isPrime = nonPrimes[i].IsPrime();
+                bool isPrime = nonPrimes[i].IsPrime(true);
                 Trace.WriteLineIf(isPrime, nonPrimes[i]);
                 Assert.IsFalse(isPrime);
             }

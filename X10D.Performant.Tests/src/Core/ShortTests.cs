@@ -80,24 +80,24 @@ namespace X10D.Performant.Tests.Core
 
             for (int i = 0; i < primes.Length; i++)
             {
-                if (!primes[i].IsPrime())
+                if (!primes[i].IsPrime(true))
                 {
                     Console.WriteLine(primes[i]);
                 }
 
-                Assert.IsTrue(primes[i].IsPrime());
+                Assert.IsTrue(primes[i].IsPrime(true));
             }
 
             short[] nonPrimes = { -10_007, -1_009, -101, -11, -2, -1, 0, 1, 4, 29_001 };
 
             for (int i = 0; i < nonPrimes.Length; i++)
             {
-                if (nonPrimes[i].IsPrime())
+                if (nonPrimes[i].IsPrime(true))
                 {
                     Console.WriteLine(nonPrimes[i]);
                 }
 
-                Assert.IsFalse(nonPrimes[i].IsPrime());
+                Assert.IsFalse(nonPrimes[i].IsPrime(true));
             }
         }
 
@@ -111,24 +111,24 @@ namespace X10D.Performant.Tests.Core
 
             for (int i = 0; i < primes.Length; i++)
             {
-                if (!primes[i].IsPrime())
+                if (!primes[i].IsPrime(true))
                 {
                     Console.WriteLine(primes[i]);
                 }
 
-                Assert.IsTrue(primes[i].IsPrime());
+                Assert.IsTrue(primes[i].IsPrime(true));
             }
 
             ushort[] nonPrimes = { 0, 1, 4, 29_001 };
 
             for (int i = 0; i < nonPrimes.Length; i++)
             {
-                if (nonPrimes[i].IsPrime())
+                if (nonPrimes[i].IsPrime(true))
                 {
                     Console.WriteLine(nonPrimes[i]);
                 }
 
-                Assert.IsFalse(nonPrimes[i].IsPrime());
+                Assert.IsFalse(nonPrimes[i].IsPrime(true));
             }
         }
 

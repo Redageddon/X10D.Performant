@@ -3,7 +3,7 @@
     public static partial class DoubleExtensions
     {
         /// <include file='DoubleExtensions.xml' path='members/member[@name="ClampedLerp"]'/>
-        public static double ClampedLerp(this double alpha, double firstValue, double secondValue) =>
+        public static double LerpClamped(this double alpha, double firstValue, double secondValue) =>
             alpha switch
             {
                 <= 0 => firstValue,
@@ -12,7 +12,7 @@
             };
 
         /// <include file='DoubleExtensions.xml' path='members/member[@name="ClampedLerp"]'/>
-        public static double ClampedLerpTo(this double firstValue, double secondValue, double alpha) =>
+        public static double LerpToClamped(this double firstValue, double secondValue, double alpha) =>
             alpha switch
             {
                 <= 0 => firstValue,

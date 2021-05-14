@@ -3,7 +3,7 @@ namespace X10D.Performant.SingleExtensions
     public static partial class SingleExtensions
     {
         /// <include file='SingleExtensions.copy.xml' path='members/member[@name="ClampedLerp"]'/>
-        public static float ClampedLerp(this float alpha, float firstValue, float secondValue) =>
+        public static float LerpClamped(this float alpha, float firstValue, float secondValue) =>
             alpha switch
             {
                 <= 0 => firstValue,
@@ -12,7 +12,7 @@ namespace X10D.Performant.SingleExtensions
             };
 
         /// <include file='SingleExtensions.copy.xml' path='members/member[@name="ClampedLerp"]'/>
-        public static float ClampedLerpTo(this float firstValue, float secondValue, float alpha) =>
+        public static float LerpToClamped(this float firstValue, float secondValue, float alpha) =>
             alpha switch
             {
                 <= 0 => firstValue,

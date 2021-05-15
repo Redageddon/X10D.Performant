@@ -10,43 +10,14 @@ namespace X10D.Performant.Tests.Core
     public class DoubleTests
     {
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.DegreesToGradians"/>.
+        ///     Tests for <see cref="DoubleExtensions.AlmostEquals"/>.
         /// </summary>
         [Test]
-        public void DegreesToGradians()
+        public void AlmostEquals()
         {
-            Assert.AreEqual(100, 90.0.DegreesToGradians());
-            Assert.AreEqual(150, 135.0.DegreesToGradians());
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.DegreesToRadians"/>.
-        /// </summary>
-        [Test]
-        public void DegreesToRadians()
-        {
-            Assert.AreEqual(Math.PI, 180.0.DegreesToRadians());
-            Assert.AreEqual(Math.PI * 1.5, 270.0.DegreesToRadians());
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.GradiansToDegrees"/>.
-        /// </summary>
-        [Test]
-        public void GradiansToDegrees()
-        {
-            Assert.AreEqual(90, 100.0.GradiansToDegrees());
-            Assert.AreEqual(135, 150.0.GradiansToDegrees());
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.GradiansToRadians"/>.
-        /// </summary>
-        [Test]
-        public void GradiansToRadians()
-        {
-            Assert.AreEqual(Math.PI, 200.0.GradiansToRadians());
-            Assert.AreEqual(1, (200 / Math.PI).GradiansToRadians());
+            Assert.IsTrue(1.5.AlmostEquals(1.6, 0.11));
+            Assert.IsFalse(1.4.AlmostEquals(1.6, 0.11));
+            Assert.IsFalse(1.8.AlmostEquals(1.6, 0.11));
         }
 
         /// <summary>
@@ -70,6 +41,26 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.DegreesToGradians"/>.
+        /// </summary>
+        [Test]
+        public void DegreesToGradians()
+        {
+            Assert.AreEqual(100, 90.0.DegreesToGradians());
+            Assert.AreEqual(150, 135.0.DegreesToGradians());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.DegreesToRadians"/>.
+        /// </summary>
+        [Test]
+        public void DegreesToRadians()
+        {
+            Assert.AreEqual(Math.PI, 180.0.DegreesToRadians());
+            Assert.AreEqual(Math.PI * 1.5, 270.0.DegreesToRadians());
+        }
+
+        /// <summary>
         ///     Tests for <see cref="DoubleExtensions.FahrenheitToCelsius"/>.
         /// </summary>
         [Test]
@@ -90,34 +81,23 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.KelvinToCelsius"/>.
+        ///     Tests for <see cref="DoubleExtensions.GradiansToDegrees"/>.
         /// </summary>
         [Test]
-        public void KelvinToCelsius()
+        public void GradiansToDegrees()
         {
-            Assert.AreEqual(0, 273.15.KelvinToCelsius());
-            Assert.AreEqual(-273.15, 0D.KelvinToCelsius());
+            Assert.AreEqual(90, 100.0.GradiansToDegrees());
+            Assert.AreEqual(135, 150.0.GradiansToDegrees());
         }
 
         /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.KelvinToFahrenheit"/>.
+        ///     Tests for <see cref="DoubleExtensions.GradiansToRadians"/>.
         /// </summary>
         [Test]
-        public void KelvinToFahrenheit()
+        public void GradiansToRadians()
         {
-            Assert.AreEqual(-459.66999999999996, 0D.KelvinToFahrenheit());
-            Assert.AreEqual(-0.00039999999993511892, 255.372D.KelvinToFahrenheit());
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.AlmostEquals"/>.
-        /// </summary>
-        [Test]
-        public void AlmostEquals()
-        {
-            Assert.IsTrue(1.5.AlmostEquals(1.6, 0.11));
-            Assert.IsFalse(1.4.AlmostEquals(1.6, 0.11));
-            Assert.IsFalse(1.8.AlmostEquals(1.6, 0.11));
+            Assert.AreEqual(Math.PI, 200.0.GradiansToRadians());
+            Assert.AreEqual(1, (200 / Math.PI).GradiansToRadians());
         }
 
         /// <summary>
@@ -148,6 +128,26 @@ namespace X10D.Performant.Tests.Core
         {
             Assert.IsFalse(2.0.IsOdd());
             Assert.IsTrue(1.0.IsOdd());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.KelvinToCelsius"/>.
+        /// </summary>
+        [Test]
+        public void KelvinToCelsius()
+        {
+            Assert.AreEqual(0, 273.15.KelvinToCelsius());
+            Assert.AreEqual(-273.15, 0D.KelvinToCelsius());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.KelvinToFahrenheit"/>.
+        /// </summary>
+        [Test]
+        public void KelvinToFahrenheit()
+        {
+            Assert.AreEqual(-459.66999999999996, 0D.KelvinToFahrenheit());
+            Assert.AreEqual(-0.00039999999993511892, 255.372D.KelvinToFahrenheit());
         }
 
         /// <summary>
@@ -193,6 +193,17 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
+        ///     Tests for <see cref="DoubleExtensions.LerpClamped"/>.
+        /// </summary>
+        [Test]
+        public void LerpClamped()
+        {
+            Assert.AreEqual(0, (-1D).LerpClamped(0, 100));
+            Assert.AreEqual(50, 0.5.LerpClamped(0, 100));
+            Assert.AreEqual(100, 2.0.LerpClamped(0, 100));
+        }
+
+        /// <summary>
         ///     Tests for <see cref="DoubleExtensions.LerpTo"/>.
         /// </summary>
         [Test]
@@ -232,17 +243,6 @@ namespace X10D.Performant.Tests.Core
             Assert.AreEqual(175, 100D.LerpTo(0, -0.75));
             Assert.AreEqual(150, 100D.LerpTo(0, -0.5));
             Assert.AreEqual(125, 100D.LerpTo(0, -0.25));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="DoubleExtensions.LerpClamped"/>.
-        /// </summary>
-        [Test]
-        public void LerpClamped()
-        {
-            Assert.AreEqual(0, (-1D).LerpClamped(0, 100));
-            Assert.AreEqual(50, 0.5.LerpClamped(0, 100));
-            Assert.AreEqual(100, 2.0.LerpClamped(0, 100));
         }
 
         /// <summary>

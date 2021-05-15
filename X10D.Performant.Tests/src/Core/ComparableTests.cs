@@ -20,17 +20,6 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="ComparableExtensions.Outside{T}"/>.
-        /// </summary>
-        [Test]
-        public void Outside()
-        {
-            Assert.IsTrue(1.Outside(2, 4));
-            Assert.IsFalse(3.Outside(2, 4));
-            Assert.IsTrue(5.Outside(2, 4));
-        }
-
-        /// <summary>
         ///     Tests for <see cref="ComparableExtensions.Clamp{T}"/>.
         /// </summary>
         [Test]
@@ -79,6 +68,17 @@ namespace X10D.Performant.Tests.Core
         {
             Assert.AreEqual(1, 1.Min(2));
             Assert.AreEqual(1, 2.Min(1));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="ComparableExtensions.Outside{T}"/>.
+        /// </summary>
+        [Test]
+        public void Outside()
+        {
+            Assert.IsTrue(1.Outside(2, 4));
+            Assert.IsFalse(3.Outside(2, 4));
+            Assert.IsTrue(5.Outside(2, 4));
         }
     }
 }

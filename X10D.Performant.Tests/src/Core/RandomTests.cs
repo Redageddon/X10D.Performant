@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using NUnit.Framework;
 using X10D.Performant.RandomExtensions;
 
@@ -11,52 +10,6 @@ namespace X10D.Performant.Tests.Core
     /// </summary>
     public class RandomTests
     {
-        /// <summary>
-        ///     Tests for <see cref="RandomExtensions.NextBoolean"/>.
-        /// </summary>
-        [Test]
-        public void NextBool()
-        {
-            Random random = new(1);
-
-            Assert.IsFalse(random.NextBoolean());
-            Assert.IsFalse(random.NextBoolean());
-            Assert.IsFalse(random.NextBoolean());
-            Assert.IsTrue(random.NextBoolean());
-            Assert.IsTrue(random.NextBoolean());
-            Assert.IsFalse(random.NextBoolean());
-            Assert.IsFalse(random.NextBoolean());
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="RandomExtensions.NextColorAhsb"/>.
-        /// </summary>
-        [Test]
-        public void NextColorAhsb()
-        {
-            Random random = new(1);
-
-            Assert.AreEqual(Color.FromArgb(63, 224, 170, 170), random.NextColorAhsb());
-            Assert.AreEqual(Color.FromArgb(167, 246, 236, 236), random.NextColorAhsb());
-            Assert.AreEqual(Color.FromArgb(25, 65, 61, 61), random.NextColorAhsb());
-
-            Assert.AreEqual(Color.FromArgb(255, 255, 255, 255), random.NextColorAhsb(255, minBrightness: 1));
-            Assert.AreEqual(Color.FromArgb(255, 0, 0, 0), random.NextColorAhsb(255, maxBrightness: 0));
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="RandomExtensions.NextColorArgb"/>.
-        /// </summary>
-        [Test]
-        public void NextColorArgb()
-        {
-            Random random = new(1);
-
-            Assert.AreEqual(Color.FromArgb(63, 28, 119, 196), random.NextColorArgb());
-            Assert.AreEqual(Color.FromArgb(167, 110, 90, 240), random.NextColorArgb());
-            Assert.AreEqual(Color.FromArgb(25, 163, 7, 63), random.NextColorArgb());
-        }
-
         /// <summary>
         ///     Tests for <see cref="RandomExtensions.OneOf{T}(System.Random,T[])"/>
         /// </summary>

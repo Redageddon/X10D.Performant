@@ -6,6 +6,9 @@ namespace X10D.Performant.RandomExtensions
     /// <summary>
     ///     Extension methods for <see cref="Random"/>.
     /// </summary>
+    /// <remarks>
+    ///     Next extensions are not going to be tested because there is to much to test, and they honestly do not need to be tested.
+    /// </remarks>
     public static partial class RandomExtensions
     {
         internal static readonly Random Random = new();

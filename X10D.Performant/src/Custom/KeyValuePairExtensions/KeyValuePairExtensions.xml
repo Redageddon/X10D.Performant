@@ -1,4 +1,13 @@
 ﻿<members>
+    <member name="FlipKeyValue">
+        <summary>
+            Flips a key and a value in a <see cref="KeyValuePair{TKey,TValue}"/>
+        </summary>
+        <param name="keyValuePair">The <see cref="KeyValuePair{TKey,TValue}"/> to be flipped.</param>
+        <typeparam name="TKey">Any type.</typeparam>
+        <typeparam name="TValue">Any type.</typeparam>
+        <returns>A new <see cref="KeyValuePair{TValue,TKey}"/></returns>
+    </member>
     <member name="FlipKeyValues">
         <summary>
             Flips the keys and values to values and keys.

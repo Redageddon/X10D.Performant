@@ -10,13 +10,8 @@ namespace X10D.Performant.SpanExtensions
         /// <include file='SpanExtensions.xml' path='members/member[@name="RandomNew"]'/>
         public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null)
         {
-            random ??= RandomExtensions.RandomExtensions.Random;
             Span<T> buffer = new T[count];
-
-            for (int i = 0; i < count; i++)
-            {
-                buffer[i] = values[random.Next(0, values.Length)];
-            }
+            Random((ReadOnlySpan<T>)values, buffer, random);
 
             return buffer;
         }

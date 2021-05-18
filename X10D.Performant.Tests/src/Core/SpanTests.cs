@@ -64,6 +64,82 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
+        ///     Tests for <see cref="SpanExtensions.Select{T}(ReadOnlySpan{T},Predicate{T},int)"/>
+        /// </summary>
+        [Test]
+        public void Select()
+        {
+            ReadOnlySpan<int> span = stackalloc int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            CollectionAssert.AreEqual(new[] { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18 }, span.Select(e => e * 2).ToArray());
+            CollectionAssert.AreEqual(new[] { 0, 2, 4 }, span.Select(e => e * 2, 3).ToArray());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SpanExtensions.Select{T}(Span{T},Predicate{T},int)"/>
+        /// </summary>
+        [Test]
+        public void Select2()
+        {
+            Span<int> span = stackalloc int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            CollectionAssert.AreEqual(new[] { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18 }, span.Select(e => e * 2).ToArray());
+            CollectionAssert.AreEqual(new[] { 0, 2, 4 }, span.Select(e => e * 2, 3).ToArray());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SpanExtensions.Select{T}(System.ReadOnlySpan{T},System.Predicate{T},ref System.Span{T},int)"/>
+        /// </summary>
+        [Test]
+        public void Select3()
+        {
+            ReadOnlySpan<int> span = stackalloc int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            Span<int> buffer = stackalloc int[5];
+            span.Select(e => e * 2, ref buffer);
+            CollectionAssert.AreEqual(new[] { 0, 2, 4, 6, 8 }, buffer.ToArray());
+
+            buffer = stackalloc int[5];
+            span.Select(e => e * 2, ref buffer, 3);
+            CollectionAssert.AreEqual(new[] { 0, 2, 4 }, buffer.ToArray());
+
+            buffer = stackalloc int[3];
+            span.Select(e => e * 2, ref buffer);
+            CollectionAssert.AreEqual(new[] { 0, 2, 4 }, buffer.ToArray());
+
+            buffer = stackalloc int[3];
+            span.Select(e => e * 2, ref buffer, 2);
+            CollectionAssert.AreEqual(new[] { 0, 2 }, buffer.ToArray());
+
+            buffer = stackalloc int[3];
+            span.Select(e => e * 2, ref buffer, 4);
+            CollectionAssert.AreEqual(new[] { 0, 2, 4 }, buffer.ToArray());
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SpanExtensions.Select{T}(Span{T},Predicate{T},ref Span{T},int)"/>
+        /// </summary>
+        [Test]
+        public void Select4()
+        {
+            Span<int> span = stackalloc int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            Span<int> buffer = stackalloc int[5];
+            span.Select(e => e * 2, ref buffer);
+            CollectionAssert.AreEqual(new[] { 0, 2, 4, 6, 8 }, buffer.ToArray());
+
+            span.Select(e => e * 2, ref buffer, 3);
+            CollectionAssert.AreEqual(new[] { 0, 2, 4 }, buffer.ToArray());
+
+            buffer = stackalloc int[3];
+            span.Select(e => e * 2, ref buffer);
+            CollectionAssert.AreEqual(new[] { 0, 2, 4 }, buffer.ToArray());
+
+            span.Select(e => e * 2, ref buffer, 2);
+            CollectionAssert.AreEqual(new[] { 0, 2 }, buffer.ToArray());
+        }
+
+        /// <summary>
         ///     Tests for <see cref="SpanExtensions.Where{T}(ReadOnlySpan{T},Predicate{T},int)"/>
         /// </summary>
         [Test]

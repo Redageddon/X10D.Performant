@@ -5,8 +5,6 @@ namespace X10D.Performant.SpanExtensions
     //TODO: DOCUMENT
     public static partial class SpanExtensions
     {
-        private const int NoValuePassed = -1;
-
         public static ReadOnlySpan<T> Where<T>(this ReadOnlySpan<T> values, Predicate<T> predicate, int cutOffLength = NoValuePassed) =>
             InternalWhere(values, predicate, cutOffLength);
 

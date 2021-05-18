@@ -5,5 +5,8 @@ namespace X10D.Performant.SpanExtensions
     /// <summary>
     ///     Extension methods for <see cref="Span{T}"/>.
     /// </summary>
-    public static partial class SpanExtensions {}
+    public static partial class SpanExtensions
+    {
+        private const int NoValuePassed = -1;
+    }
 }

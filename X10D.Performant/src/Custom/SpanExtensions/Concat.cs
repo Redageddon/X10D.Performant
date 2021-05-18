@@ -5,11 +5,9 @@ namespace X10D.Performant.SpanExtensions
     //TODO: DOCUMENT
     public static partial class SpanExtensions
     {
-        public static ReadOnlySpan<T> Concat<T>(this ReadOnlySpan<T> part1, ReadOnlySpan<T> part2) =>
-            ConcatInternal(part1, part2);
+        public static ReadOnlySpan<T> Concat<T>(this ReadOnlySpan<T> part1, ReadOnlySpan<T> part2) => ConcatInternal(part1, part2);
 
-        public static Span<T> Concat<T>(this Span<T> part1, ReadOnlySpan<T> part2) =>
-            ConcatInternal(part1, part2);
+        public static Span<T> Concat<T>(this Span<T> part1, ReadOnlySpan<T> part2) => ConcatInternal(part1, part2);
 
         public static void Concat<T>(this ReadOnlySpan<T> part1, ReadOnlySpan<T> part2, ref Span<T> buffer)
         {

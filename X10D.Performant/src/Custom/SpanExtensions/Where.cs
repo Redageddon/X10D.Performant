@@ -6,10 +6,10 @@ namespace X10D.Performant.SpanExtensions
     public static partial class SpanExtensions
     {
         public static ReadOnlySpan<T> Where<T>(this ReadOnlySpan<T> values, Predicate<T> predicate, int cutOffLength = NoValuePassed) =>
-            InternalWhere(values, predicate, cutOffLength);
+            WhereInternal(values, predicate, cutOffLength);
 
         public static Span<T> Where<T>(this Span<T> values, Predicate<T> predicate, int cutOffLength = NoValuePassed) =>
-            InternalWhere(values, predicate, cutOffLength);
+            WhereInternal(values, predicate, cutOffLength);
 
         public static void Where<T>(this ReadOnlySpan<T> values, Predicate<T> predicate, ref Span<T> buffer, int cutOffLength = NoValuePassed)
         {
@@ -36,7 +36,7 @@ namespace X10D.Performant.SpanExtensions
         public static void Where<T>(this Span<T> values, Predicate<T> predicate, ref Span<T> buffer, int cutOffLength = NoValuePassed) =>
             Where((ReadOnlySpan<T>)values, predicate, ref buffer, cutOffLength);
 
-        private static Span<T> InternalWhere<T>(ReadOnlySpan<T> values, Predicate<T> predicate, int cutOffLength)
+        private static Span<T> WhereInternal<T>(ReadOnlySpan<T> values, Predicate<T> predicate, int cutOffLength)
         {
             if (cutOffLength == NoValuePassed)
             {

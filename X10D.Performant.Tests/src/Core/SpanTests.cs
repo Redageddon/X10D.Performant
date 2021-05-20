@@ -10,6 +10,16 @@ namespace X10D.Performant.Tests.Core
     public class SpanTests
     {
         /// <summary>
+        ///     Tests for <see cref="SpanExtensions.AsReadOnly"/>
+        /// </summary>
+        [Test]
+        public void AsReadOnly()
+        {
+            Span<int> span = stackalloc int[] { 1, 2, 3 };
+            CollectionAssert.AreEqual(((ReadOnlySpan<int>)span).ToArray(), span.AsReadOnly().ToArray());
+        }
+
+        /// <summary>
         ///     Tests for <see cref="SpanExtensions.Random{T}(ReadOnlySpan{T},Span{T},System.Random?)"/>
         /// </summary>
         [Test]

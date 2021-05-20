@@ -36,7 +36,7 @@ namespace X10D.Performant.SpanExtensions
                                               Func<T, TResult> selector,
                                               ref Span<TResult> buffer,
                                               int cutOffLength = NoValuePassed) =>
-            Select((ReadOnlySpan<T>)values, selector, ref buffer, cutOffLength);
+            Select(values.AsReadOnly(), selector, ref buffer, cutOffLength);
 
         private static Span<TResult> SelectInternal<T, TResult>(ReadOnlySpan<T> values, Func<T, TResult> selector, int cutOffLength)
         {

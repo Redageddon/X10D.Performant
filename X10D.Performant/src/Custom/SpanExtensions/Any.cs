@@ -19,6 +19,6 @@ namespace X10D.Performant.SpanExtensions
             return false;
         }
 
-        public static bool Any<T>(Span<T> values, Predicate<T> predicate) => All((ReadOnlySpan<T>)values, predicate);
+        public static bool Any<T>(Span<T> values, Predicate<T> predicate) => All(values.AsReadOnly(), predicate);
     }
 }

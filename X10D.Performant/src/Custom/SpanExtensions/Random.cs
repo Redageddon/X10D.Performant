@@ -8,7 +8,7 @@ namespace X10D.Performant.SpanExtensions
         public static ReadOnlySpan<T> Random<T>(this ReadOnlySpan<T> values, int count, Random? random = null) => RandomInternal(values, count, random);
 
         /// <include file='SpanExtensions.xml' path='members/member[@name="RandomNew"]'/>
-        public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null) => RandomInternal((ReadOnlySpan<T>)values, count, random);
+        public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null) => RandomInternal(values.AsReadOnly(), count, random);
 
         /// <include file='SpanExtensions.xml' path='members/member[@name="RandomReadOnly"]'/>
         public static void Random<T>(this ReadOnlySpan<T> values, Span<T> buffer, Random? random = null)
@@ -22,7 +22,7 @@ namespace X10D.Performant.SpanExtensions
         }
 
         /// <include file='SpanExtensions.xml' path='members/member[@name="RandomReadOnly"]'/>
-        public static void Random<T>(this Span<T> values, Span<T> buffer, Random? random = null) => Random((ReadOnlySpan<T>)values, buffer, random);
+        public static void Random<T>(this Span<T> values, Span<T> buffer, Random? random = null) => Random(values.AsReadOnly(), buffer, random);
 
         private static Span<T> RandomInternal<T>(this ReadOnlySpan<T> values, int count, Random? random = null)
         {

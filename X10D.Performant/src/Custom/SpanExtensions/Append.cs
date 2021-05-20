@@ -16,8 +16,7 @@ namespace X10D.Performant.SpanExtensions
             buffer[values.Length + 1] = value;
         }
 
-        public static void Append<T>(this Span<T> values, T value, ref Span<T> buffer) =>
-            Append(values.AsReadOnly(), value, ref buffer);
+        public static void Append<T>(this Span<T> values, T value, ref Span<T> buffer) => Append(values.AsReadOnly(), value, ref buffer);
 
         private static Span<T> AppendInternal<T>(this ReadOnlySpan<T> values, T value)
         {

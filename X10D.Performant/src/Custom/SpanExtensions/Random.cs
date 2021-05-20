@@ -5,7 +5,8 @@ namespace X10D.Performant.SpanExtensions
     public static partial class SpanExtensions
     {
         /// <include file='SpanExtensions.xml' path='members/member[@name="RandomNew"]'/>
-        public static ReadOnlySpan<T> Random<T>(this ReadOnlySpan<T> values, int count, Random? random = null) => RandomInternal(values, count, random);
+        public static ReadOnlySpan<T> Random<T>(this ReadOnlySpan<T> values, int count, Random? random = null) =>
+            RandomInternal(values, count, random);
 
         /// <include file='SpanExtensions.xml' path='members/member[@name="RandomNew"]'/>
         public static Span<T> Random<T>(this Span<T> values, int count, Random? random = null) => RandomInternal(values.AsReadOnly(), count, random);

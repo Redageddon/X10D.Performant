@@ -20,14 +20,13 @@ namespace X10D.Performant.Tests.Core
         }
 
         /// <summary>
-        ///     Tests for <see cref="SpanExtensions.Random{T}(ReadOnlySpan{T},Span{T},System.Random?)"/>
+        ///     Tests for <see cref="SpanExtensions.Random{T}(ReadOnlySpan{T},int,System.Random?)"/>
         /// </summary>
         [Test]
         public void Random()
         {
-            Span<int> span = stackalloc int[] { 1, 2, 3 };
-            Span<int> buffer = stackalloc int[20];
-            span.Random(buffer);
+            ReadOnlySpan<int> span = stackalloc int[] { 1, 2, 3 };
+            ReadOnlySpan<int> buffer = span.Random(20);
 
             Assert.IsTrue(buffer.Contains(1));
             Assert.IsTrue(buffer.Contains(2));
@@ -38,10 +37,40 @@ namespace X10D.Performant.Tests.Core
         ///     Tests for <see cref="SpanExtensions.Random{T}(Span{T},int,System.Random?)"/>
         /// </summary>
         [Test]
-        public void Random2()
+        public void Random1()
         {
             Span<int> span = stackalloc int[] { 1, 2, 3 };
             Span<int> buffer = span.Random(20);
+
+            Assert.IsTrue(buffer.Contains(1));
+            Assert.IsTrue(buffer.Contains(2));
+            Assert.IsTrue(buffer.Contains(3));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SpanExtensions.Random{T}(ReadOnlySpan{T},Span{T},System.Random?)"/>
+        /// </summary>
+        [Test]
+        public void Random2()
+        {
+            ReadOnlySpan<int> span = stackalloc int[] { 1, 2, 3 };
+            Span<int> buffer = stackalloc int[20];
+            span.Random(buffer);
+
+            Assert.IsTrue(buffer.Contains(1));
+            Assert.IsTrue(buffer.Contains(2));
+            Assert.IsTrue(buffer.Contains(3));
+        }
+
+        /// <summary>
+        ///     Tests for <see cref="SpanExtensions.Random{T}(Span{T},Span{T},System.Random?)"/>
+        /// </summary>
+        [Test]
+        public void Random3()
+        {
+            Span<int> span = stackalloc int[] { 1, 2, 3 };
+            Span<int> buffer = stackalloc int[20];
+            span.Random(buffer);
 
             Assert.IsTrue(buffer.Contains(1));
             Assert.IsTrue(buffer.Contains(2));

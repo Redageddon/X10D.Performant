@@ -3,6 +3,7 @@
 namespace X10D.Performant.SpanExtensions
 {
     //TODO: DOCUMENT
+    //TODO: TEST
     public static partial class SpanExtensions
     {
         public static ReadOnlySpan<T> Append<T>(this ReadOnlySpan<T> values, T value) => AppendInternal(values, value);

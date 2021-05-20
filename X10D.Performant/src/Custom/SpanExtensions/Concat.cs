@@ -3,6 +3,7 @@
 namespace X10D.Performant.SpanExtensions
 {
     //TODO: DOCUMENT
+    //TODO: TEST
     public static partial class SpanExtensions
     {
         public static ReadOnlySpan<T> Concat<T>(this ReadOnlySpan<T> part1, ReadOnlySpan<T> part2) => ConcatInternal(part1, part2);

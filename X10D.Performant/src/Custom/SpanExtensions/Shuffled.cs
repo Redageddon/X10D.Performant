@@ -3,6 +3,7 @@
 namespace X10D.Performant.SpanExtensions
 {
     //TODO: DOCUMENT
+    //TODO: TEST
     public static partial class SpanExtensions
     {
         /// <include file='SpanExtensions.xml' path='members/member[@name="Shuffled"]'/>

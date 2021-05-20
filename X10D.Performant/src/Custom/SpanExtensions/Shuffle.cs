@@ -5,7 +5,7 @@ namespace X10D.Performant.SpanExtensions
     public static partial class SpanExtensions
     {
         /// <include file='SpanExtensions.xml' path='members/member[@name="Shuffle"]'/>
-        public static void Shuffle<T>(this Span<T> values, Random? random = null)
+        public static void Shuffle<T>(this Span<T?> values, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;
 
@@ -15,7 +15,7 @@ namespace X10D.Performant.SpanExtensions
             {
                 int index = random.Next(count--);
 
-                T temp = values[count];
+                T? temp = values[count];
                 values[count] = values[index];
                 values[index] = temp;
             }

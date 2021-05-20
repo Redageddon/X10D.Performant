@@ -6,9 +6,9 @@ namespace X10D.Performant.SpanExtensions
     //TODO: TEST
     public static partial class SpanExtensions
     {
-        public static bool Any<T>(ReadOnlySpan<T> values, Predicate<T> predicate)
+        public static bool Any<T>(ReadOnlySpan<T?> values, Predicate<T?> predicate)
         {
-            foreach (T value in values)
+            foreach (T? value in values)
             {
                 if (predicate(value))
                 {
@@ -19,6 +19,6 @@ namespace X10D.Performant.SpanExtensions
             return false;
         }
 
-        public static bool Any<T>(Span<T> values, Predicate<T> predicate) => All(values.AsReadOnly(), predicate);
+        public static bool Any<T>(Span<T?> values, Predicate<T?> predicate) => All(values.AsReadOnly(), predicate);
     }
 }

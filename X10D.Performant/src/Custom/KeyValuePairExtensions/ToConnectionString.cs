@@ -7,9 +7,9 @@ namespace X10D.Performant.KeyValuePairExtensions
     {
         /// <include file='KeyValuePairExtensions.xml' path='members/member[@name="ToConnectionString"]'/>
         [SuppressMessage("ReSharper", "ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator")]
-        public static string ToConnectionString<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs)
+        public static string ToConnectionString<TKey, TValue>(this IEnumerable<KeyValuePair<TKey?, TValue?>> keyValuePairs)
         {
-            static string? SanitizeValue(TValue value)
+            static string? SanitizeValue(TValue? value)
             {
                 if (value is null)
                 {
@@ -32,7 +32,7 @@ namespace X10D.Performant.KeyValuePairExtensions
 
             IEnumerable<string> InternalIterator()
             {
-                foreach ((TKey key, TValue value) in keyValuePairs)
+                foreach ((TKey? key, TValue? value) in keyValuePairs)
                 {
                     yield return $"{key}={SanitizeValue(value)}";
                 }

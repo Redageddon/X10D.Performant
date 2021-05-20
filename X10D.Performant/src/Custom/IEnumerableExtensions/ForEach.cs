@@ -6,9 +6,9 @@ namespace X10D.Performant.IEnumerableExtensions
     public static partial class EnumerableExtensions
     {
         /// <include file='EnumerableExtensions.xml' path='members/member[@name="ForEach0"]'/>
-        public static IEnumerable<TSource> ForEach<TSource>(this IEnumerable<TSource> values, Action<TSource> action)
+        public static IEnumerable<TSource?> ForEach<TSource>(this IEnumerable<TSource?> values, Action<TSource?> action)
         {
-            using IEnumerator<TSource> iterator = values.GetEnumerator();
+            using IEnumerator<TSource?> iterator = values.GetEnumerator();
 
             while (iterator.MoveNext())
             {
@@ -19,9 +19,9 @@ namespace X10D.Performant.IEnumerableExtensions
         }
 
         /// <include file='EnumerableExtensions.xml' path='members/member[@name="ForEach1"]'/>
-        public static IEnumerable<TSource> ForEach<TSource>(this IEnumerable<TSource> values, Action action)
+        public static IEnumerable<TSource?> ForEach<TSource>(this IEnumerable<TSource?> values, Action action)
         {
-            using IEnumerator<TSource> iterator = values.GetEnumerator();
+            using IEnumerator<TSource?> iterator = values.GetEnumerator();
 
             while (iterator.MoveNext())
             {

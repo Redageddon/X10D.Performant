@@ -25,7 +25,7 @@ namespace X10D.Performant.SpanExtensions
         /// <include file='SpanExtensions.xml' path='members/member[@name="RandomReadOnly"]'/>
         public static void Random<T>(this Span<T?> values, Span<T?> buffer, Random? random = null) => Random(values.AsReadOnly(), buffer, random);
 
-        private static Span<T?> RandomInternal<T>(this ReadOnlySpan<T?> values, int count, Random? random = null)
+        private static Span<T?> RandomInternal<T>(ReadOnlySpan<T?> values, int count, Random? random = null)
         {
             random ??= RandomExtensions.RandomExtensions.Random;
 

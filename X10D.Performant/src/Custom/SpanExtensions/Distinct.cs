@@ -32,7 +32,7 @@ namespace X10D.Performant.SpanExtensions
         public static void Distinct<T>(this Span<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null) =>
             Distinct(values.AsReadOnly(), ref buffer, comparer);
 
-        private static Span<T?> DistinctInternal<T>(this ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer = null)
+        private static Span<T?> DistinctInternal<T>(ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer = null)
         {
             Span<T?> result = new T?[values.Length];
             Distinct(result.AsReadOnly(), ref result, comparer);

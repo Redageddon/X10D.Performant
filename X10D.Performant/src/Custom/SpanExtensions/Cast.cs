@@ -20,7 +20,7 @@ namespace X10D.Performant.SpanExtensions
 
         public static void Cast<T, TResult>(this Span<T?> values, ref Span<TResult?> buffer) => Cast(values.AsReadOnly(), ref buffer);
 
-        private static Span<TResult?> CastInternal<T, TResult>(this ReadOnlySpan<T?> values)
+        private static Span<TResult?> CastInternal<T, TResult>(ReadOnlySpan<T?> values)
         {
             Span<TResult?> result = new TResult?[values.Length];
             Cast<T?, TResult?>(values, ref result);

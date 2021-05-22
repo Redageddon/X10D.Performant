@@ -7,21 +7,21 @@ namespace X10D.Performant.SpanExtensions
     public static partial class SpanExtensions
     {
         /// <include file='SpanExtensions.xml' path='members/member[@name="Shuffled"]'/>
-        public static ReadOnlySpan<T?> Shuffled<T>(this ReadOnlySpan<T?> values, Random? random = null) => ShuffledInternal(values, random);
+        public static ReadOnlySpan<T?> Shuffled<T>(this in ReadOnlySpan<T?> values, Random? random = null) => ShuffledInternal(values, random);
 
         /// <include file='SpanExtensions.xml' path='members/member[@name="Shuffled"]'/>
-        public static Span<T?> Shuffled<T>(this Span<T?> values, Random? random = null) => ShuffledInternal(values.AsReadOnly(), random);
+        public static Span<T?> Shuffled<T>(this in Span<T?> values, Random? random = null) => ShuffledInternal(values.AsReadOnly(), random);
 
-        public static void Shuffled<T>(this ReadOnlySpan<T?> values, ref Span<T?> buffer, Random? random = null)
+        public static void Shuffled<T>(this in ReadOnlySpan<T?> values, ref Span<T?> buffer, Random? random = null)
         {
             values.CopyTo(buffer);
             buffer.Shuffle(random);
         }
 
-        public static void Shuffled<T>(this Span<T?> values, ref Span<T?> buffer, Random? random = null) =>
+        public static void Shuffled<T>(this in Span<T?> values, ref Span<T?> buffer, Random? random = null) =>
             Shuffled(values.AsReadOnly(), ref buffer, random);
 
-        private static Span<T?> ShuffledInternal<T>(ReadOnlySpan<T?> values, Random? random)
+        private static Span<T?> ShuffledInternal<T>(in ReadOnlySpan<T?> values, Random? random)
         {
             Span<T?> writeableSpan = new T?[values.Length];
             Shuffled(values, ref writeableSpan, random);

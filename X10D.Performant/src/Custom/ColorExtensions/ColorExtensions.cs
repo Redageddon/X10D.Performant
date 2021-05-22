@@ -32,14 +32,14 @@ namespace X10D.Performant.ColorExtensions
         }
 
         /// <include file='ColorExtensions.xml' path='members/member[@name="WithArgb"]'/>
-        public static Color With(this Color color, byte? alpha = null, byte? red = null, byte? green = null, byte? blue = null) =>
+        public static Color With(this in Color color, byte? alpha = null, byte? red = null, byte? green = null, byte? blue = null) =>
             Color.FromArgb(((alpha ?? color.A) << 24)
                          | ((red ?? color.R) << 16)
                          | ((green ?? color.G) << 8)
                          | (blue ?? color.B));
 
         /// <include file='ColorExtensions.xml' path='members/member[@name="WithAhsb"]'/>
-        public static Color With(this Color color, byte? alpha = null, float? hue = null, float? saturation = null, float? brightness = null)
+        public static Color With(this in Color color, byte? alpha = null, float? hue = null, float? saturation = null, float? brightness = null)
         {
             hue ??= color.GetHue();
             saturation ??= color.GetSaturation();

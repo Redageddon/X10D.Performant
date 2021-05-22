@@ -7,13 +7,13 @@ namespace X10D.Performant.SpanExtensions
     //TODO: TEST
     public static partial class SpanExtensions
     {
-        public static ReadOnlySpan<T?> Distinct<T>(this ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer = null) =>
+        public static ReadOnlySpan<T?> Distinct<T>(this in ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer = null) =>
             DistinctInternal(values, comparer);
 
-        public static Span<T?> Distinct<T>(this Span<T?> values, IEqualityComparer<T?>? comparer = null) =>
+        public static Span<T?> Distinct<T>(this in Span<T?> values, IEqualityComparer<T?>? comparer = null) =>
             DistinctInternal(values, comparer);
 
-        public static void Distinct<T>(this ReadOnlySpan<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null)
+        public static void Distinct<T>(this in ReadOnlySpan<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null)
         {
             HashSet<T?> set = new(values.Length, comparer);
             int index = 0;
@@ -29,10 +29,10 @@ namespace X10D.Performant.SpanExtensions
             buffer = buffer[..index];
         }
 
-        public static void Distinct<T>(this Span<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null) =>
+        public static void Distinct<T>(this in Span<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null) =>
             Distinct(values.AsReadOnly(), ref buffer, comparer);
 
-        private static Span<T?> DistinctInternal<T>(ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer = null)
+        private static Span<T?> DistinctInternal<T>(in ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer = null)
         {
             Span<T?> result = new T?[values.Length];
             Distinct(result.AsReadOnly(), ref result, comparer);

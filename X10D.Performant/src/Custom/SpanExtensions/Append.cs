@@ -20,7 +20,7 @@ namespace X10D.Performant.SpanExtensions
 
         private static Span<T?> AppendInternal<T>(this ReadOnlySpan<T?> values, T? value)
         {
-            Span<T?> output = new T[values.Length + 1];
+            Span<T?> output = new T?[values.Length + 1];
             Append(values, value, ref output);
 
             return output;

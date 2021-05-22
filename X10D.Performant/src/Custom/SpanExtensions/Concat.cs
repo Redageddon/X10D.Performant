@@ -20,7 +20,7 @@ namespace X10D.Performant.SpanExtensions
 
         private static Span<T?> ConcatInternal<T>(this ReadOnlySpan<T?> part1, ReadOnlySpan<T?> part2)
         {
-            Span<T?> output = new T[part1.Length + part2.Length];
+            Span<T?> output = new T?[part1.Length + part2.Length];
             Concat(part1, part2, ref output);
 
             return output;

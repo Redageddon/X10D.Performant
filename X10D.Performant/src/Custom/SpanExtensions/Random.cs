@@ -29,7 +29,7 @@ namespace X10D.Performant.SpanExtensions
         {
             random ??= RandomExtensions.RandomExtensions.Random;
 
-            Span<T?> buffer = new T[count];
+            Span<T?> buffer = new T?[count];
             Random(values, buffer, random);
 
             return buffer;

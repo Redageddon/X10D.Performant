@@ -45,7 +45,7 @@ namespace X10D.Performant.SpanExtensions
                 cutOffLength = values.Length;
             }
 
-            Span<TResult?> result = new TResult[cutOffLength];
+            Span<TResult?> result = new TResult?[cutOffLength];
             Select(values, selector, ref result, cutOffLength);
 
             return result;

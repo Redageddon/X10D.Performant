@@ -43,7 +43,7 @@ namespace X10D.Performant.SpanExtensions
                 cutOffLength = values.Length;
             }
 
-            Span<T?> result = new T[cutOffLength];
+            Span<T?> result = new T?[cutOffLength];
             Where(values, predicate, ref result, cutOffLength);
 
             return result;

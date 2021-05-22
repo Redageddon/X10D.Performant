@@ -22,7 +22,7 @@ namespace X10D.Performant.SpanExtensions
 
         private static Span<TResult?> CastInternal<T, TResult>(this ReadOnlySpan<T?> values)
         {
-            Span<TResult?> result = new TResult[values.Length];
+            Span<TResult?> result = new TResult?[values.Length];
             Cast<T?, TResult?>(values, ref result);
 
             return result;

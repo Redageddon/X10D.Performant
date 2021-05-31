@@ -55,7 +55,7 @@ namespace X10D.Performant.Tests.Core
         {
             ReadOnlySpan<int> span = stackalloc int[] { 1, 2, 3 };
             Span<int> buffer = stackalloc int[20];
-            span.Random(buffer);
+            span.Random(ref buffer);
 
             Assert.IsTrue(buffer.Contains(1));
             Assert.IsTrue(buffer.Contains(2));
@@ -70,7 +70,7 @@ namespace X10D.Performant.Tests.Core
         {
             Span<int> span = stackalloc int[] { 1, 2, 3 };
             Span<int> buffer = stackalloc int[20];
-            span.Random(buffer);
+            span.Random(ref buffer);
 
             Assert.IsTrue(buffer.Contains(1));
             Assert.IsTrue(buffer.Contains(2));

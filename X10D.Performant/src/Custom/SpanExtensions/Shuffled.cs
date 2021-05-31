@@ -23,10 +23,10 @@ namespace X10D.Performant.SpanExtensions
 
         private static Span<T?> ShuffledInternal<T>(in ReadOnlySpan<T?> values, Random? random)
         {
-            Span<T?> writeableSpan = new T?[values.Length];
-            Shuffled(values, ref writeableSpan, random);
+            Span<T?> result = new T?[values.Length];
+            Shuffled(values, ref result, random);
 
-            return writeableSpan;
+            return result;
         }
     }
 }

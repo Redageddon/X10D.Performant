@@ -4,10 +4,7 @@ using System.Linq.Expressions;
 
 namespace X10D.Performant.GenericExtensions
 {
-    /// <summary>
-    ///     General generic extension methods.
-    /// </summary>
-    public static class GenericExtensions
+    public static partial class GenericExtensions
     {
         /// <include file='GenericExtensions.xml' path='members/member[@name="To"]'/>
         public static TTo? To<TFrom, TTo>(this TFrom value) => Convert<TFrom, TTo?>.Function(value);

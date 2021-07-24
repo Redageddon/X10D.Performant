@@ -1,4 +1,12 @@
 ﻿<members>
+    <member name="Swap">
+        <summary>
+            Swaps 2 variables.
+        </summary>
+        <param name="first">The value to become <paramref name="second"/>.</param>
+        <param name="second">The value to become <paramref name="first"/>.</param>
+        <typeparam name="T">Any value type.</typeparam>
+    </member>
     <member name="To">
         <summary>
             Converts the <paramref name="value"/> to a <typeparamref name="TTo"/>.

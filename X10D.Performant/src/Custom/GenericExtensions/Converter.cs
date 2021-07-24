@@ -10,7 +10,7 @@ namespace X10D.Performant.GenericExtensions
     public static class GenericExtensions
     {
         /// <include file='GenericExtensions.xml' path='members/member[@name="To"]'/>
-        public static TTo? To<TFrom, TTo>(this TFrom value) => Convert<TFrom, TTo>.Function(value);
+        public static TTo? To<TFrom, TTo>(this TFrom value) => Convert<TFrom, TTo?>.Function(value);
 
         /// <include file='GenericExtensions.xml' path='members/member[@name="ToOrOther"]'/>
         public static TTo? ToOrOther<TFrom, TTo>(this TFrom value, TTo? other) =>

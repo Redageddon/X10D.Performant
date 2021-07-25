@@ -34,10 +34,12 @@ namespace X10D.Performant.IListExtensions
             {
                 int index = random.Next(count--);
 
-                T? temp = values[count];
-                values[count] = values[index];
-                values[index] = temp;
+                values.Swap(count, index);
             }
         }
+
+        /// <include file='ListExtensions.xml' path='members/member[@name="Swap"]'/>
+        public static void Swap<T>(this IList<T> values, int firstIndex, int secondIndex) =>
+            (values[firstIndex], values[secondIndex]) = (values[secondIndex], values[firstIndex]);
     }
 }

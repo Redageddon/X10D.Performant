@@ -42,4 +42,13 @@
         <param name="random">The <see cref="System.Random"/> instance.</param>
         <typeparam name="T">Any type.</typeparam>
     </member>
+    <member name="Swap">
+        <summary>
+            Swaps 2 values in an array.
+        </summary>
+        <param name="values">The values being read from.</param>
+        <param name="firstIndex">The index of the first value to be swapped.</param>
+        <param name="secondIndex">The index of the second value to be swapped.</param>
+        <typeparam name="T">Any type.</typeparam>
+    </member>
 </members>

@@ -7,7 +7,18 @@
         <param name="exponent">The <see cref="ulong"/> that is raising <paramref name="value"/>.</param>
         <param name="modulus">The modulo to be applied to the result.</param>
         <returns>
-            <paramref name="value"/> raised by <paramref name="exponent"/> and then modded by <paramref name="modulus"/>.
+            (<paramref name="value"/> ^ <paramref name="exponent"/>) % <paramref name="modulus"/>.
+        </returns>
+    </member>
+    <member name="ModMul">
+        <summary>
+            Performs a fast and overflow proof modular multiplication.
+        </summary>
+        <param name="value">The <see cref="ulong"/> being multiplied by <paramref name="exponent"/>.</param>
+        <param name="exponent">The <see cref="ulong"/> that is multiplying <paramref name="value"/>.</param>
+        <param name="modulus">The modulo to be applied to the result.</param>
+        <returns>
+            (<paramref name="value"/> * <paramref name="exponent"/>) % <paramref name="modulus"/>.
         </returns>
     </member>
     <member name="IsPrime">

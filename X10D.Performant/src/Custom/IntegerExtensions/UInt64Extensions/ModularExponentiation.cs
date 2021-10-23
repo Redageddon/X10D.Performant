@@ -1,49 +1,11 @@
-﻿using System;
-
-namespace X10D.Performant.UInt64Extensions
+﻿namespace X10D.Performant.UInt64Extensions
 {
     public static partial class UInt64Extensions
     {
-        private static ulong Mod128By63(ulong highBits, ulong lowBits, ulong modulus)
-        {
-            ulong result = 0UL;
-            ulong a = (ulong.MaxValue % modulus) + 1UL;
-            highBits = Mod(highBits, modulus);
-
-            while (highBits != 0UL)
-            {
-                if ((highBits & 1UL) == 1UL)
-                {
-                    result += a;
-
-                    if (result >= modulus)
-                    {
-                        result -= modulus;
-                    }
-                }
-
-                a <<= 1;
-
-                if (a >= modulus)
-                {
-                    a -= modulus;
-                }
-
-                highBits >>= 1;
-            }
-
-            if (lowBits > modulus)
-            {
-                lowBits -= modulus;
-            }
-
-            return Mod(lowBits + result, modulus);
-        }
-
         /// <include file='UInt64Extensions.xml' path='members/member[@name="ModPow"]'/>
         public static ulong ModPow(this ulong value, ulong exponent, ulong modulus)
         {
-            value = Mod(value, modulus);
+            value = value.Mod(modulus);
             ulong result = 1;
 
             if ((exponent & 1) == 1)
@@ -58,11 +20,11 @@ namespace X10D.Performant.UInt64Extensions
                 if (value < uint.MaxValue)
                 {
                     value *= value;
-                    value = Mod(value, modulus);
+                    value = value.Mod(modulus);
                 }
                 else
                 {
-                    value = Mod128By63(Math.BigMul(value, value, out ulong lowBits), lowBits, modulus);
+                    value = ModMul(value, value, modulus);
                 }
 
                 if ((exponent & 1) == 1)
@@ -71,13 +33,57 @@ namespace X10D.Performant.UInt64Extensions
                      && result < uint.MaxValue)
                     {
                         result *= value;
-                        result = Mod(result, modulus);
+                        result = result.Mod(modulus);
                     }
                     else
                     {
-                        result = Mod128By63(Math.BigMul(value, result, out ulong lowBits), lowBits, modulus);
+                        result = ModMul(value, result, modulus);
                     }
                 }
+            }
+
+            return result;
+        }
+
+        /// <include file='UInt64Extensions.xml' path='members/member[@name="ModMul"]'/>
+        public static ulong ModMul(ulong a, ulong b, ulong modulus)
+        {
+            ulong result = 0UL;
+
+            if (b >= modulus)
+            {
+                if (modulus > 0x7FFFFFFFFFFFFFFF)
+                {
+                    b -= modulus;
+                }
+                else
+                {
+                    b %= modulus;
+                }
+            }
+
+            while (a != 0UL)
+            {
+                if ((a & 1UL) != 0UL)
+                {
+                    if (b >= modulus - result)
+                    {
+                        result -= modulus;
+                    }
+
+                    result += b;
+                }
+
+                a >>= 1;
+
+                ulong temp = b;
+
+                if (b >= modulus - b)
+                {
+                    temp -= modulus;
+                }
+
+                b += temp;
             }
 
             return result;

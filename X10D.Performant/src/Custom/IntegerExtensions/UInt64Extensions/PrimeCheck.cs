@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Numerics;
+using System.Threading.Tasks;
 using X10D.Performant.ByteExtensions;
 using X10D.Performant.UInt16Extensions;
 
@@ -13,16 +15,16 @@ namespace X10D.Performant.UInt64Extensions
         private static readonly HashSet<ulong> NonPrimes = new();
 
         private static readonly ulong[] Lt18446744073709551616 = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
-        private static readonly ulong[] Lt3825123056546413051 = Lt18446744073709551616[..9];
-        private static readonly ulong[] Lt341550071728321 = Lt18446744073709551616[..7];
-        private static readonly ulong[] Lt3474749660383 = Lt18446744073709551616[..6];
-        private static readonly ulong[] Lt2152302898747 = Lt18446744073709551616[..5];
+        private static readonly ulong[] Lt3825123056546413051 = { 2, 3, 5, 7, 11, 13, 17, 19, 23 };
+        private static readonly ulong[] Lt341550071728321 = { 2, 3, 5, 7, 11, 13, 17 };
+        private static readonly ulong[] Lt3474749660383 = { 2, 3, 5, 7, 11, 13 };
+        private static readonly ulong[] Lt2152302898747 = { 2, 3, 5, 7, 11 };
         private static readonly ulong[] Lt1122004669633 = { 2, 13, 23, 1662803 };
         private static readonly ulong[] Lt4759123141 = { 2, 7, 61 };
-        private static readonly ulong[] Lt3215031751 = Lt18446744073709551616[..4];
-        private static readonly ulong[] Lt25326001 = Lt18446744073709551616[..3];
+        private static readonly ulong[] Lt3215031751 = { 2, 3, 5, 7 };
+        private static readonly ulong[] Lt25326001 = { 2, 3, 5 };
         private static readonly ulong[] Lt9080191 = { 31, 73 };
-        private static readonly ulong[] Lt1373653 = Lt18446744073709551616[..2];
+        private static readonly ulong[] Lt1373653 = { 2, 3 };
 
         /// <include file='UInt64Extensions.xml' path='members/member[@name="IsPrime"]'/>
         public static bool IsPrime(this ulong value, bool useCache = false)
@@ -71,59 +73,38 @@ namespace X10D.Performant.UInt64Extensions
         // TODO: remove big int dependencies
         [SuppressMessage("ReSharper", "ForCanBeConvertedToForeach")]
         [SuppressMessage("ReSharper", "SuggestBaseTypeForParameter")]
-        private static bool MillerTest(ulong value, ulong[] witnesses)
+        private static bool MillerTest(ulong probablePrime, ulong[] witnesses)
         {
-            ulong oneLessValue = value - 1UL;
-            ulong d = value >> 1;
-            ulong s = 1UL;
+            ulong exponent = probablePrime >> 1;
+            ulong trailingZeroCount = 1UL + (ulong)BitOperations.TrailingZeroCount(exponent);
+            exponent >>= (int)(trailingZeroCount - 1);
 
-            while ((d & 1) == 0)
+            return witnesses.AsParallel().All(witness => CheckPrimality(witness, exponent, probablePrime, trailingZeroCount));
+        }
+
+        private static bool CheckPrimality(ulong witness, ulong d, ulong probablePrime, ulong trailingZeroCount)
+        {
+            ulong oneLessValue = probablePrime - 1UL;
+            ulong x = ModPow(witness, d, probablePrime);
+
+            if (x == 1UL)
             {
-                d >>= 1;
-                ++s;
+                return true;
             }
 
-            for (int i = 0; i < witnesses.Length; i++)
+            for (ulong r = 1UL; x != oneLessValue && r < trailingZeroCount; r++)
             {
-                ulong x = value > long.MaxValue
-                    ? (ulong)BigInteger.ModPow(witnesses[i], d, value)
-                    : ModPow(witnesses[i], d, value);
+                x = x <= uint.MaxValue
+                    ? (x * x).Mod(probablePrime)
+                    : ModMul(x, x, probablePrime);
 
                 if (x == 1UL)
-                {
-                    continue;
-                }
-
-                for (ulong r = 1UL; x != oneLessValue && r < s; r++)
-                {
-                    if (x < uint.MaxValue)
-                    {
-                        x = Mod(x * x, value);
-                    }
-                    else if (value > long.MaxValue)
-                    {
-                        BigInteger bigX = x;
-                        BigInteger bigValue = value;
-                        x = (ulong)(bigX * bigX % bigValue);
-                    }
-                    else if (x < long.MaxValue)
-                    {
-                        x = Mod128By63(Math.BigMul(x, x, out ulong lowBits), lowBits, value);
-                    }
-
-                    if (x == 1UL)
-                    {
-                        return false;
-                    }
-                }
-
-                if (x != oneLessValue)
                 {
                     return false;
                 }
             }
 
-            return true;
+            return x == oneLessValue;
         }
     }
 }

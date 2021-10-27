@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
 using X10D.Performant.ByteExtensions;
 using X10D.Performant.UInt16Extensions;
 
@@ -11,8 +9,8 @@ namespace X10D.Performant.UInt64Extensions
 {
     public static partial class UInt64Extensions
     {
-        private static readonly HashSet<ulong> Primes = new();
-        private static readonly HashSet<ulong> NonPrimes = new();
+        internal static readonly HashSet<ulong> Primes = new();
+        internal static readonly HashSet<ulong> NonPrimes = new();
 
         private static readonly ulong[] Lt18446744073709551616 = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
         private static readonly ulong[] Lt3825123056546413051 = { 2, 3, 5, 7, 11, 13, 17, 19, 23 };

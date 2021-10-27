@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
-using X10D.Performant.ByteExtensions;
+﻿using X10D.Performant.ByteExtensions;
 
 namespace X10D.Performant.Int16Extensions
 {
     public static partial class Int16Extensions
     {
-        private static readonly HashSet<short> Primes = new();
-        private static readonly HashSet<short> NonPrimes = new();
-
         /// <include file='Int16Extensions.copy.xml' path='members/member[@name="IsPrime"]'/>
         public static bool IsPrime(this short value, bool useCache = false)
         {
@@ -19,12 +15,12 @@ namespace X10D.Performant.Int16Extensions
 
             if (useCache)
             {
-                if (Primes.Contains(value))
+                if (UInt64Extensions.UInt64Extensions.Primes.Contains((ulong)value))
                 {
                     return true;
                 }
 
-                if (NonPrimes.Contains(value))
+                if (UInt64Extensions.UInt64Extensions.NonPrimes.Contains((ulong)value))
                 {
                     return false;
                 }
@@ -37,7 +33,7 @@ namespace X10D.Performant.Int16Extensions
                 {
                     if (useCache)
                     {
-                        NonPrimes.Add(value);
+                        UInt64Extensions.UInt64Extensions.NonPrimes.Add((ulong)value);
                     }
 
                     return false;
@@ -46,7 +42,7 @@ namespace X10D.Performant.Int16Extensions
 
             if (useCache)
             {
-                Primes.Add(value);
+                UInt64Extensions.UInt64Extensions.Primes.Add((ulong)value);
             }
 
             return true;

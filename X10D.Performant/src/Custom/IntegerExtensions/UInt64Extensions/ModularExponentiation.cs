@@ -1,4 +1,7 @@
-﻿namespace X10D.Performant.UInt64Extensions
+﻿using System;
+using System.Numerics;
+
+namespace X10D.Performant.UInt64Extensions
 {
     public static partial class UInt64Extensions
     {
@@ -46,47 +49,16 @@
         }
 
         /// <include file='UInt64Extensions.xml' path='members/member[@name="ModMul"]'/>
-        public static ulong ModMul(ulong a, ulong b, ulong modulus)
+        public static ulong ModMul(ulong a, ulong b, ulong modulo)
         {
-            ulong result = 0UL;
+            ulong high = Math.BigMul(a, b, out ulong low);
 
-            if (b >= modulus)
+            return high switch
             {
-                if (modulus > 0x7FFFFFFFFFFFFFFF)
-                {
-                    b -= modulus;
-                }
-                else
-                {
-                    b %= modulus;
-                }
-            }
-
-            while (a != 0UL)
-            {
-                if ((a & 1UL) != 0UL)
-                {
-                    if (b >= modulus - result)
-                    {
-                        result -= modulus;
-                    }
-
-                    result += b;
-                }
-
-                a >>= 1;
-
-                ulong temp = b;
-
-                if (b >= modulus - b)
-                {
-                    temp -= modulus;
-                }
-
-                b += temp;
-            }
-
-            return result;
+                0             => low % modulo,
+                <= 0xFFFFFFFF => (ulong)((decimal)a * b % modulo),
+                _             => (ulong)((BigInteger)a * b % modulo),
+            };
         }
     }
 }

@@ -15,9 +15,7 @@ namespace X10D.Performant.SpanExtensions
             {
                 int index = random.Next(count--);
 
-                T? temp = values[count];
-                values[count] = values[index];
-                values[index] = temp;
+                (values[count], values[index]) = (values[index], values[count]);
             }
         }
     }

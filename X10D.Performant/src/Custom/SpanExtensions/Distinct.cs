@@ -1,50 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace X10D.Performant.SpanExtensions
+namespace X10D.Performant.SpanExtensions;
+
+//TODO: DOCUMENT
+//TODO: TEST
+public static partial class SpanExtensions
 {
-    //TODO: DOCUMENT
-    //TODO: TEST
-    public static partial class SpanExtensions
+    public static ReadOnlySpan<T?> Distinct<T>(this in ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed) =>
+        DistinctInternal(values, comparer, cutOffLength);
+
+    public static Span<T?> Distinct<T>(this in Span<T?> values, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed) =>
+        DistinctInternal(values, comparer, cutOffLength);
+
+    public static void Distinct<T>(this in ReadOnlySpan<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed)
     {
-        public static ReadOnlySpan<T?> Distinct<T>(this in ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed) =>
-            DistinctInternal(values, comparer, cutOffLength);
+        HashSet<T?> set = new(values.Length, comparer);
+        int bufferIndex = 0;
+        int valueIndex = 0;
 
-        public static Span<T?> Distinct<T>(this in Span<T?> values, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed) =>
-            DistinctInternal(values, comparer, cutOffLength);
-
-        public static void Distinct<T>(this in ReadOnlySpan<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed)
+        while (valueIndex < values.Length
+            && bufferIndex < buffer.Length
+            && bufferIndex != cutOffLength)
         {
-            HashSet<T?> set = new(values.Length, comparer);
-            int bufferIndex = 0;
-            int valueIndex = 0;
+            T? value = values[valueIndex];
 
-            while (valueIndex < values.Length
-                && bufferIndex < buffer.Length
-                && bufferIndex != cutOffLength)
+            if (set.Add(value))
             {
-                T? value = values[valueIndex];
-
-                if (set.Add(value))
-                {
-                    buffer[bufferIndex++] = value;
-                }
-
-                valueIndex++;
+                buffer[bufferIndex++] = value;
             }
 
-            buffer = buffer[..bufferIndex];
+            valueIndex++;
         }
 
-        public static void Distinct<T>(this in Span<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed) =>
-            Distinct(values.AsReadOnly(), ref buffer, comparer, cutOffLength);
+        buffer = buffer[..bufferIndex];
+    }
 
-        private static Span<T?> DistinctInternal<T>(in ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer, int cutOffLength)
-        {
-            Span<T?> result = new T?[values.Length];
-            Distinct(values, ref result, comparer, cutOffLength);
+    public static void Distinct<T>(this in Span<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed) =>
+        Distinct(values.AsReadOnly(), ref buffer, comparer, cutOffLength);
 
-            return result;
-        }
+    private static Span<T?> DistinctInternal<T>(in ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer, int cutOffLength)
+    {
+        Span<T?> result = new T?[values.Length];
+        Distinct(values, ref result, comparer, cutOffLength);
+
+        return result;
     }
 }

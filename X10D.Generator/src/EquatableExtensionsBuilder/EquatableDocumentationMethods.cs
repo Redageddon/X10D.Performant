@@ -1,9 +1,9 @@
-﻿namespace X10D.Generator
+﻿namespace X10D.Generator;
+
+public partial class EquatableDocumentationBuilder
 {
-    public partial class EquatableDocumentationBuilder
-    {
-        public static string BuildAndMethod(int count) =>
-            $@"    <member name=""AndEquals{count}"">
+    public static string BuildAndMethod(int count) =>
+        $@"    <member name=""AndEquals{count}"">
         <summary>
             Checks if this element is AND equaled to all of the parameters.
         </summary>
@@ -15,8 +15,8 @@
         </returns>
     </member>";
 
-        public static string BuildNAndMethod(int count) =>
-            $@"    <member name=""NAndEquals{count}"">
+    public static string BuildNAndMethod(int count) =>
+        $@"    <member name=""NAndEquals{count}"">
         <summary>
             Checks if this element is NAND equaled to all of the parameters.
         </summary>
@@ -28,8 +28,8 @@
         </returns>
     </member>";
 
-        public static string BuildNOrMethod(int count) =>
-            $@"    <member name=""NOrEquals{count}"">
+    public static string BuildNOrMethod(int count) =>
+        $@"    <member name=""NOrEquals{count}"">
         <summary>
             Checks if this element is NOR equaled to all of the parameters.
         </summary>
@@ -41,8 +41,8 @@
         </returns>
     </member>";
 
-        public static string BuildOrMethod(int count) =>
-            $@"    <member name=""OrEquals{count}"">
+    public static string BuildOrMethod(int count) =>
+        $@"    <member name=""OrEquals{count}"">
         <summary>
             Checks if this element is OR equaled to all of the parameters.
         </summary>
@@ -54,8 +54,8 @@
         </returns>
     </member>";
 
-        public static string BuildXNOrMethod(int count) =>
-            $@"    <member name=""XNOrEquals{count}"">
+    public static string BuildXNOrMethod(int count) =>
+        $@"    <member name=""XNOrEquals{count}"">
         <summary>
             Checks if this element is XNOR equaled to all of the parameters.
         </summary>
@@ -67,8 +67,8 @@
         </returns>
     </member>";
 
-        public static string BuildXOrMethod(int count) =>
-            $@"    <member name=""XOrEquals{count}"">
+    public static string BuildXOrMethod(int count) =>
+        $@"    <member name=""XOrEquals{count}"">
         <summary>
             Checks if this element is XOR equaled to all of the parameters.
         </summary>
@@ -79,5 +79,4 @@
             EX: a == b ^ a == c ^ a == d.
         </returns>
     </member>";
-    }
 }

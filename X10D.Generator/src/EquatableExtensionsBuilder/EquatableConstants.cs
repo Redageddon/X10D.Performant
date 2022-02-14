@@ -1,8 +1,8 @@
-﻿namespace X10D.Generator
+﻿namespace X10D.Generator;
+
+public partial class EquatableBuilder
 {
-    public partial class EquatableBuilder
-    {
-        private const string StartingChunk = @"using System;
+    private const string StartingChunk = @"using System;
 using System.Runtime.CompilerServices;
 
 namespace X10D.Performant.IEquatableExtensions
@@ -11,7 +11,6 @@ namespace X10D.Performant.IEquatableExtensions
     {
 ";
 
-        private const string EndingChunk = @"    }
+    private const string EndingChunk = @"    }
 }";
-    }
 }

@@ -3,103 +3,102 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using X10D.Performant.KeyValuePairExtensions;
 
-namespace X10D.Performant.Tests.Core
+namespace X10D.Performant.Tests.Core;
+
+/// <summary>
+///     Tests for <see cref="KeyValuePairExtensions"/>.
+/// </summary>
+public class DictionaryTests
 {
     /// <summary>
-    ///     Tests for <see cref="KeyValuePairExtensions"/>.
+    ///     Tests for
+    ///     <see
+    ///         cref="KeyValuePairExtensions.FlipKeyValues{TKey,TValue}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{TKey,TValue}})"/>
     /// </summary>
-    public class DictionaryTests
+    [Test]
+    public void FlipKeyValues()
     {
-        /// <summary>
-        ///     Tests for
-        ///     <see
-        ///         cref="KeyValuePairExtensions.FlipKeyValues{TKey,TValue}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{TKey,TValue}})"/>
-        /// </summary>
-        [Test]
-        public void FlipKeyValues()
+        Dictionary<string, int> dictionary = new()
         {
-            Dictionary<string, int> dictionary = new()
-            {
-                { "4", 4 },
-                { "3", 3 },
-                { "2", 2 },
-                { "1", 1 },
-            };
+            { "4", 4 },
+            { "3", 3 },
+            { "2", 2 },
+            { "1", 1 },
+        };
 
-            Dictionary<int, string> dictionary2 = new()
-            {
-                { 4, "4" },
-                { 3, "3" },
-                { 2, "2" },
-                { 1, "1" },
-            };
-
-            CollectionAssert.AreEqual(dictionary2, dictionary.FlipKeyValues());
-        }
-
-        /// <summary>
-        ///     Tests for
-        ///     <see
-        ///         cref="KeyValuePairExtensions.ToConnectionString{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
-        ///     .
-        /// </summary>
-        [Test]
-        public void ToConnectionString()
+        Dictionary<int, string> dictionary2 = new()
         {
-            Dictionary<string, object> dictionary = new()
-            {
-                { "username", "Foo" },
-                { "password", "Foo Bar" },
-                { "port", 3306 },
-                { "null", null },
-            };
+            { 4, "4" },
+            { 3, "3" },
+            { 2, "2" },
+            { 1, "1" },
+        };
 
-            string connectionString = dictionary.ToConnectionString();
-            Assert.AreEqual("username=Foo;password=\"Foo Bar\";port=3306;null=", connectionString);
-        }
+        CollectionAssert.AreEqual(dictionary2, dictionary.FlipKeyValues());
+    }
 
-        /// <summary>
-        ///     Tests for
-        ///     <see cref="KeyValuePairExtensions.ToGetParameters{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
-        ///     .
-        /// </summary>
-        [Test]
-        public void ToGetParameters()
+    /// <summary>
+    ///     Tests for
+    ///     <see
+    ///         cref="KeyValuePairExtensions.ToConnectionString{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
+    ///     .
+    /// </summary>
+    [Test]
+    public void ToConnectionString()
+    {
+        Dictionary<string, object> dictionary = new()
         {
-            Dictionary<string, object> dictionary = new()
-            {
-                { "username", "Foo" },
-                { "password", "Foo Bar" },
-                { "port", 3306 },
-            };
+            { "username", "Foo" },
+            { "password", "Foo Bar" },
+            { "port", 3306 },
+            { "null", null },
+        };
 
-            string getParameterString = dictionary.ToGetParameters();
-            Assert.AreEqual("username=Foo&password=Foo+Bar&port=3306", getParameterString);
-        }
+        string connectionString = dictionary.ToConnectionString();
+        Assert.AreEqual("username=Foo;password=\"Foo Bar\";port=3306;null=", connectionString);
+    }
 
-        /// <summary>
-        ///     Tests for
-        ///     <see cref="KeyValuePairExtensions.ToGetParameters{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
-        ///     .
-        /// </summary>
-        [Test]
-        public void ToGetParametersSeparators()
+    /// <summary>
+    ///     Tests for
+    ///     <see cref="KeyValuePairExtensions.ToGetParameters{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
+    ///     .
+    /// </summary>
+    [Test]
+    public void ToGetParameters()
+    {
+        Dictionary<string, object> dictionary = new()
         {
-            Dictionary<string, IEnumerable> dictionary = new()
-            {
-                { "username", "Foo" },
-                { "password", "Foo Bar" },
-                { "port", new[] { 3, 3, 0, 6 } },
-            };
+            { "username", "Foo" },
+            { "password", "Foo Bar" },
+            { "port", 3306 },
+        };
 
-            string getParameterString = dictionary.ToGetParameters(",", "-", ".");
-            Assert.AreEqual("username=F%2co%2co&password=F-o-o-+-B-a-r&port=3.3.0.6", getParameterString);
+        string getParameterString = dictionary.ToGetParameters();
+        Assert.AreEqual("username=Foo&password=Foo+Bar&port=3306", getParameterString);
+    }
 
-            getParameterString = dictionary.ToGetParameters(",", "-");
-            Assert.AreEqual("username=F%2co%2co&password=F-o-o-+-B-a-r&port=3-3-0-6", getParameterString);
+    /// <summary>
+    ///     Tests for
+    ///     <see cref="KeyValuePairExtensions.ToGetParameters{T1,T2}(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{T1,T2}})"/>
+    ///     .
+    /// </summary>
+    [Test]
+    public void ToGetParametersSeparators()
+    {
+        Dictionary<string, IEnumerable> dictionary = new()
+        {
+            { "username", "Foo" },
+            { "password", "Foo Bar" },
+            { "port", new[] { 3, 3, 0, 6 } },
+        };
 
-            getParameterString = dictionary.ToGetParameters(",");
-            Assert.AreEqual("username=F%2co%2co&password=F%2co%2co%2c+%2cB%2ca%2cr&port=3%2c3%2c0%2c6", getParameterString);
-        }
+        string getParameterString = dictionary.ToGetParameters(",", "-", ".");
+        Assert.AreEqual("username=F%2co%2co&password=F-o-o-+-B-a-r&port=3.3.0.6", getParameterString);
+
+        getParameterString = dictionary.ToGetParameters(",", "-");
+        Assert.AreEqual("username=F%2co%2co&password=F-o-o-+-B-a-r&port=3-3-0-6", getParameterString);
+
+        getParameterString = dictionary.ToGetParameters(",");
+        Assert.AreEqual("username=F%2co%2co&password=F%2co%2co%2c+%2cB%2ca%2cr&port=3%2c3%2c0%2c6", getParameterString);
     }
 }

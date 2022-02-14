@@ -1,24 +1,23 @@
 ﻿using System;
 
-namespace X10D.Performant.SpanExtensions
-{
-    //TODO: DOCUMENT
-    //TODO: TEST
-    public static partial class SpanExtensions
-    {
-        public static bool All<T>(this in ReadOnlySpan<T?> values, Predicate<T?> predicate)
-        {
-            foreach (T? value in values)
-            {
-                if (!predicate(value))
-                {
-                    return false;
-                }
-            }
+namespace X10D.Performant.SpanExtensions;
 
-            return true;
+//TODO: DOCUMENT
+//TODO: TEST
+public static partial class SpanExtensions
+{
+    public static bool All<T>(this in ReadOnlySpan<T?> values, Predicate<T?> predicate)
+    {
+        foreach (T? value in values)
+        {
+            if (!predicate(value))
+            {
+                return false;
+            }
         }
 
-        public static bool All<T>(this in Span<T?> values, Predicate<T?> predicate) => All(values.AsReadOnly(), predicate);
+        return true;
     }
+
+    public static bool All<T>(this in Span<T?> values, Predicate<T?> predicate) => All(values.AsReadOnly(), predicate);
 }

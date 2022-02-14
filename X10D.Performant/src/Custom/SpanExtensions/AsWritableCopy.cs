@@ -1,17 +1,16 @@
 ﻿using System;
 
-namespace X10D.Performant.SpanExtensions
-{
-    //TODO: DOCUMENT
-    //TODO: TEST
-    public static partial class SpanExtensions
-    {
-        public static Span<T?> AsWritableCopy<T>(this in ReadOnlySpan<T?> values, int excess = 0)
-        {
-            Span<T?> copy = new T?[values.Length + excess];
-            values.CopyTo(copy);
+namespace X10D.Performant.SpanExtensions;
 
-            return copy;
-        }
+//TODO: DOCUMENT
+//TODO: TEST
+public static partial class SpanExtensions
+{
+    public static Span<T?> AsWritableCopy<T>(this in ReadOnlySpan<T?> values, int excess = 0)
+    {
+        Span<T?> copy = new T?[values.Length + excess];
+        values.CopyTo(copy);
+
+        return copy;
     }
 }

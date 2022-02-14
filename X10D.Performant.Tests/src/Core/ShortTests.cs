@@ -3,196 +3,195 @@ using NUnit.Framework;
 using X10D.Performant.Int16Extensions;
 using X10D.Performant.UInt16Extensions;
 
-namespace X10D.Performant.Tests.Core
+namespace X10D.Performant.Tests.Core;
+
+/// <summary>
+///     Tests for <see cref="Int16Extensions"/>.
+/// </summary>
+public class ShortTests
 {
     /// <summary>
-    ///     Tests for <see cref="Int16Extensions"/>.
+    ///     Tests for <see cref="Int16Extensions.FromUnixTimestamp"/>.
     /// </summary>
-    public class ShortTests
+    [Test]
+    public void FromUnixTimestamp()
     {
-        /// <summary>
-        ///     Tests for <see cref="Int16Extensions.FromUnixTimestamp"/>.
-        /// </summary>
-        [Test]
-        public void FromUnixTimestamp()
-        {
-            Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), ((short)1234).FromUnixTimestamp());
-            Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), ((short)1234).FromUnixTimestamp(true));
-        }
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), ((short)1234).FromUnixTimestamp());
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), ((short)1234).FromUnixTimestamp(true));
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.FromUnixTimestamp"/>.
-        /// </summary>
-        [Test]
-        public void FromUnixTimestampU()
-        {
-            Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), ((ushort)1234U).FromUnixTimestamp());
-            Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), ((ushort)1234U).FromUnixTimestamp(true));
-        }
+    /// <summary>
+    ///     Tests for <see cref="UInt16Extensions.FromUnixTimestamp"/>.
+    /// </summary>
+    [Test]
+    public void FromUnixTimestampU()
+    {
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), ((ushort)1234U).FromUnixTimestamp());
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), ((ushort)1234U).FromUnixTimestamp(true));
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="Int16Extensions.IsEven(short)"/>.
-        /// </summary>
-        [Test]
-        public void IsEven()
-        {
-            Assert.IsTrue(((short)2).IsEven());
-            Assert.IsFalse(((short)1).IsEven());
-        }
+    /// <summary>
+    ///     Tests for <see cref="Int16Extensions.IsEven(short)"/>.
+    /// </summary>
+    [Test]
+    public void IsEven()
+    {
+        Assert.IsTrue(((short)2).IsEven());
+        Assert.IsFalse(((short)1).IsEven());
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.IsEven"/>.
-        /// </summary>
-        [Test]
-        public void IsEvenU()
-        {
-            Assert.IsTrue(((ushort)2).IsEven());
-            Assert.IsFalse(((ushort)1).IsEven());
-        }
+    /// <summary>
+    ///     Tests for <see cref="UInt16Extensions.IsEven"/>.
+    /// </summary>
+    [Test]
+    public void IsEvenU()
+    {
+        Assert.IsTrue(((ushort)2).IsEven());
+        Assert.IsFalse(((ushort)1).IsEven());
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="Int16Extensions.IsOdd(short)"/>.
-        /// </summary>
-        [Test]
-        public void IsOdd()
-        {
-            Assert.IsFalse(((short)2).IsOdd());
-            Assert.IsTrue(((short)1).IsOdd());
-        }
+    /// <summary>
+    ///     Tests for <see cref="Int16Extensions.IsOdd(short)"/>.
+    /// </summary>
+    [Test]
+    public void IsOdd()
+    {
+        Assert.IsFalse(((short)2).IsOdd());
+        Assert.IsTrue(((short)1).IsOdd());
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.IsOdd"/>.
-        /// </summary>
-        [Test]
-        public void IsOddU()
-        {
-            Assert.IsFalse(((ushort)2).IsOdd());
-            Assert.IsTrue(((ushort)1).IsOdd());
-        }
+    /// <summary>
+    ///     Tests for <see cref="UInt16Extensions.IsOdd"/>.
+    /// </summary>
+    [Test]
+    public void IsOddU()
+    {
+        Assert.IsFalse(((ushort)2).IsOdd());
+        Assert.IsTrue(((ushort)1).IsOdd());
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="Int16Extensions.IsPrime"/>.
-        /// </summary>
-        [Test]
-        public void IsPrime()
-        {
-            short[] primes = { 2, 11, 101, 1_009, 10_007 };
+    /// <summary>
+    ///     Tests for <see cref="Int16Extensions.IsPrime"/>.
+    /// </summary>
+    [Test]
+    public void IsPrime()
+    {
+        short[] primes = { 2, 11, 101, 1_009, 10_007 };
 
-            for (int i = 0; i < primes.Length; i++)
+        for (int i = 0; i < primes.Length; i++)
+        {
+            if (!primes[i].IsPrime(true))
             {
-                if (!primes[i].IsPrime(true))
-                {
-                    Console.WriteLine(primes[i]);
-                }
-
-                Assert.IsTrue(primes[i].IsPrime(true));
+                Console.WriteLine(primes[i]);
             }
 
-            short[] nonPrimes = { -10_007, -1_009, -101, -11, -2, -1, 0, 1, 4, 29_001 };
-
-            for (int i = 0; i < nonPrimes.Length; i++)
-            {
-                if (nonPrimes[i].IsPrime(true))
-                {
-                    Console.WriteLine(nonPrimes[i]);
-                }
-
-                Assert.IsFalse(nonPrimes[i].IsPrime(true));
-            }
+            Assert.IsTrue(primes[i].IsPrime(true));
         }
 
-        /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.IsPrime"/>.
-        /// </summary>
-        [Test]
-        public void IsPrimeU()
+        short[] nonPrimes = { -10_007, -1_009, -101, -11, -2, -1, 0, 1, 4, 29_001 };
+
+        for (int i = 0; i < nonPrimes.Length; i++)
         {
-            ushort[] primes = { 2, 11, 101, 1_009, 10_007 };
-
-            for (int i = 0; i < primes.Length; i++)
+            if (nonPrimes[i].IsPrime(true))
             {
-                if (!primes[i].IsPrime(true))
-                {
-                    Console.WriteLine(primes[i]);
-                }
-
-                Assert.IsTrue(primes[i].IsPrime(true));
+                Console.WriteLine(nonPrimes[i]);
             }
 
-            ushort[] nonPrimes = { 0, 1, 4, 29_001 };
+            Assert.IsFalse(nonPrimes[i].IsPrime(true));
+        }
+    }
 
-            for (int i = 0; i < nonPrimes.Length; i++)
+    /// <summary>
+    ///     Tests for <see cref="UInt16Extensions.IsPrime"/>.
+    /// </summary>
+    [Test]
+    public void IsPrimeU()
+    {
+        ushort[] primes = { 2, 11, 101, 1_009, 10_007 };
+
+        for (int i = 0; i < primes.Length; i++)
+        {
+            if (!primes[i].IsPrime(true))
             {
-                if (nonPrimes[i].IsPrime(true))
+                Console.WriteLine(primes[i]);
+            }
+
+            Assert.IsTrue(primes[i].IsPrime(true));
+        }
+
+        ushort[] nonPrimes = { 0, 1, 4, 29_001 };
+
+        for (int i = 0; i < nonPrimes.Length; i++)
+        {
+            if (nonPrimes[i].IsPrime(true))
+            {
+                Console.WriteLine(nonPrimes[i]);
+            }
+
+            Assert.IsFalse(nonPrimes[i].IsPrime(true));
+        }
+    }
+
+    /// <summary>
+    ///     Tests for <see cref="Int16Extensions.Mod"/>.
+    /// </summary>
+    [Test]
+    public void Mod()
+    {
+        for (short i = -100; i < 100; i++)
+        {
+            for (short j = -100; j < 100; j++)
+            {
+                if (j == 0)
                 {
-                    Console.WriteLine(nonPrimes[i]);
+                    continue;
                 }
 
-                Assert.IsFalse(nonPrimes[i].IsPrime(true));
-            }
-        }
-
-        /// <summary>
-        ///     Tests for <see cref="Int16Extensions.Mod"/>.
-        /// </summary>
-        [Test]
-        public void Mod()
-        {
-            for (short i = -100; i < 100; i++)
-            {
-                for (short j = -100; j < 100; j++)
+                if (i % j != i.Mod(j))
                 {
-                    if (j == 0)
-                    {
-                        continue;
-                    }
-
-                    if (i % j != i.Mod(j))
-                    {
-                        Console.WriteLine(i);
-                        Console.WriteLine(j);
-                    }
-
-                    Assert.AreEqual(i % j, i.Mod(j));
+                    Console.WriteLine(i);
+                    Console.WriteLine(j);
                 }
+
+                Assert.AreEqual(i % j, i.Mod(j));
             }
         }
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.Mod"/>.
-        /// </summary>
-        [Test]
-        public void ModU()
+    /// <summary>
+    ///     Tests for <see cref="UInt16Extensions.Mod"/>.
+    /// </summary>
+    [Test]
+    public void ModU()
+    {
+        for (ushort i = 1; i < 200; i++)
         {
-            for (ushort i = 1; i < 200; i++)
+            for (ushort j = 1; j < 200; j++)
             {
-                for (ushort j = 1; j < 200; j++)
-                {
-                    Assert.AreEqual(i % j, i.Mod(j));
-                }
+                Assert.AreEqual(i % j, i.Mod(j));
             }
         }
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="Int16Extensions.ToBoolean(short)"/>.
-        /// </summary>
-        [Test]
-        public void ToBool()
-        {
-            Assert.IsTrue(((short)2).ToBoolean());
-            Assert.IsTrue(((short)1).ToBoolean());
-            Assert.IsFalse(((short)0).ToBoolean());
-        }
+    /// <summary>
+    ///     Tests for <see cref="Int16Extensions.ToBoolean(short)"/>.
+    /// </summary>
+    [Test]
+    public void ToBool()
+    {
+        Assert.IsTrue(((short)2).ToBoolean());
+        Assert.IsTrue(((short)1).ToBoolean());
+        Assert.IsFalse(((short)0).ToBoolean());
+    }
 
-        /// <summary>
-        ///     Tests for <see cref="UInt16Extensions.ToBoolean"/>.
-        /// </summary>
-        [Test]
-        public void ToBoolU()
-        {
-            Assert.IsFalse(((ushort)0).ToBoolean());
-            Assert.IsTrue(((ushort)1).ToBoolean());
-            Assert.IsTrue(((ushort)2).ToBoolean());
-        }
+    /// <summary>
+    ///     Tests for <see cref="UInt16Extensions.ToBoolean"/>.
+    /// </summary>
+    [Test]
+    public void ToBoolU()
+    {
+        Assert.IsFalse(((ushort)0).ToBoolean());
+        Assert.IsTrue(((ushort)1).ToBoolean());
+        Assert.IsTrue(((ushort)2).ToBoolean());
     }
 }

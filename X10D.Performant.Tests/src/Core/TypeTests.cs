@@ -2,21 +2,20 @@
 using NUnit.Framework;
 using X10D.Performant.TypeExtensions;
 
-namespace X10D.Performant.Tests.Core
+namespace X10D.Performant.Tests.Core;
+
+/// <summary>
+///     Tests for <see cref="TypeExtensions"/>
+/// </summary>
+public class TypeTests
 {
     /// <summary>
-    ///     Tests for <see cref="TypeExtensions"/>
+    ///     Tests for <see cref="TypeExtensions.GetContainedType"/>
     /// </summary>
-    public class TypeTests
+    [Test]
+    public void GetContainedType()
     {
-        /// <summary>
-        ///     Tests for <see cref="TypeExtensions.GetContainedType"/>
-        /// </summary>
-        [Test]
-        public void GetContainedType()
-        {
-            Assert.AreEqual(typeof(int), typeof(int[]).GetContainedType());
-            Assert.AreEqual(typeof(double), typeof(List<double>).GetContainedType());
-        }
+        Assert.AreEqual(typeof(int), typeof(int[]).GetContainedType());
+        Assert.AreEqual(typeof(double), typeof(List<double>).GetContainedType());
     }
 }

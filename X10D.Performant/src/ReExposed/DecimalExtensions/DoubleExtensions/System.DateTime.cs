@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace X10D.Performant.ReExposed
+namespace X10D.Performant.ReExposed;
+
+[SuppressMessage("ReSharper", "UnusedMember.Global")]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+[SuppressMessage("ReSharper", "UnusedType.Global")]
+public static partial class DoubleExtensions
 {
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    [SuppressMessage("ReSharper", "InconsistentNaming")]
-    [SuppressMessage("ReSharper", "UnusedType.Global")]
-    public static partial class DoubleExtensions
-    {
-        /// <inheritdoc cref="DateTime.FromOADate(double)"/>
-        public static DateTime FromOADate(this double value) => DateTime.FromOADate(value);
-    }
+    /// <inheritdoc cref="DateTime.FromOADate(double)"/>
+    public static DateTime FromOADate(this double value) => DateTime.FromOADate(value);
 }

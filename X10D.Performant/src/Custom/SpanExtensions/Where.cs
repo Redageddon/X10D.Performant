@@ -1,52 +1,51 @@
 ﻿using System;
 
-namespace X10D.Performant.SpanExtensions
+namespace X10D.Performant.SpanExtensions;
+
+//TODO: DOCUMENT
+public static partial class SpanExtensions
 {
-    //TODO: DOCUMENT
-    public static partial class SpanExtensions
+    public static ReadOnlySpan<T?> Where<T>(this in ReadOnlySpan<T?> values, Predicate<T?> predicate, int cutOffLength = NoValuePassed) =>
+        WhereInternal(values, predicate, cutOffLength);
+
+    public static Span<T?> Where<T>(this in Span<T?> values, Predicate<T?> predicate, int cutOffLength = NoValuePassed) =>
+        WhereInternal(values, predicate, cutOffLength);
+
+    public static void Where<T>(this in ReadOnlySpan<T?> values, Predicate<T?> predicate, ref Span<T?> buffer, int cutOffLength = NoValuePassed)
     {
-        public static ReadOnlySpan<T?> Where<T>(this in ReadOnlySpan<T?> values, Predicate<T?> predicate, int cutOffLength = NoValuePassed) =>
-            WhereInternal(values, predicate, cutOffLength);
+        int bufferIndex = 0;
+        int valueIndex = 0;
 
-        public static Span<T?> Where<T>(this in Span<T?> values, Predicate<T?> predicate, int cutOffLength = NoValuePassed) =>
-            WhereInternal(values, predicate, cutOffLength);
-
-        public static void Where<T>(this in ReadOnlySpan<T?> values, Predicate<T?> predicate, ref Span<T?> buffer, int cutOffLength = NoValuePassed)
+        while (valueIndex < values.Length
+            && bufferIndex < buffer.Length
+            && bufferIndex != cutOffLength)
         {
-            int bufferIndex = 0;
-            int valueIndex = 0;
+            T? current = values[valueIndex];
 
-            while (valueIndex < values.Length
-                && bufferIndex < buffer.Length
-                && bufferIndex != cutOffLength)
+            if (predicate(current))
             {
-                T? current = values[valueIndex];
-
-                if (predicate(current))
-                {
-                    buffer[bufferIndex++] = current;
-                }
-
-                valueIndex++;
+                buffer[bufferIndex++] = current;
             }
 
-            buffer = buffer[..bufferIndex];
+            valueIndex++;
         }
 
-        public static void Where<T>(this in Span<T?> values, Predicate<T?> predicate, ref Span<T?> buffer, int cutOffLength = NoValuePassed) =>
-            Where(values.AsReadOnly(), predicate, ref buffer, cutOffLength);
+        buffer = buffer[..bufferIndex];
+    }
 
-        private static Span<T?> WhereInternal<T>(in ReadOnlySpan<T?> values, Predicate<T?> predicate, int cutOffLength)
+    public static void Where<T>(this in Span<T?> values, Predicate<T?> predicate, ref Span<T?> buffer, int cutOffLength = NoValuePassed) =>
+        Where(values.AsReadOnly(), predicate, ref buffer, cutOffLength);
+
+    private static Span<T?> WhereInternal<T>(in ReadOnlySpan<T?> values, Predicate<T?> predicate, int cutOffLength)
+    {
+        if (cutOffLength == NoValuePassed)
         {
-            if (cutOffLength == NoValuePassed)
-            {
-                cutOffLength = values.Length;
-            }
-
-            Span<T?> result = new T?[cutOffLength];
-            Where(values, predicate, ref result, cutOffLength);
-
-            return result;
+            cutOffLength = values.Length;
         }
+
+        Span<T?> result = new T?[cutOffLength];
+        Where(values, predicate, ref result, cutOffLength);
+
+        return result;
     }
 }

@@ -36,15 +36,15 @@ public static partial class StreamExtensions
         if (littleEndian)
         {
             lo = BinaryPrimitives.ReadInt32LittleEndian(buffer);
-            mid = BinaryPrimitives.ReadInt32LittleEndian(buffer.Slice(4));
-            hi = BinaryPrimitives.ReadInt32LittleEndian(buffer.Slice(8));
-            flags = BinaryPrimitives.ReadInt32LittleEndian(buffer.Slice(12));
+            mid = BinaryPrimitives.ReadInt32LittleEndian(buffer[4..]);
+            hi = BinaryPrimitives.ReadInt32LittleEndian(buffer[8..]);
+            flags = BinaryPrimitives.ReadInt32LittleEndian(buffer[12..]);
         }
         else
         {
-            lo = BinaryPrimitives.ReadInt32BigEndian(buffer.Slice(12));
-            mid = BinaryPrimitives.ReadInt32BigEndian(buffer.Slice(8));
-            hi = BinaryPrimitives.ReadInt32BigEndian(buffer.Slice(4));
+            lo = BinaryPrimitives.ReadInt32BigEndian(buffer[12..]);
+            mid = BinaryPrimitives.ReadInt32BigEndian(buffer[8..]);
+            hi = BinaryPrimitives.ReadInt32BigEndian(buffer[4..]);
             flags = BinaryPrimitives.ReadInt32BigEndian(buffer);
         }
 

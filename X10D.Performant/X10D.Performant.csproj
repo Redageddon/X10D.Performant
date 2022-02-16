@@ -18,6 +18,10 @@
         <RootNamespace>X10D.Performant</RootNamespace>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
+    
+    <PropertyGroup>
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    </PropertyGroup>
 
     <PropertyGroup>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

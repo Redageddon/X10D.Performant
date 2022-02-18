@@ -37,18 +37,6 @@
         <typeparam name="TSource">Any type.</typeparam>
         <returns>The same values from <paramref name="values"/>.</returns>
     </member>
-    <member name="LazyChunk">
-        <summary>
-            Splits <paramref name="values"/> into chunks of size <paramref name="chunkSize"/>.
-        </summary>
-        <param name="values">The values to chunk.</param>
-        <param name="chunkSize">The maximum length of the nested <see cref="IEnumerable{T}"/> collection.</param>
-        <typeparam name="TSource">Any type.</typeparam>
-        <returns>
-            Returns an <see cref="IEnumerable{T}"/> of <see cref="IEnumerable{T}"/> of <typeparamref name="TSource"/> from
-            <paramref name="values"/> split int chunks of size <paramref name="chunkSize"/>.
-        </returns>
-    </member>
     <member name="SelectWhere">
         <summary>
             Combines Select and Where into a single statement for efficiency.

@@ -24,8 +24,4 @@ public static partial class StringExtensions
     /// <inheritdoc cref="Type.GetTypeFromProgID(string,string,bool)"/>
     public static Type? GetTypeFromProgID(this string value, string? server = null, bool throwOnError = false) =>
         Type.GetTypeFromProgID(value, server, throwOnError);
-
-    /// <inheritdoc cref="Type.ReflectionOnlyGetType(string,bool,bool)"/>
-    public static Type? ReflectionOnlyGetType(this string value, bool throwIfNotFound, bool ignoreCase) =>
-        Type.ReflectionOnlyGetType(value, throwIfNotFound, ignoreCase);
 }

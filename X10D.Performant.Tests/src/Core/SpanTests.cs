@@ -78,7 +78,7 @@ public class SpanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="SpanExtensions.Shuffle{T}(Span{T},System.Random?)"/>
+    ///     Tests for <see cref="SpanExtensions.SpanExtensions.Shuffle{T}(Span{T},System.Random?)"/>
     /// </summary>
     [Test]
     public void Shuffle()

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Buffers.Binary;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.IO;
 using System.Text;
 
 namespace X10D.Performant.StreamExtensions;
 
+[SuppressMessage("ReSharper", "MustUseReturnValue")]
 public static partial class StreamExtensions
 {
     /// <include file='StreamExtensions.xml' path='members/member[@name="ReadArgbColor"]'/>

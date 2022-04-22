@@ -46,15 +46,15 @@ public static partial class UInt64Extensions
     }
 
     /// <include file='UInt64Extensions.xml' path='members/member[@name="ModMul"]'/>
-    public static ulong ModMul(ulong a, ulong b, ulong modulo)
+    public static ulong ModMul(ulong value, ulong exponent, ulong modulus)
     {
-        ulong high = Math.BigMul(a, b, out ulong low);
+        ulong high = Math.BigMul(value, exponent, out ulong low);
 
         return high switch
         {
-            0             => low % modulo,
-            <= 0xFFFFFFFF => (ulong)((decimal)a * b % modulo),
-            _             => (ulong)((BigInteger)a * b % modulo),
+            0             => low % modulus,
+            <= 0xFFFFFFFF => (ulong)((decimal)value * exponent % modulus),
+            _             => (ulong)((BigInteger)value * exponent % modulus),
         };
     }
 }

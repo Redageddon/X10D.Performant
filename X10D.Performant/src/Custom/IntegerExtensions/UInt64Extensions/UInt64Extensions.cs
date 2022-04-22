@@ -1,5 +1,4 @@
-﻿using System;
-using X10D.Performant.Int64Extensions;
+﻿using X10D.Performant.Int64Extensions;
 
 namespace X10D.Performant.UInt64Extensions;
 

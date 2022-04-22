@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace X10D.Performant.ColorExtensions;
+﻿namespace X10D.Performant.ColorExtensions;
 
 public static partial class ColorExtensions
 {

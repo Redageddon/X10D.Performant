@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace X10D.Performant.ReExposed;
+﻿namespace X10D.Performant.ReExposed;
 
 public static partial class Int32Extensions
 {

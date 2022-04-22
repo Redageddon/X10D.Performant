@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Threading;
-
-namespace X10D.Performant.ReExposed;
+﻿namespace X10D.Performant.ReExposed;
 
 /// <summary>
 ///     Extension methods for<see cref="WaitHandle"/>.

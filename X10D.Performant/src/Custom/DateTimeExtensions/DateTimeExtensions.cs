@@ -1,5 +1,4 @@
-﻿using System;
-using X10D.Performant.BooleanExtensions;
+﻿using X10D.Performant.BooleanExtensions;
 
 namespace X10D.Performant.DateTimeExtensions;
 

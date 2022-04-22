@@ -2,7 +2,7 @@
 
 public static partial class Int32Extensions
 {
-    /// <include file='Int32Extensions.copy.xml' path='members/member[@name="Mod"]'/>
+    /// <include file='Int32Extensions.g.xml' path='members/member[@name="Mod"]'/>
     public static int Mod(this int value, int modulus)
     {
         if (value == modulus)

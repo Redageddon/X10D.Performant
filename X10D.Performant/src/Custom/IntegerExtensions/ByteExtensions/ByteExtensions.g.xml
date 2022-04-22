@@ -1,0 +1,92 @@
+<!--This class is auto generated and will be overridden if any changes are made.
+To make edits to this class edit the X10D.Generator project.-->
+
+<members>
+    <member name="ModPow">
+        <summary>
+            Performs a fast and overflow proof modular exponentiation.
+        </summary>
+        <param name="value">The <see cref="byte"/> being raised by <paramref name="exponent"/>.</param>
+        <param name="exponent">The <see cref="byte"/> that is raising <paramref name="value"/>.</param>
+        <param name="modulus">The modulo to be applied to the result.</param>
+        <returns>
+            (<paramref name="value"/> ^ <paramref name="exponent"/>) % <paramref name="modulus"/>.
+        </returns>
+    </member>
+    <member name="ModMul">
+        <summary>
+            Performs a fast and overflow proof modular multiplication.
+        </summary>
+        <param name="value">The <see cref="byte"/> being multiplied by <paramref name="exponent"/>.</param>
+        <param name="exponent">The <see cref="byte"/> that is multiplying <paramref name="value"/>.</param>
+        <param name="modulus">The modulo to be applied to the result.</param>
+        <returns>
+            (<paramref name="value"/> * <paramref name="exponent"/>) % <paramref name="modulus"/>.
+        </returns>
+    </member>
+    <member name="IsPrime">
+        <summary>
+            Determines if <paramref name="value"/> is a prime value.
+        </summary>
+        <param name="value">The <see cref="byte"/> value.</param>
+        <returns>
+            <see langword="true"/> if <paramref name="value"/> is prime, <see langword="false"/> otherwise.
+        </returns>
+    </member>
+    <member name="FromUnixTimestamp">
+        <summary>
+            Converts the <paramref name="timestamp"/> to a <see cref="DateTime"/> treating it as a Unix timestamp.
+        </summary>
+        <param name="timestamp">The <see cref="byte"/> value.</param>
+        <param name="isMilliseconds">
+            Whether or not the input value should be treated as milliseconds.
+            Defaults to <see langword="false"/>.
+        </param>
+        <returns>
+            A <see cref="DateTime"/> representing <paramref name="timestamp"/> seconds since the Unix epoch.
+        </returns>
+    </member>
+    <member name="IsEven">
+        <summary>
+            Determines if the <paramref name="value"/> is even.
+        </summary>
+        <param name="value">The <see cref="byte"/> value.</param>
+        <returns>
+            <see langword="true"/> if <paramref name="value"/> is even, <see langword="false"/> otherwise.
+        </returns>
+    </member>
+    <member name="IsOdd">
+        <summary>
+            Determines if the <paramref name="value"/> is odd.
+        </summary>
+        <param name="value">The <see cref="byte"/> value.</param>
+        <returns>
+            <see langword="true"/> if <paramref name="value"/> is odd, <see langword="false"/> otherwise.
+        </returns>
+    </member>
+    <member name="Mod">
+        <summary>
+            Returns the remainder of <paramref name="value"/> / <paramref name="modulus"/>.
+            This is precisely the same as the c# modulo "%" operator, just faster than the built in implementation.
+        </summary>
+        <param name="value">The dividend.</param>
+        <param name="modulus">The divisor.</param>
+        <returns>
+            The remainder of <paramref name="value"/> / <paramref name="modulus"/>.
+        </returns>
+        <remarks>
+            TODO https://github.com/dotnet/runtime/issues/5213:
+            Restore to using % and / when the JIT is able to eliminate one of the idivs.
+            In the meantime, a * and - is measurably faster than an extra /.
+        </remarks>
+    </member>
+    <member name="ToBoolean">
+        <summary>
+            Converts a <see cref="byte"/> into a <see cref="bool"/>.
+        </summary>
+        <param name="value">The <see cref="byte"/> value.</param>
+        <returns>
+            <see langword="false"/> if <paramref name="value"/> is 0, <see langword="true"/> otherwise.
+        </returns>
+    </member>
+</members>

@@ -2,7 +2,7 @@
 
 public static partial class SByteExtensions
 {
-    /// <include file='SByteExtensions.copy.xml' path='members/member[@name="IsPrime"]'/>
+    /// <include file='SByteExtensions.g.xml' path='members/member[@name="IsPrime"]'/>
     public static bool IsPrime(this sbyte value)
     {
         switch (value)

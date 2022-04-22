@@ -1,7 +1,4 @@
-﻿using System;
-using System.Numerics;
-
-namespace X10D.Performant.UInt64Extensions;
+﻿namespace X10D.Performant.UInt64Extensions;
 
 public static partial class UInt64Extensions
 {

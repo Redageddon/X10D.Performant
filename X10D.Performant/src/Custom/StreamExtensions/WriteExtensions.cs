@@ -1,9 +1,4 @@
-﻿using System;
-using System.Buffers.Binary;
-using System.Drawing;
-using System.IO;
-using System.Text;
-using X10D.Performant.BooleanExtensions;
+﻿using X10D.Performant.BooleanExtensions;
 
 namespace X10D.Performant.StreamExtensions;
 

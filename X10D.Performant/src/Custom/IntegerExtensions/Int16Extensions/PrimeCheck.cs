@@ -1,10 +1,8 @@
-﻿using X10D.Performant.ByteExtensions;
-
-namespace X10D.Performant.Int16Extensions;
+﻿namespace X10D.Performant.Int16Extensions;
 
 public static partial class Int16Extensions
 {
-    /// <include file='Int16Extensions.copy.xml' path='members/member[@name="IsPrime"]'/>
+    /// <include file='Int16Extensions.g.xml' path='members/member[@name="IsPrime"]'/>
     public static bool IsPrime(this short value, bool useCache = false)
     {
         switch (value)

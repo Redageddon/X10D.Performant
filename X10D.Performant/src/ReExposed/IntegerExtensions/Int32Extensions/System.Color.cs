@@ -1,7 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Drawing;
-
-namespace X10D.Performant.ReExposed;
+﻿namespace X10D.Performant.ReExposed;
 
 /// <summary>
 ///     Extension methods for <see cref="Color"/>.

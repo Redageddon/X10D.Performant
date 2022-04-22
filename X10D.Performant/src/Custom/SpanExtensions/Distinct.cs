@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace X10D.Performant.SpanExtensions;
+﻿namespace X10D.Performant.SpanExtensions;
 
 //TODO: DOCUMENT
 //TODO: TEST

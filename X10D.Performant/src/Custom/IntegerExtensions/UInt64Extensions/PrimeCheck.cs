@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Numerics;
-using X10D.Performant.ByteExtensions;
-using X10D.Performant.UInt16Extensions;
+﻿using X10D.Performant.UInt16Extensions;
 
 namespace X10D.Performant.UInt64Extensions;
 

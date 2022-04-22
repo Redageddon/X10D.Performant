@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Text.Json;
-
-namespace X10D.Performant.ReExposed;
+﻿namespace X10D.Performant.ReExposed;
 
 [SuppressMessage("ReSharper", "UnusedType.Global")]
 [SuppressMessage("ReSharper", "UnusedMember.Global")]

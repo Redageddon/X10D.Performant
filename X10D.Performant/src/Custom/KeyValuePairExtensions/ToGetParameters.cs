@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace X10D.Performant.KeyValuePairExtensions;
+﻿namespace X10D.Performant.KeyValuePairExtensions;
 
 public static partial class KeyValuePairExtensions
 {

@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace X10D.Performant.ReExposed;
+﻿namespace X10D.Performant.ReExposed;
 
 [SuppressMessage("ReSharper", "UnusedMember.Global")]
 [SuppressMessage("ReSharper", "UnusedType.Global")]

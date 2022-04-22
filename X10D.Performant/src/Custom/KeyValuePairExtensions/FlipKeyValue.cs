@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-
-namespace X10D.Performant.KeyValuePairExtensions;
+﻿namespace X10D.Performant.KeyValuePairExtensions;
 
 public static partial class KeyValuePairExtensions
 {

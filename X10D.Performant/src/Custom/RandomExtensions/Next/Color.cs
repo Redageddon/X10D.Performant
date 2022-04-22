@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using X10D.Performant.DoubleExtensions;
+﻿using X10D.Performant.DoubleExtensions;
 
 namespace X10D.Performant.RandomExtensions;
 

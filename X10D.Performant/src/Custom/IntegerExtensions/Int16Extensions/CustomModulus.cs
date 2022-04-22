@@ -2,7 +2,7 @@
 
 public static partial class Int16Extensions
 {
-    /// <include file='Int16Extensions.copy.xml' path='members/member[@name="Mod"]'/>
+    /// <include file='Int16Extensions.g.xml' path='members/member[@name="Mod"]'/>
     public static short Mod(this short value, short modulus)
     {
         if (value == modulus)

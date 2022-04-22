@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text;
-using X10D.Performant.ReExposed;
+﻿using X10D.Performant.ReExposed;
 
 namespace X10D.Performant.StringExtensions;
 

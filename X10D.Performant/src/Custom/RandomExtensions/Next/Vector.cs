@@ -1,7 +1,4 @@
-﻿using System;
-using System.Numerics;
-
-namespace X10D.Performant.RandomExtensions;
+﻿namespace X10D.Performant.RandomExtensions;
 
 public static partial class RandomExtensions
 {

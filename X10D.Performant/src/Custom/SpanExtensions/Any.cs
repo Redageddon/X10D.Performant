@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace X10D.Performant.SpanExtensions;
+﻿namespace X10D.Performant.SpanExtensions;
 
 //TODO: DOCUMENT
 //TODO: TEST

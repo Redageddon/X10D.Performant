@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-
-namespace X10D.Performant.ColorExtensions;
+﻿namespace X10D.Performant.ColorExtensions;
 
 /// <summary>
 ///     Extension methods for <see cref="Color"/>.

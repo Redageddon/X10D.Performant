@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace X10D.Performant.TypeExtensions;
+﻿namespace X10D.Performant.TypeExtensions;
 
 /// <summary>
 ///     Extension methods for <see cref="Type"/>.

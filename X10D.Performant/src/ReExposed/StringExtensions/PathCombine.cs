@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace X10D.Performant.ReExposed;
+﻿namespace X10D.Performant.ReExposed;
 
 public static partial class StringExtensions
 {

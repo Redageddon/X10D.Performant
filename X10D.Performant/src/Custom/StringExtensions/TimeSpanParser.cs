@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
-
-namespace X10D.Performant.StringExtensions;
+﻿namespace X10D.Performant.StringExtensions;
 
 public static partial class StringExtensions
 {

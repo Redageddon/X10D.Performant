@@ -1,11 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using X10D.Performant.ByteExtensions;
-
-namespace X10D.Performant.UInt16Extensions;
+﻿namespace X10D.Performant.UInt16Extensions;
 
 public static partial class UInt16Extensions
 {
-    /// <include file='UInt16Extensions.copy.xml' path='members/member[@name="IsPrime"]'/>
+    /// <include file='UInt16Extensions.g.xml' path='members/member[@name="IsPrime"]'/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsPrime(this ushort value, bool useCache = false)
     {

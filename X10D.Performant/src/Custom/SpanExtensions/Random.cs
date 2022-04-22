@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace X10D.Performant.SpanExtensions;
+﻿namespace X10D.Performant.SpanExtensions;
 
 public static partial class SpanExtensions
 {

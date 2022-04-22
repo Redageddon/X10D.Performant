@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace X10D.Performant.IListExtensions;
+﻿namespace X10D.Performant.IListExtensions;
 
 /// <summary>
 ///     Extension methods for <see cref="IList{T}"/>

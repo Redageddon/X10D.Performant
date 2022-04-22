@@ -1,9 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using System.Security.Cryptography;
-
-namespace X10D.Performant.StreamExtensions;
+﻿namespace X10D.Performant.StreamExtensions;
 
 /// <summary>
 ///     Extension methods for <see cref="Stream"/>.

@@ -2,7 +2,7 @@
 
 public static partial class ByteExtensions
 {
-    /// <include file='ByteExtensions.copy.xml' path='members/member[@name="IsPrime"]'/>
+    /// <include file='ByteExtensions.g.xml' path='members/member[@name="IsPrime"]'/>
     public static bool IsPrime(this byte value)
     {
         switch (value)

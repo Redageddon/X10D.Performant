@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace X10D.Performant.RandomExtensions;
+﻿namespace X10D.Performant.RandomExtensions;
 
 /// <summary>
 ///     Extension methods for <see cref="Random"/>.

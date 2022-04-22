@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq.Expressions;
-
-namespace X10D.Performant.GenericExtensions;
+﻿namespace X10D.Performant.GenericExtensions;
 
 public static partial class GenericExtensions
 {

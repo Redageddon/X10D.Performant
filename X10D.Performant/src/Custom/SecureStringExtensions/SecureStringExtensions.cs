@@ -1,7 +1,4 @@
-﻿using System.Net;
-using System.Security;
-
-namespace X10D.Performant.SecureStringExtensions;
+﻿namespace X10D.Performant.SecureStringExtensions;
 
 /// <summary>
 ///     Extension methods for <see cref="SecureString"/>.

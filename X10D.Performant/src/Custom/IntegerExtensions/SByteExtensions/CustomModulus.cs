@@ -2,7 +2,7 @@
 
 public static partial class SByteExtensions
 {
-    /// <include file='SByteExtensions.copy.xml' path='members/member[@name="Mod"]'/>
+    /// <include file='SByteExtensions.g.xml' path='members/member[@name="Mod"]'/>
     public static sbyte Mod(this sbyte value, sbyte modulus)
     {
         if (value == modulus)

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace X10D.Performant.IEnumerableExtensions;
+﻿namespace X10D.Performant.IEnumerableExtensions;
 
 public static partial class EnumerableExtensions
 {

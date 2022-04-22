@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace X10D.Performant.StringExtensions;
+﻿namespace X10D.Performant.StringExtensions;
 
 [SuppressMessage("ReSharper", "ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator")]
 public static partial class StringExtensions

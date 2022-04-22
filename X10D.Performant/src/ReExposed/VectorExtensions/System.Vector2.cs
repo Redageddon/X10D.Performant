@@ -1,7 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Numerics;
-
-namespace X10D.Performant.ReExposed.VectorExtensions;
+﻿namespace X10D.Performant.ReExposed.VectorExtensions;
 
 /// <summary>
 ///     Extensions for <see cref="Vector2"/>.

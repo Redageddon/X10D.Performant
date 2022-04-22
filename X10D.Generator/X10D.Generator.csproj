@@ -3,12 +3,8 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>Latest</LangVersion>
+        <ImplicitUsings>true</ImplicitUsings>
     </PropertyGroup>
-
-    <ItemGroup>      
-        <None Update="RawCopy\AdvancedComparisonInlining.cs.copy">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-    </ItemGroup>
 
 </Project>

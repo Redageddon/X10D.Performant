@@ -3,7 +3,7 @@ name: .NET Core
 on: [push, pull_request]
 
 env:
-  DOTNET_VERSION: '5.0.102'
+  DOTNET_VERSION: '6.0.202'
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: X10D.Performant-${{ matrix.runtime }}
-          path: X10D.Performant/bin/Release/net5.0/${{ matrix.runtime }}/publish/X10D.Performant.dll
+          path: X10D.Performant/bin/Release/net6.0/${{ matrix.runtime }}/publish/X10D.Performant.dll
 
   checks:
     runs-on: ubuntu-latest

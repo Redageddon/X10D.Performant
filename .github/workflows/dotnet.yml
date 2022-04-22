@@ -22,7 +22,7 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
       - name: Build ${{ matrix.runtime }}
-        run: dotnet publish -r ${{ matrix.runtime }} -c Release /p:GeneratePackageOnBuild=false
+        run: dotnet publish -r ${{ matrix.runtime }} -c Release /p:GeneratePackageOnBuild=false --self-contained false
       - name: Artifact Upload ${{ matrix.runtime }}
         uses: actions/upload-artifact@v2
         with:

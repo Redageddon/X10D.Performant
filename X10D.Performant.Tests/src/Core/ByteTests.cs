@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using NUnit.Framework;
 using X10D.Performant.ByteExtensions;
@@ -13,27 +14,27 @@ namespace X10D.Performant.Tests.Core;
 public class ByteTests
 {
     /// <summary>
-    ///     Tests for <see cref="ByteExtensions.FromUnixTimestamp"/>.
+    ///     Tests for <see cref="X10D.Performant.ByteExtensions.ByteExtensions.FromUnixTimestamp"/>.
     /// </summary>
     [Test]
     public void FromUnixTimestamp()
     {
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:04:15"), ((byte)255).FromUnixTimestamp());
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:00.255"), ((byte)255).FromUnixTimestamp(true));
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:04:15", CultureInfo.InvariantCulture), ((byte)255).FromUnixTimestamp());
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:00.255", CultureInfo.InvariantCulture), ((byte)255).FromUnixTimestamp(true));
     }
 
     /// <summary>
-    ///     Tests for <see cref="SByteExtensions.FromUnixTimestamp"/>.
+    ///     Tests for <see cref="X10D.Performant.SByteExtensions.SByteExtensions.FromUnixTimestamp"/>.
     /// </summary>
     [Test]
     public void FromUnixTimestampU()
     {
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:02:07"), ((sbyte)127).FromUnixTimestamp());
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:00.127"), ((sbyte)127).FromUnixTimestamp(true));
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:02:07", CultureInfo.InvariantCulture), ((sbyte)127).FromUnixTimestamp());
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:00.127", CultureInfo.InvariantCulture), ((sbyte)127).FromUnixTimestamp(true));
     }
 
     /// <summary>
-    ///     Tests for <see cref="ByteExtensions.IsEven"/>.
+    ///     Tests for <see cref="X10D.Performant.ByteExtensions.ByteExtensions.IsEven"/>.
     /// </summary>
     [Test]
     public void IsEven()
@@ -43,7 +44,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="SByteExtensions.IsEven"/>.
+    ///     Tests for <see cref="X10D.Performant.SByteExtensions.SByteExtensions.IsEven"/>.
     /// </summary>
     [Test]
     public void IsEvenS()
@@ -53,7 +54,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="ByteExtensions.IsOdd"/>.
+    ///     Tests for <see cref="X10D.Performant.ByteExtensions.ByteExtensions.IsOdd"/>.
     /// </summary>
     [Test]
     public void IsOdd()
@@ -63,7 +64,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="SByteExtensions.IsOdd"/>.
+    ///     Tests for <see cref="X10D.Performant.SByteExtensions.SByteExtensions.IsOdd"/>.
     /// </summary>
     [Test]
     public void IsOddS()
@@ -73,7 +74,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="ByteExtensions.IsPrime"/>.
+    ///     Tests for <see cref="X10D.Performant.ByteExtensions.ByteExtensions.IsPrime"/>.
     /// </summary>
     [Test]
     public void IsPrime()
@@ -92,7 +93,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="SByteExtensions.IsPrime"/>.
+    ///     Tests for <see cref="X10D.Performant.SByteExtensions.SByteExtensions.IsPrime"/>.
     /// </summary>
     [Test]
     public void IsPrimeS()
@@ -110,7 +111,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="ByteExtensions.Mod"/>.
+    ///     Tests for <see cref="X10D.Performant.ByteExtensions.ByteExtensions.Mod"/>.
     /// </summary>
     [Test]
     public void Mod()
@@ -130,7 +131,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="SByteExtensions.Mod"/>.
+    ///     Tests for <see cref="X10D.Performant.SByteExtensions.SByteExtensions.Mod"/>.
     /// </summary>
     [Test]
     public void ModS()
@@ -150,7 +151,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="ByteExtensions.ToBoolean"/>.
+    ///     Tests for <see cref="X10D.Performant.ByteExtensions.ByteExtensions.ToBoolean"/>.
     /// </summary>
     [Test]
     public void ToBoolean()
@@ -161,7 +162,7 @@ public class ByteTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="SByteExtensions.ToBoolean"/>.
+    ///     Tests for <see cref="X10D.Performant.SByteExtensions.SByteExtensions.ToBoolean"/>.
     /// </summary>
     [Test]
     public void ToBooleanS()

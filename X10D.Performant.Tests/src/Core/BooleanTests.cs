@@ -9,7 +9,7 @@ namespace X10D.Performant.Tests.Core;
 public class BooleanTests
 {
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToByte"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToByte"/>.
     /// </summary>
     [Test]
     public void ToByte()
@@ -24,7 +24,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToDecimal"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToDecimal"/>.
     /// </summary>
     [Test]
     public void ToDecimal()
@@ -39,7 +39,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToDouble"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToDouble"/>.
     /// </summary>
     [Test]
     public void ToDouble()
@@ -54,7 +54,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToSingle"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToSingle"/>.
     /// </summary>
     [Test]
     public void ToFloat()
@@ -69,7 +69,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToInt16"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToInt16"/>.
     /// </summary>
     [Test]
     public void ToInt16()
@@ -84,7 +84,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToInt32"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToInt32"/>.
     /// </summary>
     [Test]
     public void ToInt32()
@@ -99,7 +99,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToInt64"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToInt64"/>.
     /// </summary>
     [Test]
     public void ToInt64()
@@ -114,7 +114,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToNInt"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToNInt"/>.
     /// </summary>
     [Test]
     public void ToNInt()
@@ -129,7 +129,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToNUInt"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToNUInt"/>.
     /// </summary>
     [Test]
     public void ToNUInt()
@@ -144,7 +144,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToSByte"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToSByte"/>.
     /// </summary>
     [Test]
     public void ToSByte()
@@ -159,7 +159,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToUInt16"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToUInt16"/>.
     /// </summary>
     [Test]
     public void ToUInt16()
@@ -174,7 +174,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToUInt32"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToUInt32"/>.
     /// </summary>
     [Test]
     public void ToUInt32()
@@ -189,7 +189,7 @@ public class BooleanTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="BooleanExtensions.ToUInt64"/>.
+    ///     Tests for <see cref="X10D.Performant.BooleanExtensions.BooleanExtensions.ToUInt64"/>.
     /// </summary>
     [Test]
     public void ToUInt64()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using NUnit.Framework;
 using X10D.Performant.ColorExtensions;
@@ -152,10 +153,12 @@ public class ColorTests
 
         for (int i = 0; i < 255; i++)
         {
+            #pragma warning disable CA5394
             byte a = (byte)random.Next();
             byte r = (byte)random.Next();
             byte g = (byte)random.Next();
             byte b = (byte)random.Next();
+            #pragma warning restore CA5394
 
             Color normalConstruction = Color.FromArgb(a, r, g, b);
             Color withConstruction = Color.Transparent.With(a, r, g, b);

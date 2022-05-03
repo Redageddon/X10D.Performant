@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using NUnit.Framework;
 using X10D.Performant.GenericExtensions;
 
@@ -227,7 +228,7 @@ public class GenericTests
         Assert.AreEqual(1, m.To<string, double>());
         Assert.AreEqual("1", m.To<string, string>());
         Assert.AreEqual(1, m.To<string, decimal>());
-        Assert.AreEqual(TimeSpan.Parse("1.00:00:00"), m.To<string, TimeSpan>());
+        Assert.AreEqual(TimeSpan.Parse("1.00:00:00", CultureInfo.InvariantCulture), m.To<string, TimeSpan>());
         Assert.AreEqual(new CustomParse(1), m.To<string, CustomParse>());
 
         Assert.AreEqual(true, n.To<decimal, bool>());
@@ -305,7 +306,7 @@ public class GenericTests
         }
 
         [SuppressMessage("ReSharper", "UnusedMember.Local")]
-        internal static CustomParse Parse(string s) => new() { i = int.Parse(s) };
+        internal static CustomParse Parse(string s) => new() { i = int.Parse(s, CultureInfo.InvariantCulture) };
     }
 
     private readonly struct CustomBool

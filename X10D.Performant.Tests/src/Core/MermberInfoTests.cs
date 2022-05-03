@@ -67,14 +67,13 @@ public class MemberInfoTests
         public string TestValue { get; set; }
     }
 
+    #pragma warning disable 649, CA1812
     private sealed class TestClass
     {
-        #pragma warning disable 649
-        [SuppressMessage("ReSharper", "UnusedMember.Local", Justification = "Used in Reflection")]
         [System.ComponentModel.Description("Test description")]
         [DefaultValue("Foo")]
         [Sample(TestValue = "Bar")]
         public string TestField;
-        #pragma warning restore 649
     }
+    #pragma warning restore 649, CA1812
 }

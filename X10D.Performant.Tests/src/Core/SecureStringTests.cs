@@ -15,7 +15,7 @@ public class SecureStringTests
     [Test]
     public void ToNormalString()
     {
-        SecureString secureString = new();
+        using SecureString secureString = new();
         secureString.AppendChar('h');
         secureString.AppendChar('a');
         secureString.AppendChar('t');

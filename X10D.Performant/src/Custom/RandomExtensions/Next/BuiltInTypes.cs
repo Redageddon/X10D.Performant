@@ -29,26 +29,6 @@ public static partial class RandomExtensions
     public static short NextInt16(this Random random, short minValue, short maxValue) =>
         (short)(((maxValue - minValue) * random.NextDouble()) + minValue);
 
-    /// <include file='../RandomExtensions.xml' path='members/member[@name="NextInt64"]'/>
-    // TODO: remove decimal usage and ensure only 1 random.Next is called
-    public static long NextInt64(this Random random, long maxValue = long.MaxValue)
-    {
-        // Introduces a larger range of distribution but all values are still included so random.NextDecimal() is safe to use here.
-        decimal value = (decimal)random.Next() / long.MaxValue;
-
-        return (long)(maxValue * value);
-    }
-
-    /// <include file='../RandomExtensions.xml' path='members/member[@name="NextInt64Max"]'/>
-    // TODO: remove decimal usage and ensure only 1 random.Next is called
-    public static long NextInt64(this Random random, long minValue, long maxValue)
-    {
-        // Introduces a larger range of distribution but all values are still included so random.NextDecimal() is safe to use here.
-        decimal value = (decimal)random.Next() / long.MaxValue;
-
-        return (long)((maxValue * value) - (minValue * value) + minValue);
-    }
-
     /// <include file='../RandomExtensions.xml' path='members/member[@name="NextSByte"]'/>
     public static sbyte NextSByte(this Random random, sbyte maxValue = sbyte.MaxValue) => (sbyte)(maxValue * random.NextDouble());
 

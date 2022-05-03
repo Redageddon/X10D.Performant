@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using NUnit.Framework;
 using X10D.Performant.Int16Extensions;
 using X10D.Performant.UInt16Extensions;
@@ -16,8 +17,8 @@ public class ShortTests
     [Test]
     public void FromUnixTimestamp()
     {
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), ((short)1234).FromUnixTimestamp());
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), ((short)1234).FromUnixTimestamp(true));
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34", CultureInfo.InvariantCulture), ((short)1234).FromUnixTimestamp());
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234", CultureInfo.InvariantCulture), ((short)1234).FromUnixTimestamp(true));
     }
 
     /// <summary>
@@ -26,8 +27,8 @@ public class ShortTests
     [Test]
     public void FromUnixTimestampU()
     {
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), ((ushort)1234U).FromUnixTimestamp());
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), ((ushort)1234U).FromUnixTimestamp(true));
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34", CultureInfo.InvariantCulture), ((ushort)1234U).FromUnixTimestamp());
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234", CultureInfo.InvariantCulture), ((ushort)1234U).FromUnixTimestamp(true));
     }
 
     /// <summary>

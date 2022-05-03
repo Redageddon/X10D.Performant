@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using NUnit.Framework;
 using X10D.Performant.Int64Extensions;
 using X10D.Performant.UInt64Extensions;
@@ -17,8 +18,8 @@ public class LongTests
     [Test]
     public void FromUnixTimestamp()
     {
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), 1234L.FromUnixTimestamp());
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), 1234L.FromUnixTimestamp(true));
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34", CultureInfo.InvariantCulture), 1234L.FromUnixTimestamp());
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234", CultureInfo.InvariantCulture), 1234L.FromUnixTimestamp(true));
     }
 
     /// <summary>
@@ -27,8 +28,8 @@ public class LongTests
     [Test]
     public void FromUnixTimestampU()
     {
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34"), 1234UL.FromUnixTimestamp());
-        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234"), 1234UL.FromUnixTimestamp(true));
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:20:34", CultureInfo.InvariantCulture), 1234UL.FromUnixTimestamp());
+        Assert.AreEqual(DateTime.Parse("1970-01-01 00:00:01.234", CultureInfo.InvariantCulture), 1234UL.FromUnixTimestamp(true));
     }
 
     /// <summary>

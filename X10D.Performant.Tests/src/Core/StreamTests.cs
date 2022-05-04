@@ -71,9 +71,9 @@ public class StreamTests
         stream.WriteByte(1);
         stream.WriteByte(2);
         stream.ResetPosition();
-        Assert.IsFalse(stream.ReadBoolean());
-        Assert.IsTrue(stream.ReadBoolean());
-        Assert.IsTrue(stream.ReadBoolean());
+        Assert.IsFalse(stream.Read<bool>() ? true : false); // nunit doesn't actually check bools, it checks values
+        Assert.IsTrue(stream.Read<bool>() ? true : false);  // nunit doesn't actually check bools, it checks values
+        Assert.IsTrue(stream.Read<bool>() ? true : false);  // nunit doesn't actually check bools, it checks values
     }
 
     /// <summary>
@@ -96,7 +96,7 @@ public class StreamTests
 
         foreach (decimal d in decimals)
         {
-            Assert.AreEqual(d, stream.ReadDecimal());
+            Assert.AreEqual(d, stream.Read<decimal>());
         }
 
         stream.ResetPosition();
@@ -118,7 +118,7 @@ public class StreamTests
 
         foreach (decimal d in decimals)
         {
-            Assert.AreEqual(d, stream.ReadDecimal(false));
+            Assert.AreEqual(d, stream.Read<decimal>(false));
         }
     }
 
@@ -142,7 +142,7 @@ public class StreamTests
 
         foreach (double d in doubles)
         {
-            Assert.AreEqual(d, stream.ReadDouble());
+            Assert.AreEqual(d, stream.Read<double>());
         }
     }
 
@@ -164,9 +164,9 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(255, stream.ReadInt16());
-        Assert.AreEqual(-256, stream.ReadInt16());
-        Assert.AreEqual(-1, stream.ReadInt16());
+        Assert.AreEqual(255, stream.Read<short>());
+        Assert.AreEqual(-256, stream.Read<short>());
+        Assert.AreEqual(-1, stream.Read<short>());
     }
 
     /// <summary>
@@ -191,10 +191,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(255, stream.ReadInt32());
-        Assert.AreEqual(65535, stream.ReadInt32());
-        Assert.AreEqual(16777215, stream.ReadInt32());
-        Assert.AreEqual(-1, stream.ReadInt32());
+        Assert.AreEqual(255, stream.Read<int>());
+        Assert.AreEqual(65535, stream.Read<int>());
+        Assert.AreEqual(16777215, stream.Read<int>());
+        Assert.AreEqual(-1, stream.Read<int>());
     }
 
     /// <summary>
@@ -221,14 +221,14 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(255, stream.ReadInt64());
-        Assert.AreEqual(65535, stream.ReadInt64());
-        Assert.AreEqual(16777215, stream.ReadInt64());
-        Assert.AreEqual(4294967295, stream.ReadInt64());
-        Assert.AreEqual(1099511627775, stream.ReadInt64());
-        Assert.AreEqual(281474976710655, stream.ReadInt64());
-        Assert.AreEqual(72057594037927935, stream.ReadInt64());
-        Assert.AreEqual(-1, stream.ReadInt64());
+        Assert.AreEqual(255, stream.Read<long>());
+        Assert.AreEqual(65535, stream.Read<long>());
+        Assert.AreEqual(16777215, stream.Read<long>());
+        Assert.AreEqual(4294967295, stream.Read<long>());
+        Assert.AreEqual(1099511627775, stream.Read<long>());
+        Assert.AreEqual(281474976710655, stream.Read<long>());
+        Assert.AreEqual(72057594037927935, stream.Read<long>());
+        Assert.AreEqual(-1, stream.Read<long>());
     }
 
     /// <summary>
@@ -251,7 +251,7 @@ public class StreamTests
 
         foreach (float f in floats)
         {
-            Assert.AreEqual(f, stream.ReadSingle());
+            Assert.AreEqual(f, stream.Read<float>());
         }
     }
 
@@ -290,8 +290,8 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(255, stream.ReadUInt16());
-        Assert.AreEqual(65535, stream.ReadUInt16());
+        Assert.AreEqual(255, stream.Read<ushort>());
+        Assert.AreEqual(65535, stream.Read<ushort>());
     }
 
     /// <summary>
@@ -316,10 +316,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(255, stream.ReadUInt32());
-        Assert.AreEqual(65535, stream.ReadUInt32());
-        Assert.AreEqual(16777215, stream.ReadUInt32());
-        Assert.AreEqual(4294967295, stream.ReadUInt32());
+        Assert.AreEqual(255, stream.Read<uint>());
+        Assert.AreEqual(65535, stream.Read<uint>());
+        Assert.AreEqual(16777215, stream.Read<uint>());
+        Assert.AreEqual(4294967295, stream.Read<uint>());
     }
 
     /// <summary>
@@ -346,14 +346,14 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(255, stream.ReadUInt64());
-        Assert.AreEqual(65535, stream.ReadUInt64());
-        Assert.AreEqual(16777215, stream.ReadUInt64());
-        Assert.AreEqual(4294967295, stream.ReadUInt64());
-        Assert.AreEqual(1099511627775, stream.ReadUInt64());
-        Assert.AreEqual(281474976710655, stream.ReadUInt64());
-        Assert.AreEqual(72057594037927935, stream.ReadUInt64());
-        Assert.AreEqual(18446744073709551615, stream.ReadUInt64());
+        Assert.AreEqual(255, stream.Read<ulong>());
+        Assert.AreEqual(65535, stream.Read<ulong>());
+        Assert.AreEqual(16777215, stream.Read<ulong>());
+        Assert.AreEqual(4294967295, stream.Read<ulong>());
+        Assert.AreEqual(1099511627775, stream.Read<ulong>());
+        Assert.AreEqual(281474976710655, stream.Read<ulong>());
+        Assert.AreEqual(72057594037927935, stream.Read<ulong>());
+        Assert.AreEqual(18446744073709551615, stream.Read<ulong>());
     }
 
     // Tests are assumed to pass at this point, so it is safe to test the write methods with the read methods for the sake of clarity.
@@ -371,7 +371,7 @@ public class StreamTests
         stream.Write(c);
         stream.Write(c, false);
         stream.ResetPosition();
-
+;
         Assert.AreEqual(c, stream.ReadArgbColor());
         Assert.AreEqual(c, stream.ReadArgbColor(false));
     }
@@ -390,8 +390,8 @@ public class StreamTests
         stream.Write(f);
         stream.ResetPosition();
 
-        Assert.AreEqual(t, stream.ReadBoolean());
-        Assert.AreEqual(f, stream.ReadBoolean());
+        Assert.AreEqual(t, stream.Read<bool>());
+        Assert.AreEqual(f, stream.Read<bool>());
     }
 
     /// <summary>
@@ -409,10 +409,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(decimal.MaxValue, stream.ReadDecimal());
-        Assert.AreEqual(decimal.MinValue, stream.ReadDecimal());
-        Assert.AreEqual(decimal.MaxValue, stream.ReadDecimal(false));
-        Assert.AreEqual(decimal.MinValue, stream.ReadDecimal(false));
+        Assert.AreEqual(decimal.MaxValue, stream.Read<decimal>());
+        Assert.AreEqual(decimal.MinValue, stream.Read<decimal>());
+        Assert.AreEqual(decimal.MaxValue, stream.Read<decimal>(false));
+        Assert.AreEqual(decimal.MinValue, stream.Read<decimal>(false));
     }
 
     /// <summary>
@@ -430,10 +430,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(double.MaxValue, stream.ReadDouble());
-        Assert.AreEqual(double.MinValue, stream.ReadDouble());
-        Assert.AreEqual(double.MaxValue, stream.ReadDouble(false));
-        Assert.AreEqual(double.MinValue, stream.ReadDouble(false));
+        Assert.AreEqual(double.MaxValue, stream.Read<double>());
+        Assert.AreEqual(double.MinValue, stream.Read<double>());
+        Assert.AreEqual(double.MaxValue, stream.Read<double>(false));
+        Assert.AreEqual(double.MinValue, stream.Read<double>(false));
     }
 
     /// <summary>
@@ -451,10 +451,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(int.MaxValue, stream.ReadInt32());
-        Assert.AreEqual(int.MinValue, stream.ReadInt32());
-        Assert.AreEqual(int.MaxValue, stream.ReadInt32(false));
-        Assert.AreEqual(int.MinValue, stream.ReadInt32(false));
+        Assert.AreEqual(int.MaxValue, stream.Read<int>());
+        Assert.AreEqual(int.MinValue, stream.Read<int>());
+        Assert.AreEqual(int.MaxValue, stream.Read<int>(false));
+        Assert.AreEqual(int.MinValue, stream.Read<int>(false));
     }
 
     /// <summary>
@@ -472,10 +472,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(long.MaxValue, stream.ReadInt64());
-        Assert.AreEqual(long.MinValue, stream.ReadInt64());
-        Assert.AreEqual(long.MaxValue, stream.ReadInt64(false));
-        Assert.AreEqual(long.MinValue, stream.ReadInt64(false));
+        Assert.AreEqual(long.MaxValue, stream.Read<long>());
+        Assert.AreEqual(long.MinValue, stream.Read<long>());
+        Assert.AreEqual(long.MaxValue, stream.Read<long>(false));
+        Assert.AreEqual(long.MinValue, stream.Read<long>(false));
     }
 
     /// <summary>
@@ -493,10 +493,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(short.MaxValue, stream.ReadInt16());
-        Assert.AreEqual(short.MinValue, stream.ReadInt16());
-        Assert.AreEqual(short.MaxValue, stream.ReadInt16(false));
-        Assert.AreEqual(short.MinValue, stream.ReadInt16(false));
+        Assert.AreEqual(short.MaxValue, stream.Read<short>());
+        Assert.AreEqual(short.MinValue, stream.Read<short>());
+        Assert.AreEqual(short.MaxValue, stream.Read<short>(false));
+        Assert.AreEqual(short.MinValue, stream.Read<short>(false));
     }
 
     /// <summary>
@@ -514,10 +514,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(float.MaxValue, stream.ReadSingle());
-        Assert.AreEqual(float.MinValue, stream.ReadSingle());
-        Assert.AreEqual(float.MaxValue, stream.ReadSingle(false));
-        Assert.AreEqual(float.MinValue, stream.ReadSingle(false));
+        Assert.AreEqual(float.MaxValue, stream.Read<float>());
+        Assert.AreEqual(float.MinValue, stream.Read<float>());
+        Assert.AreEqual(float.MaxValue, stream.Read<float>(false));
+        Assert.AreEqual(float.MinValue, stream.Read<float>(false));
     }
 
     /// <summary>
@@ -552,10 +552,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(uint.MaxValue, stream.ReadUInt32());
-        Assert.AreEqual(uint.MinValue, stream.ReadUInt32());
-        Assert.AreEqual(uint.MaxValue, stream.ReadUInt32(false));
-        Assert.AreEqual(uint.MinValue, stream.ReadUInt32(false));
+        Assert.AreEqual(uint.MaxValue, stream.Read<uint>());
+        Assert.AreEqual(uint.MinValue, stream.Read<uint>());
+        Assert.AreEqual(uint.MaxValue, stream.Read<uint>(false));
+        Assert.AreEqual(uint.MinValue, stream.Read<uint>(false));
     }
 
     /// <summary>
@@ -573,10 +573,10 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(ulong.MaxValue, stream.ReadUInt64());
-        Assert.AreEqual(ulong.MinValue, stream.ReadUInt64());
-        Assert.AreEqual(ulong.MaxValue, stream.ReadUInt64(false));
-        Assert.AreEqual(ulong.MinValue, stream.ReadUInt64(false));
+        Assert.AreEqual(ulong.MaxValue, stream.Read<ulong>());
+        Assert.AreEqual(ulong.MinValue, stream.Read<ulong>());
+        Assert.AreEqual(ulong.MaxValue, stream.Read<ulong>(false));
+        Assert.AreEqual(ulong.MinValue, stream.Read<ulong>(false));
     }
 
     /// <summary>
@@ -594,9 +594,9 @@ public class StreamTests
 
         stream.ResetPosition();
 
-        Assert.AreEqual(ushort.MaxValue, stream.ReadUInt16());
-        Assert.AreEqual(ushort.MinValue, stream.ReadUInt16());
-        Assert.AreEqual(ushort.MaxValue, stream.ReadUInt16(false));
-        Assert.AreEqual(ushort.MinValue, stream.ReadUInt16(false));
+        Assert.AreEqual(ushort.MaxValue, stream.Read<ushort>());
+        Assert.AreEqual(ushort.MinValue, stream.Read<ushort>());
+        Assert.AreEqual(ushort.MaxValue, stream.Read<ushort>(false));
+        Assert.AreEqual(ushort.MinValue, stream.Read<ushort>(false));
     }
 }

@@ -5,6 +5,23 @@
 /// </summary>
 public static partial class StreamExtensions
 {
+    //TODO: Document
+    //TODO: Add tests
+    public static IEnumerable<byte> AsEnumerable(this Stream stream)
+    {
+        while (true)
+        {
+            int read = stream.ReadByte();
+
+            if (read == -1)
+            {
+                break;
+            }
+
+            yield return (byte)read;
+        }
+    }
+
     /// <include file='StreamExtensions.xml' path='members/member[@name="GetHash"]'/>
     public static byte[]? GetHash<T>(this Stream stream)
         where T : HashAlgorithm

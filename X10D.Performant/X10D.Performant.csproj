@@ -11,6 +11,7 @@
         <Version>10.9.0</Version>
         <RepositoryUrl>https://github.com/Redageddon/X10D/</RepositoryUrl>
         <NeutralLanguage>en</NeutralLanguage>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <PropertyGroup>

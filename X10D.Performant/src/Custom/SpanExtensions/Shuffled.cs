@@ -19,7 +19,7 @@ public static partial class SpanExtensions
     public static void Shuffled<T>(this in Span<T?> values, ref Span<T?> buffer, Random? random = null) =>
         Shuffled(values.AsReadOnly(), ref buffer, random);
 
-    private static Span<T?> ShuffledInternal<T>(in ReadOnlySpan<T?> values, Random? random)
+    private static Span<T?> ShuffledInternal<T>(scoped in ReadOnlySpan<T?> values, Random? random)
     {
         Span<T?> result = new T?[values.Length];
         Shuffled(values, ref result, random);

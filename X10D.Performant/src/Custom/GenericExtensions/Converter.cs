@@ -1,7 +1,54 @@
-﻿namespace X10D.Performant.GenericExtensions;
+﻿using X10D.Performant.ReExposed;
+
+namespace X10D.Performant.GenericExtensions;
 
 public static partial class GenericExtensions
 {
+    //Todo: document
+    //Todo: test
+    public static unsafe byte[] GetBytes<T>(this T value)
+        where T : unmanaged
+    {
+        byte[] bytes;
+
+        if (value is decimal d)
+        {
+            int[] bits = d.GetBits();
+            bytes = new byte[sizeof(int) * 4];
+            Unsafe.WriteUnaligned(ref bytes[sizeof(int) * 0], bits[0].GetBytes());
+            Unsafe.WriteUnaligned(ref bytes[sizeof(int) * 1], bits[0].GetBytes());
+            Unsafe.WriteUnaligned(ref bytes[sizeof(int) * 2], bits[0].GetBytes());
+            Unsafe.WriteUnaligned(ref bytes[sizeof(int) * 3], bits[0].GetBytes());
+
+            return bytes;
+        }
+
+        bytes = new byte[sizeof(T)];
+        Unsafe.As<byte, T>(ref bytes[0]) = value;
+
+        return bytes;
+    }
+
+    //Todo: document
+    //Todo: test
+    public static void GetBytes<T>(this T value, Span<byte> bytes)
+        where T : unmanaged
+    {
+        if (value is decimal d)
+        {
+            int[] bits = d.GetBits();
+            bytes = new byte[sizeof(int) * 4];
+            Unsafe.WriteUnaligned(ref bytes[sizeof(int) * 0], bits[0].GetBytes());
+            Unsafe.WriteUnaligned(ref bytes[sizeof(int) * 1], bits[0].GetBytes());
+            Unsafe.WriteUnaligned(ref bytes[sizeof(int) * 2], bits[0].GetBytes());
+            Unsafe.WriteUnaligned(ref bytes[sizeof(int) * 3], bits[0].GetBytes());
+
+            return;
+        }
+
+        Unsafe.ReadUnaligned<T>(ref bytes.GetPinnableReference());
+    }
+
     /// <include file='GenericExtensions.xml' path='members/member[@name="To"]'/>
     public static TTo? To<TFrom, TTo>(this TFrom value) => Convert<TFrom, TTo?>.Function(value);
 

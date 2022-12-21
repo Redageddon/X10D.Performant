@@ -23,7 +23,7 @@ public static partial class SpanExtensions
     /// <include file='SpanExtensions.xml' path='members/member[@name="RandomReadOnly"]'/>
     public static void Random<T>(this in Span<T?> values, ref Span<T?> buffer, Random? random = null) => Random(values.AsReadOnly(), ref buffer, random);
 
-    private static Span<T?> RandomInternal<T>(in ReadOnlySpan<T?> values, int count, Random? random)
+    private static Span<T?> RandomInternal<T>(scoped in ReadOnlySpan<T?> values, int count, Random? random)
     {
         random ??= RandomExtensions.RandomExtensions.Random;
 

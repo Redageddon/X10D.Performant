@@ -16,10 +16,10 @@ public static partial class SpanExtensions
 
     public static void Append<T>(this in Span<T?> values, T? value, ref Span<T?> buffer) => Append(values.AsReadOnly(), value, ref buffer);
 
-    private static Span<T?> AppendInternal<T>(in ReadOnlySpan<T?> values, T? value)
+    private static Span<T?> AppendInternal<T>(scoped in ReadOnlySpan<T?> values2, T? value)
     {
-        Span<T?> result = new T?[values.Length + 1];
-        Append(values, value, ref result);
+        Span<T?> result = new T?[values2.Length + 1];
+        Append(values2, value, ref result);
 
         return result;
     }

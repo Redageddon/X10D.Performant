@@ -36,7 +36,7 @@ public static partial class SpanExtensions
                                           int cutOffLength = NoValuePassed) =>
         Select(values.AsReadOnly(), selector, ref buffer, cutOffLength);
 
-    private static Span<TResult?> SelectInternal<T, TResult>(in ReadOnlySpan<T?> values, Func<T?, TResult?> selector, int cutOffLength)
+    private static Span<TResult?> SelectInternal<T, TResult>(scoped in ReadOnlySpan<T?> values, Func<T?, TResult?> selector, int cutOffLength)
     {
         if (cutOffLength == NoValuePassed)
         {

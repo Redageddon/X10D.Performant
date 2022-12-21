@@ -18,7 +18,7 @@ public static partial class SpanExtensions
 
     public static void Cast<T, TResult>(this in Span<T?> values, ref Span<TResult?> buffer) => Cast(values.AsReadOnly(), ref buffer);
 
-    private static Span<TResult?> CastInternal<T, TResult>(in ReadOnlySpan<T?> values)
+    private static Span<TResult?> CastInternal<T, TResult>(scoped in ReadOnlySpan<T?> values)
     {
         Span<TResult?> result = new TResult?[values.Length];
         Cast<T?, TResult?>(values, ref result);

@@ -41,7 +41,7 @@ public static partial class SpanExtensions
     public static void Intersect<T>(this in Span<T?> first, in ReadOnlySpan<T?> second, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed) =>
         Intersect(first.AsReadOnly(), second, ref buffer, comparer, cutOffLength);
 
-    private static Span<T?> IntersectInternal<T>(in ReadOnlySpan<T?> first, in ReadOnlySpan<T?> second, IEqualityComparer<T?>? comparer, int cutOffLength)
+    private static Span<T?> IntersectInternal<T>(scoped in ReadOnlySpan<T?> first, in ReadOnlySpan<T?> second, IEqualityComparer<T?>? comparer, int cutOffLength)
     {
         Span<T?> result = new T?[Math.Min(first.Length, second.Length)];
         Intersect(first, second, ref result, comparer, cutOffLength);

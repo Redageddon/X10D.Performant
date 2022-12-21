@@ -36,7 +36,7 @@ public static partial class SpanExtensions
     public static void Distinct<T>(this in Span<T?> values, ref Span<T?> buffer, IEqualityComparer<T?>? comparer = null, int cutOffLength = NoValuePassed) =>
         Distinct(values.AsReadOnly(), ref buffer, comparer, cutOffLength);
 
-    private static Span<T?> DistinctInternal<T>(in ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer, int cutOffLength)
+    private static Span<T?> DistinctInternal<T>(scoped in ReadOnlySpan<T?> values, IEqualityComparer<T?>? comparer, int cutOffLength)
     {
         Span<T?> result = new T?[values.Length];
         Distinct(values, ref result, comparer, cutOffLength);

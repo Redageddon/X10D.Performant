@@ -31,36 +31,6 @@ public class StreamTests
     }
 
     /// <summary>
-    ///     Tests for <see cref="StreamExtensions.ReadArgbColor"/>
-    /// </summary>
-    [Test]
-    public void ReadArgbColor()
-    {
-        using MemoryStream stream = new();
-
-        Color[] colors =
-        {
-            Color.FromArgb(0b00000000, 0b00000000, 0b00000000, 0b00000000), Color.FromArgb(0b00000000, 0b00000000, 0b00000000, 0b11111111),
-            Color.FromArgb(0b00000000, 0b00000000, 0b11111111, 0b11111111), Color.FromArgb(0b00000000, 0b11111111, 0b11111111, 0b11111111),
-            Color.FromArgb(0b11111111, 0b11111111, 0b11111111, 0b11111111), Color.FromArgb(0b11111111, 0b00000000, 0b00000000, 0b00000000),
-            Color.FromArgb(0b11111111, 0b11111111, 0b00000000, 0b00000000), Color.FromArgb(0b11111111, 0b11111111, 0b11111111, 0b00000000),
-            Color.FromArgb(0b10000000, 0b10000000, 0b10000000, 0b10000000), Color.FromArgb(0b00000001, 0b00000001, 0b00000001, 0b00000001),
-        };
-
-        foreach (Color color in colors)
-        {
-            stream.Write(new[] { color.B, color.G, color.R, color.A });
-        }
-
-        stream.ResetPosition();
-
-        foreach (Color color in colors)
-        {
-            Assert.AreEqual(color, stream.ReadArgbColor());
-        }
-    }
-
-    /// <summary>
     ///     Tests for <see cref="StreamExtensions.ReadBoolean"/>
     /// </summary>
     [Test]
@@ -358,23 +328,6 @@ public class StreamTests
 
     // Tests are assumed to pass at this point, so it is safe to test the write methods with the read methods for the sake of clarity.
     // If any of the previous methods fail, then these next methods have a possibility of giving false negatives or false positives.
-
-    /// <summary>
-    ///     Tests for <see cref="StreamExtensions.Write(Stream,Color,bool)"/>.
-    /// </summary>
-    [Test]
-    public void WriteArgbColor()
-    {
-        MemoryStream stream = new();
-        Color c = Color.FromArgb(123, 45, 67, 89);
-
-        stream.Write(c);
-        stream.Write(c, false);
-        stream.ResetPosition();
-;
-        Assert.AreEqual(c, stream.ReadArgbColor());
-        Assert.AreEqual(c, stream.ReadArgbColor(false));
-    }
 
     /// <summary>
     ///     Tests for <see cref="StreamExtensions.Write(Stream,bool)"/>.

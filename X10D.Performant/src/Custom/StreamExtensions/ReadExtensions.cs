@@ -24,17 +24,6 @@ public static partial class StreamExtensions
         return Unsafe.ReadUnaligned<T>(ref buffer.GetPinnableReference());
     }
 
-    /// <include file='StreamExtensions.xml' path='members/member[@name="ReadArgbColor"]'/>
-    public static Color ReadArgbColor(this Stream stream, bool littleEndian = true)
-    {
-        Span<byte> buffer = stackalloc byte[sizeof(int)];
-        stream.Read(buffer);
-
-        return Color.FromArgb(littleEndian
-                                  ? BinaryPrimitives.ReadInt32LittleEndian(buffer)
-                                  : BinaryPrimitives.ReadInt32BigEndian(buffer));
-    }
-
     /// <include file='StreamExtensions.xml' path='members/member[@name="ReadString"]'/>
     public static string ReadString(this Stream stream, int byteCount, Encoding? encoding = null)
     {

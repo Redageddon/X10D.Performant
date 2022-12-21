@@ -34,7 +34,7 @@ public static partial class SpanExtensions
     public static void Where<T>(this in Span<T?> values, Predicate<T?> predicate, ref Span<T?> buffer, int cutOffLength = NoValuePassed) =>
         Where(values.AsReadOnly(), predicate, ref buffer, cutOffLength);
 
-    private static Span<T?> WhereInternal<T>(in ReadOnlySpan<T?> values, Predicate<T?> predicate, int cutOffLength)
+    private static Span<T?> WhereInternal<T>(scoped in ReadOnlySpan<T?> values, Predicate<T?> predicate, int cutOffLength)
     {
         if (cutOffLength == NoValuePassed)
         {

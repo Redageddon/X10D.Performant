@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using NUnit.Framework;
 using X10D.Performant.Int64Extensions;
 using X10D.Performant.UInt64Extensions;

@@ -114,14 +114,14 @@ public class StringTests
     [Test]
     public void TestParser()
     {
-        Assert.AreEqual(TimeSpan.FromDays(7), "1w".ShortHandParse());
-        Assert.AreEqual(TimeSpan.FromDays(1), "1d".ShortHandParse());
-        Assert.AreEqual(TimeSpan.FromHours(1), "1h".ShortHandParse());
-        Assert.AreEqual(TimeSpan.FromMinutes(1), "1m".ShortHandParse());
-        Assert.AreEqual(TimeSpan.FromSeconds(1), "1s".ShortHandParse());
-        Assert.AreEqual(TimeSpan.FromMilliseconds(1), "1ms".ShortHandParse());
-        Assert.AreEqual(TimeSpan.FromDays(8), "1w 1d".ShortHandParse());
-        Assert.AreEqual(TimeSpan.FromDays(8), "1w1d".ShortHandParse());
+        Assert.AreEqual(TimeSpan.FromDays(7), "1w".ShortHandParse(null));
+        Assert.AreEqual(TimeSpan.FromDays(1), "1d".ShortHandParse(null));
+        Assert.AreEqual(TimeSpan.FromHours(1), "1h".ShortHandParse(null));
+        Assert.AreEqual(TimeSpan.FromMinutes(1), "1m".ShortHandParse(null));
+        Assert.AreEqual(TimeSpan.FromSeconds(1), "1s".ShortHandParse(null));
+        Assert.AreEqual(TimeSpan.FromMilliseconds(1), "1ms".ShortHandParse(null));
+        Assert.AreEqual(TimeSpan.FromDays(8), "1w 1d".ShortHandParse(null));
+        Assert.AreEqual(TimeSpan.FromDays(8), "1w1d".ShortHandParse(null));
     }
 
     /// <summary>
